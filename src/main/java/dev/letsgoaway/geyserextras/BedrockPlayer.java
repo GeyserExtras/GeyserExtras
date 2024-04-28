@@ -33,7 +33,7 @@ public class BedrockPlayer {
     private boolean blockLeftClickAir = true;
     private boolean dontUnblockNextLeftClickAir = false;
 
-    public float coolDownThresHold = 0;
+    public float coolDownThresHold = 0.0f;
     public int reach = 3;
     public String cooldownType = "Crosshair";
     public static List<String> cooldownTypes = Arrays.asList("Crosshair", "Hotbar", "None");
@@ -324,6 +324,7 @@ public class BedrockPlayer {
             EventListener.cropStop(this);
         }
         blockLeftClickAir = true;
+        dontUnblockNextLeftClickAir = true;
     }
 
     private Boolean alsoSentBreak = false;
@@ -334,9 +335,12 @@ public class BedrockPlayer {
         } else {
             coolDownThresHold = 1.0f;
             alsoSentBreak = false;
+            blockLeftClickAir = true;
+            dontUnblockNextLeftClickAir = false;
+            Tick.runIn(2L,()->{
+                blockLeftClickAir = false;
+            });
         }
-        blockLeftClickAir = true;
-        dontUnblockNextLeftClickAir = true;
         if (cropTypes.contains(ev.getBlock().getType())) {
             EventListener.cropStop(this);
         }
@@ -367,12 +371,11 @@ public class BedrockPlayer {
                 if (!dontUnblockNextLeftClickAir) {
                     blockLeftClickAir = false;
                 }
-
             }
         } else if (ev.getAction().equals(Action.RIGHT_CLICK_AIR)) {
             if (noCoolDownOnRClick.contains(player.getInventory().getItemInMainHand().getType()) || isArmor()) {
                 coolDownThresHold = 1.0f;
-                blockLeftClickAir = true;
+                blockLeftClickAir = false;
                 dontUnblockNextLeftClickAir = false;
             } else {
                 coolDownThresHold = 0.0f;
@@ -540,6 +543,7 @@ public class BedrockPlayer {
         coolDownThresHold = 1.0f;
         alsoSentBreak = true;
         blockLeftClickAir = false;
+        dontUnblockNextLeftClickAir = false;
         player.resetTitle();
     }
 
