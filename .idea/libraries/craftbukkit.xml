@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="craftbukkit">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../../BuildTools/CraftBukkit/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../BuildTools/CraftBukkit/src/test/java" />
+    </SOURCES>
+  </library>
+</component>
