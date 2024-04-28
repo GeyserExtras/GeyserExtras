@@ -1,0 +1,62 @@
+# GeyserExtras
+# If Geyser-Spigot is detected, all required config changes will be automatically applied.
+
+# Enable the custom cooldown.
+# Requires show-cooldown: "false" in Geyser's config.
+enable-custom-cooldown: true
+
+# Forces block placements to not be hold-bridgable/scaffold-bridgeable.
+# Requires disable-bedrock-scaffolding: true in Geyser's config for forward block placements.
+enable-java-only-block-placement: false
+
+# Updates blocks in a 10 block radius from the player's line of sight to remove ghost blocks.
+enable-block-ghosting-fix: false
+
+# When the server closes or Geyser reloads reconnect to the server using the below address.
+auto-reconnect: true
+
+# This is the ip and port players connect to via any port forwarding system NOT YOUR LOCAL IP. You
+# should set this to the ip and port you give to your players.
+external-address: "mc.exampleaddress.net"
+external-port: 19132
+# The actions that will show up in the Quick-Menu. Quick-Menu requires the plugin version of Geyser.
+# Actions are formatted as shown below,
+# "{title} >> {command}"
+# Commands are executed as the player.
+# Available placeholders are:
+
+# %player_name% - The name that is the Java Username of the player. For example: .Geyser_Extras
+# If the player is linked the linked Java account's name is used.
+
+# %xbox_username% - The username that the Bedrock player has. For example: Geyser Extras
+
+# %player_device% - The device the player is using currently.
+# Possible values: Android | iOS | Amazon | Windows Phone | Gear VR | Hololens | Windows | macOS | Apple TV | PlayStation | Switch | Xbox | Dedicated | Unknown
+
+# %player_platform% - The platform the player is using currently.
+# Possible values: Console | Mobile | PC | VR | Unknown
+
+# %player_inputtype% - The input type the player is using.
+# Possible values: Keyboard | Touch | Controller | VR | Unknown
+
+# %player_uiprofile% - The UI Profile the player is using.
+# Possible values: Classic | Pocket
+quick-menu-actions:
+  - "Swap Items with Off-hand >> /geyser offhand"
+  - "Toggle Tooltips >> /geyser tooltips"
+  - "Open GeyserExtras Menu >> /ge"
+  - "Open Advancements >> /geyser advancements"
+  - "Open Statistics >> /geyser statistics"
+  - "Player List >> /playerlist"
+  - "Platform List >> /platformlist"
+
+
+# Enables the Knockback Attack Sprint fix.
+# In java, when you execute a Knockback attack, the Player stops sprinting for one tick.
+# The workaround for Bedrock tricks the client into having no hunger for a tick, however
+# this temporarily makes the hunger bar look empty.
+enable-knockback-attack-sprint-fix: true
+
+
+# Only enable if you are using GeyserExtrasForwarder.
+proxy-mode: false

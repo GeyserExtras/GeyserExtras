@@ -1,0 +1,39 @@
+name: GeyserExtras
+version: '1.0-SNAPSHOT'
+main: dev.letsgoaway.geyserextras.GeyserExtras
+api-version: '1.20'
+softdepend: [floodgate, Geyser-Spigot]
+commands:
+  geyserextras:
+    description: Open the GeyserExtras menu.
+    usage: /<command>
+    permission: geyserextras.menu
+    aliases:
+      - ge
+  platformlist:
+    description: Shows a player list including everyone's platforms.
+    usage: /<command>
+    permission: geyserextras.platformlist
+    aliases:
+      - pl
+      - platforms
+  playerlist:
+    description: Shows the Java Tab Player List menu for Bedrock Edition Players.
+    usage: /<command>
+    permission: geyserextras.playerlist
+    aliases:
+      - l
+      - players
+      - listplayers
+      - tab
+      - tablist
+permissions:
+  geyserextras.menu:
+    default: true
+    description: Allow players to execute the /geyserextras command
+  geyserextras.platformlist:
+    default: true
+    description: Allow players to execute the /platformlist command
+  geyserextras.playerlist:
+    default: true
+    description: Allow players to execute the /playerlist command

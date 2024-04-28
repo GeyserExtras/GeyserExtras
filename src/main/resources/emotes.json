@@ -1,0 +1,926 @@
+[
+    {
+      "name": "Abducted?",
+      "uuid": "18891e6c-bb3d-47f6-bc15-265605d86525"
+    },
+    {
+      "name": "Acting Like a Dragon",
+      "uuid": "c2a47805-c792-4882-a56d-17c80b6c57a8"
+    },
+    {
+      "name": "Acting Like Santa",
+      "uuid": "4e3413af-86a1-1ea6-6537-c50f4e332f94"
+    },
+    {
+      "name": "Aeroplane",
+      "uuid": "e7bb3d8c-811d-442a-bfc5-775556d05d7a"
+    },
+    {
+      "name": "Ahh Choo!",
+      "uuid": "f9345ebb-4ba3-40e6-ad9b-6bfb10c92890"
+    },
+    {
+      "name": "Air Basketball",
+      "uuid": "2b01a3b6-a86f-dd83-6c53-1c2f89b9e18f"
+    },
+    {
+      "name": "Air Guitar",
+      "uuid": "d1d6eaef-c80f-e289-7770-5c1df04cf14f"
+    },
+    {
+      "name": "Alphabet A",
+      "uuid": "a43b566a-77da-2b2b-e016-e2e82393041e"
+    },
+    {
+      "name": "Anger",
+      "uuid": "07f49bd8-aff9-eae3-7735-6e14dc4836ba"
+    },
+    {
+      "name": "Anger Management",
+      "uuid": "a0b1a9f2-0ea4-48d0-8641-ada998beee4d"
+    },
+    {
+      "name": "Anime Dance",
+      "uuid": "61914613-98ee-65ce-7816-b8e076720f05"
+    },
+    {
+      "name": "Anime Run",
+      "uuid": "347f0a8b-5b97-675b-34cc-b24ba262a77f"
+    },
+    {
+      "name": "Anime Run!",
+      "uuid": "ffa4fb7c-0bc7-4b82-a207-fee3def0c8c6"
+    },
+    {
+      "name": "Back Handsprings",
+      "uuid": "f2d004ab-6d62-4c21-8517-f7ef03d9bb26"
+    },
+    {
+      "name": "Backflip Fail",
+      "uuid": "e301938b-0c4a-6630-d0a8-b7dde72ccf5c"
+    },
+    {
+      "name": "Ballerina Twirl",
+      "uuid": "79452f7e-ffa0-470f-8283-f5063348471d"
+    },
+    {
+      "name": "Batman Landing",
+      "uuid": "bb5baae6-1694-42c0-9cc8-6ff4bb5503c6"
+    },
+    {
+      "name": "BEES!",
+      "uuid": "adba2129-80ab-20b3-950c-d6eca27461e7"
+    },
+    {
+      "name": "Big Chuckles",
+      "uuid": "819f2f36-2a16-440c-8e46-94c6b003a2e0"
+    },
+    {
+      "name": "Bored",
+      "uuid": "7a314ecf-f94c-42c0-945f-76903c923808"
+    },
+    {
+      "name": "Bow",
+      "uuid": "ddfa6f0e-88ca-46de-b189-2bd5b18e96a0"
+    },
+    {
+      "name": "Break It Down",
+      "uuid": "f5d9e381-a95b-a0bc-77bd-84a735de7e04"
+    },
+    {
+      "name": "Breakdancing",
+      "uuid": "1dbaa006-0ec6-42c3-9440-a3bfa0c6fdbe"
+    },
+    {
+      "name": "Calculated",
+      "uuid": "405d0578-4ad0-1108-3a55-89520739fa8c"
+    },
+    {
+      "name": "Calling a Dragon",
+      "uuid": "9f5d4732-0513-4a0a-8ea2-b6b8d7587e74"
+    },
+    {
+      "name": "Can't Touch This Dance",
+      "uuid": "1d5bb425-35bb-e4f1-5ee4-a6e1c6e987b5"
+    },
+    {
+      "name": "Can-Can Dance",
+      "uuid": "e2fa6747-424a-e595-b9c9-45cd44733611"
+    },
+    {
+      "name": "Cartwheel",
+      "uuid": "5cf9d5a3-6fa0-424e-8ae4-d1f877b836da"
+    },
+    {
+      "name": "Chatting",
+      "uuid": "59d9e78c-f0bb-4f14-9e9b-7ab4f58ffbf5"
+    },
+    {
+      "name": "Cheer Routine",
+      "uuid": "3d10a8c7-213c-4fbe-a208-a0f7990d5bbb"
+    },
+    {
+      "name": "Chun-Li Spinning Kick",
+      "uuid": "af61c759-6252-431d-a7de-94d477cfb54c"
+    },
+    {
+      "name": "Clicking Heels",
+      "uuid": "495d686a-4cb3-4f0b-beb5-bebdcb95eed9"
+    },
+    {
+      "name": "Contorting",
+      "uuid": "fb379452-fc4e-41eb-8371-9f1475456234"
+    },
+    {
+      "name": "Cosplay Dance",
+      "uuid": "d845fa1d-5849-3774-3871-a73fe71da985"
+    },
+    {
+      "name": "Cowabunga!",
+      "uuid": "78abdd9a-b6bd-478f-8148-b4e15b6229ba"
+    },
+    {
+      "name": "Cowboy",
+      "uuid": "7bc08a5e-f0d7-fe69-b835-3e65ee666956"
+    },
+    {
+      "name": "Cowpoke Dancin'",
+      "uuid": "f99ccd35-ebda-4122-b458-ff8c9f9a432f"
+    },
+    {
+      "name": "DAB",
+      "uuid": "b5cbb1f3-6b88-ad8a-c442-de9f75547314"
+    },
+    {
+      "name": "Dab Dance",
+      "uuid": "2a2ea1f8-55ca-e1db-9562-0c786a62f2cd"
+    },
+    {
+      "name": "Dance Dance Dance!",
+      "uuid": "918bdc1f-604c-dcf7-a756-7493502d0e11"
+    },
+    {
+      "name": "Dancing Like an Elf",
+      "uuid": "0e1655a0-ebd9-a219-6464-25a927b114e9"
+    },
+    {
+      "name": "Dancing Like Rapunzel",
+      "uuid": "f15ceb56-6651-41c0-8bd5-087951204d81"
+    },
+    {
+      "name": "Dancing Like Toothless",
+      "uuid": "a12252fa-4ec8-42e0-a7d0-d44fbc90d753"
+    },
+    {
+      "name": "Disappointed",
+      "uuid": "a98ea25e-4e6a-477f-8fc2-9e8a18ab7004"
+    },
+    {
+      "name": "DJing",
+      "uuid": "beb74219-e90c-46aa-8a4b-a1c175f6cab5"
+    },
+    {
+      "name": "Dodging Arrows",
+      "uuid": "8b2e28ff-7d77-0d00-bb9e-94eb4fa4a45a"
+    },
+    {
+      "name": "Dog Walking",
+      "uuid": "9d7f75fd-28d9-6929-ccaa-7db303316380"
+    },
+    {
+      "name": "Doing Aerobics",
+      "uuid": "2647f538-6fc6-4775-85ae-7f6f2a8065b2"
+    },
+    {
+      "name": "Doing the Conga",
+      "uuid": "5e1ef7ed-efdf-44a9-8ace-6cca6275d80d"
+    },
+    {
+      "name": "Drowsy",
+      "uuid": "505146b0-d5c8-4f4b-a13c-007d2175bbb6"
+    },
+    {
+      "name": "Dual Dancing",
+      "uuid": "10db17a5-62a5-4493-8ae6-faf32ecfeb18"
+    },
+    {
+      "name": "Dueling Like Obi-Wan",
+      "uuid": "070374b6-10b8-4496-8b4e-44511d1be42b"
+    },
+    {
+      "name": "Enamoured",
+      "uuid": "c4d87a21-d4c4-498b-8bc1-5dd78c895e9f"
+    },
+    {
+      "name": "Excitedly Dancing",
+      "uuid": "d9d1192d-1262-470d-bc0c-5ba46bedab72"
+    },
+    {
+      "name": "Exhausted",
+      "uuid": "2391b018-3b8a-4bb0-9596-8edfc502d302"
+    },
+    {
+      "name": "Facepalm",
+      "uuid": "402efb2d-6607-47f2-b8e5-bc422bcd8304"
+    },
+    {
+      "name": "Faceplant",
+      "uuid": "6d9f24c0-6246-4c92-8169-4648d1981cbb"
+    },
+    {
+      "name": "Fake Death",
+      "uuid": "efc2f0f5-af00-4d9e-a4b1-78f18d63be79"
+    },
+    {
+      "name": "Fall",
+      "uuid": "dff81230-0581-4402-92d2-dba4ec99102d"
+    },
+    {
+      "name": "Feeling Sick",
+      "uuid": "bb6f1764-2b0b-4a3a-adfd-3334627cdee4"
+    },
+    {
+      "name": "Fighting Batman-style",
+      "uuid": "91d79d4a-c998-4e32-bd36-f195e619a0d8"
+    },
+    {
+      "name": "Fishy Dancing",
+      "uuid": "33a3e311-5be8-414e-972d-a0b2e27219bd"
+    },
+    {
+      "name": "Flares",
+      "uuid": "51cfdf2e-d725-09dc-a5dc-caab497dec43"
+    },
+    {
+      "name": "Flight",
+      "uuid": "b310ea06-0485-4ad1-8424-df271ca6ec37"
+    },
+    {
+      "name": "Floss",
+      "uuid": "8c0c8638-5f0b-7063-3f43-f91e93644876"
+    },
+    {
+      "name": "Floss Dance",
+      "uuid": "14cc880d-8039-515b-e59b-c6fce7b6f075"
+    },
+    {
+      "name": "Flourishing",
+      "uuid": "a57277d5-0693-4c8a-9b5c-45c33fdf7c26"
+    },
+    {
+      "name": "Fluttering",
+      "uuid": "9c939344-f9d6-4a3a-95a5-f64dd3d94e45"
+    },
+    {
+      "name": "Flying Like Peter Pan",
+      "uuid": "949c4f24-6aa6-4f2a-bad5-1b3de7e12749"
+    },
+    {
+      "name": "Follow",
+      "uuid": "17428c4c-3813-4ea1-b3a9-d6a32f83afca"
+    },
+    {
+      "name": "Foot Stomp!",
+      "uuid": "13334afa-bd66-4285-b3d9-d974046db479"
+    },
+    {
+      "name": "Football Celebration",
+      "uuid": "18801796-9fe2-e6d9-0d6d-a2a3d6790127"
+    },
+    {
+      "name": "Force Lifting",
+      "uuid": "60b9db3f-608f-4fff-aec0-31a5ff4c54eb"
+    },
+    {
+      "name": "Found Inspiration",
+      "uuid": "b690c36b-bd02-45df-a60b-00c0dbbf265f"
+    },
+    {
+      "name": "Freestyle Moves",
+      "uuid": "2dff1c49-3d78-41a5-bf02-2389e5cf5796"
+    },
+    {
+      "name": "Gangnam Style",
+      "uuid": "6c10764b-6559-316a-521f-15888c65f96e"
+    },
+    {
+      "name": "Gangnam Style Dance",
+      "uuid": "c1b25df4-88ab-c758-7df8-faffee9e832c"
+    },
+    {
+      "name": "Get Over Here",
+      "uuid": "a237e7cb-47da-710f-75b5-66818ae4fb01"
+    },
+    {
+      "name": "Ghast Dancing",
+      "uuid": "5a5b2c0c-a924-4e13-a99b-4c12e3f02e1e"
+    },
+    {
+      "name": "Giddy",
+      "uuid": "738497ce-539f-4e06-9a03-dc528506a468"
+    },
+    {
+      "name": "Giving R2-D2 a Message",
+      "uuid": "e1090020-cbe0-4b64-9c41-a3b9619da029"
+    },
+    {
+      "name": "Gliding",
+      "uuid": "7393aa53-9145-4e66-b23b-ec86def6c6f2"
+    },
+    {
+      "name": "Glitch Walk",
+      "uuid": "f4374f93-f441-5ef5-e72f-33b14e8ed144"
+    },
+    {
+      "name": "Going Hero",
+      "uuid": "f14d652f-18ed-42dc-831f-7f6a2eab1246"
+    },
+    {
+      "name": "Golf Clap",
+      "uuid": "434489fd-ed42-4814-961a-df14161d67e0"
+    },
+    {
+      "name": "Got Chills",
+      "uuid": "af6ad96c-5754-4cf9-a463-49a8190e6b0e"
+    },
+    {
+      "name": "Griddy",
+      "uuid": "e5ef10b5-d864-9766-c1a0-81035923db4a"
+    },
+    {
+      "name": "Griddy!",
+      "uuid": "2d989a34-b814-5dc9-672d-29e30dd27946"
+    },
+    {
+      "name": "Groovin'",
+      "uuid": "d863b9cc-9f8c-498b-a8a3-7ebd542cb08e"
+    },
+    {
+      "name": "Guitar Hero",
+      "uuid": "c7efbcf5-3633-5311-bfef-58937d4d4d23"
+    },
+    {
+      "name": "Hadoken!",
+      "uuid": "6453480a-54ac-435d-899d-4e6f7fe57591"
+    },
+    {
+      "name": "Hakuna Matata",
+      "uuid": "71afa8ed-03b6-4808-b537-330daf9dbf50"
+    },
+    {
+      "name": "Hammering",
+      "uuid": "7cec98d8-55cc-44fe-b0ae-2672b0b2bd37"
+    },
+    {
+      "name": "Hand Stand",
+      "uuid": "5dd129f9-cfc3-4fc1-b464-c66a03061545"
+    },
+    {
+      "name": "Hanging Upside Down",
+      "uuid": "7752d88d-22ec-adb2-7a98-5e2bfcb4ed01"
+    },
+    {
+      "name": "Happily Dancing",
+      "uuid": "c7dd1194-632a-4392-8eb0-485b50802055"
+    },
+    {
+      "name": "Helicopter",
+      "uuid": "2dc8d9e7-84de-7cb9-1716-bc938a508372"
+    },
+    {
+      "name": "Helicopter Spin",
+      "uuid": "e351162f-dad2-6aad-a5cf-65b771557a88"
+    },
+    {
+      "name": "High Five",
+      "uuid": "f65b8ee3-65db-42fc-9b00-4b0751d62364"
+    },
+    {
+      "name": "Hitting the Omnitrix",
+      "uuid": "1e30e8f4-2991-4aac-a58a-a6bf90a080c5"
+    },
+    {
+      "name": "Hooray!",
+      "uuid": "c4b5b251-24d3-43eb-9c05-46be246aeefb"
+    },
+    {
+      "name": "Hoppin'",
+      "uuid": "fb9b884a-b217-46a2-85fd-d3ab0f2f33e6"
+    },
+    {
+      "name": "Hugging Themselves",
+      "uuid": "54e2209a-41ec-4502-8500-dd51e569ab69"
+    },
+    {
+      "name": "Hungry",
+      "uuid": "d24f27c0-6bc8-4193-842c-8e33fdae5e8e"
+    },
+    {
+      "name": "Hype Dance",
+      "uuid": "9ea376ad-6693-8941-8543-ae9d37bfbe10"
+    },
+    {
+      "name": "Inspecting Item",
+      "uuid": "6d35a7a6-942f-4d6f-a233-1499be044158"
+    },
+    {
+      "name": "Intercom and Attack",
+      "uuid": "87c039b7-7bdc-45d1-8684-e940a131ec0a"
+    },
+    {
+      "name": "Investigating",
+      "uuid": "c4272178-5e93-4892-b161-1aecdef4a54d"
+    },
+    {
+      "name": "Juggling",
+      "uuid": "1e909865-4c80-4708-839c-b0c0fcaa2f1c"
+    },
+    {
+      "name": "Jumping Jacks",
+      "uuid": "b13966b3-1f7c-4f07-8ab8-9d85170203f5"
+    },
+    {
+      "name": "Kamehameha",
+      "uuid": "4108684b-7081-98d7-ba67-db688588c19a"
+    },
+    {
+      "name": "Kicking Back",
+      "uuid": "23eb26c9-064b-ac37-1efa-62de66007c2d"
+    },
+    {
+      "name": "Kneeling",
+      "uuid": "24444aea-cb6e-451f-90fc-b74e57cc7c5d"
+    },
+    {
+      "name": "L Dance",
+      "uuid": "87ffab6a-3e1d-7e29-88ed-9106f1d3b34a"
+    },
+    {
+      "name": "Laugh!",
+      "uuid": "4c069001-156e-6fc4-d2e6-dfbe131baa1e"
+    },
+    {
+      "name": "Laughing",
+      "uuid": "b962f11b-e7fd-c50a-a067-b83e02f08b8b"
+    },
+    {
+      "name": "Laughing Out Loud",
+      "uuid": "310b41de-1c7a-4098-928d-addcd905bf65"
+    },
+    {
+      "name": "Lazy Day",
+      "uuid": "220d7c59-cb41-856b-3d9f-4af105b36685"
+    },
+    {
+      "name": "Learning Magic!",
+      "uuid": "6fc09de0-397b-7bf9-e2e2-23276292ce5b"
+    },
+    {
+      "name": "Let's Move It!",
+      "uuid": "2eb61d4e-96f7-428e-353e-ecda2083ffce"
+    },
+    {
+      "name": "Little Rest",
+      "uuid": "b4d4c3e7-21f0-70ab-6a9d-8a8b18466432"
+    },
+    {
+      "name": "Mad Falling",
+      "uuid": "63cb3c45-b3b3-4c02-a4f3-fb4b9853dbe9"
+    },
+    {
+      "name": "Meditating Like Luke",
+      "uuid": "85957448-e7bb-4bb4-9182-510b4428e52c"
+    },
+    {
+      "name": "Mega Man Jump",
+      "uuid": "ae421dd2-6a61-46b7-b260-0323e523fdc1"
+    },
+    {
+      "name": "Mega Man Victory",
+      "uuid": "92572802-402b-4e50-a55b-804a48853ce6"
+    },
+    {
+      "name": "Minion Cheering",
+      "uuid": "6174a111-19ac-41d1-a483-0e0b37f9d049"
+    },
+    {
+      "name": "Minion Panicking",
+      "uuid": "79e93b59-38f0-4796-8033-f99d7aa9334e"
+    },
+    {
+      "name": "Minion Taunting",
+      "uuid": "a51f8e7c-a4dd-4ce1-9fc9-2c3cad66cede"
+    },
+    {
+      "name": "Moonwalk",
+      "uuid": "8c266eef-650e-861b-5f2f-dd6f7a344e4f"
+    },
+    {
+      "name": "Mutant Roar",
+      "uuid": "bcb113fd-1167-3ffa-ed80-17514fa4a71b"
+    },
+    {
+      "name": "Napping",
+      "uuid": "1c6b8fb8-2890-42cb-aca3-f1441625b1ce"
+    },
+    {
+      "name": "Naruto Run",
+      "uuid": "975f3227-0874-c60a-0e75-e4d43bb7cd75"
+    },
+    {
+      "name": "Offer",
+      "uuid": "21e0054a-5bf4-468d-bfc4-fc4b49bd44ac"
+    },
+    {
+      "name": "Oh, No!",
+      "uuid": "52969d45-6e3c-006c-62ac-cacb258e6cea"
+    },
+    {
+      "name": "Opening Chakras",
+      "uuid": "547e5f6c-d445-49a9-b06e-6919b1f9e48e"
+    },
+    {
+      "name": "Over Here!",
+      "uuid": "71721c51-b7d1-46b1-b7ea-eb4c4126c3db"
+    },
+    {
+      "name": "Over There!",
+      "uuid": "ce5c0300-7f03-455d-aaf1-352e4927b54d"
+    },
+    {
+      "name": "Peekaboo",
+      "uuid": "2ecc0fd1-312b-4664-9bfa-a06429838706"
+    },
+    {
+      "name": "Pet the Dog",
+      "uuid": "a6055334-3456-86fd-bcf9-e6f1e0d42f53"
+    },
+    {
+      "name": "Petting",
+      "uuid": "fc88c98e-a356-8211-5f55-943c1d6d9887"
+    },
+    {
+      "name": "Pick Up",
+      "uuid": "1597755a-dd27-4462-cecc-ac157e225bca"
+    },
+    {
+      "name": "Playing Dead",
+      "uuid": "9d4019d0-db3f-4859-a579-f6c37532d2a6"
+    },
+    {
+      "name": "Playing Zombie",
+      "uuid": "5d644007-3cdf-4246-b4ca-cfd7a4318a1c"
+    },
+    {
+      "name": "Posing Like a Hero",
+      "uuid": "7102c0f7-6113-44f5-b37c-4e94841b0e81"
+    },
+    {
+      "name": "Pouting",
+      "uuid": "34259925-44dd-46f0-98e5-80ccebc086d0"
+    },
+    {
+      "name": "Push Ups",
+      "uuid": "1041bc42-75de-b5cd-3a1f-34a3e8cd5893"
+    },
+    {
+      "name": "Push-Up's",
+      "uuid": "ea4d3777-b63d-aa67-dfa8-bc939225f85d"
+    },
+    {
+      "name": "Push-Ups",
+      "uuid": "9d009853-fed6-538c-e052-589aa3533d2c"
+    },
+    {
+      "name": "Rallying",
+      "uuid": "50e51304-515d-441f-81d8-7921327b97f9"
+    },
+    {
+      "name": "Rebooting",
+      "uuid": "a602063f-1ded-4959-b978-b5ae7f353536"
+    },
+    {
+      "name": "Red Light Green Light",
+      "uuid": "1c0dc130-8d61-2cdd-31dd-7d87824afbe1"
+    },
+    {
+      "name": "Ride The Pony",
+      "uuid": "10b7139e-bd9b-dcfd-1ea1-0371653084fe"
+    },
+    {
+      "name": "Robot Dance",
+      "uuid": "85591902-be70-164a-48ad-cdc3c3bc27d2"
+    },
+    {
+      "name": "Rock, paper, scissors",
+      "uuid": "a3397a60-d688-8a32-e198-dc2e095b7c76"
+    },
+    {
+      "name": "ROFL",
+      "uuid": "6f82688e-e549-408c-946d-f8e99b91808d"
+    },
+    {
+      "name": "Roll",
+      "uuid": "0a13a756-f4d9-1e02-f5bf-ba73971016fa"
+    },
+    {
+      "name": "Rolling",
+      "uuid": "67e35945-99ae-ef41-bb57-82f850522126"
+    },
+    {
+      "name": "Rumble",
+      "uuid": "7387be27-5975-428d-adfa-9f9b7467deb6"
+    },
+    {
+      "name": "Ryu Guarding",
+      "uuid": "0c141653-1166-448b-87a2-38d0679bb549"
+    },
+    {
+      "name": "Sad Sigh",
+      "uuid": "98a68056-e025-4c0f-a959-d6e330ccb5f5"
+    },
+    {
+      "name": "Salsa Dancing",
+      "uuid": "6bcf44bd-ff8a-48a5-9254-3983a0b0f702"
+    },
+    {
+      "name": "Saluting",
+      "uuid": "1ea5f771-827d-408d-ae8e-1af00d7aa416"
+    },
+    {
+      "name": "Secret Handshake",
+      "uuid": "ceb97e43-f793-43a6-b74c-32828f08d3e4"
+    },
+    {
+      "name": "Shadow Boxing",
+      "uuid": "42fde774-37d4-4422-b374-89ff13a6535a"
+    },
+    {
+      "name": "Shell Spinning",
+      "uuid": "a9a15546-b597-4937-9ab3-6882192ce6d8"
+    },
+    {
+      "name": "Shrug",
+      "uuid": "4ff73ed2-3c2f-4d74-9055-5fa24e59dc7a"
+    },
+    {
+      "name": "Shy",
+      "uuid": "d122def8-869d-2171-6126-4f38981dd884"
+    },
+    {
+      "name": "Shy Giggling",
+      "uuid": "f1e18201-729d-472d-9e4f-5cdd7f6bba0c"
+    },
+    {
+      "name": "Sid Dance",
+      "uuid": "946f04ea-8ff0-416e-a66d-8b0d0751e8bf"
+    },
+    {
+      "name": "Silly",
+      "uuid": "86b34976-8f41-475b-a386-385080dc6e83"
+    },
+    {
+      "name": "Simple Clap",
+      "uuid": "9a469a61-c83b-4ba9-b507-bdbe64430582"
+    },
+    {
+      "name": "Singing",
+      "uuid": "7a2ba4ae-6803-43e7-edb3-c4151f4786cf"
+    },
+    {
+      "name": "Sitting",
+      "uuid": "137730ec-9617-4fa9-a715-c2a671a7210e"
+    },
+    {
+      "name": "Skibidi Dob Yes Yes",
+      "uuid": "1288c693-d191-2a48-28ea-2ecaa642875d"
+    },
+    {
+      "name": "Sledding",
+      "uuid": "ed933c38-bef9-90c3-4dcd-abb0aed560be"
+    },
+    {
+      "name": "Sleep",
+      "uuid": "2d0316fe-4ed8-8328-a033-6b96fad29ce5"
+    },
+    {
+      "name": "Sleepy",
+      "uuid": "a5f9881c-23b7-4650-8e92-039cd7a16889"
+    },
+    {
+      "name": "Slimin'",
+      "uuid": "70831936-d97d-48fe-a7e7-d8894e7c5507"
+    },
+    {
+      "name": "Slippery",
+      "uuid": "faa79a2e-ee30-6f6d-a136-9060f845381a"
+    },
+    {
+      "name": "Sniffer Sniffin'",
+      "uuid": "3706e0e2-9991-40ac-98e0-4acd8dd7bc95"
+    },
+    {
+      "name": "Snow Angel",
+      "uuid": "5e3c2f66-23c6-f536-353e-2b7583256862"
+    },
+    {
+      "name": "Snowball Battle",
+      "uuid": "b738d2cb-3490-4f14-80b5-ce4fb143de8f"
+    },
+    {
+      "name": "Sonic-Finger Wagging",
+      "uuid": "e8a91ad4-6f7a-479e-9556-e1a7c058351b"
+    },
+    {
+      "name": "Sonic-Running",
+      "uuid": "b8e54924-ec3f-409c-8914-bca61fbe9242"
+    },
+    {
+      "name": "Sonic-Victory Spinning",
+      "uuid": "cd8c3bc6-f455-43d2-836e-62c1a19474c7"
+    },
+    {
+      "name": "Spoopy",
+      "uuid": "06bb1b0b-ed9d-f34f-533e-49471545f196"
+    },
+    {
+      "name": "Staff Spinning",
+      "uuid": "be10427e-4a69-40fb-949f-b2d51ce25f66"
+    },
+    {
+      "name": "Startled",
+      "uuid": "77300dcc-dc80-41a9-b9e6-0c9273418fea"
+    },
+    {
+      "name": "Steady",
+      "uuid": "dffb04c1-b3a8-29e1-15bb-f11982b8240f"
+    },
+    {
+      "name": "Stick in the ground",
+      "uuid": "a624945a-6b60-9dc9-3b00-517b64ee94f3"
+    },
+    {
+      "name": "Stomping Like a Dino",
+      "uuid": "8387f555-f789-45a4-90d8-3fa2a9a9e299"
+    },
+    {
+      "name": "Super Handshake",
+      "uuid": "de06c189-bc34-a3c6-2eaf-c67f669cd1a3"
+    },
+    {
+      "name": "Super Spinning",
+      "uuid": "f0e56052-e8a6-2172-5a86-d43c647870f6"
+    },
+    {
+      "name": "Superhero Landing",
+      "uuid": "c2b9dd03-7258-4813-b6f5-37ef9b4a3326"
+    },
+    {
+      "name": "Superhero Spin",
+      "uuid": "adb1a63a-de00-39ca-51fa-c2588291c262"
+    },
+    {
+      "name": "Surprised",
+      "uuid": "9f18b97c-0bc4-0291-678b-1fd18024290a"
+    },
+    {
+      "name": "Surrendering",
+      "uuid": "daeaaa6f-db91-4461-8617-400c5d1b8646"
+    },
+    {
+      "name": "Suspicious Potion",
+      "uuid": "12807615-314c-7958-88bc-c7393b1744b8"
+    },
+    {
+      "name": "Swinging Energy Sword",
+      "uuid": "d7680c67-8e54-482a-903d-622ddb43485f"
+    },
+    {
+      "name": "T-Pose",
+      "uuid": "94402c81-d8a5-6715-f056-7e556b9b783e"
+    },
+    {
+      "name": "The Dab Dance",
+      "uuid": "97f14f9f-fb0d-f394-4fba-072a33947c45"
+    },
+    {
+      "name": "The Floss",
+      "uuid": "2e050fb8-1292-e4a0-0777-1d6aa33284f7"
+    },
+    {
+      "name": "The Joker's Mad Laugh",
+      "uuid": "2e1cb748-4406-4626-8fd5-5ee4a1675e95"
+    },
+    {
+      "name": "The Master Chief",
+      "uuid": "88dc7deb-21bb-48c3-8b5a-00757a06aef9"
+    },
+    {
+      "name": "The Pickaxe",
+      "uuid": "d7519b5a-45ec-4d27-997c-89d402c6b57f"
+    },
+    {
+      "name": "The Splits",
+      "uuid": "51871829-e9ef-40aa-939c-b8952295d50e"
+    },
+    {
+      "name": "The Sturdy",
+      "uuid": "acfd62e3-e779-cd47-2f4a-1fae049a4e78"
+    },
+    {
+      "name": "The Worm",
+      "uuid": "b2c11fb9-592f-b55c-8b89-3a4b92c0d66e"
+    },
+    {
+      "name": "Thinking",
+      "uuid": "20bcb500-af82-4c2f-9239-e78191c61375"
+    },
+    {
+      "name": "Throwing a Tantrum",
+      "uuid": "591047fb-3d40-af0a-f0e7-921cea17c592"
+    },
+    {
+      "name": "To Infinity and Beyond",
+      "uuid": "79e8cb30-c1b4-4e41-8aa8-96492c6f390c"
+    },
+    {
+      "name": "Tornado",
+      "uuid": "876cc6a8-4eb3-5429-bde8-c7140ed648cd"
+    },
+    {
+      "name": "Trendy Dancing",
+      "uuid": "5be3c038-ea03-ab1f-b2a2-ed583ccc0295"
+    },
+    {
+      "name": "Triumphantly Cheering",
+      "uuid": "6131e1e3-0c13-4cd3-96cf-fbb39b277b6d"
+    },
+    {
+      "name": "Tube Man",
+      "uuid": "aa1e0413-9fdd-12a8-0092-1d3d16ea055a"
+    },
+    {
+      "name": "Underwater Dancing",
+      "uuid": "05af18ca-920f-4232-83cb-133b2d913dd6"
+    },
+    {
+      "name": "Using Jedi Mind Trick",
+      "uuid": "4b9b9f17-3722-4d38-a6a9-9ba0e8cf5044"
+    },
+    {
+      "name": "Victorious",
+      "uuid": "77053f59-c79b-4d5c-8dc5-539ed28002e9"
+    },
+    {
+      "name": "Victory Cheer",
+      "uuid": "d0c60245-538e-4ea2-bdd4-33477db5aa89"
+    },
+    {
+      "name": "Wall Running",
+      "uuid": "b305f0e8-cb72-48de-bfea-7e2f4afb63c7"
+    },
+    {
+      "name": "Warm Up Drills",
+      "uuid": "6b9c7731-7422-4333-950f-cf3d147ffa47"
+    },
+    {
+      "name": "Wave",
+      "uuid": "4c8ae710-df2e-47cd-814d-cc7bf21a3d67"
+    },
+    {
+      "name": "Waving Like C-3PO",
+      "uuid": "c2d6091d-9f91-4a9e-badd-ef8481353cb0"
+    },
+    {
+      "name": "Weapon Twirling",
+      "uuid": "2e17b365-81ee-45af-a15f-09ea012ef4d0"
+    },
+    {
+      "name": "Wildly Skipping",
+      "uuid": "ba83e17e-9ed5-421b-a0ce-4b4787d13277"
+    },
+    {
+      "name": "Wind Up",
+      "uuid": "ed139d3a-6e9a-216b-74e7-e258f0289660"
+    },
+    {
+      "name": "Workout",
+      "uuid": "749743bf-5441-a3ba-5c3c-9cd6cd351097"
+    },
+    {
+      "name": "Worm Dance",
+      "uuid": "76f240f9-5d35-4d63-a6ef-f8ad8c154a80"
+    },
+    {
+      "name": "Yay, Diamonds!",
+      "uuid": "ec80b7a5-a440-590e-341c-1b9c4b396fcb"
+    },
+    {
+      "name": "Yoga",
+      "uuid": "3f1bdf46-80b0-4a64-b631-4ac2f2491165"
+    },
+    {
+      "name": "Zero Gravity",
+      "uuid": "bc6e056c-7f29-881e-13e3-75ef40f7c45a"
+    }
+]
