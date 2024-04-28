@@ -32,7 +32,7 @@ public class Config {
 
     public static boolean proxyMode = false;
 
-
+    public static boolean skinSavingEnabled = false;
     public static boolean enableArmsOnArmorStands = false;
 
     public static FileConfiguration config;
@@ -77,6 +77,9 @@ public class Config {
         if (config.contains("enable-knockback-attack-sprint-fix", true)) {
             knockbackAttackSprintFix = config.getBoolean("enable-knockback-attack-sprint-fix");
         }
+        if (config.contains("enable-skin-saving", true)) {
+            skinSavingEnabled = config.getBoolean("enable-skin-saving");
+        }
         if (config.contains("proxy-mode", true)) {
             proxyMode = config.getBoolean("proxy-mode");
         }
@@ -91,11 +94,10 @@ public class Config {
         config.set("external-port", externalPort);
         config.set("quick-menu-actions", configQuickMenuActions);
         config.set("enable-knockback-attack-sprint-fix", knockbackAttackSprintFix);
+        config.set("enable-skin-saving", skinSavingEnabled);
         config.set("proxy-mode", proxyMode);
         try {
-            config.save(Objects.requireNonNull(GeyserExtras.plugin.getDataFolder().listFiles((dir, name) -> {
-                return name.equalsIgnoreCase("config.yml");
-            }))[0]);
+            config.save(GeyserExtras.plugin.getDataFolder().toPath().resolve("config.yml").toFile());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -22,9 +22,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Map;
-import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
 // https://api.tydiumcraft.net/v1/players/skin?uuid=16ea03b2-6d37-482b-9e4e-a4b42067ab84&type=avatar
@@ -130,17 +128,19 @@ public class TabList extends BedrockContextMenu {
     public static void precacheSkin(Player player) {
         Bukkit.getScheduler().runTaskAsynchronously(GeyserExtras.plugin, () -> {
             loadTextureID(player);
-            URL url = null;
-            try {
-                url = new URL(getSkinURL(player));
-                BufferedImage img = ImageIO.read(url);
-                // cooked
-                Path folder = Files.createDirectories(Path.of(Config.skinsFolder.toAbsolutePath() + "/" + player.getUniqueId()));
-                File file = new File(folder.toAbsolutePath() + "/" + loadTextureID(player) + ".png");
-                if (!file.exists()) {
-                    ImageIO.write(img, "png", file);
+            if (Config.skinSavingEnabled) {
+                URL url = null;
+                try {
+                    url = new URL(getSkinURL(player));
+                    BufferedImage img = ImageIO.read(url);
+                    // cooked
+                    Path folder = Files.createDirectories(Path.of(Config.skinsFolder.toAbsolutePath() + "/" + player.getUniqueId()));
+                    File file = new File(folder.toAbsolutePath() + "/" + loadTextureID(player) + ".png");
+                    if (!file.exists()) {
+                        ImageIO.write(img, "png", file);
+                    }
+                } catch (Exception e) {
                 }
-            } catch (Exception e) {
             }
         });
 
