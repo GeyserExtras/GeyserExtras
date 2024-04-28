@@ -200,6 +200,21 @@ public class BedrockPlayer {
     private String lastFog = "minecraft:fog_hell";
 
     public void updateNetherFog() {
+        if (Objects.requireNonNull(player.getLocation().getWorld()).getEnvironment().equals(World.Environment.NETHER)) {
+            if (!lastFog.equals(getNetherFogID())) {
+                GeyserExtras.bedrockAPI.sendFog(this, getNetherFogID());
+                GeyserExtras.bedrockAPI.removeFog(this, lastFog);
+            }
+        }
+        lastFog = getNetherFogID();
+    }
+
+    public void removeNetherFog() {
+        GeyserExtras.bedrockAPI.removeFog(this, "minecraft:fog_hell");
+        GeyserExtras.bedrockAPI.removeFog(this, "minecraft:fog_soulsand_valley");
+        GeyserExtras.bedrockAPI.removeFog(this, "minecraft:fog_crimson_forest");
+        GeyserExtras.bedrockAPI.removeFog(this, "minecraft:fog_warped_forest");
+        GeyserExtras.bedrockAPI.removeFog(this, "minecraft:fog_basalt_deltas");
 
     }
 
@@ -633,5 +648,11 @@ public class BedrockPlayer {
 
     public void onPlayerLeave(PlayerQuitEvent ev) {
         TabList.bedrockPlayerTextureIDs.remove(xuid);
+    }
+
+    public void onPlayerChangeWorlds(PlayerChangedWorldEvent ev) {
+        if (!player.getWorld().getEnvironment().equals(World.Environment.NETHER)) {
+            removeNetherFog();
+        }
     }
 }

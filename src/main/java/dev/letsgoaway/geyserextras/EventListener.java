@@ -183,7 +183,16 @@ public class EventListener implements Listener {
             return;
         }
     }
+    @EventHandler
+    public void onPlayerChangeWorlds(PlayerChangedWorldEvent ev){
+        Player player = ev.getPlayer();
+        if (notBedrock(player)) {
+            return;
+        }
+        BedrockPlayer bedrockPlayer = getPlayer(player);
 
+        bedrockPlayer.onPlayerChangeWorlds(ev);
+    }
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent ev) {
         Player player = ev.getPlayer();
