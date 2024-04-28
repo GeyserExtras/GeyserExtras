@@ -8,9 +8,12 @@ import org.geysermc.cumulus.util.FormImage;
 
 import java.util.Arrays;
 
-public class QuickMenuSetup extends BedrockContextMenu {
-    public QuickMenuSetup(BedrockPlayer bplayer) {
+public class QuickMenuBindings extends BedrockContextMenu {
+    public QuickMenuBindings(BedrockPlayer bplayer) {
         super("Quick-Menu Bindings");
+        this.onClose = ()->{
+          new QuickMenu(bplayer).show(bplayer);
+        };
         StringBuilder headerText = new StringBuilder();
         for (String s : bplayer.quickMenuList) {
             headerText.append("Emote #" + String.valueOf(bplayer.quickMenuList.indexOf(s) + 1) + " ID: " + EmoteUtils.getEmoteName(s) + "\n");
@@ -34,7 +37,7 @@ public class QuickMenuSetup extends BedrockContextMenu {
         }));
         add(new Button("Clear All", FormImage.Type.PATH, "textures/ui/icon_trash.png", () -> {
             bplayer.quickMenuList = Arrays.asList("", "", "", "");
-            new QuickMenuSetup(bplayer).show(bplayer);
+            new QuickMenuBindings(bplayer).show(bplayer);
         }));
     }
 }

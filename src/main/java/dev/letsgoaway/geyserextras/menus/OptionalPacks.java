@@ -1,9 +1,6 @@
 package dev.letsgoaway.geyserextras.menus;
 
-import dev.letsgoaway.geyserextras.APIType;
-import dev.letsgoaway.geyserextras.BedrockPlayer;
-import dev.letsgoaway.geyserextras.Config;
-import dev.letsgoaway.geyserextras.GeyserExtras;
+import dev.letsgoaway.geyserextras.*;
 import dev.letsgoaway.geyserextras.api.BedrockPluginAPI;
 import dev.letsgoaway.geyserextras.form.BedrockContextMenu;
 import dev.letsgoaway.geyserextras.form.elements.Button;
@@ -27,9 +24,10 @@ public class OptionalPacks extends BedrockContextMenu {
             if (!Arrays.equals(OptionalPacks.loadingResourcePacks.get(xuid), bplayer.optionalPacks.toArray(String[]::new))) {
                 loadingResourcePacks.replace(xuid, bplayer.optionalPacks.toArray(String[]::new));
                 bplayer.save();
-                GeyserExtras.bedrockAPI.reconnect(bplayer.player.getUniqueId());
+                Tick.runOnNext(()->{
+                    GeyserExtras.bedrockAPI.reconnect(bplayer.player.getUniqueId());
+                });
             }
-
         };
 
         add(new Button("§b§l§nSelected", () -> {

@@ -10,8 +10,8 @@ import java.util.List;
 
 public class BedrockContextMenu {
     public SimpleForm.Builder simpleForm = SimpleForm.builder();
-    List<Button> buttons = new ArrayList<>();
     public Runnable onClose = null;
+    List<Button> buttons = new ArrayList<>();
 
     public BedrockContextMenu(String title, String header) {
         simpleForm.title(title);

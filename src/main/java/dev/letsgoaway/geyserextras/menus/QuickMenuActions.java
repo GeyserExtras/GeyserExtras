@@ -4,14 +4,18 @@ import dev.letsgoaway.geyserextras.BedrockPlayer;
 import dev.letsgoaway.geyserextras.Config;
 import dev.letsgoaway.geyserextras.form.BedrockForm;
 import dev.letsgoaway.geyserextras.form.elements.Dropdown;
-import dev.letsgoaway.geyserextras.form.elements.Toggle;
 
-import java.util.Arrays;
 import java.util.List;
 
-public class QuickMenuSettings extends BedrockForm {
-    QuickMenuSettings(BedrockPlayer bplayer) {
+public class QuickMenuActions extends BedrockForm {
+    QuickMenuActions(BedrockPlayer bplayer) {
         super("Quick-Menu Actions");
+        this.onClose = () -> {
+            new QuickMenu(bplayer).show(bplayer);
+        };
+        this.onSubmit = () -> {
+            new QuickMenu(bplayer).show(bplayer);
+        };
         List<String> actions = Config.quickMenuCommands.keySet().stream().toList();
         add(new Dropdown("Emote #1 Action", actions, getAction(0, bplayer),
                         (str) -> {
@@ -42,12 +46,12 @@ public class QuickMenuSettings extends BedrockForm {
                 )
         );
     }
-    private String getAction(int num, BedrockPlayer bedrockPlayer){
+
+    private String getAction(int num, BedrockPlayer bedrockPlayer) {
         String name = bedrockPlayer.quickMenuActions.get(num);
-        if (Config.quickMenuCommands.containsKey(name)){
+        if (Config.quickMenuCommands.containsKey(name)) {
             return name;
-        }
-        else {
+        } else {
             return "None";
         }
     }

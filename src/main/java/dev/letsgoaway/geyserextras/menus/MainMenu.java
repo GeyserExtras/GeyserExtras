@@ -6,7 +6,11 @@ import dev.letsgoaway.geyserextras.Config;
 import dev.letsgoaway.geyserextras.GeyserExtras;
 import dev.letsgoaway.geyserextras.form.BedrockContextMenu;
 import dev.letsgoaway.geyserextras.form.elements.Button;
+import org.bukkit.Bukkit;
+import org.bukkit.advancement.Advancement;
 import org.geysermc.cumulus.util.FormImage;
+
+import java.util.Iterator;
 
 public class MainMenu extends BedrockContextMenu {
     public MainMenu(BedrockPlayer bplayer) {

@@ -13,6 +13,8 @@ public class BedrockForm {
     private CustomForm.Builder customForm;
 
     private List<FormElement> elements;
+    public Runnable onSubmit = null;
+    public Runnable onClose = null;
     public BedrockForm(String title) {
         customForm = CustomForm.builder();
         customForm.title(title);
@@ -54,7 +56,13 @@ public class BedrockForm {
                i++;
                response.next();
            }
+            if (onSubmit != null) {
+                onSubmit.run();
+            }
         });
+        if (onClose != null) {
+            customForm.closedOrInvalidResultHandler(onClose);
+        }
         GeyserExtras.bedrockAPI.sendForm(bplayer.player.getUniqueId(), customForm.build());
     }
 }

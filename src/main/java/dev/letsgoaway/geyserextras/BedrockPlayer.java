@@ -2,17 +2,14 @@ package dev.letsgoaway.geyserextras;
 
 import dev.letsgoaway.geyserextras.menus.MainMenu;
 import dev.letsgoaway.geyserextras.menus.OptionalPacks;
-import dev.letsgoaway.geyserextras.menus.QuickMenuSetup;
+import dev.letsgoaway.geyserextras.menus.QuickMenuBindings;
 import dev.letsgoaway.geyserextras.menus.TabList;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.Arrow;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Player;
+import org.bukkit.entity.*;
 import org.bukkit.event.block.*;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.*;
@@ -337,7 +334,7 @@ public class BedrockPlayer {
             alsoSentBreak = false;
             blockLeftClickAir = true;
             dontUnblockNextLeftClickAir = false;
-            Tick.runIn(2L,()->{
+            Tick.runIn(2L, () -> {
                 blockLeftClickAir = false;
             });
         }
@@ -375,19 +372,24 @@ public class BedrockPlayer {
         } else if (ev.getAction().equals(Action.RIGHT_CLICK_AIR)) {
             if (noCoolDownOnRClick.contains(player.getInventory().getItemInMainHand().getType()) || isArmor()) {
                 coolDownThresHold = 1.0f;
-                blockLeftClickAir = false;
+                blockLeftClickAir = true;
                 dontUnblockNextLeftClickAir = false;
+                Tick.runIn(2L, () -> {
+                    blockLeftClickAir = false;
+                });
             } else {
                 coolDownThresHold = 0.0f;
             }
 
         } else if (ev.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
-            coolDownThresHold = 1.0f;
-            blockLeftClickAir = true;
-            Tick.runIn(2L, () -> {
-                blockLeftClickAir = false;
-            });
-            dontUnblockNextLeftClickAir = false;
+            if (Objects.equals(player.getTargetBlockExact(6), ev.getClickedBlock())) {
+                coolDownThresHold = 1.0f;
+                blockLeftClickAir = true;
+                Tick.runIn(2L, () -> {
+                    blockLeftClickAir = false;
+                });
+                dontUnblockNextLeftClickAir = false;
+            }
         }
 
     }
@@ -550,7 +552,7 @@ public class BedrockPlayer {
     public boolean waitingForEmote = false;
     public int waitingEmoteID = 0;
 
-    private static final List<String> emoteWheelUnicodes = Arrays.asList("\uF840", "\uF841", "\uF842", "\uF843");
+    public static final List<String> emoteWheelUnicodes = Arrays.asList("\uF840", "\uF841", "\uF842", "\uF843");
 
     public void setWaiting(int waitingEmoteID) {
         int emoteNumber = waitingEmoteID + 1;
@@ -573,7 +575,7 @@ public class BedrockPlayer {
             cancelled = true;
             waitingForEmote = false;
             quickMenuList.set(waitingEmoteID, emoteUUID);
-            new QuickMenuSetup(this).show(this);
+            new QuickMenuBindings(this).show(this);
             this.save();
         } else {
             if (quickMenuList.contains(emoteUUID)) {
