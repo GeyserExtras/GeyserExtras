@@ -32,7 +32,8 @@ A plugin which attempts to unify features for Bedrock Edition players on Java Ed
 ### Platform List
 - A simple command which shows what platforms players are on.
 - `/platformlist` | `/platforms`
-  ![An image showing the Platform List in GeyserExtras.](https://github.com/GeyserExtras/GeyserExtras/blob/master/preview/platformslist.png?raw=true)
+
+![An image showing the Platform List in GeyserExtras.](https://github.com/GeyserExtras/GeyserExtras/blob/master/preview/platformslist.png?raw=true)
 ## Fixes
 
 ### Crop Sound Fix
