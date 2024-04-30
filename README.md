@@ -3,6 +3,8 @@
 
 A plugin which attempts to unify features for Bedrock Edition players on Java Edition Servers with GeyserMC, aswell as other handy features for Bedrock Players.
 
+![Discord](https://img.shields.io/discord/715685803040309310?logo=discord&logoColor=ffffff&label=discord&labelColor=5865F2&link=https%3A%2F%2Fdiscord.gg%2F2FfuShKQgy)
+
 ## Supports Spigot 1.20.4
 
 # This plugin is in its very early stages! Contributions are welcomed and encouraged!
