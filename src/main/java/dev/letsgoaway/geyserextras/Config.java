@@ -5,15 +5,14 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
-import java.util.logging.Filter;
-import java.util.logging.LogRecord;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Config {
     public static boolean customCoolDownEnabled = true;
@@ -102,8 +101,10 @@ public class Config {
             throw new RuntimeException(e);
         }
     }
+
     public static Path optionalPacks;
     public static File[] packsArray;
+
     // this config code is bad and i hate it
     public static void loadConfig() {
         if (!GeyserExtras.plugin.getDataFolder().exists()) {
@@ -140,7 +141,7 @@ public class Config {
         } else {
             Config.netherRoofEnabled = Config.proxyMode;
         }
-        if (Config.netherRoofEnabled){
+        if (Config.netherRoofEnabled) {
             GeyserExtras.logger.info("Nether Roof Fix Fog Fix enabled!");
         }
         if (geyserConfig == null) {
@@ -152,15 +153,10 @@ public class Config {
             geyserConfig.set("show-cooldown", "false");
             if (geyserDataFolder != null) {
                 Path packLocation = geyserDataFolder.toPath().resolve("packs/GeyserExtrasPack.mcpack");
-                InputStream GeyserExtrasPack = GeyserExtras.plugin.getResource("GeyserExtrasPack.mcpack");
-                assert GeyserExtrasPack != null;
-                if (!packLocation.toFile().exists() || packLocation.toFile().hashCode() != GeyserExtrasPack.hashCode()) {
-                    try (FileOutputStream output = new FileOutputStream(packLocation.toString())) {
-                        output.write(GeyserExtrasPack.readAllBytes());
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
+                if (packLocation.toFile().exists()) {
+                    packLocation.toFile().delete();
                 }
+                GeyserExtras.plugin.saveResource("GeyserExtrasPack.mcpack", false);
             }
         }
         if (geyserDataFolder != null && geyserConfig != null) {

@@ -22,6 +22,8 @@ import java.util.logging.Filter;
 public class GeyserBedrockAPI extends dev.letsgoaway.geyserextras.api.BedrockPluginAPI implements org.geysermc.geyser.api.event.EventRegistrar {
     private final org.geysermc.geyser.api.GeyserApi api = org.geysermc.geyser.api.GeyserApi.api();
     private final HashMap<UUID, ResourcePack> resourcePackHashMap = new HashMap<>();
+
+    private ResourcePack GeyserExtrasPack = null;
     private final HashMap<UUID, Path> resourcePackPathMap = new HashMap<>();
 
     public GeyserBedrockAPI() {
@@ -41,6 +43,8 @@ public class GeyserBedrockAPI extends dev.letsgoaway.geyserextras.api.BedrockPlu
         if (geyserSpigot == null) {
             return;
         }
+        GeyserExtrasPack = ResourcePack.create(PackCodec.path(GeyserExtras.plugin.getDataFolder().toPath().resolve("GeyserExtrasPack.mcpack")));
+
         /* geyser has an annoying message where it says that paths are too long,
         so i disable the logger for it temporarily here */
         Filter oldFilter = geyserSpigot.getLogger().getFilter();
@@ -73,10 +77,10 @@ public class GeyserBedrockAPI extends dev.letsgoaway.geyserextras.api.BedrockPlu
     @Subscribe
     public void onResourcePackLoadEvent(org.geysermc.geyser.api.event.bedrock.SessionLoadResourcePacksEvent ev) {
         if (OptionalPacks.loadingResourcePacks.containsKey(ev.connection().xuid())) {
+            ev.register(GeyserExtrasPack);
             for (String id : OptionalPacks.loadingResourcePacks.get(ev.connection().xuid())) {
                 ev.register(resourcePackHashMap.get(UUID.fromString(id)));
             }
-            // OptionalPacks.loadingResourcePacks.remove(ev.connection().xuid());
         }
     }
 
