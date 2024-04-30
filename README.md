@@ -4,8 +4,9 @@
 A plugin which attempts to unify features for Bedrock Edition players on Java Edition Servers with GeyserMC, aswell as other handy features for Bedrock Players.
 
 [![Discord](https://img.shields.io/discord/715685803040309310?logo=discord&logoColor=ffffff&label=discord&labelColor=5865F2&link=https%3A%2F%2Fdiscord.gg%2F2FfuShKQgy)](https://discord.gg/2FfuShKQgy)
-
-## Supports Spigot 1.20.4
+![Java Version Supported](https://img.shields.io/badge/java-1.20.4-6F4E37)
+![Bedrock Version Supported](https://img.shields.io/badge/bedrock-1.20.81-333333)
+![Supported server software](https://img.shields.io/badge/spigot-velocity-333333)
 
 # This plugin is in its very early stages! Contributions are welcomed and encouraged!
 
@@ -45,6 +46,8 @@ Crops now play the Java Edition sound for breaking and placing.
 ### Nether Roof Fix Fog Fix
 
 Fixes the fog to not be the same red fog when Geyser has `above-bedrock-nether-building: true`.
+
+![An video showing the Nether Roof Fix Fog Fix in GeyserExtras.](https://github.com/GeyserExtras/GeyserExtras/blob/master/preview/netherrooffixfogfix.gif?raw=true)
 
 ### Arrow Delay Fix
 
