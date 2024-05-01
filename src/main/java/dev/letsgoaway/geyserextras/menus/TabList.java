@@ -6,6 +6,7 @@ import com.google.gson.JsonParser;
 import dev.letsgoaway.geyserextras.BedrockPlayer;
 import dev.letsgoaway.geyserextras.Config;
 import dev.letsgoaway.geyserextras.GeyserExtras;
+import dev.letsgoaway.geyserextras.Tick;
 import dev.letsgoaway.geyserextras.form.BedrockContextMenu;
 import dev.letsgoaway.geyserextras.form.elements.Button;
 import org.bukkit.Bukkit;
@@ -28,6 +29,23 @@ import java.util.concurrent.ConcurrentHashMap;
 // https://api.tydiumcraft.net/v1/players/skin?uuid=16ea03b2-6d37-482b-9e4e-a4b42067ab84&type=avatar
 public class TabList extends BedrockContextMenu {
     public static final Map<String, String> bedrockPlayerTextureIDs = new ConcurrentHashMap<>();
+
+    public TabList(BedrockPlayer bplayer) {
+        super(getPlayerHeader(bplayer), getPlayerFooter(bplayer));
+        Tick.runAsync(() -> {
+            for (Player player : Bukkit.getOnlinePlayers()) {
+                add(new Button(getPlayerListName(player), FormImage.Type.URL,
+                        getFaceURL(player)
+                        , () -> {
+                    if (Bukkit.getOfflinePlayer(player.getUniqueId()).isOnline()) {
+                        new TabListPlayerDetails(bplayer, player).show(bplayer);
+                    }
+                    //new TabList(bplayer);
+                }));
+            }
+            this.show(bplayer);
+        });
+    }
 
     public static String loadTextureID(Player player) {
         if (GeyserExtras.bedrockAPI.isBedrockPlayer(player.getUniqueId())
@@ -60,6 +78,10 @@ public class TabList extends BedrockContextMenu {
 
     public static String getFaceURL(Player player) {
         return "https://mc-heads.net/avatar/" + loadTextureID(player) + "/8";
+    }
+
+    public static String getBodyURL(Player player) {
+        return "https://mc-heads.net/player/" + loadTextureID(player) + "/64";
     }
 
     public static String getSkinURL(Player player) {
@@ -111,22 +133,9 @@ public class TabList extends BedrockContextMenu {
         return builder.toString();
     }
 
-    public TabList(BedrockPlayer bplayer) {
-        super(getPlayerHeader(bplayer), getPlayerFooter(bplayer));
-        Bukkit.getScheduler().runTaskAsynchronously(GeyserExtras.plugin, () -> {
-            for (Player player : Bukkit.getOnlinePlayers()) {
-                add(new Button(getPlayerListName(player), FormImage.Type.URL,
-                        getFaceURL(player)
-                        , () -> {
-                    new TabList(bplayer);
-                }));
-            }
-            this.show(bplayer);
-        });
-    }
 
     public static void precacheSkin(Player player) {
-        Bukkit.getScheduler().runTaskAsynchronously(GeyserExtras.plugin, () -> {
+        Tick.runAsync(() -> {
             loadTextureID(player);
             if (Config.skinSavingEnabled) {
                 URL url = null;
@@ -139,7 +148,7 @@ public class TabList extends BedrockContextMenu {
                     if (!file.exists()) {
                         ImageIO.write(img, "png", file);
                     }
-                } catch (Exception e) {
+                } catch (Exception ignored) {
                 }
             }
         });

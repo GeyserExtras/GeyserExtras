@@ -57,5 +57,6 @@ Fixes the arrows to no longer be delayed when shooting, however this has the dow
 - Auto download GeyserOptionalPack.
 - Use Nametags or Text Displays for Glow effect.
 - Allow players to download their own skins.
+- Bedrock Subpacks Loading
 ## Bugs
 - Sweep attack sometimes plays even if the player didn't sweep attack.

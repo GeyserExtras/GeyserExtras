@@ -1,5 +1,7 @@
 package dev.letsgoaway.geyserextras;
 
+import org.bukkit.entity.Player;
+
 public enum PlayerDevice {
     UNKNOWN("Unknown"),
     ANDROID("Android"),
@@ -25,5 +27,13 @@ public enum PlayerDevice {
 
     public static PlayerDevice getPlayerDevice(BedrockPlayer bedrockPlayer) {
        return GeyserExtras.bedrockAPI.getPlayerDevice(bedrockPlayer);
+    }
+    public static PlayerDevice getPlayerDevice(Player player) {
+        if (GeyserExtras.bedrockAPI.isBedrockPlayer(player.getUniqueId())){
+            return GeyserExtras.bedrockAPI.getPlayerDevice(GeyserExtras.bplayers.get(player.getUniqueId()));
+        }
+        else {
+            return JAVA;
+        }
     }
 }

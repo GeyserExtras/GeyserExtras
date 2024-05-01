@@ -76,8 +76,8 @@ public class GeyserBedrockAPI extends dev.letsgoaway.geyserextras.api.BedrockPlu
 
     @Subscribe
     public void onResourcePackLoadEvent(org.geysermc.geyser.api.event.bedrock.SessionLoadResourcePacksEvent ev) {
+        ev.register(GeyserExtrasPack);
         if (OptionalPacks.loadingResourcePacks.containsKey(ev.connection().xuid())) {
-            ev.register(GeyserExtrasPack);
             for (String id : OptionalPacks.loadingResourcePacks.get(ev.connection().xuid())) {
                 ev.register(resourcePackHashMap.get(UUID.fromString(id)));
             }
