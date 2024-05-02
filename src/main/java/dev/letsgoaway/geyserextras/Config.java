@@ -156,7 +156,6 @@ public class Config {
                 if (packLocation.toFile().exists()) {
                     packLocation.toFile().delete();
                 }
-                GeyserExtras.plugin.saveResource("GeyserExtrasPack.mcpack", false);
             }
         }
         if (geyserDataFolder != null && geyserConfig != null) {

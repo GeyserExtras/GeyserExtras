@@ -8,7 +8,6 @@ import org.bukkit.plugin.messaging.PluginMessageListener;
 import javax.annotation.Nonnull;
 import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Objects;
@@ -44,24 +43,27 @@ public final class GeyserExtras extends JavaPlugin implements PluginMessageListe
         Objects.requireNonNull(this.getCommand("geyserextras")).setExecutor(new GeyserExtrasCommand());
         Objects.requireNonNull(this.getCommand("platformlist")).setExecutor(new PlatformListCommand());
         Objects.requireNonNull(this.getCommand("playerlist")).setExecutor(new TabListCommand());
-        GeyserExtras.logger.info("Loading config...");
+        logger.info("Loading config...");
         Config.loadConfig();
-        GeyserExtras.logger.info("Config loaded!");
-        GeyserExtras.bedrockAPI.onLoadConfig();
-        GeyserExtras.logger.info("Registering events...");
+        logger.info("Config loaded!");
+        if (!getDataFolder().toPath().resolve("GeyserExtrasPack.mcpack").toFile().exists()) {
+            plugin.saveResource("GeyserExtrasPack.mcpack", false);
+        }
+        bedrockAPI.onLoadConfig();
+        logger.info("Registering events...");
         getServer().getPluginManager().registerEvents(new EventListener(), this);
-        GeyserExtras.logger.info("Events registered!");
+        logger.info("Events registered!");
         if (Config.proxyMode) {
-            GeyserExtras.logger.info("Registering proxy channels...");
+            logger.info("Registering proxy channels...");
             getServer().getMessenger().registerIncomingPluginChannel(this, "geyserextras:emote", this);
             getServer().getMessenger().registerOutgoingPluginChannel(this, "geyserextras:fog");
             getServer().getMessenger().registerOutgoingPluginChannel(this, "geyserextras:command");
-            GeyserExtras.logger.info("Proxy channels registered!");
+            logger.info("Proxy channels registered!");
         }
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, this::update, 0L, 0L);
         DecimalFormat r3 = new DecimalFormat("0.000");
         Instant finish = Instant.now();
-        logger.info("Done! ("+r3.format(Duration.between(start, finish).toMillis()/1000.0d)+"s)");
+        logger.info("Done! (" + r3.format(Duration.between(start, finish).toMillis() / 1000.0d) + "s)");
         logger.info("----------------------------------------");
     }
 
@@ -81,7 +83,6 @@ public final class GeyserExtras extends JavaPlugin implements PluginMessageListe
         for (BedrockPlayer bplayer : bplayers.values()) {
             bplayer.update();
         }
-        CombatWatcher.update();
     }
 
     @Override

@@ -41,7 +41,7 @@ public class EventListener implements Listener {
 
     private void stopGrassSounds(BedrockPlayer bplayer) {
         cropStop(bplayer);
-        Tick.runIn(2L,() -> {
+        Tick.runIn(2L, () -> {
             cropStop(bplayer);
         });
     }
@@ -75,7 +75,21 @@ public class EventListener implements Listener {
     @EventHandler
     public void onPlayerDamageEntity(EntityDamageByEntityEvent ev) {
         if (ev.getDamager() instanceof Player player) {
-            CombatWatcher.onAttack(player, ev);
+            CombatAttackType combatAttackType = CombatAttackType.getAttackType(player, ev);
+            switch (combatAttackType) {
+                case WEAK_ATTACK ->
+                        player.getWorld().playSound(player.getLocation(), "java.weak", SoundCategory.PLAYERS, 1.0f, 1);
+                case CRITICAL_ATTACK ->
+                        player.getWorld().playSound(player.getLocation(), "java.crit", SoundCategory.PLAYERS, 1.0f, 1);
+                case KNOCKBACK_ATTACK -> {
+                    player.getWorld().playSound(player.getLocation(), "java.knockback", SoundCategory.PLAYERS, 1.0f, 1);
+                    player.getWorld().playSound(player.getLocation(), "java.strong", SoundCategory.PLAYERS, 0.5f, 1);
+                }
+                case STRONG_ATTACK ->
+                        player.getWorld().playSound(player.getLocation(), "java.strong", SoundCategory.PLAYERS, 1.0f, 1);
+                case SWEEP_ATTACK ->
+                        player.getWorld().playSound(player.getLocation(), "java.sweep", SoundCategory.PLAYERS, 1.0f, 1);
+            }
             if (notBedrock(player)) {
                 return;
             }
@@ -178,13 +192,13 @@ public class EventListener implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent ev) {
         Player player = ev.getPlayer();
-        CombatWatcher.watch(ev.getPlayer());
         if (notBedrock(player)) {
             return;
         }
     }
+
     @EventHandler
-    public void onPlayerChangeWorlds(PlayerChangedWorldEvent ev){
+    public void onPlayerChangeWorlds(PlayerChangedWorldEvent ev) {
         Player player = ev.getPlayer();
         if (notBedrock(player)) {
             return;
@@ -193,6 +207,7 @@ public class EventListener implements Listener {
 
         bedrockPlayer.onPlayerChangeWorlds(ev);
     }
+
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent ev) {
         Player player = ev.getPlayer();

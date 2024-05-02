@@ -23,10 +23,10 @@ public class CooldownHandler {
         }
         int max = (cooldownArray.length - 1);
         int cooldown;
-        if (CombatData.getCooldownPeriod(player) >= Tick.secondsToTicks(bplayer.averagePing)) {
-            cooldown = (int) Math.round(Math.floor((CombatData.getCooledAttackStrength(Tick.secondsToTicks(bplayer.averagePing / 1000.0f), player)) * max));
+        if (CombatAttackType.getCooldownPeriod(player) >= Tick.secondsToTicks(bplayer.averagePing)) {
+            cooldown = (int) Math.round(Math.floor((CombatAttackType.getCooledAttackStrength(Tick.secondsToTicks(bplayer.averagePing / 1000.0f), player)) * max));
         } else {
-            cooldown = (int) Math.round(Math.floor((CombatData.getCooledAttackStrength(0.5f, player)) * max));
+            cooldown = (int) Math.round(Math.floor((CombatAttackType.getCooledAttackStrength(0.5f, player)) * max));
         }
         if (cooldown > max) {
             cooldown = max;
@@ -36,7 +36,7 @@ public class CooldownHandler {
             return;
         }
         String textToSend = "";
-        int stayTime = 5;
+        int stayTime = (int)Math.ceil(CombatAttackType.getCooldownPeriod(player) / max)+1;
         if (player.getAttackCooldown() > bplayer.coolDownThresHold && bplayer.lastCooldown != max) {
             if (cooldown == max) {
                 stayTime = 1;

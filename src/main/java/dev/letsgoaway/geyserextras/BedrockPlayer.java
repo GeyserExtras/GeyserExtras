@@ -304,14 +304,6 @@ public class BedrockPlayer {
     public void onGeyserExtrasCommand() {
         // yucky formatting!
         new MainMenu(this);
-        /*
-        CustomForm form = CustomForm.builder()
-                .title("GeyserExtras")
-                .dropdown("Attack Indicator", Arrays.asList("Crosshair", "Hotbar", "None"), cooldownTypes.indexOf(cooldownType)) // 0
-                .validResultHandler((response) -> setCooldownType(cooldownTypes.get(response.asDropdown(0))))
-                .build();
-        GeyserExtras.bedrockAPI.sendForm(player.getUniqueId(), form);
-        */
     }
 
 
@@ -359,7 +351,10 @@ public class BedrockPlayer {
     );
 
     public void onPlayerInteract(PlayerInteractEvent ev) {
-        player.resetTitle();
+        if (ev.getAction().equals(Action.PHYSICAL)){
+            return;
+        }
+        //player.resetTitle();
         //player.sendMessage(ev.getAction().toString());
         if (ev.getAction().equals(Action.LEFT_CLICK_AIR)) {
             if (!blockLeftClickAir) {
@@ -462,7 +457,7 @@ public class BedrockPlayer {
     public void onPlayerDamageEntity(EntityDamageByEntityEvent ev) {
         coolDownThresHold = 0.0f;
         if (isTool()) {
-            player.setCooldown(player.getInventory().getItemInMainHand().getType(), Math.round(CombatData.getCooldownPeriod(player)));
+            player.setCooldown(player.getInventory().getItemInMainHand().getType(), Math.round(CombatAttackType.getCooldownPeriod(player)));
         }
     }
 
