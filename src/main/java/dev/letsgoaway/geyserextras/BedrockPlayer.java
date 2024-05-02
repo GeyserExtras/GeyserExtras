@@ -395,7 +395,7 @@ public class BedrockPlayer {
             EntityType.VILLAGER,
             EntityType.ZOMBIE_VILLAGER,
             EntityType.ARMOR_STAND,
-            EntityType.MINECART_CHEST,
+            EntityType.CHEST_MINECART,
             EntityType.MINECART,
             EntityType.BOAT,
             EntityType.CHEST_BOAT,
@@ -405,12 +405,11 @@ public class BedrockPlayer {
             EntityType.PIG,
             EntityType.LLAMA,
             EntityType.CAMEL,
-            EntityType.MINECART_COMMAND,
-            EntityType.MINECART_CHEST,
-            EntityType.MINECART_FURNACE,
-            EntityType.MINECART_HOPPER,
-            EntityType.MINECART_MOB_SPAWNER,
-            EntityType.MINECART_TNT
+            EntityType.COMMAND_BLOCK_MINECART,
+            EntityType.FURNACE_MINECART,
+            EntityType.HOPPER_MINECART,
+            EntityType.SPAWNER_MINECART,
+            EntityType.TNT_MINECART
     );
 
     public void onPlayerInteractEntity(PlayerInteractEntityEvent ev) {

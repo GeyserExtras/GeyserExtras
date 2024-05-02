@@ -20,11 +20,11 @@ repositories {
 }
 
 dependencies {
-    compileOnly "org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT"
-    compileOnly "org.geysermc.geyser:api:2.2.3-SNAPSHOT"
+    compileOnly "org.spigotmc:spigot-api:1.20.6-R0.1-SNAPSHOT"
+    compileOnly "org.geysermc.geyser:api:2.3.0-SNAPSHOT"
     compileOnly "org.geysermc.floodgate:api:2.2.3-SNAPSHOT"
 }
-def targetJavaVersion = 17
+def targetJavaVersion = 21
 java {
     def javaVersion = JavaVersion.toVersion(targetJavaVersion)
     sourceCompatibility = javaVersion
