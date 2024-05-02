@@ -606,7 +606,7 @@ public class BedrockPlayer {
     }
 
     public boolean hasPack(Path path) {
-        if (GeyserExtras.bedrockAPI.apiInstances.containsKey(APIType.GEYSER)) {
+        if (GeyserExtras.bedrockAPI.supports(APIType.GEYSER)) {
             UUID packID = GeyserExtras.bedrockAPI.apiInstances.get(APIType.GEYSER).getPackID(path);
             return optionalPacks.contains(packID.toString());
         }

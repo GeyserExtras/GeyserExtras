@@ -6,11 +6,7 @@ import dev.letsgoaway.geyserextras.Config;
 import dev.letsgoaway.geyserextras.GeyserExtras;
 import dev.letsgoaway.geyserextras.form.BedrockContextMenu;
 import dev.letsgoaway.geyserextras.form.elements.Button;
-import org.bukkit.Bukkit;
-import org.bukkit.advancement.Advancement;
 import org.geysermc.cumulus.util.FormImage;
-
-import java.util.Iterator;
 
 public class MainMenu extends BedrockContextMenu {
     public MainMenu(BedrockPlayer bplayer) {
@@ -30,15 +26,17 @@ public class MainMenu extends BedrockContextMenu {
         add(new Button("Statistics", FormImage.Type.PATH, "textures/ui/world_glyph_color_2x_black_outline.png", () -> {
             bplayer.player.performCommand("geyser statistics");
         }));
-        add(new Button("Player List", FormImage.Type.PATH, "textures/ui/Local.png", () -> {
-            new TabList(bplayer);
-        }));
+        if (bplayer.player.hasPermission("geyserextras.playerlist")) {
+            add(new Button("Player List", FormImage.Type.PATH, "textures/ui/Local.png", () -> {
+                new TabList(bplayer);
+            }));
+        }
         if (GeyserExtras.bedrockAPI.apiInstances.containsKey(APIType.GEYSER) || Config.proxyMode) {
             add(new Button("Quick-Menu", FormImage.Type.PATH, "textures/ui/emote_wheel_updated_base.png", () -> {
                 new QuickMenu(bplayer).show(bplayer);
             }));
         }
-        if (GeyserExtras.bedrockAPI.apiInstances.containsKey(APIType.GEYSER)){
+        if (GeyserExtras.bedrockAPI.apiInstances.containsKey(APIType.GEYSER)) {
             add(new Button("Resource Packs", FormImage.Type.PATH, "textures/ui/glyph_resource_pack.png", () -> {
                 new OptionalPacks(bplayer).show(bplayer);
             }));

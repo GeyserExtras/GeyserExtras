@@ -37,9 +37,9 @@ public class BedrockAPI {
             apiInstances.put(APIType.GEYSER, new dev.letsgoaway.geyserextras.api.GeyserBedrockAPI());
             foundGeyserClasses = true;
         }
-        if (apiInstances.containsKey(APIType.FLOODGATE)) {
+        if (supports(APIType.FLOODGATE)) {
             apiInstance = apiInstances.get(APIType.FLOODGATE);
-        } else if (apiInstances.containsKey(APIType.GEYSER)) {
+        } else if (supports(APIType.GEYSER)) {
             apiInstance = apiInstances.get(APIType.GEYSER);
         }
     }
@@ -84,7 +84,7 @@ public class BedrockAPI {
         if (Config.proxyMode) {
             String fog = "s" + fogID;
             bedrockPlayer.player.sendPluginMessage(GeyserExtras.plugin, "geyserextras:fog", ("s" + fogID).getBytes(StandardCharsets.UTF_8));
-        } else if (apiInstances.containsKey(APIType.GEYSER)) {
+        } else if (supports(APIType.GEYSER)) {
             apiInstances.get(APIType.GEYSER).sendFog(bedrockPlayer.player.getUniqueId(), fogID);
         }
     }
@@ -93,7 +93,7 @@ public class BedrockAPI {
         if (Config.proxyMode) {
             String fog = "r" + fogID;
             bedrockPlayer.player.sendPluginMessage(GeyserExtras.plugin, "geyserextras:fog", fog.getBytes(StandardCharsets.UTF_8));
-        } else if (apiInstances.containsKey(APIType.GEYSER)) {
+        } else if (supports(APIType.GEYSER)) {
             apiInstances.get(APIType.GEYSER).removeFog(bedrockPlayer.player.getUniqueId(), fogID);
         }
     }
@@ -102,5 +102,9 @@ public class BedrockAPI {
         for (BedrockPluginAPI api : apiInstances.values()){
             api.onConfigLoad();
         }
+    }
+
+    public boolean supports(APIType apiType){
+        return apiInstances.containsKey(apiType);
     }
 }
