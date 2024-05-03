@@ -7,6 +7,7 @@ import dev.letsgoaway.geyserextras.menus.TabList;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.*;
+import org.bukkit.attribute.Attribute;
 import org.bukkit.block.Block;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Arrow;
@@ -34,7 +35,6 @@ public class BedrockPlayer {
     private boolean dontUnblockNextLeftClickAir = false;
 
     public float coolDownThresHold = 0.0f;
-    public int reach = 3;
     public String cooldownType = "Crosshair";
     public static List<String> cooldownTypes = Arrays.asList("Crosshair", "Hotbar", "None");
     public boolean enableSneakDropOffhand = false;
@@ -168,11 +168,6 @@ public class BedrockPlayer {
         if (!Objects.requireNonNull(player.getAddress()).getHostString().equals("127.0.0.1")) {
             calculateAveragePing();
         }
-        if (player.getGameMode().equals(GameMode.CREATIVE)) {
-            reach = 5;
-        } else {
-            reach = 3;
-        }
         if (Config.customCoolDownEnabled && !cooldownType.equals("None")) {
             if (cooldownType.equals("Crosshair")) {
                 checkLookingAtEntity();
@@ -248,7 +243,7 @@ public class BedrockPlayer {
 
     public Entity getTargetEntity(Player player) {
         Location loc = player.getEyeLocation();
-        RayTraceResult entityCast = player.getWorld().rayTraceEntities(loc, loc.getDirection(), reach, entity -> {
+        RayTraceResult entityCast = player.getWorld().rayTraceEntities(loc, loc.getDirection(), Objects.requireNonNull(player.getAttribute(Attribute.PLAYER_ENTITY_INTERACTION_RANGE)).getBaseValue(), entity -> {
             if (entity instanceof Player player1) {
                 return player1.getUniqueId() != player.getUniqueId();
             } else if (entity.isDead()) {
@@ -261,7 +256,7 @@ public class BedrockPlayer {
             return null;
         }
 
-        RayTraceResult blockCast = player.getWorld().rayTraceBlocks(loc, loc.getDirection(), reach);
+        RayTraceResult blockCast = player.getWorld().rayTraceBlocks(loc, loc.getDirection(), Objects.requireNonNull(player.getAttribute(Attribute.PLAYER_BLOCK_INTERACTION_RANGE)).getBaseValue());
 
         if (blockCast == null) {
             return entityCast.getHitEntity();
@@ -522,11 +517,7 @@ public class BedrockPlayer {
         coolDownThresHold = 1.0f;
         dontUnblockNextLeftClickAir = false;
         if (Config.javaBlockPlacement) {
-            Block blockTrace = player.getTargetBlockExact(reach);
-
-            if (blockTrace != null) {
-                ev.setCancelled(!ev.getBlockPlaced().equals(Objects.requireNonNull(player.rayTraceBlocks(reach)).getHitBlock()));
-            }
+            ev.setCancelled(!ev.getBlockPlaced().equals(Objects.requireNonNull(player.rayTraceBlocks(Objects.requireNonNull(player.getAttribute(Attribute.PLAYER_BLOCK_INTERACTION_RANGE)).getBaseValue())).getHitBlock()));
             if (ev.getBlockPlaced().getType().equals(Material.AIR) || ev.getBlockAgainst().getType().equals(Material.AIR)) {
                 ev.setCancelled(true);
             }

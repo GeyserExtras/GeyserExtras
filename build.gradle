@@ -3,7 +3,6 @@ plugins {
 }
 
 group = 'dev.letsgoaway'
-version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
