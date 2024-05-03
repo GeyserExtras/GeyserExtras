@@ -11,21 +11,29 @@ import org.geysermc.cumulus.util.FormImage;
 public class MainMenu extends BedrockContextMenu {
     public MainMenu(BedrockPlayer bplayer) {
         super("Geyser Extras");
-        add(new Button("Offhand", FormImage.Type.PATH, "textures/ui/move.png", () -> {
-            bplayer.player.performCommand("geyser offhand");
-        }));
+        if (bplayer.player.hasPermission("geyser.command.offhand")) {
+            add(new Button("Offhand", FormImage.Type.PATH, "textures/ui/move.png", () -> {
+                bplayer.player.performCommand("geyser offhand");
+            }));
+        }
         add(new Button("Reconnect", FormImage.Type.PATH, "textures/ui/refresh_hover.png", () -> {
             GeyserExtras.bedrockAPI.reconnect(bplayer.player.getUniqueId());
         }));
-        add(new Button("Advanced Tooltips", FormImage.Type.PATH, "textures/ui/infobulb.png", () -> {
-            bplayer.player.performCommand("geyser tooltips");
-        }));
-        add(new Button("Advancements", FormImage.Type.PATH, "textures/ui/achievements.png", () -> {
-            bplayer.player.performCommand("geyser advancements");
-        }));
-        add(new Button("Statistics", FormImage.Type.PATH, "textures/ui/world_glyph_color_2x_black_outline.png", () -> {
-            bplayer.player.performCommand("geyser statistics");
-        }));
+        if (bplayer.player.hasPermission("geyser.command.tooltips")) {
+            add(new Button("Advanced Tooltips", FormImage.Type.PATH, "textures/ui/infobulb.png", () -> {
+                bplayer.player.performCommand("geyser tooltips");
+            }));
+        }
+        if (bplayer.player.hasPermission("geyser.command.advancements")) {
+            add(new Button("Advancements", FormImage.Type.PATH, "textures/ui/achievements.png", () -> {
+                bplayer.player.performCommand("geyser advancements");
+            }));
+        }
+        if (bplayer.player.hasPermission("geyser.command.statistics")) {
+            add(new Button("Statistics", FormImage.Type.PATH, "textures/ui/world_glyph_color_2x_black_outline.png", () -> {
+                bplayer.player.performCommand("geyser statistics");
+            }));
+        }
         if (bplayer.player.hasPermission("geyserextras.playerlist")) {
             add(new Button("Player List", FormImage.Type.PATH, "textures/ui/Local.png", () -> {
                 new TabList(bplayer);

@@ -16,10 +16,12 @@ public class SettingsMenu extends BedrockForm {
                     bplayer::setCooldownType)
             );
         }
-        add(new Toggle("Sneak-Drop to Swap Offhand", bplayer.enableSneakDropOffhand, (b) -> {
-            bplayer.enableSneakDropOffhand = b;
-            bplayer.setEnableSneakDropOffhand(b);
-        }));
+        if (bplayer.player.hasPermission("geyser.command.offhand")) {
+            add(new Toggle("Sneak-Drop to Swap Offhand", bplayer.enableSneakDropOffhand, (b) -> {
+                bplayer.enableSneakDropOffhand = b;
+                bplayer.setEnableSneakDropOffhand(b);
+            }));
+        }
         add(new Toggle("Arrow Delay Fix", bplayer.enableArrowDelayFix, bplayer::setEnableArrowDelayFix));
     }
 }

@@ -9,7 +9,10 @@ import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.*;
+import org.bukkit.entity.Arrow;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Player;
 import org.bukkit.event.block.*;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.*;
@@ -351,7 +354,7 @@ public class BedrockPlayer {
     );
 
     public void onPlayerInteract(PlayerInteractEvent ev) {
-        if (ev.getAction().equals(Action.PHYSICAL)){
+        if (ev.getAction().equals(Action.PHYSICAL)) {
             return;
         }
         //player.resetTitle();
@@ -591,14 +594,16 @@ public class BedrockPlayer {
     }
 
     private void swapOffhand() {
-        runCommand("geyser offhand");
+        if (player.hasPermission("geyser.command.offhand")) {
+            runCommand("geyser offhand");
+        }
     }
 
     public void onPlayerDrop(PlayerDropItemEvent ev) {
         coolDownThresHold = 1.0f;
         blockLeftClickAir = true; // have to do here because for some reason on next tick left_click_air is sent. why? idfk!
         dontUnblockNextLeftClickAir = false;
-        if (enableSneakDropOffhand && player.isSneaking()) {
+        if (enableSneakDropOffhand && player.isSneaking() && player.hasPermission("geyser.command.offhand")) {
             Tick.runOnNext(this::swapOffhand);
             ev.setCancelled(true);
         }
