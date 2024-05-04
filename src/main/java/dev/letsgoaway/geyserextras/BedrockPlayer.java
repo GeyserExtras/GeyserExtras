@@ -174,6 +174,7 @@ public class BedrockPlayer {
             }
             CooldownHandler.updateForPlayer(this);
         }
+
         if (Config.netherRoofEnabled) {
             updateNetherFog();
         }
@@ -236,8 +237,10 @@ public class BedrockPlayer {
         }
     }
 
+    Entity lookingEntity;
+
     public void checkLookingAtEntity() {
-        Entity lookingEntity = getTargetEntity(player);
+        lookingEntity = getTargetEntity(player);
         lookingAtEntity = lookingEntity != null;
     }
 
@@ -256,7 +259,7 @@ public class BedrockPlayer {
             return null;
         }
 
-        RayTraceResult blockCast = player.getWorld().rayTraceBlocks(loc, loc.getDirection(), Objects.requireNonNull(player.getAttribute(Attribute.PLAYER_BLOCK_INTERACTION_RANGE)).getBaseValue());
+        RayTraceResult blockCast = player.getWorld().rayTraceBlocks(loc, loc.getDirection(), Objects.requireNonNull(player.getAttribute(Attribute.PLAYER_ENTITY_INTERACTION_RANGE)).getBaseValue());
 
         if (blockCast == null) {
             return entityCast.getHitEntity();
@@ -331,6 +334,14 @@ public class BedrockPlayer {
         if (cropTypes.contains(ev.getBlock().getType())) {
             EventListener.cropStop(this);
         }
+    }
+
+    public void onPlayerBlockBreak(BlockBreakEvent ev) {
+        coolDownThresHold = 1.0f;
+        alsoSentBreak = true;
+        blockLeftClickAir = false;
+        dontUnblockNextLeftClickAir = false;
+        player.resetTitle();
     }
 
     public static final List<Material> noCoolDownOnRClick = Arrays.asList(
@@ -529,13 +540,6 @@ public class BedrockPlayer {
         player.resetTitle();
     }
 
-    public void onPlayerBlockBreak(BlockBreakEvent ev) {
-        coolDownThresHold = 1.0f;
-        alsoSentBreak = true;
-        blockLeftClickAir = false;
-        dontUnblockNextLeftClickAir = false;
-        player.resetTitle();
-    }
 
     public boolean waitingForEmote = false;
     public int waitingEmoteID = 0;
