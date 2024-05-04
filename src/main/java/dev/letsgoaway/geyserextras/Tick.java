@@ -16,7 +16,7 @@ public class Tick {
         return Bukkit.getScheduler().runTaskAsynchronously(GeyserExtras.plugin,task);
     }
     public static long secondsToTicksRounded(float seconds) {
-        return Math.round(seconds * Bukkit.getServerTickManager().getTickRate());
+        return Math.round(secondsToTicks(seconds));
     }
     public static float secondsToTicks(float seconds) {
         return seconds * Bukkit.getServerTickManager().getTickRate();
