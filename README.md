@@ -8,7 +8,7 @@ A plugin which attempts to unify features for Bedrock Edition players on Java Ed
 ![Bedrock Version Supported](https://img.shields.io/badge/bedrock-1.20.81-333333)
 ![Supported server software](https://img.shields.io/badge/spigot-velocity-333333)
 
-# This plugin is in its very early stages! Contributions are welcomed and encouraged! 1.0 will release when 1.20.6 support for Geyser comes out!
+# This plugin is in its very early stages! Contributions are welcomed and encouraged! 1.0 has released!
 
 ## Features
 
