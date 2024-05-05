@@ -9,7 +9,7 @@ enable-custom-cooldown: true
 # Requires disable-bedrock-scaffolding: true in Geyser's config for forward block placements.
 enable-java-only-block-placement: false
 
-# Updates blocks in a 10 block radius from the player's line of sight to remove ghost blocks.
+# Updates the block at the player's line of sight every tick to remove ghost blocks.
 enable-block-ghosting-fix: false
 
 # When the server closes or Geyser reloads reconnect to the server using the below address.
@@ -50,14 +50,11 @@ quick-menu-actions:
   - "Player List >> /playerlist"
   - "Platform List >> /platformlist"
 
-
 # Enables the Knockback Attack Sprint fix.
 # In java, when you execute a Knockback attack, the Player stops sprinting for one tick.
 # The workaround for Bedrock tricks the client into having no hunger for a tick, however
 # this temporarily makes the hunger bar look empty.
 enable-knockback-attack-sprint-fix: true
-
-
 
 # Enables downloading of Bedrock Player skins.
 #  Please note that this is only the skin that Floodgate converts for Java Players meaning

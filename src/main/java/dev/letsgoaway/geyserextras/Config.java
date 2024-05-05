@@ -1,6 +1,7 @@
 package dev.letsgoaway.geyserextras;
 
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 
@@ -109,12 +110,15 @@ public class Config {
         }
         config = GeyserExtras.plugin.getConfig();
         loadValues();
-        GeyserExtras.plugin.saveResource("config.yml", true); // save config
-        config = GeyserExtras.plugin.getConfig();
-        GeyserExtras.plugin.reloadConfig();
+        GeyserExtras.plugin.getDataFolder().toPath().resolve("config.yml").toFile().delete();
+        GeyserExtras.plugin.saveResource("config.yml",false);
+        try {
+            config.load(GeyserExtras.plugin.getDataFolder().toPath().resolve("config.yml").toFile());
+        } catch (IOException | InvalidConfigurationException e) {
+            throw new RuntimeException(e);
+        }
         // and save the values again so that if any new values are added in an update it will be default but other settings are user preference
         saveValues();
-        GeyserExtras.plugin.reloadConfig();
         try {
             optionalPacks = Files.createDirectories(Paths.get(GeyserExtras.plugin.getDataFolder().toURI().resolve("optionalpacks/")));
             packsArray = new ArrayList<>(Arrays.stream(Objects.requireNonNull(optionalPacks.toFile().listFiles())).toList());
@@ -144,10 +148,19 @@ public class Config {
         if (geyserConfig == null) {
             GeyserExtras.logger.warning("Make sure 'force-resource-packs: true' in Geyser's Config!");
             if (Config.customCoolDownEnabled) {
-                GeyserExtras.logger.warning("Set 'show-cooldown: false' in Geyser's Config for the cooldown!");
+                GeyserExtras.logger.warning("Set 'show-cooldown: \"false\"' in Geyser's Config for the cooldown!");
+            }
+            if (Config.javaBlockPlacement){
+                GeyserExtras.logger.warning("Set 'disable-bedrock-scaffolding: true' in Geyser's Config for enable-java-only-block-placement!");
             }
         } else {
-            geyserConfig.set("show-cooldown", "false");
+            geyserConfig.set("force-resource-packs", true);
+            if (Config.customCoolDownEnabled) {
+                geyserConfig.set("show-cooldown", "false");
+            }
+            if (Config.javaBlockPlacement){
+                geyserConfig.set("disable-bedrock-scaffolding", true);
+            }
             if (geyserDataFolder != null) {
                 Path packLocation = geyserDataFolder.toPath().resolve("packs/GeyserExtrasPack.mcpack");
                 if (packLocation.toFile().exists()) {
