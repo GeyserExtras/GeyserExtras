@@ -57,7 +57,6 @@ public final class GeyserExtras extends JavaPlugin implements PluginMessageListe
             logger.info("Registering proxy channels...");
             getServer().getMessenger().registerIncomingPluginChannel(this, "geyserextras:emote", this);
             getServer().getMessenger().registerOutgoingPluginChannel(this, "geyserextras:fog");
-            getServer().getMessenger().registerOutgoingPluginChannel(this, "geyserextras:command");
             logger.info("Proxy channels registered!");
         }
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, this::update, 0L, 0L);
