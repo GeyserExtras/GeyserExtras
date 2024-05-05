@@ -44,10 +44,12 @@ public class MainMenu extends BedrockContextMenu {
                 new QuickMenu(bplayer).show(bplayer);
             }));
         }
-        if (GeyserExtras.bedrockAPI.apiInstances.containsKey(APIType.GEYSER)) {
-            add(new Button("Resource Packs", FormImage.Type.PATH, "textures/ui/glyph_resource_pack.png", () -> {
-                new OptionalPacks(bplayer).show(bplayer);
-            }));
+        if (!Config.packsArray.isEmpty()) {
+            if (GeyserExtras.bedrockAPI.apiInstances.containsKey(APIType.GEYSER)) {
+                add(new Button("Resource Packs", FormImage.Type.PATH, "textures/ui/glyph_resource_pack.png", () -> {
+                    new OptionalPacks(bplayer).show(bplayer);
+                }));
+            }
         }
         add(new Button("Settings", FormImage.Type.PATH, "textures/ui/settings_glyph_color_2x.png", () -> {
             new SettingsMenu(bplayer).show(bplayer);

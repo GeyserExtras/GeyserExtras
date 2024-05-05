@@ -9,10 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Config {
     public static boolean customCoolDownEnabled = true;
@@ -103,7 +100,7 @@ public class Config {
     }
 
     public static Path optionalPacks;
-    public static File[] packsArray;
+    public static ArrayList<File> packsArray;
 
     // this config code is bad and i hate it
     public static void loadConfig() {
@@ -120,7 +117,7 @@ public class Config {
         GeyserExtras.plugin.reloadConfig();
         try {
             optionalPacks = Files.createDirectories(Paths.get(GeyserExtras.plugin.getDataFolder().toURI().resolve("optionalpacks/")));
-            packsArray = optionalPacks.toFile().listFiles();
+            packsArray = new ArrayList<>(Arrays.stream(Objects.requireNonNull(optionalPacks.toFile().listFiles())).toList());
             skinsFolder = Files.createDirectories(Paths.get(GeyserExtras.plugin.getDataFolder().toURI().resolve("skins/")));
         } catch (IOException e) {
             throw new RuntimeException(e);
