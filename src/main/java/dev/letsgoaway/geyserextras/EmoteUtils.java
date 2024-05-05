@@ -2,8 +2,6 @@ package dev.letsgoaway.geyserextras;
 
 import com.google.gson.Gson;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
@@ -14,11 +12,8 @@ public class EmoteUtils {
 
     public static void load() {
         try {
-            ByteArrayOutputStream result = new ByteArrayOutputStream();
-            result.write(Objects.requireNonNull(GeyserExtras.plugin.getResource("emotes.json")).readAllBytes());
-            emotes = Arrays.asList(new Gson().fromJson(result.toString(StandardCharsets.UTF_8), Emote[].class));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            emotes = Arrays.asList(new Gson().fromJson(new String(Objects.requireNonNull(GeyserExtras.plugin.getResource("emotes.json")).readAllBytes(), StandardCharsets.UTF_8), Emote[].class));
+        } catch (Exception ignored) {
         }
     }
 
