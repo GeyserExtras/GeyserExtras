@@ -8,9 +8,13 @@ A plugin which attempts to unify features for Bedrock Edition players on Java Ed
 ![Bedrock Version Supported](https://img.shields.io/badge/bedrock-1.20.81-333333)
 ![Supported server software](https://img.shields.io/badge/spigot-velocity-333333)
 
-# This plugin is in its very early stages! Contributions are welcomed and encouraged! 1.0 has released!
+<a href="https://modrinth.com/plugin/geyserextras"><img src="https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/publication/logo/a49f8e1b-3835-4ea1-a85b-118c6425ebc3/Modrinth_Dark_Logo.png" align="left" height="64"></a>
+<a href="https://hangar.papermc.io/GeyserExtras/GeyserExtras"><img src="https://raw.githubusercontent.com/HangarMC/Hangar/9c658cef2638f4aa23ba7f6b1861057c3bb8f714/frontend/src/assets/hangar-logo.svg" align="left" height="64"></a>
+<a href="https://github.com/GeyserExtras/GeyserExtras/releases"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" align="left" height="64"></a>
 
-## Features
+##
+The plugin is in very early development. Contributions are welcomed!
+##
 
 ### Java Edition Combat Improvements
 
