@@ -58,8 +58,10 @@ Fixes the arrows to no longer be delayed when shooting, however this has the dow
 
 ## Plans
 - Auto download GeyserOptionalPack.
+- Emote chat for Java Players
 - Use Nametags or Text Displays for Glow effect.
 - Allow players to download their own skins.
 - Bedrock Subpacks Loading
+  
 ## Bugs
 - Sweep attack sometimes plays even if the player didn't sweep attack.
