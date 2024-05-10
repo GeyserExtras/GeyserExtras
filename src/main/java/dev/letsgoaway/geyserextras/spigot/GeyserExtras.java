@@ -1,6 +1,7 @@
 package dev.letsgoaway.geyserextras.spigot;
 
 import dev.letsgoaway.geyserextras.ServerType;
+import dev.letsgoaway.geyserextras.VersionConstants;
 import dev.letsgoaway.geyserextras.spigot.api.APIType;
 import dev.letsgoaway.geyserextras.spigot.bedrock.EmoteUtils;
 import dev.letsgoaway.geyserextras.spigot.commands.GeyserExtrasCommand;
@@ -26,7 +27,7 @@ public final class GeyserExtras extends JavaPlugin implements PluginMessageListe
     public static Logger logger;
     public static BedrockAPI bedrockAPI;
 
-    GeyserExtras() {
+    public GeyserExtras() {
         ServerType.type = ServerType.SPIGOT;
     }
 
@@ -38,6 +39,8 @@ public final class GeyserExtras extends JavaPlugin implements PluginMessageListe
         bedrockAPI = new BedrockAPI();
         Instant start = Instant.now();
         logger.info("--------------GeyserExtras--------------");
+        logger.info("Version: " + VersionConstants.PLUGIN_VERSION);
+        logger.info("Server Type: " + ServerType.get());
         if (bedrockAPI.foundGeyserClasses) {
             StringBuilder types = new StringBuilder();
             for (APIType type : bedrockAPI.apiInstances.keySet()) {

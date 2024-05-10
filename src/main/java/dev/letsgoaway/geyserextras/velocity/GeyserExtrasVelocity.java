@@ -31,8 +31,6 @@ public class GeyserExtrasVelocity {
     public static ChannelIdentifier emoteChannel = MinecraftChannelIdentifier.create("geyserextras", "emote");
     public static ChannelIdentifier fogChannel = MinecraftChannelIdentifier.create("geyserextras", "fog");
 
-    public static ChannelIdentifier commandChannel = MinecraftChannelIdentifier.create("geyserextras", "command");
-
     @Inject
     public GeyserExtrasVelocity(ProxyServer proxyServer, Logger logger) {
         ServerType.type = ServerType.VELOCITY;
@@ -56,6 +54,7 @@ public class GeyserExtrasVelocity {
         Instant finish = Instant.now();
         logger.info("Done! (" + r3.format(Duration.between(start, finish).toMillis() / 1000.0d) + "s)");
         logger.info("----------------------------------------");
+
     }
 
     @Subscribe
