@@ -1,7 +1,8 @@
 package dev.letsgoaway.geyserextras.spigot.api;
 
+import dev.letsgoaway.geyserextras.spigot.Config;
+import dev.letsgoaway.geyserextras.spigot.GeyserExtras;
 import dev.letsgoaway.geyserextras.spigot.menus.OptionalPacks;
-import dev.letsgoaway.geyserextras.spigot.*;
 import dev.letsgoaway.geyserextras.spigot.player.PlayerDevice;
 import dev.letsgoaway.geyserextras.spigot.player.PlayerInputType;
 import dev.letsgoaway.geyserextras.spigot.player.PlayerUIProfile;

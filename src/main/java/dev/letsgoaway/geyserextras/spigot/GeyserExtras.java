@@ -1,10 +1,11 @@
 package dev.letsgoaway.geyserextras.spigot;
 
+import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.spigot.api.APIType;
+import dev.letsgoaway.geyserextras.spigot.bedrock.EmoteUtils;
 import dev.letsgoaway.geyserextras.spigot.commands.GeyserExtrasCommand;
 import dev.letsgoaway.geyserextras.spigot.commands.PlatformListCommand;
 import dev.letsgoaway.geyserextras.spigot.commands.TabListCommand;
-import dev.letsgoaway.geyserextras.spigot.bedrock.EmoteUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -24,6 +25,10 @@ public final class GeyserExtras extends JavaPlugin implements PluginMessageListe
     public static GeyserExtras plugin;
     public static Logger logger;
     public static BedrockAPI bedrockAPI;
+
+    GeyserExtras() {
+        ServerType.type = ServerType.SPIGOT;
+    }
 
     @Override
     public void onEnable() {

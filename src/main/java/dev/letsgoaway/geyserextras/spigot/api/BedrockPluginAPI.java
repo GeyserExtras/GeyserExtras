@@ -1,7 +1,7 @@
 package dev.letsgoaway.geyserextras.spigot.api;
 
-import dev.letsgoaway.geyserextras.spigot.player.PlayerInputType;
 import dev.letsgoaway.geyserextras.spigot.player.PlayerDevice;
+import dev.letsgoaway.geyserextras.spigot.player.PlayerInputType;
 import dev.letsgoaway.geyserextras.spigot.player.PlayerUIProfile;
 import org.geysermc.cumulus.form.Form;
 import org.geysermc.cumulus.form.util.FormBuilder;

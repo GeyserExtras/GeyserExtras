@@ -1,9 +1,9 @@
 package dev.letsgoaway.geyserextras.spigot.menus;
 
-import dev.letsgoaway.geyserextras.spigot.api.APIType;
 import dev.letsgoaway.geyserextras.spigot.BedrockPlayer;
 import dev.letsgoaway.geyserextras.spigot.Config;
 import dev.letsgoaway.geyserextras.spigot.GeyserExtras;
+import dev.letsgoaway.geyserextras.spigot.api.APIType;
 import dev.letsgoaway.geyserextras.spigot.form.BedrockContextMenu;
 import dev.letsgoaway.geyserextras.spigot.form.elements.Button;
 import dev.letsgoaway.geyserextras.spigot.menus.quickmenu.QuickMenu;
