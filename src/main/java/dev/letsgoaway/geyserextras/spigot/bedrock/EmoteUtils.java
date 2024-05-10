@@ -29,4 +29,19 @@ public class EmoteUtils {
         }
         return "Unknown (" + uuid + ")";
     }
+
+    public static String getEmoteChatString(String uuid) {
+        if (uuid.isEmpty() || uuid.isBlank()){
+            return "Not Set";
+        }
+        for (Emote emote : emotes) {
+            if (emote.uuid.equals(uuid)) {
+                return emote.message;
+            }
+            else {
+                return emote.specialmessage;
+            }
+        }
+        return "";
+    }
 }
