@@ -26,7 +26,7 @@ import java.util.logging.Filter;
 public class GeyserBedrockAPI extends BedrockPluginAPI implements org.geysermc.geyser.api.event.EventRegistrar {
     private final org.geysermc.geyser.api.GeyserApi api = org.geysermc.geyser.api.GeyserApi.api();
     private final HashMap<UUID, ResourcePack> resourcePackHashMap = new HashMap<>();
-
+    private ResourcePack GeyserOptionalPack = null;
     private ResourcePack GeyserExtrasPack = null;
     private final HashMap<UUID, Path> resourcePackPathMap = new HashMap<>();
 
@@ -47,7 +47,12 @@ public class GeyserBedrockAPI extends BedrockPluginAPI implements org.geysermc.g
         if (geyserSpigot == null) {
             return;
         }
+        GeyserExtras.logger.info("Loading GeyserOptionalPack...");
+        GeyserOptionalPack = ResourcePack.create(PackCodec.path(GeyserExtras.plugin.getDataFolder().toPath().resolve("GeyserOptionalPack.mcpack")));
+        GeyserExtras.logger.info("GeyserOptionalPack Pack v"+GeyserOptionalPack.manifest().header().version().toString()+" loaded succesfully!");
+        GeyserExtras.logger.info("Loading GeyserExtrasPack...");
         GeyserExtrasPack = ResourcePack.create(PackCodec.path(GeyserExtras.plugin.getDataFolder().toPath().resolve("GeyserExtrasPack.mcpack")));
+        GeyserExtras.logger.info("GeyserExtrasPack v"+GeyserExtrasPack.manifest().header().version().toString()+" loaded succesfully!");
         /* geyser has an annoying message where it says that paths are too long,
         so i disable the logger for it temporarily here */
         Filter oldFilter = geyserSpigot.getLogger().getFilter();
@@ -79,6 +84,7 @@ public class GeyserBedrockAPI extends BedrockPluginAPI implements org.geysermc.g
 
     @Subscribe
     public void onResourcePackLoadEvent(org.geysermc.geyser.api.event.bedrock.SessionLoadResourcePacksEvent ev) {
+        ev.register(GeyserOptionalPack);
         ev.register(GeyserExtrasPack);
         if (OptionalPacks.loadingResourcePacks.containsKey(ev.connection().xuid())) {
             for (String id : OptionalPacks.loadingResourcePacks.get(ev.connection().xuid())) {

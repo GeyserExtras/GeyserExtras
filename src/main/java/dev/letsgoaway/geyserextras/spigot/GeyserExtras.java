@@ -4,17 +4,22 @@ import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.VersionConstants;
 import dev.letsgoaway.geyserextras.spigot.api.APIType;
 import dev.letsgoaway.geyserextras.spigot.commands.EmoteChatCommand;
-import dev.letsgoaway.geyserextras.spigot.parity.bedrock.EmoteUtils;
 import dev.letsgoaway.geyserextras.spigot.commands.GeyserExtrasCommand;
 import dev.letsgoaway.geyserextras.spigot.commands.PlatformListCommand;
 import dev.letsgoaway.geyserextras.spigot.commands.TabListCommand;
+import dev.letsgoaway.geyserextras.spigot.parity.bedrock.EmoteUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.messaging.PluginMessageListener;
 
 import javax.annotation.Nonnull;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.text.DecimalFormat;
 import java.time.Duration;
 import java.time.Instant;
@@ -61,6 +66,7 @@ public final class GeyserExtras extends JavaPlugin implements PluginMessageListe
         logger.info("Loading config...");
         Config.loadConfig();
         logger.info("Config loaded!");
+        loadGeyserOptionalPack();
         if (!getDataFolder().toPath().resolve("GeyserExtrasPack.mcpack").toFile().exists()) {
             plugin.saveResource("GeyserExtrasPack.mcpack", false);
         }
@@ -79,6 +85,20 @@ public final class GeyserExtras extends JavaPlugin implements PluginMessageListe
         Instant finish = Instant.now();
         logger.info("Done! (" + r3.format(Duration.between(start, finish).toMillis() / 1000.0d) + "s)");
         logger.info("----------------------------------------");
+    }
+
+    public void loadGeyserOptionalPack() {
+
+        if (!getDataFolder().toPath().resolve("GeyserOptionalPack.mcpack").toFile().exists()) {
+            logger.info("Downloading GeyserOptionalPack...");
+            InputStream in = null;
+            try {
+                in = new URL("https://download.geysermc.org/v2/projects/geyseroptionalpack/versions/latest/builds/latest/downloads/geyseroptionalpack").openStream();
+                Files.copy(in, getDataFolder().toPath().resolve("GeyserOptionalPack.mcpack"), StandardCopyOption.REPLACE_EXISTING);
+                logger.info("GeyserOptionalPack downloaded!");
+            } catch (IOException e) {
+            }
+        }
     }
 
     public static ConcurrentHashMap<UUID, BedrockPlayer> bplayers = new ConcurrentHashMap<>();
