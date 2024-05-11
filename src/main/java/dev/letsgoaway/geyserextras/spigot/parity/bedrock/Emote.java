@@ -1,4 +1,4 @@
-package dev.letsgoaway.geyserextras.spigot.bedrock;
+package dev.letsgoaway.geyserextras.spigot.parity.bedrock;
 
 public class Emote {
     public String name;

@@ -3,7 +3,8 @@ package dev.letsgoaway.geyserextras.spigot;
 import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.VersionConstants;
 import dev.letsgoaway.geyserextras.spigot.api.APIType;
-import dev.letsgoaway.geyserextras.spigot.bedrock.EmoteUtils;
+import dev.letsgoaway.geyserextras.spigot.commands.EmoteChatCommand;
+import dev.letsgoaway.geyserextras.spigot.parity.bedrock.EmoteUtils;
 import dev.letsgoaway.geyserextras.spigot.commands.GeyserExtrasCommand;
 import dev.letsgoaway.geyserextras.spigot.commands.PlatformListCommand;
 import dev.letsgoaway.geyserextras.spigot.commands.TabListCommand;
@@ -56,6 +57,7 @@ public final class GeyserExtras extends JavaPlugin implements PluginMessageListe
         Objects.requireNonNull(this.getCommand("geyserextras")).setExecutor(new GeyserExtrasCommand());
         Objects.requireNonNull(this.getCommand("platformlist")).setExecutor(new PlatformListCommand());
         Objects.requireNonNull(this.getCommand("playerlist")).setExecutor(new TabListCommand());
+        Objects.requireNonNull(this.getCommand("emotechat")).setExecutor(new EmoteChatCommand());
         logger.info("Loading config...");
         Config.loadConfig();
         logger.info("Config loaded!");

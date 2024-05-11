@@ -1,7 +1,7 @@
 package dev.letsgoaway.geyserextras.spigot.menus.quickmenu;
 
 import dev.letsgoaway.geyserextras.spigot.BedrockPlayer;
-import dev.letsgoaway.geyserextras.spigot.bedrock.EmoteUtils;
+import dev.letsgoaway.geyserextras.spigot.parity.bedrock.EmoteUtils;
 import dev.letsgoaway.geyserextras.spigot.form.BedrockContextMenu;
 import dev.letsgoaway.geyserextras.spigot.form.elements.Button;
 import org.geysermc.cumulus.util.FormImage;

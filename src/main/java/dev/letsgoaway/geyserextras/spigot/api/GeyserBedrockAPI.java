@@ -48,7 +48,6 @@ public class GeyserBedrockAPI extends BedrockPluginAPI implements org.geysermc.g
             return;
         }
         GeyserExtrasPack = ResourcePack.create(PackCodec.path(GeyserExtras.plugin.getDataFolder().toPath().resolve("GeyserExtrasPack.mcpack")));
-
         /* geyser has an annoying message where it says that paths are too long,
         so i disable the logger for it temporarily here */
         Filter oldFilter = geyserSpigot.getLogger().getFilter();

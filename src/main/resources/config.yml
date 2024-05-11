@@ -1,9 +1,13 @@
 # GeyserExtras
 # If Geyser-Spigot is detected, all required config changes will be automatically applied.
+# For more details, go to https://github.com/GeyserExtras/GeyserExtras/wiki
 
-# Enable the custom cooldown.
+# Enable the Java Edition styled cooldown.
 # Requires show-cooldown: "false" in Geyser's config.
 enable-custom-cooldown: true
+
+# Enable the Java Edition combat sounds.
+enable-java-combat-sounds: true
 
 # Forces block placements to not be hold-bridgable/scaffold-bridgeable.
 # Requires disable-bedrock-scaffolding: true in Geyser's config for forward block placements.
@@ -12,13 +16,14 @@ enable-java-only-block-placement: false
 # Updates the block at the player's line of sight every tick to remove ghost blocks.
 enable-block-ghosting-fix: false
 
-# When the server closes or Geyser reloads reconnect to the server using the below address.
+# When the server closes or Geyser reloads, should GeyserExtras reconnect to the server using the below address.
 auto-reconnect: true
 
 # This is the ip and port players connect to via any port forwarding system NOT YOUR LOCAL IP. You
 # should set this to the ip and port you give to your players.
 external-address: "mc.exampleaddress.net"
 external-port: 19132
+
 # The actions that will show up in the Quick-Menu. Quick-Menu requires the plugin version of Geyser.
 # Actions are formatted as shown below,
 # "{title} >> {command}"
@@ -61,5 +66,10 @@ enable-knockback-attack-sprint-fix: true
 #  that some marketplace skins like 128x128 skins, character creator skins or even some classic skins with weird geometry may not look 100% identical.
 enable-skin-saving: false
 
-# Only enable if you are using GeyserExtrasForwarder.
+# Sets the default emote chat option for Java Players.
+# The GeyserExtras plugin forwards emote chat from Bedrock Edition to Java Players.
+# Java Players can still choose if they want to see emote chat by doing /emotechat
+mute-emote-chat: false
+
+# Only enable if you are using GeyserExtras on a proxy.
 proxy-mode: false

@@ -27,6 +27,12 @@ commands:
       - listplayers
       - tab
       - tablist
+  emotechat:
+    description: Toggles Bedrock Player emote chat for Java Players.
+    usage: /<command>
+    permission: geyserextras.emotechat
+    aliases:
+      - muteemotechat
 permissions:
   geyserextras.menu:
     default: true
@@ -37,3 +43,6 @@ permissions:
   geyserextras.playerlist:
     default: true
     description: Allow players to execute the /playerlist command
+  geyserextras.emotechat:
+    default: true
+    description: Allow players to execute the /emotechat command

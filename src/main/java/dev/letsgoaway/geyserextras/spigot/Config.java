@@ -13,24 +13,26 @@ import java.nio.file.Paths;
 import java.util.*;
 
 public class Config {
+    //region config.yml values
     public static boolean customCoolDownEnabled = true;
+    public static boolean javaCombatSounds = true;
     public static boolean javaBlockPlacement = false;
     public static boolean blockGhostingFix = false;
     public static boolean autoReconnect = true;
-    public static String externalAddress = "localhost";
+    public static String externalAddress = "mc.exampleaddress.net";
     public static int externalPort = 19132;
-
     public static ArrayList<String> configQuickMenuActions = new ArrayList<>(Arrays.asList(
             "Swap Items with Off-hand >> /geyser offhand", "Toggle Tooltips >> /geyser tooltips",
-            "Open GeyserExtras Menu >> /ge", "Open Advancements >> /geyser advancements", "Open Statistics >> /geyser statistics"));
-    public static Map<String, String> quickMenuCommands = new HashMap<>();
-
+            "Open GeyserExtras Menu >> /ge", "Open Advancements >> /geyser advancements", "Open Statistics >> /geyser statistics",
+            "Player List >> /playerlist",
+            "Platform List >> /platformlist"));
     public static boolean knockbackAttackSprintFix = true;
-
-    public static boolean proxyMode = false;
-
     public static boolean skinSavingEnabled = false;
-    public static boolean enableArmsOnArmorStands = false;
+    public static boolean muteEmoteChat = false;
+    public static boolean proxyMode = false;
+    //endregion
+
+    public static Map<String, String> quickMenuCommands = new HashMap<>();
 
     public static FileConfiguration config;
 
@@ -45,6 +47,9 @@ public class Config {
     private static void loadValues() {
         if (config.contains("enable-custom-cooldown", true)) {
             customCoolDownEnabled = config.getBoolean("enable-custom-cooldown");
+        }
+        if (config.contains("enable-java-combat-sounds", true)) {
+            javaCombatSounds = config.getBoolean("enable-custom-cooldown");
         }
         if (config.contains("enable-java-only-block-placement", true)) {
             javaBlockPlacement = config.getBoolean("enable-java-only-block-placement");
@@ -77,6 +82,9 @@ public class Config {
         if (config.contains("enable-skin-saving", true)) {
             skinSavingEnabled = config.getBoolean("enable-skin-saving");
         }
+        if (config.contains("mute-emote-chat", true)) {
+            muteEmoteChat = config.getBoolean("mute-emote-chat");
+        }
         if (config.contains("proxy-mode", true)) {
             proxyMode = config.getBoolean("proxy-mode");
         }
@@ -84,6 +92,7 @@ public class Config {
 
     private static void saveValues() {
         config.set("enable-custom-cooldown", customCoolDownEnabled);
+        config.set("enable-java-combat-sounds", javaCombatSounds);
         config.set("enable-java-only-block-placement", javaBlockPlacement);
         config.set("enable-block-ghosting-fix", blockGhostingFix);
         config.set("auto-reconnect", autoReconnect);
@@ -92,6 +101,7 @@ public class Config {
         config.set("quick-menu-actions", configQuickMenuActions);
         config.set("enable-knockback-attack-sprint-fix", knockbackAttackSprintFix);
         config.set("enable-skin-saving", skinSavingEnabled);
+        config.set("mute-emote-chat", muteEmoteChat);
         config.set("proxy-mode", proxyMode);
         try {
             config.save(GeyserExtras.plugin.getDataFolder().toPath().resolve("config.yml").toFile());
@@ -111,7 +121,7 @@ public class Config {
         config = GeyserExtras.plugin.getConfig();
         loadValues();
         GeyserExtras.plugin.getDataFolder().toPath().resolve("config.yml").toFile().delete();
-        GeyserExtras.plugin.saveResource("config.yml",false);
+        GeyserExtras.plugin.saveResource("config.yml", false);
         try {
             config.load(GeyserExtras.plugin.getDataFolder().toPath().resolve("config.yml").toFile());
         } catch (IOException | InvalidConfigurationException e) {
@@ -129,10 +139,8 @@ public class Config {
         Plugin geyserSpigot = Bukkit.getPluginManager().getPlugin("Geyser-Spigot");
         assert geyserSpigot != null;
         File geyserDataFolder = null;
-        if (geyserSpigot != null) {
-            geyserDataFolder = geyserSpigot.getDataFolder();
-            geyserConfig = geyserSpigot.getConfig();
-        }
+        geyserDataFolder = geyserSpigot.getDataFolder();
+        geyserConfig = geyserSpigot.getConfig();
         Plugin floodgate = Bukkit.getPluginManager().getPlugin("floodgate");
         if (floodgate != null) {
             floodgateConfig = floodgate.getConfig();
@@ -150,7 +158,7 @@ public class Config {
             if (Config.customCoolDownEnabled) {
                 GeyserExtras.logger.warning("Set 'show-cooldown: \"false\"' in Geyser's Config for the cooldown!");
             }
-            if (Config.javaBlockPlacement){
+            if (Config.javaBlockPlacement) {
                 GeyserExtras.logger.warning("Set 'disable-bedrock-scaffolding: true' in Geyser's Config for enable-java-only-block-placement!");
             }
         } else {
@@ -158,7 +166,7 @@ public class Config {
             if (Config.customCoolDownEnabled) {
                 geyserConfig.set("show-cooldown", "false");
             }
-            if (Config.javaBlockPlacement){
+            if (Config.javaBlockPlacement) {
                 geyserConfig.set("disable-bedrock-scaffolding", true);
             }
             if (geyserDataFolder != null) {

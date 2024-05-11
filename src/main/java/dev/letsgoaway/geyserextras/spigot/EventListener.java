@@ -76,7 +76,7 @@ public class EventListener implements Listener {
     @EventHandler
     public void onPlayerDamageEntity(EntityDamageByEntityEvent ev) {
         if (ev.getDamager() instanceof Player player) {
-            if (ev.getEntity().getType().isAlive()) {
+            if (Config.javaCombatSounds && ev.getEntity().getType().isAlive()) {
                 CombatAttackType combatAttackType = CombatAttackType.getAttackType(player, ev);
                 switch (combatAttackType) {
                     case WEAK_ATTACK ->

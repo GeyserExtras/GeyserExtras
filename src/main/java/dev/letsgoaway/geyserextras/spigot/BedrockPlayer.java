@@ -1,6 +1,7 @@
 package dev.letsgoaway.geyserextras.spigot;
 
 import dev.letsgoaway.geyserextras.spigot.api.APIType;
+import dev.letsgoaway.geyserextras.spigot.parity.bedrock.EmoteUtils;
 import dev.letsgoaway.geyserextras.spigot.menus.MainMenu;
 import dev.letsgoaway.geyserextras.spigot.menus.OptionalPacks;
 import dev.letsgoaway.geyserextras.spigot.menus.quickmenu.QuickMenuBindings;
@@ -32,6 +33,8 @@ import org.bukkit.util.RayTraceResult;
 
 import java.net.URL;
 import java.nio.file.Path;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.*;
 
 public class BedrockPlayer {
@@ -568,6 +571,8 @@ public class BedrockPlayer {
         }
     }
 
+    private Instant lastEmoteTime = Instant.now();
+
     public boolean onPlayerEmoteEvent(String emoteUUID) {
         boolean cancelled = false;
         if (waitingForEmote) {
@@ -591,6 +596,13 @@ public class BedrockPlayer {
             Tick.runOnNext(() -> {
                 player.setSneaking(true);
             });
+        } else {
+            if (Duration.between(lastEmoteTime, Instant.now()).toMillis() >= 3000) {
+                Tick.runOnNext(() -> {
+                    EmoteUtils.sendEmoteChat(player, emoteUUID);
+                });
+                lastEmoteTime = Instant.now();
+            }
         }
         return cancelled;
     }
