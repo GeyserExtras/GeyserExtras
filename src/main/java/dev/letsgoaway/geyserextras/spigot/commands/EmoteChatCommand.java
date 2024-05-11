@@ -27,14 +27,14 @@ public class EmoteChatCommand implements CommandExecutor {
                 player.sendRawMessage("You can mute Emote Chat in the Chat menu.");
             }
         }
-        return Config.muteEmoteChat;
+        return true;
     }
 
     public static boolean getEnabled(Player player) {
         if (hasData("emotechat", player)) {
           return getData("emotechat", PersistentDataType.BOOLEAN, player);
         }
-        return true;
+        return Config.muteEmoteChat;
     }
     public static void setEnabled(Player player, boolean b) {
         setData("emotechat", PersistentDataType.BOOLEAN, b, player);

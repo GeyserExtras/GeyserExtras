@@ -88,7 +88,6 @@ public final class GeyserExtras extends JavaPlugin implements PluginMessageListe
     }
 
     public void loadGeyserOptionalPack() {
-
         if (!getDataFolder().toPath().resolve("GeyserOptionalPack.mcpack").toFile().exists()) {
             logger.info("Downloading GeyserOptionalPack...");
             InputStream in = null;

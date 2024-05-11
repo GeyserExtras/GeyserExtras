@@ -169,14 +169,18 @@ public class Config {
             if (Config.javaBlockPlacement) {
                 geyserConfig.set("disable-bedrock-scaffolding", true);
             }
-            if (geyserDataFolder != null) {
-                Path packLocation = geyserDataFolder.toPath().resolve("packs/GeyserExtrasPack.mcpack");
-                if (packLocation.toFile().exists()) {
-                    packLocation.toFile().delete();
-                }
+            Path geyserExtrasPackPath = geyserDataFolder.toPath().resolve("packs/GeyserExtrasPack.mcpack");
+            if (geyserExtrasPackPath.toFile().exists()) {
+                GeyserExtras.logger.warning("GeyserExtrasPack was detected inside of Geyser's packs folder!");
+                GeyserExtras.logger.warning("You do not need to move the pack here as GeyserExtras loads the pack from the plugins folder.");
+            }
+            Path geyserOptionalPack = geyserDataFolder.toPath().resolve("packs/GeyserOptionalPack.mcpack");
+            if (geyserOptionalPack.toFile().exists()) {
+                GeyserExtras.logger.warning("GeyserOptionalPack was detected inside of Geyser's packs folder!");
+                GeyserExtras.logger.warning("You do not need to move the pack here as GeyserExtras loads the pack from the plugins folder.");
             }
         }
-        if (geyserDataFolder != null && geyserConfig != null) {
+        if (geyserConfig != null) {
             try {
                 geyserConfig.save(geyserDataFolder.toPath().resolve("config.yml").toFile());
             } catch (IOException e) {
