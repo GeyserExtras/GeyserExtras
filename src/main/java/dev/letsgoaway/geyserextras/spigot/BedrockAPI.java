@@ -15,9 +15,7 @@ import java.util.HashMap;
 import java.util.UUID;
 
 public class BedrockAPI {
-    private Class<?> apiClass = null;
     private BedrockPluginAPI apiInstance = null;
-
     public HashMap<APIType, BedrockPluginAPI> apiInstances = new HashMap<>();
     public APIType apiType = null;
     public boolean foundGeyserClasses = false;
@@ -25,7 +23,7 @@ public class BedrockAPI {
     private boolean classExists(String path) {
         boolean exists = false;
         try {
-            apiClass = Class.forName(path);
+            Class<?> apiClass = Class.forName(path);
             exists = true;
         } catch (ClassNotFoundException ignored) {
         }
@@ -38,7 +36,7 @@ public class BedrockAPI {
             apiInstances.put(APIType.FLOODGATE, new FloodgateBedrockAPI());
             foundGeyserClasses = true;
         }
-        if (classExists("org.geysermc.api.GeyserApiBase")) {
+        if (!Config.proxyMode && classExists("org.geysermc.api.GeyserApiBase")) {
             apiType = APIType.GEYSER;
             apiInstances.put(APIType.GEYSER, new GeyserBedrockAPI());
             foundGeyserClasses = true;
@@ -48,6 +46,11 @@ public class BedrockAPI {
         } else if (supports(APIType.GEYSER)) {
             apiInstance = apiInstances.get(APIType.GEYSER);
         }
+    }
+
+    public void setDefaultApiInstance(APIType type) {
+        apiType = type;
+        apiInstance = apiInstances.get(type);
     }
 
     public boolean isBedrockPlayer(@NonNull UUID uuid) {
@@ -104,13 +107,13 @@ public class BedrockAPI {
         }
     }
 
-    public void onLoadConfig(){
-        for (BedrockPluginAPI api : apiInstances.values()){
+    public void onLoadConfig() {
+        for (BedrockPluginAPI api : apiInstances.values()) {
             api.onConfigLoad();
         }
     }
 
-    public boolean supports(APIType apiType){
+    public boolean supports(APIType apiType) {
         return apiInstances.containsKey(apiType);
     }
 }

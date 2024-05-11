@@ -42,11 +42,14 @@ public final class GeyserExtras extends JavaPlugin implements PluginMessageListe
         plugin = this;
         logger = this.getLogger();
         EmoteUtils.load();
-        bedrockAPI = new BedrockAPI();
         Instant start = Instant.now();
         logger.info("--------------GeyserExtras--------------");
-        logger.info("Version: " + VersionConstants.PLUGIN_VERSION);
+        logger.info("Version: " + VersionConstants.GE_VERSION);
         logger.info("Server Type: " + ServerType.get());
+        logger.info("Loading config...");
+        Config.loadConfig();
+        logger.info("Config loaded!");
+        bedrockAPI = new BedrockAPI();
         if (bedrockAPI.foundGeyserClasses) {
             StringBuilder types = new StringBuilder();
             for (APIType type : bedrockAPI.apiInstances.keySet()) {
@@ -63,9 +66,6 @@ public final class GeyserExtras extends JavaPlugin implements PluginMessageListe
         Objects.requireNonNull(this.getCommand("platformlist")).setExecutor(new PlatformListCommand());
         Objects.requireNonNull(this.getCommand("playerlist")).setExecutor(new TabListCommand());
         Objects.requireNonNull(this.getCommand("emotechat")).setExecutor(new EmoteChatCommand());
-        logger.info("Loading config...");
-        Config.loadConfig();
-        logger.info("Config loaded!");
         loadGeyserOptionalPack();
         if (!getDataFolder().toPath().resolve("GeyserExtrasPack.mcpack").toFile().exists()) {
             plugin.saveResource("GeyserExtrasPack.mcpack", false);

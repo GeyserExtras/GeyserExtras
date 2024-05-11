@@ -13,7 +13,7 @@ public class OptionalPackManager extends BedrockContextMenu {
         BedrockPluginAPI geyserApi = GeyserExtras.bedrockAPI.apiInstances.get(APIType.GEYSER);
         return geyserApi.getPackDescription(packid) + "\n\n" +
                 "Pack ID: " + geyserApi.getPackID(geyserApi.getPackPath(packid)) +
-                "\nPack Version: "+ geyserApi.getPackVersion(packid);
+                "\nPack ResourceVersion: "+ geyserApi.getPackVersion(packid);
     }
     public OptionalPackManager(BedrockPlayer bplayer, String packID, String name) {
         super(name,  getDescriptionText(packID));

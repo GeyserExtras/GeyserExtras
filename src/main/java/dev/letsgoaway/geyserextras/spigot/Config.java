@@ -1,5 +1,6 @@
 package dev.letsgoaway.geyserextras.spigot;
 
+import dev.letsgoaway.geyserextras.spigot.api.APIType;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -187,7 +188,9 @@ public class Config {
                 throw new RuntimeException(e);
             }
         }
+        if (Config.proxyMode){
+            GeyserExtras.logger.warning("Make sure you move the resource packs in the plugins folder to the Geyser instance you are running!");
+        }
     }
-
 }
 

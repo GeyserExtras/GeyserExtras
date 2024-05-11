@@ -1,10 +1,10 @@
 package dev.letsgoaway.geyserextras.spigot;
 
 import dev.letsgoaway.geyserextras.spigot.api.APIType;
-import dev.letsgoaway.geyserextras.spigot.parity.bedrock.EmoteUtils;
 import dev.letsgoaway.geyserextras.spigot.menus.MainMenu;
 import dev.letsgoaway.geyserextras.spigot.menus.OptionalPacks;
 import dev.letsgoaway.geyserextras.spigot.menus.quickmenu.QuickMenuBindings;
+import dev.letsgoaway.geyserextras.spigot.parity.bedrock.EmoteUtils;
 import dev.letsgoaway.geyserextras.spigot.parity.java.combat.CombatAttackType;
 import dev.letsgoaway.geyserextras.spigot.parity.java.combat.CooldownHandler;
 import dev.letsgoaway.geyserextras.spigot.parity.java.tablist.TabList;
@@ -95,18 +95,22 @@ public class BedrockPlayer {
         if (this.hasData("optionalpacks")) {
             optionalPacks = new ArrayList<>(getData("optionalpacks", PersistentDataType.LIST.listTypeFrom(PersistentDataType.STRING)));
         }
-        optionalPacks.removeIf((s) -> !GeyserExtras.bedrockAPI.apiInstances.get(APIType.GEYSER).getPackExists(s));
+
         if (this.hasData("arrowdelayfix")) {
             enableArrowDelayFix = getData("arrowdelayfix", PersistentDataType.BOOLEAN);
         }
         this.save();
-        if (!OptionalPacks.loadingResourcePacks.containsKey(GeyserExtras.bedrockAPI.getPlayerXUID(this)) && !this.optionalPacks.isEmpty()) {
-            OptionalPacks.loadingResourcePacks.put(GeyserExtras.bedrockAPI.getPlayerXUID(this), this.optionalPacks.toArray(String[]::new));
+        if (GeyserExtras.bedrockAPI.supports(APIType.GEYSER)) {
+            optionalPacks.removeIf((s) -> !GeyserExtras.bedrockAPI.apiInstances.get(APIType.GEYSER).getPackExists(s));
             this.save();
-            GeyserExtras.bedrockAPI.reconnect(player.getUniqueId());
-            Tick.runIn(3L, () -> {
+            if (!OptionalPacks.loadingResourcePacks.containsKey(GeyserExtras.bedrockAPI.getPlayerXUID(this)) && !this.optionalPacks.isEmpty()) {
+                OptionalPacks.loadingResourcePacks.put(GeyserExtras.bedrockAPI.getPlayerXUID(this), this.optionalPacks.toArray(String[]::new));
+                this.save();
                 GeyserExtras.bedrockAPI.reconnect(player.getUniqueId());
-            });
+                Tick.runIn(3L, () -> {
+                    GeyserExtras.bedrockAPI.reconnect(player.getUniqueId());
+                });
+            }
         }
         Tick.runOnNext(() -> {
             TabList.precacheSkin(player);

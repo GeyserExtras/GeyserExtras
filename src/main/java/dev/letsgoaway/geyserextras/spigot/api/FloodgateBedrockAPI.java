@@ -28,6 +28,11 @@ public class FloodgateBedrockAPI extends BedrockPluginAPI {
         tryRegisterEventBus();
     }
 
+    @Override
+    public void disable() {
+
+    }
+
     private void tryRegisterEventBus() {
         api.getEventBus().subscribe(SkinApplyEvent.class, this::onSkinApplyEvent);
     }
