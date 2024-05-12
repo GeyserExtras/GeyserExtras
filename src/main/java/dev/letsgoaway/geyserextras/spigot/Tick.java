@@ -12,8 +12,8 @@ public class Tick {
         return Bukkit.getScheduler().runTaskLater(GeyserExtras.plugin, task, ticks);
     }
 
-    public static BukkitTask runAsync(Runnable task){
-        return Bukkit.getScheduler().runTaskAsynchronously(GeyserExtras.plugin,task);
+    public static Thread runAsync(Runnable task){
+        return Thread.startVirtualThread(task);
     }
     public static long secondsToTicksRounded(float seconds) {
         return Math.round(secondsToTicks(seconds));

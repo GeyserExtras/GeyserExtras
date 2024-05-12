@@ -10,7 +10,7 @@ import com.velocitypowered.api.proxy.ServerConnection;
 import com.velocitypowered.api.proxy.messages.ChannelIdentifier;
 import com.velocitypowered.api.proxy.messages.MinecraftChannelIdentifier;
 import dev.letsgoaway.geyserextras.ServerType;
-import dev.letsgoaway.geyserextras.VersionConstants;
+import dev.letsgoaway.geyserextras.PluginVersion;
 import org.slf4j.Logger;
 
 import java.nio.charset.StandardCharsets;
@@ -19,7 +19,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.Objects;
 
-@Plugin(id = "geyserextras", name = "GeyserExtras", version = VersionConstants.GE_VERSION,
+@Plugin(id = "geyserextras", name = "GeyserExtras", version = PluginVersion.GE_VERSION,
         description = "A plugin which attempts to unify features for Bedrock Edition players on Java Edition Servers with GeyserMC.", authors = {"LetsGoAway"})
 public class GeyserExtrasVelocity {
     public static ProxyServer server = null;
@@ -42,7 +42,8 @@ public class GeyserExtrasVelocity {
     public void onProxyInitialization(ProxyInitializeEvent ev) {
         Instant start = Instant.now();
         logger.info("--------------GeyserExtras--------------");
-        logger.info("Version: " + VersionConstants.GE_VERSION);
+        logger.info("Version: " + PluginVersion.GE_VERSION);
+        PluginVersion.checkForUpdatesAndPrintToLog((s)->logger.warn(s));
         logger.info("Server Type: " + ServerType.get());
         logger.info("Registering channels...");
         server.getChannelRegistrar().register(emoteChannel);

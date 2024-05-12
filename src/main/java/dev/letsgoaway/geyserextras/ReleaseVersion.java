@@ -31,6 +31,10 @@ public class ReleaseVersion {
         this.resourceVersion = Version3.fromString(versions[1]);
     }
 
+    public boolean isNewer(ReleaseVersion v) {
+        return this.resourceVersion.isNewer(v.resourceVersion);
+    }
+
     public String toString() {
         String middle = "-v";
         if (this.prerelease) {

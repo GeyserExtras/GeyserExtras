@@ -60,6 +60,7 @@ public class TabList extends BedrockContextMenu {
                 }
                 URL url = new URL("https://api.geysermc.org/v2/skin/" + XUID);
                 URLConnection request = url.openConnection();
+                request.setConnectTimeout(5000);
                 request.connect();
                 JsonParser jp = new JsonParser();
                 JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
@@ -138,7 +139,7 @@ public class TabList extends BedrockContextMenu {
         Tick.runAsync(() -> {
             loadTextureID(player);
             if (Config.skinSavingEnabled) {
-                URL url = null;
+                URL url;
                 try {
                     url = new URL(getSkinURL(player));
                     BufferedImage img = ImageIO.read(url);

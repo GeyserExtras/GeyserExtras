@@ -15,8 +15,13 @@ public class Version3 {
         return this.major + "." + this.minor + "." + this.patch;
     }
 
+    public boolean isNewer(Version3 v) {
+        return this.major > v.major || this.minor > v.minor || this.patch > v.patch;
+    }
+
     public static Version3 fromString(String string) {
         String[] nums = string.split("\\.");
-        return new Version3(Integer.parseInt(nums[0]),Integer.parseInt(nums[1]),Integer.parseInt(nums[2]));
+        return new Version3(Integer.parseInt(nums[0]), Integer.parseInt(nums[1]), Integer.parseInt(nums[2]));
     }
+
 }

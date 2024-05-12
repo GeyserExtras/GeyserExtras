@@ -1,7 +1,7 @@
 package dev.letsgoaway.geyserextras.spigot;
 
 import dev.letsgoaway.geyserextras.ServerType;
-import dev.letsgoaway.geyserextras.VersionConstants;
+import dev.letsgoaway.geyserextras.PluginVersion;
 import dev.letsgoaway.geyserextras.spigot.api.APIType;
 import dev.letsgoaway.geyserextras.spigot.commands.EmoteChatCommand;
 import dev.letsgoaway.geyserextras.spigot.commands.GeyserExtrasCommand;
@@ -44,7 +44,10 @@ public final class GeyserExtras extends JavaPlugin implements PluginMessageListe
         EmoteUtils.load();
         Instant start = Instant.now();
         logger.info("--------------GeyserExtras--------------");
-        logger.info("Version: " + VersionConstants.GE_VERSION);
+        logger.info("Version: " + PluginVersion.GE_VERSION);
+        Tick.runOnNext(()->{
+            PluginVersion.checkForUpdatesAndPrintToLog((s)->logger.warning(s));
+        });
         logger.info("Server Type: " + ServerType.get());
         logger.info("Loading config...");
         Config.loadConfig();
