@@ -29,6 +29,11 @@ public class InitializeLogger {
         info("Done! (" + r3.format(Duration.between(start, finish).toMillis() / 1000.0d) + "s)");
         info("----------------------------------------");
     }
+
+    public void endNoDone() {
+        info("----------------------------------------");
+    }
+
     public void logTask(String start, Runnable task, String end){
         info(start);
         task.run();
