@@ -9,14 +9,12 @@ import com.velocitypowered.api.proxy.ProxyServer;
 import com.velocitypowered.api.proxy.ServerConnection;
 import com.velocitypowered.api.proxy.messages.ChannelIdentifier;
 import com.velocitypowered.api.proxy.messages.MinecraftChannelIdentifier;
-import dev.letsgoaway.geyserextras.ServerType;
+import dev.letsgoaway.geyserextras.InitializeLogger;
 import dev.letsgoaway.geyserextras.PluginVersion;
+import dev.letsgoaway.geyserextras.ServerType;
 import org.slf4j.Logger;
 
 import java.nio.charset.StandardCharsets;
-import java.text.DecimalFormat;
-import java.time.Duration;
-import java.time.Instant;
 import java.util.Objects;
 
 @Plugin(id = "geyserextras", name = "GeyserExtras", version = PluginVersion.GE_VERSION,
@@ -25,6 +23,9 @@ public class GeyserExtrasVelocity {
     public static ProxyServer server = null;
     @Inject
     public static Logger logger;
+
+    public static InitializeLogger initLog;
+
 
     private GeyserEventForwarder forwarder;
 
@@ -40,22 +41,16 @@ public class GeyserExtrasVelocity {
 
     @Subscribe
     public void onProxyInitialization(ProxyInitializeEvent ev) {
-        Instant start = Instant.now();
-        logger.info("--------------GeyserExtras--------------");
-        logger.info("Version: " + PluginVersion.GE_VERSION);
-        PluginVersion.checkForUpdatesAndPrintToLog((s)->logger.warn(s));
-        logger.info("Server Type: " + ServerType.get());
-        logger.info("Registering channels...");
-        server.getChannelRegistrar().register(emoteChannel);
-        server.getChannelRegistrar().register(fogChannel);
-        logger.info("Channels registered!");
+        initLog = new InitializeLogger((s) -> logger.warn(s), (s) -> logger.info(s));
+        initLog.start();
+        PluginVersion.checkForUpdatesAndPrintToLog((s) -> logger.warn(s));
+        initLog.logTask("Registering channels...", () -> {
+            server.getChannelRegistrar().register(emoteChannel);
+            server.getChannelRegistrar().register(fogChannel);
+        }, "Channels registered!");
         this.forwarder = new GeyserEventForwarder();
         logger.warn("Make sure that 'proxy-mode: true' on your backend servers GeyserExtras config!");
-        DecimalFormat r3 = new DecimalFormat("0.000");
-        Instant finish = Instant.now();
-        logger.info("Done! (" + r3.format(Duration.between(start, finish).toMillis() / 1000.0d) + "s)");
-        logger.info("----------------------------------------");
-
+        initLog.end();
     }
 
     @Subscribe

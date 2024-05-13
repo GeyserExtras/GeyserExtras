@@ -152,15 +152,15 @@ public class Config {
             Config.netherRoofEnabled = Config.proxyMode;
         }
         if (Config.netherRoofEnabled) {
-            GeyserExtras.logger.info("Nether Roof Fix Fog Fix enabled!");
+            GeyserExtras.initLog.info("Nether Roof Fix Fog Fix enabled!");
         }
         if (geyserConfig == null) {
-            GeyserExtras.logger.warning("Make sure 'force-resource-packs: true' in Geyser's Config!");
+            GeyserExtras.initLog.warn("Make sure 'force-resource-packs: true' in Geyser's Config!");
             if (Config.customCoolDownEnabled) {
-                GeyserExtras.logger.warning("Set 'show-cooldown: \"false\"' in Geyser's Config for the cooldown!");
+                GeyserExtras.initLog.warn("Set 'show-cooldown: \"false\"' in Geyser's Config for the cooldown!");
             }
             if (Config.javaBlockPlacement) {
-                GeyserExtras.logger.warning("Set 'disable-bedrock-scaffolding: true' in Geyser's Config for enable-java-only-block-placement!");
+                GeyserExtras.initLog.warn("Set 'disable-bedrock-scaffolding: true' in Geyser's Config for enable-java-only-block-placement!");
             }
         } else {
             geyserConfig.set("force-resource-packs", true);
@@ -172,13 +172,13 @@ public class Config {
             }
             Path geyserExtrasPackPath = geyserDataFolder.toPath().resolve("packs/GeyserExtrasPack.mcpack");
             if (geyserExtrasPackPath.toFile().exists()) {
-                GeyserExtras.logger.warning("GeyserExtrasPack was detected inside of Geyser's packs folder!");
-                GeyserExtras.logger.warning("You do not need to move the pack here as GeyserExtras loads the pack from the plugins folder.");
+                GeyserExtras.initLog.warn("GeyserExtrasPack was detected inside of Geyser's packs folder!");
+                GeyserExtras.initLog.warn("You do not need to move the pack here as GeyserExtras loads the pack from the plugins folder.");
             }
             Path geyserOptionalPack = geyserDataFolder.toPath().resolve("packs/GeyserOptionalPack.mcpack");
             if (geyserOptionalPack.toFile().exists()) {
-                GeyserExtras.logger.warning("GeyserOptionalPack was detected inside of Geyser's packs folder!");
-                GeyserExtras.logger.warning("You do not need to move the pack here as GeyserExtras loads the pack from the plugins folder.");
+                GeyserExtras.initLog.warn("GeyserOptionalPack was detected inside of Geyser's packs folder!");
+                GeyserExtras.initLog.warn("You do not need to move the pack here as GeyserExtras loads the pack from the plugins folder.");
             }
         }
         if (geyserConfig != null) {
@@ -189,7 +189,7 @@ public class Config {
             }
         }
         if (Config.proxyMode){
-            GeyserExtras.logger.warning("Make sure you move the resource packs in the plugins folder to the Geyser instance you are running!");
+            GeyserExtras.initLog.warn("Make sure you move the resource packs in the plugins folder to the Geyser instance you are running!");
         }
     }
 }

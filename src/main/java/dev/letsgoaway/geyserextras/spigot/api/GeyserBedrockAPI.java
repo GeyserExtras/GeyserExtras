@@ -10,11 +10,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.geysermc.cumulus.form.Form;
 import org.geysermc.cumulus.form.util.FormBuilder;
-import org.geysermc.event.Event;
 import org.geysermc.event.subscribe.OwnedSubscriber;
 import org.geysermc.event.subscribe.Subscribe;
-import org.geysermc.geyser.api.event.EventRegistrar;
-import org.geysermc.geyser.api.event.EventSubscriber;
 import org.geysermc.geyser.api.pack.PackCodec;
 import org.geysermc.geyser.api.pack.ResourcePack;
 
@@ -41,6 +38,7 @@ public class GeyserBedrockAPI extends BedrockPluginAPI implements org.geysermc.g
     }
 
     ArrayList<OwnedSubscriber<?, ?>> subscribers = new ArrayList<>();
+
     private void tryRegisterEventBus() {
         subscribers.add(
                 api.eventBus().subscribe(this, org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent.class, this::onClientEmoteEvent)
@@ -56,11 +54,19 @@ public class GeyserBedrockAPI extends BedrockPluginAPI implements org.geysermc.g
                 })
         );
     }
+
     @Override
     public void onConfigLoad() {
-        GeyserExtras.logger.info("Loading optional packs...");
-        loadResources();
-        GeyserExtras.logger.info("Optional packs loaded!");
+        GeyserExtras.initLog.info("Loading GeyserOptionalPack...");
+        GeyserOptionalPack = ResourcePack.create(PackCodec.path(GeyserExtras.plugin.getDataFolder().toPath().resolve("GeyserOptionalPack.mcpack")));
+        GeyserExtras.initLog.info("GeyserOptionalPack v" + GeyserOptionalPack.manifest().header().version().toString() + " loaded succesfully!");
+        GeyserExtras.initLog.info("Loading GeyserExtrasPack...");
+        GeyserExtrasPack = ResourcePack.create(PackCodec.path(GeyserExtras.plugin.getDataFolder().toPath().resolve("GeyserExtrasPack.mcpack")));
+        GeyserExtras.initLog.info("GeyserExtrasPack v" + GeyserExtrasPack.manifest().header().version().toString() + " loaded succesfully!");
+        if (Config.packsArray.isEmpty()) {
+            return;
+        }
+        GeyserExtras.initLog.logTask("Loading optional packs...", this::loadResources, "Optional packs loaded!");
     }
 
     private void loadResources() {
@@ -68,12 +74,6 @@ public class GeyserBedrockAPI extends BedrockPluginAPI implements org.geysermc.g
         if (geyserSpigot == null) {
             return;
         }
-        GeyserExtras.logger.info("Loading GeyserOptionalPack...");
-        GeyserOptionalPack = ResourcePack.create(PackCodec.path(GeyserExtras.plugin.getDataFolder().toPath().resolve("GeyserOptionalPack.mcpack")));
-        GeyserExtras.logger.info("GeyserOptionalPack Pack v" + GeyserOptionalPack.manifest().header().version().toString() + " loaded succesfully!");
-        GeyserExtras.logger.info("Loading GeyserExtrasPack...");
-        GeyserExtrasPack = ResourcePack.create(PackCodec.path(GeyserExtras.plugin.getDataFolder().toPath().resolve("GeyserExtrasPack.mcpack")));
-        GeyserExtras.logger.info("GeyserExtrasPack v" + GeyserExtrasPack.manifest().header().version().toString() + " loaded succesfully!");
         /* geyser has an annoying message where it says that paths are too long,
         so i disable the logger for it temporarily here */
         Filter oldFilter = geyserSpigot.getLogger().getFilter();
@@ -82,7 +82,7 @@ public class GeyserBedrockAPI extends BedrockPluginAPI implements org.geysermc.g
             ResourcePack resourcePack = ResourcePack.create(PackCodec.path(rp.toPath()));
             resourcePackHashMap.put(resourcePack.manifest().header().uuid(), resourcePack);
             resourcePackPathMap.put(resourcePack.manifest().header().uuid(), rp.toPath());
-            GeyserExtras.logger.info("Pack '" + resourcePack.manifest().header().name() + "' loaded succesfully!");
+            GeyserExtras.initLog.info("Pack '" + resourcePack.manifest().header().name() + "' loaded succesfully!");
         }
         /* and reenable it here */
         geyserSpigot.getLogger().setFilter(oldFilter);

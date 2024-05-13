@@ -12,8 +12,7 @@ public class GeyserEventForwarder implements EventRegistrar {
     public static final org.geysermc.geyser.api.GeyserApi api = org.geysermc.geyser.api.GeyserApi.api();
 
     public GeyserEventForwarder() {
-        GeyserExtrasVelocity.logger.info("Registering Geyser events...");
-        tryRegisterEventBus();
+        GeyserExtrasVelocity.initLog.logTask("Registering events...", this::tryRegisterEventBus, "Events registered!");
     }
     public static boolean enableNetherFog = false;
     private void tryRegisterEventBus() {
@@ -23,7 +22,6 @@ public class GeyserEventForwarder implements EventRegistrar {
         } catch (ConfigurateException e) {
             throw new RuntimeException(e);
         }
-        GeyserExtrasVelocity.logger.info("Geyser events registered!");
     }
 
     @Subscribe

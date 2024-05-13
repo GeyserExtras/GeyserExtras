@@ -1,7 +1,8 @@
 package dev.letsgoaway.geyserextras.spigot;
 
-import dev.letsgoaway.geyserextras.ServerType;
+import dev.letsgoaway.geyserextras.InitializeLogger;
 import dev.letsgoaway.geyserextras.PluginVersion;
+import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.spigot.api.APIType;
 import dev.letsgoaway.geyserextras.spigot.commands.EmoteChatCommand;
 import dev.letsgoaway.geyserextras.spigot.commands.GeyserExtrasCommand;
@@ -20,9 +21,6 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
-import java.text.DecimalFormat;
-import java.time.Duration;
-import java.time.Instant;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
@@ -31,6 +29,7 @@ import java.util.logging.Logger;
 public final class GeyserExtras extends JavaPlugin implements PluginMessageListener {
     public static GeyserExtras plugin;
     public static Logger logger;
+    public static InitializeLogger initLog;
     public static BedrockAPI bedrockAPI;
 
     public GeyserExtras() {
@@ -41,27 +40,23 @@ public final class GeyserExtras extends JavaPlugin implements PluginMessageListe
     public void onEnable() {
         plugin = this;
         logger = this.getLogger();
+        initLog = new InitializeLogger((s) -> logger.warning(s), (s) -> logger.info(s));
         EmoteUtils.load();
-        Instant start = Instant.now();
-        logger.info("--------------GeyserExtras--------------");
-        logger.info("Version: " + PluginVersion.GE_VERSION);
-        Tick.runOnNext(()->{
-            PluginVersion.checkForUpdatesAndPrintToLog((s)->logger.warning(s));
+        Tick.runOnNext(() -> {
+            PluginVersion.checkForUpdatesAndPrintToLog((s) -> logger.warning(s));
         });
-        logger.info("Server Type: " + ServerType.get());
-        logger.info("Loading config...");
-        Config.loadConfig();
-        logger.info("Config loaded!");
+        initLog.start();
+        initLog.logTask("Loading config...", Config::loadConfig, "Config loaded!");
         bedrockAPI = new BedrockAPI();
         if (bedrockAPI.foundGeyserClasses) {
             StringBuilder types = new StringBuilder();
             for (APIType type : bedrockAPI.apiInstances.keySet()) {
                 types.append(type.toString() + ", ");
             }
-            logger.info("API Types: " + types.substring(0, types.length() - 2));
+            initLog.info("API Types: " + types.substring(0, types.length() - 2));
         } else {
-            logger.info("GeyserExtras could not initialize! This means that Floodgate or Geyser was not in your plugins folder.");
-            logger.info("----------------------------------------");
+            initLog.warn("GeyserExtras could not initialize! This means that Floodgate or Geyser was not in your plugins folder.");
+            initLog.end();
             this.setEnabled(false);
             return;
         }
@@ -74,31 +69,31 @@ public final class GeyserExtras extends JavaPlugin implements PluginMessageListe
             plugin.saveResource("GeyserExtrasPack.mcpack", false);
         }
         bedrockAPI.onLoadConfig();
-        logger.info("Registering events...");
-        getServer().getPluginManager().registerEvents(new EventListener(), this);
-        logger.info("Events registered!");
+        initLog.logTask("Registering events...",
+                () -> getServer().getPluginManager().registerEvents(new EventListener(), this),
+                "Events registered!"
+        );
         if (Config.proxyMode) {
-            logger.info("Registering proxy channels...");
-            getServer().getMessenger().registerIncomingPluginChannel(this, "geyserextras:emote", this);
-            getServer().getMessenger().registerOutgoingPluginChannel(this, "geyserextras:fog");
-            logger.info("Proxy channels registered!");
+            initLog.logTask("Registering proxy channels...",
+                    () -> {
+                        getServer().getMessenger().registerIncomingPluginChannel(this, "geyserextras:emote", this);
+                        getServer().getMessenger().registerOutgoingPluginChannel(this, "geyserextras:fog");
+                    }, "Proxy channels registered!"
+            );
         }
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, this::update, 0L, 0L);
-        DecimalFormat r3 = new DecimalFormat("0.000");
-        Instant finish = Instant.now();
-        logger.info("Done! (" + r3.format(Duration.between(start, finish).toMillis() / 1000.0d) + "s)");
-        logger.info("----------------------------------------");
+        initLog.end();
     }
 
     public void loadGeyserOptionalPack() {
         if (!getDataFolder().toPath().resolve("GeyserOptionalPack.mcpack").toFile().exists()) {
-            logger.info("Downloading GeyserOptionalPack...");
+            initLog.info("Downloading GeyserOptionalPack...");
             InputStream in = null;
             try {
                 in = new URL("https://download.geysermc.org/v2/projects/geyseroptionalpack/versions/latest/builds/latest/downloads/geyseroptionalpack").openStream();
                 Files.copy(in, getDataFolder().toPath().resolve("GeyserOptionalPack.mcpack"), StandardCopyOption.REPLACE_EXISTING);
-                logger.info("GeyserOptionalPack downloaded!");
-            } catch (IOException e) {
+                initLog.info("GeyserOptionalPack downloaded!");
+            } catch (IOException ignored) {
             }
         }
     }

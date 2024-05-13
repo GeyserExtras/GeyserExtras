@@ -57,11 +57,7 @@ Fixes the fog to not be the same red fog when Geyser has `above-bedrock-nether-b
 Fixes the arrows to no longer be delayed when shooting, however this has the downside of making the arrows movement look very choppy. Players can configure this for themselves using the GeyserExtras Menu.
 
 ## Plans
-- Auto download GeyserOptionalPack.
-- Emote chat for Java Players
-- Use Nametags or Text Displays for Glow effect.
-- Allow players to download their own skins.
-- Bedrock Subpacks Loading
+https://trello.com/b/9UHPTQST
   
 ## Bugs
 - Sweep attack sometimes plays even if the player didn't sweep attack.
