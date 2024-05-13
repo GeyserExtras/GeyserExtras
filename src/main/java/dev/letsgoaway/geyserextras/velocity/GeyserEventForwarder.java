@@ -12,7 +12,7 @@ public class GeyserEventForwarder implements EventRegistrar {
     public static final org.geysermc.geyser.api.GeyserApi api = org.geysermc.geyser.api.GeyserApi.api();
 
     public GeyserEventForwarder() {
-        GeyserExtrasVelocity.initLog.logTask("Registering events...", this::tryRegisterEventBus, "Events registered!");
+        GeyserExtras.initLog.logTask("Registering events...", this::tryRegisterEventBus, "Events registered!");
     }
     public static boolean enableNetherFog = false;
     private void tryRegisterEventBus() {
@@ -26,7 +26,7 @@ public class GeyserEventForwarder implements EventRegistrar {
 
     @Subscribe
     public void onClientEmoteEvent(org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent ev) {
-        Objects.requireNonNull(Objects.requireNonNull(GeyserExtrasVelocity.server.getPlayer(ev.connection().javaUuid())).get().getCurrentServer().get())
-                .sendPluginMessage(GeyserExtrasVelocity.emoteChannel, ev.emoteId().getBytes(StandardCharsets.UTF_8));
+        Objects.requireNonNull(Objects.requireNonNull(GeyserExtras.server.getPlayer(ev.connection().javaUuid())).get().getCurrentServer().get())
+                .sendPluginMessage(GeyserExtras.emoteChannel, ev.emoteId().getBytes(StandardCharsets.UTF_8));
     }
 }

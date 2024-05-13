@@ -19,7 +19,7 @@ import java.util.Objects;
 
 @Plugin(id = "geyserextras", name = "GeyserExtras", version = PluginVersion.GE_VERSION,
         description = "A plugin which attempts to unify features for Bedrock Edition players on Java Edition Servers with GeyserMC.", authors = {"LetsGoAway"})
-public class GeyserExtrasVelocity {
+public class GeyserExtras {
     public static ProxyServer server = null;
     @Inject
     public static Logger logger;
@@ -33,10 +33,10 @@ public class GeyserExtrasVelocity {
     public static ChannelIdentifier fogChannel = MinecraftChannelIdentifier.create("geyserextras", "fog");
 
     @Inject
-    public GeyserExtrasVelocity(ProxyServer proxyServer, Logger logger) {
+    public GeyserExtras(ProxyServer proxyServer, Logger logger) {
         ServerType.type = ServerType.VELOCITY;
-        GeyserExtrasVelocity.server = proxyServer;
-        GeyserExtrasVelocity.logger = logger;
+        GeyserExtras.server = proxyServer;
+        GeyserExtras.logger = logger;
     }
 
     @Subscribe
@@ -49,7 +49,7 @@ public class GeyserExtrasVelocity {
             server.getChannelRegistrar().register(fogChannel);
         }, "Channels registered!");
         this.forwarder = new GeyserEventForwarder();
-        logger.warn("Make sure that 'proxy-mode: true' on your backend servers GeyserExtras config!");
+        initLog.warn("Make sure that 'proxy-mode: true' on your backend servers GeyserExtras config!");
         initLog.end();
     }
 
