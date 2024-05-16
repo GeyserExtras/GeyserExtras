@@ -16,7 +16,7 @@ A plugin which attempts to unify features for Bedrock Edition players on Java Ed
 
 For how to install, see [Getting started](https://github.com/GeyserExtras/GeyserExtras/wiki/Getting-started).
 
-# Feature Support Table
+## Feature Support Table
 **Server** refers to a Spigot-Based server with GeyserExtras, Geyser and Floodgate installed.
 
 **Proxy** refers to a Bungee/Velocity proxy with GeyserExtras, Geyser and Floodgate installed, with the backend server being a Spigot-Based server with GeyserExtras and the `proxy-mode` option set to `true` with only Floodgate installed. 
@@ -34,17 +34,24 @@ For how to install, see [Getting started](https://github.com/GeyserExtras/Geyser
 |Nether Roof Fix Fog Fix    |🟢    |🟢   |
 |Geyser Commands in /ge menu|🟢    |🔴   |
 
-### Java Edition Combat Improvements
+## Features
 
+### Java Edition Combat Improvements
 - Cooldown Indicator![An video showing the two types of Attack Indicators, attack and hot-bar, in the GeyserExtras plugin.](https://github.com/GeyserExtras/GeyserExtras/blob/master/preview/indicator.gif?raw=true)
 - Combat Sounds, sweep attack, crit, strong, knockback.
+  
+### Bedrock Emote Chat for Java Edition players.
+Java players can toggle this by typing `/emotechat`.
+
 ### Quick-Menu
 - Players can bind whatever emotes they want to whatever commands are in the plugins config.
 - e.g, /geyser offhand, /geyser statistics, /customcommandhere, anything that can be ran by the player can be ran by the Quick-Menu.
   ![An video showing the GeyserExtras Quick-Menu Feature.](https://github.com/GeyserExtras/GeyserExtras/blob/master/preview/quickmenu.gif?raw=true)
+  
 ### Optional Pack Loading
 - Players can load whatever packs are placed under `optionalpacks/` in the GeyserExtras Folder via the GeyserExtras Menu (`/ge`).
   ![An video showing the GeyserExtras Optional Packs Feature.](https://github.com/GeyserExtras/GeyserExtras/blob/master/preview/resourcepacks.gif?raw=true)
+
 ### Skin Saving
 - The plugin can automatically save player skins to the plugins folder under `skins/playerUUID/textureid.png`.
 - Please note that this is only the skin that Floodgate converts for Java Players meaning that some marketplace skins like 128x128 skins or classic skins with weird geometry may not look 100% identical.
@@ -75,7 +82,7 @@ Fixes the fog to not be the same red fog when Geyser has `above-bedrock-nether-b
 Fixes the arrows to no longer be delayed when shooting, however this has the downside of making the arrows movement look very choppy. Players can configure this for themselves using the GeyserExtras Menu.
 
 ## Plans
-https://trello.com/b/9UHPTQST
+[Trello](https://trello.com/b/9UHPTQST)
   
 ## Bugs
 - Sweep attack sometimes plays even if the player didn't sweep attack.
