@@ -9,7 +9,9 @@ A plugin which attempts to unify features for Bedrock Edition players on Java Ed
 
 # Downloads
 Modrinth: https://modrinth.com/plugin/geyserextras
+
 Hangar: https://hangar.papermc.io/GeyserExtras/GeyserExtras/versions
+
 GitHub: https://github.com/GeyserExtras/GeyserExtras/releases
 
 For how to install, see [Getting started](https://github.com/GeyserExtras/GeyserExtras/wiki/Getting-started).
