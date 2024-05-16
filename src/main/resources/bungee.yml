@@ -1,5 +1,5 @@
 name: GeyserExtras
-version: '1.20.6-v1.2.0'
+version: '1.20.6-v1.1.1'
 author: "LetsGoAway"
 main: dev.letsgoaway.geyserextras.bungee.GeyserExtras
 depends:

@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 import java.util.logging.Logger;
 
 public class PluginVersion {
-    public static final String GE_VERSION = "1.20.6-v1.2.0";
+    public static final String GE_VERSION = "1.20.6-v1.1.1";
 
     public static String latestVersion = "";
 

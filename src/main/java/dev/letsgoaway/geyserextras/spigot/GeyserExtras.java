@@ -56,7 +56,7 @@ public final class GeyserExtras extends JavaPlugin implements PluginMessageListe
             initLog.info("API Types: " + types.substring(0, types.length() - 2));
         } else {
             initLog.warn("GeyserExtras could not initialize! This means that Floodgate or Geyser was not in your plugins folder.");
-            initLog.end();
+            initLog.endNoDone();
             this.setEnabled(false);
             return;
         }

@@ -107,14 +107,10 @@ public class BedrockPlayer {
                 OptionalPacks.loadingResourcePacks.put(GeyserExtras.bedrockAPI.getPlayerXUID(this), this.optionalPacks.toArray(String[]::new));
                 this.save();
                 GeyserExtras.bedrockAPI.reconnect(player.getUniqueId());
-                Tick.runIn(3L, () -> {
-                    GeyserExtras.bedrockAPI.reconnect(player.getUniqueId());
-                });
+                Tick.runIn(3L, () -> GeyserExtras.bedrockAPI.reconnect(player.getUniqueId()));
             }
         }
-        Tick.runOnNext(() -> {
-            TabList.precacheSkin(player);
-        });
+        Tick.runOnNext(() -> TabList.precacheSkin(player));
     }
 
 
@@ -403,9 +399,7 @@ public class BedrockPlayer {
             if (Objects.equals(player.getTargetBlockExact(6), ev.getClickedBlock())) {
                 coolDownThresHold = 1.0f;
                 blockLeftClickAir = true;
-                Tick.runIn(2L, () -> {
-                    blockLeftClickAir = false;
-                });
+                Tick.runIn(2L, () -> blockLeftClickAir = false);
                 dontUnblockNextLeftClickAir = false;
             }
         }
@@ -590,21 +584,15 @@ public class BedrockPlayer {
                 String action = quickMenuActions.get(quickMenuList.indexOf(emoteUUID));
                 if (!action.equals("None")) {
                     cancelled = true;
-                    Tick.runOnNext(() -> {
-                        runCommand(parsePlaceholders(Config.quickMenuCommands.getOrDefault(action, "")));
-                    });
+                    Tick.runOnNext(() -> runCommand(parsePlaceholders(Config.quickMenuCommands.getOrDefault(action, ""))));
                 }
             }
         }
         if (cancelled) {
-            Tick.runOnNext(() -> {
-                player.setSneaking(true);
-            });
+            Tick.runOnNext(() -> player.setSneaking(true));
         } else {
             if (Duration.between(lastEmoteTime, Instant.now()).toMillis() >= 3000) {
-                Tick.runOnNext(() -> {
-                    EmoteUtils.sendEmoteChat(player, emoteUUID);
-                });
+                Tick.runOnNext(() -> EmoteUtils.sendEmoteChat(player, emoteUUID));
                 lastEmoteTime = Instant.now();
             }
         }
@@ -638,7 +626,7 @@ public class BedrockPlayer {
     public void addPack(Path path) {
         UUID packID = GeyserExtras.bedrockAPI.apiInstances.get(APIType.GEYSER).getPackID(path);
         if (!optionalPacks.contains(packID.toString())) {
-            optionalPacks.add(0, packID.toString());
+            optionalPacks.addFirst(packID.toString());
         }
     }
 
@@ -652,7 +640,7 @@ public class BedrockPlayer {
         int lastPos = optionalPacks.indexOf(packID.toString());
         optionalPacks.remove(lastPos);
         if (lastPos - 1 == -1) {
-            optionalPacks.add(0, packID.toString());
+            optionalPacks.addFirst(packID.toString());
             return;
         }
         optionalPacks.add(lastPos - 1, packID.toString());
