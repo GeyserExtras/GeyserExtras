@@ -1,4 +1,3 @@
-
 # GeyserExtras
 
 A plugin which attempts to unify features for Bedrock Edition players on Java Edition Servers with GeyserMC, aswell as other handy features for Bedrock Players.
@@ -81,6 +80,22 @@ Fixes the fog to not be the same red fog when Geyser has `above-bedrock-nether-b
 
 Fixes the arrows to no longer be delayed when shooting, however this has the downside of making the arrows movement look very choppy. Players can configure this for themselves using the GeyserExtras Menu.
 
+## Permissions
+```yaml
+permissions:
+  geyserextras.menu:
+    default: true
+    description: Allow players to execute the /geyserextras command
+  geyserextras.platformlist:
+    default: true
+    description: Allow players to execute the /platformlist command
+  geyserextras.playerlist:
+    default: true
+    description: Allow players to execute the /playerlist command
+  geyserextras.emotechat:
+    default: true
+    description: Allow players to execute the /emotechat command
+```
 ## Plans
 [Trello](https://trello.com/b/9UHPTQST)
   
