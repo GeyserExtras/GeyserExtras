@@ -8,11 +8,11 @@ A plugin which attempts to unify features for Bedrock Edition players on Java Ed
 ![Bedrock Version Supported](https://img.shields.io/badge/bedrock-1.20.81-333333)
 
 # Downloads
-Modrinth: https://modrinth.com/plugin/geyserextras
+**Modrinth:** https://modrinth.com/plugin/geyserextras
 
-Hangar: https://hangar.papermc.io/GeyserExtras/GeyserExtras/versions
+**Hangar:** https://hangar.papermc.io/GeyserExtras/GeyserExtras/versions
 
-GitHub: https://github.com/GeyserExtras/GeyserExtras/releases
+**GitHub:** https://github.com/GeyserExtras/GeyserExtras/releases
 
 For how to install, see [Getting started](https://github.com/GeyserExtras/GeyserExtras/wiki/Getting-started).
 
