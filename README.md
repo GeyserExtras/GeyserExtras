@@ -1,4 +1,3 @@
-
 # GeyserExtras
 
 A plugin which attempts to unify features for Bedrock Edition players on Java Edition Servers with GeyserMC, aswell as other handy features for Bedrock Players.
@@ -6,27 +5,52 @@ A plugin which attempts to unify features for Bedrock Edition players on Java Ed
 [![Discord](https://img.shields.io/discord/715685803040309310?logo=discord&logoColor=ffffff&label=discord&labelColor=5865F2&link=https%3A%2F%2Fdiscord.gg%2F2FfuShKQgy)](https://discord.gg/2FfuShKQgy)
 ![Java Version Supported](https://img.shields.io/badge/java-1.20.6-6F4E37)
 ![Bedrock Version Supported](https://img.shields.io/badge/bedrock-1.20.81-333333)
-![Supported server software](https://img.shields.io/badge/spigot-velocity-333333)
 
-<a href="https://modrinth.com/plugin/geyserextras"><img src="https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/publication/logo/a49f8e1b-3835-4ea1-a85b-118c6425ebc3/Modrinth_Dark_Logo.png" align="left" height="64"></a>
-<a href="https://hangar.papermc.io/GeyserExtras/GeyserExtras"><img src="https://raw.githubusercontent.com/HangarMC/Hangar/9c658cef2638f4aa23ba7f6b1861057c3bb8f714/frontend/src/assets/hangar-logo.svg" align="left" height="64"></a>
-<a href="https://github.com/GeyserExtras/GeyserExtras/releases"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" align="left" height="64"></a>
+# Downloads
+**Modrinth:** https://modrinth.com/plugin/geyserextras
 
-##
-The plugin is in very early development. Contributions are welcomed!
-##
+**Hangar:** https://hangar.papermc.io/GeyserExtras/GeyserExtras/versions
+
+**GitHub:** https://github.com/GeyserExtras/GeyserExtras/releases
+
+For how to install, see [Getting started](https://github.com/GeyserExtras/GeyserExtras/wiki/Getting-started).
+
+## Feature Support Table
+**Server** refers to a Spigot-Based server with GeyserExtras, Geyser and Floodgate installed.
+
+**Proxy** refers to a Bungee/Velocity proxy with GeyserExtras, Geyser and Floodgate installed, with the backend server being a Spigot-Based server with GeyserExtras and the `proxy-mode` option set to `true` with only Floodgate installed. 
+
+|Feature                     |Server|Proxy|
+|---------------------------|------|-----|
+|Java Cooldown              |🟢    |🟢   |
+|Java Combat Sounds         |🟢    |🟢   |
+|Block Ghosting Fix         |🟢    |🟢   |
+|Speed Bridge Fix           |🟢    |🟢   |
+|Quick-Menu                 |🟢    |🟢   |
+|Resource Pack Loading      |🟢    |🔴   |
+|Bedrock Emote Chat         |🟢    |🟢   |
+|Auto-Reconnect             |🟢    |🟢   |
+|Nether Roof Fix Fog Fix    |🟢    |🟢   |
+|Geyser Commands in /ge menu|🟢    |🔴   |
+
+## Features
 
 ### Java Edition Combat Improvements
-
 - Cooldown Indicator![An video showing the two types of Attack Indicators, attack and hot-bar, in the GeyserExtras plugin.](https://github.com/GeyserExtras/GeyserExtras/blob/master/preview/indicator.gif?raw=true)
 - Combat Sounds, sweep attack, crit, strong, knockback.
+  
+### Bedrock Emote Chat for Java Edition players.
+Java players can toggle this by typing `/emotechat`.
+
 ### Quick-Menu
 - Players can bind whatever emotes they want to whatever commands are in the plugins config.
 - e.g, /geyser offhand, /geyser statistics, /customcommandhere, anything that can be ran by the player can be ran by the Quick-Menu.
   ![An video showing the GeyserExtras Quick-Menu Feature.](https://github.com/GeyserExtras/GeyserExtras/blob/master/preview/quickmenu.gif?raw=true)
+  
 ### Optional Pack Loading
 - Players can load whatever packs are placed under `optionalpacks/` in the GeyserExtras Folder via the GeyserExtras Menu (`/ge`).
   ![An video showing the GeyserExtras Optional Packs Feature.](https://github.com/GeyserExtras/GeyserExtras/blob/master/preview/resourcepacks.gif?raw=true)
+
 ### Skin Saving
 - The plugin can automatically save player skins to the plugins folder under `skins/playerUUID/textureid.png`.
 - Please note that this is only the skin that Floodgate converts for Java Players meaning that some marketplace skins like 128x128 skins or classic skins with weird geometry may not look 100% identical.
@@ -56,8 +80,24 @@ Fixes the fog to not be the same red fog when Geyser has `above-bedrock-nether-b
 
 Fixes the arrows to no longer be delayed when shooting, however this has the downside of making the arrows movement look very choppy. Players can configure this for themselves using the GeyserExtras Menu.
 
+## Permissions
+```yaml
+permissions:
+  geyserextras.menu:
+    default: true
+    description: Allow players to execute the /geyserextras command
+  geyserextras.platformlist:
+    default: true
+    description: Allow players to execute the /platformlist command
+  geyserextras.playerlist:
+    default: true
+    description: Allow players to execute the /playerlist command
+  geyserextras.emotechat:
+    default: true
+    description: Allow players to execute the /emotechat command
+```
 ## Plans
-https://trello.com/b/9UHPTQST
+[Trello](https://trello.com/b/9UHPTQST)
   
 ## Bugs
 - Sweep attack sometimes plays even if the player didn't sweep attack.
