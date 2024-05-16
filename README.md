@@ -6,15 +6,31 @@ A plugin which attempts to unify features for Bedrock Edition players on Java Ed
 [![Discord](https://img.shields.io/discord/715685803040309310?logo=discord&logoColor=ffffff&label=discord&labelColor=5865F2&link=https%3A%2F%2Fdiscord.gg%2F2FfuShKQgy)](https://discord.gg/2FfuShKQgy)
 ![Java Version Supported](https://img.shields.io/badge/java-1.20.6-6F4E37)
 ![Bedrock Version Supported](https://img.shields.io/badge/bedrock-1.20.81-333333)
-![Supported server software](https://img.shields.io/badge/spigot-velocity-333333)
 
-<a href="https://modrinth.com/plugin/geyserextras"><img src="https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/publication/logo/a49f8e1b-3835-4ea1-a85b-118c6425ebc3/Modrinth_Dark_Logo.png" align="left" height="64"></a>
-<a href="https://hangar.papermc.io/GeyserExtras/GeyserExtras"><img src="https://raw.githubusercontent.com/HangarMC/Hangar/9c658cef2638f4aa23ba7f6b1861057c3bb8f714/frontend/src/assets/hangar-logo.svg" align="left" height="64"></a>
-<a href="https://github.com/GeyserExtras/GeyserExtras/releases"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" align="left" height="64"></a>
+# Downloads
+Modrinth: https://modrinth.com/plugin/geyserextras
+Hangar: https://hangar.papermc.io/GeyserExtras/GeyserExtras/versions
+GitHub: https://github.com/GeyserExtras/GeyserExtras/releases
 
-##
-The plugin is in very early development. Contributions are welcomed!
-##
+For how to install, see [Getting started](https://github.com/GeyserExtras/GeyserExtras/wiki/Getting-started).
+
+# Feature Support Table
+**Server** refers to a Spigot-Based server with GeyserExtras, Geyser and Floodgate installed.
+
+**Proxy** refers to a Bungee/Velocity proxy with GeyserExtras, Geyser and Floodgate installed, with the backend server being a Spigot-Based server with GeyserExtras and the `proxy-mode` option set to `true` with only Floodgate installed. 
+
+|Feature                     |Server|Proxy|
+|---------------------------|------|-----|
+|Java Cooldown              |🟢    |🟢   |
+|Java Combat Sounds         |🟢    |🟢   |
+|Block Ghosting Fix         |🟢    |🟢   |
+|Speed Bridge Fix           |🟢    |🟢   |
+|Quick-Menu                 |🟢    |🟢   |
+|Resource Pack Loading      |🟢    |🔴   |
+|Bedrock Emote Chat         |🟢    |🟢   |
+|Auto-Reconnect             |🟢    |🟢   |
+|Nether Roof Fix Fog Fix    |🟢    |🟢   |
+|Geyser Commands in /ge menu|🟢    |🔴   |
 
 ### Java Edition Combat Improvements
 
