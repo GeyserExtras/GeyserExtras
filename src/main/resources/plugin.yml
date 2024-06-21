@@ -1,8 +1,8 @@
 name: GeyserExtras
-version: '1.20.6-v1.1.1'
+version: '1.21.0-v1.1.1'
 author: "LetsGoAway"
 main: dev.letsgoaway.geyserextras.spigot.GeyserExtras
-api-version: '1.20'
+api-version: '1.21'
 softdepend: [floodgate, Geyser-Spigot]
 commands:
   geyserextras:

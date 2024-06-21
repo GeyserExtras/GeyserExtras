@@ -295,6 +295,7 @@ public class BedrockPlayer {
                         || item.getTranslationKey().contains("_pickaxe")
                         || item.getTranslationKey().contains("_shovel")
                         || item.getTranslationKey().contains("_sword")
+                        || item.getTranslationKey().contains("mace")
                 // || item.getTranslationKey().contains("_hoe")
                 // hoes dont have attack speed for some reason
         );
@@ -307,8 +308,6 @@ public class BedrockPlayer {
                         || item.getTranslationKey().contains("_chestplate")
                         || item.getTranslationKey().contains("_leggings")
                         || item.getTranslationKey().contains("_boots")
-                // || item.getTranslationKey().contains("_hoe")
-                // hoes dont have attack speed for some reason
         );
     }
 
@@ -366,7 +365,8 @@ public class BedrockPlayer {
             Material.EXPERIENCE_BOTTLE,
             Material.LEGACY_EXP_BOTTLE,
             Material.ELYTRA,
-            Material.TURTLE_HELMET
+            Material.TURTLE_HELMET,
+            Material.WIND_CHARGE
     );
 
     public void onPlayerInteract(PlayerInteractEvent ev) {
