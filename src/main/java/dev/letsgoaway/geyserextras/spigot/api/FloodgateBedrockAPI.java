@@ -66,7 +66,7 @@ public class FloodgateBedrockAPI extends BedrockPluginAPI {
                 .getAsJsonObject("SKIN")
                 .getAsJsonPrimitive("url")
                 .getAsString()
-                .replace("http://textures.minecraft.net/texture/","")
+                .replace("http://textures.minecraft.net/texture/", "")
         );
     }
 
@@ -135,6 +135,7 @@ public class FloodgateBedrockAPI extends BedrockPluginAPI {
 
     @Override
     public void removeFog(UUID uuid, String fog) {
+
     }
 
     @Override
@@ -169,4 +170,8 @@ public class FloodgateBedrockAPI extends BedrockPluginAPI {
     }
 
 
+    @Override
+    public void hidePaperDoll(UUID uuid) {
+        return;
+    }
 }

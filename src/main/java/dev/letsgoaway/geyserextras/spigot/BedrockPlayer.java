@@ -188,6 +188,11 @@ public class BedrockPlayer {
         if (Config.netherRoofEnabled) {
             updateNetherFog();
         }
+        if (Config.disablePaperDoll) {
+            if (GeyserExtras.bedrockAPI.apiInstances.containsKey(APIType.GEYSER)) {
+                GeyserExtras.bedrockAPI.apiInstances.get(APIType.GEYSER).hidePaperDoll(player.getUniqueId());
+            }
+        }
         if (Config.blockGhostingFix) {
             Block targetBlock = player.getTargetBlockExact(5, FluidCollisionMode.ALWAYS);
             if (targetBlock != null) {

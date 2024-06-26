@@ -41,4 +41,6 @@ import java.util.UUID;
      boolean getPackExists(String id);
 
      void onConfigLoad();
+
+     void hidePaperDoll(UUID uuid);
 }

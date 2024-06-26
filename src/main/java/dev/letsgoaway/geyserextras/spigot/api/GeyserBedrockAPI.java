@@ -12,6 +12,8 @@ import org.geysermc.cumulus.form.Form;
 import org.geysermc.cumulus.form.util.FormBuilder;
 import org.geysermc.event.subscribe.OwnedSubscriber;
 import org.geysermc.event.subscribe.Subscribe;
+import org.geysermc.geyser.api.bedrock.camera.GuiElement;
+import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.pack.PackCodec;
 import org.geysermc.geyser.api.pack.ResourcePack;
 
@@ -236,4 +238,14 @@ public class GeyserBedrockAPI extends BedrockPluginAPI implements org.geysermc.g
             return false;
         }
     }
+
+    @Override
+    public void hidePaperDoll(UUID uuid) {
+        GeyserConnection connection = api.connectionByUuid(uuid);
+        if (connection != null)
+            if (!connection.camera().isHudElementHidden(GuiElement.PAPER_DOLL)){
+                connection.camera().hideElement(GuiElement.PAPER_DOLL);
+            }
+    }
+
 }

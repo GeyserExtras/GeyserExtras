@@ -31,7 +31,7 @@ public class Config {
     public static boolean muteEmoteChat = false;
     public static boolean proxyMode = false;
     //endregion
-
+    public static boolean disablePaperDoll = false;
     public static Map<String, String> quickMenuCommands = new HashMap<>();
 
     public static FileConfiguration config;
@@ -88,6 +88,10 @@ public class Config {
         if (config.contains("proxy-mode", true)) {
             proxyMode = config.getBoolean("proxy-mode");
         }
+        if (config.contains("disable-paper-doll", true)) {
+            disablePaperDoll = config.getBoolean("disable-paper-doll");
+        }
+
     }
 
     private static void saveValues() {
@@ -103,6 +107,7 @@ public class Config {
         config.set("enable-skin-saving", skinSavingEnabled);
         config.set("mute-emote-chat", muteEmoteChat);
         config.set("proxy-mode", proxyMode);
+        config.set("disable-paper-doll", disablePaperDoll);
         try {
             config.save(GeyserExtras.plugin.getDataFolder().toPath().resolve("config.yml").toFile());
         } catch (IOException e) {
