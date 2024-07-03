@@ -49,7 +49,7 @@ public class Config {
             customCoolDownEnabled = config.getBoolean("enable-custom-cooldown");
         }
         if (config.contains("enable-java-combat-sounds", true)) {
-            javaCombatSounds = config.getBoolean("enable-custom-cooldown");
+            javaCombatSounds = config.getBoolean("enable-java-combat-sounds");
         }
         if (config.contains("enable-java-only-block-placement", true)) {
             javaBlockPlacement = config.getBoolean("enable-java-only-block-placement");
