@@ -80,17 +80,20 @@ public class EventListener implements Listener {
                 CombatAttackType combatAttackType = CombatAttackType.getAttackType(player, ev);
                 switch (combatAttackType) {
                     case WEAK_ATTACK ->
-                            player.getWorld().playSound(player.getLocation(), "java.weak", SoundCategory.PLAYERS, 1.0f, 1);
+                            player.getWorld().playSound(player.getLocation(), "game.player.attack.nodamage", SoundCategory.PLAYERS, 1.0f, 1);
                     case CRITICAL_ATTACK ->
-                            player.getWorld().playSound(player.getLocation(), "java.crit", SoundCategory.PLAYERS, 1.0f, 1);
+                            player.getWorld().playSound(player.getLocation(), "geyserext.player.attack.crit", SoundCategory.PLAYERS, 1.0f, 1);
                     case KNOCKBACK_ATTACK -> {
-                        player.getWorld().playSound(player.getLocation(), "java.knockback", SoundCategory.PLAYERS, 1.0f, 1);
-                        player.getWorld().playSound(player.getLocation(), "java.strong", SoundCategory.PLAYERS, 0.5f, 1);
+                        player.getWorld().playSound(player.getLocation(), "geyserext.player.attack.knockback", SoundCategory.PLAYERS, 1.0f, 1);
+                        // Geyser already plays this
+                        //player.getWorld().playSound(player.getLocation(), "game.player.attack.strong", SoundCategory.PLAYERS, 0.5f, 1);
                     }
-                    case STRONG_ATTACK ->
-                            player.getWorld().playSound(player.getLocation(), "java.strong", SoundCategory.PLAYERS, 1.0f, 1);
+                    case STRONG_ATTACK -> {
+                        // Geyser already plays this
+                        // player.getWorld().playSound(player.getLocation(), "game.player.attack.strong", SoundCategory.PLAYERS, 1.0f, 1);
+                    }
                     case SWEEP_ATTACK ->
-                            player.getWorld().playSound(player.getLocation(), "java.sweep", SoundCategory.PLAYERS, 1.0f, 1);
+                            player.getWorld().playSound(player.getLocation(), "geyserext.player.attack.sweep", SoundCategory.PLAYERS, 1.0f, 1);
                 }
             }
             if (notBedrock(player)) {

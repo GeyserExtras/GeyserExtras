@@ -75,7 +75,7 @@ mute-emote-chat: false
 # The Paper Doll is the small player graphic in the top left of bedrock players screens
 # This can give players a competitve advantage over java in some cases, for example,
 # you can see what armor you have on without pressing the inventory key
-# you can see what armor has broken
+# you can see what armor has broken during combat
 disable-paper-doll: false
 
 # Only enable if you are using GeyserExtras on a proxy.
