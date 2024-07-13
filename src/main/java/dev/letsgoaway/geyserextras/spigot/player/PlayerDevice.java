@@ -18,6 +18,8 @@ public enum PlayerDevice {
     PLAYSTATION("PlayStation"), // Named "PlayStation" and not "PS4" due to backwards compatibility on PlayStation 5.
     // Mojang recently announced PS5 support was in the works, so this may change in the future.
     // My guess is that it will be supported in 1.21 (Tricky Trials). Leaving this here so if it ever happens I predicted it!!!!!
+    // GUESS WHAT HAPPENED THEY RELEASED A PREVIEW VERSION OF IT FOR PS5 LMAOOO
+    PLAYSTATIONFIVE("PlayStation 5"),
     SWITCH("Switch"),
     XBOX("Xbox"), // Named "Xbox" and not "Xbox One" due to backwards compatibility on Xbox Series X/S.
     WINDOWS_PHONE("Windows Phone"),

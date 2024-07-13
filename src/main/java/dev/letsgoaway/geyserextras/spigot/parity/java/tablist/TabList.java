@@ -65,6 +65,9 @@ public class TabList extends BedrockContextMenu {
                 JsonParser jp = new JsonParser();
                 JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
                 JsonObject rootobj = root.getAsJsonObject();
+                if (rootobj.isEmpty()) {
+                    return "";
+                }
                 bedrockPlayerTextureIDs.put(XUID, rootobj.get("texture_id").getAsString());
                 return bedrockPlayerTextureIDs.get(XUID);
             } catch (IOException e) {

@@ -1,5 +1,5 @@
 name: GeyserExtras
-version: '1.21.0-v1.1.2'
+version: '1.21.0-v1.1.3'
 author: "LetsGoAway"
 main: dev.letsgoaway.geyserextras.spigot.GeyserExtras
 api-version: '1.21'
