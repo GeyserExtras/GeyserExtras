@@ -1,10 +1,12 @@
+# NOTICE: 2.0 supporting Fabric, Bungee, and Velocity natively without the Spigot server requirement on versions 1.12+ coming soon. Join the discord for the latest news. Spigot will still be supported.
+
 # GeyserExtras
 
 A plugin which attempts to unify features for Bedrock Edition players on Java Edition Servers with GeyserMC, aswell as other handy features for Bedrock Players.
 
 [![Discord](https://img.shields.io/discord/715685803040309310?logo=discord&logoColor=ffffff&label=discord&labelColor=5865F2&link=https%3A%2F%2Fdiscord.gg%2F2FfuShKQgy)](https://discord.gg/2FfuShKQgy)
-![Java Version Supported](https://img.shields.io/badge/java-1.20.6-6F4E37)
-![Bedrock Version Supported](https://img.shields.io/badge/bedrock-1.20.81-333333)
+![Java Version Supported](https://img.shields.io/badge/java-1.21-6F4E37)
+![Bedrock Version Supported](https://img.shields.io/badge/bedrock-1.20.80+-333333)
 
 # Downloads
 **Modrinth:** https://modrinth.com/plugin/geyserextras
