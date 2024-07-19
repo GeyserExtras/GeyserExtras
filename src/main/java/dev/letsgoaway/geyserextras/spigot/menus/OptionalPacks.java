@@ -2,12 +2,12 @@ package dev.letsgoaway.geyserextras.spigot.menus;
 
 import dev.letsgoaway.geyserextras.spigot.BedrockPlayer;
 import dev.letsgoaway.geyserextras.spigot.Config;
-import dev.letsgoaway.geyserextras.spigot.GeyserExtras;
+import dev.letsgoaway.geyserextras.spigot.GeyserExtrasSpigot;
 import dev.letsgoaway.geyserextras.spigot.Tick;
-import dev.letsgoaway.geyserextras.spigot.api.APIType;
-import dev.letsgoaway.geyserextras.spigot.api.BedrockPluginAPI;
-import dev.letsgoaway.geyserextras.spigot.form.BedrockContextMenu;
-import dev.letsgoaway.geyserextras.spigot.form.elements.Button;
+import dev.letsgoaway.geyserextras.core.geyser.APIType;
+import dev.letsgoaway.geyserextras.core.geyser.BedrockPluginAPI;
+import dev.letsgoaway.geyserextras.core.geyser.form.BedrockContextMenu;
+import dev.letsgoaway.geyserextras.core.geyser.form.elements.Button;
 
 import java.io.File;
 import java.util.Arrays;
@@ -19,8 +19,8 @@ public class OptionalPacks extends BedrockContextMenu {
 
     public OptionalPacks(BedrockPlayer bplayer) {
         super("Optional Resource Packs");
-        BedrockPluginAPI geyserApi = GeyserExtras.bedrockAPI.apiInstances.get(APIType.GEYSER);
-        String xuid = GeyserExtras.bedrockAPI.getPlayerXUID(bplayer);
+        BedrockPluginAPI geyserApi = GeyserExtrasSpigot.bedrockAPI.apiInstances.get(APIType.GEYSER);
+        String xuid = GeyserExtrasSpigot.bedrockAPI.getPlayerXUID(bplayer);
         this.onClose = () -> {
             if (!OptionalPacks.loadingResourcePacks.containsKey(xuid)) {
                 loadingResourcePacks.putIfAbsent(xuid, bplayer.optionalPacks.toArray(String[]::new));
@@ -29,7 +29,7 @@ public class OptionalPacks extends BedrockContextMenu {
                 loadingResourcePacks.replace(xuid, bplayer.optionalPacks.toArray(String[]::new));
                 bplayer.save();
                 Tick.runOnNext(()->{
-                    GeyserExtras.bedrockAPI.reconnect(bplayer.player.getUniqueId());
+                    GeyserExtrasSpigot.bedrockAPI.reconnect(bplayer.player.getUniqueId());
                 });
             }
         };

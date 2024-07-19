@@ -1,7 +1,7 @@
-package dev.letsgoaway.geyserextras.spigot.form.elements;
+package dev.letsgoaway.geyserextras.core.geyser.form.elements;
 
-import dev.letsgoaway.geyserextras.spigot.form.FormComponentType;
-import dev.letsgoaway.geyserextras.spigot.form.FormElement;
+import dev.letsgoaway.geyserextras.core.geyser.form.FormComponentType;
+import dev.letsgoaway.geyserextras.core.geyser.form.FormElement;
 import org.geysermc.cumulus.component.Component;
 import org.geysermc.cumulus.component.LabelComponent;
 

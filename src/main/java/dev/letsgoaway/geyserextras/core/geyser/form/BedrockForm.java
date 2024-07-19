@@ -1,7 +1,7 @@
-package dev.letsgoaway.geyserextras.spigot.form;
+package dev.letsgoaway.geyserextras.core.geyser.form;
 
 import dev.letsgoaway.geyserextras.spigot.BedrockPlayer;
-import dev.letsgoaway.geyserextras.spigot.GeyserExtras;
+import dev.letsgoaway.geyserextras.spigot.GeyserExtrasSpigot;
 import org.geysermc.cumulus.form.CustomForm;
 
 import java.util.ArrayList;
@@ -61,6 +61,6 @@ public class BedrockForm {
         if (onClose != null) {
             customForm.closedOrInvalidResultHandler(onClose);
         }
-        GeyserExtras.bedrockAPI.sendForm(bplayer.player.getUniqueId(), customForm.build());
+        GeyserExtrasSpigot.bedrockAPI.sendForm(bplayer.player.getUniqueId(), customForm.build());
     }
 }

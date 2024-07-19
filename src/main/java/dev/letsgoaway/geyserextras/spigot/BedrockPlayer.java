@@ -1,6 +1,6 @@
 package dev.letsgoaway.geyserextras.spigot;
 
-import dev.letsgoaway.geyserextras.spigot.api.APIType;
+import dev.letsgoaway.geyserextras.core.geyser.APIType;
 import dev.letsgoaway.geyserextras.spigot.menus.MainMenu;
 import dev.letsgoaway.geyserextras.spigot.menus.OptionalPacks;
 import dev.letsgoaway.geyserextras.spigot.menus.quickmenu.QuickMenuBindings;
@@ -67,12 +67,12 @@ public class BedrockPlayer {
 
     BedrockPlayer(Player player) {
         this.player = player;
-        this.bedrockUsername = GeyserExtras.bedrockAPI.getXboxUsername(this);
+        this.bedrockUsername = GeyserExtrasSpigot.bedrockAPI.getXboxUsername(this);
         this.device = PlayerDevice.getPlayerDevice(this);
         this.inputType = PlayerInputType.getPlayerInputType(this);
         this.platform = PlayerPlatform.getPlayerPlatform(this);
         this.uiProfile = PlayerUIProfile.getPlayerUIProfile(this);
-        this.xuid = GeyserExtras.bedrockAPI.getPlayerXUID(this);
+        this.xuid = GeyserExtrasSpigot.bedrockAPI.getPlayerXUID(this);
         if (this.hasData("cooldown") && cooldownTypes.contains(getData("cooldown", PersistentDataType.STRING))) {
             cooldownType = getData("cooldown", PersistentDataType.STRING);
         }
@@ -100,14 +100,14 @@ public class BedrockPlayer {
             enableArrowDelayFix = getData("arrowdelayfix", PersistentDataType.BOOLEAN);
         }
         this.save();
-        if (GeyserExtras.bedrockAPI.supports(APIType.GEYSER)) {
-            optionalPacks.removeIf((s) -> !GeyserExtras.bedrockAPI.apiInstances.get(APIType.GEYSER).getPackExists(s));
+        if (GeyserExtrasSpigot.bedrockAPI.supports(APIType.GEYSER)) {
+            optionalPacks.removeIf((s) -> !GeyserExtrasSpigot.bedrockAPI.apiInstances.get(APIType.GEYSER).getPackExists(s));
             this.save();
-            if (!OptionalPacks.loadingResourcePacks.containsKey(GeyserExtras.bedrockAPI.getPlayerXUID(this)) && !this.optionalPacks.isEmpty()) {
-                OptionalPacks.loadingResourcePacks.put(GeyserExtras.bedrockAPI.getPlayerXUID(this), this.optionalPacks.toArray(String[]::new));
+            if (!OptionalPacks.loadingResourcePacks.containsKey(GeyserExtrasSpigot.bedrockAPI.getPlayerXUID(this)) && !this.optionalPacks.isEmpty()) {
+                OptionalPacks.loadingResourcePacks.put(GeyserExtrasSpigot.bedrockAPI.getPlayerXUID(this), this.optionalPacks.toArray(String[]::new));
                 this.save();
-                GeyserExtras.bedrockAPI.reconnect(player.getUniqueId());
-                Tick.runIn(3L, () -> GeyserExtras.bedrockAPI.reconnect(player.getUniqueId()));
+                GeyserExtrasSpigot.bedrockAPI.reconnect(player.getUniqueId());
+                Tick.runIn(3L, () -> GeyserExtrasSpigot.bedrockAPI.reconnect(player.getUniqueId()));
             }
         }
         Tick.runOnNext(() -> TabList.precacheSkin(player));
@@ -120,19 +120,19 @@ public class BedrockPlayer {
 
     public boolean hasData(String key) {
         try {
-            return playerSaveData().has(NamespacedKey.fromString(key, GeyserExtras.plugin));
+            return playerSaveData().has(NamespacedKey.fromString(key, GeyserExtrasSpigot.plugin));
         } catch (Exception ignored) {
             return false;
         }
     }
 
     public <P, C> void setData(String key, PersistentDataType<P, C> type, C value) {
-        playerSaveData().set(NamespacedKey.fromString(key, GeyserExtras.plugin), type, value);
+        playerSaveData().set(NamespacedKey.fromString(key, GeyserExtrasSpigot.plugin), type, value);
     }
 
 
     public <P, C> C getData(String key, PersistentDataType<P, C> type) {
-        return playerSaveData().get(NamespacedKey.fromString(key, GeyserExtras.plugin), type);
+        return playerSaveData().get(NamespacedKey.fromString(key, GeyserExtrasSpigot.plugin), type);
     }
 
     public void setCooldownType(String cooldownType) {
@@ -170,8 +170,8 @@ public class BedrockPlayer {
         if (enableArrowDelayFix) {
             for (Entity entity : player.getWorld().getEntitiesByClasses(Arrow.class)) {
                 if (128.0 >= entity.getLocation().distance(player.getLocation()) && !entity.equals(player)) {
-                    player.hideEntity(GeyserExtras.plugin, entity);
-                    player.showEntity(GeyserExtras.plugin, entity);
+                    player.hideEntity(GeyserExtrasSpigot.plugin, entity);
+                    player.showEntity(GeyserExtrasSpigot.plugin, entity);
                 }
             }
         }
@@ -189,8 +189,8 @@ public class BedrockPlayer {
             updateNetherFog();
         }
         if (Config.disablePaperDoll) {
-            if (GeyserExtras.bedrockAPI.apiInstances.containsKey(APIType.GEYSER)) {
-                GeyserExtras.bedrockAPI.apiInstances.get(APIType.GEYSER).hidePaperDoll(player.getUniqueId());
+            if (GeyserExtrasSpigot.bedrockAPI.apiInstances.containsKey(APIType.GEYSER)) {
+                GeyserExtrasSpigot.bedrockAPI.apiInstances.get(APIType.GEYSER).hidePaperDoll(player.getUniqueId());
             }
         }
         if (Config.blockGhostingFix) {
@@ -213,19 +213,19 @@ public class BedrockPlayer {
     public void updateNetherFog() {
         if (Objects.requireNonNull(player.getLocation().getWorld()).getEnvironment().equals(World.Environment.NETHER)) {
             if (!lastFog.equals(getNetherFogID())) {
-                GeyserExtras.bedrockAPI.sendFog(this, getNetherFogID());
-                GeyserExtras.bedrockAPI.removeFog(this, lastFog);
+                GeyserExtrasSpigot.bedrockAPI.sendFog(this, getNetherFogID());
+                GeyserExtrasSpigot.bedrockAPI.removeFog(this, lastFog);
             }
         }
         lastFog = getNetherFogID();
     }
 
     public void removeNetherFog() {
-        GeyserExtras.bedrockAPI.removeFog(this, "minecraft:fog_hell");
-        GeyserExtras.bedrockAPI.removeFog(this, "minecraft:fog_soulsand_valley");
-        GeyserExtras.bedrockAPI.removeFog(this, "minecraft:fog_crimson_forest");
-        GeyserExtras.bedrockAPI.removeFog(this, "minecraft:fog_warped_forest");
-        GeyserExtras.bedrockAPI.removeFog(this, "minecraft:fog_basalt_deltas");
+        GeyserExtrasSpigot.bedrockAPI.removeFog(this, "minecraft:fog_hell");
+        GeyserExtrasSpigot.bedrockAPI.removeFog(this, "minecraft:fog_soulsand_valley");
+        GeyserExtrasSpigot.bedrockAPI.removeFog(this, "minecraft:fog_crimson_forest");
+        GeyserExtrasSpigot.bedrockAPI.removeFog(this, "minecraft:fog_warped_forest");
+        GeyserExtrasSpigot.bedrockAPI.removeFog(this, "minecraft:fog_basalt_deltas");
 
     }
 
@@ -621,27 +621,27 @@ public class BedrockPlayer {
     }
 
     public boolean hasPack(Path path) {
-        if (GeyserExtras.bedrockAPI.supports(APIType.GEYSER)) {
-            UUID packID = GeyserExtras.bedrockAPI.apiInstances.get(APIType.GEYSER).getPackID(path);
+        if (GeyserExtrasSpigot.bedrockAPI.supports(APIType.GEYSER)) {
+            UUID packID = GeyserExtrasSpigot.bedrockAPI.apiInstances.get(APIType.GEYSER).getPackID(path);
             return optionalPacks.contains(packID.toString());
         }
         return false;
     }
 
     public void addPack(Path path) {
-        UUID packID = GeyserExtras.bedrockAPI.apiInstances.get(APIType.GEYSER).getPackID(path);
+        UUID packID = GeyserExtrasSpigot.bedrockAPI.apiInstances.get(APIType.GEYSER).getPackID(path);
         if (!optionalPacks.contains(packID.toString())) {
             optionalPacks.addFirst(packID.toString());
         }
     }
 
     public void removePack(Path path) {
-        UUID packID = GeyserExtras.bedrockAPI.apiInstances.get(APIType.GEYSER).getPackID(path);
+        UUID packID = GeyserExtrasSpigot.bedrockAPI.apiInstances.get(APIType.GEYSER).getPackID(path);
         optionalPacks.remove(packID.toString());
     }
 
     public void movePackUp(Path path) {
-        UUID packID = GeyserExtras.bedrockAPI.apiInstances.get(APIType.GEYSER).getPackID(path);
+        UUID packID = GeyserExtrasSpigot.bedrockAPI.apiInstances.get(APIType.GEYSER).getPackID(path);
         int lastPos = optionalPacks.indexOf(packID.toString());
         optionalPacks.remove(lastPos);
         if (lastPos - 1 == -1) {
@@ -652,7 +652,7 @@ public class BedrockPlayer {
     }
 
     public void movePackDown(Path path) {
-        UUID packID = GeyserExtras.bedrockAPI.apiInstances.get(APIType.GEYSER).getPackID(path);
+        UUID packID = GeyserExtrasSpigot.bedrockAPI.apiInstances.get(APIType.GEYSER).getPackID(path);
         int lastPos = optionalPacks.indexOf(packID.toString());
         optionalPacks.remove(lastPos);
         optionalPacks.add(lastPos + 1, packID.toString());

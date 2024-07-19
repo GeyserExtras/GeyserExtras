@@ -15,11 +15,11 @@ import org.bukkit.event.player.*;
 
 public class EventListener implements Listener {
     public boolean notBedrock(Player player) {
-        return !GeyserExtras.bplayers.containsKey(player.getUniqueId());
+        return !GeyserExtrasSpigot.bplayers.containsKey(player.getUniqueId());
     }
 
     public BedrockPlayer getPlayer(Player player) {
-        return GeyserExtras.bplayers.getOrDefault(player.getUniqueId(), null);
+        return GeyserExtrasSpigot.bplayers.getOrDefault(player.getUniqueId(), null);
     }
 
     public static void stopSoundForBlock(String blockName, BedrockPlayer bplayer) {
@@ -51,7 +51,7 @@ public class EventListener implements Listener {
     public void onPlayerInteract(PlayerInteractEvent ev) {
         Player player = ev.getPlayer();
         if (BedrockPlayer.cropTypes.contains(ev.getMaterial())) {
-            for (BedrockPlayer bplayer : GeyserExtras.bplayers.values()) {
+            for (BedrockPlayer bplayer : GeyserExtrasSpigot.bplayers.values()) {
                 if (player.getWorld().equals(bplayer.player.getWorld()) && 48.0 >= Math.abs(bplayer.player.getLocation().distance(player.getLocation()))) {
                     stopGrassSounds(bplayer);
                 }
@@ -127,7 +127,7 @@ public class EventListener implements Listener {
         if (BedrockPlayer.cropTypes.contains(ev.getBlock().getType())) {
             player.getWorld().playSound(ev.getBlockPlaced().getLocation(),
                     "plant.crop", SoundCategory.BLOCKS, 0.85f, BedrockPlayer.random.nextBoolean() ? 1.0f : 1.2f);
-            for (BedrockPlayer bplayer : GeyserExtras.bplayers.values()) {
+            for (BedrockPlayer bplayer : GeyserExtrasSpigot.bplayers.values()) {
                 if (player.getWorld().equals(bplayer.player.getWorld()) && 48.0 >= Math.abs(bplayer.player.getLocation().distance(player.getLocation()))) {
                     stopGrassSounds(bplayer);
                 }
@@ -142,7 +142,7 @@ public class EventListener implements Listener {
     @EventHandler
     public void onPlayerBlockDamage(BlockDamageEvent ev) {
         Player player = ev.getPlayer();
-        for (BedrockPlayer bplayer : GeyserExtras.bplayers.values()) {
+        for (BedrockPlayer bplayer : GeyserExtrasSpigot.bplayers.values()) {
             if (player.getWorld().equals(bplayer.player.getWorld()) && 48.0 >= Math.abs(bplayer.player.getLocation().distance(player.getLocation()))) {
                 if (ev.getInstaBreak()) {
                     stopSoundForBlock("stone", bplayer);
@@ -172,7 +172,7 @@ public class EventListener implements Listener {
             // For some reason bedrock has the sound that is meant to play but doesnt play it for crops
             // "we are always working on parity!" - mojang
             player.getWorld().playSound(ev.getBlock().getLocation(), "block.bamboo_sapling.break", SoundCategory.BLOCKS, 0.9f, 1.0f);
-            for (BedrockPlayer bplayer : GeyserExtras.bplayers.values()) {
+            for (BedrockPlayer bplayer : GeyserExtrasSpigot.bplayers.values()) {
                 if (player.getWorld().equals(bplayer.player.getWorld()) && 48.0 >= Math.abs(bplayer.player.getLocation().distance(player.getLocation()))) {
                     if (BedrockPlayer.cropTypes.contains(ev.getBlock().getType())) {
                         stopGrassSounds(bplayer);
@@ -222,19 +222,19 @@ public class EventListener implements Listener {
         }
         BedrockPlayer bedrockPlayer = getPlayer(player);
         bedrockPlayer.onPlayerLeave(ev);
-        GeyserExtras.bplayers.remove(ev.getPlayer().getUniqueId());
+        GeyserExtrasSpigot.bplayers.remove(ev.getPlayer().getUniqueId());
     }
 
     public void runOnNextTick(Runnable function) {
-        Bukkit.getScheduler().scheduleSyncDelayedTask(GeyserExtras.plugin, function, 1L);
+        Bukkit.getScheduler().scheduleSyncDelayedTask(GeyserExtrasSpigot.plugin, function, 1L);
     }
 
     @EventHandler
     public void onExecuteCommand(PlayerCommandPreprocessEvent ev) {
         if ((ev.getMessage().equals("/geyser reload") || ev.getMessage().equals("/stop")) && Config.autoReconnect) {
             ev.setCancelled(true);
-            for (BedrockPlayer bedrockPlayer : GeyserExtras.bplayers.values()) {
-                GeyserExtras.bedrockAPI.reconnect(bedrockPlayer.player.getUniqueId());
+            for (BedrockPlayer bedrockPlayer : GeyserExtrasSpigot.bplayers.values()) {
+                GeyserExtrasSpigot.bedrockAPI.reconnect(bedrockPlayer.player.getUniqueId());
             }
             runOnNextTick(() -> {
                 ev.getPlayer().performCommand(ev.getMessage().replace("/", ""));

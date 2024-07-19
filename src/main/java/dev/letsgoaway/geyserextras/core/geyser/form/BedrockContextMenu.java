@@ -1,8 +1,9 @@
-package dev.letsgoaway.geyserextras.spigot.form;
+package dev.letsgoaway.geyserextras.core.geyser.form;
 
+import dev.letsgoaway.geyserextras.core.geyser.BedrockAPI;
 import dev.letsgoaway.geyserextras.spigot.BedrockPlayer;
-import dev.letsgoaway.geyserextras.spigot.GeyserExtras;
-import dev.letsgoaway.geyserextras.spigot.form.elements.Button;
+import dev.letsgoaway.geyserextras.spigot.GeyserExtrasSpigot;
+import dev.letsgoaway.geyserextras.core.geyser.form.elements.Button;
 import org.geysermc.cumulus.form.SimpleForm;
 
 import java.util.ArrayList;
@@ -42,6 +43,6 @@ public class BedrockContextMenu {
         if (onClose != null) {
             simpleForm.closedOrInvalidResultHandler(onClose);
         }
-        GeyserExtras.bedrockAPI.sendForm(bplayer.player.getUniqueId(), simpleForm.build());
+        BedrockAPI.instance.sendForm(bplayer.player.getUniqueId(), simpleForm.build());
     }
 }

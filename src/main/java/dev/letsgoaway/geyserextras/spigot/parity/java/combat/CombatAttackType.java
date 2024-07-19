@@ -1,7 +1,7 @@
 package dev.letsgoaway.geyserextras.spigot.parity.java.combat;
 
 import dev.letsgoaway.geyserextras.spigot.Config;
-import dev.letsgoaway.geyserextras.spigot.GeyserExtras;
+import dev.letsgoaway.geyserextras.spigot.GeyserExtrasSpigot;
 import dev.letsgoaway.geyserextras.spigot.Tick;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.Player;
@@ -44,7 +44,7 @@ public enum CombatAttackType {
                 } else if (player.getFallDistance() > 0.0f && !player.isSprinting()) {
                     return CombatAttackType.CRITICAL_ATTACK;
                 } else if (player.isSprinting()) {
-                    if (Config.knockbackAttackSprintFix && GeyserExtras.bedrockAPI.isBedrockPlayer(player.getUniqueId())) {
+                    if (Config.knockbackAttackSprintFix && GeyserExtrasSpigot.bedrockAPI.isBedrockPlayer(player.getUniqueId())) {
                         player.setSprinting(false);
                         player.sendHealthUpdate(player.getHealth(), 0, player.getSaturation());
                         Tick.runOnNext(() -> {

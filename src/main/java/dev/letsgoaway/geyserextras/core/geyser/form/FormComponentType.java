@@ -1,4 +1,4 @@
-package dev.letsgoaway.geyserextras.spigot.form;
+package dev.letsgoaway.geyserextras.core.geyser.form;
 
 public enum FormComponentType {
     BUTTON,

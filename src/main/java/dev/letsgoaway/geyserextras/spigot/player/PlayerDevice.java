@@ -1,7 +1,7 @@
 package dev.letsgoaway.geyserextras.spigot.player;
 
 import dev.letsgoaway.geyserextras.spigot.BedrockPlayer;
-import dev.letsgoaway.geyserextras.spigot.GeyserExtras;
+import dev.letsgoaway.geyserextras.spigot.GeyserExtrasSpigot;
 import org.bukkit.entity.Player;
 
 public enum PlayerDevice {
@@ -32,11 +32,11 @@ public enum PlayerDevice {
     }
 
     public static PlayerDevice getPlayerDevice(BedrockPlayer bedrockPlayer) {
-       return GeyserExtras.bedrockAPI.getPlayerDevice(bedrockPlayer);
+       return GeyserExtrasSpigot.bedrockAPI.getPlayerDevice(bedrockPlayer);
     }
     public static PlayerDevice getPlayerDevice(Player player) {
-        if (GeyserExtras.bedrockAPI.isBedrockPlayer(player.getUniqueId())){
-            return GeyserExtras.bedrockAPI.getPlayerDevice(GeyserExtras.bplayers.get(player.getUniqueId()));
+        if (GeyserExtrasSpigot.bedrockAPI.isBedrockPlayer(player.getUniqueId())){
+            return GeyserExtrasSpigot.bedrockAPI.getPlayerDevice(GeyserExtrasSpigot.bplayers.get(player.getUniqueId()));
         }
         else {
             return JAVA;

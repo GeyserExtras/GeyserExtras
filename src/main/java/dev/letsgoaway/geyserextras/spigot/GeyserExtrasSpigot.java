@@ -3,7 +3,8 @@ package dev.letsgoaway.geyserextras.spigot;
 import dev.letsgoaway.geyserextras.InitializeLogger;
 import dev.letsgoaway.geyserextras.PluginVersion;
 import dev.letsgoaway.geyserextras.ServerType;
-import dev.letsgoaway.geyserextras.spigot.api.APIType;
+import dev.letsgoaway.geyserextras.core.geyser.APIType;
+import dev.letsgoaway.geyserextras.core.geyser.BedrockAPI;
 import dev.letsgoaway.geyserextras.spigot.commands.EmoteChatCommand;
 import dev.letsgoaway.geyserextras.spigot.commands.GeyserExtrasCommand;
 import dev.letsgoaway.geyserextras.spigot.commands.PlatformListCommand;
@@ -26,13 +27,13 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
-public final class GeyserExtras extends JavaPlugin implements PluginMessageListener {
-    public static GeyserExtras plugin;
+public final class GeyserExtrasSpigot extends JavaPlugin implements PluginMessageListener {
+    public static GeyserExtrasSpigot plugin;
     public static Logger logger;
     public static InitializeLogger initLog;
     public static BedrockAPI bedrockAPI;
 
-    public GeyserExtras() {
+    public GeyserExtrasSpigot() {
         ServerType.type = ServerType.SPIGOT;
     }
 

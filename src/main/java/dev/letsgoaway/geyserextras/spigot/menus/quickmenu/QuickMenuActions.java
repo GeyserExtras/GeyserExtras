@@ -2,8 +2,8 @@ package dev.letsgoaway.geyserextras.spigot.menus.quickmenu;
 
 import dev.letsgoaway.geyserextras.spigot.BedrockPlayer;
 import dev.letsgoaway.geyserextras.spigot.Config;
-import dev.letsgoaway.geyserextras.spigot.form.BedrockForm;
-import dev.letsgoaway.geyserextras.spigot.form.elements.Dropdown;
+import dev.letsgoaway.geyserextras.core.geyser.form.BedrockForm;
+import dev.letsgoaway.geyserextras.core.geyser.form.elements.Dropdown;
 
 import java.util.List;
 

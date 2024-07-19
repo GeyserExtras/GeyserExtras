@@ -1,7 +1,7 @@
 package dev.letsgoaway.geyserextras.spigot.commands;
 
 import dev.letsgoaway.geyserextras.spigot.Config;
-import dev.letsgoaway.geyserextras.spigot.GeyserExtras;
+import dev.letsgoaway.geyserextras.spigot.GeyserExtrasSpigot;
 import org.bukkit.NamespacedKey;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -14,7 +14,7 @@ public class EmoteChatCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player player) {
-            if (!GeyserExtras.bedrockAPI.isBedrockPlayer(player.getUniqueId())) {
+            if (!GeyserExtrasSpigot.bedrockAPI.isBedrockPlayer(player.getUniqueId())) {
                 setEnabled(player, !getEnabled(player));
                 if (getEnabled(player)){
                     player.sendRawMessage("Emote chat is now unmuted.");
@@ -45,18 +45,18 @@ public class EmoteChatCommand implements CommandExecutor {
 
     private static boolean hasData(String key, Player player) {
         try {
-            return playerSaveData(player).has(NamespacedKey.fromString(key, GeyserExtras.plugin));
+            return playerSaveData(player).has(NamespacedKey.fromString(key, GeyserExtrasSpigot.plugin));
         } catch (Exception ignored) {
             return false;
         }
     }
 
     private static <P, C> void setData(String key, PersistentDataType<P, C> type, C value, Player player) {
-        playerSaveData(player).set(NamespacedKey.fromString(key, GeyserExtras.plugin), type, value);
+        playerSaveData(player).set(NamespacedKey.fromString(key, GeyserExtrasSpigot.plugin), type, value);
     }
 
 
     private static <P, C> C getData(String key, PersistentDataType<P, C> type, Player player) {
-        return playerSaveData(player).get(NamespacedKey.fromString(key, GeyserExtras.plugin), type);
+        return playerSaveData(player).get(NamespacedKey.fromString(key, GeyserExtrasSpigot.plugin), type);
     }
 }

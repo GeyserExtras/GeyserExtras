@@ -109,7 +109,7 @@ public class Config {
         config.set("proxy-mode", proxyMode);
         config.set("disable-paper-doll", disablePaperDoll);
         try {
-            config.save(GeyserExtras.plugin.getDataFolder().toPath().resolve("config.yml").toFile());
+            config.save(GeyserExtrasSpigot.plugin.getDataFolder().toPath().resolve("config.yml").toFile());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -120,24 +120,24 @@ public class Config {
 
     // this config code is bad and i hate it
     public static void loadConfig() {
-        if (!GeyserExtras.plugin.getDataFolder().exists()) {
-            GeyserExtras.plugin.saveResource("config.yml", false);
+        if (!GeyserExtrasSpigot.plugin.getDataFolder().exists()) {
+            GeyserExtrasSpigot.plugin.saveResource("config.yml", false);
         }
-        config = GeyserExtras.plugin.getConfig();
+        config = GeyserExtrasSpigot.plugin.getConfig();
         loadValues();
-        GeyserExtras.plugin.getDataFolder().toPath().resolve("config.yml").toFile().delete();
-        GeyserExtras.plugin.saveResource("config.yml", false);
+        GeyserExtrasSpigot.plugin.getDataFolder().toPath().resolve("config.yml").toFile().delete();
+        GeyserExtrasSpigot.plugin.saveResource("config.yml", false);
         try {
-            config.load(GeyserExtras.plugin.getDataFolder().toPath().resolve("config.yml").toFile());
+            config.load(GeyserExtrasSpigot.plugin.getDataFolder().toPath().resolve("config.yml").toFile());
         } catch (IOException | InvalidConfigurationException e) {
             throw new RuntimeException(e);
         }
         // and save the values again so that if any new values are added in an update it will be default but other settings are user preference
         saveValues();
         try {
-            optionalPacks = Files.createDirectories(Paths.get(GeyserExtras.plugin.getDataFolder().toURI().resolve("optionalpacks/")));
+            optionalPacks = Files.createDirectories(Paths.get(GeyserExtrasSpigot.plugin.getDataFolder().toURI().resolve("optionalpacks/")));
             packsArray = new ArrayList<>(Arrays.stream(Objects.requireNonNull(optionalPacks.toFile().listFiles())).toList());
-            skinsFolder = Files.createDirectories(Paths.get(GeyserExtras.plugin.getDataFolder().toURI().resolve("skins/")));
+            skinsFolder = Files.createDirectories(Paths.get(GeyserExtrasSpigot.plugin.getDataFolder().toURI().resolve("skins/")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -157,15 +157,15 @@ public class Config {
             Config.netherRoofEnabled = Config.proxyMode;
         }
         if (Config.netherRoofEnabled) {
-            GeyserExtras.initLog.info("Nether Roof Fix Fog Fix enabled!");
+            GeyserExtrasSpigot.initLog.info("Nether Roof Fix Fog Fix enabled!");
         }
         if (geyserConfig == null) {
-            GeyserExtras.initLog.warn("Make sure 'force-resource-packs: true' in Geyser's Config!");
+            GeyserExtrasSpigot.initLog.warn("Make sure 'force-resource-packs: true' in Geyser's Config!");
             if (Config.customCoolDownEnabled) {
-                GeyserExtras.initLog.warn("Set 'show-cooldown: \"false\"' in Geyser's Config for the cooldown!");
+                GeyserExtrasSpigot.initLog.warn("Set 'show-cooldown: \"false\"' in Geyser's Config for the cooldown!");
             }
             if (Config.javaBlockPlacement) {
-                GeyserExtras.initLog.warn("Set 'disable-bedrock-scaffolding: true' in Geyser's Config for enable-java-only-block-placement!");
+                GeyserExtrasSpigot.initLog.warn("Set 'disable-bedrock-scaffolding: true' in Geyser's Config for enable-java-only-block-placement!");
             }
         } else {
             geyserConfig.set("force-resource-packs", true);
@@ -177,13 +177,13 @@ public class Config {
             }
             Path geyserExtrasPackPath = geyserDataFolder.toPath().resolve("packs/GeyserExtrasPack.mcpack");
             if (geyserExtrasPackPath.toFile().exists()) {
-                GeyserExtras.initLog.warn("GeyserExtrasPack was detected inside of Geyser's packs folder!");
-                GeyserExtras.initLog.warn("You do not need to move the pack here as GeyserExtras loads the pack from the plugins folder.");
+                GeyserExtrasSpigot.initLog.warn("GeyserExtrasPack was detected inside of Geyser's packs folder!");
+                GeyserExtrasSpigot.initLog.warn("You do not need to move the pack here as GeyserExtras loads the pack from the plugins folder.");
             }
             Path geyserOptionalPack = geyserDataFolder.toPath().resolve("packs/GeyserOptionalPack.mcpack");
             if (geyserOptionalPack.toFile().exists()) {
-                GeyserExtras.initLog.warn("GeyserOptionalPack was detected inside of Geyser's packs folder!");
-                GeyserExtras.initLog.warn("You do not need to move the pack here as GeyserExtras loads the pack from the plugins folder.");
+                GeyserExtrasSpigot.initLog.warn("GeyserOptionalPack was detected inside of Geyser's packs folder!");
+                GeyserExtrasSpigot.initLog.warn("You do not need to move the pack here as GeyserExtras loads the pack from the plugins folder.");
             }
         }
         if (geyserConfig != null) {
@@ -194,7 +194,7 @@ public class Config {
             }
         }
         if (Config.proxyMode) {
-            GeyserExtras.initLog.warn("Make sure you move the resource packs in the plugins folder to the Geyser instance you are running!");
+            GeyserExtrasSpigot.initLog.warn("Make sure you move the resource packs in the plugins folder to the Geyser instance you are running!");
         }
     }
 }

@@ -1,7 +1,7 @@
 package dev.letsgoaway.geyserextras.spigot.player;
 
 import dev.letsgoaway.geyserextras.spigot.BedrockPlayer;
-import dev.letsgoaway.geyserextras.spigot.GeyserExtras;
+import dev.letsgoaway.geyserextras.spigot.GeyserExtrasSpigot;
 
 public enum PlayerInputType {
     UNKNOWN("Unknown"),
@@ -15,7 +15,7 @@ public enum PlayerInputType {
         this.displayName = displayName;
     }
     public static PlayerInputType getPlayerInputType(BedrockPlayer bedrockPlayer) {
-        PlayerInputType type = GeyserExtras.bedrockAPI.getPlayerInputType(bedrockPlayer);
+        PlayerInputType type = GeyserExtrasSpigot.bedrockAPI.getPlayerInputType(bedrockPlayer);
         // if api returns unknown, guess what it likely is
         if (type.equals(UNKNOWN)) {
             return switch (PlayerPlatform.getPlayerPlatform(bedrockPlayer)) {

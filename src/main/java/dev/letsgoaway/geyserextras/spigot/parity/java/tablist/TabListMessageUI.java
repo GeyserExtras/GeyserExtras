@@ -1,8 +1,8 @@
 package dev.letsgoaway.geyserextras.spigot.parity.java.tablist;
 
 import dev.letsgoaway.geyserextras.spigot.BedrockPlayer;
-import dev.letsgoaway.geyserextras.spigot.form.BedrockForm;
-import dev.letsgoaway.geyserextras.spigot.form.elements.TextInput;
+import dev.letsgoaway.geyserextras.core.geyser.form.BedrockForm;
+import dev.letsgoaway.geyserextras.core.geyser.form.elements.TextInput;
 import org.bukkit.entity.Player;
 
 public class TabListMessageUI extends BedrockForm {

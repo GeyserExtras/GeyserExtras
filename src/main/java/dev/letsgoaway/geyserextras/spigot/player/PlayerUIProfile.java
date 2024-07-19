@@ -1,7 +1,7 @@
 package dev.letsgoaway.geyserextras.spigot.player;
 
 import dev.letsgoaway.geyserextras.spigot.BedrockPlayer;
-import dev.letsgoaway.geyserextras.spigot.GeyserExtras;
+import dev.letsgoaway.geyserextras.spigot.GeyserExtrasSpigot;
 
 public enum PlayerUIProfile {
     CLASSIC("Classic"),
@@ -13,6 +13,6 @@ public enum PlayerUIProfile {
     }
 
     public static PlayerUIProfile getPlayerUIProfile(BedrockPlayer bedrockPlayer) {
-        return GeyserExtras.bedrockAPI.getPlayerUIProfile(bedrockPlayer);
+        return GeyserExtrasSpigot.bedrockAPI.getPlayerUIProfile(bedrockPlayer);
     }
 }

@@ -1,23 +1,23 @@
 package dev.letsgoaway.geyserextras.spigot.menus;
 
 import dev.letsgoaway.geyserextras.spigot.BedrockPlayer;
-import dev.letsgoaway.geyserextras.spigot.GeyserExtras;
-import dev.letsgoaway.geyserextras.spigot.api.APIType;
-import dev.letsgoaway.geyserextras.spigot.api.BedrockPluginAPI;
-import dev.letsgoaway.geyserextras.spigot.form.BedrockContextMenu;
-import dev.letsgoaway.geyserextras.spigot.form.elements.Button;
+import dev.letsgoaway.geyserextras.spigot.GeyserExtrasSpigot;
+import dev.letsgoaway.geyserextras.core.geyser.APIType;
+import dev.letsgoaway.geyserextras.core.geyser.BedrockPluginAPI;
+import dev.letsgoaway.geyserextras.core.geyser.form.BedrockContextMenu;
+import dev.letsgoaway.geyserextras.core.geyser.form.elements.Button;
 import org.geysermc.cumulus.util.FormImage;
 
 public class OptionalPackManager extends BedrockContextMenu {
     public static String getDescriptionText(String packid) {
-        BedrockPluginAPI geyserApi = GeyserExtras.bedrockAPI.apiInstances.get(APIType.GEYSER);
+        BedrockPluginAPI geyserApi = GeyserExtrasSpigot.bedrockAPI.apiInstances.get(APIType.GEYSER);
         return geyserApi.getPackDescription(packid) + "\n\n" +
                 "Pack ID: " + geyserApi.getPackID(geyserApi.getPackPath(packid)) +
                 "\nPack ResourceVersion: "+ geyserApi.getPackVersion(packid);
     }
     public OptionalPackManager(BedrockPlayer bplayer, String packID, String name) {
         super(name,  getDescriptionText(packID));
-        BedrockPluginAPI geyserApi = GeyserExtras.bedrockAPI.apiInstances.get(APIType.GEYSER);
+        BedrockPluginAPI geyserApi = GeyserExtrasSpigot.bedrockAPI.apiInstances.get(APIType.GEYSER);
         this.onClose = ()->{
             new OptionalPacks(bplayer).show(bplayer);
         };

@@ -5,10 +5,10 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import dev.letsgoaway.geyserextras.spigot.BedrockPlayer;
 import dev.letsgoaway.geyserextras.spigot.Config;
-import dev.letsgoaway.geyserextras.spigot.GeyserExtras;
+import dev.letsgoaway.geyserextras.spigot.GeyserExtrasSpigot;
 import dev.letsgoaway.geyserextras.spigot.Tick;
-import dev.letsgoaway.geyserextras.spigot.form.BedrockContextMenu;
-import dev.letsgoaway.geyserextras.spigot.form.elements.Button;
+import dev.letsgoaway.geyserextras.core.geyser.form.BedrockContextMenu;
+import dev.letsgoaway.geyserextras.core.geyser.form.elements.Button;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.geysermc.cumulus.util.FormImage;
@@ -48,9 +48,9 @@ public class TabList extends BedrockContextMenu {
     }
 
     public static String loadTextureID(Player player) {
-        if (GeyserExtras.bedrockAPI.isBedrockPlayer(player.getUniqueId())
-                && !GeyserExtras.bedrockAPI.isLinked(GeyserExtras.bplayers.get(player.getUniqueId()))) {
-            String XUID = GeyserExtras.bedrockAPI.getPlayerXUID(GeyserExtras.bplayers.get(player.getUniqueId()));
+        if (GeyserExtrasSpigot.bedrockAPI.isBedrockPlayer(player.getUniqueId())
+                && !GeyserExtrasSpigot.bedrockAPI.isLinked(GeyserExtrasSpigot.bplayers.get(player.getUniqueId()))) {
+            String XUID = GeyserExtrasSpigot.bedrockAPI.getPlayerXUID(GeyserExtrasSpigot.bplayers.get(player.getUniqueId()));
             if (bedrockPlayerTextureIDs.containsKey(XUID)) {
                 return bedrockPlayerTextureIDs.get(XUID);
             }

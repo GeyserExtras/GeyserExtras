@@ -1,13 +1,16 @@
-package dev.letsgoaway.geyserextras.spigot.api;
+package dev.letsgoaway.geyserextras.core.geyser;
 
 import dev.letsgoaway.geyserextras.spigot.player.PlayerDevice;
+import dev.letsgoaway.geyserextras.spigot.player.PlayerInputType;
+import dev.letsgoaway.geyserextras.spigot.player.PlayerUIProfile;
 import org.geysermc.cumulus.form.Form;
 import org.geysermc.cumulus.form.util.FormBuilder;
 
+import javax.annotation.Nullable;
 import java.nio.file.Path;
 import java.util.UUID;
 
- interface IBedrockPluginAPI {
+public interface BedrockPluginAPI {
      void disable();
      boolean isBedrockPlayer(UUID uuid);
 
@@ -38,9 +41,16 @@ import java.util.UUID;
      String getPackVersion(String id);
 
 
+     @Nullable
+     Path getPackPath(String id);
+
      boolean getPackExists(String id);
 
      void onConfigLoad();
 
      void hidePaperDoll(UUID uuid);
+
+    PlayerInputType getPlayerInputType(UUID uniqueId);
+
+    PlayerUIProfile getPlayerUIProfile(UUID uniqueId);
 }

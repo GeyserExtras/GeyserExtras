@@ -1,4 +1,4 @@
-package dev.letsgoaway.geyserextras.spigot.api;
+package dev.letsgoaway.geyserextras.core.geyser;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -20,7 +20,7 @@ import java.util.Base64;
 import java.util.Objects;
 import java.util.UUID;
 
-public class FloodgateBedrockAPI extends BedrockPluginAPI {
+public class FloodgateBedrockAPI implements BedrockPluginAPI {
     private final org.geysermc.floodgate.api.FloodgateApi api = org.geysermc.floodgate.api.FloodgateApi.getInstance();
 
     public FloodgateBedrockAPI() {

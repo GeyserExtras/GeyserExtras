@@ -1,7 +1,7 @@
 package dev.letsgoaway.geyserextras.spigot.commands;
 
 import dev.letsgoaway.geyserextras.spigot.BedrockPlayer;
-import dev.letsgoaway.geyserextras.spigot.GeyserExtras;
+import dev.letsgoaway.geyserextras.spigot.GeyserExtrasSpigot;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -18,8 +18,8 @@ public class PlatformListCommand implements CommandExecutor {
         sender.sendMessage(color("&bThere are a total of &f["+ (long) Bukkit.getServer().getOnlinePlayers().size() +"/"+Bukkit.getServer().getMaxPlayers()+"] &bplayers online&3."));
         for (Player onlinePlayer : Bukkit.getOnlinePlayers()){
             String playerName = onlinePlayer.getName();
-            if (GeyserExtras.bedrockAPI.isBedrockPlayer(onlinePlayer.getUniqueId())){
-                BedrockPlayer bedrockPlayer = GeyserExtras.bplayers.get(onlinePlayer.getUniqueId());
+            if (GeyserExtrasSpigot.bedrockAPI.isBedrockPlayer(onlinePlayer.getUniqueId())){
+                BedrockPlayer bedrockPlayer = GeyserExtrasSpigot.bplayers.get(onlinePlayer.getUniqueId());
                 sender.sendMessage(color("&3"+playerName+" &8- &eBedrock &7&o["+bedrockPlayer.device.displayName+"]"));
             }
             else {

@@ -1,9 +1,8 @@
-package dev.letsgoaway.geyserextras.spigot;
+package dev.letsgoaway.geyserextras.core.geyser;
 
-import dev.letsgoaway.geyserextras.spigot.api.APIType;
-import dev.letsgoaway.geyserextras.spigot.api.BedrockPluginAPI;
-import dev.letsgoaway.geyserextras.spigot.api.FloodgateBedrockAPI;
-import dev.letsgoaway.geyserextras.spigot.api.GeyserBedrockAPI;
+import dev.letsgoaway.geyserextras.spigot.BedrockPlayer;
+import dev.letsgoaway.geyserextras.spigot.Config;
+import dev.letsgoaway.geyserextras.spigot.GeyserExtrasSpigot;
 import dev.letsgoaway.geyserextras.spigot.player.PlayerDevice;
 import dev.letsgoaway.geyserextras.spigot.player.PlayerInputType;
 import dev.letsgoaway.geyserextras.spigot.player.PlayerUIProfile;
@@ -15,6 +14,7 @@ import java.util.HashMap;
 import java.util.UUID;
 
 public class BedrockAPI {
+    public static BedrockAPI instance;
     private BedrockPluginAPI apiInstance = null;
     public HashMap<APIType, BedrockPluginAPI> apiInstances = new HashMap<>();
     public APIType apiType = null;
@@ -46,6 +46,7 @@ public class BedrockAPI {
         } else if (supports(APIType.GEYSER)) {
             apiInstance = apiInstances.get(APIType.GEYSER);
         }
+        instance = this;
     }
 
     public void setDefaultApiInstance(APIType type) {
@@ -92,7 +93,7 @@ public class BedrockAPI {
     public void sendFog(BedrockPlayer bedrockPlayer, String fogID) {
         if (Config.proxyMode) {
             String fog = "s" + fogID;
-            bedrockPlayer.player.sendPluginMessage(GeyserExtras.plugin, "geyserextras:fog", ("s" + fogID).getBytes(StandardCharsets.UTF_8));
+            bedrockPlayer.player.sendPluginMessage(GeyserExtrasSpigot.plugin, "geyserextras:fog", ("s" + fogID).getBytes(StandardCharsets.UTF_8));
         } else if (supports(APIType.GEYSER)) {
             apiInstances.get(APIType.GEYSER).sendFog(bedrockPlayer.player.getUniqueId(), fogID);
         }
@@ -101,7 +102,7 @@ public class BedrockAPI {
     public void removeFog(BedrockPlayer bedrockPlayer, String fogID) {
         if (Config.proxyMode) {
             String fog = "r" + fogID;
-            bedrockPlayer.player.sendPluginMessage(GeyserExtras.plugin, "geyserextras:fog", fog.getBytes(StandardCharsets.UTF_8));
+            bedrockPlayer.player.sendPluginMessage(GeyserExtrasSpigot.plugin, "geyserextras:fog", fog.getBytes(StandardCharsets.UTF_8));
         } else if (supports(APIType.GEYSER)) {
             apiInstances.get(APIType.GEYSER).removeFog(bedrockPlayer.player.getUniqueId(), fogID);
         }

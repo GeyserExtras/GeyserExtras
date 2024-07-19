@@ -2,10 +2,10 @@ package dev.letsgoaway.geyserextras.spigot.menus;
 
 import dev.letsgoaway.geyserextras.spigot.BedrockPlayer;
 import dev.letsgoaway.geyserextras.spigot.Config;
-import dev.letsgoaway.geyserextras.spigot.GeyserExtras;
-import dev.letsgoaway.geyserextras.spigot.api.APIType;
-import dev.letsgoaway.geyserextras.spigot.form.BedrockContextMenu;
-import dev.letsgoaway.geyserextras.spigot.form.elements.Button;
+import dev.letsgoaway.geyserextras.spigot.GeyserExtrasSpigot;
+import dev.letsgoaway.geyserextras.core.geyser.APIType;
+import dev.letsgoaway.geyserextras.core.geyser.form.BedrockContextMenu;
+import dev.letsgoaway.geyserextras.core.geyser.form.elements.Button;
 import dev.letsgoaway.geyserextras.spigot.menus.quickmenu.QuickMenu;
 import dev.letsgoaway.geyserextras.spigot.parity.java.tablist.TabList;
 import org.geysermc.cumulus.util.FormImage;
@@ -19,7 +19,7 @@ public class MainMenu extends BedrockContextMenu {
             }));
         }
         add(new Button("Reconnect", FormImage.Type.PATH, "textures/ui/refresh_hover.png", () -> {
-            GeyserExtras.bedrockAPI.reconnect(bplayer.player.getUniqueId());
+            GeyserExtrasSpigot.bedrockAPI.reconnect(bplayer.player.getUniqueId());
         }));
         if (bplayer.player.hasPermission("geyser.command.tooltips")) {
             add(new Button("Advanced Tooltips", FormImage.Type.PATH, "textures/ui/infobulb.png", () -> {
@@ -41,12 +41,12 @@ public class MainMenu extends BedrockContextMenu {
                 new TabList(bplayer);
             }));
         }
-        if (GeyserExtras.bedrockAPI.supports(APIType.GEYSER) || Config.proxyMode) {
+        if (GeyserExtrasSpigot.bedrockAPI.supports(APIType.GEYSER) || Config.proxyMode) {
             add(new Button("Quick-Menu", FormImage.Type.PATH, "textures/ui/emote_wheel_updated_base.png", () -> {
                 new QuickMenu(bplayer).show(bplayer);
             }));
         }
-        if (GeyserExtras.bedrockAPI.supports(APIType.GEYSER) && !Config.packsArray.isEmpty()) {
+        if (GeyserExtrasSpigot.bedrockAPI.supports(APIType.GEYSER) && !Config.packsArray.isEmpty()) {
             add(new Button("Resource Packs", FormImage.Type.PATH, "textures/ui/glyph_resource_pack.png", () -> {
                 new OptionalPacks(bplayer).show(bplayer);
             }));

@@ -1,8 +1,8 @@
 package dev.letsgoaway.geyserextras.spigot.parity.java.tablist;
 
 import dev.letsgoaway.geyserextras.spigot.BedrockPlayer;
-import dev.letsgoaway.geyserextras.spigot.form.BedrockContextMenu;
-import dev.letsgoaway.geyserextras.spigot.form.elements.Button;
+import dev.letsgoaway.geyserextras.core.geyser.form.BedrockContextMenu;
+import dev.letsgoaway.geyserextras.core.geyser.form.elements.Button;
 import dev.letsgoaway.geyserextras.spigot.player.PlayerDevice;
 import dev.letsgoaway.geyserextras.spigot.player.PlayerPlatform;
 import org.bukkit.Bukkit;

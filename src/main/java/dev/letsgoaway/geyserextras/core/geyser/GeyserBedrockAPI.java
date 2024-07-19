@@ -1,7 +1,7 @@
-package dev.letsgoaway.geyserextras.spigot.api;
+package dev.letsgoaway.geyserextras.core.geyser;
 
 import dev.letsgoaway.geyserextras.spigot.Config;
-import dev.letsgoaway.geyserextras.spigot.GeyserExtras;
+import dev.letsgoaway.geyserextras.spigot.GeyserExtrasSpigot;
 import dev.letsgoaway.geyserextras.spigot.menus.OptionalPacks;
 import dev.letsgoaway.geyserextras.spigot.player.PlayerDevice;
 import dev.letsgoaway.geyserextras.spigot.player.PlayerInputType;
@@ -14,6 +14,7 @@ import org.geysermc.event.subscribe.OwnedSubscriber;
 import org.geysermc.event.subscribe.Subscribe;
 import org.geysermc.geyser.api.bedrock.camera.GuiElement;
 import org.geysermc.geyser.api.connection.GeyserConnection;
+import org.geysermc.geyser.api.event.EventRegistrar;
 import org.geysermc.geyser.api.pack.PackCodec;
 import org.geysermc.geyser.api.pack.ResourcePack;
 
@@ -23,7 +24,7 @@ import java.nio.file.Path;
 import java.util.*;
 import java.util.logging.Filter;
 
-public class GeyserBedrockAPI extends BedrockPluginAPI implements org.geysermc.geyser.api.event.EventRegistrar {
+public class GeyserBedrockAPI implements EventRegistrar, BedrockPluginAPI {
     private final org.geysermc.geyser.api.GeyserApi api = org.geysermc.geyser.api.GeyserApi.api();
     private final HashMap<UUID, ResourcePack> resourcePackHashMap = new HashMap<>();
     private ResourcePack GeyserOptionalPack = null;
@@ -59,16 +60,16 @@ public class GeyserBedrockAPI extends BedrockPluginAPI implements org.geysermc.g
 
     @Override
     public void onConfigLoad() {
-        GeyserExtras.initLog.info("Loading GeyserOptionalPack...");
-        GeyserOptionalPack = ResourcePack.create(PackCodec.path(GeyserExtras.plugin.getDataFolder().toPath().resolve("GeyserOptionalPack.mcpack")));
-        GeyserExtras.initLog.info("GeyserOptionalPack v" + GeyserOptionalPack.manifest().header().version().toString() + " loaded succesfully!");
-        GeyserExtras.initLog.info("Loading GeyserExtrasPack...");
-        GeyserExtrasPack = ResourcePack.create(PackCodec.path(GeyserExtras.plugin.getDataFolder().toPath().resolve("GeyserExtrasPack.mcpack")));
-        GeyserExtras.initLog.info("GeyserExtrasPack v" + GeyserExtrasPack.manifest().header().version().toString() + " loaded succesfully!");
+        GeyserExtrasSpigot.initLog.info("Loading GeyserOptionalPack...");
+        GeyserOptionalPack = ResourcePack.create(PackCodec.path(GeyserExtrasSpigot.plugin.getDataFolder().toPath().resolve("GeyserOptionalPack.mcpack")));
+        GeyserExtrasSpigot.initLog.info("GeyserOptionalPack v" + GeyserOptionalPack.manifest().header().version().toString() + " loaded succesfully!");
+        GeyserExtrasSpigot.initLog.info("Loading GeyserExtrasPack...");
+        GeyserExtrasPack = ResourcePack.create(PackCodec.path(GeyserExtrasSpigot.plugin.getDataFolder().toPath().resolve("GeyserExtrasPack.mcpack")));
+        GeyserExtrasSpigot.initLog.info("GeyserExtrasPack v" + GeyserExtrasPack.manifest().header().version().toString() + " loaded succesfully!");
         if (Config.packsArray.isEmpty()) {
             return;
         }
-        GeyserExtras.initLog.logTask("Loading optional packs...", this::loadResources, "Optional packs loaded!");
+        GeyserExtrasSpigot.initLog.logTask("Loading optional packs...", this::loadResources, "Optional packs loaded!");
     }
 
     private void loadResources() {
@@ -84,7 +85,7 @@ public class GeyserBedrockAPI extends BedrockPluginAPI implements org.geysermc.g
             ResourcePack resourcePack = ResourcePack.create(PackCodec.path(rp.toPath()));
             resourcePackHashMap.put(resourcePack.manifest().header().uuid(), resourcePack);
             resourcePackPathMap.put(resourcePack.manifest().header().uuid(), rp.toPath());
-            GeyserExtras.initLog.info("Pack '" + resourcePack.manifest().header().name() + "' loaded succesfully!");
+            GeyserExtrasSpigot.initLog.info("Pack '" + resourcePack.manifest().header().name() + "' loaded succesfully!");
         }
         /* and reenable it here */
         geyserSpigot.getLogger().setFilter(oldFilter);
@@ -93,7 +94,7 @@ public class GeyserBedrockAPI extends BedrockPluginAPI implements org.geysermc.g
 
     @Subscribe
     public void onClientEmoteEvent(org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent ev) {
-        ev.setCancelled(GeyserExtras.bplayers.get(ev.connection().javaUuid()).onPlayerEmoteEvent(ev.emoteId()));
+        ev.setCancelled(GeyserExtrasSpigot.bplayers.get(ev.connection().javaUuid()).onPlayerEmoteEvent(ev.emoteId()));
     }
 
     @Subscribe
@@ -243,7 +244,7 @@ public class GeyserBedrockAPI extends BedrockPluginAPI implements org.geysermc.g
     public void hidePaperDoll(UUID uuid) {
         GeyserConnection connection = api.connectionByUuid(uuid);
         if (connection != null)
-            if (!connection.camera().isHudElementHidden(GuiElement.PAPER_DOLL)){
+            if (!connection.camera().isHudElementHidden(GuiElement.PAPER_DOLL)) {
                 connection.camera().hideElement(GuiElement.PAPER_DOLL);
             }
     }

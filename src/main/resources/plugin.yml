@@ -3,7 +3,9 @@ version: '1.21.0-v1.1.3'
 author: "LetsGoAway"
 main: dev.letsgoaway.geyserextras.spigot.GeyserExtras
 api-version: '1.21'
-softdepend: [floodgate, Geyser-Spigot]
+softdepend: [ floodgate, Geyser-Spigot ]
+depend:
+  - packetevents
 commands:
   geyserextras:
     description: Open the GeyserExtras menu.

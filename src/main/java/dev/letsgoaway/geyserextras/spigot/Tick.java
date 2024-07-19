@@ -5,11 +5,11 @@ import org.bukkit.scheduler.BukkitTask;
 
 public class Tick {
     public static void runOnNext(Runnable task){
-        Bukkit.getScheduler().scheduleSyncDelayedTask(GeyserExtras.plugin, task);
+        Bukkit.getScheduler().scheduleSyncDelayedTask(GeyserExtrasSpigot.plugin, task);
     }
 
     public static BukkitTask runIn(long ticks, Runnable task){
-        return Bukkit.getScheduler().runTaskLater(GeyserExtras.plugin, task, ticks);
+        return Bukkit.getScheduler().runTaskLater(GeyserExtrasSpigot.plugin, task, ticks);
     }
 
     public static Thread runAsync(Runnable task){

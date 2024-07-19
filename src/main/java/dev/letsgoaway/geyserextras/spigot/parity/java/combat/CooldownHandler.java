@@ -1,7 +1,7 @@
 package dev.letsgoaway.geyserextras.spigot.parity.java.combat;
 
 import dev.letsgoaway.geyserextras.spigot.BedrockPlayer;
-import dev.letsgoaway.geyserextras.spigot.GeyserExtras;
+import dev.letsgoaway.geyserextras.spigot.GeyserExtrasSpigot;
 import dev.letsgoaway.geyserextras.spigot.Tick;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -75,7 +75,7 @@ public class CooldownHandler {
                 }
                 player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(hotbarText));
                 if (stayTime != Integer.MAX_VALUE) {
-                    bplayer.hotbarTask = Bukkit.getScheduler().runTaskLater(GeyserExtras.plugin,
+                    bplayer.hotbarTask = Bukkit.getScheduler().runTaskLater(GeyserExtrasSpigot.plugin,
                             () -> player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("\uE0AF")), stayTime);
                 }
             }

@@ -1,7 +1,7 @@
 package dev.letsgoaway.geyserextras.spigot.parity.bedrock;
 
 import com.google.gson.Gson;
-import dev.letsgoaway.geyserextras.spigot.GeyserExtras;
+import dev.letsgoaway.geyserextras.spigot.GeyserExtrasSpigot;
 import dev.letsgoaway.geyserextras.spigot.commands.EmoteChatCommand;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -14,7 +14,7 @@ public class EmoteUtils {
 
     public static void load() {
         try {
-            emotes = Arrays.asList(new Gson().fromJson(new String(Objects.requireNonNull(GeyserExtras.plugin.getResource("emotes.json")).readAllBytes(), StandardCharsets.UTF_8), Emote[].class));
+            emotes = Arrays.asList(new Gson().fromJson(new String(Objects.requireNonNull(GeyserExtrasSpigot.plugin.getResource("emotes.json")).readAllBytes(), StandardCharsets.UTF_8), Emote[].class));
         } catch (Exception ignored) {
         }
     }
@@ -82,7 +82,7 @@ public class EmoteUtils {
             return;
         }
         for (Player playerNear : player.getWorld().getEntitiesByClass(Player.class)) {
-            if (EmoteChatCommand.getEnabled(playerNear) && !GeyserExtras.bedrockAPI.isBedrockPlayer(playerNear.getUniqueId())
+            if (EmoteChatCommand.getEnabled(playerNear) && !GeyserExtrasSpigot.bedrockAPI.isBedrockPlayer(playerNear.getUniqueId())
                     && 128.0 >= player.getLocation().distance(playerNear.getLocation())) {
                 playerNear.sendRawMessage(emoteString);
             }
