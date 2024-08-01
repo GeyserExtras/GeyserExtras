@@ -6,7 +6,8 @@
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.velocitypowered/velocity-api/3.3.0-SNAPSHOT/51c0ac35f35d1a5da84ceb0e82ec7f5ed0b5276d/velocity-api-3.3.0-SNAPSHOT.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.velocitypowered/velocity-api/3.3.0-SNAPSHOT/f2df936a9ad6818ff27597e43a399b4e3f5de65e/velocity-api-3.3.0-SNAPSHOT.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.34/ec547ef414ab1d2c040118fb9c1c265ada63af14/lombok-1.18.34.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.moandjiezana.toml/toml4j/0.7.2/a03337911d0bd2c40932aca3946edb30d0e7d0c/toml4j-0.7.2.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.spongepowered/configurate-gson/4.1.2/3e5c7a0ea73e95ce6139fa72f1b6d36eb531ab81/configurate-gson-4.1.2.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-logger-slf4j/4.17.0/ebc3d59bdce591f1e1daed8b5b9ebd13f231c946/adventure-text-logger-slf4j-4.17.0.jar" />
@@ -45,6 +46,13 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/option/1.0.0/59c5ae54c47ae294322ad979eaf7cdcde7ad0646/option-1.0.0.jar" />
         </processorPath>
         <module name="GeyserExtras.main" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.34/ec547ef414ab1d2c040118fb9c1c265ada63af14/lombok-1.18.34.jar" />
+        </processorPath>
+        <module name="GeyserExtras.test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="21">

@@ -1,11 +1,15 @@
 plugins {
     id 'java'
+    id "io.freefair.lombok" version "8.6"
 }
 
 group = 'dev.letsgoaway'
 
 repositories {
     mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
     maven {
         url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
     }
@@ -31,6 +35,10 @@ dependencies {
     compileOnly "org.geysermc.geyser:api:2.4.0-SNAPSHOT"
     compileOnly "org.geysermc.floodgate:api:2.2.3-SNAPSHOT"
     compileOnly 'com.github.retrooper:packetevents-api:2.4.0'
+    compileOnly 'org.projectlombok:lombok:1.18.34'
+    annotationProcessor 'org.projectlombok:lombok:1.18.34'
+    testCompileOnly 'org.projectlombok:lombok:1.18.34'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.34'
 }
 def targetJavaVersion = 21
 java {
@@ -41,7 +49,7 @@ java {
         toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
     }
 }
-
+apply plugin: "io.freefair.lombok"
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 

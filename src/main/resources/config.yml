@@ -1,5 +1,5 @@
 # GeyserExtras
-# If Geyser-Spigot is detected, all required config changes will be automatically applied.
+# If Geyser is detected, all required config changes will be automatically applied.
 # For more details, go to https://github.com/GeyserExtras/GeyserExtras/wiki
 
 # Enable the Java Edition styled cooldown.
