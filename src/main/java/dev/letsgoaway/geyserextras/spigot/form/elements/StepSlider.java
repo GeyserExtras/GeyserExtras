@@ -24,7 +24,7 @@ public class StepSlider extends FormElement {
     public StepSlider(String title, List<String> steps, Consumer<String> onResult) {
         this.title = title;
         this.steps = steps;
-        this.defaultStep = steps.get(0);
+        this.defaultStep = steps.getFirst();
         this.onResult = onResult;
     }
 

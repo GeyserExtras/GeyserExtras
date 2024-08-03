@@ -43,4 +43,6 @@ import java.util.UUID;
      void onConfigLoad();
 
      void hidePaperDoll(UUID uuid);
+
+     int getPing(UUID uuid);
 }

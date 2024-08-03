@@ -52,4 +52,6 @@ public abstract class BedrockPluginAPI implements IBedrockPluginAPI {
     public abstract boolean getPackExists(String id);
 
     public abstract void hidePaperDoll(UUID uuid);
+
+    public abstract int getPing(UUID uuid);
 }

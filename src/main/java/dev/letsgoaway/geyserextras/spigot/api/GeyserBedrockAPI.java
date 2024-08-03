@@ -243,9 +243,19 @@ public class GeyserBedrockAPI extends BedrockPluginAPI implements org.geysermc.g
     public void hidePaperDoll(UUID uuid) {
         GeyserConnection connection = api.connectionByUuid(uuid);
         if (connection != null)
-            if (!connection.camera().isHudElementHidden(GuiElement.PAPER_DOLL)){
+            if (!connection.camera().isHudElementHidden(GuiElement.PAPER_DOLL)) {
                 connection.camera().hideElement(GuiElement.PAPER_DOLL);
             }
     }
 
+    @Override
+    public int getPing(UUID uuid) {
+        GeyserConnection connection = api.connectionByUuid(uuid);
+        if (connection != null) return connection.ping();
+        try {
+            return Bukkit.getPlayer(uuid).getPing();
+        } catch (NullPointerException e) {
+            return 0;
+        }
+    }
 }

@@ -8,6 +8,7 @@ import dev.letsgoaway.geyserextras.spigot.parity.java.tablist.TabList;
 import dev.letsgoaway.geyserextras.spigot.player.PlayerDevice;
 import dev.letsgoaway.geyserextras.spigot.player.PlayerInputType;
 import dev.letsgoaway.geyserextras.spigot.player.PlayerUIProfile;
+import org.bukkit.Bukkit;
 import org.geysermc.cumulus.form.Form;
 import org.geysermc.cumulus.form.util.FormBuilder;
 import org.geysermc.event.subscribe.Subscribe;
@@ -173,5 +174,10 @@ public class FloodgateBedrockAPI extends BedrockPluginAPI {
     @Override
     public void hidePaperDoll(UUID uuid) {
         return;
+    }
+
+    @Override
+    public int getPing(UUID uuid) {
+        return 0;
     }
 }

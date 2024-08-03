@@ -474,6 +474,15 @@ public class BedrockPlayer {
         }
     }
 
+    private float getPing() {
+        if (GeyserExtras.bedrockAPI.apiInstances.containsKey(APIType.GEYSER)) {
+            return GeyserExtras.bedrockAPI.apiInstances.get(APIType.GEYSER).getPing(player.getUniqueId());
+        }
+        else {
+            return player.getPing();
+        }
+    }
+
     // is on ground works good enough and bedrock players are unlikely to spoof.
     public void onPlayerDamageEntity(EntityDamageByEntityEvent ev) {
         coolDownThresHold = 0.0f;

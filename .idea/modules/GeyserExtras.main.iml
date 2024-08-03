@@ -9,6 +9,9 @@
     <facet type="minecraft" name="Minecraft">
       <configuration>
         <autoDetectTypes>
+          <platformType>SPIGOT</platformType>
+          <platformType>BUNGEECORD</platformType>
+          <platformType>VELOCITY</platformType>
           <platformType>ADVENTURE</platformType>
         </autoDetectTypes>
         <projectReimportVersion>1</projectReimportVersion>

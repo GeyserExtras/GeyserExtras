@@ -31,7 +31,7 @@ public class Slider extends FormElement {
         this.min = min;
         this.max = max;
         this.step = step;
-        this.defaultValue = max/2;
+        this.defaultValue = max / 2;
         this.onResult = onResult;
     }
 
@@ -47,6 +47,6 @@ public class Slider extends FormElement {
 
     @Override
     public Component getComponent() {
-        return SliderComponent.of(this.title, this.min, this.max, this.defaultValue);
+        return SliderComponent.of(this.title, this.min, this.max, this.step, this.defaultValue);
     }
 }
