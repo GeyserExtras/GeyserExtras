@@ -258,4 +258,10 @@ public class GeyserBedrockAPI extends BedrockPluginAPI implements org.geysermc.g
             return 0;
         }
     }
+
+    @Override
+    public void swapOffhand(UUID uuid) {
+        GeyserConnection connection = api.connectionByUuid(uuid);
+        if (connection != null) connection.entities().switchHands();
+    }
 }

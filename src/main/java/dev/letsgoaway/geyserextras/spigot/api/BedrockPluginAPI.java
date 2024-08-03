@@ -14,9 +14,12 @@ public abstract class BedrockPluginAPI implements IBedrockPluginAPI {
     public BedrockPluginAPI() {
 
     }
+
     public abstract boolean isBedrockPlayer(UUID uuid);
+
     public abstract boolean sendForm(UUID uuid, Form form);
-    public abstract boolean sendForm(UUID uuid, FormBuilder<?,?,?> form);
+
+    public abstract boolean sendForm(UUID uuid, FormBuilder<?, ?, ?> form);
 
     public abstract void onConfigLoad();
 
@@ -54,4 +57,7 @@ public abstract class BedrockPluginAPI implements IBedrockPluginAPI {
     public abstract void hidePaperDoll(UUID uuid);
 
     public abstract int getPing(UUID uuid);
+
+    public abstract void swapOffhand(UUID uuid);
+
 }

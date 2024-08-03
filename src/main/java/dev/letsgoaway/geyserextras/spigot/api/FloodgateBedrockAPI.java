@@ -180,4 +180,9 @@ public class FloodgateBedrockAPI extends BedrockPluginAPI {
     public int getPing(UUID uuid) {
         return 0;
     }
+
+    @Override
+    public void swapOffhand(UUID uuid) {
+
+    }
 }
