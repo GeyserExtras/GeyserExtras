@@ -10,11 +10,11 @@ public class BungeeTickUtil implements TickUtil {
 
     @Override
     public void runIn(long ticks, Runnable func, float tickrate) {
-        ProxyServer.getInstance().getScheduler().schedule(GeyserExtrasBungee.BUNGEE, func, TickMath.toNanos(tickrate), TimeUnit.NANOSECONDS);
+        ProxyServer.getInstance().getScheduler().schedule(GeyserExtrasBungee.BUNGEE, func, TickMath.toNanos(tickrate)*ticks, TimeUnit.NANOSECONDS);
     }
 
     @Override
-    public void runSync(Runnable func) {
-        ProxyServer.getInstance().getScheduler().schedule(GeyserExtrasBungee.BUNGEE, func, 0, TimeUnit.NANOSECONDS);
+    public void runSync(Runnable func, float tickrate) {
+        ProxyServer.getInstance().getScheduler().schedule(GeyserExtrasBungee.BUNGEE, func, TickMath.toNanos(tickrate), TimeUnit.NANOSECONDS);
     }
 }

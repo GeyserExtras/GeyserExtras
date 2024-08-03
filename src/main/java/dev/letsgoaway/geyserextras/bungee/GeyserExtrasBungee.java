@@ -3,8 +3,14 @@ package dev.letsgoaway.geyserextras.bungee;
 import dev.letsgoaway.geyserextras.Server;
 import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.TickUtil;
+import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.GeyserExtras;
+import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.Plugin;
+import org.geysermc.geyser.api.connection.GeyserConnection;
+
+import java.io.File;
+import java.nio.file.Path;
 
 public class GeyserExtrasBungee extends Plugin implements Server {
     public static GeyserExtras CORE;
@@ -20,12 +26,26 @@ public class GeyserExtrasBungee extends Plugin implements Server {
 
     @Override
     public void onEnable() {
-
         CORE = new GeyserExtras(this);
     }
 
     @Override
     public TickUtil getTickUtil() {
         return bungeeTickUtil;
+    }
+
+    @Override
+    public ExtrasPlayer createPlayer(GeyserConnection connection) {
+        return new BungeeExtrasPlayer(connection);
+    }
+
+    @Override
+    public void log(String string) {
+        this.getLogger().info(string);
+    }
+
+    @Override
+    public Path getPluginFolder() {
+        return getDataFolder().toPath();
     }
 }

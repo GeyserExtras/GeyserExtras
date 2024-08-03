@@ -4,8 +4,11 @@ import lombok.Getter;
 import lombok.Setter;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent;
+import org.geysermc.geyser.api.event.lifecycle.GeyserDefineCustomItemsEvent;
 
 import java.util.UUID;
+
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class ExtrasPlayer {
     private UUID javaUUID;
@@ -24,14 +27,18 @@ public class ExtrasPlayer {
     }
 
     @Setter
-    private double attackSpeed = 4.0;
+    public double attackSpeed = 4.0;
 
     @Setter
-    private float tickrate = 20.0f;
+    public float tickrate = 20.0f;
 
-    private long ticks = 0;
+    public long ticks = 0;
 
     public void tick() {
         ticks++;
+    }
+
+    public void setTickingState(float tickrate){
+        this.tickrate = tickrate;
     }
 }

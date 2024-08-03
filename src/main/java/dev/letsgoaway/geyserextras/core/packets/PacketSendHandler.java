@@ -3,15 +3,21 @@ package dev.letsgoaway.geyserextras.core.packets;
 import com.github.retrooper.packetevents.event.*;
 import com.github.retrooper.packetevents.protocol.attribute.Attributes;
 import com.github.retrooper.packetevents.protocol.packettype.PacketType;
+import com.github.retrooper.packetevents.protocol.player.ClientVersion;
 import com.github.retrooper.packetevents.protocol.sound.Sound;
 import com.github.retrooper.packetevents.protocol.sound.Sounds;
+import com.github.retrooper.packetevents.resources.ResourceLocation;
+import com.github.retrooper.packetevents.util.mappings.MappingHelper;
+import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerEntitySoundEffect;
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerSoundEffect;
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerTickingState;
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerUpdateAttributes;
+import dev.letsgoaway.geyserextras.core.Config;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.SoundReplacer;
 import net.kyori.adventure.key.Key;
 import org.geysermc.geyser.api.connection.GeyserConnection;
+import org.jetbrains.annotations.Nullable;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 
@@ -27,6 +33,8 @@ public class PacketSendHandler implements PacketListener {
             case PacketType.Play.Server.TICKING_STATE ->
                     onTickRateUpdate(player, new WrapperPlayServerTickingState(ev));
             case PacketType.Play.Server.SOUND_EFFECT -> onSoundEvent(player, new WrapperPlayServerSoundEffect(ev), ev);
+            case PacketType.Play.Server.ENTITY_SOUND_EFFECT ->
+                    onSoundEvent(player, new WrapperPlayServerEntitySoundEffect(ev), ev);
             default -> {
             }
         }
@@ -42,11 +50,23 @@ public class PacketSendHandler implements PacketListener {
     }
 
     private void onTickRateUpdate(ExtrasPlayer player, WrapperPlayServerTickingState tickingState) {
-        player.setTickrate(tickingState.getTickRate());
+        player.setTickingState(tickingState.getTickRate());
     }
 
     private void onSoundEvent(ExtrasPlayer player, WrapperPlayServerSoundEffect soundEffect, PacketSendEvent ev) {
-        soundEffect.setSound(Sounds.define(SoundReplacer.replaceSound(soundEffect.getSound().toString())));
+        if (Config.javaCombatSounds) {
+            soundEffect.setSound(SoundReplacer.getSound(soundEffect.getSound().getSoundId().toString()));
+            ev.setLastUsedWrapper(soundEffect);
+            ev.markForReEncode(true);
+        }
+    }
+
+    private void onSoundEvent(ExtrasPlayer player, WrapperPlayServerEntitySoundEffect soundEffect, PacketSendEvent ev) {
+        if (Config.javaCombatSounds) {
+            soundEffect.setSound(SoundReplacer.getSound(soundEffect.getSound().getSoundId().toString()));
+            ev.setLastUsedWrapper(soundEffect);
+            ev.markForReEncode(true);
+        }
     }
 
     private ExtrasPlayer getPlayer(ProtocolPacketEvent<?> ev) {

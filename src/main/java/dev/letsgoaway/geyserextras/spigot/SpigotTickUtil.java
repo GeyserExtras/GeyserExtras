@@ -11,7 +11,7 @@ public class SpigotTickUtil implements TickUtil {
     }
 
     @Override
-    public void runSync(Runnable func) {
+    public void runSync(Runnable func, float tickrate) {
         Bukkit.getScheduler().runTask(GeyserExtrasSpigot.SPIGOT, func);
     }
 }

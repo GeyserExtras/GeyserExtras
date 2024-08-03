@@ -4,6 +4,9 @@ import com.github.retrooper.packetevents.PacketEvents;
 import com.github.retrooper.packetevents.event.PacketListenerPriority;
 import dev.letsgoaway.geyserextras.Server;
 import dev.letsgoaway.geyserextras.core.packets.PacketSendHandler;
+import org.geysermc.api.GeyserApiBase;
+import org.geysermc.event.Listener;
+import org.geysermc.event.PostOrder;
 import org.geysermc.event.subscribe.Subscribe;
 import org.geysermc.geyser.api.GeyserApi;
 import org.geysermc.geyser.api.event.EventRegistrar;
@@ -11,7 +14,9 @@ import org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent;
 import org.geysermc.geyser.api.event.bedrock.SessionDisconnectEvent;
 import org.geysermc.geyser.api.event.bedrock.SessionJoinEvent;
 import org.geysermc.geyser.api.event.lifecycle.GeyserPostInitializeEvent;
+import org.spongepowered.configurate.yaml.YamlConfigurationLoader;
 
+import java.lang.annotation.Annotation;
 import java.util.HashMap;
 
 public class GeyserExtras implements EventRegistrar {
@@ -19,22 +24,25 @@ public class GeyserExtras implements EventRegistrar {
 
     public static Server SERVER;
 
-    public GeyserApi geyserApi = GeyserApi.api();
+    public GeyserApi geyserApi;
 
-    public HashMap<String, ExtrasPlayer> connections = new HashMap<>();
+    public HashMap<String, ExtrasPlayer> connections;
 
-    public GeyserExtras() {
+    public GeyserExtras(Server server) {
         GE = this;
+        GeyserExtras.SERVER = server;
+        Config.load();
+        geyserApi = GeyserApi.api();
+        geyserApi.eventBus().subscribe(this, GeyserPostInitializeEvent.class, this::onGeyserInitialize);
+        geyserApi.eventBus().subscribe(this, ClientEmoteEvent.class, this::onEmoteEvent);
+        geyserApi.eventBus().subscribe(this, SessionJoinEvent.class, this::onSessionJoin);
+        geyserApi.eventBus().subscribe(this, SessionDisconnectEvent.class, this::onSessionRemove);
+        connections = new HashMap<>();
         PacketEvents.getAPI().getSettings().reEncodeByDefault(false)
                 .checkForUpdates(false);
         PacketEvents.getAPI().getEventManager().registerListener(new PacketSendHandler(),
                 PacketListenerPriority.HIGH);
-    }
-
-    public GeyserExtras(Server server) {
-        super();
-        SERVER = server;
-        SoundReplacer.loadSoundMappings();
+        PacketEvents.getAPI().init();
     }
 
     public void tick() {
@@ -45,14 +53,22 @@ public class GeyserExtras implements EventRegistrar {
 
     @Subscribe
     public void onGeyserInitialize(GeyserPostInitializeEvent init) {
-        geyserApi.eventBus().subscribe(this, SessionJoinEvent.class, (ev) -> {
-            connections.put(ev.connection().xuid(), new ExtrasPlayer(ev.connection()));
-        });
-        geyserApi.eventBus().subscribe(this, SessionDisconnectEvent.class, (ev) -> {
-            connections.remove(ev.connection().xuid());
-        });
-        geyserApi.eventBus().subscribe(this, ClientEmoteEvent.class, (ev) -> {
-            connections.get(ev.connection().xuid()).onEmoteEvent(ev);
-        });
+        SoundReplacer.loadSoundMappings();
     }
+
+    @Subscribe(postOrder = PostOrder.EARLY)
+    public void onSessionJoin(SessionJoinEvent ev) {
+        connections.put(ev.connection().xuid(), SERVER.createPlayer(ev.connection()));
+    }
+
+    @Subscribe(postOrder = PostOrder.EARLY)
+    public void onSessionRemove(SessionDisconnectEvent ev) {
+        connections.remove(ev.connection().xuid());
+    }
+
+    @Subscribe(postOrder = PostOrder.EARLY)
+    public void onEmoteEvent(ClientEmoteEvent ev) {
+        connections.get(ev.connection().xuid()).onEmoteEvent(ev);
+    }
+
 }

@@ -1,6 +1,6 @@
 id: geyserextras
 name: GeyserExtras
-main: dev.letsgoaway.geyserextras.extension.GeyserExtras
+main: dev.letsgoaway.geyserextras.extension.GeyserExtrasExtension
 api: 1.0.1
 version: 2.0.0
 authors: [LetsGoAway]

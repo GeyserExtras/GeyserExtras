@@ -12,15 +12,15 @@ public class VelocityTickUtil implements TickUtil {
     public void runIn(long ticks, Runnable func, float tickrate) {
         GeyserExtrasVelocity.server.getScheduler()
                 .buildTask(GeyserExtrasVelocity.VELOCITY, func)
-                .delay(TickMath.toNanos(tickrate), TimeUnit.NANOSECONDS)
+                .delay(TickMath.toNanos(tickrate) * ticks, TimeUnit.NANOSECONDS)
                 .schedule();
     }
 
     @Override
-    public void runSync(Runnable func) {
+    public void runSync(Runnable func, float tickrate) {
         GeyserExtrasVelocity.server.getScheduler()
                 .buildTask(GeyserExtrasVelocity.VELOCITY, func)
-                .clearDelay()
+                .delay(TickMath.toNanos(tickrate), TimeUnit.NANOSECONDS)
                 .clearRepeat()
                 .schedule();
     }
