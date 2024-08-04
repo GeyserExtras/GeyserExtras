@@ -6,6 +6,7 @@ import dev.letsgoaway.geyserextras.spigot.Tick;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 
@@ -39,7 +40,7 @@ public class CooldownHandler {
             return;
         }
         String textToSend = "";
-        int stayTime = (int)Math.ceil(CombatAttackType.getCooldownPeriod(player) / max)+1;
+        int stayTime = (int) Math.ceil(CombatAttackType.getCooldownPeriod(player) / max) + 1;
         if (player.getAttackCooldown() > bplayer.coolDownThresHold && bplayer.lastCooldown != max) {
             if (cooldown == max) {
                 stayTime = 1;
@@ -66,7 +67,10 @@ public class CooldownHandler {
                 }
                 String hotbarText = textToSend;
                 if (bplayer.spaceHotbar) {
-                    hotbarText += "\n\n";
+                    hotbarText += "\n";
+                    if (player.getInventory().getItemInMainHand().getType().equals(Material.DEBUG_STICK)) {
+                        hotbarText += "\n";
+                    }
                     for (Enchantment enchantment : player.getInventory().getItemInMainHand().getEnchantments().keySet()) {
                         if (!enchantment.equals(Enchantment.SWEEPING_EDGE)) {
                             hotbarText += "\n";

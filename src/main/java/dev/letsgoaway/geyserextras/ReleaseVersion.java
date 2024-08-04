@@ -11,12 +11,7 @@ public class ReleaseVersion {
         this.resourceVersion = resourceVersion;
     }
 
-    ReleaseVersion(Version3 minecraftVersion) {
-        this.minecraftVersion = minecraftVersion;
-        this.resourceVersion = resourceVersion;
-    }
-
-    ReleaseVersion(Version3 minecraftVersion, boolean prerelease) {
+    ReleaseVersion(Version3 minecraftVersion, Version3 resourceVersion, boolean prerelease) {
         this.minecraftVersion = minecraftVersion;
         this.resourceVersion = resourceVersion;
         this.prerelease = prerelease;
@@ -26,6 +21,7 @@ public class ReleaseVersion {
         String[] versions = string.split("-v");
         if (string.contains("+v")) {
             versions = string.split("\\+v");
+            this.prerelease = true;
         }
         this.minecraftVersion = Version3.fromString(versions[0]);
         this.resourceVersion = Version3.fromString(versions[1]);
