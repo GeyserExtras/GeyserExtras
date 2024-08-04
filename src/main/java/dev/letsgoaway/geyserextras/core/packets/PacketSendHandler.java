@@ -4,10 +4,12 @@ import com.github.retrooper.packetevents.event.*;
 import com.github.retrooper.packetevents.protocol.attribute.Attributes;
 import com.github.retrooper.packetevents.protocol.packettype.PacketType;
 import com.github.retrooper.packetevents.wrapper.play.server.*;
+import dev.letsgoaway.geyserextras.MathUtils;
 import dev.letsgoaway.geyserextras.core.Config;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.SoundReplacer;
 import net.kyori.adventure.key.Key;
+import org.bukkit.attribute.AttributeModifier;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.jetbrains.annotations.Nullable;
 
@@ -18,13 +20,14 @@ public class PacketSendHandler implements PacketListener {
     @Override
     public void onPacketSend(PacketSendEvent ev) {
         ExtrasPlayer player = getPlayer(ev);
+        // Not a Geyser player
         if (player == null) return;
         if (ev.getPacketType() instanceof PacketType.Play.Server packet) {
             switch (packet) {
                 case UPDATE_ATTRIBUTES -> onUpdateAttributes(player, new WrapperPlayServerUpdateAttributes(ev));
                 case TICKING_STATE -> onTickRateUpdate(player, new WrapperPlayServerTickingState(ev));
-                case SOUND_EFFECT -> onSoundEvent(player, new WrapperPlayServerSoundEffect(ev), ev);
-                case ENTITY_SOUND_EFFECT -> onSoundEvent(player, new WrapperPlayServerEntitySoundEffect(ev), ev);
+                case SOUND_EFFECT -> onSoundEvent(new WrapperPlayServerSoundEffect(ev), ev);
+                case ENTITY_SOUND_EFFECT -> onSoundEvent(new WrapperPlayServerEntitySoundEffect(ev), ev);
                 default -> {
                 }
             }
@@ -32,10 +35,9 @@ public class PacketSendHandler implements PacketListener {
     }
 
     private void onUpdateAttributes(ExtrasPlayer player, WrapperPlayServerUpdateAttributes attributes) {
-        for (WrapperPlayServerUpdateAttributes.Property properties : attributes.getProperties()) {
-            if (properties.getAttribute().equals(Attributes.GENERIC_ATTACK_SPEED)) {
-                player.setAttackSpeed(properties.getValue());
-                break;
+        for (WrapperPlayServerUpdateAttributes.Property property : attributes.getProperties()) {
+            if (property.getAttribute().equals(Attributes.GENERIC_ATTACK_SPEED)) {
+                player.setAttackSpeed(MathUtils.calculateAttribute(property));
             }
         }
     }
@@ -44,7 +46,7 @@ public class PacketSendHandler implements PacketListener {
         player.setTickingState(tickingState.getTickRate());
     }
 
-    private void onSoundEvent(ExtrasPlayer player, WrapperPlayServerSoundEffect soundEffect, PacketSendEvent ev) {
+    private void onSoundEvent(WrapperPlayServerSoundEffect soundEffect, PacketSendEvent ev) {
         if (Config.javaCombatSounds) {
             soundEffect.setSound(SoundReplacer.getSound(soundEffect.getSound().getSoundId().toString()));
             ev.setLastUsedWrapper(soundEffect);
@@ -52,7 +54,7 @@ public class PacketSendHandler implements PacketListener {
         }
     }
 
-    private void onSoundEvent(ExtrasPlayer player, WrapperPlayServerEntitySoundEffect soundEffect, PacketSendEvent ev) {
+    private void onSoundEvent(WrapperPlayServerEntitySoundEffect soundEffect, PacketSendEvent ev) {
         if (Config.javaCombatSounds) {
             soundEffect.setSound(SoundReplacer.getSound(soundEffect.getSound().getSoundId().toString()));
             ev.setLastUsedWrapper(soundEffect);
@@ -61,8 +63,12 @@ public class PacketSendHandler implements PacketListener {
     }
 
     private ExtrasPlayer getPlayer(ProtocolPacketEvent<?> ev) {
-        GeyserConnection connection = GE.geyserApi.connectionByUuid(ev.getUser().getUUID());
-        if (connection == null) return null;
-        return GE.connections.get(connection.xuid());
+        try {
+            GeyserConnection connection = GE.geyserApi.connectionByUuid(ev.getUser().getUUID());
+            if (connection == null) return null;
+            return GE.connections.get(connection.xuid());
+        } catch (NullPointerException e) {
+            return null;
+        }
     }
 }

@@ -36,7 +36,6 @@ public class Config {
 
     //endregion
     public static void load() {
-
         Path configPath = SERVER.getPluginFolder().resolve("config.yml");
         if (!configPath.toFile().exists()) {
             try {
@@ -79,9 +78,22 @@ public class Config {
                 muteEmoteChat = data.node("mute-emote-chat").getBoolean();
             if (data.hasChild("disable-paper-doll"))
                 disablePaperDoll = data.node("disable-paper-doll").getBoolean();
-
+            updateGeyserConfig();
         } catch (ConfigurateException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private static void updateGeyserConfig() throws ConfigurateException {
+        Path configPath = GE.geyserApi.configDirectory().resolve("config.yml");
+        YamlConfigurationLoader loader = YamlConfigurationLoader.builder().file(configPath.toFile()).build();
+        CommentedConfigurationNode geyserConfig = loader.load();
+        if (Config.customCoolDownEnabled) {
+            geyserConfig.node("show-cooldown").set("false");
+        }
+        if (Config.javaBlockPlacement) {
+            geyserConfig.node("disable-bedrock-scaffolding").set(true);
+        }
+        loader.save(geyserConfig);
     }
 }

@@ -21,7 +21,7 @@ public class PacketReceiveHandler implements PacketListener {
                 case INTERACT_ENTITY -> {
                     WrapperPlayClientInteractEntity action = new WrapperPlayClientInteractEntity(ev);
                     if (action.getAction().equals(WrapperPlayClientInteractEntity.InteractAction.ATTACK)) {
-                        // cooldown stuff here!
+                        player.getCooldownHandler().setLastSwingTime(System.currentTimeMillis());
                     }
                 }
                 default -> {}

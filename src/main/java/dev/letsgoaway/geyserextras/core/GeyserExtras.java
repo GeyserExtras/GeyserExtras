@@ -3,6 +3,7 @@ package dev.letsgoaway.geyserextras.core;
 import com.github.retrooper.packetevents.PacketEvents;
 import com.github.retrooper.packetevents.event.PacketListenerPriority;
 import dev.letsgoaway.geyserextras.Server;
+import dev.letsgoaway.geyserextras.core.packets.PacketReceiveHandler;
 import dev.letsgoaway.geyserextras.core.packets.PacketSendHandler;
 import org.geysermc.api.GeyserApiBase;
 import org.geysermc.event.Listener;
@@ -33,8 +34,8 @@ public class GeyserExtras implements EventRegistrar {
     public GeyserExtras(Server server) {
         GE = this;
         GeyserExtras.SERVER = server;
-        Config.load();
         geyserApi = GeyserApi.api();
+        Config.load();
         geyserApi.eventBus().subscribe(this, GeyserDefineCommandsEvent.class, this::onDefineCommands);
         geyserApi.eventBus().subscribe(this, GeyserPostInitializeEvent.class, this::onGeyserInitialize);
         geyserApi.eventBus().subscribe(this, ClientEmoteEvent.class, this::onEmoteEvent);
@@ -44,7 +45,9 @@ public class GeyserExtras implements EventRegistrar {
         PacketEvents.getAPI().getSettings().reEncodeByDefault(false)
                 .checkForUpdates(false);
         PacketEvents.getAPI().getEventManager().registerListener(new PacketSendHandler(),
-                PacketListenerPriority.HIGH);
+                PacketListenerPriority.HIGHEST);
+        PacketEvents.getAPI().getEventManager().registerListener(new PacketReceiveHandler(),
+                PacketListenerPriority.HIGHEST);
         PacketEvents.getAPI().init();
     }
 

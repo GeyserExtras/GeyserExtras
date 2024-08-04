@@ -78,5 +78,5 @@ mute-emote-chat: false
 # you can see what armor has broken during combat
 disable-paper-doll: false
 
-# Only enable if you are using GeyserExtras on a proxy.
-proxy-mode: false
+# `proxy-mode` is no longer required in v2.0.0 as everything can now run
+# on your proxy natively.
