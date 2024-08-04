@@ -26,6 +26,7 @@ public class ReleaseVersion {
         String[] versions = string.split("-v");
         if (string.contains("+v")) {
             versions = string.split("\\+v");
+            this.prerelease = true;
         }
         this.minecraftVersion = Version3.fromString(versions[0]);
         this.resourceVersion = Version3.fromString(versions[1]);

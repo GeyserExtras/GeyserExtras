@@ -2,12 +2,9 @@ package dev.letsgoaway.geyserextras.core.packets;
 
 import com.github.retrooper.packetevents.event.PacketListener;
 import com.github.retrooper.packetevents.event.PacketReceiveEvent;
-import com.github.retrooper.packetevents.event.PacketSendEvent;
 import com.github.retrooper.packetevents.event.ProtocolPacketEvent;
-import com.github.retrooper.packetevents.protocol.attribute.Attributes;
 import com.github.retrooper.packetevents.protocol.packettype.PacketType;
-import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerTickingState;
-import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerUpdateAttributes;
+import com.github.retrooper.packetevents.wrapper.play.client.WrapperPlayClientInteractEntity;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 
@@ -20,7 +17,14 @@ public class PacketReceiveHandler implements PacketListener {
         ExtrasPlayer player = getPlayer(ev);
         if (player == null) return;
         switch (ev.getPacketType()) {
-            default -> {}
+            case PacketType.Play.Client.INTERACT_ENTITY -> {
+                WrapperPlayClientInteractEntity action = new WrapperPlayClientInteractEntity(ev);
+                if (action.getAction().equals(WrapperPlayClientInteractEntity.InteractAction.ATTACK)) {
+                    // cooldown stuff here!
+                }
+            }
+            default -> {
+            }
         }
     }
 
