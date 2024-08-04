@@ -88,9 +88,6 @@ public class Config {
         Path configPath = GE.geyserApi.configDirectory().resolve("config.yml");
         YamlConfigurationLoader loader = YamlConfigurationLoader.builder().file(configPath.toFile()).build();
         CommentedConfigurationNode geyserConfig = loader.load();
-        if (Config.customCoolDownEnabled) {
-            geyserConfig.node("show-cooldown").set("false");
-        }
         if (Config.javaBlockPlacement) {
             geyserConfig.node("disable-bedrock-scaffolding").set(true);
         }

@@ -36,7 +36,6 @@ public class GeyserExtras implements EventRegistrar {
         GeyserExtras.SERVER = server;
         geyserApi = GeyserApi.api();
         Config.load();
-        geyserApi.eventBus().subscribe(this, GeyserDefineCommandsEvent.class, this::onDefineCommands);
         geyserApi.eventBus().subscribe(this, GeyserPostInitializeEvent.class, this::onGeyserInitialize);
         geyserApi.eventBus().subscribe(this, ClientEmoteEvent.class, this::onEmoteEvent);
         geyserApi.eventBus().subscribe(this, SessionJoinEvent.class, this::onSessionJoin);
@@ -55,11 +54,6 @@ public class GeyserExtras implements EventRegistrar {
         for (ExtrasPlayer player : connections.values()) {
             player.tick();
         }
-    }
-
-    @Subscribe
-    public void onDefineCommands(GeyserDefineCommandsEvent ev) {
-
     }
 
     @Subscribe

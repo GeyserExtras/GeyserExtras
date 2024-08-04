@@ -24,20 +24,11 @@ public class PacketSendHandler implements PacketListener {
         if (player == null) return;
         if (ev.getPacketType() instanceof PacketType.Play.Server packet) {
             switch (packet) {
-                case UPDATE_ATTRIBUTES -> onUpdateAttributes(player, new WrapperPlayServerUpdateAttributes(ev));
                 case TICKING_STATE -> onTickRateUpdate(player, new WrapperPlayServerTickingState(ev));
                 case SOUND_EFFECT -> onSoundEvent(new WrapperPlayServerSoundEffect(ev), ev);
                 case ENTITY_SOUND_EFFECT -> onSoundEvent(new WrapperPlayServerEntitySoundEffect(ev), ev);
                 default -> {
                 }
-            }
-        }
-    }
-
-    private void onUpdateAttributes(ExtrasPlayer player, WrapperPlayServerUpdateAttributes attributes) {
-        for (WrapperPlayServerUpdateAttributes.Property property : attributes.getProperties()) {
-            if (property.getAttribute().equals(Attributes.GENERIC_ATTACK_SPEED)) {
-                player.setAttackSpeed(MathUtils.calculateAttribute(property));
             }
         }
     }

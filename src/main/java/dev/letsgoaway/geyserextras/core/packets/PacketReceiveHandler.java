@@ -6,6 +6,7 @@ import com.github.retrooper.packetevents.event.ProtocolPacketEvent;
 import com.github.retrooper.packetevents.protocol.packettype.PacketType;
 import com.github.retrooper.packetevents.wrapper.play.client.WrapperPlayClientInteractEntity;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
+import org.geysermc.geyser.GeyserImpl;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
