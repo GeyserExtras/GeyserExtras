@@ -4,10 +4,7 @@ import org.spongepowered.configurate.CommentedConfigurationNode;
 import org.spongepowered.configurate.ConfigurateException;
 import org.spongepowered.configurate.yaml.*;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -47,7 +44,7 @@ public class Config {
                 InputStream stream = Config.class.getResourceAsStream("/config.yml");
                 OutputStream outStream = new FileOutputStream(configPath.toFile());
                 outStream.write(stream.readAllBytes());
-            } catch (IOException e) {
+            } catch (Exception e) {
                 throw new RuntimeException(e);
             }
         }
@@ -82,6 +79,7 @@ public class Config {
                 muteEmoteChat = data.node("mute-emote-chat").getBoolean();
             if (data.hasChild("disable-paper-doll"))
                 disablePaperDoll = data.node("disable-paper-doll").getBoolean();
+
         } catch (ConfigurateException e) {
             throw new RuntimeException(e);
         }

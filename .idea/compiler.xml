@@ -55,7 +55,7 @@
         <module name="GeyserExtras.test" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="21">
+    <bytecodeTargetLevel target="17">
       <module name="spigot" target="17" />
     </bytecodeTargetLevel>
   </component>

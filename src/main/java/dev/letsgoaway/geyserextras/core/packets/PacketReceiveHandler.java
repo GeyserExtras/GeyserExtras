@@ -16,14 +16,15 @@ public class PacketReceiveHandler implements PacketListener {
     public void onPacketReceive(PacketReceiveEvent ev) {
         ExtrasPlayer player = getPlayer(ev);
         if (player == null) return;
-        switch (ev.getPacketType()) {
-            case PacketType.Play.Client.INTERACT_ENTITY -> {
-                WrapperPlayClientInteractEntity action = new WrapperPlayClientInteractEntity(ev);
-                if (action.getAction().equals(WrapperPlayClientInteractEntity.InteractAction.ATTACK)) {
-                    // cooldown stuff here!
+        if (ev.getPacketType() instanceof PacketType.Play.Client packet) {
+            switch (packet) {
+                case INTERACT_ENTITY -> {
+                    WrapperPlayClientInteractEntity action = new WrapperPlayClientInteractEntity(ev);
+                    if (action.getAction().equals(WrapperPlayClientInteractEntity.InteractAction.ATTACK)) {
+                        // cooldown stuff here!
+                    }
                 }
-            }
-            default -> {
+                default -> {}
             }
         }
     }

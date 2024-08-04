@@ -13,7 +13,9 @@ import org.geysermc.geyser.api.event.EventRegistrar;
 import org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent;
 import org.geysermc.geyser.api.event.bedrock.SessionDisconnectEvent;
 import org.geysermc.geyser.api.event.bedrock.SessionJoinEvent;
+import org.geysermc.geyser.api.event.lifecycle.GeyserDefineCommandsEvent;
 import org.geysermc.geyser.api.event.lifecycle.GeyserPostInitializeEvent;
+import org.geysermc.geyser.api.extension.Extension;
 import org.spongepowered.configurate.yaml.YamlConfigurationLoader;
 
 import java.lang.annotation.Annotation;
@@ -33,6 +35,7 @@ public class GeyserExtras implements EventRegistrar {
         GeyserExtras.SERVER = server;
         Config.load();
         geyserApi = GeyserApi.api();
+        geyserApi.eventBus().subscribe(this, GeyserDefineCommandsEvent.class, this::onDefineCommands);
         geyserApi.eventBus().subscribe(this, GeyserPostInitializeEvent.class, this::onGeyserInitialize);
         geyserApi.eventBus().subscribe(this, ClientEmoteEvent.class, this::onEmoteEvent);
         geyserApi.eventBus().subscribe(this, SessionJoinEvent.class, this::onSessionJoin);
@@ -49,6 +52,11 @@ public class GeyserExtras implements EventRegistrar {
         for (ExtrasPlayer player : connections.values()) {
             player.tick();
         }
+    }
+
+    @Subscribe
+    public void onDefineCommands(GeyserDefineCommandsEvent ev) {
+
     }
 
     @Subscribe

@@ -41,7 +41,7 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok:1.18.34'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.34'
 }
-def targetJavaVersion = 21
+def targetJavaVersion = 17
 java {
     def javaVersion = JavaVersion.toVersion(targetJavaVersion)
     sourceCompatibility = javaVersion
@@ -53,7 +53,7 @@ java {
 apply plugin: "io.freefair.lombok"
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
-
+    options.compilerArgs += "--enable-preview"
     if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
         options.release.set(targetJavaVersion)
     }

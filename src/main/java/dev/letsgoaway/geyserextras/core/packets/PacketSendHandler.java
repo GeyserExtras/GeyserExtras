@@ -19,15 +19,14 @@ public class PacketSendHandler implements PacketListener {
     public void onPacketSend(PacketSendEvent ev) {
         ExtrasPlayer player = getPlayer(ev);
         if (player == null) return;
-        switch (ev.getPacketType()) {
-            case PacketType.Play.Server.UPDATE_ATTRIBUTES ->
-                    onUpdateAttributes(player, new WrapperPlayServerUpdateAttributes(ev));
-            case PacketType.Play.Server.TICKING_STATE ->
-                    onTickRateUpdate(player, new WrapperPlayServerTickingState(ev));
-            case PacketType.Play.Server.SOUND_EFFECT -> onSoundEvent(player, new WrapperPlayServerSoundEffect(ev), ev);
-            case PacketType.Play.Server.ENTITY_SOUND_EFFECT ->
-                    onSoundEvent(player, new WrapperPlayServerEntitySoundEffect(ev), ev);
-            default -> {
+        if (ev.getPacketType() instanceof PacketType.Play.Server packet) {
+            switch (packet) {
+                case UPDATE_ATTRIBUTES -> onUpdateAttributes(player, new WrapperPlayServerUpdateAttributes(ev));
+                case TICKING_STATE -> onTickRateUpdate(player, new WrapperPlayServerTickingState(ev));
+                case SOUND_EFFECT -> onSoundEvent(player, new WrapperPlayServerSoundEffect(ev), ev);
+                case ENTITY_SOUND_EFFECT -> onSoundEvent(player, new WrapperPlayServerEntitySoundEffect(ev), ev);
+                default -> {
+                }
             }
         }
     }
