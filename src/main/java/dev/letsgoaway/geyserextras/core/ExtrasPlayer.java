@@ -17,7 +17,10 @@ import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class ExtrasPlayer {
+    @Getter
     private UUID javaUUID;
+
+    @Getter
     private String bedrockXUID;
 
     @Getter

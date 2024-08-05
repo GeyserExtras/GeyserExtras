@@ -1,6 +1,7 @@
 package dev.letsgoaway.geyserextras.core.handlers.bedrock;
 
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
+import dev.letsgoaway.geyserextras.core.SoundReplacer;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
 import org.cloudburstmc.protocol.bedrock.data.PlayerActionType;
 import org.cloudburstmc.protocol.bedrock.packet.PlayerActionPacket;
@@ -27,7 +28,7 @@ public class BedrockActionInjector extends PacketTranslator<PlayerActionPacket> 
             session.setLastHitTime(System.currentTimeMillis());
         }
         if (packet.getAction().equals(PlayerActionType.STOP_BREAK)) {
-                //
+            //
         }
     }
 }
