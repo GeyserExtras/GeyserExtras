@@ -28,7 +28,7 @@ public class GeyserExtrasSpigot extends JavaPlugin implements Server {
     public void onEnable() {
         CORE = new GeyserExtras(this);
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, ()->{
-            CORE.tick();
+            CORE.serverTick();
         }, 0L,0L);
     }
 

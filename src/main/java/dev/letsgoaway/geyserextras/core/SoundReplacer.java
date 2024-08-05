@@ -1,16 +1,5 @@
 package dev.letsgoaway.geyserextras.core;
 
-import com.github.retrooper.packetevents.protocol.player.ClientVersion;
-import com.github.retrooper.packetevents.protocol.sound.Sound;
-import com.github.retrooper.packetevents.protocol.sound.Sounds;
-import com.github.retrooper.packetevents.protocol.sound.StaticSound;
-import com.github.retrooper.packetevents.resources.ResourceLocation;
-import com.github.retrooper.packetevents.util.mappings.MappingHelper;
-import com.github.retrooper.packetevents.util.mappings.TypesBuilder;
-import com.github.retrooper.packetevents.util.mappings.TypesBuilderData;
-import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerSoundEffect;
-import org.jetbrains.annotations.Nullable;
-
 import java.util.HashMap;
 
 public enum SoundReplacer {
@@ -21,20 +10,21 @@ public enum SoundReplacer {
 
     public final String javaSound;
     public final String bedrockSound;
-    public static final HashMap<String, Sound> soundMap = new HashMap<>();
+    public static final HashMap<String, String> soundMap = new HashMap<>();
 
     SoundReplacer(String javaSound, String bedrockSound) {
         this.javaSound = javaSound;
         this.bedrockSound = bedrockSound;
     }
+
     public static void loadSoundMappings() {
         soundMap.clear();
         for (SoundReplacer sounds : SoundReplacer.values()) {
-            soundMap.put(sounds.javaSound, new StaticSound(ResourceLocation.minecraft(sounds.bedrockSound),null));
+            soundMap.put(sounds.javaSound, sounds.bedrockSound);
         }
     }
 
-    public static Sound getSound(String javaSound) {
-        return soundMap.getOrDefault(javaSound, Sounds.getByName(javaSound));
+    public static String getSound(String javaSound) {
+        return soundMap.getOrDefault(javaSound, javaSound);
     }
 }

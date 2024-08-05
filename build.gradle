@@ -1,7 +1,9 @@
 plugins {
     id 'java'
     id "io.freefair.lombok" version "8.6"
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
+apply plugin: 'com.github.johnrengelman.shadow'
 
 group = 'dev.letsgoaway'
 
@@ -35,7 +37,6 @@ dependencies {
     compileOnly 'net.md-5:bungeecord-api:1.21-R0.1-SNAPSHOT'
     compileOnly "org.geysermc.geyser:core:2.4.1-SNAPSHOT"
     compileOnly "org.geysermc.floodgate:api:2.2.3-SNAPSHOT"
-    compileOnly 'com.github.retrooper:packetevents-api:2.4.0'
     compileOnly 'org.projectlombok:lombok:1.18.34'
     annotationProcessor 'org.projectlombok:lombok:1.18.34'
     testCompileOnly 'org.projectlombok:lombok:1.18.34'

@@ -2,9 +2,6 @@ package dev.letsgoaway.geyserextras.core;
 
 // Couldn't think of a good name to call this lol
 public class IsAvailable {
-    public static boolean packetEvents() {
-        return classExists("com.github.retrooper.packetevents.PacketEvents");
-    }
 
     private static boolean classExists(String clazz) {
         try {

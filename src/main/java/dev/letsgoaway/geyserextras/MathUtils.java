@@ -1,36 +1,7 @@
 package dev.letsgoaway.geyserextras;
 
-import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerUpdateAttributes;
-
 // Most of these are copied from GeyserMC source code lmao.
 public class MathUtils {
-
-    /**
-     * Retrieve the base attribute value with all modifiers applied.
-     * <a href="https://minecraft.wiki/w/Attribute#Modifiers">See here</a>
-     * @param attribute The attribute to calculate the total value.
-     * @return The finished attribute with all modifiers applied.
-     */
-    public static double calculateAttribute(WrapperPlayServerUpdateAttributes.Property attribute) {
-        double base = attribute.getValue();
-        for (WrapperPlayServerUpdateAttributes.PropertyModifier modifier : attribute.getModifiers()) {
-            if (modifier.getOperation() == WrapperPlayServerUpdateAttributes.PropertyModifier.Operation.ADDITION) {
-                base += modifier.getAmount();
-            }
-        }
-        double value = base;
-        for (WrapperPlayServerUpdateAttributes.PropertyModifier modifier : attribute.getModifiers()) {
-            if (modifier.getOperation() == WrapperPlayServerUpdateAttributes.PropertyModifier.Operation.MULTIPLY_BASE) {
-                value += base * modifier.getAmount();
-            }
-        }
-        for (WrapperPlayServerUpdateAttributes.PropertyModifier modifier : attribute.getModifiers()) {
-            if (modifier.getOperation() == WrapperPlayServerUpdateAttributes.PropertyModifier.Operation.MULTIPLY_TOTAL) {
-                value *= 1.0D + modifier.getAmount();
-            }
-        }
-        return value;
-    }
     public static double restrain(double x, double max) {
         if (x < 0d)
             return 0d;

@@ -15,11 +15,12 @@ import java.nio.file.Path;
 
 public class GeyserExtrasExtension implements Extension, Server {
     public static GeyserExtras CORE;
+    public static GeyserExtrasExtension EXTENSION;
     private ExtensionTickUtil tickUtil;
 
     public GeyserExtrasExtension() {
         ServerType.type = ServerType.EXTENSION;
-        GeyserApi.api().eventBus().subscribe(this, GeyserPostInitializeEvent.class, this::onEnable);
+        EXTENSION = this;
     }
 
     @Subscribe
@@ -35,7 +36,7 @@ public class GeyserExtrasExtension implements Extension, Server {
 
     @Override
     public ExtrasPlayer createPlayer(GeyserConnection connection) {
-        return null;
+        return new ExtensionExtrasPlayer(connection);
     }
 
     @Override

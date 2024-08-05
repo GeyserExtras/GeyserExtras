@@ -22,19 +22,23 @@ public class InitializeLogger {
         DecimalFormat r3 = new DecimalFormat("0.000");
         Instant finish = Instant.now();
         info("Done! (" + r3.format(Duration.between(start, finish).toMillis() / 1000.0d) + "s)");
-        info("----------------------------------------");
+        if (!ServerType.type.equals(ServerType.EXTENSION))
+            info("----------------------------------------");
+        else
+            info("-----------------------------------------------");
     }
 
     public static void endNoDone() {
         info("----------------------------------------");
     }
 
-    public static void logTask(String start, Runnable task, String end){
+    public static void logTask(String start, Runnable task, String end) {
         info(start);
         task.run();
         info(end);
     }
-    public static void logTask(Runnable task, String onComplete){
+
+    public static void logTask(Runnable task, String onComplete) {
         task.run();
         info(onComplete);
     }

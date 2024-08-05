@@ -1,7 +1,5 @@
 package dev.letsgoaway.geyserextras.core;
 
-import com.github.retrooper.packetevents.PacketEvents;
-import com.github.retrooper.packetevents.protocol.player.User;
 import dev.letsgoaway.geyserextras.core.parity.java.CooldownHandler;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,29 +21,23 @@ public class ExtrasPlayer {
     private String bedrockXUID;
 
     @Getter
-    private GeyserSession session;
+    public GeyserSession session;
 
     @Getter
     private CooldownHandler cooldownHandler;
-
-    @Getter
-    public User packetUser;
 
     public ExtrasPlayer(GeyserConnection connection) {
         this.session = (GeyserSession) connection;
         this.javaUUID = connection.javaUuid();
         this.bedrockXUID = connection.xuid();
         cooldownHandler = new CooldownHandler(this);
-        for (User user : PacketEvents.getAPI().getProtocolManager().getUsers()) {
-            if (user.getUUID().equals(this.javaUUID)) {
-                packetUser = user;
-                break;
-            }
-        }
-        setTickingState(20.0f);
     }
-    public void onDisconnect() {}
-    public void onEmoteEvent(ClientEmoteEvent ev) {}
+
+    public void onDisconnect() {
+    }
+
+    public void onEmoteEvent(ClientEmoteEvent ev) {
+    }
 
     @Setter
     @Getter
@@ -61,6 +53,32 @@ public class ExtrasPlayer {
         if (Config.disablePaperDoll) {
             session.camera().hideElement(GuiElement.PAPER_DOLL);
         }
+    }
+
+    public void sendTitle(String title, String subtitle, int fadeIn, int stay, int fadeOut) {
+
+        SetTitlePacket timesPacket = new SetTitlePacket();
+        timesPacket.setText("");
+        timesPacket.setType(SetTitlePacket.Type.TIMES);
+        timesPacket.setFadeInTime(fadeIn);
+        timesPacket.setStayTime(stay);
+        timesPacket.setFadeOutTime(fadeOut);
+        timesPacket.setXuid("");
+        timesPacket.setPlatformOnlineId("");
+        session.sendUpstreamPacket(timesPacket);
+        SetTitlePacket titlePacket = new SetTitlePacket();
+        titlePacket.setType(SetTitlePacket.Type.TITLE);
+        titlePacket.setText(title.isEmpty() ? " " : "");
+        titlePacket.setXuid("");
+        titlePacket.setPlatformOnlineId("");
+        session.sendUpstreamPacket(titlePacket);
+        SetTitlePacket subtitlePacket = new SetTitlePacket();
+        subtitlePacket.setType(SetTitlePacket.Type.SUBTITLE);
+        subtitlePacket.setText(subtitle);
+        subtitlePacket.setXuid("");
+        subtitlePacket.setPlatformOnlineId("");
+        session.sendUpstreamPacket(subtitlePacket);
+
     }
 
     public void setTickingState(float tickrate) {

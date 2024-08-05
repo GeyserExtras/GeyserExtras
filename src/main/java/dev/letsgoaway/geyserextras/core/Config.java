@@ -1,14 +1,20 @@
 package dev.letsgoaway.geyserextras.core;
 
+import dev.letsgoaway.geyserextras.ServerType;
+import dev.letsgoaway.geyserextras.extension.GeyserExtrasExtension;
 import org.spongepowered.configurate.CommentedConfigurationNode;
 import org.spongepowered.configurate.ConfigurateException;
 import org.spongepowered.configurate.yaml.*;
 
 import java.io.*;
+import java.net.URISyntaxException;
+import java.nio.file.FileSystems;
+import java.nio.file.FileSystem;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
@@ -37,14 +43,41 @@ public class Config {
     //endregion
     public static void load() {
         Path configPath = SERVER.getPluginFolder().resolve("config.yml");
-        if (!configPath.toFile().exists()) {
-            try {
-                Files.createDirectories(SERVER.getPluginFolder());
-                InputStream stream = Config.class.getResourceAsStream("/config.yml");
-                OutputStream outStream = new FileOutputStream(configPath.toFile());
-                outStream.write(stream.readAllBytes());
-            } catch (Exception e) {
-                throw new RuntimeException(e);
+        if (ServerType.type.equals(ServerType.EXTENSION)) {
+            File configFile = SERVER.getPluginFolder().resolve("config.yml").toFile();
+            GeyserExtrasExtension extension = GeyserExtrasExtension.EXTENSION;
+            // Ensure the data folder exists
+            if (!extension.dataFolder().toFile().exists()) {
+                if (!extension.dataFolder().toFile().mkdirs()) {
+                    extension.logger().error("Failed to create data folder");
+                }
+            }
+
+            // Create the config file if it doesn't exist
+            if (!configFile.exists()) {
+                try (FileWriter writer = new FileWriter(configFile)) {
+                    try (FileSystem fileSystem = FileSystems.newFileSystem(new File(GeyserExtrasExtension.class.getProtectionDomain().getCodeSource().getLocation().toURI()).toPath(), Collections.emptyMap())) {
+                        try (InputStream input = Files.newInputStream(fileSystem.getPath("config.yml"))) {
+                            byte[] bytes = new byte[input.available()];
+                            input.read(bytes);
+                            writer.write(new String(bytes).toCharArray());
+                            writer.flush();
+                        }
+                    }
+                } catch (IOException | URISyntaxException e) {
+                    GeyserExtrasExtension.EXTENSION.logger().error("Failed to create config", e);
+                }
+            }
+        } else {
+            if (!configPath.toFile().exists()) {
+                try {
+                    Files.createDirectories(SERVER.getPluginFolder());
+                    InputStream stream = Config.class.getResourceAsStream("/config.yml");
+                    OutputStream outStream = new FileOutputStream(configPath.toFile());
+                    outStream.write(stream.readAllBytes());
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
         YamlConfigurationLoader loader = YamlConfigurationLoader.builder().file(configPath.toFile()).build();
