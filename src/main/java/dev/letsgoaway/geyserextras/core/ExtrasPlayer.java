@@ -9,6 +9,7 @@ import org.geysermc.geyser.api.bedrock.camera.GuiElement;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent;
 import org.geysermc.geyser.session.GeyserSession;
+import org.geysermc.geyser.translator.protocol.bedrock.BedrockItemStackRequestTranslator;
 import org.geysermc.mcprotocollib.protocol.data.game.entity.type.EntityType;
 
 import java.util.UUID;
@@ -40,6 +41,7 @@ public class ExtrasPlayer {
     }
 
     public void onEmoteEvent(ClientEmoteEvent ev) {
+
     }
 
     @Setter

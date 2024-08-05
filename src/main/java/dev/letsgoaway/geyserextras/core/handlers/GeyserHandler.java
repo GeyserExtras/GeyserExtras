@@ -3,8 +3,12 @@ package dev.letsgoaway.geyserextras.core.handlers;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.SoundReplacer;
 import dev.letsgoaway.geyserextras.core.handlers.bedrock.BedrockActionInjector;
+import dev.letsgoaway.geyserextras.core.handlers.bedrock.BedrockBlockPickRequestInjector;
+import dev.letsgoaway.geyserextras.core.handlers.bedrock.BedrockEntityPickRequestInjector;
 import dev.letsgoaway.geyserextras.core.handlers.java.JavaSoundEntityInjector;
 import dev.letsgoaway.geyserextras.core.handlers.java.JavaSoundInjector;
+import org.cloudburstmc.protocol.bedrock.packet.BlockPickRequestPacket;
+import org.cloudburstmc.protocol.bedrock.packet.EntityPickRequestPacket;
 import org.cloudburstmc.protocol.bedrock.packet.PlayerActionPacket;
 import org.geysermc.geyser.registry.Registries;
 import org.geysermc.geyser.session.GeyserSession;
@@ -28,6 +32,8 @@ public class GeyserHandler {
 
     public static void registerDownstream() {
         Registries.BEDROCK_PACKET_TRANSLATORS.register(PlayerActionPacket.class, new BedrockActionInjector());
+        Registries.BEDROCK_PACKET_TRANSLATORS.register(BlockPickRequestPacket.class, new BedrockBlockPickRequestInjector());
+        Registries.BEDROCK_PACKET_TRANSLATORS.register(EntityPickRequestPacket.class, new BedrockEntityPickRequestInjector());
     }
 
 
