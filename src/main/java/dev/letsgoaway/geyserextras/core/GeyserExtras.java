@@ -1,5 +1,6 @@
 package dev.letsgoaway.geyserextras.core;
 
+import dev.letsgoaway.geyserextras.InitializeLogger;
 import dev.letsgoaway.geyserextras.Server;
 import org.geysermc.event.PostOrder;
 import org.geysermc.event.subscribe.Subscribe;
@@ -24,6 +25,7 @@ public class GeyserExtras implements EventRegistrar {
     public GeyserExtras(Server server) {
         GE = this;
         GeyserExtras.SERVER = server;
+        InitializeLogger.start();
         geyserApi = GeyserApi.api();
         Config.load();
         geyserApi.eventBus().subscribe(this, GeyserPostInitializeEvent.class, this::onGeyserInitialize);
@@ -32,8 +34,10 @@ public class GeyserExtras implements EventRegistrar {
         geyserApi.eventBus().subscribe(this, SessionDisconnectEvent.class, this::onSessionRemove);
         connections = new HashMap<>();
         if (IsAvailable.packetEvents()) {
+            SERVER.log("PacketEvents Detected!");
             dev.letsgoaway.geyserextras.core.handlers.packetevents.PacketEventsHandler.register();
         }
+        InitializeLogger.end();
     }
 
     /**
