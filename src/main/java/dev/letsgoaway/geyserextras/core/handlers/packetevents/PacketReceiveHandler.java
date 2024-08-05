@@ -1,4 +1,4 @@
-package dev.letsgoaway.geyserextras.core.packets;
+package dev.letsgoaway.geyserextras.core.handlers.packetevents;
 
 import com.github.retrooper.packetevents.event.PacketListener;
 import com.github.retrooper.packetevents.event.PacketReceiveEvent;

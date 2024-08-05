@@ -1,7 +1,9 @@
 package dev.letsgoaway.geyserextras;
 
-public interface TickUtil {
-    void runIn(long ticks, Runnable func, float tickrate);
+import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 
-    void runSync(Runnable func, float tickrate);
+public interface TickUtil {
+    void runIn(long ticks, Runnable func, ExtrasPlayer player);
+
+    void runSync(Runnable func, ExtrasPlayer player);
 }

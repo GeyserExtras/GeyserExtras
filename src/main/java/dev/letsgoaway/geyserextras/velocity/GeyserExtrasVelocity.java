@@ -58,6 +58,11 @@ public class GeyserExtrasVelocity implements Server {
     }
 
     @Override
+    public void warn(String string) {
+        this.logger.warn(string);
+    }
+
+    @Override
     public Path getPluginFolder() {
         return dataDirectory;
     }

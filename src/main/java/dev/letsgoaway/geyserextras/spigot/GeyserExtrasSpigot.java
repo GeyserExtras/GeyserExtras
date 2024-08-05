@@ -48,6 +48,11 @@ public class GeyserExtrasSpigot extends JavaPlugin implements Server {
     }
 
     @Override
+    public void warn(String string) {
+        this.getLogger().warning(string);
+    }
+
+    @Override
     public Path getPluginFolder() {
         return getDataFolder().toPath();
     }

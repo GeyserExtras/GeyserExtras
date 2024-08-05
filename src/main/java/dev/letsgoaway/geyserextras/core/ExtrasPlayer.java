@@ -25,7 +25,6 @@ public class ExtrasPlayer {
     @Getter
     private GeyserSession session;
 
-
     @Getter
     private CooldownHandler cooldownHandler;
 
@@ -43,11 +42,10 @@ public class ExtrasPlayer {
                 break;
             }
         }
+        setTickingState(20.0f);
     }
-
-    public void onEmoteEvent(ClientEmoteEvent ev) {
-
-    }
+    public void onDisconnect() {}
+    public void onEmoteEvent(ClientEmoteEvent ev) {}
 
     @Setter
     @Getter

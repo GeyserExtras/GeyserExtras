@@ -1,12 +1,6 @@
 package dev.letsgoaway.geyserextras.core;
 
-import com.github.retrooper.packetevents.PacketEvents;
-import com.github.retrooper.packetevents.event.PacketListenerPriority;
 import dev.letsgoaway.geyserextras.Server;
-import dev.letsgoaway.geyserextras.core.packets.PacketReceiveHandler;
-import dev.letsgoaway.geyserextras.core.packets.PacketSendHandler;
-import org.geysermc.api.GeyserApiBase;
-import org.geysermc.event.Listener;
 import org.geysermc.event.PostOrder;
 import org.geysermc.event.subscribe.Subscribe;
 import org.geysermc.geyser.api.GeyserApi;
@@ -14,12 +8,8 @@ import org.geysermc.geyser.api.event.EventRegistrar;
 import org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent;
 import org.geysermc.geyser.api.event.bedrock.SessionDisconnectEvent;
 import org.geysermc.geyser.api.event.bedrock.SessionJoinEvent;
-import org.geysermc.geyser.api.event.lifecycle.GeyserDefineCommandsEvent;
 import org.geysermc.geyser.api.event.lifecycle.GeyserPostInitializeEvent;
-import org.geysermc.geyser.api.extension.Extension;
-import org.spongepowered.configurate.yaml.YamlConfigurationLoader;
 
-import java.lang.annotation.Annotation;
 import java.util.HashMap;
 
 public class GeyserExtras implements EventRegistrar {
@@ -41,15 +31,16 @@ public class GeyserExtras implements EventRegistrar {
         geyserApi.eventBus().subscribe(this, SessionJoinEvent.class, this::onSessionJoin);
         geyserApi.eventBus().subscribe(this, SessionDisconnectEvent.class, this::onSessionRemove);
         connections = new HashMap<>();
-        PacketEvents.getAPI().getSettings().reEncodeByDefault(false)
-                .checkForUpdates(false);
-        PacketEvents.getAPI().getEventManager().registerListener(new PacketSendHandler(),
-                PacketListenerPriority.HIGHEST);
-        PacketEvents.getAPI().getEventManager().registerListener(new PacketReceiveHandler(),
-                PacketListenerPriority.HIGHEST);
-        PacketEvents.getAPI().init();
+        if (IsAvailable.packetEvents()) {
+            dev.letsgoaway.geyserextras.core.handlers.packetevents.PacketEventsHandler.register();
+        }
     }
 
+    /**
+     * Dont use this on proxys, only on servers
+     * Tick individually based on tickrate for each player
+     * on proxys
+     */
     public void tick() {
         for (ExtrasPlayer player : connections.values()) {
             player.tick();
@@ -61,17 +52,18 @@ public class GeyserExtras implements EventRegistrar {
         SoundReplacer.loadSoundMappings();
     }
 
-    @Subscribe(postOrder = PostOrder.EARLY)
+    @Subscribe(postOrder = PostOrder.FIRST)
     public void onSessionJoin(SessionJoinEvent ev) {
         connections.put(ev.connection().xuid(), SERVER.createPlayer(ev.connection()));
     }
 
-    @Subscribe(postOrder = PostOrder.EARLY)
+    @Subscribe(postOrder = PostOrder.FIRST)
     public void onSessionRemove(SessionDisconnectEvent ev) {
+        connections.get(ev.connection().xuid()).onDisconnect();
         connections.remove(ev.connection().xuid());
     }
 
-    @Subscribe(postOrder = PostOrder.EARLY)
+    @Subscribe(postOrder = PostOrder.FIRST)
     public void onEmoteEvent(ClientEmoteEvent ev) {
         connections.get(ev.connection().xuid()).onEmoteEvent(ev);
     }

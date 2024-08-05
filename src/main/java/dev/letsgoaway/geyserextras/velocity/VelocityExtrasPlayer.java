@@ -14,14 +14,17 @@ public class VelocityExtrasPlayer extends ExtrasPlayer {
 
     public VelocityExtrasPlayer(GeyserConnection connection) {
         super(connection);
-        builder = GeyserExtrasVelocity.server.getScheduler().buildTask(GeyserExtrasVelocity.VELOCITY, this::tick).repeat(TickMath.toNanos(tickrate), TimeUnit.NANOSECONDS);
-        task = builder.schedule();
     }
 
     @Override
     public void setTickingState(float tickrate) {
         super.setTickingState(tickrate);
-        task.cancel();
+        if (builder == null) {
+            builder = GeyserExtrasVelocity.server.getScheduler().buildTask(GeyserExtrasVelocity.VELOCITY, this::tick);
+        }
+        if (task != null) {
+            task.cancel();
+        }
         builder.clearRepeat();
         builder.repeat(TickMath.toNanos(tickrate), TimeUnit.NANOSECONDS);
         task = builder.schedule();

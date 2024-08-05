@@ -2,10 +2,7 @@ package dev.letsgoaway.geyserextras;
 
 public enum ServerType {
     BUNGEE,
-    /**
-     * @deprecated Unsupported
-     */
-    @Deprecated EXTENSION,
+    EXTENSION,
     SPIGOT,
     VELOCITY;
     public static ServerType type;

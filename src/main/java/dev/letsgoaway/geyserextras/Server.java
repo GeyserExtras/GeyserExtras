@@ -13,5 +13,8 @@ public interface Server {
 
     void log(String string);
 
+    void warn(String string);
+
+
     Path getPluginFolder();
 }

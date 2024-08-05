@@ -78,13 +78,12 @@ public class Config {
                 muteEmoteChat = data.node("mute-emote-chat").getBoolean();
             if (data.hasChild("disable-paper-doll"))
                 disablePaperDoll = data.node("disable-paper-doll").getBoolean();
-            updateGeyserConfig();
         } catch (ConfigurateException e) {
             throw new RuntimeException(e);
         }
     }
 
-    private static void updateGeyserConfig() throws ConfigurateException {
+    public static void updateGeyserConfig() throws ConfigurateException {
         Path configPath = GE.geyserApi.configDirectory().resolve("config.yml");
         YamlConfigurationLoader loader = YamlConfigurationLoader.builder().file(configPath.toFile()).build();
         CommentedConfigurationNode geyserConfig = loader.load();

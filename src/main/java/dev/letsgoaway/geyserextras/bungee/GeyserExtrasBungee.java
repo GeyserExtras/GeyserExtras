@@ -45,6 +45,11 @@ public class GeyserExtrasBungee extends Plugin implements Server {
     }
 
     @Override
+    public void warn(String string) {
+        this.getLogger().warning(string);
+    }
+
+    @Override
     public Path getPluginFolder() {
         return getDataFolder().toPath();
     }
