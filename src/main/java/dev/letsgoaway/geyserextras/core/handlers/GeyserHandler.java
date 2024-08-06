@@ -13,6 +13,7 @@ import org.geysermc.geyser.api.event.lifecycle.GeyserDefineCommandsEvent;
 import org.geysermc.geyser.registry.Registries;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.translator.protocol.bedrock.BedrockBlockPickRequestTranslator;
+import org.geysermc.geyser.translator.protocol.bedrock.BedrockEmoteListTranslator;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.ClientboundSoundEntityPacket;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.level.ClientboundSoundPacket;
 
@@ -37,6 +38,9 @@ public class GeyserHandler {
         }
         // Cooldown
         Registries.BEDROCK_PACKET_TRANSLATORS.register(PlayerActionPacket.class, new BedrockActionInjector());
+        // Emotes
+        Registries.BEDROCK_PACKET_TRANSLATORS.register(EmoteListPacket.class, new BedrockEmoteListInjector());
+
 
         /* Action intercept related */
         // PICK_BLOCK

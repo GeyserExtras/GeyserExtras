@@ -14,6 +14,11 @@ public class VelocityExtrasPlayer extends ExtrasPlayer {
 
     public VelocityExtrasPlayer(GeyserConnection connection) {
         super(connection);
+    }
+    
+    @Override
+    public void startGame() {
+        super.startGame();
         this.setTickingState(20.0f);
     }
 

@@ -9,9 +9,11 @@ public enum Remappable {
     EMOTE_2,
     EMOTE_3,
     EMOTE_4,
-    SNEAK_DROP,
+    SNEAK_INVENTORY,
+    OPEN_INVENTORY,
     PICK_BLOCK,
-    OPEN_INVENTORY;
+    SNEAK_DROP;
+
     public String getLocaleString(ExtrasPlayer player) {
         GeyserSession session = player.getSession();
         String locale = session.locale();
@@ -20,10 +22,13 @@ public enum Remappable {
                 return MinecraftLocale.getLocaleString("key.pickItem", locale);
             }
             case OPEN_INVENTORY -> {
-                return MinecraftLocale.getLocaleString("key.inventory", locale);
+                return MinecraftLocale.getLocaleString("container.inventory", locale);
             }
             case SNEAK_DROP -> {
                 return MinecraftLocale.getLocaleString("key.sneak", locale) + " + " + MinecraftLocale.getLocaleString("key.drop", locale);
+            }
+            case SNEAK_INVENTORY -> {
+                return MinecraftLocale.getLocaleString("key.sneak", locale) + " + " + MinecraftLocale.getLocaleString("container.inventory", locale);
             }
             default -> {
                 return this.name();

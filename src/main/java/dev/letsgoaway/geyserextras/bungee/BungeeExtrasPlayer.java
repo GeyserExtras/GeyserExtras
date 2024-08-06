@@ -15,6 +15,10 @@ public class BungeeExtrasPlayer extends ExtrasPlayer {
 
     public BungeeExtrasPlayer(GeyserConnection connection) {
         super(connection);
+    }
+
+    @Override
+    public void startGame() {
         SERVER.getTickUtil().runIn(1L, this::tick, this);
     }
 
@@ -22,6 +26,6 @@ public class BungeeExtrasPlayer extends ExtrasPlayer {
     public void tick() {
         super.tick();
         ProxyServer.getInstance().getScheduler().schedule(GeyserExtrasBungee.BUNGEE, this::tick, TickMath.toNanos(this.tickrate), TimeUnit.NANOSECONDS);
-        SERVER.getTickUtil().runIn(1L, this::tick,this);
+        SERVER.getTickUtil().runIn(1L, this::tick, this);
     }
 }

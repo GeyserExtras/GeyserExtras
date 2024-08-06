@@ -11,12 +11,10 @@ import org.geysermc.geyser.translator.protocol.Translator;
 import org.geysermc.geyser.translator.protocol.bedrock.entity.player.BedrockActionTranslator;
 
 @Translator(packet = PlayerActionPacket.class)
-public class BedrockActionInjector extends PacketTranslator<PlayerActionPacket> {
-    BedrockActionTranslator translator = new BedrockActionTranslator();
-
+public class BedrockActionInjector extends BedrockActionTranslator {
     @Override
     public void translate(GeyserSession session, PlayerActionPacket packet) {
-        translator.translate(session, packet);
+        super.translate(session, packet);
         ExtrasPlayer player = GeyserHandler.getPlayer(session);
         if (packet.getAction().equals(PlayerActionType.START_BREAK)) {
             session.setLastHitTime(System.currentTimeMillis());

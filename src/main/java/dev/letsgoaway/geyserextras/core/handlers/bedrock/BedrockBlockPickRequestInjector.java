@@ -11,14 +11,12 @@ import org.geysermc.geyser.translator.protocol.bedrock.BedrockBlockPickRequestTr
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 @Translator(packet = BlockPickRequestPacket.class)
-public class BedrockBlockPickRequestInjector extends PacketTranslator<BlockPickRequestPacket> {
-    public static BedrockBlockPickRequestTranslator translator = new BedrockBlockPickRequestTranslator();
-
+public class BedrockBlockPickRequestInjector extends BedrockBlockPickRequestTranslator {
     @Override
     public void translate(GeyserSession session, BlockPickRequestPacket packet) {
         ExtrasPlayer player = GeyserHandler.getPlayer(session);
         if (player.getPreferences().isDefault(Remappable.PICK_BLOCK))
-            translator.translate(session, packet);
+            super.translate(session, packet);
         else
             player.getPreferences().runAction(Remappable.PICK_BLOCK);
     }

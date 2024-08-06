@@ -9,8 +9,14 @@ import java.util.concurrent.TimeUnit;
 
 public class ExtensionExtrasPlayer extends ExtrasPlayer {
     private ScheduledFuture<?> tickThread = null;
+
     public ExtensionExtrasPlayer(GeyserConnection connection) {
         super(connection);
+    }
+
+    @Override
+    public void startGame() {
+        super.startGame();
         this.setTickingState(20.0f);
     }
 
@@ -21,7 +27,7 @@ public class ExtensionExtrasPlayer extends ExtrasPlayer {
     }
 
     @Override
-    public void onDisconnect(){
+    public void onDisconnect() {
         tickThread.cancel(true);
         tickThread = null;
         super.onDisconnect();

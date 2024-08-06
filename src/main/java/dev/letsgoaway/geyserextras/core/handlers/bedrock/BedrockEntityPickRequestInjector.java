@@ -10,14 +10,13 @@ import org.geysermc.geyser.translator.protocol.Translator;
 import org.geysermc.geyser.translator.protocol.bedrock.BedrockEntityPickRequestTranslator;
 
 @Translator(packet = EntityPickRequestPacket.class)
-public class BedrockEntityPickRequestInjector extends PacketTranslator<EntityPickRequestPacket> {
-    BedrockEntityPickRequestTranslator translator = new BedrockEntityPickRequestTranslator();
+public class BedrockEntityPickRequestInjector extends BedrockEntityPickRequestTranslator {
 
     @Override
     public void translate(GeyserSession session, EntityPickRequestPacket packet) {
         ExtrasPlayer player = GeyserHandler.getPlayer(session);
         if (player.getPreferences().isDefault(Remappable.PICK_BLOCK))
-            translator.translate(session, packet);
+            super.translate(session, packet);
         else
             player.getPreferences().runAction(Remappable.PICK_BLOCK);
     }

@@ -12,13 +12,11 @@ import org.geysermc.geyser.util.SoundUtils;
 import org.geysermc.mcprotocollib.protocol.data.game.level.sound.Sound;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.level.ClientboundSoundPacket;
 @Translator(packet = ClientboundSoundPacket.class)
-public class JavaSoundInjector extends PacketTranslator<ClientboundSoundPacket> {
-    JavaSoundTranslator translator = new JavaSoundTranslator();
-
+public class JavaSoundInjector extends JavaSoundTranslator {
     @Override
     public void translate(GeyserSession session, ClientboundSoundPacket packet) {
         if (!Config.javaCombatSounds) {
-            translator.translate(session, packet);
+            super.translate(session, packet);
             return;
         }
         Vector3f position = Vector3f.from(packet.getX(), packet.getY(), packet.getZ());

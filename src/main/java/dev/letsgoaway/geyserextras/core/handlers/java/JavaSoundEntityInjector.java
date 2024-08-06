@@ -12,13 +12,11 @@ import org.geysermc.geyser.util.SoundUtils;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.ClientboundSoundEntityPacket;
 
 @Translator(packet = ClientboundSoundEntityPacket.class)
-public class JavaSoundEntityInjector extends PacketTranslator<ClientboundSoundEntityPacket> {
-    JavaSoundEntityTranslator translator = new JavaSoundEntityTranslator();
-
+public class JavaSoundEntityInjector extends JavaSoundEntityTranslator {
     @Override
     public void translate(GeyserSession session, ClientboundSoundEntityPacket packet) {
         if (!Config.javaCombatSounds) {
-            translator.translate(session, packet);
+            super.translate(session, packet);
             return;
         }
         Entity entity = session.getEntityCache().getEntityByJavaId(packet.getEntityId());

@@ -14,16 +14,14 @@ import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 @Translator(packet = CommandRequestPacket.class)
-public class BedrockCommandRequestInjector extends PacketTranslator<CommandRequestPacket> {
-    BedrockCommandRequestTranslator translator = new BedrockCommandRequestTranslator();
-
+public class BedrockCommandRequestInjector extends BedrockCommandRequestTranslator {
     @Override
     public void translate(GeyserSession session, CommandRequestPacket packet) {
         if (CommandHandler.isExtrasCommand(packet.getCommand())) {
             ExtrasPlayer player = GeyserHandler.getPlayer(session);
             CommandHandler.runFromInput(player, packet.getCommand());
         } else {
-            translator.translate(session, packet);
+            super.translate(session, packet);
         }
     }
 }

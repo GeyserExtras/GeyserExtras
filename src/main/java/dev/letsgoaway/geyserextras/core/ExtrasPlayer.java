@@ -1,5 +1,6 @@
 package dev.letsgoaway.geyserextras.core;
 
+import dev.letsgoaway.geyserextras.core.features.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
 import dev.letsgoaway.geyserextras.core.form.BedrockForm;
 import dev.letsgoaway.geyserextras.core.parity.java.CooldownHandler;
@@ -11,6 +12,7 @@ import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent;
 import org.geysermc.geyser.session.GeyserSession;
 
+import java.util.List;
 import java.util.UUID;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
@@ -22,6 +24,9 @@ public class ExtrasPlayer {
 
     @Getter
     private String bedrockXUID;
+
+    @Setter
+    private List<UUID> emotesList;
 
     @Getter
     public GeyserSession session;
@@ -38,6 +43,10 @@ public class ExtrasPlayer {
         this.bedrockXUID = connection.xuid();
         cooldownHandler = new CooldownHandler(this);
         preferences = new PreferencesData(this);
+        emotesList = List.of();
+    }
+
+    public void startGame() {
     }
 
     public void onDisconnect() {
@@ -51,7 +60,17 @@ public class ExtrasPlayer {
     }
 
     public void onEmoteEvent(ClientEmoteEvent ev) {
+        int id = emotesList.indexOf(UUID.fromString(ev.emoteId()));
 
+        SERVER.log(ev.emoteId());
+        SERVER.log(String.valueOf(id));
+        if (id == -1) {
+            // TODO: debug logs??? we could check if geyser has debug mode on in config
+            SERVER.warn("Emote with id: " + ev.emoteId() + " was not in emote list!");
+            return;
+        }
+
+        preferences.getAction(Remappable.values()[id]).run(this);
     }
 
     @Setter
@@ -106,5 +125,4 @@ public class ExtrasPlayer {
     public void setTickingState(float tickrate) {
         this.tickrate = tickrate;
     }
-
 }
