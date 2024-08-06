@@ -8,6 +8,7 @@ import org.geysermc.event.subscribe.Subscribe;
 import org.geysermc.geyser.api.GeyserApi;
 import org.geysermc.geyser.api.event.EventRegistrar;
 import org.geysermc.geyser.api.event.bedrock.*;
+import org.geysermc.geyser.api.event.lifecycle.GeyserDefineCommandsEvent;
 import org.geysermc.geyser.api.event.lifecycle.GeyserPostInitializeEvent;
 
 import java.util.HashMap;
@@ -37,6 +38,7 @@ public class GeyserExtras implements EventRegistrar {
         connections = new ConcurrentHashMap<>();
         InitializeLogger.end();
     }
+
 
     /**
      * Dont use this on proxys, only on servers
@@ -78,6 +80,7 @@ public class GeyserExtras implements EventRegistrar {
         }
 
     }
+
 
     @Subscribe(postOrder = PostOrder.FIRST)
     public void onEmoteEvent(ClientEmoteEvent ev) {

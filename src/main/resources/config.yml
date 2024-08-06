@@ -19,11 +19,6 @@ enable-block-ghosting-fix: false
 # When the server closes or Geyser reloads, should GeyserExtras reconnect to the server using the below address.
 auto-reconnect: true
 
-# This is the ip and port players connect to via any port forwarding system NOT YOUR LOCAL IP. You
-# should set this to the ip and port you give to your players.
-external-address: "mc.exampleaddress.net"
-external-port: 19132
-
 # The actions that will show up in the Quick-Menu. Quick-Menu requires the plugin version of Geyser.
 # Actions are formatted as shown below,
 # "{title} >> {command}"

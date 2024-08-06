@@ -1,15 +1,15 @@
 package dev.letsgoaway.geyserextras.core.handlers;
 
+import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.SoundReplacer;
-import dev.letsgoaway.geyserextras.core.handlers.bedrock.BedrockActionInjector;
-import dev.letsgoaway.geyserextras.core.handlers.bedrock.BedrockBlockPickRequestInjector;
-import dev.letsgoaway.geyserextras.core.handlers.bedrock.BedrockEntityPickRequestInjector;
+import dev.letsgoaway.geyserextras.core.handlers.bedrock.*;
 import dev.letsgoaway.geyserextras.core.handlers.java.JavaSoundEntityInjector;
 import dev.letsgoaway.geyserextras.core.handlers.java.JavaSoundInjector;
-import org.cloudburstmc.protocol.bedrock.packet.BlockPickRequestPacket;
-import org.cloudburstmc.protocol.bedrock.packet.EntityPickRequestPacket;
-import org.cloudburstmc.protocol.bedrock.packet.PlayerActionPacket;
+import org.cloudburstmc.protocol.bedrock.packet.*;
+import org.geysermc.geyser.api.command.Command;
+import org.geysermc.geyser.api.command.CommandSource;
+import org.geysermc.geyser.api.event.lifecycle.GeyserDefineCommandsEvent;
 import org.geysermc.geyser.registry.Registries;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.translator.protocol.bedrock.BedrockBlockPickRequestTranslator;
@@ -21,6 +21,7 @@ import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 public class GeyserHandler {
     public static void register() {
         SoundReplacer.loadSoundMappings();
+        CommandHandler.loadCommands();
         registerUpstream();
         registerDownstream();
     }
@@ -31,9 +32,19 @@ public class GeyserHandler {
     }
 
     public static void registerDownstream() {
+        if (ServerType.type.equals(ServerType.EXTENSION)) {
+            Registries.BEDROCK_PACKET_TRANSLATORS.register(CommandRequestPacket.class, new BedrockCommandRequestInjector());
+        }
+        // Cooldown
         Registries.BEDROCK_PACKET_TRANSLATORS.register(PlayerActionPacket.class, new BedrockActionInjector());
+
+        /* Action intercept related */
+        // PICK_BLOCK
         Registries.BEDROCK_PACKET_TRANSLATORS.register(BlockPickRequestPacket.class, new BedrockBlockPickRequestInjector());
         Registries.BEDROCK_PACKET_TRANSLATORS.register(EntityPickRequestPacket.class, new BedrockEntityPickRequestInjector());
+        // OPEN_INVENTORY
+        Registries.BEDROCK_PACKET_TRANSLATORS.register(InteractPacket.class, new BedrockInteractInjector());
+
     }
 
 

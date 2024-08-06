@@ -1,16 +1,15 @@
 package dev.letsgoaway.geyserextras.core;
 
+import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
+import dev.letsgoaway.geyserextras.core.form.BedrockForm;
 import dev.letsgoaway.geyserextras.core.parity.java.CooldownHandler;
 import lombok.Getter;
 import lombok.Setter;
 import org.cloudburstmc.protocol.bedrock.packet.SetTitlePacket;
-import org.geysermc.geyser.GeyserImpl;
 import org.geysermc.geyser.api.bedrock.camera.GuiElement;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent;
 import org.geysermc.geyser.session.GeyserSession;
-import org.geysermc.geyser.translator.protocol.bedrock.BedrockItemStackRequestTranslator;
-import org.geysermc.mcprotocollib.protocol.data.game.entity.type.EntityType;
 
 import java.util.UUID;
 
@@ -30,14 +29,25 @@ public class ExtrasPlayer {
     @Getter
     private CooldownHandler cooldownHandler;
 
+    @Getter
+    private PreferencesData preferences;
+
     public ExtrasPlayer(GeyserConnection connection) {
         this.session = (GeyserSession) connection;
         this.javaUUID = connection.javaUuid();
         this.bedrockXUID = connection.xuid();
         cooldownHandler = new CooldownHandler(this);
+        preferences = new PreferencesData(this);
     }
 
     public void onDisconnect() {
+    }
+
+    public void reconnect() {
+        String[] data = session.getClientData().getServerAddress().split(":");
+        String address = data[0];
+        int port = Integer.parseInt(data[1]);
+        session.transfer(address, port);
     }
 
     public void onEmoteEvent(ClientEmoteEvent ev) {
@@ -61,7 +71,6 @@ public class ExtrasPlayer {
     }
 
     public void sendTitle(String title, String subtitle, int fadeIn, int stay, int fadeOut) {
-
         SetTitlePacket timesPacket = new SetTitlePacket();
         timesPacket.setText("");
         timesPacket.setType(SetTitlePacket.Type.TIMES);
@@ -84,6 +93,14 @@ public class ExtrasPlayer {
         subtitlePacket.setPlatformOnlineId("");
         session.sendUpstreamPacket(subtitlePacket);
 
+    }
+
+    public void sendForm(BedrockForm form) {
+        session.sendForm(form.create(this));
+    }
+
+    public void sendForm(BedrockMenu form) {
+        session.sendForm(form.create(this));
     }
 
     public void setTickingState(float tickrate) {

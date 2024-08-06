@@ -39,7 +39,7 @@ public class CooldownHandler {
 
         long time = System.currentTimeMillis() - lastSwingTime;
         double cooldown = MathUtils.restrain(((double) time) * attackSpeed / 1000.0, 1);
-        player.sendTitle("", String.valueOf(cooldown), 0, 5, 0);
+        // player.sendTitle("", String.valueOf(cooldown), 0, 5, 0);
     }
 
     public double getCooldownPeriod() {

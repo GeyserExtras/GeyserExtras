@@ -27,8 +27,6 @@ public class Config {
     public static boolean javaBlockPlacement = false;
     public static boolean blockGhostingFix = false;
     public static boolean autoReconnect = true;
-    public static String externalAddress = "mc.exampleaddress.net";
-    public static int externalPort = 19132;
     public static ArrayList<String> configQuickMenuActions = new ArrayList<>(Arrays.asList(
             "Swap Items with Off-hand >> /geyser offhand", "Toggle Tooltips >> /geyser tooltips",
             "Open GeyserExtras Menu >> /ge", "Open Advancements >> /geyser advancements", "Open Statistics >> /geyser statistics",
@@ -93,10 +91,6 @@ public class Config {
                 blockGhostingFix = data.node("enable-block-ghosting-fix").getBoolean();
             if (data.hasChild("auto-reconnect"))
                 autoReconnect = data.node("auto-reconnect").getBoolean();
-            if (data.hasChild("external-address"))
-                externalAddress = data.node("external-address").getString();
-            if (data.hasChild("external-port"))
-                externalPort = data.node("external-port").getInt();
             if (data.hasChild("quick-menu-actions")) {
                 List<String> actions = data.node("quick-menu-actions").getList(String.class);
                 if (actions != null) {

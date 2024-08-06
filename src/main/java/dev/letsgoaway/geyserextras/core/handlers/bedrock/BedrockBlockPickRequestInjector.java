@@ -1,4 +1,7 @@
 package dev.letsgoaway.geyserextras.core.handlers.bedrock;
+import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
+import dev.letsgoaway.geyserextras.core.features.bindings.Remappable;
+import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
 import org.cloudburstmc.protocol.bedrock.packet.BlockPickRequestPacket;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.translator.protocol.PacketTranslator;
@@ -9,13 +12,14 @@ import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 @Translator(packet = BlockPickRequestPacket.class)
 public class BedrockBlockPickRequestInjector extends PacketTranslator<BlockPickRequestPacket> {
-    BedrockBlockPickRequestTranslator translator = new BedrockBlockPickRequestTranslator();
+    public static BedrockBlockPickRequestTranslator translator = new BedrockBlockPickRequestTranslator();
 
     @Override
     public void translate(GeyserSession session, BlockPickRequestPacket packet) {
-        if (true)// to-do config ootion
-            session.entities().switchHands();
-        else
+        ExtrasPlayer player = GeyserHandler.getPlayer(session);
+        if (player.getPreferences().isDefault(Remappable.PICK_BLOCK))
             translator.translate(session, packet);
+        else
+            player.getPreferences().runAction(Remappable.PICK_BLOCK);
     }
 }

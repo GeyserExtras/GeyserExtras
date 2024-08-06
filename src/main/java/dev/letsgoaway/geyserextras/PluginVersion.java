@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 
 public class PluginVersion {
     public static final String GE_VERSION = "1.21.0-v2.0.0";
+    public static ReleaseVersion GE_RELEASE = new ReleaseVersion(GE_VERSION);
 
     public static String latestVersion = "";
 
@@ -29,7 +30,7 @@ public class PluginVersion {
             JsonArray rootobj = root.getAsJsonArray();
             latestVersion = rootobj.get(0).getAsJsonObject().get("name").getAsString();
             ReleaseVersion latestVer = new ReleaseVersion(latestVersion);
-            return !latestVersion.equals(GE_VERSION) && !latestVer.prerelease && latestVer.isNewer(new ReleaseVersion(GE_VERSION));
+            return !latestVersion.equals(GE_VERSION) && !latestVer.prerelease && latestVer.isNewer(GE_RELEASE);
         } catch (IOException e) {
             return false;
         }
