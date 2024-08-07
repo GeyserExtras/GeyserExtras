@@ -1,22 +1,16 @@
 package dev.letsgoaway.geyserextras.core.parity.java;
 
 import dev.letsgoaway.geyserextras.MathUtils;
-import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import lombok.Getter;
 import lombok.Setter;
-import org.geysermc.geyser.GeyserImpl;
-import org.geysermc.geyser.registry.Registries;
+import org.geysermc.geyser.session.GeyserSession;
 
-import java.time.Duration;
-import java.time.Instant;
-import java.util.Objects;
-
-import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
-import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class CooldownHandler {
-    private ExtrasPlayer player;
+    private final ExtrasPlayer player;
+
+    private GeyserSession session;
 
     @Setter
     private long lastSwingTime;
@@ -25,24 +19,118 @@ public class CooldownHandler {
     @Getter
     public double attackSpeed = 4.0;
 
+
+    /**
+     * -1 means the player is not digging
+     */
+    @Setter
+    @Getter
+    public int digTicks = -1;
+
+    @Setter
+    private long lastMouseoverID = 0;
+
+
     public CooldownHandler(ExtrasPlayer player) {
         this.player = player;
         lastSwingTime = System.currentTimeMillis();
+        session = player.getSession();
     }
 
+    public boolean readyToAttack = false;
+
+    // TODO: better way to detect instead of using identifier
+    public boolean isTool() {
+        String item = session.getPlayerInventory().getItemInHand().getMapping(session).getBedrockIdentifier();
+        return (
+                item.contains("_axe")
+                        || item.contains("_pickaxe")
+                        || item.contains("_shovel")
+                        || item.contains("_sword")
+                        || item.contains("trident")
+                        || item.contains("mace")
+                // || item.contains("_hoe")
+                // hoes dont have attack speed for some reason
+        );
+    }
 
     public void tick() {
-        if (player.getSession().getLastHitTime() > lastSwingTime) {
-            lastSwingTime = player.getSession().getLastHitTime();
+        if (lastMouseoverID != 0 && session.getMouseoverEntity() != null && isTool()) {
+            readyToAttack = session.getMouseoverEntity().isAlive();
+        } else {
+            readyToAttack = false;
         }
-        attackSpeed = player.getSession().getAttackSpeed();
+        double time = (System.currentTimeMillis() - averagePing) - lastSwingTime;
+        double cooldown = MathUtils.restrain((time) * attackSpeed / 1000.0, 1);
+        sendCooldown(cooldown);
+    }
 
-        long time = System.currentTimeMillis() - lastSwingTime;
-        double cooldown = MathUtils.restrain(((double) time) * attackSpeed / 1000.0, 1);
-        // player.sendTitle("", String.valueOf(cooldown), 0, 5, 0);
+    private static final String[] crosshair = {"\uF821", "\uF810", "\uF811", "\uF812", "\uF813", "\uF814", "\uF815", "\uF816", "\uF817", "\uF818", "\uF819", "\uF81A", "\uF81B", "\uF81C", "\uF81D", "\uF81E", "\uF81F"};
+    private static final String[] hotbar = {"\uF800", "\uF801", "\uF802", "\uF803", "\uF804", "\uF805", "\uF806", "\uF807", "\uF808", "\uF809", "\uF80A", "\uF80B", "\uF80C", "\uF80D", "\uF80E", "\uF80F"};
+
+    private static final String crosshairAttackReady = "\uF820";
+
+    private String lastCharSent = "";
+
+    private void sendCooldown(double progress) {
+        if (digTicks != -1 || progress == 1.0) {
+            switch (session.getPreferencesCache().getCooldownPreference()) {
+                case TITLE -> {
+                    if (readyToAttack && !lastCharSent.equals(crosshairAttackReady)) {
+                        lastCharSent = crosshairAttackReady;
+                        player.sendTitle("", lastCharSent, 0, Integer.MAX_VALUE, 0);
+                    } else if (!readyToAttack && !lastCharSent.isEmpty()) {
+                        lastCharSent = "";
+                        player.resetTitle();
+                    }
+                }
+                case ACTIONBAR -> {
+                }
+                case DISABLED -> {
+                }
+            }
+            return;
+        }
+        switch (session.getPreferencesCache().getCooldownPreference()) {
+            case TITLE -> {
+                int max = (crosshair.length - 1);
+                // java math is so good i love it alot
+                int cooldown = Math.toIntExact(Math.round(Math.floor(progress * max)));
+                if (cooldown > max) {
+                    cooldown = max;
+                }
+                String curChar = crosshair[cooldown];
+                if (lastCharSent.equals(curChar)) {
+                    return;
+                }
+                lastCharSent = curChar;
+                player.sendTitle("", lastCharSent, 0, MathUtils.ceil((float) getCooldownPeriod()), 0);
+            }
+            case ACTIONBAR -> {
+            }
+            case DISABLED -> {
+            }
+        }
     }
 
     public double getCooldownPeriod() {
         return 1.0D / attackSpeed * 20.0;
+    }
+
+    private double averagePing = 0.0f;
+    private long pingSample = 0;
+
+    private long pingSampleSize = 0;
+
+    private int lastPing = -1;
+
+    private void calculateAveragePing() {
+        int ping = session.ping();
+        if (ping != lastPing) {
+            pingSample += ping;
+            pingSampleSize++;
+            lastPing = ping;
+        }
+        averagePing = (double) pingSample / pingSampleSize;
     }
 }

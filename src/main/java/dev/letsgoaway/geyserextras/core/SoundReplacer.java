@@ -44,7 +44,6 @@ public enum SoundReplacer {
     }
 
     public static String getSound(String javaSound) {
-        SERVER.log(javaSound);
         return soundMap.getOrDefault(javaSound, javaSound);
     }
 }

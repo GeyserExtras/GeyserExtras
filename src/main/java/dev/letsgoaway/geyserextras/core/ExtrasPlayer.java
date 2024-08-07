@@ -1,5 +1,6 @@
 package dev.letsgoaway.geyserextras.core;
 
+import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.features.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
 import dev.letsgoaway.geyserextras.core.form.BedrockForm;
@@ -33,7 +34,6 @@ public class ExtrasPlayer {
 
     @Getter
     private CooldownHandler cooldownHandler;
-
     @Getter
     private PreferencesData preferences;
 
@@ -62,8 +62,6 @@ public class ExtrasPlayer {
     public void onEmoteEvent(ClientEmoteEvent ev) {
         int id = emotesList.indexOf(UUID.fromString(ev.emoteId()));
 
-        SERVER.log(ev.emoteId());
-        SERVER.log(String.valueOf(id));
         if (id == -1) {
             // TODO: debug logs??? we could check if geyser has debug mode on in config
             SERVER.warn("Emote with id: " + ev.emoteId() + " was not in emote list!");
@@ -81,7 +79,8 @@ public class ExtrasPlayer {
 
     public void tick() {
         ticks++;
-        if (Config.customCoolDownEnabled) {
+        // we update it faster on extensions at 60 tps for a smoother cooldown
+        if (ServerType.type != ServerType.EXTENSION && Config.customCoolDownEnabled) {
             cooldownHandler.tick();
         }
         if (Config.disablePaperDoll) {
@@ -101,7 +100,7 @@ public class ExtrasPlayer {
         session.sendUpstreamPacket(timesPacket);
         SetTitlePacket titlePacket = new SetTitlePacket();
         titlePacket.setType(SetTitlePacket.Type.TITLE);
-        titlePacket.setText(title.isEmpty() ? " " : "");
+        titlePacket.setText(title.isEmpty() ? " " : title);
         titlePacket.setXuid("");
         titlePacket.setPlatformOnlineId("");
         session.sendUpstreamPacket(titlePacket);
@@ -111,7 +110,15 @@ public class ExtrasPlayer {
         subtitlePacket.setXuid("");
         subtitlePacket.setPlatformOnlineId("");
         session.sendUpstreamPacket(subtitlePacket);
+    }
 
+    public void resetTitle() {
+        SetTitlePacket titlePacket = new SetTitlePacket();
+        titlePacket.setType(SetTitlePacket.Type.CLEAR);
+        titlePacket.setText("");
+        titlePacket.setXuid("");
+        titlePacket.setPlatformOnlineId("");
+        session.sendUpstreamPacket(titlePacket);
     }
 
     public void sendForm(BedrockForm form) {
