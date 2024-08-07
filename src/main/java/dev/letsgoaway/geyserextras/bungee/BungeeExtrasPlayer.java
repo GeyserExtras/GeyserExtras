@@ -25,6 +25,7 @@ public class BungeeExtrasPlayer extends ExtrasPlayer {
     @Override
     public void tick() {
         super.tick();
+
         ProxyServer.getInstance().getScheduler().schedule(GeyserExtrasBungee.BUNGEE, this::tick, TickMath.toNanos(this.tickrate), TimeUnit.NANOSECONDS);
         SERVER.getTickUtil().runIn(1L, this::tick, this);
     }

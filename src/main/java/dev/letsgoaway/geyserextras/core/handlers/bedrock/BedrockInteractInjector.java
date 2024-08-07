@@ -5,14 +5,17 @@ import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.features.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
 import org.cloudburstmc.protocol.bedrock.data.PlayerActionType;
+import org.cloudburstmc.protocol.bedrock.packet.EntityPickRequestPacket;
 import org.cloudburstmc.protocol.bedrock.packet.InteractPacket;
 import org.geysermc.geyser.entity.type.Entity;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.translator.protocol.PacketTranslator;
+import org.geysermc.geyser.translator.protocol.Translator;
 import org.geysermc.geyser.translator.protocol.bedrock.entity.player.BedrockInteractTranslator;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
+@Translator(packet = InteractPacket.class)
 public class BedrockInteractInjector extends BedrockInteractTranslator {
     @Override
     public void translate(GeyserSession session, InteractPacket packet) {

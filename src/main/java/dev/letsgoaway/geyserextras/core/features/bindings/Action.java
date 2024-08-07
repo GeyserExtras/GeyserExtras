@@ -1,5 +1,6 @@
 package dev.letsgoaway.geyserextras.core.features.bindings;
 
+import dev.letsgoaway.geyserextras.core.Config;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.handlers.CommandHandler;
 import dev.letsgoaway.geyserextras.core.handlers.bedrock.BedrockBlockPickRequestInjector;
@@ -46,12 +47,8 @@ public enum Action {
                         + MinecraftLocale.getLocaleString("debug.advanced_tooltips." + onOrOff, session.locale()));
                 session.getInventoryTranslator().updateInventory(session, session.getPlayerInventory());
             }
-            case OPEN_GE_MENU -> {
-                player.sendForm(new MainMenu());
-            }
-            case OPEN_ADVANCEMENTS -> {
-                session.getAdvancementsCache().buildAndShowMenuForm();
-            }
+            case OPEN_GE_MENU -> player.sendForm(new MainMenu());
+            case OPEN_ADVANCEMENTS -> session.getAdvancementsCache().buildAndShowMenuForm();
             case OPEN_STATISTICS -> {
                 session.setWaitingForStatistics(true);
                 ServerboundClientCommandPacket packet = new ServerboundClientCommandPacket(ClientCommand.STATS);

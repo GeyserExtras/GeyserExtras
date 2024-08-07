@@ -6,6 +6,7 @@ import org.cloudburstmc.protocol.bedrock.data.inventory.transaction.InventoryTra
 import org.cloudburstmc.protocol.bedrock.packet.InventoryTransactionPacket;
 import org.geysermc.geyser.entity.type.Entity;
 import org.geysermc.geyser.session.GeyserSession;
+import org.geysermc.geyser.translator.protocol.Translator;
 import org.geysermc.geyser.translator.protocol.bedrock.BedrockInventoryTransactionTranslator;
 // I love it when bedrock randomly sends data in random packets
 // of which the name they have is completely irrelavant to what
@@ -14,6 +15,7 @@ import org.geysermc.geyser.translator.protocol.bedrock.BedrockInventoryTransacti
 // doesnt work :3
 
 // but its ok we still win though
+@Translator(packet = InventoryTransactionPacket.class)
 public class BedrockInventoryTransactionInjector extends BedrockInventoryTransactionTranslator {
     @Override
     public void translate(GeyserSession session, InventoryTransactionPacket packet) {
