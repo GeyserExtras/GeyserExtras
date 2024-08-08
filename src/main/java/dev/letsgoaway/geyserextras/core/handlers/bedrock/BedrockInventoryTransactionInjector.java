@@ -119,7 +119,7 @@ public class BedrockInventoryTransactionInjector extends BedrockInventoryTransac
         FoodProperties foodProperties = session.getPlayerInventory().getItemInHand().getComponent(DataComponentType.FOOD);
         if (foodProperties != null) {
             AttributeData hunger = session.getPlayerEntity().getAttributes().get(GeyserAttributeType.HUNGER);
-            if (foodProperties.isCanAlwaysEat() || hunger.getValue() == hunger.getMaximum()) {
+            if (foodProperties.isCanAlwaysEat() || hunger.getValue() != hunger.getMaximum()) {
                 return false;
             }
         }
