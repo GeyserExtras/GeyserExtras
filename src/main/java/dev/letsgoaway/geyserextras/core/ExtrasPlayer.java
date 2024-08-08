@@ -4,6 +4,7 @@ import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.features.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
 import dev.letsgoaway.geyserextras.core.form.BedrockForm;
+import dev.letsgoaway.geyserextras.core.handlers.bedrock.BedrockInventoryTransactionInjector;
 import dev.letsgoaway.geyserextras.core.parity.java.CooldownHandler;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +16,8 @@ import org.geysermc.geyser.session.GeyserSession;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
@@ -37,6 +40,8 @@ public class ExtrasPlayer {
     @Getter
     private PreferencesData preferences;
 
+    private ScheduledFuture<?> combatTickThread;
+
     public ExtrasPlayer(GeyserConnection connection) {
         this.session = (GeyserSession) connection;
         this.javaUUID = connection.javaUuid();
@@ -44,12 +49,20 @@ public class ExtrasPlayer {
         cooldownHandler = new CooldownHandler(this);
         preferences = new PreferencesData(this);
         emotesList = List.of();
+        // Update the cooldown at a faster rate for smoother animations at fast periods
+        combatTickThread = session.getEventLoop().scheduleAtFixedRate(() -> {
+            if (Config.customCoolDownEnabled) {
+                getCooldownHandler().tick();
+            }
+        }, TickMath.toNanos(60), TickMath.toNanos(tickrate), TimeUnit.NANOSECONDS);
     }
 
     public void startGame() {
     }
 
     public void onDisconnect() {
+        combatTickThread.cancel(true);
+        combatTickThread = null;
     }
 
     public void reconnect() {
@@ -79,13 +92,10 @@ public class ExtrasPlayer {
 
     public void tick() {
         ticks++;
-        // we update it faster on extensions at 60 tps for a smoother cooldown
-        if (ServerType.type != ServerType.EXTENSION && Config.customCoolDownEnabled) {
-            cooldownHandler.tick();
-        }
         if (Config.disablePaperDoll) {
             session.camera().hideElement(GuiElement.PAPER_DOLL);
         }
+        BedrockInventoryTransactionInjector.updateBlockSpeed(session);
     }
 
     public void sendTitle(String title, String subtitle, int fadeIn, int stay, int fadeOut) {

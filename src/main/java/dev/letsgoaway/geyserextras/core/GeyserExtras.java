@@ -77,6 +77,7 @@ public class GeyserExtras implements EventRegistrar {
         if (connections.remove(ev.connection().xuid()) == null) {
             SERVER.warn("Could not remove user.");
         }
+
     }
 
     public void onEmoteEvent(ClientEmoteEvent ev) {

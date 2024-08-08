@@ -4,6 +4,7 @@ import dev.letsgoaway.geyserextras.MathUtils;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import lombok.Getter;
 import lombok.Setter;
+import org.geysermc.geyser.entity.attribute.GeyserAttributeType;
 import org.geysermc.geyser.session.GeyserSession;
 
 
@@ -29,7 +30,6 @@ public class CooldownHandler {
 
     @Setter
     private long lastMouseoverID = 0;
-
 
     public CooldownHandler(ExtrasPlayer player) {
         this.player = player;
