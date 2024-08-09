@@ -9,6 +9,9 @@ enable-custom-cooldown: true
 # Enable the Java Edition combat sounds.
 enable-java-combat-sounds: true
 
+# Enable toggling the shield by pressing right click.
+enable-toggle-block: false
+
 # Forces block placements to not be hold-bridgable/scaffold-bridgeable.
 # Requires disable-bedrock-scaffolding: true in Geyser's config for forward block placements.
 enable-java-only-block-placement: false

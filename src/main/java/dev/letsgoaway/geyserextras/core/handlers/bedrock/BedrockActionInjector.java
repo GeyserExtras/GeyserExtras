@@ -62,9 +62,11 @@ public class BedrockActionInjector extends BedrockActionTranslator {
             case MISSED_SWING -> {
                 player.getCooldownHandler().setDigTicks(-1);
                 player.getCooldownHandler().setLastSwingTime(System.currentTimeMillis());
-                if (BedrockInventoryTransactionInjector.disableBlocking(session)) {
-                    session.getPlayerEntity().updateBedrockMetadata();
-                    session.getPlayerEntity().resetAttributes();
+                if (Config.toggleBlock) {
+                    if (BedrockInventoryTransactionInjector.disableBlocking(session)) {
+                        session.getPlayerEntity().updateBedrockMetadata();
+                        session.getPlayerEntity().resetAttributes();
+                    }
                 }
 
             }

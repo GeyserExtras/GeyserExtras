@@ -24,6 +24,8 @@ public class Config {
     //region config.yml values
     public static boolean customCoolDownEnabled = true;
     public static boolean javaCombatSounds = true;
+
+    public static boolean toggleBlock = false;
     public static boolean javaBlockPlacement = false;
     public static boolean blockGhostingFix = false;
     public static boolean autoReconnect = true;
@@ -85,6 +87,8 @@ public class Config {
                 customCoolDownEnabled = data.node("enable-custom-cooldown").getBoolean();
             if (data.hasChild("enable-java-combat-sounds"))
                 javaCombatSounds = data.node("enable-java-combat-sounds").getBoolean();
+            if (data.hasChild("enable-toggle-block"))
+                toggleBlock = data.node("enable-toggle-block").getBoolean();
             if (data.hasChild("enable-java-only-block-placement"))
                 javaBlockPlacement = data.node("enable-java-only-block-placement").getBoolean();
             if (data.hasChild("enable-block-ghosting-fix"))

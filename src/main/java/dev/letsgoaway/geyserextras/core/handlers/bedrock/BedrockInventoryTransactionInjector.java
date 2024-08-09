@@ -1,5 +1,6 @@
 package dev.letsgoaway.geyserextras.core.handlers.bedrock;
 
+import dev.letsgoaway.geyserextras.core.Config;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
 import org.cloudburstmc.math.vector.Vector3i;
@@ -51,9 +52,11 @@ public class BedrockInventoryTransactionInjector extends BedrockInventoryTransac
                 return;
 
             if (packet.getActionType() == 1) {
-                if (BedrockInventoryTransactionInjector.disableBlocking(session)) {
-                    session.getPlayerEntity().updateBedrockMetadata();
-                    session.getPlayerEntity().resetAttributes();
+                if (Config.toggleBlock) {
+                    if (BedrockInventoryTransactionInjector.disableBlocking(session)) {
+                        session.getPlayerEntity().updateBedrockMetadata();
+                        session.getPlayerEntity().resetAttributes();
+                    }
                 }
                 ExtrasPlayer player = GeyserHandler.getPlayer(session);
                 player.getCooldownHandler().setDigTicks(-1);
@@ -63,9 +66,10 @@ public class BedrockInventoryTransactionInjector extends BedrockInventoryTransac
         // Block Breaking
         if (packet.getTransactionType().equals(InventoryTransactionType.ITEM_USE)) {
             ExtrasPlayer player = GeyserHandler.getPlayer(session);
-            if (packet.getActionType() == 1) {
+            if (Config.toggleBlock && packet.getActionType() == 1) {
                 checkBlock(session);
             }
+
             if (packet.getActionType() == 2) {
 
                 // Disable the GeyserExtras cooldown until next player action to
