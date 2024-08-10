@@ -31,6 +31,14 @@ public class CooldownHandler {
     @Setter
     private long lastMouseoverID = 0;
 
+    @Setter
+    @Getter
+    private boolean skipNextItemUse1 = false;
+
+    @Setter
+    @Getter
+    private long lastBlockRightClickTime = 0;
+
     public CooldownHandler(ExtrasPlayer player) {
         this.player = player;
         lastSwingTime = System.currentTimeMillis();
@@ -39,23 +47,8 @@ public class CooldownHandler {
 
     public boolean readyToAttack = false;
 
-    // TODO: better way to detect instead of using identifier
-    public boolean isTool() {
-        String item = session.getPlayerInventory().getItemInHand().getMapping(session).getBedrockIdentifier();
-        return (
-                item.contains("_axe")
-                        || item.contains("_pickaxe")
-                        || item.contains("_shovel")
-                        || item.contains("_sword")
-                        || item.contains("trident")
-                        || item.contains("mace")
-                // || item.contains("_hoe")
-                // hoes dont have attack speed for some reason
-        );
-    }
-
     public void tick() {
-        if (lastMouseoverID != 0 && session.getMouseoverEntity() != null && isTool()) {
+        if (lastMouseoverID != 0 && session.getMouseoverEntity() != null && player.isTool()) {
             readyToAttack = session.getMouseoverEntity().isAlive();
         } else {
             readyToAttack = false;

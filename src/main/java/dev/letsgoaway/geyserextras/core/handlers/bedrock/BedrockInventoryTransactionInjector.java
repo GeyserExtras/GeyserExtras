@@ -4,30 +4,24 @@ import dev.letsgoaway.geyserextras.core.Config;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
 import org.cloudburstmc.math.vector.Vector3i;
-import org.cloudburstmc.protocol.bedrock.data.AttributeData;
-import org.cloudburstmc.protocol.bedrock.data.entity.EntityFlag;
+import org.cloudburstmc.protocol.bedrock.data.definitions.BlockDefinition;
 import org.cloudburstmc.protocol.bedrock.data.inventory.transaction.InventoryTransactionType;
 import org.cloudburstmc.protocol.bedrock.packet.InventoryTransactionPacket;
-import org.cloudburstmc.protocol.bedrock.packet.UpdateAttributesPacket;
-import org.geysermc.geyser.entity.attribute.GeyserAttributeType;
+
+import org.cloudburstmc.protocol.bedrock.packet.UpdateBlockPacket;
 import org.geysermc.geyser.entity.type.Entity;
-import org.geysermc.geyser.item.Items;
+import org.geysermc.geyser.level.block.type.BlockState;
+import org.geysermc.geyser.level.block.type.SkullBlock;
+import org.geysermc.geyser.registry.BlockRegistries;
 import org.geysermc.geyser.session.GeyserSession;
+import org.geysermc.geyser.session.cache.SkullCache;
+import org.geysermc.geyser.translator.inventory.InventoryTranslator;
 import org.geysermc.geyser.translator.protocol.Translator;
 import org.geysermc.geyser.translator.protocol.bedrock.BedrockInventoryTransactionTranslator;
-import org.geysermc.mcprotocollib.protocol.data.game.entity.attribute.Attribute;
-import org.geysermc.mcprotocollib.protocol.data.game.entity.attribute.AttributeType;
-import org.geysermc.mcprotocollib.protocol.data.game.entity.object.Direction;
-import org.geysermc.mcprotocollib.protocol.data.game.entity.player.Hand;
-import org.geysermc.mcprotocollib.protocol.data.game.entity.player.PlayerAction;
-import org.geysermc.mcprotocollib.protocol.data.game.item.component.DataComponentType;
-import org.geysermc.mcprotocollib.protocol.data.game.item.component.FoodProperties;
-import org.geysermc.mcprotocollib.protocol.packet.ingame.serverbound.player.ServerboundPlayerActionPacket;
-
-import java.util.Collections;
-import java.util.List;
+import dev.letsgoaway.geyserextras.core.parity.java.ShieldUtils;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
+
 // I love it when bedrock randomly sends data in random packets
 // of which the name they have is completely irrelavant to what
 // the data does it really helps me waste time trying to figure
@@ -43,35 +37,70 @@ import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 public class BedrockInventoryTransactionInjector extends BedrockInventoryTransactionTranslator {
     @Override
     public void translate(GeyserSession session, InventoryTransactionPacket packet) {
-        //SERVER.log("INVENTORY TRANSACTION PACKET: " + packet.getTransactionType().name() + " " + packet.getActionType());
-        super.translate(session, packet);
-        // Entity Damage
-        if (packet.getTransactionType().equals(InventoryTransactionType.ITEM_USE_ON_ENTITY)) {
-            Entity entity = session.getEntityCache().getEntityByGeyserId(packet.getRuntimeEntityId());
-            if (entity == null)
-                return;
+        ExtrasPlayer player = GeyserHandler.getPlayer(session);
 
+        SERVER.log("INVENTORY TRANSACTION PACKET: " + packet.getTransactionType().name() + " " + packet.getActionType() + " " + (packet.getBlockPosition() == null ? "null" : packet.getBlockPosition().toString()) + " " + packet.getClickPosition().toString());
+        SERVER.log(String.valueOf(System.currentTimeMillis() - player.getCooldownHandler().getLastBlockRightClickTime()));
+        InventoryTransactionType type = packet.getTransactionType();
+        // Trying to do a block interaction, but we should disable the shield first
+        if (Config.toggleBlock && ShieldUtils.getBlocking(session)
+                && (type.equals(InventoryTransactionType.ITEM_USE)
+                || type.equals(InventoryTransactionType.ITEM_USE_ON_ENTITY))
+                && packet.getActionType() == 0) {
+            if (System.currentTimeMillis() - player.getCooldownHandler().getLastBlockRightClickTime() > 100 && ShieldUtils.disableBlocking(session)) {
+                Vector3i position = packet.getBlockPosition();
+                if (position == null) {
+                    position = packet.getClickPosition().toInt();
+                }
+                restoreCorrectBlock(session, position, packet);
+                session.getPlayerEntity().updateBedrockMetadata();
+                // If the user can block again, then their item they are holding
+                // does not have an important action
+                // if it does, we should process it
+                if (ShieldUtils.canBlock(session)) {
+                    return;
+                }
+            } else {
+                player.getCooldownHandler().setSkipNextItemUse1(true);
+            }
+            player.getCooldownHandler().setLastBlockRightClickTime(System.currentTimeMillis());
+        }
+        super.translate(session, packet);
+
+        if (type.equals(InventoryTransactionType.ITEM_USE_ON_ENTITY)) {
+            Entity entity = session.getEntityCache().getEntityByGeyserId(packet.getRuntimeEntityId());
+            if (entity == null) return;
+
+            // Entity Damage
             if (packet.getActionType() == 1) {
                 if (Config.toggleBlock) {
-                    if (BedrockInventoryTransactionInjector.disableBlocking(session)) {
+                    if (ShieldUtils.disableBlocking(session)) {
                         session.getPlayerEntity().updateBedrockMetadata();
-                        session.getPlayerEntity().resetAttributes();
                     }
                 }
-                ExtrasPlayer player = GeyserHandler.getPlayer(session);
                 player.getCooldownHandler().setDigTicks(-1);
                 player.getCooldownHandler().setLastSwingTime(System.currentTimeMillis());
             }
         }
-        // Block Breaking
-        if (packet.getTransactionType().equals(InventoryTransactionType.ITEM_USE)) {
-            ExtrasPlayer player = GeyserHandler.getPlayer(session);
-            if (Config.toggleBlock && packet.getActionType() == 1) {
-                checkBlock(session);
+        if (type.equals(InventoryTransactionType.ITEM_USE)) {
+            // Item use
+            if (Config.toggleBlock) {
+                if (packet.getActionType() == 0) {
+                    player.getCooldownHandler().setLastBlockRightClickTime(System.currentTimeMillis());
+                }
+                if (packet.getActionType() == 1) {
+                    if (player.getCooldownHandler().isSkipNextItemUse1()) {
+                        player.getCooldownHandler().setSkipNextItemUse1(false);
+                        return;
+                    }
+                    if (!session.isSneaking()) {
+                        ShieldUtils.checkBlock(session);
+                    } else if (System.currentTimeMillis() - player.getCooldownHandler().getLastBlockRightClickTime() > 100) {
+                        ShieldUtils.checkBlock(session);
+                    }
+                }
             }
-
-            if (packet.getActionType() == 2) {
-
+            if (packet.getActionType() == 2) { // Block Breaking
                 // Disable the GeyserExtras cooldown until next player action to
                 // match java
                 player.getCooldownHandler().setDigTicks(5);
@@ -79,78 +108,40 @@ public class BedrockInventoryTransactionInjector extends BedrockInventoryTransac
         }
     }
 
-    // TODO: move shield stuff into seperate class
-    public static void checkBlock(GeyserSession session) {
-        if (!getBlocking(session)) {
-            if (attemptToBlock(session)) {
-                UpdateAttributesPacket attributesPacket = new UpdateAttributesPacket();
-                attributesPacket.setRuntimeEntityId(session.getPlayerEntity().getGeyserId());
-                attributesPacket.setAttributes(Collections.singletonList(
-                        GeyserAttributeType.MOVEMENT_SPEED.getAttribute(0.10000000149011612f / 4)));
-                session.sendUpstreamPacket(attributesPacket);
-                session.getPlayerEntity().updateBedrockMetadata();
-            }
-        } else {
-            if (disableBlocking(session)) {
-                session.getPlayerEntity().updateBedrockMetadata();
-                session.getPlayerEntity().resetAttributes();
-            }
-        }
-    }
-
-    public static boolean getBlocking(GeyserSession session) {
-        return session.getPlayerEntity().getFlag(EntityFlag.BLOCKING);
-    }
-
-    public static void updateBlockSpeed(GeyserSession session) {
-        if (getBlocking(session)) {
-            UpdateAttributesPacket attributesPacket = new UpdateAttributesPacket();
-            attributesPacket.setRuntimeEntityId(session.getPlayerEntity().getGeyserId());
-            attributesPacket.setAttributes(List.of(
-                    GeyserAttributeType.MOVEMENT_SPEED.getAttribute(0.10000000149011612f / 4)));
-            session.sendUpstreamPacket(attributesPacket);
-        } else {
-            session.getPlayerEntity().updateBedrockMetadata();
-        }
-    }
-
     /**
-     * Checks to see if a shield is in either hand to activate blocking. If so, it sets the Bedrock client to display
-     * blocking and sends a packet to the Java server.
+     * Restore the correct block state from the server without updating the chunk cache.
+     *
+     * @param session  the session of the Bedrock client
+     * @param blockPos the block position to restore
      */
-    public static boolean attemptToBlock(GeyserSession session) {
-        // If we can eat, prefer eating over shield blocking
-        FoodProperties foodProperties = session.getPlayerInventory().getItemInHand().getComponent(DataComponentType.FOOD);
-        if (foodProperties != null) {
-            AttributeData hunger = session.getPlayerEntity().getAttributes().get(GeyserAttributeType.HUNGER);
-            if (foodProperties.isCanAlwaysEat() || hunger.getValue() != hunger.getMaximum()) {
-                return false;
+    private void restoreCorrectBlock(GeyserSession session, Vector3i blockPos, InventoryTransactionPacket packet) {
+        BlockState javaBlockState = session.getGeyser().getWorldManager().blockAt(session, blockPos);
+        BlockDefinition bedrockBlock = session.getBlockMappings().getBedrockBlock(javaBlockState);
+
+        if (javaBlockState.block() instanceof SkullBlock skullBlock && skullBlock.skullType() == SkullBlock.Type.PLAYER) {
+            // The changed block was a player skull so check if a custom block was defined for this skull
+            SkullCache.Skull skull = session.getSkullCache().getSkulls().get(blockPos);
+            if (skull != null && skull.getBlockDefinition() != null) {
+                bedrockBlock = skull.getBlockDefinition();
             }
         }
 
-        if (session.getPlayerInventory().getItemInHand().asItem() == Items.SHIELD) {
-            session.useItem(Hand.MAIN_HAND);
-        } else if (session.getPlayerInventory().getOffhand().asItem() == Items.SHIELD) {
-            session.useItem(Hand.OFF_HAND);
-        } else {
-            // No blocking
-            return false;
-        }
+        UpdateBlockPacket updateBlockPacket = new UpdateBlockPacket();
+        updateBlockPacket.setDataLayer(0);
+        updateBlockPacket.setBlockPosition(blockPos);
+        updateBlockPacket.setDefinition(bedrockBlock);
+        updateBlockPacket.getFlags().addAll(UpdateBlockPacket.FLAG_ALL_PRIORITY);
+        session.sendUpstreamPacket(updateBlockPacket);
 
-        session.getPlayerEntity().setFlag(EntityFlag.BLOCKING, true);
-        // Metadata should be updated later
-        return true;
+        UpdateBlockPacket updateWaterPacket = new UpdateBlockPacket();
+        updateWaterPacket.setDataLayer(1);
+        updateWaterPacket.setBlockPosition(blockPos);
+        updateWaterPacket.setDefinition(BlockRegistries.WATERLOGGED.get().get(javaBlockState.javaId()) ? session.getBlockMappings().getBedrockWater() : session.getBlockMappings().getBedrockAir());
+        updateWaterPacket.getFlags().addAll(UpdateBlockPacket.FLAG_ALL_PRIORITY);
+        session.sendUpstreamPacket(updateWaterPacket);
+
+        // Reset the item in hand to prevent "missing" blocks
+        InventoryTranslator.PLAYER_INVENTORY_TRANSLATOR.updateSlot(session, session.getPlayerInventory(), session.getPlayerInventory().getOffsetForHotbar(packet.getHotbarSlot()));
     }
 
-    public static boolean disableBlocking(GeyserSession session) {
-
-        if (session.getPlayerEntity().getFlag(EntityFlag.BLOCKING)) {
-            ServerboundPlayerActionPacket releaseItemPacket = new ServerboundPlayerActionPacket(PlayerAction.RELEASE_USE_ITEM,
-                    Vector3i.ZERO, Direction.DOWN, 0);
-            session.sendDownstreamGamePacket(releaseItemPacket);
-            session.getPlayerEntity().setFlag(EntityFlag.BLOCKING, false);
-            return true;
-        }
-        return false;
-    }
 }

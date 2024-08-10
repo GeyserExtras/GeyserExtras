@@ -61,5 +61,15 @@
       <option name="name" value="maven" />
       <option name="url" value="https://plugins.gradle.org/m2/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven" />
+      <option name="name" value="maven" />
+      <option name="url" value="https://jitpack.io" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="lenni0451Maven" />
+      <option name="name" value="lenni0451Maven" />
+      <option name="url" value="https://maven.lenni0451.net/snapshots/" />
+    </remote-repository>
   </component>
 </project>

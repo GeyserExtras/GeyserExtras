@@ -10,6 +10,7 @@ import org.geysermc.geyser.api.event.EventRegistrar;
 import org.geysermc.geyser.api.event.bedrock.*;
 import org.geysermc.geyser.api.event.lifecycle.GeyserDefineCommandsEvent;
 import org.geysermc.geyser.api.event.lifecycle.GeyserPostInitializeEvent;
+import org.geysermc.geyser.api.event.lifecycle.GeyserPreReloadEvent;
 
 import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
@@ -29,10 +30,17 @@ public class GeyserExtras implements EventRegistrar {
         Config.load();
         geyserApi.eventBus().register(this, this);
         geyserApi.eventBus().subscribe(this, GeyserPostInitializeEvent.class, this::onGeyserInitialize);
-        geyserApi.eventBus().subscribe(this, ClientEmoteEvent.class, this::onEmoteEvent);
+
+        // ExtrasPlayer handlers
         geyserApi.eventBus().subscribe(this, SessionLoginEvent.class, this::onSessionLogin);
         geyserApi.eventBus().subscribe(this, SessionJoinEvent.class, this::onSessionJoin);
         geyserApi.eventBus().subscribe(this, SessionDisconnectEvent.class, this::onSessionRemove);
+
+        // Emote bindings
+        geyserApi.eventBus().subscribe(this, ClientEmoteEvent.class, this::onEmoteEvent);
+
+        // Auto reconnect
+        geyserApi.eventBus().subscribe(this, GeyserPreReloadEvent.class, this::onGeyserReload);
         connections = new ConcurrentHashMap<>();
         InitializeLogger.end();
     }
@@ -48,7 +56,6 @@ public class GeyserExtras implements EventRegistrar {
         }
     }
 
-    @Subscribe
     public void onGeyserInitialize(GeyserPostInitializeEvent init) {
     }
 
@@ -84,4 +91,11 @@ public class GeyserExtras implements EventRegistrar {
         connections.get(ev.connection().xuid()).onEmoteEvent(ev);
     }
 
+    public void onGeyserReload(GeyserPreReloadEvent geyserPreReloadEvent) {
+        if (Config.autoReconnect) {
+            for (ExtrasPlayer player : connections.values()) {
+                player.reconnect();
+            }
+        }
+    }
 }

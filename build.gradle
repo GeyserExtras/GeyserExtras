@@ -10,7 +10,11 @@ group = 'dev.letsgoaway'
 repositories {
     mavenCentral()
     maven {
-        url "https://plugins.gradle.org/m2/"
+        name = "lenni0451Maven"
+        url = "https://maven.lenni0451.net/snapshots/"
+    }
+    maven {
+        url = "https://plugins.gradle.org/m2/"
     }
     maven {
         url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'

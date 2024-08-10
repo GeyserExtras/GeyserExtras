@@ -2,25 +2,16 @@ package dev.letsgoaway.geyserextras.core.handlers.bedrock;
 
 import dev.letsgoaway.geyserextras.core.Config;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
-import dev.letsgoaway.geyserextras.core.SoundReplacer;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
-import org.cloudburstmc.math.vector.Vector3f;
-import org.cloudburstmc.math.vector.Vector3i;
-import org.cloudburstmc.protocol.bedrock.data.LevelEvent;
+import dev.letsgoaway.geyserextras.core.parity.java.ShieldUtils;
 import org.cloudburstmc.protocol.bedrock.data.PlayerActionType;
-import org.cloudburstmc.protocol.bedrock.packet.LevelEventPacket;
 import org.cloudburstmc.protocol.bedrock.packet.PlayerActionPacket;
-import org.geysermc.geyser.level.block.type.Block;
-import org.geysermc.geyser.level.block.type.BlockState;
+import org.geysermc.geyser.entity.type.player.SessionPlayerEntity;
 import org.geysermc.geyser.session.GeyserSession;
-import org.geysermc.geyser.translator.protocol.PacketTranslator;
 import org.geysermc.geyser.translator.protocol.Translator;
 import org.geysermc.geyser.translator.protocol.bedrock.entity.player.BedrockActionTranslator;
-import org.geysermc.geyser.util.BlockUtils;
-import org.geysermc.mcprotocollib.protocol.data.game.entity.object.Direction;
-import org.geysermc.mcprotocollib.protocol.data.game.entity.player.GameMode;
-import org.geysermc.mcprotocollib.protocol.data.game.entity.player.PlayerAction;
-import org.geysermc.mcprotocollib.protocol.packet.ingame.serverbound.player.ServerboundPlayerActionPacket;
+import org.geysermc.mcprotocollib.protocol.data.game.entity.player.PlayerState;
+import org.geysermc.mcprotocollib.protocol.packet.ingame.serverbound.player.ServerboundPlayerCommandPacket;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
@@ -28,9 +19,14 @@ import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 public class BedrockActionInjector extends BedrockActionTranslator {
     @Override
     public void translate(GeyserSession session, PlayerActionPacket packet) {
-        //SERVER.log("PLAYER ACTION PACKET: " + packet.getAction().name() + " " + packet.getBlockPosition().toString() + " " + packet.getResultPosition().toString() + " " + packet.getFace());
-        super.translate(session, packet);
+        if (!Config.toggleBlock) {
+            super.translate(session, packet);
+        } else if (!packet.getAction().equals(PlayerActionType.START_SNEAK)
+                && !packet.getAction().equals(PlayerActionType.STOP_SNEAK)) {
+            super.translate(session, packet);
+        }
         ExtrasPlayer player = GeyserHandler.getPlayer(session);
+        SessionPlayerEntity playerEntity = session.getPlayerEntity();
         switch (packet.getAction()) {
             case START_BREAK -> {
                 // Hide the cooldown and get ready to break
@@ -52,6 +48,29 @@ public class BedrockActionInjector extends BedrockActionTranslator {
                 // Dont show the cooldown until the next action
                 // if the block is broken.
             }
+            case START_SPRINT -> {
+                // Dont allow blocking if we start sprinting
+                if (Config.toggleBlock && ShieldUtils.getBlocking(session)) {
+                    ShieldUtils.disableBlocking(session);
+                }
+            }
+            case START_SNEAK -> {
+                if (Config.toggleBlock) {
+                    ServerboundPlayerCommandPacket startSneakPacket = new ServerboundPlayerCommandPacket(playerEntity.getEntityId(), PlayerState.START_SNEAKING);
+                    session.sendDownstreamGamePacket(startSneakPacket);
+
+
+                    ShieldUtils.setSneaking(session, true);
+                }
+            }
+            case STOP_SNEAK -> {
+                if (Config.toggleBlock) {
+                    ServerboundPlayerCommandPacket stopSneakPacket = new ServerboundPlayerCommandPacket(playerEntity.getEntityId(), PlayerState.STOP_SNEAKING);
+                    session.sendDownstreamGamePacket(stopSneakPacket);
+
+                    ShieldUtils.setSneaking(session, false);
+                }
+            }
             case ABORT_BREAK -> {
                 // its set to 5 when InventoryTransactionInjector detects a block break, we shouldnt show the cool down then
                 if (player.getCooldownHandler().getDigTicks() != 5) {
@@ -63,12 +82,10 @@ public class BedrockActionInjector extends BedrockActionTranslator {
                 player.getCooldownHandler().setDigTicks(-1);
                 player.getCooldownHandler().setLastSwingTime(System.currentTimeMillis());
                 if (Config.toggleBlock) {
-                    if (BedrockInventoryTransactionInjector.disableBlocking(session)) {
-                        session.getPlayerEntity().updateBedrockMetadata();
-                        session.getPlayerEntity().resetAttributes();
+                    if (ShieldUtils.disableBlocking(session)) {
+                        playerEntity.updateBedrockMetadata();
                     }
                 }
-
             }
         }
     }

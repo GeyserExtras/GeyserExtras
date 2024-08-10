@@ -6,6 +6,7 @@ import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
 import dev.letsgoaway.geyserextras.core.form.BedrockForm;
 import dev.letsgoaway.geyserextras.core.handlers.bedrock.BedrockInventoryTransactionInjector;
 import dev.letsgoaway.geyserextras.core.parity.java.CooldownHandler;
+import dev.letsgoaway.geyserextras.core.parity.java.ShieldUtils;
 import lombok.Getter;
 import lombok.Setter;
 import org.cloudburstmc.protocol.bedrock.packet.SetTitlePacket;
@@ -96,10 +97,24 @@ public class ExtrasPlayer {
             session.camera().hideElement(GuiElement.PAPER_DOLL);
         }
         if (Config.toggleBlock) {
-            BedrockInventoryTransactionInjector.updateBlockSpeed(session);
+            ShieldUtils.updateBlockSpeed(session);
         }
     }
 
+    // TODO: better way to detect instead of using identifier
+    public boolean isTool() {
+        String item = session.getPlayerInventory().getItemInHand().getMapping(session).getBedrockIdentifier();
+        return (
+                item.contains("_axe")
+                        || item.contains("_pickaxe")
+                        || item.contains("_shovel")
+                        || item.contains("_sword")
+                        || item.contains("trident")
+                        || item.contains("mace")
+                // || item.contains("_hoe")
+                // hoes dont have attack speed for some reason
+        );
+    }
     public void sendTitle(String title, String subtitle, int fadeIn, int stay, int fadeOut) {
         SetTitlePacket timesPacket = new SetTitlePacket();
         timesPacket.setText("");
