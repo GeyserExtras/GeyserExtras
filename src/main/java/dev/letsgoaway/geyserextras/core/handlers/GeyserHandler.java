@@ -25,6 +25,7 @@ public class GeyserHandler {
     public static void registerUpstream() {
         Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundSoundPacket.class, new JavaSoundInjector());
         Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundSoundEntityPacket.class, new JavaSoundEntityInjector());
+        Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundEntityEventPacket.class, new JavaEntityEventInjector());
         Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundUpdateAttributesPacket.class, new JavaUpdateAttributesInjector());
     }
 
