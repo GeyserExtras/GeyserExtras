@@ -3,17 +3,16 @@ package dev.letsgoaway.geyserextras.core.handlers.bedrock;
 import dev.letsgoaway.geyserextras.core.Config;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
-import dev.letsgoaway.geyserextras.core.parity.java.ShieldUtils;
+import dev.letsgoaway.geyserextras.core.parity.java.shield.ShieldUtils;
 import org.cloudburstmc.protocol.bedrock.data.PlayerActionType;
 import org.cloudburstmc.protocol.bedrock.packet.PlayerActionPacket;
+import org.geysermc.api.util.InputMode;
 import org.geysermc.geyser.entity.type.player.SessionPlayerEntity;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.translator.protocol.Translator;
 import org.geysermc.geyser.translator.protocol.bedrock.entity.player.BedrockActionTranslator;
 import org.geysermc.mcprotocollib.protocol.data.game.entity.player.PlayerState;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.serverbound.player.ServerboundPlayerCommandPacket;
-
-import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 @Translator(packet = PlayerActionPacket.class)
 public class BedrockActionInjector extends BedrockActionTranslator {
@@ -85,6 +84,9 @@ public class BedrockActionInjector extends BedrockActionTranslator {
                     if (ShieldUtils.disableBlocking(session)) {
                         playerEntity.updateBedrockMetadata();
                     }
+                }
+                if (session.inputMode().equals(InputMode.TOUCH)) {
+                    player.swingArm();
                 }
             }
         }

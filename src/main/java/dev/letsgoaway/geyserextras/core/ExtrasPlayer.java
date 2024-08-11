@@ -1,14 +1,13 @@
 package dev.letsgoaway.geyserextras.core;
 
-import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.features.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
 import dev.letsgoaway.geyserextras.core.form.BedrockForm;
-import dev.letsgoaway.geyserextras.core.handlers.bedrock.BedrockInventoryTransactionInjector;
 import dev.letsgoaway.geyserextras.core.parity.java.CooldownHandler;
-import dev.letsgoaway.geyserextras.core.parity.java.ShieldUtils;
+import dev.letsgoaway.geyserextras.core.parity.java.shield.ShieldUtils;
 import lombok.Getter;
 import lombok.Setter;
+import org.cloudburstmc.protocol.bedrock.packet.AnimatePacket;
 import org.cloudburstmc.protocol.bedrock.packet.SetTitlePacket;
 import org.geysermc.geyser.api.bedrock.camera.GuiElement;
 import org.geysermc.geyser.api.connection.GeyserConnection;
@@ -20,7 +19,6 @@ import java.util.UUID;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class ExtrasPlayer {
@@ -115,6 +113,7 @@ public class ExtrasPlayer {
                 // hoes dont have attack speed for some reason
         );
     }
+
     public void sendTitle(String title, String subtitle, int fadeIn, int stay, int fadeOut) {
         SetTitlePacket timesPacket = new SetTitlePacket();
         timesPacket.setText("");
@@ -158,5 +157,12 @@ public class ExtrasPlayer {
 
     public void setTickingState(float tickrate) {
         this.tickrate = tickrate;
+    }
+
+    public void swingArm() {
+        AnimatePacket animatePacket = new AnimatePacket();
+        animatePacket.setRuntimeEntityId(session.getPlayerEntity().getGeyserId());
+        animatePacket.setAction(AnimatePacket.Action.SWING_ARM);
+        session.sendUpstreamPacket(animatePacket);
     }
 }

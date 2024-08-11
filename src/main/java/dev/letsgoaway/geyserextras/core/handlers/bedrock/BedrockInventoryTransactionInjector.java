@@ -3,6 +3,7 @@ package dev.letsgoaway.geyserextras.core.handlers.bedrock;
 import dev.letsgoaway.geyserextras.core.Config;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
+import org.cloudburstmc.math.vector.Vector3f;
 import org.cloudburstmc.math.vector.Vector3i;
 import org.cloudburstmc.protocol.bedrock.data.definitions.BlockDefinition;
 import org.cloudburstmc.protocol.bedrock.data.inventory.transaction.InventoryTransactionType;
@@ -18,7 +19,7 @@ import org.geysermc.geyser.session.cache.SkullCache;
 import org.geysermc.geyser.translator.inventory.InventoryTranslator;
 import org.geysermc.geyser.translator.protocol.Translator;
 import org.geysermc.geyser.translator.protocol.bedrock.BedrockInventoryTransactionTranslator;
-import dev.letsgoaway.geyserextras.core.parity.java.ShieldUtils;
+import dev.letsgoaway.geyserextras.core.parity.java.shield.ShieldUtils;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
@@ -39,14 +40,15 @@ public class BedrockInventoryTransactionInjector extends BedrockInventoryTransac
     public void translate(GeyserSession session, InventoryTransactionPacket packet) {
         ExtrasPlayer player = GeyserHandler.getPlayer(session);
 
-        SERVER.log("INVENTORY TRANSACTION PACKET: " + packet.getTransactionType().name() + " " + packet.getActionType() + " " + (packet.getBlockPosition() == null ? "null" : packet.getBlockPosition().toString()) + " " + packet.getClickPosition().toString());
-        SERVER.log(String.valueOf(System.currentTimeMillis() - player.getCooldownHandler().getLastBlockRightClickTime()));
+        //SERVER.log("INVENTORY TRANSACTION PACKET: " + packet.getTransactionType().name() + " " + packet.getActionType() + " " + (packet.getBlockPosition() == null ? "null" : packet.getBlockPosition().toString()) + " " + packet.getClickPosition().toString());
+        //SERVER.log(String.valueOf(System.currentTimeMillis() - player.getCooldownHandler().getLastBlockRightClickTime()));
         InventoryTransactionType type = packet.getTransactionType();
         // Trying to do a block interaction, but we should disable the shield first
-        if (Config.toggleBlock && ShieldUtils.getBlocking(session)
-                && (type.equals(InventoryTransactionType.ITEM_USE)
-                || type.equals(InventoryTransactionType.ITEM_USE_ON_ENTITY))
-                && packet.getActionType() == 0) {
+        if (Config.toggleBlock
+                && ShieldUtils.getBlocking(session)
+                && type.equals(InventoryTransactionType.ITEM_USE)
+                && packet.getActionType() == 0
+                && packet.getClickPosition() != null) {
             if (System.currentTimeMillis() - player.getCooldownHandler().getLastBlockRightClickTime() > 100 && ShieldUtils.disableBlocking(session)) {
                 Vector3i position = packet.getBlockPosition();
                 if (position == null) {
@@ -86,12 +88,16 @@ public class BedrockInventoryTransactionInjector extends BedrockInventoryTransac
             // Item use
             if (Config.toggleBlock) {
                 if (packet.getActionType() == 0) {
+                    player.getCooldownHandler().setLastClickWasAirClick(false);
                     player.getCooldownHandler().setLastBlockRightClickTime(System.currentTimeMillis());
                 }
                 if (packet.getActionType() == 1) {
                     if (player.getCooldownHandler().isSkipNextItemUse1()) {
                         player.getCooldownHandler().setSkipNextItemUse1(false);
                         return;
+                    }
+                    if (System.currentTimeMillis() - player.getCooldownHandler().getLastBlockRightClickTime() > 100) {
+                        player.getCooldownHandler().setLastClickWasAirClick(true);
                     }
                     if (!session.isSneaking()) {
                         ShieldUtils.checkBlock(session);

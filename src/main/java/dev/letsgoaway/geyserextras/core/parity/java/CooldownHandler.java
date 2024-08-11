@@ -1,6 +1,8 @@
 package dev.letsgoaway.geyserextras.core.parity.java;
 
 import dev.letsgoaway.geyserextras.MathUtils;
+import dev.letsgoaway.geyserextras.ReflectionAPI;
+import dev.letsgoaway.geyserextras.core.Config;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,6 +33,7 @@ public class CooldownHandler {
     @Setter
     private long lastMouseoverID = 0;
 
+    // Shield stuff
     @Setter
     @Getter
     private boolean skipNextItemUse1 = false;
@@ -38,6 +41,11 @@ public class CooldownHandler {
     @Setter
     @Getter
     private long lastBlockRightClickTime = 0;
+
+    @Setter
+    @Getter
+    private boolean lastClickWasAirClick = false;
+
 
     public CooldownHandler(ExtrasPlayer player) {
         this.player = player;
@@ -48,6 +56,9 @@ public class CooldownHandler {
     public boolean readyToAttack = false;
 
     public void tick() {
+        if (Config.toggleBlock) {
+            setArmAnimationTicks(-1);
+        }
         if (lastMouseoverID != 0 && session.getMouseoverEntity() != null && player.isTool()) {
             readyToAttack = session.getMouseoverEntity().isAlive();
         } else {
@@ -125,5 +136,13 @@ public class CooldownHandler {
             lastPing = ping;
         }
         averagePing = (double) pingSample / pingSampleSize;
+    }
+    // Used to disable the automatic re blocking when sneaking + attacking done by Geyser
+    private void setArmAnimationTicks(int ticks) {
+        try {
+            ReflectionAPI.setValue(session, ReflectionAPI.getFieldAccessible(GeyserSession.class, "armAnimationTicks"), ticks);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
