@@ -2,8 +2,10 @@ package dev.letsgoaway.geyserextras.core.handlers.bedrock;
 
 import dev.letsgoaway.geyserextras.core.Config;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
+import dev.letsgoaway.geyserextras.core.features.bindings.Action;
 import dev.letsgoaway.geyserextras.core.features.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
+import dev.letsgoaway.geyserextras.core.parity.java.shield.ShieldUtils;
 import org.cloudburstmc.protocol.bedrock.data.PlayerActionType;
 import org.cloudburstmc.protocol.bedrock.packet.EntityPickRequestPacket;
 import org.cloudburstmc.protocol.bedrock.packet.InteractPacket;
@@ -35,7 +37,10 @@ public class BedrockInteractInjector extends BedrockInteractTranslator {
             super.translate(session, packet);
         } else {
             Remappable bind = player.getSession().isSneaking() ? Remappable.SNEAK_INVENTORY : Remappable.OPEN_INVENTORY;
-            if (player.getPreferences().isDefault(bind)) {
+            if (player.getPreferences().isDefault(bind) || player.getPreferences().getAction(bind).equals(Action.OPEN_INVENTORY)) {
+                if (Config.toggleBlock && ShieldUtils.disableBlocking(session)){
+                    session.getPlayerEntity().updateBedrockMetadata();
+                }
                 super.translate(session, packet);
                 return;
             }

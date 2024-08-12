@@ -75,11 +75,11 @@ public class BedrockInventoryTransactionInjector extends BedrockInventoryTransac
 
             // Entity Damage
             if (packet.getActionType() == 1) {
-                if (Config.toggleBlock) {
-                    if (ShieldUtils.disableBlocking(session)) {
-                        session.getPlayerEntity().updateBedrockMetadata();
-                    }
+
+                if (Config.toggleBlock && ShieldUtils.disableBlocking(session)) {
+                    session.getPlayerEntity().updateBedrockMetadata();
                 }
+
                 player.getCooldownHandler().setDigTicks(-1);
                 player.getCooldownHandler().setLastSwingTime(System.currentTimeMillis());
             }

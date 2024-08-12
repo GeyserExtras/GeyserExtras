@@ -21,9 +21,11 @@ public class JavaEntityEventInjector extends JavaEntityEventTranslator {
             case PLAYER_SWAP_SAME_ITEM -> {
                 if (packet.getEntityId() == session.getPlayerEntity().getEntityId()) {
                     GeyserHandler.getPlayer(session).getCooldownHandler().setLastSwingTime(System.currentTimeMillis());
+                    GeyserHandler.getPlayer(session).getCooldownHandler().setDigTicks(-1);
                 }
             }
             case LIVING_SHIELD_BLOCK -> {
+                // Possible bug in Geyser? Shield doesnt play sound, should make PR
                 if (packet.getEntityId() == session.getPlayerEntity().getEntityId()) {
                     PlaySoundPacket playSoundPacket = new PlaySoundPacket();
                     playSoundPacket.setSound("item.shield.block");

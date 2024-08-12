@@ -1,6 +1,7 @@
-package dev.letsgoaway.geyserextras.core.parity.java.shield.interactions;
+package dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.item;
 
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
+import dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.Interaction;
 import org.geysermc.geyser.inventory.GeyserItemStack;
 import org.geysermc.geyser.item.Items;
 import org.geysermc.geyser.item.type.*;
@@ -10,18 +11,16 @@ import java.util.List;
 
 public class ItemCheck implements Interaction {
     private static final List<Item> dontBlock = List.of(
-            Items.DEBUG_STICK,
-            Items.FIREWORK_ROCKET,
             Items.LINGERING_POTION,
             Items.BOW,
             Items.CROSSBOW,
+            Items.TRIDENT,
             Items.ENDER_PEARL,
             Items.SNOWBALL,
             Items.ENDER_EYE,
             Items.SPLASH_POTION,
             Items.EXPERIENCE_BOTTLE,
-            Items.WIND_CHARGE,
-            Items.FLINT_AND_STEEL
+            Items.WIND_CHARGE
     );
 
     public boolean check(GeyserSession session) {
@@ -33,7 +32,7 @@ public class ItemCheck implements Interaction {
         if (heldItem instanceof BlockItem
                 || heldItem instanceof SpawnEggItem
                 || heldItem instanceof BoatItem
-                || heldItem.equals(Items.DEBUG_STICK)) {
+        ) {
             return lastClickWasAir;
         }
         // Going to equip currently held armor/elytra, not requiring that the player

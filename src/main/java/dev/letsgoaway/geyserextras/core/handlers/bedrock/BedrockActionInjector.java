@@ -49,8 +49,8 @@ public class BedrockActionInjector extends BedrockActionTranslator {
             }
             case START_SPRINT -> {
                 // Dont allow blocking if we start sprinting
-                if (Config.toggleBlock && ShieldUtils.getBlocking(session)) {
-                    ShieldUtils.disableBlocking(session);
+                if (Config.toggleBlock && ShieldUtils.getBlocking(session) && ShieldUtils.disableBlocking(session)) {
+                    playerEntity.updateBedrockMetadata();
                 }
             }
             case START_SNEAK -> {
@@ -80,11 +80,11 @@ public class BedrockActionInjector extends BedrockActionTranslator {
             case MISSED_SWING -> {
                 player.getCooldownHandler().setDigTicks(-1);
                 player.getCooldownHandler().setLastSwingTime(System.currentTimeMillis());
-                if (Config.toggleBlock) {
-                    if (ShieldUtils.disableBlocking(session)) {
-                        playerEntity.updateBedrockMetadata();
-                    }
+
+                if (Config.toggleBlock && ShieldUtils.disableBlocking(session)) {
+                    playerEntity.updateBedrockMetadata();
                 }
+
                 if (session.inputMode().equals(InputMode.TOUCH)) {
                     player.swingArm();
                 }

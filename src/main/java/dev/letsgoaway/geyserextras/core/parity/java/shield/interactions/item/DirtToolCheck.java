@@ -1,8 +1,8 @@
-package dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.blockitem;
+package dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.item;
 
-import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
 import dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.Interaction;
+import dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.InteractionUtils;
 import org.geysermc.geyser.item.Items;
 import org.geysermc.geyser.item.type.Item;
 import org.geysermc.geyser.level.block.Blocks;
@@ -40,14 +40,14 @@ public class DirtToolCheck implements Interaction {
 
     @Override
     public boolean check(GeyserSession session) {
-        if (GeyserHandler.getPlayer(session).getCooldownHandler().isLastClickWasAirClick()) {
+        if (InteractionUtils.isAirClick(session)) {
             return true;
         }
         Item heldItem = session.getPlayerInventory().getItemInHand().asItem();
         Block block = session.getGeyser().getWorldManager().blockAt(session, session.getLastInteractionBlockPosition()).block();
 
         Block aboveBlock = session.getGeyser().getWorldManager().blockAt(session, session.getLastInteractionBlockPosition().up(1)).block();
-        if (blocksThatChange.contains(block) && !(aboveBlock.equals(Blocks.AIR) || aboveBlock.equals(Blocks.CAVE_AIR) || aboveBlock.equals(Blocks.VOID_AIR))) {
+        if (blocksThatChange.contains(block) && !(InteractionUtils.isAir(aboveBlock))) {
             // We can block because this interaction wont do anything.
             return true;
         }
@@ -59,7 +59,7 @@ public class DirtToolCheck implements Interaction {
             GeyserHandler.getPlayer(session).swingArm();
             return false;
         }
-        // one off exception block for hoes, they still get tilled
+        // one off exception block for hoes, paths still get tilled
         if (block == Blocks.DIRT_PATH && tillsBlocks.contains(heldItem)) {
             GeyserHandler.getPlayer(session).swingArm();
             return false;

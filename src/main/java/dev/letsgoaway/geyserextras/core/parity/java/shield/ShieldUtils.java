@@ -3,7 +3,10 @@ package dev.letsgoaway.geyserextras.core.parity.java.shield;
 import dev.letsgoaway.geyserextras.ReflectionAPI;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
 import dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.*;
-import dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.blockitem.DirtToolCheck;
+import dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.item.DirtToolCheck;
+import dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.item.FireworkCheck;
+import dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.item.GroundItemCheck;
+import dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.item.ItemCheck;
 import org.cloudburstmc.math.vector.Vector3i;
 import org.cloudburstmc.protocol.bedrock.data.entity.EntityFlag;
 import org.geysermc.geyser.item.Items;
@@ -65,10 +68,14 @@ public class ShieldUtils {
     }
 
     private static final List<Interaction> interactionCheckList = List.of(
-            new WalkingCheck(),
             new ItemCheck(),
             new FoodCheck(),
-            new DirtToolCheck()
+            new GroundItemCheck(),
+            new DirtToolCheck(),
+            new FireworkCheck(),
+            // Run this last so all extra code in
+            // interactions can run if needed
+            new WalkingCheck()
     );
 
     public static boolean canBlock(GeyserSession session) {
