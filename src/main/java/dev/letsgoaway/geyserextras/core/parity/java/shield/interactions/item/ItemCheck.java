@@ -2,9 +2,11 @@ package dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.item;
 
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
 import dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.Interaction;
+import dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.InteractionUtils;
 import org.geysermc.geyser.inventory.GeyserItemStack;
 import org.geysermc.geyser.item.Items;
 import org.geysermc.geyser.item.type.*;
+import org.geysermc.geyser.level.block.type.Block;
 import org.geysermc.geyser.session.GeyserSession;
 
 import java.util.List;
@@ -23,17 +25,14 @@ public class ItemCheck implements Interaction {
             Items.WIND_CHARGE
     );
 
-    public boolean check(GeyserSession session) {
-        GeyserItemStack mainHandItem = session.getPlayerInventory().getItemInHand();
-        Item heldItem = mainHandItem.asItem();
-        boolean lastClickWasAir = GeyserHandler.getPlayer(session).getCooldownHandler().isLastClickWasAirClick();
+    public boolean check(GeyserSession session, Item heldItem, GeyserItemStack heldItemStack, Block block) {
         // Going to place block, spawn entity or summon boat,
         // and we should not block the shield if that is the case.
         if (heldItem instanceof BlockItem
                 || heldItem instanceof SpawnEggItem
                 || heldItem instanceof BoatItem
         ) {
-            return lastClickWasAir;
+            return InteractionUtils.isAirClick(session);
         }
         // Going to equip currently held armor/elytra, not requiring that the player
         // is looking in the air or not.

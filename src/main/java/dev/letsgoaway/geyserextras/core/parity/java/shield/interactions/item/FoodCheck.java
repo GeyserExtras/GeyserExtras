@@ -1,10 +1,12 @@
-package dev.letsgoaway.geyserextras.core.parity.java.shield.interactions;
+package dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.item;
 
+import dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.Interaction;
 import org.cloudburstmc.protocol.bedrock.data.AttributeData;
 import org.geysermc.geyser.entity.attribute.GeyserAttributeType;
 import org.geysermc.geyser.inventory.GeyserItemStack;
 import org.geysermc.geyser.item.Items;
 import org.geysermc.geyser.item.type.Item;
+import org.geysermc.geyser.level.block.type.Block;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.mcprotocollib.protocol.data.game.entity.player.GameMode;
 import org.geysermc.mcprotocollib.protocol.data.game.item.component.DataComponentType;
@@ -75,18 +77,14 @@ public class FoodCheck implements Interaction {
     );
 
     @Override
-    public boolean check(GeyserSession session) {
-        // If we can eat, prefer eating over shield blocking
-        GeyserItemStack mainHandItem = session.getPlayerInventory().getItemInHand();
-        Item heldItem = mainHandItem.asItem();
-
+    public boolean check(GeyserSession session, Item heldItem, GeyserItemStack heldItemStack, Block block) {
         if (canAlwaysEatFoods.contains(heldItem)) {
             return false;
         }
         if (foods.contains(heldItem) && canEat(session)) {
             return false;
         }
-        FoodProperties foodProperties = mainHandItem.getComponent(DataComponentType.FOOD);
+        FoodProperties foodProperties = heldItemStack.getComponent(DataComponentType.FOOD);
         if (foodProperties != null) {
             if (foodProperties.isCanAlwaysEat() || canEat(session)) {
                 return false;

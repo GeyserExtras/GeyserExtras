@@ -3,13 +3,12 @@ package dev.letsgoaway.geyserextras.core.parity.java.shield;
 import dev.letsgoaway.geyserextras.ReflectionAPI;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
 import dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.*;
-import dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.item.DirtToolCheck;
-import dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.item.FireworkCheck;
-import dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.item.GroundItemCheck;
-import dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.item.ItemCheck;
+import dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.item.*;
 import org.cloudburstmc.math.vector.Vector3i;
 import org.cloudburstmc.protocol.bedrock.data.entity.EntityFlag;
+import org.geysermc.geyser.inventory.GeyserItemStack;
 import org.geysermc.geyser.item.Items;
+import org.geysermc.geyser.level.block.type.Block;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.mcprotocollib.protocol.data.game.entity.object.Direction;
 import org.geysermc.mcprotocollib.protocol.data.game.entity.player.Hand;
@@ -73,14 +72,17 @@ public class ShieldUtils {
             new GroundItemCheck(),
             new DirtToolCheck(),
             new FireworkCheck(),
+            new BonemealCheck(),
             // Run this last so all extra code in
             // interactions can run if needed
             new WalkingCheck()
     );
 
     public static boolean canBlock(GeyserSession session) {
+        GeyserItemStack heldItemStack = session.getPlayerInventory().getItemInHand();
+        Block block = session.getGeyser().getWorldManager().blockAt(session, session.getLastInteractionBlockPosition()).block();
         for (Interaction interaction : interactionCheckList) {
-            if (!interaction.check(session)) {
+            if (!interaction.check(session, heldItemStack.asItem(), heldItemStack, block)) {
                 return false;
             }
         }
