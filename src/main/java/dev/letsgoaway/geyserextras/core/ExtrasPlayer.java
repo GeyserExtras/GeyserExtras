@@ -3,12 +3,15 @@ package dev.letsgoaway.geyserextras.core;
 import dev.letsgoaway.geyserextras.core.features.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
 import dev.letsgoaway.geyserextras.core.form.BedrockForm;
+import dev.letsgoaway.geyserextras.core.form.BedrockModal;
 import dev.letsgoaway.geyserextras.core.parity.java.CooldownHandler;
 import dev.letsgoaway.geyserextras.core.parity.java.shield.ShieldUtils;
+import dev.letsgoaway.geyserextras.core.parity.java.tablist.TabListData;
 import lombok.Getter;
 import lombok.Setter;
 import org.cloudburstmc.protocol.bedrock.packet.AnimatePacket;
 import org.cloudburstmc.protocol.bedrock.packet.SetTitlePacket;
+import org.geysermc.cumulus.form.ModalForm;
 import org.geysermc.geyser.api.bedrock.camera.GuiElement;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent;
@@ -35,10 +38,15 @@ public class ExtrasPlayer {
     public GeyserSession session;
 
     @Getter
-    private CooldownHandler cooldownHandler;
-    @Getter
-    private PreferencesData preferences;
+    private final CooldownHandler cooldownHandler;
 
+    @Getter
+    private final TabListData tabListData;
+
+    @Getter
+    private final PreferencesData preferences;
+
+    @Getter
     private ScheduledFuture<?> combatTickThread;
 
     public ExtrasPlayer(GeyserConnection connection) {
@@ -46,17 +54,26 @@ public class ExtrasPlayer {
         this.javaUUID = connection.javaUuid();
         this.bedrockXUID = connection.xuid();
         cooldownHandler = new CooldownHandler(this);
+        tabListData = new TabListData(this);
         preferences = new PreferencesData(this);
         emotesList = List.of();
         // Update the cooldown at a faster rate for smoother animations at fast periods
+        startCombatTickThread(60f);
+    }
+
+    public void startGame() {
+    }
+
+    public void startCombatTickThread(float updateRate) {
+        getPreferences().setIndicatorUpdateRate(updateRate);
+        if (combatTickThread != null) {
+            combatTickThread.cancel(false);
+        }
         combatTickThread = session.getEventLoop().scheduleAtFixedRate(() -> {
             if (Config.customCoolDownEnabled) {
                 getCooldownHandler().tick();
             }
-        }, TickMath.toNanos(60), TickMath.toNanos(tickrate), TimeUnit.NANOSECONDS);
-    }
-
-    public void startGame() {
+        }, TickMath.toNanos(updateRate), TickMath.toNanos(updateRate), TimeUnit.NANOSECONDS);
     }
 
     public void onDisconnect() {
@@ -138,6 +155,16 @@ public class ExtrasPlayer {
         session.sendUpstreamPacket(subtitlePacket);
     }
 
+    public void sendActionbarTitle(String title) {
+        SetTitlePacket titlePacket = new SetTitlePacket();
+        titlePacket.setType(SetTitlePacket.Type.ACTIONBAR);
+        titlePacket.setText(title);
+        titlePacket.setXuid("");
+        titlePacket.setPlatformOnlineId("");
+        session.sendUpstreamPacket(titlePacket);
+    }
+
+
     public void resetTitle() {
         SetTitlePacket titlePacket = new SetTitlePacket();
         titlePacket.setType(SetTitlePacket.Type.CLEAR);
@@ -148,10 +175,14 @@ public class ExtrasPlayer {
     }
 
     public void sendForm(BedrockForm form) {
-        session.sendForm(form.create(this));
+        session.sendForm(form.create(this).build());
     }
 
     public void sendForm(BedrockMenu form) {
+        session.sendForm(form.create(this));
+    }
+
+    public void sendForm(BedrockModal form) {
         session.sendForm(form.create(this));
     }
 

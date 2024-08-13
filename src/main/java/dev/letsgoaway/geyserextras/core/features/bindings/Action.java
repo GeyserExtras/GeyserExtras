@@ -5,6 +5,7 @@ import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.handlers.CommandHandler;
 import dev.letsgoaway.geyserextras.core.handlers.bedrock.BedrockBlockPickRequestInjector;
 import dev.letsgoaway.geyserextras.core.menus.MainMenu;
+import dev.letsgoaway.geyserextras.core.parity.java.tablist.PlayerList;
 import org.cloudburstmc.protocol.bedrock.packet.BlockPickRequestPacket;
 import org.geysermc.geyser.entity.type.Entity;
 import org.geysermc.geyser.entity.type.living.animal.horse.AbstractHorseEntity;
@@ -68,7 +69,7 @@ public enum Action {
                 }
             }
             case PLAYER_LIST -> {
-                // TODO: playerlist
+                player.sendForm(new PlayerList());
             }
             case PLATFORM_LIST -> {
                 // TODO: platformlist

@@ -32,6 +32,9 @@ public class GeyserHandler {
         Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundOpenScreenPacket.class, new JavaOpenScreenInjector());
         // Cooldown
         Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundUpdateAttributesPacket.class, new JavaUpdateAttributesInjector());
+
+        // Tab list
+        Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundTabListPacket.class, new JavaTabListInjector());
     }
 
     public static void registerDownstream() {
@@ -45,6 +48,9 @@ public class GeyserHandler {
 
         // Emotes
         Registries.BEDROCK_PACKET_TRANSLATORS.register(EmoteListPacket.class, new BedrockEmoteListInjector());
+
+        // Settings
+        Registries.BEDROCK_PACKET_TRANSLATORS.register(ServerSettingsRequestPacket.class, new BedrockServerSettingsRequestInjector());
 
         /* Action intercept related */
         // PICK_BLOCK

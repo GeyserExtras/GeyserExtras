@@ -23,6 +23,7 @@ public class JavaUpdateAttributesInjector extends JavaUpdateAttributesTranslator
                 if (attribute.getType().equals(AttributeType.Builtin.GENERIC_ATTACK_SPEED)) {
                     ExtrasPlayer player = GeyserHandler.getPlayer(session);
                     player.getCooldownHandler().setAttackSpeed(AttributeUtils.calculateValue(attribute));
+                    player.getCooldownHandler().setLastSwingTime(System.currentTimeMillis());
                     break;
                 }
             }

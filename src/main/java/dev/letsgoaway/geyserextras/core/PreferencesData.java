@@ -2,6 +2,9 @@ package dev.letsgoaway.geyserextras.core;
 
 import dev.letsgoaway.geyserextras.core.features.bindings.Action;
 import dev.letsgoaway.geyserextras.core.features.bindings.Remappable;
+import dev.letsgoaway.geyserextras.core.menus.Menus;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,6 +12,14 @@ import java.util.Map;
 public class PreferencesData {
     private final ExtrasPlayer player;
     public HashMap<Remappable, Action> remappableActionMap;
+
+    @Getter
+    @Setter
+    private float indicatorUpdateRate = 60f;
+
+    @Getter
+    @Setter
+    private Menus settingsMenuForm = Menus.GE_SETTINGS;
 
     public PreferencesData(ExtrasPlayer player) {
         this.player = player;

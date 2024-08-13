@@ -1,6 +1,7 @@
 package dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.item;
 
 import dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.Interaction;
+import dev.letsgoaway.geyserextras.core.parity.java.shield.interactions.InteractionUtils;
 import org.geysermc.geyser.inventory.GeyserItemStack;
 import org.geysermc.geyser.item.Items;
 import org.geysermc.geyser.item.type.Item;
@@ -93,6 +94,9 @@ public class BonemealCheck implements Interaction {
 
     @Override
     public boolean check(GeyserSession session, Item heldItem, GeyserItemStack heldItemStack, Block block) {
+        if (InteractionUtils.isAirClick(session)) {
+            return true;
+        }
         if (heldItem.equals(Items.BONE_MEAL)) {
             return !growableBlocks.contains(block);
         }
