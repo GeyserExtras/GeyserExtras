@@ -36,28 +36,37 @@ public class BedrockForm {
         customForm.validResultHandler((response) -> {
             int i = 0;
             response.includeLabels(true);
-            while (response.isNextPresent()) {
-
-                FormElement elem = elements.get(i);
-                SERVER.log(elem.getType().name());
-                switch (elem.getType()) {
-                    case DROPDOWN -> elem.resultRecieved(response.asDropdown(i));
-                    case LABEL -> {}
-                    case INPUT -> elem.resultRecieved(response.asInput(i));
-                    case SLIDER -> elem.resultRecieved(response.asSlider(i));
-                    case STEPSLIDER -> elem.resultRecieved(response.asStepSlider(i));
-                    case TOGGLE -> elem.resultRecieved(response.asToggle(i));
-                    default -> {}
+            for (FormElement element : elements) {
+                switch (element.getType()) {
+                    case DROPDOWN -> {
+                        element.resultRecieved(response.asDropdown(i));
+                    }
+                    case INPUT -> {
+                        element.resultRecieved(response.asInput(i));
+                    }
+                    case LABEL -> {
+                        element.resultRecieved((Object) null);
+                    }
+                    case SLIDER -> {
+                        element.resultRecieved(response.asSlider(i));
+                    }
+                    case STEPSLIDER -> {
+                        element.resultRecieved(response.asStepSlider(i));
+                    }
+                    case TOGGLE -> {
+                        element.resultRecieved(response.asToggle(i));
+                    }
+                    default -> {
+                    }
                 }
                 i++;
-                response.next();
             }
             onSubmit();
         });
 
         customForm.closedResultHandler(this::onClose);
-        customForm.invalidResultHandler(()->{
-           SERVER.warn("ERROR: FORM RESPONSE BY " + player.getSession().getClientData().getUsername() + " WAS INVALID!");
+        customForm.invalidResultHandler(() -> {
+            SERVER.warn("ERROR: FORM RESPONSE BY " + player.getSession().getClientData().getUsername() + " WAS INVALID!");
         });
         return customForm;
     }

@@ -12,7 +12,8 @@ public enum Remappable {
     SNEAK_INVENTORY,
     OPEN_INVENTORY,
     PICK_BLOCK,
-    SNEAK_DROP;
+    SNEAK_DROP,
+    SETTINGS;
 
     public String getLocaleString(ExtrasPlayer player) {
         GeyserSession session = player.getSession();
@@ -29,6 +30,9 @@ public enum Remappable {
             }
             case SNEAK_INVENTORY -> {
                 return MinecraftLocale.getLocaleString("key.sneak", locale) + " + " + MinecraftLocale.getLocaleString("container.inventory", locale);
+            }
+            case SETTINGS ->{
+                return MinecraftLocale.getLocaleString("mco.configure.world.settings.title", locale);
             }
             default -> {
                 return this.name();
