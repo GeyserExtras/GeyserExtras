@@ -5,6 +5,7 @@ import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.features.bindings.Action;
 import dev.letsgoaway.geyserextras.core.features.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
+import dev.letsgoaway.geyserextras.core.menus.VRInventoryMenu;
 import dev.letsgoaway.geyserextras.core.parity.java.shield.ShieldUtils;
 import org.cloudburstmc.protocol.bedrock.data.PlayerActionType;
 import org.cloudburstmc.protocol.bedrock.packet.EntityPickRequestPacket;
@@ -14,6 +15,8 @@ import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.translator.protocol.PacketTranslator;
 import org.geysermc.geyser.translator.protocol.Translator;
 import org.geysermc.geyser.translator.protocol.bedrock.entity.player.BedrockInteractTranslator;
+
+import java.util.concurrent.TimeUnit;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
@@ -29,16 +32,37 @@ public class BedrockInteractInjector extends BedrockInteractTranslator {
                 if (packet.getAction().equals(InteractPacket.Action.DAMAGE)) {
                     player.getCooldownHandler().setDigTicks(-1);
                     player.getCooldownHandler().setLastSwingTime(System.currentTimeMillis());
-                }
-                else if (packet.getAction().equals(InteractPacket.Action.MOUSEOVER)) {
+                } else if (packet.getAction().equals(InteractPacket.Action.MOUSEOVER)) {
                     player.getCooldownHandler().setLastMouseoverID(packet.getRuntimeEntityId());
                 }
             }
             super.translate(session, packet);
         } else {
+            if (player.isVR() && player.getPreferences().isEnableDoubleClickForVRQuickMenu()) {
+                // Double click
+                if (player.getPreferences().getVrMenuDoubleClickMS() > System.currentTimeMillis() - player.getLastInventoryClickTime()) {
+                    if (player.getVrInventoryMenuFuture() != null && !player.getVrInventoryMenuFuture().isCancelled() && !player.getVrInventoryMenuFuture().isDone()) {
+                        player.getVrInventoryMenuFuture().cancel(false);
+                        // open vr menu
+                        player.sendForm(new VRInventoryMenu());
+                    } else {
+                        player.setLastInventoryClickTime(System.currentTimeMillis());
+                        player.setVrInventoryMenuFuture(session.scheduleInEventLoop(() -> {
+                            Action.OPEN_INVENTORY.run(player);
+                        }, player.getPreferences().getVrMenuDoubleClickMS() + 20, TimeUnit.MILLISECONDS));
+                    }
+                    return;
+                } else {
+                    player.setLastInventoryClickTime(System.currentTimeMillis());
+                    player.setVrInventoryMenuFuture(session.scheduleInEventLoop(() -> {
+                        Action.OPEN_INVENTORY.run(player);
+                    }, player.getPreferences().getVrMenuDoubleClickMS() + 20, TimeUnit.MILLISECONDS));
+                    return;
+                }
+            }
             Remappable bind = player.getSession().isSneaking() ? Remappable.SNEAK_INVENTORY : Remappable.OPEN_INVENTORY;
             if (player.getPreferences().isDefault(bind) || player.getPreferences().getAction(bind).equals(Action.OPEN_INVENTORY)) {
-                if (Config.toggleBlock && ShieldUtils.disableBlocking(session)){
+                if (Config.toggleBlock && ShieldUtils.disableBlocking(session)) {
                     session.getPlayerEntity().updateBedrockMetadata();
                 }
                 super.translate(session, packet);

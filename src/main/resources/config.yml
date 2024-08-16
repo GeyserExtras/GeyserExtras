@@ -10,6 +10,8 @@ enable-custom-cooldown: true
 enable-java-combat-sounds: true
 
 # Enable toggling the shield by pressing right click.
+# THIS CAN GET YOU BANNED FROM SERVERS AS YOU WALK FASTER WHILE BLOCKING
+# THAN JAVA PLAYERS! USE AT YOUR OWN RISK IF USING GEYSER STANDALONE.
 enable-toggle-block: false
 
 # Forces block placements to not be hold-bridgable/scaffold-bridgeable.

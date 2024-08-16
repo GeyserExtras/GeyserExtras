@@ -1,4 +1,4 @@
 package dev.letsgoaway.geyserextras.core.handlers.java;
-// todo
+// todo: tab list
 public class JavaPlayerInfoUpdateInjector {
 }

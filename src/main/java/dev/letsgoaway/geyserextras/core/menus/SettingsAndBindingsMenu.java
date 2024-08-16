@@ -8,10 +8,7 @@ import dev.letsgoaway.geyserextras.core.form.elements.Dropdown;
 import dev.letsgoaway.geyserextras.core.form.elements.Label;
 import dev.letsgoaway.geyserextras.core.form.elements.Slider;
 import dev.letsgoaway.geyserextras.core.form.elements.Toggle;
-import dev.letsgoaway.geyserextras.core.menus.settings.BindingsSection;
-import dev.letsgoaway.geyserextras.core.menus.settings.DebugSection;
-import dev.letsgoaway.geyserextras.core.menus.settings.HudSection;
-import dev.letsgoaway.geyserextras.core.menus.settings.SettingsSection;
+import dev.letsgoaway.geyserextras.core.menus.settings.*;
 import org.geysermc.cumulus.form.CustomForm;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.text.ChatColor;
@@ -29,6 +26,9 @@ public class SettingsAndBindingsMenu extends BedrockForm {
         setTitle("GeyserExtras Settings");
         GeyserSession session = player.getSession();
         SettingsSection.build(this, session, player);
+        if (player.isVR()) {
+            VRSection.build(this, session, player);
+        }
         HudSection.build(this, session, player);
         BindingsSection.build(this, session, player);
         DebugSection.build(this, session, player);

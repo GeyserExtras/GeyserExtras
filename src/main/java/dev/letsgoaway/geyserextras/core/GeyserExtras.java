@@ -8,9 +8,9 @@ import org.geysermc.event.subscribe.Subscribe;
 import org.geysermc.geyser.api.GeyserApi;
 import org.geysermc.geyser.api.event.EventRegistrar;
 import org.geysermc.geyser.api.event.bedrock.*;
-import org.geysermc.geyser.api.event.lifecycle.GeyserDefineCommandsEvent;
-import org.geysermc.geyser.api.event.lifecycle.GeyserPostInitializeEvent;
-import org.geysermc.geyser.api.event.lifecycle.GeyserPreReloadEvent;
+import org.geysermc.geyser.api.event.lifecycle.*;
+import org.geysermc.geyser.api.item.custom.CustomItemData;
+import org.geysermc.geyser.api.item.custom.CustomRenderOffsets;
 
 import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
@@ -41,6 +41,8 @@ public class GeyserExtras implements EventRegistrar {
 
         // Auto reconnect
         geyserApi.eventBus().subscribe(this, GeyserPreReloadEvent.class, this::onGeyserReload);
+        geyserApi.eventBus().subscribe(this, GeyserShutdownEvent.class, this::onGeyserShutdown);
+
         connections = new ConcurrentHashMap<>();
         InitializeLogger.end();
     }
@@ -92,6 +94,14 @@ public class GeyserExtras implements EventRegistrar {
     }
 
     public void onGeyserReload(GeyserPreReloadEvent geyserPreReloadEvent) {
+        if (Config.autoReconnect) {
+            for (ExtrasPlayer player : connections.values()) {
+                player.reconnect();
+            }
+        }
+    }
+
+    public void onGeyserShutdown(GeyserShutdownEvent geyserShutdownEvent) {
         if (Config.autoReconnect) {
             for (ExtrasPlayer player : connections.values()) {
                 player.reconnect();

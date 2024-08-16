@@ -1,4 +1,4 @@
-package dev.letsgoaway.geyserextras.core.parity.java;
+package dev.letsgoaway.geyserextras.core.parity.java.combat;
 
 import dev.letsgoaway.geyserextras.MathUtils;
 import dev.letsgoaway.geyserextras.ReflectionAPI;
@@ -6,6 +6,7 @@ import dev.letsgoaway.geyserextras.core.Config;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import lombok.Getter;
 import lombok.Setter;
+import org.geysermc.geyser.api.bedrock.camera.GuiElement;
 import org.geysermc.geyser.entity.attribute.GeyserAttributeType;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.util.CooldownUtils;
@@ -95,8 +96,9 @@ public class CooldownHandler {
                 }
                 case ACTIONBAR -> {
                     if (!lastCharSent.isEmpty()) {
-                        lastCharSent = " ";
-                        player.sendActionbarTitle(lastCharSent);
+                        player.getSession().camera().resetElement(GuiElement.ITEM_TEXT_POPUP);
+                        lastCharSent = "";
+                        player.sendActionbarTitle(" ");
                     }
                 }
             }
@@ -119,6 +121,8 @@ public class CooldownHandler {
                 player.sendTitle("", lastCharSent, 0, MathUtils.ceil((float) getCooldownPeriod()), 0);
             }
             case ACTIONBAR -> {
+                player.getSession().camera().hideElement(GuiElement.ITEM_TEXT_POPUP);
+
                 int max = (hotbar.length - 1);
 
                 int cooldown = Math.toIntExact(Math.round(progress * max + 0.475f));

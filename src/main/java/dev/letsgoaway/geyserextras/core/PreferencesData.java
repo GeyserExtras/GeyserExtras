@@ -21,6 +21,14 @@ public class PreferencesData {
     @Setter
     private Menus settingsMenuForm = Menus.GE_SETTINGS;
 
+    @Getter
+    @Setter
+    private boolean enableDoubleClickForVRQuickMenu = true;
+
+    @Getter
+    @Setter
+    private int vrMenuDoubleClickMS = 200;
+
     public PreferencesData(ExtrasPlayer player) {
         this.player = player;
         remappableActionMap = new HashMap<>();
