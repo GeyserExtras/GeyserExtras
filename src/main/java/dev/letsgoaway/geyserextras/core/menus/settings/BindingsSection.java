@@ -12,12 +12,13 @@ import org.geysermc.geyser.text.ChatColor;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class BindingsSection {
     public static void build(SettingsMenu menu, GeyserSession session, ExtrasPlayer player) {
         menu.add(new Label(ChatColor.BOLD + BedrockLocale.CONTROLLER.BINDINGS +"\n"));
 
-        HashMap<String, Action> actionNames = new HashMap<>();
+        LinkedHashMap<String, Action> actionNames = new LinkedHashMap<>();
         for (Action action : Action.values()) {
             actionNames.put(action.translate(player), action);
         }

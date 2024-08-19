@@ -15,13 +15,14 @@ import org.geysermc.geyser.util.CooldownUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class SettingsSection {
     public static void build(SettingsMenu menu, GeyserSession session, ExtrasPlayer player) {
         menu.add(new Label(ChatColor.BOLD + BedrockLocale.SETTINGS + "\n"));
 
         if (CooldownUtils.getDefaultShowCooldown() != CooldownUtils.CooldownType.DISABLED) {
-            HashMap<String, CooldownUtils.CooldownType> cooldownTypes = new HashMap<>();
+            LinkedHashMap<String, CooldownUtils.CooldownType> cooldownTypes = new LinkedHashMap<>();
             for (CooldownUtils.CooldownType cooldownType : CooldownUtils.CooldownType.values()) {
                 cooldownTypes.put(translateCooldown(cooldownType, session), cooldownType);
             }
