@@ -1,6 +1,6 @@
 package dev.letsgoaway.geyserextras.core;
 
-import dev.letsgoaway.geyserextras.core.features.bindings.Remappable;
+import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
 import dev.letsgoaway.geyserextras.core.form.BedrockForm;
 import dev.letsgoaway.geyserextras.core.form.BedrockModal;
@@ -11,6 +11,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.cloudburstmc.protocol.bedrock.packet.AnimatePacket;
 import org.cloudburstmc.protocol.bedrock.packet.SetTitlePacket;
+import org.cloudburstmc.protocol.bedrock.packet.ToastRequestPacket;
 import org.geysermc.api.util.BedrockPlatform;
 import org.geysermc.api.util.InputMode;
 import org.geysermc.geyser.api.bedrock.camera.GuiElement;
@@ -67,6 +68,7 @@ public class ExtrasPlayer {
     }
 
     public void startGame() {
+        sendToast("GeyserExtras is available!", "Open settings or run /ge to configure");
     }
 
     public void startCombatTickThread(float updateRate) {
@@ -168,6 +170,12 @@ public class ExtrasPlayer {
         session.sendUpstreamPacket(titlePacket);
     }
 
+    public void sendToast(String title, String description) {
+        ToastRequestPacket toastPacket = new ToastRequestPacket();
+        toastPacket.setTitle(title);
+        toastPacket.setContent(description);
+        session.sendUpstreamPacket(toastPacket);
+    }
 
     public void resetTitle() {
         SetTitlePacket titlePacket = new SetTitlePacket();

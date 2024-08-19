@@ -1,14 +1,11 @@
 package dev.letsgoaway.geyserextras.core.handlers.bedrock;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
-import dev.letsgoaway.geyserextras.core.features.bindings.Remappable;
+import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
 import org.cloudburstmc.protocol.bedrock.packet.BlockPickRequestPacket;
 import org.geysermc.geyser.session.GeyserSession;
-import org.geysermc.geyser.translator.protocol.PacketTranslator;
 import org.geysermc.geyser.translator.protocol.Translator;
 import org.geysermc.geyser.translator.protocol.bedrock.BedrockBlockPickRequestTranslator;
-
-import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 @Translator(packet = BlockPickRequestPacket.class)
 public class BedrockBlockPickRequestInjector extends BedrockBlockPickRequestTranslator {

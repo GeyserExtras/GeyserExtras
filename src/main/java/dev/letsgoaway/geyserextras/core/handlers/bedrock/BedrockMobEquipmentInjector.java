@@ -51,7 +51,7 @@ public class BedrockMobEquipmentInjector extends BedrockMobEquipmentTranslator {
             if (oldItem.getJavaId() != newItem.getJavaId()) {
                 // Java sends a cooldown indicator whenever you switch to a new item type
                 player.getCooldownHandler().setDigTicks(-1);
-                player.getCooldownHandler().setLastSwingTime(System.currentTimeMillis());
+                player.getCooldownHandler().setLastHotbarTime(System.currentTimeMillis());
             }
 
             // Update the interactive tag, if an entity is present

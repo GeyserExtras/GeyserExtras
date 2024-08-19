@@ -4,12 +4,16 @@ import dev.letsgoaway.geyserextras.MathUtils;
 import dev.letsgoaway.geyserextras.ReflectionAPI;
 import dev.letsgoaway.geyserextras.core.Config;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
+import dev.letsgoaway.geyserextras.core.utils.GUIElements;
 import lombok.Getter;
 import lombok.Setter;
-import org.geysermc.geyser.api.bedrock.camera.GuiElement;
-import org.geysermc.geyser.entity.attribute.GeyserAttributeType;
+import org.geysermc.geyser.inventory.GeyserItemStack;
+import org.geysermc.geyser.item.Items;
+import org.geysermc.geyser.item.enchantment.Enchantment;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.util.CooldownUtils;
+import org.geysermc.mcprotocollib.protocol.data.game.item.component.DataComponentType;
+import org.geysermc.mcprotocollib.protocol.data.game.item.component.ItemEnchantments;
 
 
 public class CooldownHandler {
@@ -19,6 +23,8 @@ public class CooldownHandler {
 
     @Setter
     private long lastSwingTime;
+
+    private long lastHotbarTime = 0;
 
     @Setter
     @Getter
@@ -96,7 +102,6 @@ public class CooldownHandler {
                 }
                 case ACTIONBAR -> {
                     if (!lastCharSent.isEmpty()) {
-                        player.getSession().camera().resetElement(GuiElement.ITEM_TEXT_POPUP);
                         lastCharSent = "";
                         player.sendActionbarTitle(" ");
                     }
@@ -121,8 +126,6 @@ public class CooldownHandler {
                 player.sendTitle("", lastCharSent, 0, MathUtils.ceil((float) getCooldownPeriod()), 0);
             }
             case ACTIONBAR -> {
-                player.getSession().camera().hideElement(GuiElement.ITEM_TEXT_POPUP);
-
                 int max = (hotbar.length - 1);
 
                 int cooldown = Math.toIntExact(Math.round(progress * max + 0.475f));
@@ -130,6 +133,25 @@ public class CooldownHandler {
                     cooldown = max;
                 }
                 String curChar = hotbar[cooldown];
+                // TODO: figure out why this wont work
+                if (System.currentTimeMillis() / (lastHotbarTime + getHBStayTime()) < 1.0) {
+                    curChar += "\n";
+                    GeyserItemStack heldItem = session.getPlayerInventory().getItemInHand();
+                    // Geyser adds a custom enchantment i think
+                    // but all i know is that it adds a blank extra line
+                    if (heldItem.asItem().equals(Items.DEBUG_STICK)) {
+                        curChar += "\n";
+                    }
+                    ItemEnchantments enchantments = heldItem.getComponent(DataComponentType.ENCHANTMENTS);
+                    if (enchantments != null) {
+                        for (int enchID : enchantments.getEnchantments().keySet()) {
+                            // SWEEPING_EDGE, java only so it doesnt show on the item text popup
+                            if (enchID != 22) {
+                                curChar += "\n";
+                            }
+                        }
+                    }
+                }
                 if (lastCharSent.equals(curChar)) {
                     return;
                 }
@@ -167,5 +189,32 @@ public class CooldownHandler {
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void setLastHotbarTime(long time) {
+        lastHotbarTime = time;
+        setLastSwingTime(time);
+    }
+
+    private double getHBStayTime() {
+        double textTime = 2.5; // 2.5 seconds is how long the item text popup stay time is
+        GeyserItemStack item = session.getPlayerInventory().getItemInHand();
+        ItemEnchantments enchantments = item.getComponent(DataComponentType.ENCHANTMENTS);
+        if (enchantments != null) {
+
+            for (int enchID : enchantments.getEnchantments().keySet()) {
+                // SWEEPING_EDGE, java only so it doesnt show on the item text popup
+                if (enchID != 22) {
+                    textTime += .75; // + .75 seconds is added on the bedrock client
+                    // for each enchantment so you have time to read it
+                }
+            }
+        }
+        if (lastPing >= 40) {
+            if (textTime - (averagePing / 1000) > 0.0) {
+                textTime -= (averagePing / 1000);
+            }
+        }
+        return textTime * 1000;
     }
 }

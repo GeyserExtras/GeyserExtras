@@ -1,6 +1,7 @@
-package dev.letsgoaway.geyserextras.core.features.bindings;
+package dev.letsgoaway.geyserextras.core.preferences.bindings;
 
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
+import dev.letsgoaway.geyserextras.core.locale.BedrockLocale;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.text.MinecraftLocale;
 
@@ -15,24 +16,24 @@ public enum Remappable {
     SNEAK_DROP,
     SETTINGS;
 
-    public String getLocaleString(ExtrasPlayer player) {
+    public String translate(ExtrasPlayer player) {
         GeyserSession session = player.getSession();
         String locale = session.locale();
         switch (this) {
             case PICK_BLOCK -> {
-                return MinecraftLocale.getLocaleString("key.pickItem", locale);
+                return BedrockLocale.KEY.PICK_BLOCK;
             }
             case OPEN_INVENTORY -> {
-                return MinecraftLocale.getLocaleString("container.inventory", locale);
+                return BedrockLocale.KEY.INVENTORY;
             }
             case SNEAK_DROP -> {
-                return MinecraftLocale.getLocaleString("key.sneak", locale) + " + " + MinecraftLocale.getLocaleString("key.drop", locale);
+                return MinecraftLocale.getLocaleString("key.sneak", locale) + " + " + BedrockLocale.CONTROLLER.DROP;
             }
             case SNEAK_INVENTORY -> {
-                return MinecraftLocale.getLocaleString("key.sneak", locale) + " + " + MinecraftLocale.getLocaleString("container.inventory", locale);
+                return MinecraftLocale.getLocaleString("key.sneak", locale) + " + " + BedrockLocale.KEY.INVENTORY;
             }
-            case SETTINGS ->{
-                return MinecraftLocale.getLocaleString("mco.configure.world.settings.title", locale);
+            case SETTINGS -> {
+                return BedrockLocale.GAME_SETTINGS_SCREEN;
             }
             default -> {
                 return this.name();

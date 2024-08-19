@@ -1,11 +1,12 @@
 package dev.letsgoaway.geyserextras.core.menus.settings;
 
+import dev.letsgoaway.geyserextras.core.locale.BedrockLocale;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.form.elements.Dropdown;
 import dev.letsgoaway.geyserextras.core.form.elements.Label;
 import dev.letsgoaway.geyserextras.core.form.elements.Slider;
 import dev.letsgoaway.geyserextras.core.form.elements.Toggle;
-import dev.letsgoaway.geyserextras.core.menus.SettingsAndBindingsMenu;
+import dev.letsgoaway.geyserextras.core.menus.SettingsMenu;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.text.ChatColor;
 import org.geysermc.geyser.text.GeyserLocale;
@@ -16,8 +17,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SettingsSection {
-    public static void build(SettingsAndBindingsMenu menu, GeyserSession session, ExtrasPlayer player) {
-        menu.add(new Label(ChatColor.BOLD + "Settings\n"));
+    public static void build(SettingsMenu menu, GeyserSession session, ExtrasPlayer player) {
+        menu.add(new Label(ChatColor.BOLD + BedrockLocale.SETTINGS + "\n"));
 
         if (CooldownUtils.getDefaultShowCooldown() != CooldownUtils.CooldownType.DISABLED) {
             HashMap<String, CooldownUtils.CooldownType> cooldownTypes = new HashMap<>();
@@ -33,8 +34,9 @@ public class SettingsSection {
         }
 
         if (session.getPreferencesCache().isAllowShowCoordinates()) {
-            menu.add(new Toggle("%createWorldScreen.showCoordinates", session.getPreferencesCache().isPrefersShowCoordinates(), (b) -> {
+            menu.add(new Toggle(BedrockLocale.SHOW_COORDINATES, session.getPreferencesCache().isPrefersShowCoordinates(), (b) -> {
                 session.getPreferencesCache().setPrefersShowCoordinates(b);
+                session.getPreferencesCache().updateShowCoordinates();
             }));
         }
 
@@ -58,13 +60,13 @@ public class SettingsSection {
     private static String translateCooldown(CooldownUtils.CooldownType cooldownType, GeyserSession session) {
         switch (cooldownType) {
             case TITLE -> {
-                return MinecraftLocale.getLocaleStringIfPresent("options.attack.crosshair", session.locale());
+                return BedrockLocale.CROSSHAIR;
             }
             case ACTIONBAR -> {
                 return MinecraftLocale.getLocaleStringIfPresent("options.attack.hotbar", session.locale());
             }
             case DISABLED -> {
-                return MinecraftLocale.getLocaleStringIfPresent("options.off", session.locale());
+                return BedrockLocale.OPTIONS.OFF;
             }
         }
         return "";

@@ -1,12 +1,9 @@
-package dev.letsgoaway.geyserextras.core.features.bindings;
+package dev.letsgoaway.geyserextras.core.preferences.bindings;
 
-import dev.letsgoaway.geyserextras.core.Config;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
-import dev.letsgoaway.geyserextras.core.handlers.CommandHandler;
-import dev.letsgoaway.geyserextras.core.handlers.bedrock.BedrockBlockPickRequestInjector;
+import dev.letsgoaway.geyserextras.core.locale.BedrockLocale;
 import dev.letsgoaway.geyserextras.core.menus.MainMenu;
 import dev.letsgoaway.geyserextras.core.parity.java.tablist.PlayerList;
-import org.cloudburstmc.protocol.bedrock.packet.BlockPickRequestPacket;
 import org.geysermc.geyser.entity.type.Entity;
 import org.geysermc.geyser.entity.type.living.animal.horse.AbstractHorseEntity;
 import org.geysermc.geyser.session.GeyserSession;
@@ -21,7 +18,7 @@ import org.geysermc.mcprotocollib.protocol.packet.ingame.serverbound.player.Serv
 
 public enum Action {
     DEFAULT,
-    NOTHING,
+    DISABLED,
     SWAP_OFFHAND,
     RECONNECT,
     TOGGLE_TOOLTIPS,
@@ -82,38 +79,47 @@ public enum Action {
         }
     }
 
-    public String getLocaleString(ExtrasPlayer player) {
+    public String translate(ExtrasPlayer player) {
         GeyserSession session = player.getSession();
         String locale = session.locale();
         switch (this) {
+            case DEFAULT -> {
+                return BedrockLocale.GUI.DEFAULT;
+            }
+            case DISABLED -> {
+                return BedrockLocale.OPTIONS.DISABLED;
+            }
             case SWAP_OFFHAND -> {
                 return MinecraftLocale.getLocaleString("key.swapOffhand", locale);
+            }
+            case RECONNECT -> {
+                return BedrockLocale.RELOAD;
             }
             case TOGGLE_TOOLTIPS -> {
                 String onOrOff = session.isAdvancedTooltips() ? "on" : "off";
                 return MinecraftLocale.getLocaleString("debug.advanced_tooltips." + onOrOff, locale);
             }
+            case OPEN_GE_MENU -> {
+
+            }
             case OPEN_ADVANCEMENTS -> {
                 return MinecraftLocale.getLocaleString("gui.advancements", locale);
             }
             case OPEN_STATISTICS -> {
-                return MinecraftLocale.getLocaleString("gui.stats", locale);
+                return BedrockLocale.GUI.STATS;
             }
             case PLAYER_LIST -> {
-                return MinecraftLocale.getLocaleString("key.playerlist", locale);
+                return BedrockLocale.KEY.PLAYER_LIST;
             }
-            case DEFAULT -> {
-                return MinecraftLocale.getLocaleString("options.gamma.default", locale);
-            }
-            case NOTHING -> {
-                return MinecraftLocale.getLocaleString("addServer.resourcePack.disabled", locale);
+            case PLATFORM_LIST -> {
             }
             case OPEN_INVENTORY -> {
-                return MinecraftLocale.getLocaleString("tutorial.open_inventory.title", locale);
+                return BedrockLocale.KEY.OPEN_INVENTORY;
             }
-            default -> {
-                return this.name();
+            case CUSTOM -> {
+                return BedrockLocale.GUI.CUSTOM;
             }
         }
+        return this.name();
     }
 }
