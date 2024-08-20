@@ -18,6 +18,8 @@ import org.geysermc.mcprotocollib.protocol.data.game.item.component.ItemEnchantm
 
 import java.util.List;
 
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
+
 
 public class CooldownHandler {
     private final ExtrasPlayer player;
@@ -191,6 +193,8 @@ public class CooldownHandler {
                     return;
                 }
                 lastCharSent = curChar.toString();
+
+                SERVER.log(lastCharSent);
                 player.sendActionbarTitle(lastCharSent);
             }
         }
