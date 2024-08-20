@@ -17,6 +17,7 @@ import org.geysermc.api.util.InputMode;
 import org.geysermc.geyser.api.bedrock.camera.GuiElement;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent;
+import org.geysermc.geyser.item.type.Item;
 import org.geysermc.geyser.session.GeyserSession;
 
 import java.util.List;
@@ -126,15 +127,6 @@ public class ExtrasPlayer {
         if (Config.toggleBlock) {
             ShieldUtils.updateBlockSpeed(session);
         }
-    }
-
-    // TODO: better way to detect instead of using identifier
-    public boolean isTool() {
-        String item = session.getPlayerInventory().getItemInHand().getMapping(session).getBedrockIdentifier();
-        return (item.contains("_axe") || item.contains("_pickaxe") || item.contains("_shovel") || item.contains("_sword") || item.contains("trident") || item.contains("mace")
-                // || item.contains("_hoe")
-                // hoes dont have attack speed for some reason
-        );
     }
 
     public void sendTitle(String title, String subtitle, int fadeIn, int stay, int fadeOut) {

@@ -10,10 +10,13 @@ import lombok.Setter;
 import org.geysermc.geyser.inventory.GeyserItemStack;
 import org.geysermc.geyser.item.Items;
 import org.geysermc.geyser.item.enchantment.Enchantment;
+import org.geysermc.geyser.item.type.Item;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.util.CooldownUtils;
 import org.geysermc.mcprotocollib.protocol.data.game.item.component.DataComponentType;
 import org.geysermc.mcprotocollib.protocol.data.game.item.component.ItemEnchantments;
+
+import java.util.List;
 
 
 public class CooldownHandler {
@@ -62,13 +65,45 @@ public class CooldownHandler {
     }
 
     public boolean readyToAttack = false;
+    private static final List<Item> readyToAttackIndicatorItems = List.of(
+            Items.NETHERITE_AXE,
+            Items.DIAMOND_AXE,
+            Items.GOLDEN_AXE,
+            Items.IRON_AXE,
+            Items.STONE_AXE,
+            Items.WOODEN_AXE,
+            Items.NETHERITE_PICKAXE,
+            Items.DIAMOND_PICKAXE,
+            Items.GOLDEN_PICKAXE,
+            Items.IRON_PICKAXE,
+            Items.STONE_PICKAXE,
+            Items.WOODEN_PICKAXE,
+            Items.NETHERITE_SHOVEL,
+            Items.DIAMOND_SHOVEL,
+            Items.GOLDEN_SHOVEL,
+            Items.IRON_SHOVEL,
+            Items.STONE_SHOVEL,
+            Items.WOODEN_SHOVEL,
+            Items.NETHERITE_SWORD,
+            Items.DIAMOND_SWORD,
+            Items.GOLDEN_SWORD,
+            Items.IRON_SWORD,
+            Items.STONE_SWORD,
+            Items.WOODEN_SWORD,
+            Items.TRIDENT,
+            Items.MACE
+    );
+
+    public boolean isTool() {
+        return readyToAttackIndicatorItems.contains(session.getPlayerInventory().getItemInHand().asItem());
+    }
 
     public void tick() {
         calculateAveragePing();
         if (Config.toggleBlock) {
             setArmAnimationTicks(-1);
         }
-        if (lastMouseoverID != 0 && session.getMouseoverEntity() != null && player.isTool()) {
+        if (lastMouseoverID != 0 && session.getMouseoverEntity() != null && isTool()) {
             readyToAttack = session.getMouseoverEntity().isAlive();
         } else {
             readyToAttack = false;
@@ -132,30 +167,30 @@ public class CooldownHandler {
                 if (cooldown > max) {
                     cooldown = max;
                 }
-                String curChar = hotbar[cooldown];
+                StringBuilder curChar = new StringBuilder(hotbar[cooldown]);
                 // TODO: figure out why this wont work
                 if (System.currentTimeMillis() / (lastHotbarTime + getHBStayTime()) < 1.0) {
-                    curChar += "\n";
+                    curChar.append("\n");
                     GeyserItemStack heldItem = session.getPlayerInventory().getItemInHand();
                     // Geyser adds a custom enchantment i think
                     // but all i know is that it adds a blank extra line
                     if (heldItem.asItem().equals(Items.DEBUG_STICK)) {
-                        curChar += "\n";
+                        curChar.append("\n");
                     }
                     ItemEnchantments enchantments = heldItem.getComponent(DataComponentType.ENCHANTMENTS);
                     if (enchantments != null) {
                         for (int enchID : enchantments.getEnchantments().keySet()) {
                             // SWEEPING_EDGE, java only so it doesnt show on the item text popup
                             if (enchID != 22) {
-                                curChar += "\n";
+                                curChar.append("\n");
                             }
                         }
                     }
                 }
-                if (lastCharSent.equals(curChar)) {
+                if (lastCharSent.contentEquals(curChar)) {
                     return;
                 }
-                lastCharSent = curChar;
+                lastCharSent = curChar.toString();
                 player.sendActionbarTitle(lastCharSent);
             }
         }

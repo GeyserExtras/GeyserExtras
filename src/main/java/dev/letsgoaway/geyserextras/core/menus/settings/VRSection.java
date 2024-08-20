@@ -11,7 +11,7 @@ import org.geysermc.geyser.text.ChatColor;
 public class VRSection {
     public static void build(SettingsMenu menu, GeyserSession session, ExtrasPlayer player) {
 
-        menu.add(new Label(ChatColor.BOLD + "VR\n"));
+        menu.add(new SectionLabel("VR",""));
         menu.add(new Toggle("Enable VR Quick-Menu on Inventory Double Click", player.getPreferences().isEnableDoubleClickForVRQuickMenu(), (b) -> {
             player.getPreferences().setEnableDoubleClickForVRQuickMenu(b);
         }));

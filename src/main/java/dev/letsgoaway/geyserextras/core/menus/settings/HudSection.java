@@ -12,7 +12,7 @@ import org.geysermc.geyser.text.ChatColor;
 
 public class HudSection {
     public static void build(SettingsMenu menu, GeyserSession session, ExtrasPlayer player) {
-        menu.add(new SectionLabel("HUD\n", ""));
+        menu.add(new SectionLabel("HUD", ""));
 
         // TODO: Figure out why this sends a broken packet
         /*
