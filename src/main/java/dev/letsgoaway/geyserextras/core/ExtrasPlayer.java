@@ -7,6 +7,7 @@ import dev.letsgoaway.geyserextras.core.form.BedrockModal;
 import dev.letsgoaway.geyserextras.core.parity.java.combat.CooldownHandler;
 import dev.letsgoaway.geyserextras.core.parity.java.shield.ShieldUtils;
 import dev.letsgoaway.geyserextras.core.parity.java.tablist.TabListData;
+import dev.letsgoaway.geyserextras.core.utils.StringUtils;
 import lombok.Getter;
 import lombok.Setter;
 import org.cloudburstmc.protocol.bedrock.packet.AnimatePacket;
@@ -155,8 +156,8 @@ public class ExtrasPlayer {
 
     public void sendActionbarTitle(String title) {
         SetTitlePacket titlePacket = new SetTitlePacket();
-        titlePacket.setType(SetTitlePacket.Type.ACTIONBAR);
-        titlePacket.setText(title);
+        titlePacket.setType(SetTitlePacket.Type.ACTIONBAR_JSON);
+        titlePacket.setText("{ \"rawtext\": [ { \"text\":\""+ StringUtils.escape(title) +"\" } ] }");
         titlePacket.setXuid("");
         titlePacket.setPlatformOnlineId("");
         session.sendUpstreamPacket(titlePacket);

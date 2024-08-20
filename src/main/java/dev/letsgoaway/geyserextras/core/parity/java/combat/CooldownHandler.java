@@ -12,7 +12,9 @@ import org.geysermc.geyser.item.Items;
 import org.geysermc.geyser.item.enchantment.Enchantment;
 import org.geysermc.geyser.item.type.Item;
 import org.geysermc.geyser.session.GeyserSession;
+import org.geysermc.geyser.translator.text.MessageTranslator;
 import org.geysermc.geyser.util.CooldownUtils;
+import org.geysermc.mcprotocollib.protocol.data.game.entity.player.GameMode;
 import org.geysermc.mcprotocollib.protocol.data.game.item.component.DataComponentType;
 import org.geysermc.mcprotocollib.protocol.data.game.item.component.ItemEnchantments;
 
@@ -169,26 +171,29 @@ public class CooldownHandler {
                 if (cooldown > max) {
                     cooldown = max;
                 }
-                StringBuilder curChar = new StringBuilder(hotbar[cooldown]);
+                StringBuilder curChar = new StringBuilder(" " + hotbar[cooldown]);
                 // TODO: figure out why this wont work
-                if (System.currentTimeMillis() / (lastHotbarTime + getHBStayTime()) < 1.0) {
-                    curChar.append("\n");
+                if (!GUIElements.ITEM_TEXT_POPUP.isHidden(session) && System.currentTimeMillis() / (lastHotbarTime + getHBStayTime()) < 1.0) {
+                    if (session.getGameMode().equals(GameMode.SURVIVAL) || session.getGameMode().equals(GameMode.ADVENTURE)) {
+                        curChar.append("\n\n\n");
+                    }
                     GeyserItemStack heldItem = session.getPlayerInventory().getItemInHand();
                     // Geyser adds a custom enchantment i think
                     // but all i know is that it adds a blank extra line
                     if (heldItem.asItem().equals(Items.DEBUG_STICK)) {
-                        curChar.append("\n");
+                        curChar.append("\n\n");
                     }
                     ItemEnchantments enchantments = heldItem.getComponent(DataComponentType.ENCHANTMENTS);
                     if (enchantments != null) {
                         for (int enchID : enchantments.getEnchantments().keySet()) {
                             // SWEEPING_EDGE, java only so it doesnt show on the item text popup
                             if (enchID != 22) {
-                                curChar.append("\n");
+                                curChar.append("\n\n");
                             }
                         }
                     }
                 }
+                curChar.append(" ");
                 if (lastCharSent.contentEquals(curChar)) {
                     return;
                 }
@@ -236,7 +241,7 @@ public class CooldownHandler {
     }
 
     private double getHBStayTime() {
-        double textTime = 2.5; // 2.5 seconds is how long the item text popup stay time is
+        double textTime = 3.5; // 3 seconds is how long the item text popup stay time is
         GeyserItemStack item = session.getPlayerInventory().getItemInHand();
         ItemEnchantments enchantments = item.getComponent(DataComponentType.ENCHANTMENTS);
         if (enchantments != null) {
@@ -244,7 +249,7 @@ public class CooldownHandler {
             for (int enchID : enchantments.getEnchantments().keySet()) {
                 // SWEEPING_EDGE, java only so it doesnt show on the item text popup
                 if (enchID != 22) {
-                    textTime += .75; // + .75 seconds is added on the bedrock client
+                    textTime += 0.75; // + .75 seconds are added on the bedrock client
                     // for each enchantment so you have time to read it
                 }
             }
