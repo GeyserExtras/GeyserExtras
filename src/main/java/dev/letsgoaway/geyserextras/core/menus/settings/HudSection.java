@@ -1,5 +1,6 @@
 package dev.letsgoaway.geyserextras.core.menus.settings;
 
+import dev.letsgoaway.geyserextras.core.Config;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.form.elements.*;
 import dev.letsgoaway.geyserextras.core.locale.BedrockLocale;
@@ -12,7 +13,7 @@ import org.geysermc.geyser.text.ChatColor;
 
 public class HudSection {
     public static void build(SettingsMenu menu, GeyserSession session, ExtrasPlayer player) {
-        menu.add(new SectionLabel("HUD\n", ""));
+        menu.add(new SectionLabel("HUD", ""));
 
         // TODO: Figure out why this sends a broken packet
         /*
@@ -23,6 +24,7 @@ public class HudSection {
         ));
         */
         for (GUIElements element : GUIElements.values()) {
+            if (Config.disablePaperDoll && element.equals(GUIElements.PAPER_DOLL)) continue;
             menu.add(createToggle(element, session));
         }
     }

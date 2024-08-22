@@ -7,6 +7,7 @@ import dev.letsgoaway.geyserextras.core.form.BedrockModal;
 import dev.letsgoaway.geyserextras.core.parity.java.combat.CooldownHandler;
 import dev.letsgoaway.geyserextras.core.parity.java.shield.ShieldUtils;
 import dev.letsgoaway.geyserextras.core.parity.java.tablist.TabListData;
+import dev.letsgoaway.geyserextras.core.utils.StringUtils;
 import lombok.Getter;
 import lombok.Setter;
 import org.cloudburstmc.protocol.bedrock.packet.AnimatePacket;
@@ -17,6 +18,7 @@ import org.geysermc.api.util.InputMode;
 import org.geysermc.geyser.api.bedrock.camera.GuiElement;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent;
+import org.geysermc.geyser.item.type.Item;
 import org.geysermc.geyser.session.GeyserSession;
 
 import java.util.List;
@@ -128,15 +130,6 @@ public class ExtrasPlayer {
         }
     }
 
-    // TODO: better way to detect instead of using identifier
-    public boolean isTool() {
-        String item = session.getPlayerInventory().getItemInHand().getMapping(session).getBedrockIdentifier();
-        return (item.contains("_axe") || item.contains("_pickaxe") || item.contains("_shovel") || item.contains("_sword") || item.contains("trident") || item.contains("mace")
-                // || item.contains("_hoe")
-                // hoes dont have attack speed for some reason
-        );
-    }
-
     public void sendTitle(String title, String subtitle, int fadeIn, int stay, int fadeOut) {
         SetTitlePacket timesPacket = new SetTitlePacket();
         timesPacket.setText("");
@@ -163,8 +156,8 @@ public class ExtrasPlayer {
 
     public void sendActionbarTitle(String title) {
         SetTitlePacket titlePacket = new SetTitlePacket();
-        titlePacket.setType(SetTitlePacket.Type.ACTIONBAR);
-        titlePacket.setText(title);
+        titlePacket.setType(SetTitlePacket.Type.ACTIONBAR_JSON);
+        titlePacket.setText("{ \"rawtext\": [ { \"text\":\""+ StringUtils.escape(title) +"\" } ] }");
         titlePacket.setXuid("");
         titlePacket.setPlatformOnlineId("");
         session.sendUpstreamPacket(titlePacket);

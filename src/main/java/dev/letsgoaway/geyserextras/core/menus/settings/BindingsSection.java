@@ -15,8 +15,8 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 public class BindingsSection {
-    public static void build(SettingsMenu menu, GeyserSession session, ExtrasPlayer player) {
-        menu.add(new Label(ChatColor.BOLD + BedrockLocale.CONTROLLER.BINDINGS +"\n"));
+    public static void build(SettingsMenu menu, ExtrasPlayer player) {
+        menu.add(new SectionLabel(BedrockLocale.CONTROLLER.BINDINGS, ""));
 
         LinkedHashMap<String, Action> actionNames = new LinkedHashMap<>();
         for (Action action : Action.values()) {

@@ -19,7 +19,7 @@ import java.util.LinkedHashMap;
 
 public class SettingsSection {
     public static void build(SettingsMenu menu, GeyserSession session, ExtrasPlayer player) {
-        menu.add(new Label(ChatColor.BOLD + BedrockLocale.SETTINGS + "\n"));
+        menu.add(new SectionLabel(BedrockLocale.SETTINGS,""));
 
         if (CooldownUtils.getDefaultShowCooldown() != CooldownUtils.CooldownType.DISABLED) {
             LinkedHashMap<String, CooldownUtils.CooldownType> cooldownTypes = new LinkedHashMap<>();
