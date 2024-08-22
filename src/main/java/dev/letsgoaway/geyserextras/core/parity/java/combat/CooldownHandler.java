@@ -33,8 +33,8 @@ public class CooldownHandler {
 
     private long lastHotbarTime = 0;
 
-    @Setter
     @Getter
+    @Setter
     public double attackSpeed = 4.0;
 
 
@@ -148,7 +148,6 @@ public class CooldownHandler {
             }
             return;
         }
-
         switch (session.getPreferencesCache().getCooldownPreference()) {
             case TITLE -> {
                 int max = (crosshair.length - 1);
@@ -198,8 +197,6 @@ public class CooldownHandler {
                     return;
                 }
                 lastCharSent = curChar.toString();
-
-                SERVER.log(lastCharSent);
                 player.sendActionbarTitle(lastCharSent);
             }
         }
