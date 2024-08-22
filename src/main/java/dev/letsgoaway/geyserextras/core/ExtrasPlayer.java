@@ -77,7 +77,7 @@ public class ExtrasPlayer {
             combatTickThread.cancel(false);
         }
         combatTickThread = session.getEventLoop().scheduleAtFixedRate(() -> {
-            if (Config.customCoolDownEnabled) {
+            if (ConfigLoader.config.isEnableCustomCooldown()) {
                 getCooldownHandler().tick();
             }
         }, TickMath.toNanos(updateRate), TickMath.toNanos(updateRate), TimeUnit.NANOSECONDS);
@@ -120,10 +120,10 @@ public class ExtrasPlayer {
 
     public void tick() {
         ticks++;
-        if (Config.disablePaperDoll) {
+        if (ConfigLoader.config.isDisablePaperDoll()) {
             session.camera().hideElement(GuiElement.PAPER_DOLL);
         }
-        if (Config.toggleBlock) {
+        if (ConfigLoader.config.isEnableToggleBlock()) {
             ShieldUtils.updateBlockSpeed(session);
         }
     }

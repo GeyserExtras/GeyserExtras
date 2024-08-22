@@ -1,6 +1,6 @@
 package dev.letsgoaway.geyserextras.core.handlers.bedrock;
 
-import dev.letsgoaway.geyserextras.core.Config;
+import dev.letsgoaway.geyserextras.core.ConfigLoader;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
 import org.cloudburstmc.protocol.bedrock.data.inventory.ContainerId;
@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 public class BedrockMobEquipmentInjector extends BedrockMobEquipmentTranslator {
     @Override
     public void translate(GeyserSession session, MobEquipmentPacket packet) {
-        if (Config.customCoolDownEnabled) {
+        if (ConfigLoader.config.isEnableCustomCooldown()) {
             ExtrasPlayer player = GeyserHandler.getPlayer(session);
 
             int newSlot = packet.getHotbarSlot();

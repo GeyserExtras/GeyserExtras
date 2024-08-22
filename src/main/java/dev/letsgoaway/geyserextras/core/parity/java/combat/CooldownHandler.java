@@ -2,14 +2,12 @@ package dev.letsgoaway.geyserextras.core.parity.java.combat;
 
 import dev.letsgoaway.geyserextras.MathUtils;
 import dev.letsgoaway.geyserextras.ReflectionAPI;
-import dev.letsgoaway.geyserextras.core.Config;
+import dev.letsgoaway.geyserextras.core.ConfigLoader;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
-import dev.letsgoaway.geyserextras.core.utils.GUIElements;
 import lombok.Getter;
 import lombok.Setter;
 import org.geysermc.geyser.inventory.GeyserItemStack;
 import org.geysermc.geyser.item.Items;
-import org.geysermc.geyser.item.enchantment.Enchantment;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.util.CooldownUtils;
 import org.geysermc.mcprotocollib.protocol.data.game.item.component.DataComponentType;
@@ -65,7 +63,7 @@ public class CooldownHandler {
 
     public void tick() {
         calculateAveragePing();
-        if (Config.toggleBlock) {
+        if (ConfigLoader.config.isEnableToggleBlock()) {
             setArmAnimationTicks(-1);
         }
         if (lastMouseoverID != 0 && session.getMouseoverEntity() != null && player.isTool()) {

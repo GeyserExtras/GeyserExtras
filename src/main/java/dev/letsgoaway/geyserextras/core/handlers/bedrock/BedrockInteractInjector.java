@@ -1,6 +1,6 @@
 package dev.letsgoaway.geyserextras.core.handlers.bedrock;
 
-import dev.letsgoaway.geyserextras.core.Config;
+import dev.letsgoaway.geyserextras.core.ConfigLoader;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Action;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
@@ -21,7 +21,7 @@ public class BedrockInteractInjector extends BedrockInteractTranslator {
     public void translate(GeyserSession session, InteractPacket packet) {
         ExtrasPlayer player = GeyserHandler.getPlayer(session);
         if (!packet.getAction().equals(InteractPacket.Action.OPEN_INVENTORY)) {
-            if (Config.customCoolDownEnabled) {
+            if (ConfigLoader.config.isEnableCustomCooldown()) {
                 // seems like this is handled properly in BedrockInventoryTransactionTranslator
                 // but ill handle it here anyway
                 if (packet.getAction().equals(InteractPacket.Action.DAMAGE)) {
@@ -57,7 +57,7 @@ public class BedrockInteractInjector extends BedrockInteractTranslator {
             }
             Remappable bind = player.getSession().isSneaking() ? Remappable.SNEAK_INVENTORY : Remappable.OPEN_INVENTORY;
             if (player.getPreferences().isDefault(bind) || player.getPreferences().getAction(bind).equals(Action.OPEN_INVENTORY)) {
-                if (Config.toggleBlock && ShieldUtils.disableBlocking(session)) {
+                if (ConfigLoader.config.isEnableToggleBlock() && ShieldUtils.disableBlocking(session)) {
                     session.getPlayerEntity().updateBedrockMetadata();
                 }
                 super.translate(session, packet);

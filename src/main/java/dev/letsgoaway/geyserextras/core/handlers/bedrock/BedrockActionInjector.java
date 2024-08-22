@@ -1,6 +1,6 @@
 package dev.letsgoaway.geyserextras.core.handlers.bedrock;
 
-import dev.letsgoaway.geyserextras.core.Config;
+import dev.letsgoaway.geyserextras.core.ConfigLoader;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
 import dev.letsgoaway.geyserextras.core.parity.java.shield.ShieldUtils;
@@ -18,7 +18,7 @@ import org.geysermc.mcprotocollib.protocol.packet.ingame.serverbound.player.Serv
 public class BedrockActionInjector extends BedrockActionTranslator {
     @Override
     public void translate(GeyserSession session, PlayerActionPacket packet) {
-        if (!Config.toggleBlock) {
+        if (!ConfigLoader.config.isEnableToggleBlock()) {
             super.translate(session, packet);
         } else if (!packet.getAction().equals(PlayerActionType.START_SNEAK)
                 && !packet.getAction().equals(PlayerActionType.STOP_SNEAK)) {
@@ -49,12 +49,12 @@ public class BedrockActionInjector extends BedrockActionTranslator {
             }
             case START_SPRINT -> {
                 // Dont allow blocking if we start sprinting
-                if (Config.toggleBlock && ShieldUtils.getBlocking(session) && ShieldUtils.disableBlocking(session)) {
+                if (ConfigLoader.config.isEnableToggleBlock() && ShieldUtils.getBlocking(session) && ShieldUtils.disableBlocking(session)) {
                     playerEntity.updateBedrockMetadata();
                 }
             }
             case START_SNEAK -> {
-                if (Config.toggleBlock) {
+                if (ConfigLoader.config.isEnableToggleBlock()) {
                     ServerboundPlayerCommandPacket startSneakPacket = new ServerboundPlayerCommandPacket(playerEntity.getEntityId(), PlayerState.START_SNEAKING);
                     session.sendDownstreamGamePacket(startSneakPacket);
 
@@ -63,7 +63,7 @@ public class BedrockActionInjector extends BedrockActionTranslator {
                 }
             }
             case STOP_SNEAK -> {
-                if (Config.toggleBlock) {
+                if (ConfigLoader.config.isEnableToggleBlock()) {
                     ServerboundPlayerCommandPacket stopSneakPacket = new ServerboundPlayerCommandPacket(playerEntity.getEntityId(), PlayerState.STOP_SNEAKING);
                     session.sendDownstreamGamePacket(stopSneakPacket);
 
@@ -81,7 +81,7 @@ public class BedrockActionInjector extends BedrockActionTranslator {
                 player.getCooldownHandler().setDigTicks(-1);
                 player.getCooldownHandler().setLastSwingTime(System.currentTimeMillis());
 
-                if (Config.toggleBlock && ShieldUtils.disableBlocking(session)) {
+                if (ConfigLoader.config.isEnableToggleBlock() && ShieldUtils.disableBlocking(session)) {
                     playerEntity.updateBedrockMetadata();
                 }
 

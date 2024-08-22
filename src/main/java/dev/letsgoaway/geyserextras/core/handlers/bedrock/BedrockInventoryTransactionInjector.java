@@ -1,9 +1,8 @@
 package dev.letsgoaway.geyserextras.core.handlers.bedrock;
 
-import dev.letsgoaway.geyserextras.core.Config;
+import dev.letsgoaway.geyserextras.core.ConfigLoader;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
-import org.cloudburstmc.math.vector.Vector3f;
 import org.cloudburstmc.math.vector.Vector3i;
 import org.cloudburstmc.protocol.bedrock.data.definitions.BlockDefinition;
 import org.cloudburstmc.protocol.bedrock.data.inventory.transaction.InventoryTransactionType;
@@ -20,8 +19,6 @@ import org.geysermc.geyser.translator.inventory.InventoryTranslator;
 import org.geysermc.geyser.translator.protocol.Translator;
 import org.geysermc.geyser.translator.protocol.bedrock.BedrockInventoryTransactionTranslator;
 import dev.letsgoaway.geyserextras.core.parity.java.shield.ShieldUtils;
-
-import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 // I love it when bedrock randomly sends data in random packets
 // of which the name they have is completely irrelavant to what
@@ -44,7 +41,7 @@ public class BedrockInventoryTransactionInjector extends BedrockInventoryTransac
         //SERVER.log(String.valueOf(System.currentTimeMillis() - player.getCooldownHandler().getLastBlockRightClickTime()));
         InventoryTransactionType type = packet.getTransactionType();
         // Trying to do a block interaction, but we should disable the shield first
-        if (Config.toggleBlock
+        if (ConfigLoader.config.isEnableToggleBlock()
                 && ShieldUtils.getBlocking(session)
                 && type.equals(InventoryTransactionType.ITEM_USE)
                 && packet.getActionType() == 0
@@ -76,7 +73,7 @@ public class BedrockInventoryTransactionInjector extends BedrockInventoryTransac
             // Entity Damage
             if (packet.getActionType() == 1) {
 
-                if (Config.toggleBlock && ShieldUtils.disableBlocking(session)) {
+                if (ConfigLoader.config.isEnableToggleBlock() && ShieldUtils.disableBlocking(session)) {
                     session.getPlayerEntity().updateBedrockMetadata();
                 }
 
@@ -86,7 +83,7 @@ public class BedrockInventoryTransactionInjector extends BedrockInventoryTransac
         }
         if (type.equals(InventoryTransactionType.ITEM_USE)) {
             // Item use
-            if (Config.toggleBlock) {
+            if (ConfigLoader.config.isEnableToggleBlock()) {
                 if (packet.getActionType() == 0) {
                     player.getCooldownHandler().setLastClickWasAirClick(false);
                     player.getCooldownHandler().setLastBlockRightClickTime(System.currentTimeMillis());
