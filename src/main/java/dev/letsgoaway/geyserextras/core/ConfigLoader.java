@@ -46,6 +46,8 @@ public class ConfigLoader {
             }
         }
 
+        boolean existingConfig = configPath.toFile().exists();
+
         // Load the config, or create if needed
         final YamlConfigurationLoader loader = YamlConfigurationLoader.builder()
                 .path(configPath)
@@ -54,12 +56,10 @@ public class ConfigLoader {
 
         try {
             final CommentedConfigurationNode configurationNode = loader.load();
-
             config = configurationNode.get(GeyserExtrasConfig.class);
 
             var versionNode = configurationNode.node("version");
-            if (versionNode.virtual()) {
-                // Remove item steerable workaround
+            if (versionNode.virtual() && existingConfig) {
                 transformer.apply(configurationNode);
             }
 

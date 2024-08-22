@@ -104,5 +104,5 @@ public final class GeyserExtrasConfig {
     private boolean disablePaperDoll = false;
 
     @Comment("The version of the config. DO NOT CHANGE!")
-    private int version = 0; // TODO?
+    private int version = 1;
 }
