@@ -1,6 +1,5 @@
 package dev.letsgoaway.geyserextras.core.menus.settings;
 
-import dev.letsgoaway.geyserextras.core.Config;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.form.elements.*;
 import dev.letsgoaway.geyserextras.core.locale.BedrockLocale;
@@ -10,6 +9,8 @@ import dev.letsgoaway.geyserextras.core.utils.GUIElements;
 import org.geysermc.geyser.api.bedrock.camera.GuiElement;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.text.ChatColor;
+
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 
 public class HudSection {
     public static void build(SettingsMenu menu, GeyserSession session, ExtrasPlayer player) {
@@ -24,7 +25,7 @@ public class HudSection {
         ));
         */
         for (GUIElements element : GUIElements.values()) {
-            if (Config.disablePaperDoll && element.equals(GUIElements.PAPER_DOLL)) continue;
+            if (GE.getConfig().isDisablePaperDoll() && element.equals(GUIElements.PAPER_DOLL)) continue;
             menu.add(createToggle(element, session));
         }
     }

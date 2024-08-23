@@ -1,10 +1,9 @@
-name: GeyserExtras
-version: '1.21.0-v2.0.0'
+name: ${name}
+version: ${version}
 author: "LetsGoAway"
 main: dev.letsgoaway.geyserextras.spigot.GeyserExtrasSpigot
 api-version: '1.12'
 depend:
-  - packetevents
   - Geyser-Spigot
 commands:
   geyserextras:

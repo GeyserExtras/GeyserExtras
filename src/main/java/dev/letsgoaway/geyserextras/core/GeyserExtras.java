@@ -2,7 +2,11 @@ package dev.letsgoaway.geyserextras.core;
 
 import dev.letsgoaway.geyserextras.InitializeLogger;
 import dev.letsgoaway.geyserextras.Server;
+import dev.letsgoaway.geyserextras.core.config.ConfigLoader;
+import dev.letsgoaway.geyserextras.core.config.GeyserExtrasConfig;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
+import lombok.Getter;
+import lombok.Setter;
 import org.geysermc.geyser.api.GeyserApi;
 import org.geysermc.geyser.api.event.EventRegistrar;
 import org.geysermc.geyser.api.event.bedrock.*;
@@ -13,6 +17,8 @@ import java.util.concurrent.ConcurrentHashMap;
 public class GeyserExtras implements EventRegistrar {
     public static GeyserExtras GE;
     public static Server SERVER;
+    @Getter @Setter
+    private GeyserExtrasConfig config;
     public GeyserApi geyserApi;
     public ConcurrentHashMap<String, ExtrasPlayer> connections;
 
@@ -89,7 +95,7 @@ public class GeyserExtras implements EventRegistrar {
     }
 
     public void onGeyserReload(GeyserPreReloadEvent ignored) {
-        if (ConfigLoader.config.isAutoReconnect()) {
+        if (GE.getConfig().isAutoReconnect()) {
             for (ExtrasPlayer player : connections.values()) {
                 player.reconnect();
             }
@@ -97,7 +103,7 @@ public class GeyserExtras implements EventRegistrar {
     }
 
     public void onGeyserShutdown(GeyserShutdownEvent ignored) {
-        if (ConfigLoader.config.isAutoReconnect()) {
+        if (GE.getConfig().isAutoReconnect()) {
             for (ExtrasPlayer player : connections.values()) {
                 player.reconnect();
             }

@@ -1,6 +1,5 @@
 package dev.letsgoaway.geyserextras.core.handlers.java;
 
-import dev.letsgoaway.geyserextras.core.ConfigLoader;
 import dev.letsgoaway.geyserextras.core.SoundReplacer;
 import org.cloudburstmc.protocol.bedrock.packet.PlaySoundPacket;
 import org.geysermc.geyser.entity.type.Entity;
@@ -10,11 +9,13 @@ import org.geysermc.geyser.translator.protocol.java.entity.JavaSoundEntityTransl
 import org.geysermc.geyser.util.SoundUtils;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.ClientboundSoundEntityPacket;
 
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
+
 @Translator(packet = ClientboundSoundEntityPacket.class)
 public class JavaSoundEntityInjector extends JavaSoundEntityTranslator {
     @Override
     public void translate(GeyserSession session, ClientboundSoundEntityPacket packet) {
-        if (!ConfigLoader.config.isEnableJavaCombatSounds()) {
+        if (!GE.getConfig().isEnableJavaCombatSounds()) {
             super.translate(session, packet);
             return;
         }

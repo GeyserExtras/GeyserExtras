@@ -13,10 +13,9 @@ import dev.letsgoaway.geyserextras.core.GeyserExtras;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.slf4j.Logger;
 
-import java.io.File;
 import java.nio.file.Path;
 
-@Plugin(authors = "LetsGoAway", name = "GeyserExtras", version = PluginVersion.GE_VERSION, id = "geyserextras", dependencies = {@Dependency(id = "geyser"),@Dependency(id = "packetevents")})
+@Plugin(authors = "LetsGoAway", name = "GeyserExtras", version = PluginVersion.GE_VERSION, id = "geyserextras", dependencies = {@Dependency(id = "geyser"),})
 public class GeyserExtrasVelocity implements Server {
     public static GeyserExtras CORE;
     public static GeyserExtrasVelocity VELOCITY;

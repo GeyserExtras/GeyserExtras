@@ -2,17 +2,14 @@ package dev.letsgoaway.geyserextras.core.parity.java.combat;
 
 import dev.letsgoaway.geyserextras.MathUtils;
 import dev.letsgoaway.geyserextras.ReflectionAPI;
-import dev.letsgoaway.geyserextras.core.ConfigLoader;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.utils.GUIElements;
 import lombok.Getter;
 import lombok.Setter;
 import org.geysermc.geyser.inventory.GeyserItemStack;
 import org.geysermc.geyser.item.Items;
-import org.geysermc.geyser.item.enchantment.Enchantment;
 import org.geysermc.geyser.item.type.Item;
 import org.geysermc.geyser.session.GeyserSession;
-import org.geysermc.geyser.translator.text.MessageTranslator;
 import org.geysermc.geyser.util.CooldownUtils;
 import org.geysermc.mcprotocollib.protocol.data.game.entity.player.GameMode;
 import org.geysermc.mcprotocollib.protocol.data.game.item.component.DataComponentType;
@@ -20,7 +17,7 @@ import org.geysermc.mcprotocollib.protocol.data.game.item.component.ItemEnchantm
 
 import java.util.List;
 
-import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 
 
 public class CooldownHandler {
@@ -104,7 +101,7 @@ public class CooldownHandler {
 
     public void tick() {
         calculateAveragePing();
-        if (ConfigLoader.config.isEnableToggleBlock()) {
+        if (GE.getConfig().isEnableToggleBlock()) {
             setArmAnimationTicks(-1);
         }
         if (lastMouseoverID != 0 && session.getMouseoverEntity() != null && isTool()) {

@@ -1,6 +1,5 @@
 package dev.letsgoaway.geyserextras.core.handlers.bedrock;
 
-import dev.letsgoaway.geyserextras.core.ConfigLoader;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
 import org.cloudburstmc.math.vector.Vector3i;
@@ -19,6 +18,8 @@ import org.geysermc.geyser.translator.inventory.InventoryTranslator;
 import org.geysermc.geyser.translator.protocol.Translator;
 import org.geysermc.geyser.translator.protocol.bedrock.BedrockInventoryTransactionTranslator;
 import dev.letsgoaway.geyserextras.core.parity.java.shield.ShieldUtils;
+
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 
 // I love it when bedrock randomly sends data in random packets
 // of which the name they have is completely irrelavant to what
@@ -41,7 +42,7 @@ public class BedrockInventoryTransactionInjector extends BedrockInventoryTransac
         //SERVER.log(String.valueOf(System.currentTimeMillis() - player.getCooldownHandler().getLastBlockRightClickTime()));
         InventoryTransactionType type = packet.getTransactionType();
         // Trying to do a block interaction, but we should disable the shield first
-        if (ConfigLoader.config.isEnableToggleBlock()
+        if (GE.getConfig().isEnableToggleBlock()
                 && ShieldUtils.getBlocking(session)
                 && type.equals(InventoryTransactionType.ITEM_USE)
                 && packet.getActionType() == 0
@@ -73,7 +74,7 @@ public class BedrockInventoryTransactionInjector extends BedrockInventoryTransac
             // Entity Damage
             if (packet.getActionType() == 1) {
 
-                if (ConfigLoader.config.isEnableToggleBlock() && ShieldUtils.disableBlocking(session)) {
+                if (GE.getConfig().isEnableToggleBlock() && ShieldUtils.disableBlocking(session)) {
                     session.getPlayerEntity().updateBedrockMetadata();
                 }
 
@@ -83,7 +84,7 @@ public class BedrockInventoryTransactionInjector extends BedrockInventoryTransac
         }
         if (type.equals(InventoryTransactionType.ITEM_USE)) {
             // Item use
-            if (ConfigLoader.config.isEnableToggleBlock()) {
+            if (GE.getConfig().isEnableToggleBlock()) {
                 if (packet.getActionType() == 0) {
                     player.getCooldownHandler().setLastClickWasAirClick(false);
                     player.getCooldownHandler().setLastBlockRightClickTime(System.currentTimeMillis());
