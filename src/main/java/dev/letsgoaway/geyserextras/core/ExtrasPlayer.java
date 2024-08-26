@@ -1,5 +1,6 @@
 package dev.letsgoaway.geyserextras.core;
 
+import dev.letsgoaway.geyserextras.core.features.skinsaver.SkinSaver;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
 import dev.letsgoaway.geyserextras.core.form.BedrockForm;
@@ -72,6 +73,7 @@ public class ExtrasPlayer {
 
     public void startGame() {
         sendToast("GeyserExtras is available!", "Open settings or run /ge to configure");
+        SkinSaver.save(this);
     }
 
     public void startCombatTickThread(float updateRate) {

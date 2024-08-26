@@ -64,6 +64,7 @@ tasks {
 
     shadowJar {
         archiveClassifier.set("")
+        archiveFileName.set("GeyserExtras.jar")
         relocate("org.spongepowered", "dev.letsgoaway.relocate.org.spongepowered")
         relocate("io.leangen.geantyref", "dev.letsgoaway.io.leangen.geantyref")
     }

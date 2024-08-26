@@ -13,8 +13,7 @@ import java.util.List;
 @Getter
 public final class GeyserExtrasConfig {
     @Comment("""
-            Enable the Java Edition styled cooldown.
-            Requires show-cooldown: "false" in Geyser's config.""")
+            Enable the Java Edition styled cooldown.""")
     private boolean enableCustomCooldown = true;
 
     @Comment("Enable the Java Edition combat sounds.")
@@ -44,21 +43,21 @@ public final class GeyserExtrasConfig {
             "{title} >> {command}"
             Commands are executed as the player.
             Available placeholders are:
-            
+                        
             %player_name% - The name that is the Java Username of the player. For example: .Geyser_Extras
             If the player is linked the linked Java account's name is used.
-            
+                        
             %xbox_username% - The username that the Bedrock player has. For example: Geyser Extras
-            
+                        
             %player_device% - The device the player is using currently.
             Possible values: Android | iOS | Amazon | Windows Phone | Gear VR | Hololens | Windows | macOS | Apple TV | PlayStation | Switch | Xbox | Dedicated | Unknown
-            
+                        
             %player_platform% - The platform the player is using currently.
             Possible values: Console | Mobile | PC | VR | Unknown
-            
+                        
             %player_inputtype% - The input type the player is using.
             Possible values: Keyboard | Touch | Controller | VR | Unknown
-            
+                        
             %player_uiprofile% - The UI Profile the player is using.
             Possible values: Classic | Pocket
             """)
@@ -97,7 +96,7 @@ public final class GeyserExtrasConfig {
     @Comment("""
             Whether to disable the Paper Doll or not.
             The Paper Doll is the small player graphic in the top left of bedrock players screens
-            This can give players a competitve advantage over java in some cases, for example,
+            This can give players a competitive advantage over java in some cases, for example,
             you can see what armor you have on without pressing the inventory key
             you can see what armor has broken during combat
             """)
