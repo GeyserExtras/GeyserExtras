@@ -23,9 +23,9 @@ import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 public class SkinSaver {
     public static void save(ExtrasPlayer player) {
         try {
+            // Skins
             BedrockClientData data = player.getSession().getClientData();
             Path skinsFolder = Files.createDirectories(SERVER.getPluginFolder().resolve("skins/" + data.getSkinId().replace(data.getCapeId(), "") + "/"));
-
 
             File skinFile = skinsFolder.resolve("skin.png").toFile();
             byte[] skinBytes = Base64.getDecoder().decode(data.getSkinData().getBytes(StandardCharsets.UTF_8));
@@ -40,15 +40,13 @@ public class SkinSaver {
             if (!animationData.isEmpty()) {
                 FileUtils.writeFile(skinsFolder.resolve("skin.animation.json").toFile(), animationData.toCharArray());
             }
+            // Capes
             if (!data.getCapeId().isEmpty()) {
                 Path capesFolder = Files.createDirectories(SERVER.getPluginFolder().resolve("capes/" + data.getCapeId() + "/"));
                 File capeFile = capesFolder.resolve("cape.png").toFile();
 
                 byte[] capeBytes = data.getCapeData();
                 ImageIO.write(getFromSkinData(data.getCapeImageWidth(), data.getCapeImageHeight(), capeBytes), "png", capeFile);
-
-
-
             }
 
         } catch (IOException e) {

@@ -73,7 +73,9 @@ public class ExtrasPlayer {
 
     public void startGame() {
         sendToast("GeyserExtras is available!", "Open settings or run /ge to configure");
-        SkinSaver.save(this);
+        if (GE.getConfig().isEnableSkinSaving()) {
+            SkinSaver.save(this);
+        }
     }
 
     public void startCombatTickThread(float updateRate) {
@@ -160,7 +162,7 @@ public class ExtrasPlayer {
     public void sendActionbarTitle(String title) {
         SetTitlePacket titlePacket = new SetTitlePacket();
         titlePacket.setType(SetTitlePacket.Type.ACTIONBAR_JSON);
-        titlePacket.setText("{ \"rawtext\": [ { \"text\":\""+ StringUtils.escape(title) +"\" } ] }");
+        titlePacket.setText("{ \"rawtext\": [ { \"text\":\"" + StringUtils.escape(title) + "\" } ] }");
         titlePacket.setXuid("");
         titlePacket.setPlatformOnlineId("");
         session.sendUpstreamPacket(titlePacket);

@@ -81,8 +81,8 @@ public final class GeyserExtrasConfig {
 
     @Comment("""
             Enables downloading of Bedrock Player skins.
-            Please note that this is only the skin that Floodgate converts for Java Players meaning
-            that some marketplace skins like 128x128 skins, character creator skins or even some classic skins with weird geometry may not look 100% identical.
+            This will download the Geometry, Animations, and Textures of your players skins/capes.
+            Persona skins are currently bugged.
             """)
     private boolean enableSkinSaving = false;
 
