@@ -59,12 +59,17 @@ public class ConfigLoader {
                 transformer.apply(configurationNode);
             }
 
+            // Get the configured values based on our GeyserExtrasConfig class
             GeyserExtrasConfig config = configurationNode.get(GeyserExtrasConfig.class);
-            configurationNode.set(GeyserExtrasConfig.class, config);
+
+            // Let's not save the configuration options back to the original node, but create a new node instead
+            // and save them there. This will allow us to order new configuration options.
+            CommentedConfigurationNode newNode = CommentedConfigurationNode.root(loader.defaultOptions());
+            newNode.set(GeyserExtrasConfig.class, config);
 
             // Save only when the config changed, or didn't exist in the first place
             if (!existingConfig || currentVersion != LATEST_VERSION) {
-                loader.save(configurationNode);
+                loader.save(newNode);
             }
 
             GE.setConfig(config);
