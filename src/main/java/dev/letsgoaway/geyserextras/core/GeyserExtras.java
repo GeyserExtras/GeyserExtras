@@ -2,22 +2,23 @@ package dev.letsgoaway.geyserextras.core;
 
 import dev.letsgoaway.geyserextras.InitializeLogger;
 import dev.letsgoaway.geyserextras.Server;
+import dev.letsgoaway.geyserextras.core.config.ConfigLoader;
+import dev.letsgoaway.geyserextras.core.config.GeyserExtrasConfig;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
-import org.geysermc.event.PostOrder;
-import org.geysermc.event.subscribe.Subscribe;
+import lombok.Getter;
+import lombok.Setter;
 import org.geysermc.geyser.api.GeyserApi;
 import org.geysermc.geyser.api.event.EventRegistrar;
 import org.geysermc.geyser.api.event.bedrock.*;
 import org.geysermc.geyser.api.event.lifecycle.*;
-import org.geysermc.geyser.api.item.custom.CustomItemData;
-import org.geysermc.geyser.api.item.custom.CustomRenderOffsets;
 
-import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class GeyserExtras implements EventRegistrar {
     public static GeyserExtras GE;
     public static Server SERVER;
+    @Getter @Setter
+    private GeyserExtrasConfig config;
     public GeyserApi geyserApi;
     public ConcurrentHashMap<String, ExtrasPlayer> connections;
 
@@ -27,7 +28,7 @@ public class GeyserExtras implements EventRegistrar {
         GeyserHandler.register();
         InitializeLogger.start();
         geyserApi = GeyserApi.api();
-        Config.load();
+        ConfigLoader.load();
         geyserApi.eventBus().register(this, this);
         geyserApi.eventBus().subscribe(this, GeyserPostInitializeEvent.class, this::onGeyserInitialize);
 
@@ -93,16 +94,16 @@ public class GeyserExtras implements EventRegistrar {
         connections.get(ev.connection().xuid()).onEmoteEvent(ev);
     }
 
-    public void onGeyserReload(GeyserPreReloadEvent geyserPreReloadEvent) {
-        if (Config.autoReconnect) {
+    public void onGeyserReload(GeyserPreReloadEvent ignored) {
+        if (GE.getConfig().isAutoReconnect()) {
             for (ExtrasPlayer player : connections.values()) {
                 player.reconnect();
             }
         }
     }
 
-    public void onGeyserShutdown(GeyserShutdownEvent geyserShutdownEvent) {
-        if (Config.autoReconnect) {
+    public void onGeyserShutdown(GeyserShutdownEvent ignored) {
+        if (GE.getConfig().isAutoReconnect()) {
             for (ExtrasPlayer player : connections.values()) {
                 player.reconnect();
             }

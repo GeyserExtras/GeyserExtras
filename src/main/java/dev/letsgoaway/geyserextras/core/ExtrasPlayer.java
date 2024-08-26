@@ -26,6 +26,7 @@ import java.util.UUID;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class ExtrasPlayer {
@@ -79,7 +80,7 @@ public class ExtrasPlayer {
             combatTickThread.cancel(false);
         }
         combatTickThread = session.getEventLoop().scheduleAtFixedRate(() -> {
-            if (Config.customCoolDownEnabled) {
+            if (GE.getConfig().isEnableCustomCooldown()) {
                 getCooldownHandler().tick();
             }
         }, TickMath.toNanos(updateRate), TickMath.toNanos(updateRate), TimeUnit.NANOSECONDS);
@@ -122,10 +123,10 @@ public class ExtrasPlayer {
 
     public void tick() {
         ticks++;
-        if (Config.disablePaperDoll) {
+        if (GE.getConfig().isDisablePaperDoll()) {
             session.camera().hideElement(GuiElement.PAPER_DOLL);
         }
-        if (Config.toggleBlock) {
+        if (GE.getConfig().isEnableToggleBlock()) {
             ShieldUtils.updateBlockSpeed(session);
         }
     }

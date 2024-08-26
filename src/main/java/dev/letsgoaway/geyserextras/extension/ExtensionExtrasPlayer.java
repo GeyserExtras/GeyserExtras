@@ -1,6 +1,5 @@
 package dev.letsgoaway.geyserextras.extension;
 
-import dev.letsgoaway.geyserextras.core.Config;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.TickMath;
 import org.geysermc.geyser.api.connection.GeyserConnection;
