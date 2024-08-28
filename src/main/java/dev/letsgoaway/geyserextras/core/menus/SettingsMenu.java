@@ -18,6 +18,7 @@ public class SettingsMenu extends BedrockForm {
         HudSection.build(this, session, player);
         BindingsSection.build(this, player);
         DebugSection.build(this, session, player);
+        CreditsSection.build(this, session, player);
         return super.create(player);
     }
 

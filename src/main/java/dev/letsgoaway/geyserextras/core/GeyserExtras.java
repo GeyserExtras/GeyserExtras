@@ -2,6 +2,7 @@ package dev.letsgoaway.geyserextras.core;
 
 import dev.letsgoaway.geyserextras.InitializeLogger;
 import dev.letsgoaway.geyserextras.Server;
+import dev.letsgoaway.geyserextras.core.cache.Cache;
 import dev.letsgoaway.geyserextras.core.config.ConfigLoader;
 import dev.letsgoaway.geyserextras.core.config.GeyserExtrasConfig;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
@@ -12,12 +13,18 @@ import org.geysermc.geyser.api.event.EventRegistrar;
 import org.geysermc.geyser.api.event.bedrock.*;
 import org.geysermc.geyser.api.event.lifecycle.*;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class GeyserExtras implements EventRegistrar {
     public static GeyserExtras GE;
     public static Server SERVER;
-    @Getter @Setter
+    @Getter
+    @Setter
     private GeyserExtrasConfig config;
     public GeyserApi geyserApi;
     public ConcurrentHashMap<String, ExtrasPlayer> connections;
@@ -28,7 +35,14 @@ public class GeyserExtras implements EventRegistrar {
         GeyserHandler.register();
         InitializeLogger.start();
         geyserApi = GeyserApi.api();
+
+        SERVER.log("Loading config...");
         ConfigLoader.load();
+
+        SERVER.log("Initializing cache...");
+        Cache.initialize();
+
+        SERVER.log("Registering events...");
         geyserApi.eventBus().register(this, this);
         geyserApi.eventBus().subscribe(this, GeyserPostInitializeEvent.class, this::onGeyserInitialize);
 
@@ -47,6 +61,7 @@ public class GeyserExtras implements EventRegistrar {
         connections = new ConcurrentHashMap<>();
         InitializeLogger.end();
     }
+
 
     /**
      * Dont use this on proxys, only on servers

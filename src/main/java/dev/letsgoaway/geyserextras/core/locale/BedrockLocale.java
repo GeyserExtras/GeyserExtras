@@ -24,6 +24,8 @@ public class BedrockLocale {
         public static final String THIRD_PERSON_BACK = "%options.thirdperson.thirdpersonback";
         public static final String THIRD_PERSON_FRONT = "%options.thirdperson.thirdpersonfront";
 
+        public static final String CREDITS = "%options.credits";
+
     }
 
     public static class CONTROLLER {
