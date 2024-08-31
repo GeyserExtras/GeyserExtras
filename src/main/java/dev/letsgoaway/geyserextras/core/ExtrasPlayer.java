@@ -1,6 +1,8 @@
 package dev.letsgoaway.geyserextras.core;
 
+import dev.letsgoaway.geyserextras.core.cache.CacheDates;
 import dev.letsgoaway.geyserextras.core.features.skinsaver.SkinSaver;
+import dev.letsgoaway.geyserextras.core.preferences.PreferencesData;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
 import dev.letsgoaway.geyserextras.core.form.BedrockForm;
@@ -19,9 +21,9 @@ import org.geysermc.api.util.InputMode;
 import org.geysermc.geyser.api.bedrock.camera.GuiElement;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent;
-import org.geysermc.geyser.item.type.Item;
 import org.geysermc.geyser.session.GeyserSession;
 
+import java.io.File;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ScheduledFuture;
@@ -58,6 +60,8 @@ public class ExtrasPlayer {
     @Getter
     @Setter
     private ScheduledFuture<?> vrInventoryMenuFuture;
+    @Getter
+    private File userPrefs;
 
     public ExtrasPlayer(GeyserConnection connection) {
         this.session = (GeyserSession) connection;
@@ -67,8 +71,7 @@ public class ExtrasPlayer {
         tabListData = new TabListData(this);
         preferences = new PreferencesData(this);
         emotesList = List.of();
-        // Update the cooldown at a faster rate for smoother animations at fast periods
-        startCombatTickThread(60f);
+        userPrefs = PreferencesData.PREFERENCES_PATH.resolve(bedrockXUID + ".json").toFile();
     }
 
     public void startGame() {
@@ -76,6 +79,11 @@ public class ExtrasPlayer {
         if (GE.getConfig().isEnableSkinSaving()) {
             SkinSaver.save(this);
         }
+        if (userPrefs.exists()) {
+            preferences.load();
+        }
+        // Update the cooldown at a faster rate for smoother animations at fast periods
+        startCombatTickThread(60f);
     }
 
     public void startCombatTickThread(float updateRate) {
@@ -93,6 +101,7 @@ public class ExtrasPlayer {
     public void onDisconnect() {
         combatTickThread.cancel(true);
         combatTickThread = null;
+        preferences.save();
     }
 
     public void reconnect() {

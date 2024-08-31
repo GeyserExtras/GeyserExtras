@@ -18,15 +18,13 @@ import java.util.TimeZone;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class Cache {
-    private static final ObjectMapper JSON_MAPPER = new ObjectMapper().disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+    public static final ObjectMapper JSON_MAPPER = new ObjectMapper().disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 
     public static Path CACHE_FOLDER;
     public static CacheDates CACHE_DATES;
 
     public static Path DATES_PATH;
     public static Path CREDITS_PATH;
-
-
     public static void initialize() {
         CACHE_FOLDER = SERVER.getPluginFolder().resolve("cache/");
 
@@ -51,7 +49,8 @@ public class Cache {
     }
 
     public static void downloadAll() {
-        if (checkData()) {
+        boolean dataNeedsUpdate = checkData();
+        if (dataNeedsUpdate || !CREDITS_PATH.toFile().exists()) {
             downloadCredits();
         }
     }

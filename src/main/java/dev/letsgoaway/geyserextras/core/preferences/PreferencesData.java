@@ -1,0 +1,163 @@
+package dev.letsgoaway.geyserextras.core.preferences;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
+import dev.letsgoaway.geyserextras.core.preferences.Perspectives;
+import dev.letsgoaway.geyserextras.core.preferences.bindings.Action;
+import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
+import dev.letsgoaway.geyserextras.core.menus.Menus;
+import lombok.Getter;
+import lombok.Setter;
+import org.geysermc.geyser.GeyserImpl;
+import org.geysermc.geyser.session.GeyserSession;
+import org.geysermc.geyser.text.ChatColor;
+import org.geysermc.geyser.text.MinecraftLocale;
+import org.geysermc.geyser.util.CooldownUtils;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.util.HashMap;
+
+import static dev.letsgoaway.geyserextras.core.cache.Cache.JSON_MAPPER;
+
+public class PreferencesData {
+    @JsonIgnore
+    private final ExtrasPlayer player;
+
+    @JsonIgnore
+    private final GeyserSession session;
+
+    @JsonIgnore
+    public static Path PREFERENCES_PATH;
+
+    public CooldownUtils.CooldownType cooldownType = CooldownUtils.CooldownType.TITLE;
+
+    public boolean showCoordinates = false;
+
+    public boolean advancedTooltips = false;
+
+    public boolean customSkullSkins = false;
+
+    public HashMap<Remappable, Action> remappableActionMap;
+
+    @Getter
+    @Setter
+    private float indicatorUpdateRate = 60f;
+
+    @Getter
+    @Setter
+    private Menus settingsMenuForm = Menus.GE_SETTINGS;
+
+    @Getter
+    @Setter
+    private boolean enableDoubleClickForVRQuickMenu = true;
+
+    @Getter
+    @Setter
+    private int vrMenuDoubleClickMS = 200;
+
+    @Getter
+    private Perspectives lockedPerspective = Perspectives.OFF;
+
+    public PreferencesData(ExtrasPlayer player) {
+        this.player = player;
+        this.session = player.getSession();
+        remappableActionMap = new HashMap<>();
+        showCoordinates = GeyserImpl.getInstance().getConfig().isShowCoordinates();
+    }
+
+    public PreferencesData() {
+        this.player = null;
+        this.session = null;
+        remappableActionMap = new HashMap<>();
+        showCoordinates = GeyserImpl.getInstance().getConfig().isShowCoordinates();
+    }
+
+    public void runAction(Remappable binding) {
+        if (remappableActionMap.containsKey(binding)) {
+            remappableActionMap.get(binding).run(player);
+        }
+    }
+
+    public Action getAction(Remappable binding) {
+        Action action = remappableActionMap.get(binding);
+        return action == null ? Action.DEFAULT : action;
+    }
+
+    public void update() {
+        this.cooldownType = session.getPreferencesCache().getCooldownPreference();
+        this.showCoordinates = session.getPreferencesCache().isPrefersShowCoordinates();
+        this.advancedTooltips = session.isAdvancedTooltips();
+        this.customSkullSkins = session.getPreferencesCache().showCustomSkulls();
+    }
+
+    public void save() {
+        this.update();
+        new Thread(() -> {
+            try {
+                JSON_MAPPER.writeValue(player.getUserPrefs(), this);
+            } catch (IOException e) {
+                throw new RuntimeException("Could not save data for player " + player.getBedrockXUID(), e);
+            }
+        });
+    }
+
+    public void load() {
+        new Thread(() -> {
+            try {
+                FileInputStream data = new FileInputStream(player.getUserPrefs());
+                // Copy from because session would be null
+                this.copyFrom(JSON_MAPPER.convertValue(JSON_MAPPER.readTree(data.readAllBytes()), PreferencesData.class));
+                this.onLoad();
+            } catch (Exception e) {
+                // Reset the config to default if theres any issues :/
+            }
+        });
+    }
+
+    public void onLoad() {
+        session.getPreferencesCache().setCooldownPreference(this.cooldownType);
+        session.getPreferencesCache().setPrefersShowCoordinates(this.showCoordinates);
+
+        session.setAdvancedTooltips(this.advancedTooltips);
+        session.getInventoryTranslator().updateInventory(session, session.getPlayerInventory());
+
+        session.getPreferencesCache().setPrefersCustomSkulls(this.customSkullSkins);
+    }
+
+    // TODO: figure out literally any better way to do this
+    public void copyFrom(PreferencesData data) {
+        this.cooldownType = data.cooldownType;
+        this.showCoordinates = data.showCoordinates;
+        this.advancedTooltips = data.advancedTooltips;
+        this.customSkullSkins = data.customSkullSkins;
+        this.remappableActionMap = data.remappableActionMap;
+        this.indicatorUpdateRate = data.indicatorUpdateRate;
+        this.settingsMenuForm = data.settingsMenuForm;
+        this.enableDoubleClickForVRQuickMenu = data.enableDoubleClickForVRQuickMenu;
+        this.vrMenuDoubleClickMS = data.vrMenuDoubleClickMS;
+        this.lockedPerspective = data.lockedPerspective;
+    }
+
+    public Action setAction(Remappable binding, Action action) {
+        return remappableActionMap.put(binding, action);
+    }
+
+    public boolean isDefault(Remappable binding) {
+        return remappableActionMap.get(binding) == null || remappableActionMap.get(binding) == Action.DEFAULT;
+    }
+
+    public void setLockedPerspective(Perspectives perspective) {
+        this.lockedPerspective = perspective;
+        if (session != null) {
+            if (perspective.equals(Perspectives.OFF)) {
+                session.camera().clearCameraInstructions();
+                return;
+            }
+            // It wont equal null because the only one that can be null is OFF which we already handled
+            assert perspective.getGeyser() != null;
+            session.camera().forceCameraPerspective(perspective.getGeyser());
+        }
+    }
+}

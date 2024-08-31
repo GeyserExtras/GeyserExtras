@@ -6,6 +6,7 @@ import dev.letsgoaway.geyserextras.core.cache.Cache;
 import dev.letsgoaway.geyserextras.core.config.ConfigLoader;
 import dev.letsgoaway.geyserextras.core.config.GeyserExtrasConfig;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
+import dev.letsgoaway.geyserextras.core.preferences.PreferencesData;
 import lombok.Getter;
 import lombok.Setter;
 import org.geysermc.geyser.api.GeyserApi;
@@ -41,6 +42,12 @@ public class GeyserExtras implements EventRegistrar {
 
         SERVER.log("Initializing cache...");
         Cache.initialize();
+
+        PreferencesData.PREFERENCES_PATH = SERVER.getPluginFolder().resolve("preferences/");
+        try {
+            Files.createDirectories(PreferencesData.PREFERENCES_PATH);
+        }
+        catch (Exception ignored){}
 
         SERVER.log("Registering events...");
         geyserApi.eventBus().register(this, this);
