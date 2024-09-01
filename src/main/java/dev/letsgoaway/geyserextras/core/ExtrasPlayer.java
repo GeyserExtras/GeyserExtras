@@ -76,7 +76,11 @@ public class ExtrasPlayer {
         userPrefs = PreferencesData.PREFERENCES_PATH.resolve(bedrockXUID + ".json").toFile();
     }
 
+    @Getter
+    private boolean loggedIn = false;
+
     public void startGame() {
+        loggedIn = true;
         sendToast("GeyserExtras is available!", "Open settings or run /ge to configure");
         if (GE.getConfig().isEnableSkinSaving()) {
             SkinSaver.save(this);
@@ -222,8 +226,7 @@ public class ExtrasPlayer {
     private static final List<BedrockPlatform> vrPlatforms = List.of(BedrockPlatform.GEARVR, BedrockPlatform.HOLOLENS);
 
     public boolean isVR() {
-        return session.getClientData().getCurrentInputMode() == org.geysermc.floodgate.util.InputMode.VR
-                || session.inputMode() == InputMode.VR || vrPlatforms.contains(session.platform());
+        return session.inputMode() == InputMode.VR || vrPlatforms.contains(session.platform());
     }
 
     public void swingArm() {

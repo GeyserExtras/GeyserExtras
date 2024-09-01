@@ -47,8 +47,8 @@ public class GeyserExtras implements EventRegistrar {
         PreferencesData.PREFERENCES_PATH = SERVER.getPluginFolder().resolve("preferences/");
         try {
             Files.createDirectories(PreferencesData.PREFERENCES_PATH);
+        } catch (Exception ignored) {
         }
-        catch (Exception ignored){}
 
         SERVER.log("Registering events...");
         geyserApi.eventBus().register(this, this);
@@ -79,7 +79,9 @@ public class GeyserExtras implements EventRegistrar {
      */
     public void serverTick() {
         for (ExtrasPlayer player : connections.values()) {
-            player.tick();
+            if (player.isLoggedIn()) {
+                player.tick();
+            }
         }
     }
 
