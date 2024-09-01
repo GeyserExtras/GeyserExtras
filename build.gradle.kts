@@ -25,6 +25,12 @@ repositories {
 dependencies {
     implementation("org.spongepowered:configurate-yaml:4.2.0-GeyserMC-SNAPSHOT")
     shadow("org.spongepowered:configurate-yaml:4.2.0-GeyserMC-SNAPSHOT")
+    implementation("com.fasterxml.jackson.core:jackson-annotations:2.17.0")
+    implementation("com.fasterxml.jackson.core:jackson-core:2.17.0")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.17.0")
+    shadow("com.fasterxml.jackson.core:jackson-annotations:2.17.0")
+    shadow("com.fasterxml.jackson.core:jackson-core:2.17.0")
+    shadow("com.fasterxml.jackson.core:jackson-databind:2.17.0")
 
     compileOnly("org.spigotmc:spigot-api:1.12-R0.1-SNAPSHOT")
     compileOnly("com.velocitypowered:velocity-api:3.3.0-SNAPSHOT")
@@ -67,5 +73,6 @@ tasks {
         archiveFileName.set("GeyserExtras.jar")
         relocate("org.spongepowered", "dev.letsgoaway.relocate.org.spongepowered")
         relocate("io.leangen.geantyref", "dev.letsgoaway.io.leangen.geantyref")
+        relocate("com.fasterxml", "dev.letsgoaway.relocate.com.fasterxml")
     }
 }
