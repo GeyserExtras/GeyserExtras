@@ -3,6 +3,8 @@ package dev.letsgoaway.geyserextras.core.handlers.bedrock;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
 import dev.letsgoaway.geyserextras.core.parity.java.shield.ShieldUtils;
+import dev.letsgoaway.geyserextras.core.preferences.bindings.Action;
+import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
 import org.cloudburstmc.protocol.bedrock.data.PlayerActionType;
 import org.cloudburstmc.protocol.bedrock.packet.PlayerActionPacket;
 import org.geysermc.api.util.InputMode;
@@ -22,7 +24,7 @@ public class BedrockActionInjector extends BedrockActionTranslator {
         if (!GE.getConfig().isEnableToggleBlock()) {
             super.translate(session, packet);
         } else if (!packet.getAction().equals(PlayerActionType.START_SNEAK)
-                && !packet.getAction().equals(PlayerActionType.STOP_SNEAK)) {
+                && !packet.getAction().equals(PlayerActionType.STOP_SNEAK) && !(packet.getAction().equals(PlayerActionType.DROP_ITEM) && session.isSneaking())) {
             super.translate(session, packet);
         }
         ExtrasPlayer player = GeyserHandler.getPlayer(session);
@@ -88,6 +90,13 @@ public class BedrockActionInjector extends BedrockActionTranslator {
 
                 if (session.inputMode().equals(InputMode.TOUCH)) {
                     player.swingArm();
+                }
+            }
+            // handle it here anyway just in case lmao but it doesnt work here at least on 1.21
+            case DROP_ITEM -> {
+                if (session.isSneaking()) {
+                    player.getPreferences().runAction(Remappable.SNEAK_DROP);
+                    session.getInventoryTranslator().updateInventory(session, session.getPlayerInventory());
                 }
             }
         }

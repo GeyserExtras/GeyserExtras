@@ -13,15 +13,17 @@ import dev.letsgoaway.geyserextras.core.parity.java.tablist.TabListData;
 import dev.letsgoaway.geyserextras.core.utils.StringUtils;
 import lombok.Getter;
 import lombok.Setter;
-import org.cloudburstmc.protocol.bedrock.packet.AnimatePacket;
-import org.cloudburstmc.protocol.bedrock.packet.SetTitlePacket;
-import org.cloudburstmc.protocol.bedrock.packet.ToastRequestPacket;
+import org.cloudburstmc.protocol.bedrock.data.LevelEvent;
+import org.cloudburstmc.protocol.bedrock.data.LevelEventType;
+import org.cloudburstmc.protocol.bedrock.packet.*;
 import org.geysermc.api.util.BedrockPlatform;
 import org.geysermc.api.util.InputMode;
 import org.geysermc.geyser.api.bedrock.camera.GuiElement;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent;
+import org.geysermc.geyser.level.JavaDimension;
 import org.geysermc.geyser.session.GeyserSession;
+import org.geysermc.geyser.util.DimensionUtils;
 
 import java.io.File;
 import java.util.List;
@@ -84,6 +86,7 @@ public class ExtrasPlayer {
         }
         // Update the cooldown at a faster rate for smoother animations at fast periods
         startCombatTickThread(60f);
+
     }
 
     public void startCombatTickThread(float updateRate) {
@@ -141,6 +144,11 @@ public class ExtrasPlayer {
         }
         if (GE.getConfig().isEnableToggleBlock()) {
             ShieldUtils.updateBlockSpeed(session);
+        }
+        if (session.getDimensionType().isNetherLike()) {
+            if (session.camera().fogEffects().contains(DimensionUtils.BEDROCK_FOG_HELL)) {
+                session.camera().removeFog(DimensionUtils.BEDROCK_FOG_HELL);
+            }
         }
     }
 

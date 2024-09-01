@@ -8,7 +8,16 @@ import lombok.Setter;
 public class CacheDates {
     @Setter
     @Getter
-    public long dataUpdateTime;
+    public long dataUpdateTime = -1;
 
-    public CacheDates() {}
+    @Setter
+    @Getter
+    public int[] lastOptionalPackVersion = {0, 0, 0};
+
+    @Setter
+    @Getter
+    public int[] lastExtrasPackVersion = {0, 0, 0};
+
+    public CacheDates() {
+    }
 }
