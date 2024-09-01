@@ -28,8 +28,10 @@ public class ExtensionExtrasPlayer extends ExtrasPlayer {
 
     @Override
     public void onDisconnect() {
-        tickThread.cancel(true);
-        tickThread = null;
+        if (tickThread != null) {
+            tickThread.cancel(true);
+            tickThread = null;
+        }
         super.onDisconnect();
     }
 }

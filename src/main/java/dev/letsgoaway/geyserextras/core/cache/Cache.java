@@ -37,8 +37,7 @@ public class Cache {
                 CACHE_DATES = JSON_MAPPER.convertValue(JSON_MAPPER.readTree(data.readAllBytes()), CacheDates.class);
             } else {
                 CACHE_DATES = new CacheDates();
-                CACHE_DATES.setDataUpdateTime(-1);
-                JSON_MAPPER.writeValue(DATES_PATH.toFile(), CACHE_DATES);
+                saveCacheDates();
             }
         } catch (Exception ignored) {
         }
@@ -46,6 +45,17 @@ public class Cache {
 
         SERVER.log("Loading cache...");
         loadData();
+
+        PackCacheUtils.initialize();
+        SERVER.log("Loading resources...");
+
+    }
+
+    public static void saveCacheDates(){
+        try {
+            JSON_MAPPER.writeValue(DATES_PATH.toFile(), CACHE_DATES);
+        } catch (IOException e) {
+        }
     }
 
     public static void downloadAll() {

@@ -3,6 +3,7 @@ package dev.letsgoaway.geyserextras.core;
 import dev.letsgoaway.geyserextras.InitializeLogger;
 import dev.letsgoaway.geyserextras.Server;
 import dev.letsgoaway.geyserextras.core.cache.Cache;
+import dev.letsgoaway.geyserextras.core.cache.PackCacheUtils;
 import dev.letsgoaway.geyserextras.core.config.ConfigLoader;
 import dev.letsgoaway.geyserextras.core.config.GeyserExtrasConfig;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
@@ -65,10 +66,11 @@ public class GeyserExtras implements EventRegistrar {
         geyserApi.eventBus().subscribe(this, GeyserPreReloadEvent.class, this::onGeyserReload);
         geyserApi.eventBus().subscribe(this, GeyserShutdownEvent.class, this::onGeyserShutdown);
 
+        // Packs
+        geyserApi.eventBus().subscribe(this, SessionLoadResourcePacksEvent.class, this::onLoadPacks);
         connections = new ConcurrentHashMap<>();
         InitializeLogger.end();
     }
-
 
     /**
      * Dont use this on proxys, only on servers
@@ -85,9 +87,7 @@ public class GeyserExtras implements EventRegistrar {
     }
 
     public void onSessionLogin(SessionLoginEvent ev) {
-        if (connections.containsKey(ev.connection().xuid())) {
-            connections.remove(ev.connection().xuid());
-        }
+        connections.remove(ev.connection().xuid());
         connections.put(ev.connection().xuid(), SERVER.createPlayer(ev.connection()));
     }
 
@@ -130,5 +130,9 @@ public class GeyserExtras implements EventRegistrar {
                 player.reconnect();
             }
         }
+    }
+
+    public void onLoadPacks(SessionLoadResourcePacksEvent ev) {
+        PackCacheUtils.onPackLoadEvent(connections.get(ev.connection().xuid()), ev);
     }
 }

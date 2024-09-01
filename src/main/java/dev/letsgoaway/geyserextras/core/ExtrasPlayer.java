@@ -102,8 +102,10 @@ public class ExtrasPlayer {
     }
 
     public void onDisconnect() {
-        combatTickThread.cancel(true);
-        combatTickThread = null;
+        if (combatTickThread != null) {
+            combatTickThread.cancel(true);
+            combatTickThread = null;
+        }
         preferences.save();
     }
 
