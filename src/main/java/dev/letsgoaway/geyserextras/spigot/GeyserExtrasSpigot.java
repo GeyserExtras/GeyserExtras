@@ -26,6 +26,11 @@ public class GeyserExtrasSpigot extends JavaPlugin implements Server {
 
     @Override
     public void onEnable() {
+        SpigotCommandHandler handler = new SpigotCommandHandler();
+        this.getCommand("geyserextras").setExecutor(handler);
+        this.getCommand("platformlist").setExecutor(handler);
+        this.getCommand("playerlist").setExecutor(handler);
+        this.getCommand("emotechat").setExecutor(handler);
         CORE = new GeyserExtras(this);
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, ()->{
             CORE.serverTick();

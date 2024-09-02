@@ -1,8 +1,10 @@
 package dev.letsgoaway.geyserextras.core.handlers.bedrock;
 
+import dev.letsgoaway.geyserextras.ReflectionAPI;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
+import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import org.cloudburstmc.protocol.bedrock.packet.ServerSettingsRequestPacket;
 import org.cloudburstmc.protocol.bedrock.packet.ServerSettingsResponsePacket;
 import org.geysermc.cumulus.form.CustomForm;
@@ -17,6 +19,11 @@ public class BedrockServerSettingsRequestInjector extends BedrockServerSettingsR
     public void translate(GeyserSession session, ServerSettingsRequestPacket packet) {
         ExtrasPlayer player = GeyserHandler.getPlayer(session);
         player.getPreferences().runAction(Remappable.SETTINGS);
+        // Sending settings form with floodgate causes linkage error :/
+        if (IsAvailable.floodgate()) {
+            player.sendToast("GeyserExtras Settings could not be loaded in the Settings Menu","Run '/ge settings' to open settings");
+            return;
+        }
         CustomForm form = GeyserHandler.getPlayer(session).getPreferences().getSettingsMenuForm().open(GeyserHandler.getPlayer(session));
         int formId = session.getFormCache().addForm(form);
 

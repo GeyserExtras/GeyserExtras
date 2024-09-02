@@ -8,6 +8,7 @@ import dev.letsgoaway.geyserextras.core.config.ConfigLoader;
 import dev.letsgoaway.geyserextras.core.config.GeyserExtrasConfig;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
 import dev.letsgoaway.geyserextras.core.preferences.PreferencesData;
+import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import lombok.Getter;
 import lombok.Setter;
 import org.geysermc.geyser.api.GeyserApi;
@@ -25,6 +26,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class GeyserExtras implements EventRegistrar {
     public static GeyserExtras GE;
     public static Server SERVER;
+
     @Getter
     @Setter
     private GeyserExtrasConfig config;
@@ -33,6 +35,7 @@ public class GeyserExtras implements EventRegistrar {
 
     public GeyserExtras(Server server) {
         GE = this;
+
         GeyserExtras.SERVER = server;
         GeyserHandler.register();
         InitializeLogger.start();

@@ -43,7 +43,7 @@ public class MainMenu extends BedrockMenu {
 
 
         add(new Button(BedrockLocale.SETTINGS, FormImage.Type.PATH, "textures/ui/settings_glyph_color_2x.png", () -> {
-            player.sendForm(new SettingsMenu());
+            player.sendForm(new InGameSettingsMenu());
         }));
 
 

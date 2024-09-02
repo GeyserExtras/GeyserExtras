@@ -9,20 +9,17 @@ commands:
   geyserextras:
     description: Open the GeyserExtras menu.
     usage: /<command>
-    permission: geyserextras.menu
     aliases:
       - ge
   platformlist:
     description: Shows a player list including everyone's platforms.
     usage: /<command>
-    permission: geyserextras.platformlist
     aliases:
       - pl
       - platforms
   playerlist:
     description: Shows the Java Tab Player List menu for Bedrock Edition Players.
     usage: /<command>
-    permission: geyserextras.playerlist
     aliases:
       - l
       - players
@@ -32,19 +29,5 @@ commands:
   emotechat:
     description: Toggles Bedrock Player emote chat for Java Players.
     usage: /<command>
-    permission: geyserextras.emotechat
     aliases:
       - muteemotechat
-permissions:
-  geyserextras.menu:
-    default: true
-    description: Allow players to execute the /geyserextras command
-  geyserextras.platformlist:
-    default: true
-    description: Allow players to execute the /platformlist command
-  geyserextras.playerlist:
-    default: true
-    description: Allow players to execute the /playerlist command
-  geyserextras.emotechat:
-    default: true
-    description: Allow players to execute the /emotechat command

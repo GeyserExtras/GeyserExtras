@@ -37,6 +37,7 @@ dependencies {
     annotationProcessor("com.velocitypowered:velocity-api:3.3.0-SNAPSHOT")
     compileOnly("net.md-5:bungeecord-api:1.21-R0.1-SNAPSHOT")
     compileOnly("org.geysermc.geyser:core:2.4.2-SNAPSHOT")
+    compileOnly("org.geysermc.floodgate:core:2.2.3-SNAPSHOT")
     compileOnly("org.projectlombok:lombok:1.18.34")
     annotationProcessor("org.projectlombok:lombok:1.18.34")
     testCompileOnly("org.projectlombok:lombok:1.18.34")

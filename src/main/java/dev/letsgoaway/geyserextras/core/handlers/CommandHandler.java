@@ -4,13 +4,10 @@ import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.commands.BedrockCommand;
 import dev.letsgoaway.geyserextras.core.commands.GeyserExtrasCommand;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class CommandHandler {
-    private static Map<String, BedrockCommand> ids;
+    public static Map<String, BedrockCommand> ids;
 
     public static void loadCommands() {
         ids = new HashMap<>();
@@ -29,6 +26,11 @@ public class CommandHandler {
         if (ids.containsKey(root)) {
             args.remove(0);
             ids.get(root).onExecute(player, args);
+        }
+    }
+    public static void runFromCommandInput(ExtrasPlayer player, String label, String[] args) {
+        if (ids.containsKey(label)) {
+            ids.get(label).onExecute(player, Arrays.asList(args));
         }
     }
 }

@@ -13,6 +13,8 @@ import org.cloudburstmc.protocol.bedrock.packet.*;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.inventory.ClientboundOpenScreenPacket;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.level.*;
 
+import java.util.UUID;
+
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 
 public class GeyserHandler {
@@ -63,5 +65,14 @@ public class GeyserHandler {
 
     public static ExtrasPlayer getPlayer(GeyserSession session) {
         return GE.connections.get(session.xuid());
+    }
+
+    public static ExtrasPlayer getPlayer(UUID javaUUID) {
+        for (ExtrasPlayer player : GE.connections.values()) {
+            if (player.getJavaUUID().equals(javaUUID)){
+                return player;
+            }
+        }
+        return null;
     }
 }

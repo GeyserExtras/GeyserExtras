@@ -1,10 +1,10 @@
 package dev.letsgoaway.geyserextras.core.menus.settings;
 
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
+import dev.letsgoaway.geyserextras.core.form.BedrockForm;
 import dev.letsgoaway.geyserextras.core.form.elements.*;
 import dev.letsgoaway.geyserextras.core.locale.BedrockLocale;
 import dev.letsgoaway.geyserextras.core.menus.Menus;
-import dev.letsgoaway.geyserextras.core.menus.SettingsMenu;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.session.auth.BedrockClientData;
 
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DebugSection {
-    public static void build(SettingsMenu menu, GeyserSession session, ExtrasPlayer player) {
+    public static void build(BedrockForm menu, GeyserSession session, ExtrasPlayer player) {
 
         menu.add(new SectionLabel(BedrockLocale.OPTIONS.DEBUG,
                 "Don't change settings here unless you know what you are doing!"));
@@ -35,10 +35,6 @@ public class DebugSection {
         menu.add(new Label("Playfab ID: " + data.getPlayFabId()));
         menu.add(new Label("Device ID: " + data.getDeviceId()));
         menu.add(new Label("Device Model: " + data.getDeviceModel()));
-        menu.add(new Label("Device OS: " + data.getDeviceOs().name()));
-        menu.add(new Label("Current Input Mode: " + data.getCurrentInputMode().name()));
-        menu.add(new Label("Default Input Mode: " + data.getDefaultInputMode().name()));
-        menu.add(new Label("UI Profile: " + data.getUiProfile().name()));
         menu.add(new Label("GUI Scale: " + data.getGuiScale()));
         menu.add(new Label("Joined Address: " + data.getServerAddress()));
         menu.add(new Label("Language Code: " + data.getLanguageCode()));

@@ -14,7 +14,7 @@ public enum Menus {
                 return SettingsUtils.buildForm(player.getSession());
             }
             case GE_SETTINGS -> {
-                return new SettingsMenu().create(player).build();
+                return new InGameSettingsMenu().create(player).build();
             }
         }
         return SettingsUtils.buildForm(player.getSession());

@@ -5,6 +5,7 @@ import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.TickUtil;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.GeyserExtras;
+import dev.letsgoaway.geyserextras.core.handlers.CommandHandler;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.Plugin;
 import org.geysermc.geyser.api.connection.GeyserConnection;
@@ -27,6 +28,9 @@ public class GeyserExtrasBungee extends Plugin implements Server {
     @Override
     public void onEnable() {
         CORE = new GeyserExtras(this);
+        for (String label : CommandHandler.ids.keySet()){
+            ProxyServer.getInstance().getPluginManager().registerCommand(this, new BungeeCommandHandler(label));
+        }
     }
 
     @Override

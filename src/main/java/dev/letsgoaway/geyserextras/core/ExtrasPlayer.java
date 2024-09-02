@@ -10,6 +10,7 @@ import dev.letsgoaway.geyserextras.core.form.BedrockModal;
 import dev.letsgoaway.geyserextras.core.parity.java.combat.CooldownHandler;
 import dev.letsgoaway.geyserextras.core.parity.java.shield.ShieldUtils;
 import dev.letsgoaway.geyserextras.core.parity.java.tablist.TabListData;
+import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import dev.letsgoaway.geyserextras.core.utils.StringUtils;
 import lombok.Getter;
 import lombok.Setter;
@@ -90,7 +91,8 @@ public class ExtrasPlayer {
         }
         // Update the cooldown at a faster rate for smoother animations at fast periods
         startCombatTickThread(60f);
-
+        // Java UUID is null until login
+        javaUUID = session.javaUuid();
     }
 
     public void startCombatTickThread(float updateRate) {
@@ -208,15 +210,27 @@ public class ExtrasPlayer {
     }
 
     public void sendForm(BedrockForm form) {
-        session.sendForm(form.create(this).build());
+        if (IsAvailable.floodgate()) {
+            org.geysermc.floodgate.api.FloodgateApi.getInstance().getPlayer(javaUUID).sendForm(form.create(this).build());
+        } else {
+            session.sendForm(form.create(this).build());
+        }
     }
 
     public void sendForm(BedrockMenu form) {
-        session.sendForm(form.create(this));
+        if (IsAvailable.floodgate()) {
+            org.geysermc.floodgate.api.FloodgateApi.getInstance().getPlayer(javaUUID).sendForm(form.create(this));
+        } else {
+            session.sendForm(form.create(this));
+        }
     }
 
     public void sendForm(BedrockModal form) {
-        session.sendForm(form.create(this));
+        if (IsAvailable.floodgate()) {
+            org.geysermc.floodgate.api.FloodgateApi.getInstance().getPlayer(javaUUID).sendForm(form.create(this));
+        } else {
+            session.sendForm(form.create(this));
+        }
     }
 
     public void setTickingState(float tickrate) {

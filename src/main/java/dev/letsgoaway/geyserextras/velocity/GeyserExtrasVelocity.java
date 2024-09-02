@@ -1,6 +1,7 @@
 package dev.letsgoaway.geyserextras.velocity;
 
 import com.google.inject.Inject;
+import com.velocitypowered.api.command.CommandManager;
 import com.velocitypowered.api.event.Subscribe;
 import com.velocitypowered.api.event.proxy.ProxyInitializeEvent;
 import com.velocitypowered.api.plugin.Dependency;
@@ -10,7 +11,9 @@ import com.velocitypowered.api.proxy.ProxyServer;
 import dev.letsgoaway.geyserextras.*;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.GeyserExtras;
+import dev.letsgoaway.geyserextras.core.handlers.CommandHandler;
 import org.geysermc.geyser.api.connection.GeyserConnection;
+import org.incendo.cloud.meta.CommandMeta;
 import org.slf4j.Logger;
 
 import java.nio.file.Path;
@@ -39,6 +42,10 @@ public class GeyserExtrasVelocity implements Server {
     @Subscribe
     public void onProxyInitialization(ProxyInitializeEvent event) {
         CORE = new GeyserExtras(this);
+        CommandManager commandManager = server.getCommandManager();
+        for (String label : CommandHandler.ids.keySet()) {
+            commandManager.register(commandManager.metaBuilder(label).build(), new VelocityCommandHandler());
+        }
     }
 
     @Override
