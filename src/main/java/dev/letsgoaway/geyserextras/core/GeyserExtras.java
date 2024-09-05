@@ -35,10 +35,19 @@ public class GeyserExtras implements EventRegistrar {
 
     public GeyserExtras(Server server) {
         GE = this;
+        SERVER = server;
 
-        GeyserExtras.SERVER = server;
-        GeyserHandler.register();
         InitializeLogger.start();
+
+        if (!IsAvailable.cloudburst()) {
+            SERVER.warn("!ERROR! GeyserExtras currently does not support running as an extension on modded platforms. !ERROR!");
+            SERVER.warn("Please use Geyser-Standalone!");
+            InitializeLogger.endNoDone();
+            return;
+        }
+
+        GeyserHandler.register();
+
         geyserApi = GeyserApi.api();
 
         SERVER.log("Loading config...");

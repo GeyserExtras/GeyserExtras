@@ -40,7 +40,7 @@ public class GeyserHandler {
     }
 
     public static void registerDownstream() {
-        if (ServerType.type.equals(ServerType.EXTENSION)) {
+        if (ServerType.isExtension()) {
             Registries.BEDROCK_PACKET_TRANSLATORS.register(CommandRequestPacket.class, new BedrockCommandRequestInjector());
         }
         // Cooldown

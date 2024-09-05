@@ -5,6 +5,7 @@ import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.TickUtil;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.GeyserExtras;
+import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import org.geysermc.event.subscribe.Subscribe;
 import org.geysermc.geyser.api.GeyserApi;
 import org.geysermc.geyser.api.connection.GeyserConnection;
@@ -19,7 +20,7 @@ public class GeyserExtrasExtension implements Extension, Server {
     private ExtensionTickUtil tickUtil;
 
     public GeyserExtrasExtension() {
-        ServerType.type = ServerType.EXTENSION;
+        ServerType.type = IsAvailable.classExists("org.geysermc.geyser.platform.standalone.GeyserStandaloneBootstrap") ? ServerType.STANDALONE : ServerType.EXTENSION;
         EXTENSION = this;
     }
 

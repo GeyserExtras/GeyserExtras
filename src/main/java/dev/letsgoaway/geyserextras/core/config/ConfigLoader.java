@@ -32,7 +32,7 @@ public class ConfigLoader {
     public static void load() {
         Path configPath = SERVER.getPluginFolder().resolve("config.yml");
 
-        if (ServerType.type.equals(ServerType.EXTENSION)) {
+        if (ServerType.isExtension()) {
             GeyserExtrasExtension extension = GeyserExtrasExtension.EXTENSION;
             // Ensure the data folder exists
             if (!extension.dataFolder().toFile().exists()) {
