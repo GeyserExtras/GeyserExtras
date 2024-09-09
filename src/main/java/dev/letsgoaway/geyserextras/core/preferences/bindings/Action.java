@@ -3,7 +3,7 @@ package dev.letsgoaway.geyserextras.core.preferences.bindings;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.locale.BedrockLocale;
 import dev.letsgoaway.geyserextras.core.menus.MainMenu;
-import dev.letsgoaway.geyserextras.core.parity.java.tablist.PlayerList;
+import dev.letsgoaway.geyserextras.core.parity.java.tablist.PlayerListMenu;
 import org.geysermc.geyser.entity.type.Entity;
 import org.geysermc.geyser.entity.type.living.animal.horse.AbstractHorseEntity;
 import org.geysermc.geyser.session.GeyserSession;
@@ -66,7 +66,7 @@ public enum Action {
                 }
             }
             case PLAYER_LIST -> {
-                player.sendForm(new PlayerList());
+                player.sendForm(new PlayerListMenu());
             }
             case PLATFORM_LIST -> {
                 // TODO: platformlist

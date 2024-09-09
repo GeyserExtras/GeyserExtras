@@ -112,7 +112,12 @@ public class ExtrasPlayer {
             combatTickThread.cancel(true);
             combatTickThread = null;
         }
+        if (vrInventoryMenuFuture != null) {
+            vrInventoryMenuFuture.cancel(true);
+            vrInventoryMenuFuture = null;
+        }
         preferences.save();
+        tabListData.getPlayers().clear();
     }
 
     public void reconnect() {

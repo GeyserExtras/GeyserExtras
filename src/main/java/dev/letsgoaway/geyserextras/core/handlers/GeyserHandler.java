@@ -37,6 +37,7 @@ public class GeyserHandler {
 
         // Tab list
         Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundTabListPacket.class, new JavaTabListInjector());
+        Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundPlayerInfoUpdatePacket.class, new JavaPlayerInfoUpdateInjector());
     }
 
     public static void registerDownstream() {
