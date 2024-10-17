@@ -1,6 +1,7 @@
 package dev.letsgoaway.geyserextras.core.form;
 
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
+import dev.letsgoaway.geyserextras.core.GeyserExtras;
 import lombok.Setter;
 import org.geysermc.cumulus.form.CustomForm;
 import org.geysermc.cumulus.util.FormImage;
@@ -61,19 +62,21 @@ public class BedrockForm {
                 }
                 i++;
             }
-            onSubmit();
+            onSubmit(player);
         });
 
-        customForm.closedResultHandler(this::onClose);
+        customForm.closedResultHandler(()->{
+            onClose(player);
+        });
         customForm.invalidResultHandler(() -> {
             SERVER.warn("ERROR: FORM RESPONSE BY " + player.getSession().getClientData().getUsername() + " WAS INVALID!");
         });
         return customForm;
     }
 
-    public void onSubmit() {
+    public void onSubmit(ExtrasPlayer player) {
     }
 
-    public void onClose() {
+    public void onClose(ExtrasPlayer player) {
     }
 }

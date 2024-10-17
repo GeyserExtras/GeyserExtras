@@ -1,10 +1,10 @@
 package dev.letsgoaway.geyserextras.core.handlers.bedrock;
 
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
+import dev.letsgoaway.geyserextras.core.menus.MainMenu;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Action;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
-import dev.letsgoaway.geyserextras.core.menus.VRInventoryMenu;
 import dev.letsgoaway.geyserextras.core.parity.java.shield.ShieldUtils;
 import org.cloudburstmc.protocol.bedrock.packet.InteractPacket;
 import org.geysermc.geyser.entity.type.Entity;
@@ -34,25 +34,25 @@ public class BedrockInteractInjector extends BedrockInteractTranslator {
             }
             super.translate(session, packet);
         } else {
-            if (player.isVR() && player.getPreferences().isEnableDoubleClickForVRQuickMenu()) {
+            if (player.getPreferences().isEnableDoubleClickShortcut()) {
                 // Double click
-                if (player.getPreferences().getVrMenuDoubleClickMS() > System.currentTimeMillis() - player.getLastInventoryClickTime()) {
-                    if (player.getVrInventoryMenuFuture() != null && !player.getVrInventoryMenuFuture().isCancelled() && !player.getVrInventoryMenuFuture().isDone()) {
-                        player.getVrInventoryMenuFuture().cancel(false);
-                        // open vr menu
-                        player.sendForm(new VRInventoryMenu());
+                if (player.getPreferences().getDoubleClickMS() > System.currentTimeMillis() - player.getLastInventoryClickTime()) {
+                    if (player.getDoubleClickShortcutFuture() != null && !player.getDoubleClickShortcutFuture().isCancelled() && !player.getDoubleClickShortcutFuture().isDone()) {
+                        player.getDoubleClickShortcutFuture().cancel(false);
+                        // open menu
+                        player.sendForm(new MainMenu());
                     } else {
                         player.setLastInventoryClickTime(System.currentTimeMillis());
-                        player.setVrInventoryMenuFuture(session.scheduleInEventLoop(() -> {
+                        player.setDoubleClickShortcutFuture(session.scheduleInEventLoop(() -> {
                             Action.OPEN_INVENTORY.run(player);
-                        }, player.getPreferences().getVrMenuDoubleClickMS() + 20, TimeUnit.MILLISECONDS));
+                        }, player.getPreferences().getDoubleClickMS() + 20, TimeUnit.MILLISECONDS));
                     }
                     return;
                 } else {
                     player.setLastInventoryClickTime(System.currentTimeMillis());
-                    player.setVrInventoryMenuFuture(session.scheduleInEventLoop(() -> {
+                    player.setDoubleClickShortcutFuture(session.scheduleInEventLoop(() -> {
                         Action.OPEN_INVENTORY.run(player);
-                    }, player.getPreferences().getVrMenuDoubleClickMS() + 20, TimeUnit.MILLISECONDS));
+                    }, player.getPreferences().getDoubleClickMS() + 20, TimeUnit.MILLISECONDS));
                     return;
                 }
             }

@@ -62,7 +62,7 @@ public class ExtrasPlayer {
 
     @Getter
     @Setter
-    private ScheduledFuture<?> vrInventoryMenuFuture;
+    private ScheduledFuture<?> doubleClickShortcutFuture;
     @Getter
     private File userPrefs;
 
@@ -82,7 +82,7 @@ public class ExtrasPlayer {
 
     public void startGame() {
         loggedIn = true;
-        sendToast("GeyserExtras is available!", "Open settings or run /ge to configure");
+        sendToast("GeyserExtras is available!", "Double tap Inventory to open menu");
         if (GE.getConfig().isEnableSkinSaving()) {
             SkinSaver.save(this);
         }
@@ -112,9 +112,9 @@ public class ExtrasPlayer {
             combatTickThread.cancel(true);
             combatTickThread = null;
         }
-        if (vrInventoryMenuFuture != null) {
-            vrInventoryMenuFuture.cancel(true);
-            vrInventoryMenuFuture = null;
+        if (doubleClickShortcutFuture != null) {
+            doubleClickShortcutFuture.cancel(true);
+            doubleClickShortcutFuture = null;
         }
         preferences.save();
         tabListData.getPlayers().clear();

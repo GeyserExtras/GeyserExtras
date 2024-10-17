@@ -51,11 +51,11 @@ public class PreferencesData {
 
     @Getter
     @Setter
-    private boolean enableDoubleClickForVRQuickMenu = true;
+    private boolean enableDoubleClickShortcut = true;
 
     @Getter
     @Setter
-    private int vrMenuDoubleClickMS = 200;
+    private int doubleClickMS = 200;
 
     @Getter
     private Perspectives lockedPerspective = Perspectives.OFF;
@@ -135,8 +135,8 @@ public class PreferencesData {
         this.remappableActionMap = data.remappableActionMap;
         this.indicatorUpdateRate = data.indicatorUpdateRate;
         this.settingsMenuForm = data.settingsMenuForm;
-        this.enableDoubleClickForVRQuickMenu = data.enableDoubleClickForVRQuickMenu;
-        this.vrMenuDoubleClickMS = data.vrMenuDoubleClickMS;
+        this.enableDoubleClickShortcut = data.enableDoubleClickShortcut;
+        this.doubleClickMS = data.doubleClickMS;
         this.lockedPerspective = data.lockedPerspective;
     }
 

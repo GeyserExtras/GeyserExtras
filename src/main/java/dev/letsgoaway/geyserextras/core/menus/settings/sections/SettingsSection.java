@@ -1,4 +1,4 @@
-package dev.letsgoaway.geyserextras.core.menus.settings;
+package dev.letsgoaway.geyserextras.core.menus.settings.sections;
 
 import dev.letsgoaway.geyserextras.core.form.BedrockForm;
 import dev.letsgoaway.geyserextras.core.locale.BedrockLocale;
@@ -14,11 +14,11 @@ import org.geysermc.geyser.util.CooldownUtils;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 
-public class SettingsSection {
-    public static void build(BedrockForm menu, GeyserSession session, ExtrasPlayer player) {
-        menu.add(new SectionLabel(BedrockLocale.SETTINGS,""));
-
+public class SettingsSection extends Section {
+    @Override
+    public void build(BedrockForm menu, GeyserSession session, ExtrasPlayer player) {
         if (CooldownUtils.getDefaultShowCooldown() != CooldownUtils.CooldownType.DISABLED) {
             LinkedHashMap<String, CooldownUtils.CooldownType> cooldownTypes = new LinkedHashMap<>();
             for (CooldownUtils.CooldownType cooldownType : CooldownUtils.CooldownType.values()) {
@@ -69,5 +69,9 @@ public class SettingsSection {
             }
         }
         return "";
+    }
+
+    public List<String> getHeader() {
+        return List.of(BedrockLocale.SETTINGS, "");
     }
 }

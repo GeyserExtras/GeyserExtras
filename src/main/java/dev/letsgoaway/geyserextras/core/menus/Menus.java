@@ -1,6 +1,7 @@
 package dev.letsgoaway.geyserextras.core.menus;
 
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
+import dev.letsgoaway.geyserextras.core.menus.settings.menus.InGameSettingsMenu;
 import org.geysermc.cumulus.form.CustomForm;
 import org.geysermc.geyser.util.SettingsUtils;
 

@@ -1,22 +1,21 @@
-package dev.letsgoaway.geyserextras.core.menus.settings;
+package dev.letsgoaway.geyserextras.core.menus.settings.sections;
 
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.form.BedrockForm;
 import dev.letsgoaway.geyserextras.core.form.elements.*;
 import dev.letsgoaway.geyserextras.core.locale.BedrockLocale;
 import dev.letsgoaway.geyserextras.core.menus.Menus;
+import org.geysermc.cumulus.util.FormImage;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.session.auth.BedrockClientData;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
-public class DebugSection {
-    public static void build(BedrockForm menu, GeyserSession session, ExtrasPlayer player) {
-
-        menu.add(new SectionLabel(BedrockLocale.OPTIONS.DEBUG,
-                "Don't change settings here unless you know what you are doing!"));
-
+public class DebugSection extends Section {
+    @Override
+    public void build(BedrockForm menu, GeyserSession session, ExtrasPlayer player) {
         HashMap<String, Menus> menuNames = new HashMap<>();
         for (Menus menuOption : Menus.values()) {
             menuNames.put(menuOption.name(), menuOption);
@@ -47,5 +46,16 @@ public class DebugSection {
         menu.add(new Label("Is Cape on Classic Skin? " + data.isCapeOnClassicSkin()));
         menu.add(new Label("Is Persona Skin? " + data.isPersonaSkin()));
         menu.add(new Label("Is Premium Skin? " + data.isPremiumSkin()));
+    }
+
+    @Override
+    public List<String> getHeader() {
+        return List.of(BedrockLocale.OPTIONS.DEBUG,
+                "Don't change settings here unless you know what you are doing!");
+    }
+
+    @Override
+    public FormImage getImage() {
+        return FormImage.of(FormImage.Type.PATH, "textures/ui/ChainSquare.png");
     }
 }

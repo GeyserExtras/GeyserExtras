@@ -21,7 +21,7 @@ public class BedrockServerSettingsRequestInjector extends BedrockServerSettingsR
         player.getPreferences().runAction(Remappable.SETTINGS);
         // Sending settings form with floodgate causes linkage error :/
         if (IsAvailable.floodgate()) {
-            player.sendToast("GeyserExtras Settings could not be loaded in the Settings Menu","Run '/ge settings' to open settings");
+            player.sendToast("GeyserExtras Settings could not be loaded in the Settings Menu","You can go to settings by double tapping Inventory in-game");
             return;
         }
         CustomForm form = GeyserHandler.getPlayer(session).getPreferences().getSettingsMenuForm().open(GeyserHandler.getPlayer(session));

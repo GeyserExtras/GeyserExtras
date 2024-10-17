@@ -1,5 +1,7 @@
 package dev.letsgoaway.geyserextras.core.menus;
 
+import dev.letsgoaway.geyserextras.core.menus.settings.menus.InGameSettingsMenu;
+import dev.letsgoaway.geyserextras.core.menus.settings.menus.SettingsMenu;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Action;
 import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
 import dev.letsgoaway.geyserextras.core.form.elements.Button;
@@ -25,8 +27,8 @@ public class MainMenu extends BedrockMenu {
             Action.RECONNECT.run(player);
         }));
 
-        add(new Button(Action.TOGGLE_TOOLTIPS.translate(player), FormImage.Type.PATH, "textures/ui/infobulb.png", () -> {
-            Action.TOGGLE_TOOLTIPS.run(player);
+        add(new Button(BedrockLocale.SETTINGS, FormImage.Type.PATH, "textures/ui/settings_glyph_color_2x.png", () -> {
+            player.sendForm(new SettingsMenu());
         }));
 
         add(new Button(Action.OPEN_ADVANCEMENTS.translate(player), FormImage.Type.PATH, "textures/ui/achievements.png", () -> {
@@ -41,16 +43,12 @@ public class MainMenu extends BedrockMenu {
             Action.PLAYER_LIST.run(player);
         }));
 
-
-        add(new Button(BedrockLocale.SETTINGS, FormImage.Type.PATH, "textures/ui/settings_glyph_color_2x.png", () -> {
-            player.sendForm(new InGameSettingsMenu());
-        }));
-
-
-        add(new Button(BedrockLocale.MENU.RESOURCE_PACKS, FormImage.Type.PATH, "textures/ui/glyph_resource_pack.png", () -> {
-            // TODO
-            //new OptionalPacks(bplayer).show(bplayer);
-        }));
+        /*
+            add(new Button(BedrockLocale.MENU.RESOURCE_PACKS, FormImage.Type.PATH, "textures/ui/glyph_resource_pack.png", () -> {
+                // TODO
+                //new OptionalPacks(bplayer).show(bplayer);
+            }));
+        */
         return super.create(player);
     }
 }

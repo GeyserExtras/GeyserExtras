@@ -1,4 +1,4 @@
-package dev.letsgoaway.geyserextras.core.menus.settings;
+package dev.letsgoaway.geyserextras.core.menus.settings.sections;
 
 import dev.letsgoaway.geyserextras.core.form.elements.Label;
 import org.geysermc.geyser.text.ChatColor;
