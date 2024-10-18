@@ -24,7 +24,7 @@ public class InGameSettingsMenu extends BedrockForm {
     }
 
     @Override
-    public void onSubmit(ExtrasPlayer player){
+    public void onSubmit(ExtrasPlayer player) {
         player.getPreferences().save();
     }
 }
