@@ -13,11 +13,14 @@ public class GeyserExtrasCommand implements BedrockCommand {
     public void onExecute(ExtrasPlayer player, List<String> args) {
         if (!args.isEmpty()) {
             String subcommand = args.get(0);
+            /*
             if (subcommand.equalsIgnoreCase("reload")) {
                 ConfigLoader.load();
                 return;
             }
-            else if (subcommand.equalsIgnoreCase("settings")){
+            else
+            */
+            if (subcommand.equalsIgnoreCase("settings")) {
                 player.sendForm(new InGameSettingsMenu());
                 return;
             }

@@ -1,10 +1,13 @@
 package dev.letsgoaway.geyserextras.core.menus.settings.sections;
 
+import dev.letsgoaway.geyserextras.PluginVersion;
+import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.form.BedrockForm;
 import dev.letsgoaway.geyserextras.core.form.elements.*;
 import dev.letsgoaway.geyserextras.core.locale.BedrockLocale;
 import dev.letsgoaway.geyserextras.core.menus.Menus;
+import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import org.geysermc.cumulus.util.FormImage;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.session.auth.BedrockClientData;
@@ -39,13 +42,27 @@ public class DebugSection extends Section {
         menu.add(new Label("Language Code: " + data.getLanguageCode()));
 
         // Cape ID is appended to the Skin ID
-        menu.add(new Label("Skin ID: " + data.getSkinId().replace(data.getCapeId(),"")));
+        menu.add(new Label("Skin ID: " + data.getSkinId().replace(data.getCapeId(), "")));
         menu.add(new Label("Skin Color: " + data.getSkinColor()));
         menu.add(new Label("Skin Arm Size: " + data.getArmSize()));
         menu.add(new Label("Cape ID: " + data.getCapeId()));
         menu.add(new Label("Is Cape on Classic Skin? " + data.isCapeOnClassicSkin()));
         menu.add(new Label("Is Persona Skin? " + data.isPersonaSkin()));
         menu.add(new Label("Is Premium Skin? " + data.isPremiumSkin()));
+
+        menu.add(new SubSectionLabel("Player Data", ""));
+        menu.add(new Label("Average Ping: " + player.getCooldownHandler().getAveragePing()));
+        menu.add(new Label("Average Ping (Ticks): " + (player.getCooldownHandler().getAveragePing() / 50)));
+
+        menu.add(new Label("Last Ping: " + player.getCooldownHandler().getLastPing()));
+        menu.add(new Label("Ping Sample: " + player.getCooldownHandler().getPingSample()));
+        menu.add(new Label("Ping Sample Size: " + player.getCooldownHandler().getPingSampleSize()));
+
+        menu.add(new SubSectionLabel("GeyserExtras Info", ""));
+        menu.add(new Label("Version: " + PluginVersion.GE_VERSION));
+        menu.add(new Label("Server Type: " + ServerType.get()));
+        menu.add(new Label("Floodgate installed: " + (IsAvailable.floodgate() ? "Yes" : "No")));
+
     }
 
     @Override

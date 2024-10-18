@@ -109,7 +109,7 @@ public class CooldownHandler {
         } else {
             readyToAttack = false;
         }
-        double time = (System.currentTimeMillis() - averagePing) - lastSwingTime;
+        double time = (System.currentTimeMillis() + (player.getPreferences().isAdjustCooldownWithPing() ? averagePing : 0)) - lastSwingTime;
         double cooldown = MathUtils.restrain((time) * attackSpeed / 1000.0, 1);
         sendCooldown(cooldown);
     }
@@ -203,11 +203,15 @@ public class CooldownHandler {
         return 1.0D / attackSpeed * 20.0;
     }
 
+    @Getter
     private double averagePing = 0.0f;
-    private long pingSample = 0;
 
+    @Getter
+    private long pingSample = 0;
+    @Getter
     private long pingSampleSize = 0;
 
+    @Getter
     private int lastPing = -1;
 
     private void calculateAveragePing() {
@@ -248,9 +252,11 @@ public class CooldownHandler {
                 }
             }
         }
-        if (lastPing >= 40) {
-            if (textTime - (averagePing / 1000) > 0.0) {
-                textTime -= (averagePing / 1000);
+        if (player.getPreferences().isAdjustCooldownWithPing()) {
+            if (lastPing >= 40) {
+                if (textTime - (averagePing / 1000) > 0.0) {
+                    textTime -= (averagePing / 1000);
+                }
             }
         }
         return textTime * 1000;

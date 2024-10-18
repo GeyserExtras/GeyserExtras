@@ -29,5 +29,6 @@ public class SectionMenu extends BedrockForm {
     @Override
     public void onSubmit(ExtrasPlayer player){
         player.sendForm(new SettingsMenu());
+        player.getPreferences().save();
     }
 }

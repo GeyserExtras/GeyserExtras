@@ -116,7 +116,6 @@ public class ExtrasPlayer {
             doubleClickShortcutFuture.cancel(true);
             doubleClickShortcutFuture = null;
         }
-        preferences.save();
         tabListData.getPlayers().clear();
     }
 
@@ -131,8 +130,7 @@ public class ExtrasPlayer {
         int id = emotesList.indexOf(UUID.fromString(ev.emoteId()));
 
         if (id == -1) {
-            // TODO: debug logs??? we could check if geyser has debug mode on in config
-            SERVER.warn("Emote with id: " + ev.emoteId() + " was not in emote list!");
+            SERVER.debugWarn("Emote with id: " + ev.emoteId() + " was not in emote list!");
             return;
         }
 

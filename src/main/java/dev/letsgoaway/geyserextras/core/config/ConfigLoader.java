@@ -20,7 +20,7 @@ public class ConfigLoader {
     private static final String HEADER = """
             GeyserExtras
             If Geyser is detected, all required config changes will be automatically applied.
-            For more details, go to https://github.com/GeyserExtras/GeyserExtras/wiki
+            For more details, go to https://geyserextras.github.io/
             """;
 
     private static final int LATEST_VERSION = 1;

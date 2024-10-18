@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.HashMap;
 
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 import static dev.letsgoaway.geyserextras.core.cache.Cache.JSON_MAPPER;
 
 public class PreferencesData {
@@ -32,6 +33,10 @@ public class PreferencesData {
     public static Path PREFERENCES_PATH;
 
     public CooldownUtils.CooldownType cooldownType = CooldownUtils.CooldownType.TITLE;
+
+    @Getter
+    @Setter
+    private boolean adjustCooldownWithPing = true;
 
     public boolean showCoordinates = false;
 
@@ -98,9 +103,9 @@ public class PreferencesData {
             try {
                 JSON_MAPPER.writeValue(player.getUserPrefs(), this);
             } catch (IOException e) {
-                throw new RuntimeException("Could not save data for player " + player.getBedrockXUID(), e);
+                SERVER.warn("Could not save data for player " + player.getBedrockXUID() + "\n" + e.getLocalizedMessage());
             }
-        });
+        }).start();
     }
 
     public void load() {
@@ -109,11 +114,11 @@ public class PreferencesData {
                 FileInputStream data = new FileInputStream(player.getUserPrefs());
                 // Copy from because session would be null
                 this.copyFrom(JSON_MAPPER.convertValue(JSON_MAPPER.readTree(data.readAllBytes()), PreferencesData.class));
-                this.onLoad();
             } catch (Exception e) {
-                // Reset the config to default if theres any issues :/
+               SERVER.warn(e.getLocalizedMessage());
             }
-        });
+            this.onLoad();
+        }).start();
     }
 
     public void onLoad() {
@@ -129,6 +134,7 @@ public class PreferencesData {
     // TODO: figure out literally any better way to do this
     public void copyFrom(PreferencesData data) {
         this.cooldownType = data.cooldownType;
+        this.adjustCooldownWithPing = data.adjustCooldownWithPing;
         this.showCoordinates = data.showCoordinates;
         this.advancedTooltips = data.advancedTooltips;
         this.customSkullSkins = data.customSkullSkins;

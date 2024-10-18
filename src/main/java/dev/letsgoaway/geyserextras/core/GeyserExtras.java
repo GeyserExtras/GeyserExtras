@@ -1,6 +1,7 @@
 package dev.letsgoaway.geyserextras.core;
 
 import dev.letsgoaway.geyserextras.InitializeLogger;
+import dev.letsgoaway.geyserextras.PluginVersion;
 import dev.letsgoaway.geyserextras.Server;
 import dev.letsgoaway.geyserextras.core.cache.Cache;
 import dev.letsgoaway.geyserextras.core.cache.PackCacheUtils;
@@ -82,6 +83,7 @@ public class GeyserExtras implements EventRegistrar {
         geyserApi.eventBus().subscribe(this, SessionLoadResourcePacksEvent.class, this::onLoadPacks);
         connections = new ConcurrentHashMap<>();
         InitializeLogger.end();
+        PluginVersion.checkForUpdatesAndPrintToLog();
     }
 
     /**

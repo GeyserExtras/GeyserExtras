@@ -102,6 +102,9 @@ public final class GeyserExtrasConfig {
             """)
     private boolean disablePaperDoll = false;
 
+    @Comment("Only enable if you know what you are doing.")
+    private boolean debugMode = false;
+
     @Comment("The version of the config. DO NOT CHANGE!")
     private int version = 1;
 }

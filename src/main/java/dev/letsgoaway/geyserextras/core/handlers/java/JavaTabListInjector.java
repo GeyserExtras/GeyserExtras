@@ -1,5 +1,6 @@
 package dev.letsgoaway.geyserextras.core.handlers.java;
 
+import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
 import org.geysermc.geyser.session.GeyserSession;
@@ -11,6 +12,14 @@ import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.Clientbound
 public class JavaTabListInjector extends PacketTranslator<ClientboundTabListPacket> {
     @Override
     public void translate(GeyserSession session, ClientboundTabListPacket packet) {
+        // Causes
+        //java.lang.NoSuchMethodError:
+        // 'net.kyori.adventure.text.Component
+        // org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.ClientboundTabListPacket.getHeader()'
+        // due to package errors
+        if (ServerType.get().equals(ServerType.SPIGOT)) {
+            return;
+        }
         ExtrasPlayer player = GeyserHandler.getPlayer(session);
         player.getTabListData().setHeader(MessageTranslator.convertMessage(session, packet.getHeader()));
         player.getTabListData().setFooter(MessageTranslator.convertMessage(session, packet.getFooter()));

@@ -29,9 +29,12 @@ public class BedrockLocale {
     }
 
     public static class CONTROLLER {
+        public static final String CANCEL = "%controllerLayoutScreen.cancel";
         public static final String DROP = "%controller.buttonTip.drop";
 
         public static final String BINDINGS = "%controllerLayoutScreen.bindings";
+
+        public static final String RESET_TO_DEFAULT = "%controllerLayoutScreen.resetAllBindings";
     }
 
     public static class GUI {

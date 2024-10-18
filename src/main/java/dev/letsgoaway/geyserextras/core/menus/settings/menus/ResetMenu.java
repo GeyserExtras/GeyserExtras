@@ -11,22 +11,27 @@ import org.geysermc.geyser.session.GeyserSession;
 
 import java.util.List;
 
-public class SettingsMenu extends BedrockMenu {
+public class ResetMenu extends BedrockMenu {
     @Override
 
     public SimpleForm create(ExtrasPlayer player) {
-        setTitle("GeyserExtras Settings");
-        GeyserSession session = player.getSession();
-        List<Section> sections = Settings.list();
+        setHeader("Resetting your settings will require reconnecting.\nContinue?");
 
-        for (Section section : sections) {
-            section.create(this, session, player);
-        }
-
-        add(new Button(BedrockLocale.CONTROLLER.RESET_TO_DEFAULT,()->{
-            player.sendForm(new ResetMenu());
+        add(new Button(BedrockLocale.CONTROLLER.RESET_TO_DEFAULT, ()->{
+            player.getUserPrefs().delete();
+            player.reconnect();
         }));
 
+        add(new Button(BedrockLocale.CONTROLLER.CANCEL, ()->{
+                onClose(player);
+        }));
+
+
         return super.create(player);
+    }
+
+    @Override
+    public void onClose(ExtrasPlayer player){
+        player.sendForm(new SettingsMenu());
     }
 }

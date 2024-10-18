@@ -21,6 +21,9 @@ public class BindingsSection extends Section {
             actionNames.put(action.translate(player), action);
         }
         for (Remappable binding : Remappable.values()) {
+            if (binding.equals(Remappable.SNEAK_DROP)) {
+                continue; // not implemented yet
+            }
             menu.add(new Dropdown(binding.translate(player),
                     new ArrayList<>(actionNames.keySet()),
                     player.getPreferences().getAction(binding).translate(player), (str) -> {

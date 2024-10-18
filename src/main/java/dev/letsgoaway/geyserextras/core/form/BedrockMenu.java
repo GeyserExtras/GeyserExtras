@@ -23,7 +23,7 @@ public class BedrockMenu {
         buttons = new ArrayList<>();
     }
 
-    public void onClose() {
+    public void onClose(ExtrasPlayer player) {
     }
 
     public BedrockMenu add(Button button) {
@@ -45,7 +45,9 @@ public class BedrockMenu {
             }
         });
 
-        simpleForm.closedOrInvalidResultHandler(this::onClose);
+        simpleForm.closedOrInvalidResultHandler(() -> {
+            onClose(player);
+        });
 
         return simpleForm.build();
     }

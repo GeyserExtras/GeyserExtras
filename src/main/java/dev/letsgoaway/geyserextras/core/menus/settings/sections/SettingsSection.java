@@ -30,6 +30,9 @@ public class SettingsSection extends Section {
                 session.getPreferencesCache().setCooldownPreference(cooldownTypes.get(str));
             }));
             menu.add(new Slider("Attack Indicator FPS", 5, 250, 5, player.getPreferences().getIndicatorUpdateRate(), player::startCombatTickThread));
+            menu.add(new Toggle("Sync Attack Indicator timing based on ping", player.getPreferences().isAdjustCooldownWithPing(), (b) -> {
+                player.getPreferences().setAdjustCooldownWithPing(b);
+            }));
         }
 
         if (session.getPreferencesCache().isAllowShowCoordinates()) {

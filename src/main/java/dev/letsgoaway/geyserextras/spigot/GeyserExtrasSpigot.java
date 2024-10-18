@@ -12,6 +12,8 @@ import org.geysermc.geyser.api.connection.GeyserConnection;
 import java.io.File;
 import java.nio.file.Path;
 
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
+
 public class GeyserExtrasSpigot extends JavaPlugin implements Server {
     public static GeyserExtras CORE;
 
@@ -32,9 +34,9 @@ public class GeyserExtrasSpigot extends JavaPlugin implements Server {
         this.getCommand("playerlist").setExecutor(handler);
         this.getCommand("emotechat").setExecutor(handler);
         CORE = new GeyserExtras(this);
-        Bukkit.getScheduler().scheduleSyncRepeatingTask(this, ()->{
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(this, () -> {
             CORE.serverTick();
-        }, 0L,0L);
+        }, 0L, 0L);
     }
 
     @Override
