@@ -3,6 +3,7 @@ package dev.letsgoaway.geyserextras.core.handlers.java;
 import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
+import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.translator.protocol.PacketTranslator;
 import org.geysermc.geyser.translator.text.MessageTranslator;
@@ -17,7 +18,7 @@ public class JavaTabListInjector extends PacketTranslator<ClientboundTabListPack
         // 'net.kyori.adventure.text.Component
         // org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.ClientboundTabListPacket.getHeader()'
         // due to package errors
-        if (ServerType.get().equals(ServerType.SPIGOT)) {
+        if (!IsAvailable.adventure()) {
             return;
         }
         ExtrasPlayer player = GeyserHandler.getPlayer(session);

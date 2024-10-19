@@ -18,11 +18,9 @@ import java.util.logging.Logger;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class PluginVersion {
-    public static final String GE_VERSION = "2.0.0-ALPHA-7";
+    public static final String GE_VERSION = "2.0.0-ALPHA-8";
 
     public static String latestVersion = "";
-
-    public static String latestVersionURL = "";
 
     public static boolean checkForUpdate() {
         try {
@@ -34,7 +32,6 @@ public class PluginVersion {
             JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
             JsonObject latest = root.getAsJsonArray().get(0).getAsJsonObject();
             latestVersion = latest.get("version_number").getAsString();
-            latestVersionURL = latest.get("files").getAsJsonArray().get(0).getAsJsonObject().get("url").getAsString();
             return !latestVersion.equals(GE_VERSION);
         } catch (IOException e) {
             return false;
@@ -46,8 +43,7 @@ public class PluginVersion {
             if (checkForUpdate()) {
                 SERVER.warn("There is a new update to GeyserExtras!");
                 SERVER.warn("You are on version " + GE_VERSION + " but the latest version is " + latestVersion + ".");
-                SERVER.warn("Download: " + latestVersionURL);
-                SERVER.warn("Changelog: https://modrinth.com/plugin/geyserextras/version/" + latestVersion);
+                SERVER.warn("Download & Changelog: https://modrinth.com/plugin/geyserextras/version/" + latestVersion);
             }
             else {
                 SERVER.warn("GeyserExtras is on the latest version.");

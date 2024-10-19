@@ -38,6 +38,8 @@ public class GeyserExtras implements EventRegistrar {
         GE = this;
         SERVER = server;
 
+        IsAvailable.preload();
+
         InitializeLogger.start();
 
         if (!IsAvailable.cloudburst()) {
