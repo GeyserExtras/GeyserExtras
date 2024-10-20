@@ -7,6 +7,7 @@ import org.geysermc.geyser.registry.Registries;
 import org.geysermc.geyser.session.GeyserSession;
 import dev.letsgoaway.geyserextras.core.handlers.bedrock.*;
 import dev.letsgoaway.geyserextras.core.handlers.java.*;
+import org.geysermc.mcprotocollib.protocol.packet.common.clientbound.ClientboundServerLinksPacket;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.*;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.entity.*;
 import org.cloudburstmc.protocol.bedrock.packet.*;
@@ -38,6 +39,9 @@ public class GeyserHandler {
         // Tab list
         Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundTabListPacket.class, new JavaTabListInjector());
         Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundPlayerInfoUpdatePacket.class, new JavaPlayerInfoUpdateInjector());
+
+        // Server Links (1.21+)
+        Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundServerLinksPacket.class, new JavaServerLinksInjector());
     }
 
     public static void registerDownstream() {

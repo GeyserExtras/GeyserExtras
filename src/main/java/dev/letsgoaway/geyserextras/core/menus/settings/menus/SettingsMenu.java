@@ -23,8 +23,8 @@ public class SettingsMenu extends BedrockMenu {
             section.create(this, session, player);
         }
 
-        add(new Button(BedrockLocale.CONTROLLER.RESET_TO_DEFAULT,()->{
-            player.sendForm(new ResetMenu());
+        add(new Button(BedrockLocale.CONTROLLER.RESET_TO_DEFAULT, () -> {
+            player.sendForm(new ResetModal());
         }));
 
         return super.create(player);

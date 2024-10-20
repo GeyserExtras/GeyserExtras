@@ -26,6 +26,8 @@ public class BedrockLocale {
 
         public static final String CREDITS = "%options.credits";
 
+        public static final String VIDEO = "%options.video";
+
     }
 
     public static class CONTROLLER {
@@ -40,8 +42,13 @@ public class BedrockLocale {
     public static class GUI {
         public static final String DEFAULT = "%gui.default";
         public static final String CUSTOM = "%gui.custom";
-
+        public static final String BACK = "%gui.back";
         public static final String STATS = "%gui.stats";
+
+        public static final String YES = "%gui.yes";
+
+        public static final String NO = "%gui.no";
+
     }
 
     public static class MENU {

@@ -3,7 +3,7 @@ package dev.letsgoaway.geyserextras.core.preferences.bindings;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.locale.BedrockLocale;
 import dev.letsgoaway.geyserextras.core.menus.MainMenu;
-import dev.letsgoaway.geyserextras.core.parity.java.tablist.PlayerListMenu;
+import dev.letsgoaway.geyserextras.core.parity.java.menus.tablist.PlayerListMenu;
 import org.geysermc.geyser.entity.type.Entity;
 import org.geysermc.geyser.entity.type.living.animal.horse.AbstractHorseEntity;
 import org.geysermc.geyser.session.GeyserSession;

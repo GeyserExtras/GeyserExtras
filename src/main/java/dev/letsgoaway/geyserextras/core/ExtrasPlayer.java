@@ -1,7 +1,7 @@
 package dev.letsgoaway.geyserextras.core;
 
-import dev.letsgoaway.geyserextras.core.cache.CacheDates;
 import dev.letsgoaway.geyserextras.core.features.skinsaver.SkinSaver;
+import dev.letsgoaway.geyserextras.core.parity.java.menus.serverlinks.ServerLinksData;
 import dev.letsgoaway.geyserextras.core.preferences.PreferencesData;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
@@ -9,21 +9,19 @@ import dev.letsgoaway.geyserextras.core.form.BedrockForm;
 import dev.letsgoaway.geyserextras.core.form.BedrockModal;
 import dev.letsgoaway.geyserextras.core.parity.java.combat.CooldownHandler;
 import dev.letsgoaway.geyserextras.core.parity.java.shield.ShieldUtils;
-import dev.letsgoaway.geyserextras.core.parity.java.tablist.TabListData;
+import dev.letsgoaway.geyserextras.core.parity.java.menus.tablist.TabListData;
 import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import dev.letsgoaway.geyserextras.core.utils.StringUtils;
 import lombok.Getter;
 import lombok.Setter;
-import org.cloudburstmc.protocol.bedrock.data.LevelEvent;
-import org.cloudburstmc.protocol.bedrock.data.LevelEventType;
 import org.cloudburstmc.protocol.bedrock.packet.*;
 import org.geysermc.api.util.BedrockPlatform;
 import org.geysermc.api.util.InputMode;
 import org.geysermc.geyser.api.bedrock.camera.GuiElement;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent;
-import org.geysermc.geyser.level.JavaDimension;
 import org.geysermc.geyser.session.GeyserSession;
+import org.geysermc.geyser.text.MinecraftLocale;
 import org.geysermc.geyser.util.DimensionUtils;
 
 import java.io.File;
@@ -55,6 +53,10 @@ public class ExtrasPlayer {
     private final TabListData tabListData;
 
     @Getter
+    private final ServerLinksData serverLinksData;
+
+
+    @Getter
     private final PreferencesData preferences;
 
     @Getter
@@ -72,6 +74,7 @@ public class ExtrasPlayer {
         this.bedrockXUID = connection.xuid();
         cooldownHandler = new CooldownHandler(this);
         tabListData = new TabListData(this);
+        serverLinksData = new ServerLinksData(this);
         preferences = new PreferencesData(this);
         emotesList = List.of();
         userPrefs = PreferencesData.PREFERENCES_PATH.resolve(bedrockXUID + ".json").toFile();
@@ -86,9 +89,9 @@ public class ExtrasPlayer {
         if (GE.getConfig().isEnableSkinSaving()) {
             SkinSaver.save(this);
         }
-        if (userPrefs.exists()) {
-            preferences.load();
-        }
+
+        preferences.load();
+
         // Update the cooldown at a faster rate for smoother animations at fast periods
         startCombatTickThread(60f);
         // Java UUID is null until login
@@ -251,5 +254,9 @@ public class ExtrasPlayer {
         animatePacket.setRuntimeEntityId(session.getPlayerEntity().getGeyserId());
         animatePacket.setAction(AnimatePacket.Action.SWING_ARM);
         session.sendUpstreamPacket(animatePacket);
+    }
+
+    public String translate(String lang) {
+        return MinecraftLocale.getLocaleString(lang, session.locale());
     }
 }

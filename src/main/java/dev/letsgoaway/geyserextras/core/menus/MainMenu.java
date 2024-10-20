@@ -2,6 +2,7 @@ package dev.letsgoaway.geyserextras.core.menus;
 
 import dev.letsgoaway.geyserextras.core.menus.settings.menus.InGameSettingsMenu;
 import dev.letsgoaway.geyserextras.core.menus.settings.menus.SettingsMenu;
+import dev.letsgoaway.geyserextras.core.parity.java.menus.serverlinks.ServerLinksMenu;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Action;
 import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
 import dev.letsgoaway.geyserextras.core.form.elements.Button;
@@ -10,6 +11,7 @@ import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.locale.BedrockLocale;
 import org.geysermc.cumulus.form.SimpleForm;
 import org.geysermc.cumulus.util.FormImage;
+import org.geysermc.geyser.text.MinecraftLocale;
 
 public class MainMenu extends BedrockMenu {
     public MainMenu() {
@@ -42,6 +44,12 @@ public class MainMenu extends BedrockMenu {
         add(new Button(Action.PLAYER_LIST.translate(player), FormImage.Type.PATH, "textures/ui/Local.png", () -> {
             Action.PLAYER_LIST.run(player);
         }));
+
+        if (!player.getServerLinksData().getServerLinks().isEmpty()) {
+            add(new Button(MinecraftLocale.getLocaleString("menu.server_links.title", player.getSession().locale()), FormImage.Type.PATH, "textures/ui/external_link.png", () -> {
+                player.sendForm(new ServerLinksMenu());
+            }));
+        }
 
         /*
             add(new Button(BedrockLocale.MENU.RESOURCE_PACKS, FormImage.Type.PATH, "textures/ui/glyph_resource_pack.png", () -> {

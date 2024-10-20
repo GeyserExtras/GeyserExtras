@@ -1,4 +1,4 @@
-package dev.letsgoaway.geyserextras.core.parity.java.tablist;
+package dev.letsgoaway.geyserextras.core.parity.java.menus.tablist;
 
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import lombok.Getter;
@@ -7,7 +7,6 @@ import org.geysermc.geyser.text.ChatColor;
 import org.geysermc.geyser.translator.text.MessageTranslator;
 import org.geysermc.mcprotocollib.protocol.data.game.PlayerListEntry;
 
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.UUID;
 

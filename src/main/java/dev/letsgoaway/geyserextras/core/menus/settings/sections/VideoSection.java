@@ -6,6 +6,7 @@ import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.form.elements.Dropdown;
 import dev.letsgoaway.geyserextras.core.form.elements.Slider;
 import dev.letsgoaway.geyserextras.core.form.elements.Toggle;
+import org.geysermc.cumulus.util.FormImage;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.text.ChatColor;
 import org.geysermc.geyser.text.GeyserLocale;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-public class SettingsSection extends Section {
+public class VideoSection extends Section {
     @Override
     public void build(BedrockForm menu, GeyserSession session, ExtrasPlayer player) {
         if (CooldownUtils.getDefaultShowCooldown() != CooldownUtils.CooldownType.DISABLED) {
@@ -75,6 +76,11 @@ public class SettingsSection extends Section {
     }
 
     public List<String> getHeader() {
-        return List.of(BedrockLocale.SETTINGS, "");
+        return List.of(BedrockLocale.OPTIONS.VIDEO, "");
+    }
+
+    @Override
+    public FormImage getImage() {
+        return FormImage.of(FormImage.Type.PATH, "textures/ui/video_glyph_2x.png");
     }
 }

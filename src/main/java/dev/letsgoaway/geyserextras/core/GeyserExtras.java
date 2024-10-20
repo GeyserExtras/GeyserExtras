@@ -59,11 +59,7 @@ public class GeyserExtras implements EventRegistrar {
         SERVER.log("Initializing cache...");
         Cache.initialize();
 
-        PreferencesData.PREFERENCES_PATH = SERVER.getPluginFolder().resolve("preferences/");
-        try {
-            Files.createDirectories(PreferencesData.PREFERENCES_PATH);
-        } catch (Exception ignored) {
-        }
+        PreferencesData.init();
 
         SERVER.log("Registering events...");
         geyserApi.eventBus().register(this, this);

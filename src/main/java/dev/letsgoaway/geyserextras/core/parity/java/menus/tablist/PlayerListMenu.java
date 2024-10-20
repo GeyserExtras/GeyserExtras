@@ -1,4 +1,4 @@
-package dev.letsgoaway.geyserextras.core.parity.java.tablist;
+package dev.letsgoaway.geyserextras.core.parity.java.menus.tablist;
 
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.form.BedrockMenu;

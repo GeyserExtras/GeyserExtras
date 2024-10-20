@@ -20,6 +20,10 @@ public class MenuSection extends Section {
                 (i) -> {
                     player.getPreferences().setDoubleClickMS(Math.round(i));
                 }));
+
+        menu.add(new Toggle(player.translate("options.chat.links.prompt"), player.getPreferences().isPromptOnLinks(), (b) -> {
+            player.getPreferences().setPromptOnLinks(b);
+        }));
     }
 
     @Override

@@ -10,7 +10,7 @@ public class Settings {
     public static List<Section> list() {
         if (GE.getConfig().isDebugMode()) {
             return List.of(
-                    new SettingsSection(),
+                    new VideoSection(),
                     new MenuSection(),
                     new HudSection(),
                     new BindingsSection(),
@@ -20,7 +20,7 @@ public class Settings {
         }
         else {
             return List.of(
-                    new SettingsSection(),
+                    new VideoSection(),
                     new MenuSection(),
                     new HudSection(),
                     new BindingsSection(),

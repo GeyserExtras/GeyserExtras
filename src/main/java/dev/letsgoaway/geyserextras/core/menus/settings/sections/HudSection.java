@@ -47,6 +47,6 @@ public class HudSection extends Section {
 
     @Override
     public FormImage getImage() {
-        return FormImage.of(FormImage.Type.PATH, "textures/ui/video_glyph_2x.png");
+        return FormImage.of(FormImage.Type.PATH, "textures/ui/heart_new.png");
     }
 }

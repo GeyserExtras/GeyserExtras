@@ -16,6 +16,7 @@ import org.geysermc.geyser.util.CooldownUtils;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
 
@@ -63,6 +64,10 @@ public class PreferencesData {
     private int doubleClickMS = 200;
 
     @Getter
+    @Setter
+    private boolean promptOnLinks = true;
+
+    @Getter
     private Perspectives lockedPerspective = Perspectives.OFF;
 
     public PreferencesData(ExtrasPlayer player) {
@@ -71,6 +76,33 @@ public class PreferencesData {
         remappableActionMap = new HashMap<>();
         showCoordinates = GeyserImpl.getInstance().getConfig().isShowCoordinates();
     }
+
+    @JsonIgnore
+    private static PreferencesData DEFAULT;
+
+
+    public static void init() {
+        PREFERENCES_PATH = SERVER.getPluginFolder().resolve("preferences/");
+        try {
+            Files.createDirectories(PreferencesData.PREFERENCES_PATH);
+        } catch (Exception ignored) {
+        }
+
+
+        Path defaultPath = PREFERENCES_PATH.resolve("default.json");
+        DEFAULT = new PreferencesData();
+        try {
+            if (defaultPath.toFile().exists()) {
+                FileInputStream data = new FileInputStream(defaultPath.toFile());
+                // Copy from because defaults might be different
+                DEFAULT.copyFrom(JSON_MAPPER.convertValue(JSON_MAPPER.readTree(data.readAllBytes()), PreferencesData.class));
+            }
+            JSON_MAPPER.writeValue(defaultPath.toFile(), DEFAULT);
+        } catch (Exception e) {
+            SERVER.warn("Could not load custom default settings, new players will recieve factory\ndefault's, no changes have been made to default.json.\n" + e.getLocalizedMessage());
+        }
+    }
+
 
     public PreferencesData() {
         this.player = null;
@@ -91,10 +123,12 @@ public class PreferencesData {
     }
 
     public void update() {
-        this.cooldownType = session.getPreferencesCache().getCooldownPreference();
-        this.showCoordinates = session.getPreferencesCache().isPrefersShowCoordinates();
-        this.advancedTooltips = session.isAdvancedTooltips();
-        this.customSkullSkins = session.getPreferencesCache().showCustomSkulls();
+        if (session != null) {
+            this.cooldownType = session.getPreferencesCache().getCooldownPreference();
+            this.showCoordinates = session.getPreferencesCache().isPrefersShowCoordinates();
+            this.advancedTooltips = session.isAdvancedTooltips();
+            this.customSkullSkins = session.getPreferencesCache().showCustomSkulls();
+        }
     }
 
     public void save() {
@@ -110,12 +144,18 @@ public class PreferencesData {
 
     public void load() {
         new Thread(() -> {
-            try {
-                FileInputStream data = new FileInputStream(player.getUserPrefs());
-                // Copy from because session would be null
-                this.copyFrom(JSON_MAPPER.convertValue(JSON_MAPPER.readTree(data.readAllBytes()), PreferencesData.class));
-            } catch (Exception e) {
-               SERVER.warn(e.getLocalizedMessage());
+            if (player.getUserPrefs().exists()) {
+                try {
+                    FileInputStream data = new FileInputStream(player.getUserPrefs());
+                    // Copy from because session would be null
+                    this.copyFrom(JSON_MAPPER.convertValue(JSON_MAPPER.readTree(data.readAllBytes()), PreferencesData.class));
+                } catch (Exception e) {
+                    SERVER.warn("Could not load data for player " + player.getBedrockXUID() + ", restoring to default for them.\n" + e.getLocalizedMessage());
+
+                    this.copyFrom(DEFAULT);
+                }
+            } else {
+                this.copyFrom(DEFAULT);
             }
             this.onLoad();
         }).start();
@@ -124,10 +164,8 @@ public class PreferencesData {
     public void onLoad() {
         session.getPreferencesCache().setCooldownPreference(this.cooldownType);
         session.getPreferencesCache().setPrefersShowCoordinates(this.showCoordinates);
-
         session.setAdvancedTooltips(this.advancedTooltips);
         session.getInventoryTranslator().updateInventory(session, session.getPlayerInventory());
-
         session.getPreferencesCache().setPrefersCustomSkulls(this.customSkullSkins);
     }
 

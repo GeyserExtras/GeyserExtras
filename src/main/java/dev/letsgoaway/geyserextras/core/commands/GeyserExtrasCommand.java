@@ -4,6 +4,7 @@ import dev.letsgoaway.geyserextras.core.config.ConfigLoader;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.menus.MainMenu;
 import dev.letsgoaway.geyserextras.core.menus.settings.menus.InGameSettingsMenu;
+import dev.letsgoaway.geyserextras.core.menus.settings.menus.SettingsMenu;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class GeyserExtrasCommand implements BedrockCommand {
             else
             */
             if (subcommand.equalsIgnoreCase("settings")) {
-                player.sendForm(new InGameSettingsMenu());
+                player.sendForm(new SettingsMenu());
                 return;
             }
         }
