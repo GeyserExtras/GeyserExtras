@@ -34,7 +34,7 @@ public class BedrockInteractInjector extends BedrockInteractTranslator {
             }
             super.translate(session, packet);
         } else {
-            if (player.getPreferences().isEnableDoubleClickShortcut()) {
+            if (player.getPreferences().isEnableDoubleClickShortcut() && !(player.getSession().isSneaking() && !player.getPreferences().isDefault(Remappable.SNEAK_INVENTORY))) {
                 // Double click
                 if (player.getPreferences().getDoubleClickMS() > System.currentTimeMillis() - player.getLastInventoryClickTime()) {
                     if (player.getDoubleClickShortcutFuture() != null && !player.getDoubleClickShortcutFuture().isCancelled() && !player.getDoubleClickShortcutFuture().isDone()) {
@@ -44,14 +44,14 @@ public class BedrockInteractInjector extends BedrockInteractTranslator {
                     } else {
                         player.setLastInventoryClickTime(System.currentTimeMillis());
                         player.setDoubleClickShortcutFuture(session.scheduleInEventLoop(() -> {
-                            Action.OPEN_INVENTORY.run(player);
+                           player.getPreferences().runAction(Remappable.OPEN_INVENTORY);
                         }, player.getPreferences().getDoubleClickMS() + 20, TimeUnit.MILLISECONDS));
                     }
                     return;
                 } else {
                     player.setLastInventoryClickTime(System.currentTimeMillis());
                     player.setDoubleClickShortcutFuture(session.scheduleInEventLoop(() -> {
-                        Action.OPEN_INVENTORY.run(player);
+                        player.getPreferences().runAction(Remappable.OPEN_INVENTORY);
                     }, player.getPreferences().getDoubleClickMS() + 20, TimeUnit.MILLISECONDS));
                     return;
                 }
