@@ -112,8 +112,15 @@ public class PreferencesData {
     }
 
     public void runAction(Remappable binding) {
-        if (remappableActionMap.containsKey(binding)) {
-            remappableActionMap.get(binding).run(player);
+        if (!isDefault(binding)) {
+            if (remappableActionMap.containsKey(binding)) {
+                remappableActionMap.get(binding).run(player);
+            }
+        } else {
+            switch (binding) {
+                case OPEN_INVENTORY -> Action.OPEN_INVENTORY.run(player);
+                default -> {}
+            }
         }
     }
 

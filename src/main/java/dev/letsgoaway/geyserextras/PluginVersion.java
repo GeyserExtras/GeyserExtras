@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class PluginVersion {
-    public static final String GE_VERSION = "2.0.0-ALPHA-9";
+    public static final String GE_VERSION = "2.0.0-ALPHA-10";
 
     public static String latestVersion = "";
 

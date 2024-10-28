@@ -3,6 +3,7 @@ package dev.letsgoaway.geyserextras.core;
 import dev.letsgoaway.geyserextras.InitializeLogger;
 import dev.letsgoaway.geyserextras.PluginVersion;
 import dev.letsgoaway.geyserextras.Server;
+import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.cache.Cache;
 import dev.letsgoaway.geyserextras.core.cache.PackCacheUtils;
 import dev.letsgoaway.geyserextras.core.config.ConfigLoader;
@@ -16,6 +17,7 @@ import org.geysermc.geyser.api.GeyserApi;
 import org.geysermc.geyser.api.event.EventRegistrar;
 import org.geysermc.geyser.api.event.bedrock.*;
 import org.geysermc.geyser.api.event.lifecycle.*;
+import org.geysermc.geyser.api.util.PlatformType;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -49,15 +51,18 @@ public class GeyserExtras implements EventRegistrar {
             return;
         }
 
-        GeyserHandler.register();
+        if (ServerType.isExtension()) {
+            GeyserHandler.register();
+
+            SERVER.log("Initializing cache...");
+            Cache.initialize();
+        }
 
         geyserApi = GeyserApi.api();
 
         SERVER.log("Loading config...");
         ConfigLoader.load();
 
-        SERVER.log("Initializing cache...");
-        Cache.initialize();
 
         PreferencesData.init();
 
@@ -80,7 +85,9 @@ public class GeyserExtras implements EventRegistrar {
         // Packs
         geyserApi.eventBus().subscribe(this, SessionLoadResourcePacksEvent.class, this::onLoadPacks);
         connections = new ConcurrentHashMap<>();
-        InitializeLogger.end();
+        if (ServerType.isExtension()) {
+            InitializeLogger.end();
+        }
         PluginVersion.checkForUpdatesAndPrintToLog();
     }
 
@@ -98,6 +105,13 @@ public class GeyserExtras implements EventRegistrar {
     }
 
     public void onGeyserInitialize(GeyserPostInitializeEvent init) {
+        if (!ServerType.isExtension()) {
+            GeyserHandler.register();
+            SERVER.log("Initializing cache...");
+            Cache.initialize();
+            InitializeLogger.end();
+
+        }
     }
 
     public void onSessionLogin(SessionLoginEvent ev) {

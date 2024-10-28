@@ -66,7 +66,7 @@ public enum Action {
                 }
             }
             case PLAYER_LIST -> {
-                player.sendForm(new PlayerListMenu());
+              //  player.sendForm(new PlayerListMenu());
             }
             case PLATFORM_LIST -> {
                 // TODO: platformlist
