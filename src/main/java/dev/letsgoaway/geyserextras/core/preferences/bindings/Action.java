@@ -8,7 +8,6 @@ import org.geysermc.geyser.entity.type.Entity;
 import org.geysermc.geyser.entity.type.living.animal.horse.AbstractHorseEntity;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.text.ChatColor;
-import org.geysermc.geyser.text.MinecraftLocale;
 import org.geysermc.geyser.util.InventoryUtils;
 import org.geysermc.mcprotocollib.protocol.data.game.ClientCommand;
 import org.geysermc.mcprotocollib.protocol.data.game.entity.player.PlayerState;
@@ -40,9 +39,9 @@ public enum Action {
                 session.setAdvancedTooltips(!session.isAdvancedTooltips());
                 String onOrOff = session.isAdvancedTooltips() ? "on" : "off";
                 session.sendMessage(ChatColor.BOLD + ChatColor.YELLOW
-                        + MinecraftLocale.getLocaleString("debug.prefix", session.locale())
+                        + player.translate("debug.prefix")
                         + " " + ChatColor.RESET
-                        + MinecraftLocale.getLocaleString("debug.advanced_tooltips." + onOrOff, session.locale()));
+                        + player.translate("debug.advanced_tooltips." + onOrOff));
                 session.getInventoryTranslator().updateInventory(session, session.getPlayerInventory());
             }
             case OPEN_GE_MENU -> player.sendForm(new MainMenu());
@@ -66,7 +65,7 @@ public enum Action {
                 }
             }
             case PLAYER_LIST -> {
-              //  player.sendForm(new PlayerListMenu());
+              player.sendForm(new PlayerListMenu());
             }
             case PLATFORM_LIST -> {
                 // TODO: platformlist
@@ -80,8 +79,6 @@ public enum Action {
     }
 
     public String translate(ExtrasPlayer player) {
-        GeyserSession session = player.getSession();
-        String locale = session.locale();
         switch (this) {
             case DEFAULT -> {
                 return BedrockLocale.GUI.DEFAULT;
@@ -90,20 +87,21 @@ public enum Action {
                 return BedrockLocale.OPTIONS.DISABLED;
             }
             case SWAP_OFFHAND -> {
-                return MinecraftLocale.getLocaleString("key.swapOffhand", locale);
+                return player.translate("key.swapOffhand");
             }
             case RECONNECT -> {
                 return BedrockLocale.RELOAD;
             }
             case TOGGLE_TOOLTIPS -> {
+                GeyserSession session = player.getSession();
                 String onOrOff = session.isAdvancedTooltips() ? "on" : "off";
-                return MinecraftLocale.getLocaleString("debug.advanced_tooltips." + onOrOff, locale);
+                return player.translate("debug.advanced_tooltips." + onOrOff);
             }
             case OPEN_GE_MENU -> {
 
             }
             case OPEN_ADVANCEMENTS -> {
-                return MinecraftLocale.getLocaleString("gui.advancements", locale);
+                return player.translate("gui.advancements");
             }
             case OPEN_STATISTICS -> {
                 return BedrockLocale.GUI.STATS;

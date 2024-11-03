@@ -10,7 +10,6 @@ import org.geysermc.cumulus.util.FormImage;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.text.ChatColor;
 import org.geysermc.geyser.text.GeyserLocale;
-import org.geysermc.geyser.text.MinecraftLocale;
 import org.geysermc.geyser.util.CooldownUtils;
 
 import java.util.ArrayList;
@@ -23,10 +22,10 @@ public class VideoSection extends Section {
         if (CooldownUtils.getDefaultShowCooldown() != CooldownUtils.CooldownType.DISABLED) {
             LinkedHashMap<String, CooldownUtils.CooldownType> cooldownTypes = new LinkedHashMap<>();
             for (CooldownUtils.CooldownType cooldownType : CooldownUtils.CooldownType.values()) {
-                cooldownTypes.put(translateCooldown(cooldownType, session), cooldownType);
+                cooldownTypes.put(translateCooldown(cooldownType, player), cooldownType);
             }
-            String playerOption = translateCooldown(session.getPreferencesCache().getCooldownPreference(), session);
-            menu.add(new Dropdown(MinecraftLocale.getLocaleStringIfPresent("options.attackIndicator", session.locale()),
+            String playerOption = translateCooldown(session.getPreferencesCache().getCooldownPreference(), player);
+            menu.add(new Dropdown(player.translate("options.attackIndicator"),
                     new ArrayList<>(cooldownTypes.keySet()), playerOption, (str) -> {
                 session.getPreferencesCache().setCooldownPreference(cooldownTypes.get(str));
             }));
@@ -48,9 +47,9 @@ public class VideoSection extends Section {
                 session.setAdvancedTooltips(b);
                 String onOrOff = session.isAdvancedTooltips() ? "on" : "off";
                 session.sendMessage(ChatColor.BOLD + ChatColor.YELLOW
-                        + MinecraftLocale.getLocaleString("debug.prefix", session.locale())
+                        + player.translate("debug.prefix")
                         + " " + ChatColor.RESET
-                        + MinecraftLocale.getLocaleString("debug.advanced_tooltips." + onOrOff, session.locale()));
+                        + player.translate("debug.advanced_tooltips." + onOrOff));
                 session.getInventoryTranslator().updateInventory(session, session.getPlayerInventory());
             }
         }));
@@ -60,13 +59,13 @@ public class VideoSection extends Section {
                 (b) -> session.getPreferencesCache().setPrefersCustomSkulls(b)));
     }
 
-    private static String translateCooldown(CooldownUtils.CooldownType cooldownType, GeyserSession session) {
+    private static String translateCooldown(CooldownUtils.CooldownType cooldownType, ExtrasPlayer player) {
         switch (cooldownType) {
             case TITLE -> {
                 return BedrockLocale.CROSSHAIR;
             }
             case ACTIONBAR -> {
-                return MinecraftLocale.getLocaleStringIfPresent("options.attack.hotbar", session.locale());
+                return player.translate("options.attack.hotbar");
             }
             case DISABLED -> {
                 return BedrockLocale.OPTIONS.OFF;

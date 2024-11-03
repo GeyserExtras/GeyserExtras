@@ -2,7 +2,6 @@ package dev.letsgoaway.geyserextras.core.preferences;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
-import dev.letsgoaway.geyserextras.core.preferences.Perspectives;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Action;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.menus.Menus;
@@ -10,8 +9,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.geysermc.geyser.GeyserImpl;
 import org.geysermc.geyser.session.GeyserSession;
-import org.geysermc.geyser.text.ChatColor;
-import org.geysermc.geyser.text.MinecraftLocale;
 import org.geysermc.geyser.util.CooldownUtils;
 
 import java.io.FileInputStream;

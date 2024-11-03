@@ -19,7 +19,7 @@ public class LinkMenu extends BedrockMenu {
 
     @Override
     public SimpleForm create(ExtrasPlayer player) {
-        String linkText = ServerLinksData.getLinkText(link, player.getSession());
+        String linkText = ServerLinksData.getLinkText(link, player);
 
         setTitle(linkText);
         setHeader(link.link()); // lol

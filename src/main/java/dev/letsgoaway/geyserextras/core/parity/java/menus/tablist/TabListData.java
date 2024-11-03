@@ -31,7 +31,7 @@ public class TabListData {
 
     public static String getPlayerListName(PlayerListEntry entry) {
         if (entry.getDisplayName() == null && entry.getProfile() != null) {
-            return ChatColor.GRAY + entry.getProfile().getName();
+            return ChatColor.DARK_GRAY + entry.getProfile().getName();
         }
         return MessageTranslator.convertMessage(entry.getDisplayName());
     }

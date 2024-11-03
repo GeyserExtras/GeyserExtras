@@ -5,47 +5,38 @@ import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
 import dev.letsgoaway.geyserextras.core.form.elements.Button;
 import org.geysermc.cumulus.form.SimpleForm;
 import org.geysermc.cumulus.util.FormImage;
+import org.geysermc.geyser.text.ChatColor;
 import org.geysermc.mcprotocollib.protocol.data.game.PlayerListEntry;
 
 import java.util.stream.Stream;
+
 // TODO: Fix header and footer
 public class PlayerListMenu extends BedrockMenu {
     @Override
     public SimpleForm create(ExtrasPlayer player) {
-        // So it can be overrided by json ui
-        setTitle("geyserextras:playerlist");
-
-        Stream<String> headerLines = player.getTabListData().getHeader().lines();
-        headerLines.forEachOrdered((line) -> {
-            add(new Button(line, () -> {
-                player.sendForm(new PlayerListMenu());
-            }));
-        });
-
+        setTitle(player.translate("key.playerlist"));
+        setHeader(player.getTabListData().getHeader() + "\n\n" + player.getTabListData().getFooter());
         for (PlayerListEntry entry : player.getTabListData().getPlayers().values()) {
             if (!entry.isListed()) continue;
-            String name = createPlayerName(entry);
+            String name = fixUnreadable(createPlayerName(entry));
             add(new Button(name, FormImage.Type.URL, TabListData.getPlayerListHead(entry), () -> {
                 player.sendForm(new PlayerListMenu());
             }));
         }
-
-        Stream<String> footerLines = player.getTabListData().getFooter().lines();
-        footerLines.forEachOrdered((line) -> {
-            add(new Button(line, () -> {
-                player.sendForm(new PlayerListMenu());
-            }));
-        });
 
         return super.create(player);
     }
 
     private String createPlayerName(PlayerListEntry entry) {
         StringBuilder builder = new StringBuilder(TabListData.getPlayerListName(entry));
-        while (builder.length() < 25) {
+        while (builder.length() < 30) {
             builder.append(" ");
         }
         builder.append(TabListData.getPingIcon(entry));
         return builder.toString();
+    }
+
+    private static String fixUnreadable(String text) {
+        return text.replace(ChatColor.GRAY, ChatColor.DARK_GRAY);
     }
 }
