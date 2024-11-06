@@ -25,13 +25,19 @@ public class Cache {
 
     public static Path DATES_PATH;
     public static Path CREDITS_PATH;
+
+    public static Path LANGUAGE_FOLDER;
+
     public static void initialize() {
         CACHE_FOLDER = SERVER.getPluginFolder().resolve("cache/");
 
         DATES_PATH = CACHE_FOLDER.resolve("dates.json");
         CREDITS_PATH = CACHE_FOLDER.resolve("credits.txt");
+        LANGUAGE_FOLDER = CACHE_FOLDER.resolve("langs/");
+
         try {
             Files.createDirectories(CACHE_FOLDER);
+            Files.createDirectories(LANGUAGE_FOLDER);
             if (Files.exists(DATES_PATH)) {
                 FileInputStream data = new FileInputStream(DATES_PATH.toFile());
                 CACHE_DATES = JSON_MAPPER.convertValue(JSON_MAPPER.readTree(data.readAllBytes()), CacheDates.class);
@@ -51,7 +57,7 @@ public class Cache {
 
     }
 
-    public static void saveCacheDates(){
+    public static void saveCacheDates() {
         try {
             JSON_MAPPER.writeValue(DATES_PATH.toFile(), CACHE_DATES);
         } catch (IOException e) {
@@ -63,6 +69,9 @@ public class Cache {
         if (dataNeedsUpdate || !CREDITS_PATH.toFile().exists()) {
             downloadCredits();
         }
+        if (dataNeedsUpdate) {
+            downloadLanguages();
+        }
     }
 
     public static String CREDITS_TEXT = "";
@@ -70,8 +79,8 @@ public class Cache {
     public static void loadData() {
         try (FileInputStream data = new FileInputStream(CREDITS_PATH.toFile())) {
             CREDITS_TEXT = new String(data.readAllBytes()).replaceAll("&", "§");
+        } catch (Exception e) {
         }
-        catch (Exception e){}
     }
 
 
@@ -79,6 +88,14 @@ public class Cache {
         try {
             InputStream in = new URL("https://raw.githubusercontent.com/GeyserExtras/data/main/credits.txt").openStream();
             Files.copy(in, CREDITS_PATH, StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException ignored) {
+        }
+    }
+
+    private static void downloadLanguages() {
+        try {
+            byte[] data = new URL("https://raw.githubusercontent.com/GeyserExtras/data/main/langs/language_names.json").openStream().readAllBytes();
+            JsonNode languageNamesJson = JSON_MAPPER.readTree(data);
         } catch (IOException ignored) {
         }
     }

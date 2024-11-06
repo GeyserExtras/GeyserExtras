@@ -20,7 +20,7 @@ public class JavaUpdateAttributesInjector extends JavaUpdateAttributesTranslator
     public void translate(GeyserSession session, ClientboundUpdateAttributesPacket packet) {
         if (packet.getEntityId() == session.getPlayerEntity().getEntityId()) {
             for (Attribute attribute : packet.getAttributes()) {
-                if (attribute.getType().equals(AttributeType.Builtin.GENERIC_ATTACK_SPEED)) {
+                if (attribute.getType().equals(AttributeType.Builtin.ATTACK_SPEED)) {
                     ExtrasPlayer player = GeyserHandler.getPlayer(session);
                     player.getCooldownHandler().setAttackSpeed(AttributeUtils.calculateValue(attribute));
                     // player.getCooldownHandler().setLastSwingTime(System.currentTimeMillis());
