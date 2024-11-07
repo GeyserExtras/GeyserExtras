@@ -17,7 +17,7 @@ public class CreditsSection extends Section {
     }
 
     @Override
-    public List<String> getHeader() {
+    public List<String> getHeader(ExtrasPlayer player) {
         return List.of(BedrockLocale.OPTIONS.CREDITS, "");
     }
 

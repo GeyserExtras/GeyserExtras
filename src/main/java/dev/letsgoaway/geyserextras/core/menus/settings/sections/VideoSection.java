@@ -29,8 +29,8 @@ public class VideoSection extends Section {
                     new ArrayList<>(cooldownTypes.keySet()), playerOption, (str) -> {
                 session.getPreferencesCache().setCooldownPreference(cooldownTypes.get(str));
             }));
-            menu.add(new Slider("Attack Indicator FPS", 5, 250, 5, player.getPreferences().getIndicatorUpdateRate(), player::startCombatTickThread));
-            menu.add(new Toggle("Sync Attack Indicator timing based on ping", player.getPreferences().isAdjustCooldownWithPing(), (b) -> {
+            menu.add(new Slider(player.translateGE("ge.settings.video.attackIndicatorFPS"), 5, 250, 5, player.getPreferences().getIndicatorUpdateRate(), player::startCombatTickThread));
+            menu.add(new Toggle(player.translateGE("ge.settings.video.adjustCooldownWithPing"), player.getPreferences().isAdjustCooldownWithPing(), (b) -> {
                 player.getPreferences().setAdjustCooldownWithPing(b);
             }));
         }
@@ -42,7 +42,7 @@ public class VideoSection extends Section {
             }));
         }
 
-        menu.add(new Toggle("Advanced Tooltips", session.isAdvancedTooltips(), (b) -> {
+        menu.add(new Toggle(player.translateGE("ge.settings.video.advancedTooltips"), session.isAdvancedTooltips(), (b) -> {
             if (b != session.isAdvancedTooltips()) {
                 session.setAdvancedTooltips(b);
                 String onOrOff = session.isAdvancedTooltips() ? "on" : "off";
@@ -74,7 +74,8 @@ public class VideoSection extends Section {
         return "";
     }
 
-    public List<String> getHeader() {
+    @Override
+    public List<String> getHeader(ExtrasPlayer player) {
         return List.of(BedrockLocale.OPTIONS.VIDEO, "");
     }
 

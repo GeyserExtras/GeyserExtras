@@ -9,7 +9,9 @@ public class ResetModal extends BedrockModal {
     @Override
 
     public ModalForm create(ExtrasPlayer player) {
-        setContent("Resetting your settings will require reconnecting.\n\n" + player.translate("mco.configure.world.leave.question.line2"));
+        setContent(player.translateGE("ge.settings.reset.reconnect")
+                + "\n\n" +
+                player.translate("mco.configure.world.leave.question.line2"));
 
         setYesText(BedrockLocale.CONTROLLER.RESET_TO_DEFAULT);
         setNoText(BedrockLocale.CONTROLLER.CANCEL);

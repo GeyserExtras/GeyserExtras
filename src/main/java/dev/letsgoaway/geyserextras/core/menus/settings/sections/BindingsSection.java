@@ -33,7 +33,7 @@ public class BindingsSection extends Section {
     }
 
     @Override
-    public List<String> getHeader() {
+    public List<String> getHeader(ExtrasPlayer player) {
         return List.of(BedrockLocale.CONTROLLER.BINDINGS, "");
     }
 

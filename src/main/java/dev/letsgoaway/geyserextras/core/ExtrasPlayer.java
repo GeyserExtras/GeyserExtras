@@ -1,6 +1,7 @@
 package dev.letsgoaway.geyserextras.core;
 
 import dev.letsgoaway.geyserextras.core.features.skinsaver.SkinSaver;
+import dev.letsgoaway.geyserextras.core.locale.GELocale;
 import dev.letsgoaway.geyserextras.core.parity.java.menus.serverlinks.ServerLinksData;
 import dev.letsgoaway.geyserextras.core.preferences.PreferencesData;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
@@ -85,7 +86,7 @@ public class ExtrasPlayer {
 
     public void startGame() {
         loggedIn = true;
-        sendToast("GeyserExtras is available!", "Double tap Inventory to open menu");
+        sendToast(translateGE("ge.welcome_toast.line1"), translateGE("ge.welcome_toast.line2"));
         if (GE.getConfig().isEnableSkinSaving()) {
             SkinSaver.save(this);
         }
@@ -258,5 +259,9 @@ public class ExtrasPlayer {
 
     public String translate(String lang) {
         return MinecraftLocale.getLocaleString(lang, session.locale());
+    }
+
+    public String translateGE(String lang) {
+        return GELocale.translate(lang, session.locale());
     }
 }

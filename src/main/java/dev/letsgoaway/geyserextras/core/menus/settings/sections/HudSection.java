@@ -25,17 +25,18 @@ public class HudSection extends Section {
         */
         for (GUIElements element : GUIElements.values()) {
             if (GE.getConfig().isDisablePaperDoll() && element.equals(GUIElements.PAPER_DOLL)) continue;
-            menu.add(createToggle(element, session));
+            menu.add(createToggle(element, player));
         }
     }
 
     @Override
-    public List<String> getHeader() {
+    public List<String> getHeader(ExtrasPlayer player) {
         return List.of("HUD", "");
     }
 
-    private static Toggle createToggle(GUIElements element, GeyserSession session) {
-        return new Toggle(element.translateOptions(session),
+    private static Toggle createToggle(GUIElements element, ExtrasPlayer player) {
+        GeyserSession session = player.getSession();
+        return new Toggle(element.translateOptions(player),
                 element.isHidden(session), (hide) -> {
             if (hide && !element.isHidden(session)) {
                 element.hide(session);

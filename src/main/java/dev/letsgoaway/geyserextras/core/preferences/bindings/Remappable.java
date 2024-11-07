@@ -26,16 +26,16 @@ public enum Remappable {
                 return player.translate("key.sneak") + " + " + BedrockLocale.CONTROLLER.DROP;
             }
             case EMOTE_1 -> {
-                return this.name();
+                return player.translateGE("ge.settings.bindings.emote1");
             }
             case EMOTE_2 -> {
-                return this.name();
+                return player.translateGE("ge.settings.bindings.emote2");
             }
             case EMOTE_3 -> {
-                return this.name();
+                return player.translateGE("ge.settings.bindings.emote3");
             }
             case EMOTE_4 -> {
-                return this.name();
+                return player.translateGE("ge.settings.bindings.emote4");
             }
             case SNEAK_INVENTORY -> {
                 return player.translate("key.sneak") + " + " + BedrockLocale.KEY.INVENTORY;

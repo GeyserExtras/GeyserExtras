@@ -90,7 +90,7 @@ public enum Action {
                 return player.translate("key.swapOffhand");
             }
             case RECONNECT -> {
-                return BedrockLocale.RELOAD;
+                return player.translateGE("ge.reconnect");
             }
             case TOGGLE_TOOLTIPS -> {
                 GeyserSession session = player.getSession();

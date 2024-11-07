@@ -66,9 +66,9 @@ public class DebugSection extends Section {
     }
 
     @Override
-    public List<String> getHeader() {
+    public List<String> getHeader(ExtrasPlayer player) {
         return List.of(BedrockLocale.OPTIONS.DEBUG,
-                "Don't change settings here unless you know what you are doing!");
+                player.translateGE("ge.settings.debug.header"));
     }
 
     @Override

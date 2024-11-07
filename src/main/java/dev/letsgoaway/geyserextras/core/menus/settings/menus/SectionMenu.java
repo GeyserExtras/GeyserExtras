@@ -15,7 +15,7 @@ public class SectionMenu extends BedrockForm {
 
     @Override
     public CustomForm.Builder create(ExtrasPlayer player) {
-        setTitle(section.getHeader().get(0));
+        setTitle(section.getHeader(player).get(0));
         GeyserSession session = player.getSession();
         section.create(this,session,player);
         return super.create(player);

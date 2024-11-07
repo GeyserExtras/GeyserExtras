@@ -15,7 +15,7 @@ public class SettingsMenu extends BedrockMenu {
     @Override
 
     public SimpleForm create(ExtrasPlayer player) {
-        setTitle("GeyserExtras Settings");
+        setTitle(player.translateGE("ge.settings"));
         GeyserSession session = player.getSession();
         List<Section> sections = Settings.list();
 

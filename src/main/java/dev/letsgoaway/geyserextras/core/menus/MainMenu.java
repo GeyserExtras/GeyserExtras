@@ -18,7 +18,7 @@ public class MainMenu extends BedrockMenu {
 
     @Override
     public SimpleForm create(ExtrasPlayer player) {
-        setTitle("GeyserExtras Menu");
+        setTitle(player.translateGE("ge.menu"));
         add(new Button(Action.SWAP_OFFHAND.translate(player), FormImage.Type.PATH, "textures/ui/move.png", () -> {
             Action.SWAP_OFFHAND.run(player);
         }));

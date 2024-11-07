@@ -12,11 +12,11 @@ import java.util.List;
 public class MenuSection extends Section {
     @Override
     public void build(BedrockForm menu, GeyserSession session, ExtrasPlayer player) {
-        menu.add(new Toggle("Inventory Double Click for Menu Shortcut", player.getPreferences().isEnableDoubleClickShortcut(), (b) -> {
+        menu.add(new Toggle(player.translateGE("ge.settings.menu.doubleClickInventoryShortcut"), player.getPreferences().isEnableDoubleClickShortcut(), (b) -> {
             player.getPreferences().setEnableDoubleClickShortcut(b);
         }));
 
-        menu.add(new Slider("Double Click Time (ms)", 150, 350, 10, player.getPreferences().getDoubleClickMS(),
+        menu.add(new Slider(player.translateGE("ge.settings.menu.doubleClickTime"), 150, 350, 10, player.getPreferences().getDoubleClickMS(),
                 (i) -> {
                     player.getPreferences().setDoubleClickMS(Math.round(i));
                 }));
@@ -27,8 +27,8 @@ public class MenuSection extends Section {
     }
 
     @Override
-    public List<String> getHeader() {
-        return List.of("Menu", "");
+    public List<String> getHeader(ExtrasPlayer player) {
+        return List.of(player.translateGE("ge.settings.menu.title"), "");
     }
 
     @Override

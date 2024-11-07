@@ -3,11 +3,17 @@ package dev.letsgoaway.geyserextras.core.cache;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import dev.letsgoaway.geyserextras.core.locale.GELocale;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
@@ -19,7 +25,7 @@ import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class Cache {
     public static final ObjectMapper JSON_MAPPER = new ObjectMapper().disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
-
+    public static final Gson gson = new Gson();
     public static Path CACHE_FOLDER;
     public static CacheDates CACHE_DATES;
 
@@ -81,6 +87,7 @@ public class Cache {
             CREDITS_TEXT = new String(data.readAllBytes()).replaceAll("&", "§");
         } catch (Exception e) {
         }
+        GELocale.loadAll();
     }
 
 
@@ -94,8 +101,20 @@ public class Cache {
 
     private static void downloadLanguages() {
         try {
-            byte[] data = new URL("https://raw.githubusercontent.com/GeyserExtras/data/main/langs/language_names.json").openStream().readAllBytes();
-            JsonNode languageNamesJson = JSON_MAPPER.readTree(data);
+            InputStream in = new URL("https://raw.githubusercontent.com/GeyserExtras/data/main/langs/language_names.json").openStream();
+            byte[] inarr = in.readAllBytes();
+            String langNames = new String(inarr, StandardCharsets.UTF_8);
+
+            PrintWriter out = new PrintWriter(LANGUAGE_FOLDER.resolve("language_names.json").toFile());
+            out.println(langNames);
+            out.close();
+
+            String[][] langs = gson.fromJson(langNames, String[][].class);
+
+            for (String[] lang : langs) {
+                InputStream langJson = new URL("https://raw.githubusercontent.com/GeyserExtras/data/main/langs/" + lang[0] + ".json").openStream();
+                Files.copy(langJson, LANGUAGE_FOLDER.resolve(lang[0] + ".json"), StandardCopyOption.REPLACE_EXISTING);
+            }
         } catch (IOException ignored) {
         }
     }
@@ -106,6 +125,9 @@ public class Cache {
     private static boolean checkData() {
         dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
         try {
+            if (isDirEmpty(LANGUAGE_FOLDER)) {
+                return true;
+            }
             byte[] data = new URL("https://api.github.com/repos/GeyserExtras/data/branches/main").openStream().readAllBytes();
             JsonNode clientDataJson = JSON_MAPPER.readTree(data);
             long githubDataTime = dateFormat.parse(clientDataJson.get("commit").get("commit").get("author").get("date").asText()).toInstant().getEpochSecond();
@@ -118,6 +140,13 @@ public class Cache {
             return false;
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    // https://stackoverflow.com/questions/5930087/how-to-check-if-a-directory-is-empty-in-java
+    private static boolean isDirEmpty(final Path directory) throws IOException {
+        try (DirectoryStream<Path> dirStream = Files.newDirectoryStream(directory)) {
+            return !dirStream.iterator().hasNext();
         }
     }
 }

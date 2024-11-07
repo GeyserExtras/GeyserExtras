@@ -1,5 +1,6 @@
 package dev.letsgoaway.geyserextras.core.utils;
 
+import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.locale.BedrockLocale;
 import org.geysermc.geyser.api.bedrock.camera.GuiElement;
 import org.geysermc.geyser.session.GeyserSession;
@@ -38,49 +39,16 @@ public enum GUIElements {
         return session.camera().isHudElementHidden(this.geyserElement);
     }
 
-    public String translateOptions(GeyserSession session) {
+    public String translateOptions(ExtrasPlayer player) {
+        String hide = player.translateGE("ge.settings.hud.hide");
         switch (this) {
-            case AIR_BUBBLES_BAR -> {
-                return "Hide Air Bubbles Bar";
-            }
-            case ARMOR -> {
-                return "Hide Armor Bar";
-            }
-            case CROSSHAIR -> {
-                return "Hide Crosshair";
-            }
-            case EFFECTS_BAR -> {
-                return "Hide Effects Bar";
-            }
-            case PROGRESS_BAR -> {
-                return "Hide Experience Bar";
-            }
-            case FOOD_BAR -> {
-                return "Hide Hunger Bar";
-            }
-            case HEALTH -> {
-                return "Hide Health Bar";
-            }
-            case HOTBAR -> {
-                return "Hide Hotbar";
-            }
-            case ITEM_TEXT_POPUP -> {
-                return "Hide Item Text Popup";
-            }
-            case VEHICLE_HEALTH -> {
-                return "Hide Mounted Entity Health";
+            default -> {
+                return hide.replace("%s", this.name().toLowerCase());
             }
             // lololol ez translation
             case PAPER_DOLL -> {
                 return BedrockLocale.OPTIONS.HIDE_PAPER_DOLL;
             }
-            case TOOL_TIPS -> {
-                return "Hide Tooltips";
-            }
-            case TOUCH_CONTROLS -> {
-                return "Hide Touch Controls";
-            }
         }
-        return this.name();
     }
 }
