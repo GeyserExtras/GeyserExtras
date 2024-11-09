@@ -1,28 +1,28 @@
 package dev.letsgoaway.geyserextras;
 
-public class ReleaseVersion {
+public class LegacyV1ReleaseVersion {
     public Version3 minecraftVersion;
     public Version3 resourceVersion;
 
     public boolean prerelease = false;
 
-    ReleaseVersion(Version3 minecraftVersion, Version3 resourceVersion) {
+    LegacyV1ReleaseVersion(Version3 minecraftVersion, Version3 resourceVersion) {
         this.minecraftVersion = minecraftVersion;
         this.resourceVersion = resourceVersion;
     }
 
-    ReleaseVersion(Version3 minecraftVersion) {
+    LegacyV1ReleaseVersion(Version3 minecraftVersion) {
         this.minecraftVersion = minecraftVersion;
         this.resourceVersion = resourceVersion;
     }
 
-    ReleaseVersion(Version3 minecraftVersion, boolean prerelease) {
+    LegacyV1ReleaseVersion(Version3 minecraftVersion, boolean prerelease) {
         this.minecraftVersion = minecraftVersion;
         this.resourceVersion = resourceVersion;
         this.prerelease = prerelease;
     }
 
-    ReleaseVersion(String string) {
+    LegacyV1ReleaseVersion(String string) {
         String[] versions = string.split("-v");
         if (string.contains("+v")) {
             versions = string.split("\\+v");
@@ -32,7 +32,7 @@ public class ReleaseVersion {
         this.resourceVersion = Version3.fromString(versions[1]);
     }
 
-    public boolean isNewer(ReleaseVersion v) {
+    public boolean isNewer(LegacyV1ReleaseVersion v) {
         return this.resourceVersion.isNewer(v.resourceVersion);
     }
 

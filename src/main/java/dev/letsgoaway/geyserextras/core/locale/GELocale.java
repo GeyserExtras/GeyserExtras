@@ -1,18 +1,12 @@
 package dev.letsgoaway.geyserextras.core.locale;
 
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import dev.letsgoaway.geyserextras.core.cache.Cache;
-import org.geysermc.geyser.session.GeyserSession;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
-
-import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
-import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class GELocale {
     private static HashMap<String, HashMap<String, String>> LANGUAGES_MAP = new HashMap<>();
@@ -22,10 +16,10 @@ public class GELocale {
             FileInputStream data = new FileInputStream(Cache.LANGUAGE_FOLDER.resolve("language_names.json").toFile());
 
             String langNames = new String(data.readAllBytes(), StandardCharsets.UTF_8);
-            String[][] langs = Cache.gson.fromJson(langNames, String[][].class);
+            String[][] langs = Cache.GSON.fromJson(langNames, String[][].class);
             for (String[] lang : langs) {
                 FileInputStream langData = new FileInputStream(Cache.LANGUAGE_FOLDER.resolve(lang[0] + ".json").toFile());
-                JsonObject json = Cache.gson.fromJson(new String(langData.readAllBytes(), StandardCharsets.UTF_8), JsonObject.class);
+                JsonObject json = Cache.GSON.fromJson(new String(langData.readAllBytes(), StandardCharsets.UTF_8), JsonObject.class);
                 HashMap<String, String> languageData = new HashMap<>();
                 for (String key : json.keySet()) {
                     String translation = json.get(key).getAsString();

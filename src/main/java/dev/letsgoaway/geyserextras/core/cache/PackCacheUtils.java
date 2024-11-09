@@ -40,13 +40,13 @@ public class PackCacheUtils {
             }
             if (optionalPackNeedsUpdate) {
                 SERVER.log("Downloading GeyserOptionalPack...");
-                InputStream in = new URL("https://download.geysermc.org/v2/projects/geyseroptionalpack/versions/latest/builds/latest/downloads/geyseroptionalpack").openStream();
+                InputStream in = HTTP.request("https://download.geysermc.org/v2/projects/geyseroptionalpack/versions/latest/builds/latest/downloads/geyseroptionalpack");
                 Files.copy(in, GEYSER_OPTIONAL_PACK, StandardCopyOption.REPLACE_EXISTING);
                 SERVER.log("GeyserOptionalPack downloaded!");
             }
             if (extrasPackNeedsUpdate) {
                 SERVER.log("Downloading GeyserExtrasPack...");
-                InputStream in = new URL("https://raw.githubusercontent.com/GeyserExtras/GeyserExtrasPack/main/GeyserExtrasPack.mcpack").openStream();
+                InputStream in = HTTP.request("https://raw.githubusercontent.com/GeyserExtras/GeyserExtrasPack/main/GeyserExtrasPack.mcpack");
                 Files.copy(in, GEYSER_EXTRAS_PACK, StandardCopyOption.REPLACE_EXISTING);
                 SERVER.log("GeyserExtrasPack downloaded!");
             }

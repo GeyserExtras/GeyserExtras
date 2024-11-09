@@ -48,6 +48,21 @@ public enum Perspectives {
         return CameraPerspective.FIRST_PERSON;
     }
 
+    // I'm sure there is a better way to do this but good enough for now
+    public Perspectives getNext() {
+        switch (this) {
+            case FIRST_PERSON -> {
+                return THIRD_PERSON_BACK;
+            }
+            case THIRD_PERSON_BACK -> {
+                return THIRD_PERSON_FRONT;
+            }
+            case THIRD_PERSON_FRONT -> {
+                return FIRST_PERSON;
+            }
+        }
+        return THIRD_PERSON_BACK;
+    }
 
     public static LinkedHashMap<String, Perspectives> buildTranslations(GeyserSession session) {
         LinkedHashMap<String, Perspectives> translations = new LinkedHashMap<>();

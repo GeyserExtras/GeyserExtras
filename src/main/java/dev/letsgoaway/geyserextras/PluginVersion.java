@@ -8,6 +8,7 @@ import com.google.gson.JsonParser;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.file.Files;
@@ -18,7 +19,7 @@ import java.util.logging.Logger;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class PluginVersion {
-    public static final String GE_VERSION = "2.0.0-ALPHA-12";
+    public static final String GE_VERSION = "2.0.0-ALPHA-13";
 
     public static String latestVersion = "";
 
@@ -27,9 +28,9 @@ public class PluginVersion {
             URL url = new URL("https://api.modrinth.com/v2/project/geyserextras/version");
             URLConnection request = url.openConnection();
             request.setConnectTimeout(5000);
+            request.setRequestProperty("User-Agent","GeyserExtras/GeyserExtras/"+GE_VERSION);
             request.connect();
-            JsonParser jp = new JsonParser();
-            JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
+            JsonElement root = JsonParser.parseReader(new InputStreamReader((InputStream) request.getContent()));
             JsonObject latest = root.getAsJsonArray().get(0).getAsJsonObject();
             latestVersion = latest.get("version_number").getAsString();
             return !latestVersion.equals(GE_VERSION);

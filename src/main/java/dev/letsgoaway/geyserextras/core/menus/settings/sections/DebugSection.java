@@ -29,7 +29,7 @@ public class DebugSection extends Section {
                 (str) -> player.getPreferences().setSettingsMenuForm(Menus.valueOf(str))
         ));
         BedrockClientData data = session.getClientData();
-        menu.add(new SubSectionLabel("Client Data", ""));
+        menu.add(new SubSectionLabel("Client Data"));
         menu.add(new Label("Game Version: " + data.getGameVersion()));
         menu.add(new Label("Username: " + data.getUsername()));
         menu.add(new Label("Offline ID: " + data.getPlatformOfflineId()));
@@ -50,7 +50,7 @@ public class DebugSection extends Section {
         menu.add(new Label("Is Persona Skin? " + data.isPersonaSkin()));
         menu.add(new Label("Is Premium Skin? " + data.isPremiumSkin()));
 
-        menu.add(new SubSectionLabel("Player Data", ""));
+        menu.add(new SubSectionLabel("Player Data"));
         menu.add(new Label("Average Ping: " + player.getCooldownHandler().getAveragePing()));
         menu.add(new Label("Average Ping (Ticks): " + (player.getCooldownHandler().getAveragePing() / 50)));
 
@@ -58,7 +58,7 @@ public class DebugSection extends Section {
         menu.add(new Label("Ping Sample: " + player.getCooldownHandler().getPingSample()));
         menu.add(new Label("Ping Sample Size: " + player.getCooldownHandler().getPingSampleSize()));
 
-        menu.add(new SubSectionLabel("GeyserExtras Info", ""));
+        menu.add(new SubSectionLabel("GeyserExtras Info"));
         menu.add(new Label("Version: " + PluginVersion.GE_VERSION));
         menu.add(new Label("Server Type: " + ServerType.get()));
         menu.add(new Label("Floodgate installed: " + (IsAvailable.floodgate() ? "Yes" : "No")));

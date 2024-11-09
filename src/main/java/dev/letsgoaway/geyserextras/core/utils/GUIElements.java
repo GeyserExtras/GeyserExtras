@@ -43,7 +43,7 @@ public enum GUIElements {
         String hide = player.translateGE("ge.settings.hud.hide");
         switch (this) {
             default -> {
-                return hide.replace("%s", this.name().toLowerCase());
+                return hide.replace("%s", player.translateGE("ge.settings.hud." + this.name().toLowerCase()));
             }
             // lololol ez translation
             case PAPER_DOLL -> {

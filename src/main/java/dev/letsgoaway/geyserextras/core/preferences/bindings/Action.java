@@ -27,6 +27,7 @@ public enum Action {
     PLAYER_LIST,
     PLATFORM_LIST,
     OPEN_INVENTORY,
+    NEXT_LOCKED_PERSPECTIVE,
     CUSTOM;
 
 
@@ -51,6 +52,12 @@ public enum Action {
                 ServerboundClientCommandPacket packet = new ServerboundClientCommandPacket(ClientCommand.STATS);
                 session.sendDownstreamGamePacket(packet);
             }
+            case PLAYER_LIST -> {
+                player.sendForm(new PlayerListMenu());
+            }
+            case PLATFORM_LIST -> {
+                // TODO: platformlist
+            }
             case OPEN_INVENTORY -> {
                 // Taken from BedrockInteractTranslator
                 if (session.getOpenInventory() == null) {
@@ -64,11 +71,8 @@ public enum Action {
                     }
                 }
             }
-            case PLAYER_LIST -> {
-              player.sendForm(new PlayerListMenu());
-            }
-            case PLATFORM_LIST -> {
-                // TODO: platformlist
+            case NEXT_LOCKED_PERSPECTIVE -> {
+                player.getPreferences().setLockedPerspective(player.getPreferences().getLockedPerspective().getNext());
             }
             case CUSTOM -> {
                 // TODO: custom
@@ -97,9 +101,6 @@ public enum Action {
                 String onOrOff = session.isAdvancedTooltips() ? "on" : "off";
                 return player.translate("debug.advanced_tooltips." + onOrOff);
             }
-            case OPEN_GE_MENU -> {
-
-            }
             case OPEN_ADVANCEMENTS -> {
                 return player.translate("gui.advancements");
             }
@@ -109,7 +110,8 @@ public enum Action {
             case PLAYER_LIST -> {
                 return BedrockLocale.KEY.PLAYER_LIST;
             }
-            case PLATFORM_LIST -> {
+            case NEXT_LOCKED_PERSPECTIVE, PLATFORM_LIST, OPEN_GE_MENU -> {
+                return player.translateGE("ge.settings.bindings.actions." + this.name().toLowerCase());
             }
             case OPEN_INVENTORY -> {
                 return BedrockLocale.KEY.OPEN_INVENTORY;

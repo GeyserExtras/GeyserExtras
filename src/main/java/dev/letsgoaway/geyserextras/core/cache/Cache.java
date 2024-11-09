@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import dev.letsgoaway.geyserextras.core.locale.GELocale;
 
 import java.io.FileInputStream;
@@ -12,7 +13,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -25,7 +25,7 @@ import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class Cache {
     public static final ObjectMapper JSON_MAPPER = new ObjectMapper().disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
-    public static final Gson gson = new Gson();
+    public static final Gson GSON = new Gson();
     public static Path CACHE_FOLDER;
     public static CacheDates CACHE_DATES;
 
@@ -92,27 +92,26 @@ public class Cache {
 
 
     private static void downloadCredits() {
+        InputStream in = HTTP.request("https://raw.githubusercontent.com/GeyserExtras/data/main/credits.txt");
         try {
-            InputStream in = new URL("https://raw.githubusercontent.com/GeyserExtras/data/main/credits.txt").openStream();
             Files.copy(in, CREDITS_PATH, StandardCopyOption.REPLACE_EXISTING);
-        } catch (IOException ignored) {
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
     private static void downloadLanguages() {
-        try {
-            InputStream in = new URL("https://raw.githubusercontent.com/GeyserExtras/data/main/langs/language_names.json").openStream();
-            byte[] inarr = in.readAllBytes();
-            String langNames = new String(inarr, StandardCharsets.UTF_8);
+        String langNames = HTTP.asText("https://raw.githubusercontent.com/GeyserExtras/data/main/langs/language_names.json");
 
+        try {
             PrintWriter out = new PrintWriter(LANGUAGE_FOLDER.resolve("language_names.json").toFile());
             out.println(langNames);
             out.close();
 
-            String[][] langs = gson.fromJson(langNames, String[][].class);
+            String[][] langs = GSON.fromJson(langNames, String[][].class);
 
             for (String[] lang : langs) {
-                InputStream langJson = new URL("https://raw.githubusercontent.com/GeyserExtras/data/main/langs/" + lang[0] + ".json").openStream();
+                InputStream langJson = HTTP.request("https://raw.githubusercontent.com/GeyserExtras/data/main/langs/" + lang[0] + ".json");
                 Files.copy(langJson, LANGUAGE_FOLDER.resolve(lang[0] + ".json"), StandardCopyOption.REPLACE_EXISTING);
             }
         } catch (IOException ignored) {
@@ -128,9 +127,14 @@ public class Cache {
             if (isDirEmpty(LANGUAGE_FOLDER)) {
                 return true;
             }
-            byte[] data = new URL("https://api.github.com/repos/GeyserExtras/data/branches/main").openStream().readAllBytes();
-            JsonNode clientDataJson = JSON_MAPPER.readTree(data);
-            long githubDataTime = dateFormat.parse(clientDataJson.get("commit").get("commit").get("author").get("date").asText()).toInstant().getEpochSecond();
+
+            JsonObject clientDataJson = GSON.fromJson(HTTP.asText("https://api.github.com/repos/GeyserExtras/data/branches/main"), JsonObject.class);
+            long githubDataTime = dateFormat.parse(clientDataJson
+                    .get("commit").getAsJsonObject()
+                    .get("commit").getAsJsonObject()
+                    .get("author").getAsJsonObject()
+                    .get("date").getAsString()
+            ).toInstant().getEpochSecond();
 
             if (githubDataTime > CACHE_DATES.getDataUpdateTime()) {
                 CACHE_DATES.setDataUpdateTime(githubDataTime);

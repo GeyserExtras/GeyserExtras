@@ -1,11 +1,13 @@
 package dev.letsgoaway.geyserextras.core.menus.settings.sections;
 
 import dev.letsgoaway.geyserextras.core.form.BedrockForm;
+import dev.letsgoaway.geyserextras.core.form.elements.MappedDropdown;
 import dev.letsgoaway.geyserextras.core.locale.BedrockLocale;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.form.elements.Dropdown;
 import dev.letsgoaway.geyserextras.core.form.elements.Slider;
 import dev.letsgoaway.geyserextras.core.form.elements.Toggle;
+import dev.letsgoaway.geyserextras.core.preferences.Perspectives;
 import org.geysermc.cumulus.util.FormImage;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.text.ChatColor;
@@ -34,6 +36,12 @@ public class VideoSection extends Section {
                 player.getPreferences().setAdjustCooldownWithPing(b);
             }));
         }
+
+        menu.add(new MappedDropdown<>(player.translateGE("ge.settings.video.lockedCameraPerspective"),
+                Perspectives.buildTranslations(session),
+                player.getPreferences().getLockedPerspective(),
+                (pov) -> player.getPreferences().setLockedPerspective(pov)
+        ));
 
         if (session.getPreferencesCache().isAllowShowCoordinates()) {
             menu.add(new Toggle(BedrockLocale.SHOW_COORDINATES, session.getPreferencesCache().isPrefersShowCoordinates(), (b) -> {
