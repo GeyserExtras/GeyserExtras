@@ -9,7 +9,6 @@ import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
 import dev.letsgoaway.geyserextras.core.form.BedrockForm;
 import dev.letsgoaway.geyserextras.core.form.BedrockModal;
 import dev.letsgoaway.geyserextras.core.parity.java.combat.CooldownHandler;
-import dev.letsgoaway.geyserextras.core.parity.java.shield.ShieldUtils;
 import dev.letsgoaway.geyserextras.core.parity.java.menus.tablist.TabListData;
 import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import dev.letsgoaway.geyserextras.core.utils.StringUtils;
@@ -157,9 +156,7 @@ public class ExtrasPlayer {
         if (GE.getConfig().isDisablePaperDoll()) {
             session.camera().hideElement(GuiElement.PAPER_DOLL);
         }
-        if (GE.getConfig().isEnableToggleBlock()) {
-            ShieldUtils.updateBlockSpeed(session);
-        }
+
         if (session.getDimensionType().isNetherLike()) {
             if (session.camera().fogEffects().contains(DimensionUtils.BEDROCK_FOG_HELL)) {
                 session.camera().removeFog(DimensionUtils.BEDROCK_FOG_HELL);

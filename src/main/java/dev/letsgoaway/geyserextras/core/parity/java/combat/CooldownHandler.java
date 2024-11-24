@@ -101,9 +101,6 @@ public class CooldownHandler {
 
     public void tick() {
         calculateAveragePing();
-        if (GE.getConfig().isEnableToggleBlock()) {
-            setArmAnimationTicks(-1);
-        }
         if (lastMouseoverID != 0 && session.getMouseoverEntity() != null && isTool()) {
             readyToAttack = session.getMouseoverEntity().isAlive();
         } else {
@@ -223,16 +220,7 @@ public class CooldownHandler {
         }
         averagePing = (double) pingSample / pingSampleSize;
     }
-
-    // Used to disable the automatic re blocking when sneaking + attacking done by Geyser
-    private void setArmAnimationTicks(int ticks) {
-        try {
-            ReflectionAPI.setValue(session, ReflectionAPI.getFieldAccessible(GeyserSession.class, "armAnimationTicks"), ticks);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
+    
     public void setLastHotbarTime(long time) {
         lastHotbarTime = time;
         setLastSwingTime(time);

@@ -20,12 +20,6 @@ public final class GeyserExtrasConfig {
     private boolean enableJavaCombatSounds = true;
 
     @Comment("""
-            # Enable toggling the shield by pressing right click.
-            # THIS CAN GET YOU BANNED FROM SERVERS AS YOU WALK FASTER WHILE BLOCKING
-            # THAN JAVA PLAYERS! USE AT YOUR OWN RISK IF USING GEYSER STANDALONE.""")
-    private boolean enableToggleBlock = false;
-
-    @Comment("""
             Forces block placements to not be hold-bridgable/scaffold-bridgeable.
             Requires disable-bedrock-scaffolding: true in Geyser's config for forward block placements.
             """)

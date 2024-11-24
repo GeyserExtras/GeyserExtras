@@ -17,7 +17,6 @@ import org.geysermc.geyser.session.cache.SkullCache;
 import org.geysermc.geyser.translator.inventory.InventoryTranslator;
 import org.geysermc.geyser.translator.protocol.Translator;
 import org.geysermc.geyser.translator.protocol.bedrock.BedrockInventoryTransactionTranslator;
-import dev.letsgoaway.geyserextras.core.parity.java.shield.ShieldUtils;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 
@@ -42,29 +41,7 @@ public class BedrockInventoryTransactionInjector extends BedrockInventoryTransac
         //SERVER.log(String.valueOf(System.currentTimeMillis() - player.getCooldownHandler().getLastBlockRightClickTime()));
         InventoryTransactionType type = packet.getTransactionType();
         // Trying to do a block interaction, but we should disable the shield first
-        if (GE.getConfig().isEnableToggleBlock()
-                && ShieldUtils.getBlocking(session)
-                && type.equals(InventoryTransactionType.ITEM_USE)
-                && packet.getActionType() == 0
-                && packet.getClickPosition() != null) {
-            if (System.currentTimeMillis() - player.getCooldownHandler().getLastBlockRightClickTime() > 100 && ShieldUtils.disableBlocking(session)) {
-                Vector3i position = packet.getBlockPosition();
-                if (position == null) {
-                    position = packet.getClickPosition().toInt();
-                }
-                restoreCorrectBlock(session, position, packet);
-                session.getPlayerEntity().updateBedrockMetadata();
-                // If the user can block again, then their item they are holding
-                // does not have an important action
-                // if it does, we should process it
-                if (ShieldUtils.canBlock(session)) {
-                    return;
-                }
-            } else {
-                player.getCooldownHandler().setSkipNextItemUse1(true);
-            }
-            player.getCooldownHandler().setLastBlockRightClickTime(System.currentTimeMillis());
-        }
+
         super.translate(session, packet);
 
         if (type.equals(InventoryTransactionType.ITEM_USE_ON_ENTITY)) {
@@ -73,37 +50,12 @@ public class BedrockInventoryTransactionInjector extends BedrockInventoryTransac
 
             // Entity Damage
             if (packet.getActionType() == 1) {
-
-                if (GE.getConfig().isEnableToggleBlock() && ShieldUtils.disableBlocking(session)) {
-                    session.getPlayerEntity().updateBedrockMetadata();
-                }
-
                 player.getCooldownHandler().setDigTicks(-1);
                 player.getCooldownHandler().setLastSwingTime(System.currentTimeMillis());
             }
         }
         if (type.equals(InventoryTransactionType.ITEM_USE)) {
             // Item use
-            if (GE.getConfig().isEnableToggleBlock()) {
-                if (packet.getActionType() == 0) {
-                    player.getCooldownHandler().setLastClickWasAirClick(false);
-                    player.getCooldownHandler().setLastBlockRightClickTime(System.currentTimeMillis());
-                }
-                if (packet.getActionType() == 1) {
-                    if (player.getCooldownHandler().isSkipNextItemUse1()) {
-                        player.getCooldownHandler().setSkipNextItemUse1(false);
-                        return;
-                    }
-                    if (System.currentTimeMillis() - player.getCooldownHandler().getLastBlockRightClickTime() > 100) {
-                        player.getCooldownHandler().setLastClickWasAirClick(true);
-                    }
-                    if (!session.isSneaking()) {
-                        ShieldUtils.checkBlock(session);
-                    } else if (System.currentTimeMillis() - player.getCooldownHandler().getLastBlockRightClickTime() > 100) {
-                        ShieldUtils.checkBlock(session);
-                    }
-                }
-            }
             if (packet.getActionType() == 2) { // Block Breaking
                 // Disable the GeyserExtras cooldown until next player action to
                 // match java
