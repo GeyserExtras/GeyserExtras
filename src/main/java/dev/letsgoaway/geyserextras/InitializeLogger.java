@@ -1,6 +1,7 @@
 package dev.letsgoaway.geyserextras;
 
 import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
+import org.geysermc.geyser.api.util.PlatformType;
 
 import java.text.DecimalFormat;
 import java.time.Duration;
@@ -18,13 +19,14 @@ public class InitializeLogger {
         info("--------------GeyserExtras--------------");
         info("Version: " + PluginVersion.GE_VERSION);
         info("Server Type: " + ServerType.get());
+        info("Platform Type: " + ServerType.platform());
         info("Floodgate installed: " + (IsAvailable.floodgate() ? "Yes" : "No"));
         if (IsAvailable.floodgate()) {
             SERVER.warn("WARNING: Floodgate is installed, so GeyserExtras settings will not");
             SERVER.warn("show up in the Game Settings menu due to how forms work on GeyserMC.");
             SERVER.warn("If you want a temporary work around to this, use Geyser-Standalone,");
             SERVER.warn("otherwise a notification toast will show up informing players that");
-            SERVER.warn("they will have to run '/ge settings'.");
+            SERVER.warn("they will have to double tap inventory.");
         }
     }
 

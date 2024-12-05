@@ -13,11 +13,14 @@ import dev.letsgoaway.geyserextras.core.preferences.PreferencesData;
 import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import lombok.Getter;
 import lombok.Setter;
+import org.geysermc.floodgate.api.FloodgateApi;
+import org.geysermc.geyser.GeyserImpl;
 import org.geysermc.geyser.api.GeyserApi;
 import org.geysermc.geyser.api.event.EventRegistrar;
 import org.geysermc.geyser.api.event.bedrock.*;
 import org.geysermc.geyser.api.event.lifecycle.*;
 import org.geysermc.geyser.api.util.PlatformType;
+import org.geysermc.geyser.extension.GeyserExtensionClassLoader;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -39,6 +42,7 @@ public class GeyserExtras implements EventRegistrar {
     public GeyserExtras(Server server) {
         GE = this;
         SERVER = server;
+        ServerType.platformType = GeyserImpl.getInstance().getPlatformType();
 
         IsAvailable.preload();
 

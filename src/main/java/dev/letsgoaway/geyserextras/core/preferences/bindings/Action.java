@@ -1,5 +1,6 @@
 package dev.letsgoaway.geyserextras.core.preferences.bindings;
 
+import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.locale.BedrockLocale;
 import dev.letsgoaway.geyserextras.core.menus.MainMenu;
@@ -53,7 +54,9 @@ public enum Action {
                 session.sendDownstreamGamePacket(packet);
             }
             case PLAYER_LIST -> {
-                player.sendForm(new PlayerListMenu());
+                if (ServerType.canRunTabList()) {
+                    player.sendForm(new PlayerListMenu());
+                }
             }
             case PLATFORM_LIST -> {
                 // TODO: platformlist

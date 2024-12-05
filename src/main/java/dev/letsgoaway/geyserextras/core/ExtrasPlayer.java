@@ -14,6 +14,8 @@ import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import dev.letsgoaway.geyserextras.core.utils.StringUtils;
 import lombok.Getter;
 import lombok.Setter;
+import org.cloudburstmc.math.vector.Vector3f;
+import org.cloudburstmc.protocol.bedrock.data.camera.CameraTargetInstruction;
 import org.cloudburstmc.protocol.bedrock.packet.*;
 import org.geysermc.api.util.BedrockPlatform;
 import org.geysermc.api.util.InputMode;
@@ -65,8 +67,13 @@ public class ExtrasPlayer {
     @Getter
     @Setter
     private ScheduledFuture<?> doubleClickShortcutFuture;
+
     @Getter
     private File userPrefs;
+
+    @Getter
+    @Setter
+    private ServerboundDiagnosticsPacket diagnostics;
 
     public ExtrasPlayer(GeyserConnection connection) {
         this.session = (GeyserSession) connection;

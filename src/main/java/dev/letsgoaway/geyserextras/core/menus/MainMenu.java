@@ -1,5 +1,6 @@
 package dev.letsgoaway.geyserextras.core.menus;
 
+import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.menus.settings.menus.SettingsMenu;
 import dev.letsgoaway.geyserextras.core.parity.java.menus.serverlinks.ServerLinksMenu;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Action;
@@ -38,17 +39,17 @@ public class MainMenu extends BedrockMenu {
         add(new Button(Action.OPEN_STATISTICS.translate(player), FormImage.Type.PATH, "textures/ui/world_glyph_color_2x_black_outline.png", () -> {
             Action.OPEN_STATISTICS.run(player);
         }));
-
-        add(new Button(Action.PLAYER_LIST.translate(player), FormImage.Type.PATH, "textures/ui/Local.png", () -> {
-            Action.PLAYER_LIST.run(player);
-        }));
-
-        if (!player.getServerLinksData().getServerLinks().isEmpty()) {
-            add(new Button(player.translate("menu.server_links.title"), FormImage.Type.PATH, "textures/ui/external_link.png", () -> {
-                player.sendForm(new ServerLinksMenu());
+        if (ServerType.canRunTabList()) {
+            add(new Button(Action.PLAYER_LIST.translate(player), FormImage.Type.PATH, "textures/ui/Local.png", () -> {
+                Action.PLAYER_LIST.run(player);
             }));
-        }
 
+            if (!player.getServerLinksData().getServerLinks().isEmpty()) {
+                add(new Button(player.translate("menu.server_links.title"), FormImage.Type.PATH, "textures/ui/external_link.png", () -> {
+                    player.sendForm(new ServerLinksMenu());
+                }));
+            }
+        }
         /*
             add(new Button(BedrockLocale.MENU.RESOURCE_PACKS, FormImage.Type.PATH, "textures/ui/glyph_resource_pack.png", () -> {
                 // TODO

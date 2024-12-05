@@ -3,6 +3,8 @@ package dev.letsgoaway.geyserextras.core.handlers;
 import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.SoundReplacer;
+import org.geysermc.geyser.GeyserImpl;
+import org.geysermc.geyser.api.util.PlatformType;
 import org.geysermc.geyser.registry.Registries;
 import org.geysermc.geyser.session.GeyserSession;
 import dev.letsgoaway.geyserextras.core.handlers.bedrock.*;
@@ -37,11 +39,17 @@ public class GeyserHandler {
         Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundUpdateAttributesPacket.class, new JavaUpdateAttributesInjector());
 
         // Tab list
-        Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundTabListPacket.class, new JavaTabListInjector());
-        Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundPlayerInfoUpdatePacket.class, new JavaPlayerInfoUpdateInjector());
 
-        // Server Links (1.21+)
-        Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundServerLinksPacket.class, new JavaServerLinksInjector());
+        PlatformType platformType = GeyserImpl.getInstance().getPlatformType();
+
+        // we do this for now because of adventure library issues (this sucks!!!)
+        // todo: figure out a workaround or a better way to fix this
+        if (ServerType.canRunTabList()) {
+            Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundTabListPacket.class, new JavaTabListInjector());
+            Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundPlayerInfoUpdatePacket.class, new JavaPlayerInfoUpdateInjector());
+            // Server Links (1.21+)
+            Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundServerLinksPacket.class, new JavaServerLinksInjector());
+        }
     }
 
     public static void registerDownstream() {
@@ -59,6 +67,10 @@ public class GeyserHandler {
         // Settings
         Registries.BEDROCK_PACKET_TRANSLATORS.register(ServerSettingsRequestPacket.class, new BedrockServerSettingsRequestInjector());
 
+        // FPS Counter
+        // todo: why isnt this registering even though its being sent AAAAAAAAAAAAAAAAAAAAAAAAAAA
+        Registries.BEDROCK_PACKET_TRANSLATORS.register(ServerboundDiagnosticsPacket.class, new BedrockDiagnosticsInjector());
+
         /* Action intercept related */
         // PICK_BLOCK
         Registries.BEDROCK_PACKET_TRANSLATORS.register(BlockPickRequestPacket.class, new BedrockBlockPickRequestInjector());
@@ -74,7 +86,7 @@ public class GeyserHandler {
 
     public static ExtrasPlayer getPlayer(UUID javaUUID) {
         for (ExtrasPlayer player : GE.connections.values()) {
-            if (player.getJavaUUID().equals(javaUUID)){
+            if (player.getJavaUUID().equals(javaUUID)) {
                 return player;
             }
         }

@@ -7,6 +7,7 @@ import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.menus.Menus;
 import lombok.Getter;
 import lombok.Setter;
+import org.cloudburstmc.protocol.bedrock.packet.CameraAimAssistPacket;
 import org.geysermc.geyser.GeyserImpl;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.util.CooldownUtils;
@@ -66,6 +67,11 @@ public class PreferencesData {
 
     @Getter
     private Perspectives lockedPerspective = Perspectives.OFF;
+
+    @Getter
+    @Setter
+    private boolean aimAssist = false;
+
 
     public PreferencesData(ExtrasPlayer player) {
         this.player = player;
