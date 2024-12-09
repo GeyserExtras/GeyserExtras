@@ -13,6 +13,8 @@ import dev.letsgoaway.geyserextras.core.locale.BedrockLocale;
 import org.geysermc.cumulus.form.SimpleForm;
 import org.geysermc.cumulus.util.FormImage;
 
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
+
 public class MainMenu extends BedrockMenu {
     public MainMenu() {
         super();
@@ -51,11 +53,11 @@ public class MainMenu extends BedrockMenu {
                 }));
             }
         }
-
-        add(new Button(BedrockLocale.MENU.RESOURCE_PACKS, FormImage.Type.PATH, "textures/ui/glyph_resource_pack.png", () -> {
-            player.sendForm(new PackMenu());
-        }));
-
+        if (GE.getConfig().isDebugMode()) {
+            add(new Button(BedrockLocale.MENU.RESOURCE_PACKS, FormImage.Type.PATH, "textures/ui/glyph_resource_pack.png", () -> {
+                player.sendForm(new PackMenu());
+            }));
+        }
         return super.create(player);
     }
 }
