@@ -19,14 +19,14 @@ public class InitializeLogger {
         info("--------------GeyserExtras--------------");
         info("Version: " + PluginVersion.GE_VERSION);
         info("Server Type: " + ServerType.get());
-        info("Platform Type: " + ServerType.platform());
+        info("Platform Type: " + ServerType.platform().platformName());
         info("Floodgate installed: " + (IsAvailable.floodgate() ? "Yes" : "No"));
         if (IsAvailable.floodgate()) {
-            SERVER.warn("WARNING: Floodgate is installed, so GeyserExtras settings will not");
-            SERVER.warn("show up in the Game Settings menu due to how forms work on GeyserMC.");
-            SERVER.warn("If you want a temporary work around to this, use Geyser-Standalone,");
-            SERVER.warn("otherwise a notification toast will show up informing players that");
-            SERVER.warn("they will have to double tap inventory.");
+            warn("WARNING: Floodgate is installed, so GeyserExtras settings will not");
+            warn("show up in the Game Settings menu due to how forms work on GeyserMC.");
+            warn("If you want a temporary work around to this, use Geyser-Standalone,");
+            warn("otherwise a notification toast will show up informing players that");
+            warn("they will have to double tap inventory.");
         }
     }
 

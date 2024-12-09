@@ -14,6 +14,6 @@ public class ExtensionTickUtil implements TickUtil {
 
     @Override
     public void runSync(Runnable func, ExtrasPlayer player) {
-        player.getSession().getEventLoop().schedule(func, 0, TimeUnit.NANOSECONDS);
+        player.getSession().getTickEventLoop().schedule(func, 0, TimeUnit.NANOSECONDS);
     }
 }

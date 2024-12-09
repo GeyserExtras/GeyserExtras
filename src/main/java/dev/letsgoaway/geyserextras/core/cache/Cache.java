@@ -7,6 +7,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import dev.letsgoaway.geyserextras.core.locale.GELocale;
+import dev.letsgoaway.geyserextras.core.parity.java.menus.packs.PackLoader;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -58,9 +59,9 @@ public class Cache {
         SERVER.log("Loading cache...");
         loadData();
 
-        PackCacheUtils.initialize();
         SERVER.log("Loading resources...");
-
+        PackCacheUtils.initialize();
+        PackLoader.initialize();
     }
 
     public static void saveCacheDates() {

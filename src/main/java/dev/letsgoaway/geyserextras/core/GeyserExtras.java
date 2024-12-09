@@ -1,9 +1,6 @@
 package dev.letsgoaway.geyserextras.core;
 
-import dev.letsgoaway.geyserextras.InitializeLogger;
-import dev.letsgoaway.geyserextras.PluginVersion;
-import dev.letsgoaway.geyserextras.Server;
-import dev.letsgoaway.geyserextras.ServerType;
+import dev.letsgoaway.geyserextras.*;
 import dev.letsgoaway.geyserextras.core.cache.Cache;
 import dev.letsgoaway.geyserextras.core.cache.PackCacheUtils;
 import dev.letsgoaway.geyserextras.core.config.ConfigLoader;
@@ -13,20 +10,13 @@ import dev.letsgoaway.geyserextras.core.preferences.PreferencesData;
 import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import lombok.Getter;
 import lombok.Setter;
-import org.geysermc.floodgate.api.FloodgateApi;
+
 import org.geysermc.geyser.GeyserImpl;
 import org.geysermc.geyser.api.GeyserApi;
 import org.geysermc.geyser.api.event.EventRegistrar;
 import org.geysermc.geyser.api.event.bedrock.*;
 import org.geysermc.geyser.api.event.lifecycle.*;
-import org.geysermc.geyser.api.util.PlatformType;
-import org.geysermc.geyser.extension.GeyserExtensionClassLoader;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class GeyserExtras implements EventRegistrar {
@@ -67,7 +57,6 @@ public class GeyserExtras implements EventRegistrar {
         SERVER.log("Loading config...");
         ConfigLoader.load();
 
-
         PreferencesData.init();
 
         SERVER.log("Registering events...");
@@ -92,6 +81,7 @@ public class GeyserExtras implements EventRegistrar {
         if (ServerType.isExtension()) {
             InitializeLogger.end();
         }
+
         PluginVersion.checkForUpdatesAndPrintToLog();
     }
 
@@ -114,13 +104,11 @@ public class GeyserExtras implements EventRegistrar {
             SERVER.log("Initializing cache...");
             Cache.initialize();
             InitializeLogger.end();
-
         }
     }
 
     public void onSessionLogin(SessionLoginEvent ev) {
-        connections.remove(ev.connection().xuid());
-        connections.put(ev.connection().xuid(), SERVER.createPlayer(ev.connection()));
+
     }
 
     public void onSessionJoin(SessionJoinEvent ev) {
@@ -165,6 +153,8 @@ public class GeyserExtras implements EventRegistrar {
     }
 
     public void onLoadPacks(SessionLoadResourcePacksEvent ev) {
+        connections.remove(ev.connection().xuid());
+        connections.put(ev.connection().xuid(), SERVER.createPlayer(ev.connection()));
         PackCacheUtils.onPackLoadEvent(connections.get(ev.connection().xuid()), ev);
     }
 }

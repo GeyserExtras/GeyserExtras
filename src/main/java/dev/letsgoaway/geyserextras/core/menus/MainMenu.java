@@ -2,6 +2,7 @@ package dev.letsgoaway.geyserextras.core.menus;
 
 import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.menus.settings.menus.SettingsMenu;
+import dev.letsgoaway.geyserextras.core.parity.java.menus.packs.PackMenu;
 import dev.letsgoaway.geyserextras.core.parity.java.menus.serverlinks.ServerLinksMenu;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Action;
 import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
@@ -50,12 +51,11 @@ public class MainMenu extends BedrockMenu {
                 }));
             }
         }
-        /*
-            add(new Button(BedrockLocale.MENU.RESOURCE_PACKS, FormImage.Type.PATH, "textures/ui/glyph_resource_pack.png", () -> {
-                // TODO
-                //new OptionalPacks(bplayer).show(bplayer);
-            }));
-        */
+
+        add(new Button(BedrockLocale.MENU.RESOURCE_PACKS, FormImage.Type.PATH, "textures/ui/glyph_resource_pack.png", () -> {
+            player.sendForm(new PackMenu());
+        }));
+
         return super.create(player);
     }
 }

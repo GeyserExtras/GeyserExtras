@@ -75,6 +75,10 @@ public class ExtrasPlayer {
     @Setter
     private ServerboundDiagnosticsPacket diagnostics;
 
+    @Setter
+    @Getter
+    private boolean packsUpdated = false;
+
     public ExtrasPlayer(GeyserConnection connection) {
         this.session = (GeyserSession) connection;
         this.javaUUID = connection.javaUuid();
@@ -85,6 +89,7 @@ public class ExtrasPlayer {
         preferences = new PreferencesData(this);
         emotesList = List.of();
         userPrefs = PreferencesData.PREFERENCES_PATH.resolve(bedrockXUID + ".json").toFile();
+        preferences.load();
     }
 
     @Getter
@@ -97,8 +102,6 @@ public class ExtrasPlayer {
             SkinSaver.save(this);
         }
 
-        preferences.load();
-
         // Update the cooldown at a faster rate for smoother animations at fast periods
         startCombatTickThread(60f);
         // Java UUID is null until login
@@ -110,7 +113,7 @@ public class ExtrasPlayer {
         if (combatTickThread != null) {
             combatTickThread.cancel(false);
         }
-        combatTickThread = session.getEventLoop().scheduleAtFixedRate(() -> {
+        combatTickThread = session.getTickEventLoop().scheduleAtFixedRate(() -> {
             if (GE.getConfig().isEnableCustomCooldown()) {
                 getCooldownHandler().tick();
             }
@@ -246,12 +249,6 @@ public class ExtrasPlayer {
 
     public void setTickingState(float tickrate) {
         this.tickrate = tickrate;
-    }
-
-    private static final List<BedrockPlatform> vrPlatforms = List.of(BedrockPlatform.GEARVR, BedrockPlatform.HOLOLENS);
-
-    public boolean isVR() {
-        return session.inputMode() == InputMode.VR || vrPlatforms.contains(session.platform());
     }
 
     public void swingArm() {

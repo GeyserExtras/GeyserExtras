@@ -3,6 +3,7 @@ package dev.letsgoaway.geyserextras.core.cache;
 import com.fasterxml.jackson.databind.JsonNode;
 import dev.letsgoaway.geyserextras.Version3;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
+import dev.letsgoaway.geyserextras.core.parity.java.menus.packs.PackLoader;
 import org.geysermc.geyser.api.event.bedrock.SessionLoadResourcePacksEvent;
 import org.geysermc.geyser.api.pack.PackCodec;
 import org.geysermc.geyser.api.pack.ResourcePack;
@@ -15,6 +16,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 import static dev.letsgoaway.geyserextras.core.cache.Cache.*;
@@ -53,6 +55,7 @@ public class PackCacheUtils {
         } catch (Exception e) {
             throw new RuntimeException("Error while downloading resources!", e);
         }
+        SERVER.log("Loading resources...");
         RP_GEYSER_OPTIONAL = ResourcePack.create(PackCodec.path(GEYSER_OPTIONAL_PACK));
         RP_GEYSER_EXTRAS = ResourcePack.create(PackCodec.path(GEYSER_EXTRAS_PACK));
     }
@@ -94,5 +97,9 @@ public class PackCacheUtils {
     public static void onPackLoadEvent(ExtrasPlayer player, SessionLoadResourcePacksEvent ev){
         ev.register(RP_GEYSER_OPTIONAL);
         ev.register(RP_GEYSER_EXTRAS);
+        List<UUID> packsToLoad = player.getPreferences().getSelectedPacks();
+        for (UUID pack : packsToLoad){
+            ev.register(PackLoader.PACKS.get(pack));
+        }
     }
 }

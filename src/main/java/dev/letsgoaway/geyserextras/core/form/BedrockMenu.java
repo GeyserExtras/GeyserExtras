@@ -9,8 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BedrockMenu {
-    private final SimpleForm.Builder simpleForm;
+    private SimpleForm.Builder simpleForm;
     private final List<Button> buttons;
+
 
     @Setter
     private String title = "";
@@ -26,12 +27,16 @@ public class BedrockMenu {
     public void onClose(ExtrasPlayer player) {
     }
 
+    public void onButtonClick(ExtrasPlayer player) {
+    }
+
     public BedrockMenu add(Button button) {
         buttons.add(button);
         return this;
     }
 
     public SimpleForm create(ExtrasPlayer player) {
+        simpleForm = SimpleForm.builder();
         simpleForm.title(this.title)
                 .content(this.header);
         for (Button button : buttons) {
@@ -41,6 +46,7 @@ public class BedrockMenu {
             for (Button button : buttons) {
                 if (response.clickedButtonId() == buttons.indexOf(button)) {
                     button.onSelect.run();
+                    onButtonClick(player);
                 }
             }
         });

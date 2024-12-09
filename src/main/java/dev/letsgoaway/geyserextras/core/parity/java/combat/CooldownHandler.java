@@ -6,6 +6,8 @@ import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.utils.GUIElements;
 import lombok.Getter;
 import lombok.Setter;
+import org.cloudburstmc.protocol.bedrock.packet.AnimateEntityPacket;
+import org.cloudburstmc.protocol.bedrock.packet.AnimatePacket;
 import org.geysermc.geyser.inventory.GeyserItemStack;
 import org.geysermc.geyser.item.Items;
 import org.geysermc.geyser.item.type.Item;
@@ -57,7 +59,6 @@ public class CooldownHandler {
     @Setter
     @Getter
     private boolean lastClickWasAirClick = false;
-
 
     public CooldownHandler(ExtrasPlayer player) {
         this.player = player;

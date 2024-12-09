@@ -13,6 +13,14 @@ public class BedrockLocale {
 
     public static final String GAME_SETTINGS_SCREEN = "%accessibility.screenName.settings";
 
+    // locales used for packs menu
+    public static class PACKS {
+        public static final String SELECT = "%gui.select";
+        public static final String REMOVE = "%addExternalServerScreen.removeButtonLabel";
+        public static final String UP = "%gui.up";
+        public static final String DOWN = "%gui.down";
+    }
+
     public static class OPTIONS {
         // Shouldn't rely on this one being in the locales for too long because its a dev one
         public static final String DISABLED = "%options.dev_nethernet_logging_verbosity.disabled";

@@ -7,7 +7,6 @@ import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.menus.Menus;
 import lombok.Getter;
 import lombok.Setter;
-import org.cloudburstmc.protocol.bedrock.packet.CameraAimAssistPacket;
 import org.geysermc.geyser.GeyserImpl;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.util.CooldownUtils;
@@ -16,7 +15,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.UUID;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 import static dev.letsgoaway.geyserextras.core.cache.Cache.JSON_MAPPER;
@@ -70,8 +72,7 @@ public class PreferencesData {
 
     @Getter
     @Setter
-    private boolean aimAssist = false;
-
+    private List<UUID> selectedPacks = new ArrayList<>();
 
     public PreferencesData(ExtrasPlayer player) {
         this.player = player;
@@ -122,7 +123,8 @@ public class PreferencesData {
         } else {
             switch (binding) {
                 case OPEN_INVENTORY -> Action.OPEN_INVENTORY.run(player);
-                default -> {}
+                default -> {
+                }
             }
         }
     }
@@ -153,29 +155,29 @@ public class PreferencesData {
     }
 
     public void load() {
-        new Thread(() -> {
-            if (player.getUserPrefs().exists()) {
-                try {
-                    FileInputStream data = new FileInputStream(player.getUserPrefs());
-                    // Copy from because session would be null
-                    this.copyFrom(JSON_MAPPER.convertValue(JSON_MAPPER.readTree(data.readAllBytes()), PreferencesData.class));
-                } catch (Exception e) {
-                    SERVER.warn("Could not load data for player " + player.getBedrockXUID() + ", restoring to default for them.\n" + e.getLocalizedMessage());
+        if (player.getUserPrefs().exists()) {
+            try {
+                FileInputStream data = new FileInputStream(player.getUserPrefs());
+                // Copy from because session would be null
+                this.copyFrom(JSON_MAPPER.convertValue(JSON_MAPPER.readTree(data.readAllBytes()), PreferencesData.class));
+            } catch (Exception e) {
+                SERVER.warn("Could not load data for player " + player.getBedrockXUID() + ", restoring to default for them.\n" + e.getLocalizedMessage());
 
-                    this.copyFrom(DEFAULT);
-                }
-            } else {
                 this.copyFrom(DEFAULT);
             }
-            this.onLoad();
-        }).start();
+        } else {
+            this.copyFrom(DEFAULT);
+        }
+        this.onLoad();
     }
 
     public void onLoad() {
         session.getPreferencesCache().setCooldownPreference(this.cooldownType);
         session.getPreferencesCache().setPrefersShowCoordinates(this.showCoordinates);
         session.setAdvancedTooltips(this.advancedTooltips);
-        session.getInventoryTranslator().updateInventory(session, session.getPlayerInventory());
+        if (player.isLoggedIn()) {
+            session.getInventoryTranslator().updateInventory(session, session.getPlayerInventory());
+        }
         session.getPreferencesCache().setPrefersCustomSkulls(this.customSkullSkins);
     }
 
@@ -192,6 +194,7 @@ public class PreferencesData {
         this.enableDoubleClickShortcut = data.enableDoubleClickShortcut;
         this.doubleClickMS = data.doubleClickMS;
         this.lockedPerspective = data.lockedPerspective;
+        this.selectedPacks = data.selectedPacks;
     }
 
     public Action setAction(Remappable binding, Action action) {
