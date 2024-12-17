@@ -26,16 +26,24 @@ import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.text.MinecraftLocale;
 import org.geysermc.geyser.util.DimensionUtils;
 
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+
+
 import java.io.File;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
+
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class ExtrasPlayer {
+
+    public Player player;
+
     @Getter
     private UUID javaUUID;
 
@@ -95,6 +103,10 @@ public class ExtrasPlayer {
     @Getter
     private boolean loggedIn = false;
 
+    public Player getPlayer(UUID playerUUID) {
+        return Bukkit.getPlayer(playerUUID);
+    }
+
     public void startGame() {
         loggedIn = true;
         sendToast(translateGE("ge.welcome_toast.line1"), translateGE("ge.welcome_toast.line2"));
@@ -148,6 +160,12 @@ public class ExtrasPlayer {
         }
 
         preferences.getAction(Remappable.values()[id]).run(this);
+    }
+
+    public void runCommand(String string) {
+        session =
+        this.player = getPlayer(session.javaUuid());
+        player.performCommand(string);
     }
 
     @Setter

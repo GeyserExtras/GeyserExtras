@@ -13,6 +13,8 @@ import dev.letsgoaway.geyserextras.core.locale.BedrockLocale;
 import org.geysermc.cumulus.form.SimpleForm;
 import org.geysermc.cumulus.util.FormImage;
 
+import org.bukkit.entity.Player;
+
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 
 public class MainMenu extends BedrockMenu {
@@ -41,6 +43,9 @@ public class MainMenu extends BedrockMenu {
 
         add(new Button(Action.OPEN_STATISTICS.translate(player), FormImage.Type.PATH, "textures/ui/world_glyph_color_2x_black_outline.png", () -> {
             Action.OPEN_STATISTICS.run(player);
+        }));
+        add(new Button("엄준식", FormImage.Type.PATH, "textures/ui/world_glyph_color_2x_black_outline.png", () -> {
+            player.runCommand("skill");
         }));
         if (ServerType.canRunTabList()) {
             add(new Button(Action.PLAYER_LIST.translate(player), FormImage.Type.PATH, "textures/ui/Local.png", () -> {

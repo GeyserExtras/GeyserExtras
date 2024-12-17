@@ -29,7 +29,8 @@ public enum Action {
     PLATFORM_LIST,
     OPEN_INVENTORY,
     NEXT_LOCKED_PERSPECTIVE,
-    CUSTOM;
+    CUSTOM,
+    SERVER_UI;
 
 
     public void run(ExtrasPlayer player) {
@@ -52,6 +53,9 @@ public enum Action {
                 session.setWaitingForStatistics(true);
                 ServerboundClientCommandPacket packet = new ServerboundClientCommandPacket(ClientCommand.STATS);
                 session.sendDownstreamGamePacket(packet);
+            }
+            case SERVER_UI -> {
+
             }
             case PLAYER_LIST -> {
                 if (ServerType.canRunTabList()) {
@@ -121,6 +125,9 @@ public enum Action {
             }
             case CUSTOM -> {
                 return BedrockLocale.GUI.CUSTOM;
+            }
+            case SERVER_UI -> {
+
             }
         }
         return this.name();
