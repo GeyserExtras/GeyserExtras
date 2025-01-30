@@ -9,6 +9,7 @@ import org.geysermc.geyser.registry.Registries;
 import org.geysermc.geyser.session.GeyserSession;
 import dev.letsgoaway.geyserextras.core.handlers.bedrock.*;
 import dev.letsgoaway.geyserextras.core.handlers.java.*;
+import org.geysermc.mcprotocollib.protocol.packet.common.clientbound.ClientboundDisconnectPacket;
 import org.geysermc.mcprotocollib.protocol.packet.common.clientbound.ClientboundServerLinksPacket;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.*;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.entity.*;
@@ -37,6 +38,10 @@ public class GeyserHandler {
         Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundOpenScreenPacket.class, new JavaOpenScreenInjector());
         // Cooldown
         Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundUpdateAttributesPacket.class, new JavaUpdateAttributesInjector());
+        // Ticking state
+        Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundTickingStatePacket.class, new JavaTickingStateInjector());
+        // Asuto reconnect (doesn't work, should look into)
+        Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundDisconnectPacket.class, new JavaDisconnectInjector());
 
         // Tab list
 

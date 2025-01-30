@@ -13,9 +13,11 @@ import lombok.Setter;
 
 import org.geysermc.geyser.GeyserImpl;
 import org.geysermc.geyser.api.GeyserApi;
+import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.event.EventRegistrar;
 import org.geysermc.geyser.api.event.bedrock.*;
 import org.geysermc.geyser.api.event.lifecycle.*;
+import org.geysermc.geyser.session.GeyserSession;
 
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -116,8 +118,19 @@ public class GeyserExtras implements EventRegistrar {
     }
 
     public void onSessionRemove(SessionDisconnectEvent ev) {
+        GeyserConnection connection = ev.connection();
         for (ExtrasPlayer player : connections.values()) {
-            if (player.getSession().bedrockUsername().equals(ev.connection().bedrockUsername())) {
+            GeyserSession session = player.getSession();
+            if (session.bedrockUsername().equals(connection.bedrockUsername())) {
+                // this occurs before bedrock authenticates properly
+                if (player.getSession().getAuthData() == null && player.getSession().getClientData() == null){
+                    // we clear the players packs here as its possible that the game crashes when trying to load a pack
+                    player.getPreferences().getSelectedPacks().clear();
+                    player.getPreferences().save();
+                }
+                if (GE.getConfig().isAutoReconnect()){
+                    player.reconnect();
+                }
                 connections.get(player.getBedrockXUID()).onDisconnect();
                 connections.remove(player.getBedrockXUID());
                 return;

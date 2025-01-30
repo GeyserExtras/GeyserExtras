@@ -53,11 +53,11 @@ public class MainMenu extends BedrockMenu {
                 }));
             }
         }
-        if (GE.getConfig().isDebugMode()) {
-            add(new Button(BedrockLocale.MENU.RESOURCE_PACKS, FormImage.Type.PATH, "textures/ui/glyph_resource_pack.png", () -> {
-                player.sendForm(new PackMenu());
-            }));
-        }
+
+        add(new Button(BedrockLocale.MENU.RESOURCE_PACKS, FormImage.Type.PATH, "textures/ui/glyph_resource_pack.png", () -> {
+            player.sendForm(new PackMenu());
+        }));
+
         return super.create(player);
     }
 }
