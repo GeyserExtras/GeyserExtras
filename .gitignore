@@ -3,3 +3,8 @@
 /build/
 /build/classes/java/main/
 /.idea/
+/bungee/build/
+/core/build/
+/extension/build/
+/spigot/build/
+/velocity/build/
