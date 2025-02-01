@@ -31,3 +31,4 @@ commands:
     usage: /<command>
     aliases:
       - muteemotechat
+      - unmuteemotechat

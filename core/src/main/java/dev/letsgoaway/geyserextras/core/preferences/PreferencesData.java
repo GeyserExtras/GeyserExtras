@@ -92,6 +92,7 @@ public class PreferencesData {
         } catch (Exception ignored) {
         }
 
+        JavaPreferencesData.init();
 
         Path defaultPath = PREFERENCES_PATH.resolve("default.json");
         DEFAULT = new PreferencesData();
@@ -172,13 +173,15 @@ public class PreferencesData {
     }
 
     public void onLoad() {
-        session.getPreferencesCache().setCooldownPreference(this.cooldownType);
-        session.getPreferencesCache().setPrefersShowCoordinates(this.showCoordinates);
-        session.setAdvancedTooltips(this.advancedTooltips);
-        if (player.isLoggedIn()) {
-            session.getInventoryTranslator().updateInventory(session, session.getPlayerInventory());
+        if (session != null) {
+            session.getPreferencesCache().setCooldownPreference(this.cooldownType);
+            session.getPreferencesCache().setPrefersShowCoordinates(this.showCoordinates);
+            session.setAdvancedTooltips(this.advancedTooltips);
+            if (player.isLoggedIn()) {
+                session.getInventoryTranslator().updateInventory(session, session.getPlayerInventory());
+            }
+            session.getPreferencesCache().setPrefersCustomSkulls(this.customSkullSkins);
         }
-        session.getPreferencesCache().setPrefersCustomSkulls(this.customSkullSkins);
     }
 
     // TODO: figure out literally any better way to do this

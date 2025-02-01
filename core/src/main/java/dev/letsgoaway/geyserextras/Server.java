@@ -5,6 +5,7 @@ import org.geysermc.geyser.api.connection.GeyserConnection;
 
 import java.io.File;
 import java.nio.file.Path;
+import java.util.UUID;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 
@@ -29,6 +30,12 @@ public interface Server {
         }
     }
 
+    default void sendEmoteChat(ExtrasPlayer player, String emoteChat) {
+    }
+
+    default void sendRawMessage(UUID javaPlayer, String message) {}
 
     Path getPluginFolder();
+
+    default void onGeyserExtrasInitialize() {}
 }

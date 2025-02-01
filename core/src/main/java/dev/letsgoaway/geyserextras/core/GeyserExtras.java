@@ -1,35 +1,42 @@
 package dev.letsgoaway.geyserextras.core;
 
-import dev.letsgoaway.geyserextras.*;
+import dev.letsgoaway.geyserextras.InitializeLogger;
+import dev.letsgoaway.geyserextras.PluginVersion;
+import dev.letsgoaway.geyserextras.Server;
+import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.cache.Cache;
 import dev.letsgoaway.geyserextras.core.cache.PackCacheUtils;
 import dev.letsgoaway.geyserextras.core.config.ConfigLoader;
 import dev.letsgoaway.geyserextras.core.config.GeyserExtrasConfig;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
+import dev.letsgoaway.geyserextras.core.parity.bedrock.EmoteUtils;
+import dev.letsgoaway.geyserextras.core.preferences.JavaPreferencesData;
 import dev.letsgoaway.geyserextras.core.preferences.PreferencesData;
 import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import lombok.Getter;
 import lombok.Setter;
-
 import org.geysermc.geyser.GeyserImpl;
 import org.geysermc.geyser.api.GeyserApi;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.event.EventRegistrar;
 import org.geysermc.geyser.api.event.bedrock.*;
-import org.geysermc.geyser.api.event.lifecycle.*;
+import org.geysermc.geyser.api.event.lifecycle.GeyserPostInitializeEvent;
+import org.geysermc.geyser.api.event.lifecycle.GeyserPreReloadEvent;
+import org.geysermc.geyser.api.event.lifecycle.GeyserShutdownEvent;
 import org.geysermc.geyser.session.GeyserSession;
 
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class GeyserExtras implements EventRegistrar {
     public static GeyserExtras GE;
     public static Server SERVER;
-
+    public GeyserApi geyserApi;
+    public ConcurrentHashMap<String, ExtrasPlayer> connections;
+    public ConcurrentHashMap<UUID, JavaPreferencesData> javaConnections;
     @Getter
     @Setter
     private GeyserExtrasConfig config;
-    public GeyserApi geyserApi;
-    public ConcurrentHashMap<String, ExtrasPlayer> connections;
 
     public GeyserExtras(Server server) {
         GE = this;
@@ -52,7 +59,10 @@ public class GeyserExtras implements EventRegistrar {
 
             SERVER.log("Initializing cache...");
             Cache.initialize();
+            SERVER.log("Loading Emote Data...");
+            EmoteUtils.initialize();
         }
+
 
         geyserApi = GeyserApi.api();
 
@@ -80,6 +90,8 @@ public class GeyserExtras implements EventRegistrar {
         // Packs
         geyserApi.eventBus().subscribe(this, SessionLoadResourcePacksEvent.class, this::onLoadPacks);
         connections = new ConcurrentHashMap<>();
+        javaConnections = new ConcurrentHashMap<>();
+
         if (ServerType.isExtension()) {
             InitializeLogger.end();
         }
@@ -105,6 +117,8 @@ public class GeyserExtras implements EventRegistrar {
             GeyserHandler.register();
             SERVER.log("Initializing cache...");
             Cache.initialize();
+            SERVER.log("Loading Emote Data...");
+            EmoteUtils.initialize();
             InitializeLogger.end();
         }
     }
@@ -123,12 +137,12 @@ public class GeyserExtras implements EventRegistrar {
             GeyserSession session = player.getSession();
             if (session.bedrockUsername().equals(connection.bedrockUsername())) {
                 // this occurs before bedrock authenticates properly
-                if (player.getSession().getAuthData() == null && player.getSession().getClientData() == null){
+                if (player.getSession().getAuthData() == null && player.getSession().getClientData() == null) {
                     // we clear the players packs here as its possible that the game crashes when trying to load a pack
                     player.getPreferences().getSelectedPacks().clear();
                     player.getPreferences().save();
                 }
-                if (GE.getConfig().isAutoReconnect()){
+                if (GE.getConfig().isAutoReconnect()) {
                     player.reconnect();
                 }
                 connections.get(player.getBedrockXUID()).onDisconnect();
@@ -150,24 +164,44 @@ public class GeyserExtras implements EventRegistrar {
     }
 
     public void onGeyserReload(GeyserPreReloadEvent ignored) {
-        if (GE.getConfig().isAutoReconnect()) {
-            for (ExtrasPlayer player : connections.values()) {
-                player.reconnect();
-            }
-        }
+        autoReconnectAll();
     }
 
     public void onGeyserShutdown(GeyserShutdownEvent ignored) {
-        if (GE.getConfig().isAutoReconnect()) {
-            for (ExtrasPlayer player : connections.values()) {
-                player.reconnect();
-            }
-        }
+        autoReconnectAll();
     }
 
     public void onLoadPacks(SessionLoadResourcePacksEvent ev) {
         connections.remove(ev.connection().xuid());
         connections.put(ev.connection().xuid(), SERVER.createPlayer(ev.connection()));
         PackCacheUtils.onPackLoadEvent(connections.get(ev.connection().xuid()), ev);
+    }
+
+    public JavaPreferencesData getJavaPreferencesData(UUID javaUUID) {
+        return javaConnections.get(javaUUID);
+    }
+
+    public void autoReconnectAll() {
+        if (getConfig().isAutoReconnect()) {
+            for (ExtrasPlayer player : connections.values()) {
+                player.getPreferences().save();
+                player.reconnect();
+            }
+        }
+    }
+
+    // These are called from the seperate plugin classes and these aren't ever called on standalone / extension
+    public void onJavaPlayerJoin(UUID javaUUID) {
+        // this still saves sometimes if your a bedrock player anyway (doesnt really matter atm but pretty stupid that it happens)
+        if (!geyserApi.isBedrockPlayer(javaUUID)) {
+            javaConnections.put(javaUUID, JavaPreferencesData.load(javaUUID));
+        }
+    }
+
+    public void onJavaPlayerLeave(UUID javaUUID) {
+        if (javaConnections.containsKey(javaUUID)) {
+            javaConnections.get(javaUUID).save();
+            javaConnections.remove(javaUUID);
+        }
     }
 }

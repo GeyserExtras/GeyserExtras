@@ -38,6 +38,8 @@ public class InitializeLogger {
             info("----------------------------------------");
         else
             info("-----------------------------------------------");
+
+        SERVER.onGeyserExtrasInitialize();
     }
 
     public static void endNoDone() {

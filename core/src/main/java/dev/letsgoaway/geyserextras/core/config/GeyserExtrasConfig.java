@@ -31,6 +31,14 @@ public final class GeyserExtrasConfig {
     @Comment("When the server closes or Geyser reloads, should GeyserExtras reconnect to the server using the below address.")
     private boolean autoReconnect = true;
 
+    @Comment(
+            """
+            The language that Java Edition players read when using a GeyserExtras command (e.g, `/muteemotechat`).
+            This is automatically set on Bedrock Edition from the player's settings.
+            You can see the list of all locale codes here: https://github.com/GeyserExtras/data/blob/main/langs/language_names.json
+            """)
+    private String defaultLocale = "en_US";
+
     @Comment("""
             The actions that will show up in the Quick-Menu. Quick-Menu requires the plugin version of Geyser.
             Actions are formatted as shown below,
@@ -80,12 +88,6 @@ public final class GeyserExtrasConfig {
             """)
     private boolean enableSkinSaving = false;
 
-    @Comment("""
-            Sets the default emote chat option for Java Players.
-            The GeyserExtras plugin forwards emote chat from Bedrock Edition to Java Players.
-            Java Players can still choose if they want to see emote chat by doing /emotechat
-            """)
-    private boolean muteEmoteChat = false;
 
     @Comment("""
             Whether to disable the Paper Doll or not.

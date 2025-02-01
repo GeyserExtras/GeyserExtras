@@ -1,2120 +1,2969 @@
-[
-  {
+{
+  "17428c4c-3813-4ea1-b3a9-d6a32f83afca": {
     "name": "Follow",
-    "uuid": "17428c4c-3813-4ea1-b3a9-d6a32f83afca",
     "message": "@ is asking everyone to &Follow& along.",
-    "specialmessage": "@: Llama train, rolling out! (&Follow&)"
+    "specialmessage": "@: Llama train, rolling out! (&Follow&)",
+    "creator": "Minecraft",
+    "price": 0,
+    "rarity": "common"
   },
-  {
+  "9a469a61-c83b-4ba9-b507-bdbe64430582": {
     "name": "Clapping",
-    "uuid": "9a469a61-c83b-4ba9-b507-bdbe64430582",
     "message": "@ is &Clapping&.",
-    "specialmessage": "@: Congratulations!"
+    "specialmessage": "@: Congratulations!",
+    "creator": "Minecraft",
+    "price": 0,
+    "rarity": "common"
   },
-  {
+  "ce5c0300-7f03-455d-aaf1-352e4927b54d": {
     "name": "Over There!",
-    "uuid": "ce5c0300-7f03-455d-aaf1-352e4927b54d",
     "message": "@ is pointing &over there&!",
-    "specialmessage": "@: This isn't working... CREEPER!"
+    "specialmessage": "@: This isn't working... CREEPER!",
+    "creator": "Minecraft",
+    "price": 0,
+    "rarity": "common"
   },
-  {
+  "4c8ae710-df2e-47cd-814d-cc7bf21a3d67": {
     "name": "Waving",
-    "uuid": "4c8ae710-df2e-47cd-814d-cc7bf21a3d67",
     "message": "@ is &Waving&.",
-    "specialmessage": "@'s arm is tired from so much Waving."
+    "specialmessage": "@'s arm is tired from so much Waving.",
+    "creator": "Minecraft",
+    "price": 0,
+    "rarity": "common"
   },
-  {
+  "2c2183c9-d8a2-aacd-9ad6-cdb260d7fc33": {
     "name": "Aggressive Pointing",
-    "uuid": "2c2183c9-d8a2-aacd-9ad6-cdb260d7fc33",
     "message": "@ is &Aggressively Pointing&",
     "specialmessage": "@ is just standing there... and &POINTING AGGRESSIVELY&"
   },
-  {
+  "d40b905d-d32e-6485-4617-5bd993460b77": {
     "name": "Rocket Leap",
-    "uuid": "d40b905d-d32e-6485-4617-5bd993460b77",
     "message": "@ is doing a &Rocket Leap&",
     "specialmessage": "@ is so happy they could fly! (&Rocket Leap&)"
   },
-  {
+  "c5ea5554-b6fd-eec2-8474-4d53cc990814": {
     "name": "Spinning",
-    "uuid": "c5ea5554-b6fd-eec2-8474-4d53cc990814",
     "message": "@ started the &Spinning&",
     "specialmessage": "@ is getting dizzy! (&Spinning&)"
   },
-  {
+  "73d8639d-47f4-e752-3eb4-208476ac327c": {
     "name": "Take the L",
-    "uuid": "73d8639d-47f4-e752-3eb4-208476ac327c",
     "message": "Take the L!",
     "specialmessage": "@ dances on your grave."
   },
-  {
+  "c9ec1072-0824-8008-6550-a8bcf5a8a945": {
     "name": "anime_run",
-    "uuid": "c9ec1072-0824-8008-6550-a8bcf5a8a945",
     "message": "@ is doing an &Anime Run&",
     "specialmessage": "@ is running like an Anime Character!"
   },
-  {
+  "146b7ff5-bbb4-54dc-673a-5b9a3f3339b7": {
+    "name": "Petting a Dog",
+    "message": "@ is &Petting a Dog&",
+    "specialmessage": "Who's a good dog? You are! (&Petting a Dog&)"
+  },
+  "bf77e5f3-f867-9099-201d-713df49d4b29": {
     "name": "Ninja Backflip",
-    "uuid": "bf77e5f3-f867-9099-201d-713df49d4b29",
     "message": "@ is doing a &Ninja Backflip&",
     "specialmessage": "@ is on a roll! (&Ninja Backflip&)"
   },
-  {
+  "f403d9e9-9d7f-8326-ffea-e35274c7df70": {
     "name": "Sleep Animation",
-    "uuid": "f403d9e9-9d7f-8326-ffea-e35274c7df70",
     "message": "@, dreaming of flying sheep? Sleep Animation's working wonders!",
     "specialmessage": "@'s snoozing! Watch out for dreamland's snoring concert!"
   },
-  {
+  "fbd5e155-1ed7-7aaf-7206-41c1b153b50b": {
     "name": "Griddy Dance",
-    "uuid": "fbd5e155-1ed7-7aaf-7206-41c1b153b50b",
     "message": "@ is doing the Griddy!",
     "specialmessage": "@ is &Griddy Dancing&"
   },
-  {
+  "34a9df51-c283-b494-62ab-f77405829f30": {
     "name": "Check This!",
-    "uuid": "34a9df51-c283-b494-62ab-f77405829f30",
     "message": "@ wants to show you something! (&Check This!&)",
     "specialmessage": "@ shows you a beauty! (&Check This!&)"
   },
-  {
+  "7858f8b0-c91d-c16b-5aa9-629bd4d4ca30": {
     "name": "Inflatable Tube Man",
-    "uuid": "7858f8b0-c91d-c16b-5aa9-629bd4d4ca30",
     "message": "@ is an &inflatable tube man&.",
     "specialmessage": "@ lacks some bones. (&Inflatable tube man&)"
   },
-  {
+  "563e7419-5b8f-68d8-1b0c-48448a2d9d6d": {
     "name": "bow",
-    "uuid": "563e7419-5b8f-68d8-1b0c-48448a2d9d6d",
     "message": "@ is taking a &Winners Bow&!",
     "specialmessage": "@ is taking a &Winners Bow&! Kneel before them!"
   },
-  {
+  "41af2a82-2f46-83c6-7265-229d1a900847": {
     "name": "Griddy",
-    "uuid": "41af2a82-2f46-83c6-7265-229d1a900847",
     "message": "@ is gridding! (&Griddy&)",
     "specialmessage": "@ knows the moves! (&Griddy&)"
   },
-  {
+  "b3b9b834-8c25-da7e-6dd6-164abe0c7cf0": {
+    "name": "One-Arm Handstand",
+    "message": "@ is doing a &One-Arm Handstand&!",
+    "specialmessage": "@ defies gravity with a stunning &One-Arm Handstand&! Balancing with poise, they're standing tall on just one hand."
+  },
+  "48db5bc8-b360-6ffd-f034-d013918e157b": {
+    "name": "Ride to Victory",
+    "message": "@ is riding to victory!",
+    "specialmessage": "@ is visualizing their success and riding to victory!"
+  },
+  "02f4f5f4-0e00-dc19-71e2-0b309c50db80": {
+    "name": "Gravity Glitch",
+    "message": "@ is doing the &Gravity Glitch&!",
+    "specialmessage": "@ is defying physics with the &Gravity Glitch&!"
+  },
+  "25ff75aa-bf6d-d023-9cc2-762e607c9a5f": {
     "name": "Jump Scare",
-    "uuid": "25ff75aa-bf6d-d023-9cc2-762e607c9a5f",
     "message": "@ is &terrified&!",
     "specialmessage": "Who jumpscared @?"
   },
-  {
+  "d2470e8c-8ebd-e331-a122-e32e100877a6": {
     "name": "The Shoot",
-    "uuid": "d2470e8c-8ebd-e331-a122-e32e100877a6",
     "message": "@ is doing The Shoot.",
     "specialmessage": "@ wrecked you and is now dancing The Shoot"
   },
-  {
+  "91800d81-1b6f-b003-33fb-422e0a50b199": {
     "name": "Gorilla",
-    "uuid": "91800d81-1b6f-b003-33fb-422e0a50b199",
     "message": "@ is raging like a &Gorilla&",
     "specialmessage": "@ is raging like a &Gorilla&! RUUUN!"
   },
-  {
+  "21e70048-7da7-e260-3a7a-2873d6ba1154": {
     "name": "Straight Stem",
-    "uuid": "21e70048-7da7-e260-3a7a-2873d6ba1154",
     "message": "@ is imitating a plant! (&Straight Stem&)",
     "specialmessage": "@ is very good at gymnastics! (&Straight Stem&)"
   },
-  {
+  "3b343e41-208c-4000-df42-517904a8d4cb": {
     "name": "Fast Dance",
-    "uuid": "3b343e41-208c-4000-df42-517904a8d4cb",
     "message": "@ is doing a &Fast Dance&! JOIN IN!",
     "specialmessage": "@ is showing their skills with a &Fast Dance&!"
   },
-  {
+  "6b025b2d-4650-28d2-2723-70da1ec1e80c": {
+    "name": "L-Dance",
+    "message": "@ is doing the &L-Dance&!",
+    "specialmessage": "Someone is taking an L from @!"
+  },
+  "981d34f1-85ed-8540-0644-9ca79728a84a": {
     "name": "Heroic Backflip",
-    "uuid": "981d34f1-85ed-8540-0644-9ca79728a84a",
     "message": "@ is doing a &Heroic Backflip&",
     "specialmessage": "@ just busted their superhero cover! (&Heroic Backflip&)"
   },
-  {
+  "becd354e-9585-06e3-dc5f-b96f57f62333": {
     "name": "Star Shuffle",
-    "uuid": "becd354e-9585-06e3-dc5f-b96f57f62333",
     "message": "@ is doing the (&Star Shuffle&)",
     "specialmessage": "Oh my stars, you can dance! (&Star Shuffle&)"
   },
-  {
+  "41d02fd2-72a3-4319-194f-962e9a935f48": {
     "name": "Fast Running",
-    "uuid": "41d02fd2-72a3-4319-194f-962e9a935f48",
     "message": "@ is running at the speed of light! (&Fast Running&)",
     "specialmessage": "@ gotta go fast! (&Fast Running&)"
   },
-  {
+  "d3a7450b-ca8e-79d9-12c4-63594bb6bcc5": {
     "name": "Hit By Shulker",
-    "uuid": "d3a7450b-ca8e-79d9-12c4-63594bb6bcc5",
     "message": "@ was &Hit By Shulker&",
     "specialmessage": "It seems that @ doesn't like having both feet on the ground.(&Hit By Shulker&)"
   },
-  {
+  "44e306e1-cb31-c791-fe2d-6addb9270189": {
     "name": "Raise the Roof",
-    "uuid": "44e306e1-cb31-c791-fe2d-6addb9270189",
     "message": "@ is &Raising the Roof& ",
     "specialmessage": "@ is &Raising the Roof&! WOOP WOOP!"
   },
-  {
+  "4d87632b-5391-a28d-424a-5a87923a2f87": {
+    "name": "Victory Cartwheel",
+    "message": "@ is doing a victorious cartwheel!",
+    "specialmessage": "@ is performing a magnificent cartwheel!"
+  },
+  "1c082444-afe2-2223-7c7f-1d0e9fe5a5e0": {
+    "name": "Chicken Flying",
+    "message": "@ is flying like a chicken!",
+    "specialmessage": "@ is flapping their wings and flying like a chicken!"
+  },
+  "b494a015-a60d-408f-c124-db0b8a04a8e5": {
     "name": "The Worm",
-    "uuid": "b494a015-a60d-408f-c124-db0b8a04a8e5",
     "message": "@ is imitating a Worm!",
     "specialmessage": "@ is doing an impresive Worm Dance!"
   },
-  {
+  "b30ff7de-8459-e6e5-a6f3-5d36660cc013": {
+    "name": "T-Pose",
+    "message": "@ is doing &the T-Pose&!",
+    "specialmessage": "@ is a certified T-poser! (&T-Pose&)"
+  },
+  "cf5c4f0b-f73a-355b-8d7d-b9ceb9d9b28d": {
     "name": "Flossing",
-    "uuid": "cf5c4f0b-f73a-355b-8d7d-b9ceb9d9b28d",
     "message": "@ used &Flossing&",
     "specialmessage": "@ is dancing. (&Flossing&)"
   },
-  {
+  "f975905a-0b2b-be69-f25e-f5ce40fff28a": {
     "name": "Dab",
-    "uuid": "f975905a-0b2b-be69-f25e-f5ce40fff28a",
     "message": "@ is &Dabbing&!",
     "specialmessage": "@ thinks it's 2016 and is &Dabbing&!"
   },
-  {
+  "f4374f93-f441-5ef5-e72f-33b14e8ed144": {
+    "name": "Glitch Walk",
+    "message": "@ is doing the &Glitch Walk&.",
+    "specialmessage": "@ has strange hiccups. (&Glitch Walk&)"
+  },
+  "913a299d-c16c-63fe-8167-aa2f061ce736": {
     "name": "Jubilation",
-    "uuid": "913a299d-c16c-63fe-8167-aa2f061ce736",
     "message": "@ is celebrating.",
     "specialmessage": "@ is going crazy!"
   },
-  {
+  "83c92ab6-ab90-5253-659f-1a74c19868f1": {
+    "name": "Rock On",
+    "message": "@ celebrates the music.",
+    "specialmessage": "@ shouts \"Yeah, awesome beat!\""
+  },
+  "e90d32e1-bb24-c68b-33b6-117b51209109": {
+    "name": "Crazy Rider",
+    "message": "@ is faster than you!",
+    "specialmessage": " @ is a crazy rider!"
+  },
+  "294c4ef4-d7d1-1edb-14b7-95e1677e827e": {
     "name": "Helicopter Spin",
-    "uuid": "294c4ef4-d7d1-1edb-14b7-95e1677e827e",
     "message": "@'s spinning in the Helicopter Spin Animation – dizzy yet?",
     "specialmessage": "Look up! @'s mastering the Helicopter – flying or flailing?"
   },
-  {
+  "e64848e7-cd6a-1eb4-476f-e53ccba1a087": {
     "name": "To di World",
-    "uuid": "e64848e7-cd6a-1eb4-476f-e53ccba1a087",
     "message": "@ is posing &To di World&",
     "specialmessage": "@ is having fun! (&To di World&)"
   },
-  {
+  "d6b18ef1-fece-f989-d559-6b86482d5648": {
+    "name": "Winner Dance",
+    "message": "@ is doing the &Winner Dance&",
+    "specialmessage": "@ is a winner"
+  },
+  "8ec59f5b-0366-a066-57d2-94742e7a90b1": {
     "name": "Helicopter",
-    "uuid": "8ec59f5b-0366-a066-57d2-94742e7a90b1",
     "message": "@ is a helicopter",
     "specialmessage": "Helicopter makes chop chop chop chop."
   },
-  {
+  "8fea740a-399d-ba05-c13a-847c88afff9f": {
+    "name": "Butterfly",
+    "message": "@ is a &Butterfly&",
+    "specialmessage": "Does anybody know @ became a &Butterfly& ?"
+  },
+  "f1e500f6-cb8c-f224-822b-6b3ca8edff7a": {
+    "name": "Best Mates",
+    "message": "@ is dancing with their best mate!",
+    "specialmessage": "Are we best mates?"
+  },
+  "b6b0b5fe-aa5c-8ba2-3924-55fe16d5f3f8": {
+    "name": "Ballet Dancing",
+    "message": "@ is &Ballet Dancing&",
+    "specialmessage": "@ is showing of their dancing skills! (&Ballet Dancing&)"
+  },
+  "3f5a4e4c-ad27-a62e-0fd1-e39fe0aa5574": {
+    "name": "Sneeze",
+    "message": "@ has a cold.",
+    "specialmessage": "Bless you @!"
+  },
+  "2e17b365-81ee-45af-a15f-09ea012ef4d0": {
     "name": "Weapon Twirling",
-    "uuid": "2e17b365-81ee-45af-a15f-09ea012ef4d0",
     "message": "@ is ready to attack! &Weapon Twirling&",
     "specialmessage": "Whoosh, whoosh, whoosh, whoosh, whoosh. The epic sound of &Weapon Twirling.&"
   },
-  {
+  "afed80c1-7372-c454-286f-83e4cdacda4d": {
     "name": "Learn to Fly",
-    "uuid": "afed80c1-7372-c454-286f-83e4cdacda4d",
     "message": "@ wants to &Learn to Fly&.",
     "specialmessage": "@ transformed into a baby bird. (&Learn to Fly&)"
   },
-  {
+  "7a21a5d2-263f-48a6-0851-4fa45d8907a8": {
     "name": "Double Dab",
-    "uuid": "7a21a5d2-263f-48a6-0851-4fa45d8907a8",
     "message": "Watch out! @ is unleashing the epic Double Dab!\"",
     "specialmessage": "@'s Double Dab – Twice the fun, double the swag!"
   },
-  {
+  "42825663-e644-87b8-4711-9bff3dac9049": {
     "name": "Twisty  Moves",
-    "uuid": "42825663-e644-87b8-4711-9bff3dac9049",
     "message": "@ has some &Twisty Moves&",
     "specialmessage": "Swish swish swish! (&Twisty Moves&)"
   },
-  {
+  "6d2b4bae-356b-40d6-8988-17ef8852d4c9": {
+    "name": "Horror Crawl",
+    "message": "@ might just be possessed. ",
+    "specialmessage": "What is @ doing?! AHHHHHHH!!! "
+  },
+  "98b76df3-4839-3a24-1d9d-0c369fa36c97": {
     "name": "Fight Taunt",
-    "uuid": "98b76df3-4839-3a24-1d9d-0c369fa36c97",
     "message": "@ is looking for some trouble. (&Fight Taunt&)",
     "specialmessage": "What are you looking at? (&Fight Taunt&)"
   },
-  {
+  "d8b477b7-5924-dc7a-966b-a1c6c9289d59": {
     "name": "Shuffle Dance",
-    "uuid": "d8b477b7-5924-dc7a-966b-a1c6c9289d59",
     "message": "@ does a &Shuffle Dance$",
     "specialmessage": "@ is out of control with the $Shuffle Dance$"
   },
-  {
+  "6e41eff6-7ecb-dba5-0f85-3534f7bb8156": {
+    "name": "Epic Break Dance",
+    "message": "@ is break dancing",
+    "specialmessage": "@ is showing some great moves"
+  },
+  "12b004c5-0e36-0b4c-6903-89f3341991fd": {
+    "name": "Watch Me Dance",
+    "message": "@ is doing the &Watch Me Dance&",
+    "specialmessage": "@ can nae nae! (&Watch Me Dance&)"
+  },
+  "9a0499d1-ceab-ed0f-5c44-87d5202ed271": {
+    "name": "Celebration",
+    "message": "@ is celebrating!",
+    "specialmessage": "@ is on top of the world!"
+  },
+  "8c925ffb-a376-5a34-d9de-9e648fd3cc94": {
+    "name": "Heart Emote",
+    "message": "@ is doing the &Heart Emote&!",
+    "specialmessage": "@ wants to show you how much they love you using the &Heart Emote&!"
+  },
+  "20b0a551-270a-0a41-ce15-dde6ebb21206": {
     "name": "Way Over Here",
-    "uuid": "20b0a551-270a-0a41-ce15-dde6ebb21206",
     "message": "@ is waving really high!",
     "specialmessage": "@ needs assistance!"
   },
-  {
+  "e27f5200-bca7-0973-d38f-c7e8126c75d0": {
     "name": "Be the Fish!",
-    "uuid": "e27f5200-bca7-0973-d38f-c7e8126c75d0",
     "message": "@ is transforming to a fish!",
     "specialmessage": "@ needs a little water."
   },
-  {
+  "738497ce-539f-4e06-9a03-dc528506a468": {
+    "name": "Giddy",
+    "message": "@ is feeling &Giddy.&",
+    "specialmessage": "@ has entered the &Giddy& zone, we can’t stop them now."
+  },
+  "27cf15b3-f24b-99c6-e41f-d148811a0e04": {
+    "name": "Teleporting",
+    "message": "@ is &Teleporting& !",
+    "specialmessage": "Wow! @ is &Teleporting& !"
+  },
+  "a384081b-6e0b-7030-894c-e506f4e504ca": {
     "name": "The Floss",
-    "uuid": "a384081b-6e0b-7030-894c-e506f4e504ca",
     "message": "@ is doing the floss.",
     "specialmessage": "where is @'s backpack."
   },
-  {
+  "92eae883-3d64-1095-6962-c856c33bd923": {
     "name": "T-Posing",
-    "uuid": "92eae883-3d64-1095-6962-c856c33bd923",
     "message": "@ is &T-Posing&!",
     "specialmessage": "@ is &T-Posing&! #Toxic"
   },
-  {
+  "8f4c970c-44b3-a75d-f12b-0fe90b0e96ee": {
+    "name": "Evil Laugh",
+    "message": "@ laughs evilly. Beware, the master plan involves stealing all the cookies! ",
+    "specialmessage": "With that laugh, @ declares world domination! "
+  },
+  "cd946bc3-f1ea-7415-aed1-1d75228a42d8": {
     "name": "Cowering",
-    "uuid": "cd946bc3-f1ea-7415-aed1-1d75228a42d8",
     "message": "@ is &Cowering& in fear!",
     "specialmessage": "@ is quaking in their boots! (&Cowering&)"
   },
-  {
+  "4dc34de0-000b-1b31-6d33-b630b29f318b": {
     "name": "Dumb Zombie Emote",
-    "uuid": "4dc34de0-000b-1b31-6d33-b630b29f318b",
     "message": "@ is doing a &Dumb Zombie Walk&!",
     "specialmessage": "@ is imitating a &Dumb Zombie&!"
   },
-  {
+  "63041af7-70ee-91a7-41a8-3c010f53f4d5": {
+    "name": "Confused",
+    "message": "@ is confused",
+    "specialmessage": "@ is not sure what happened"
+  },
+  "a4060cc3-62f4-eb34-1252-48a80784e12b": {
+    "name": "Head Spin",
+    "message": "@ is doing a &head spin&!",
+    "specialmessage": "@ is spinning  so fast!"
+  },
+  "40d33335-ac27-fb97-6029-064335c0585e": {
     "name": "Knee Slide",
-    "uuid": "40d33335-ac27-fb97-6029-064335c0585e",
     "message": "@ is doing a &Knee Slide&!",
     "specialmessage": "@ is celebrating with a &Knee Slide&!"
   },
-  {
+  "5cdba8c6-7496-1b17-af5e-30afacf99b79": {
     "name": "Triple Jump",
-    "uuid": "5cdba8c6-7496-1b17-af5e-30afacf99b79",
     "message": "@ is doing a &Triple Jump&!",
     "specialmessage": "@ wants to go on the moon! (&Triple Jump&)"
   },
-  {
+  "2eab8285-6de6-1be9-b7ce-e22b70047047": {
     "name": "Gives Heart",
-    "uuid": "2eab8285-6de6-1be9-b7ce-e22b70047047",
     "message": "@ gives their &heart&!",
     "specialmessage": "@ is showing much love!"
   },
-  {
+  "97978dbc-9cda-64f7-e70e-9724bef3cc17": {
     "name": "Backflip",
-    "uuid": "97978dbc-9cda-64f7-e70e-9724bef3cc17",
     "message": "@ is doing a &Backflip&!",
     "specialmessage": "@ is Flipping!"
   },
-  {
+  "947e458b-bf5d-d729-5d6f-fe96da5c8ae1": {
     "name": "Panic",
-    "uuid": "947e458b-bf5d-d729-5d6f-fe96da5c8ae1",
     "message": "@ is &Panic&ing!",
     "specialmessage": "@ doesn't know what to do! (&Panic&)"
   },
-  {
+  "2ba19c63-990e-9813-e047-c09beddb05e9": {
+    "name": "Shuffle!",
+    "message": "@ is doing the &Shuffle&!",
+    "specialmessage": "@ is Rocking the Party!"
+  },
+  "d0ef0bc9-1290-d7cd-b524-8608b5ed8bc8": {
     "name": "Spinning Take Off",
-    "uuid": "d0ef0bc9-1290-d7cd-b524-8608b5ed8bc8",
     "message": "@ is doing a Spinning Take Off!",
     "specialmessage": "@ is spinning so fast they might take off!"
   },
-  {
+  "415ddb6e-0032-806a-1c7d-207247db36a9": {
+    "name": "Terrified",
+    "message": "@ is shaking... they're &Terrifierf&!",
+    "specialmessage": "What's that hiding in the dark...? @ is &Terrified&!"
+  },
+  "6545956a-f9f8-6fdf-3569-608ee37df971": {
+    "name": "Headspin",
+    "message": "@ is doing the &Headspin&",
+    "specialmessage": "Don't get a bald spot @! (&Headspin&)"
+  },
+  "0188be2f-62ea-b9f9-b0bf-71539722d141": {
     "name": "Belly Flop",
-    "uuid": "0188be2f-62ea-b9f9-b0bf-71539722d141",
     "message": "@ is saying &Watch out, I am doing a Belly Flop!&",
     "specialmessage": "@ is saying &Belly Flop incoming!&"
   },
-  {
+  "329665c9-ca9a-0ddb-dc5a-a3ef95ea1737": {
     "name": "Super Cute",
-    "uuid": "329665c9-ca9a-0ddb-dc5a-a3ef95ea1737",
     "message": "@ thinks this is super cute!",
     "specialmessage": "@ :3"
   },
-  {
+  "34744bb0-79c4-1312-678c-70b892521f82": {
     "name": "Challenging Point",
-    "uuid": "34744bb0-79c4-1312-678c-70b892521f82",
     "message": "@ is pointing.",
     "specialmessage": "@ is looking for a challenge."
   },
-  {
+  "ca56db36-6de4-9c8c-2076-c75fe9fc20e1": {
     "name": "Bouncing Ball",
-    "uuid": "ca56db36-6de4-9c8c-2076-c75fe9fc20e1",
     "message": "@ is a &Bouncing Ball&",
     "specialmessage": "@ can't stop bouncing around! (&Bouncing Ball&)"
   },
-  {
+  "ad961b4f-a699-973d-e187-14e1596d0a89": {
+    "name": "Float Back",
+    "message": "@ is relaxing! (&Float Back&)",
+    "specialmessage": "@ is as light as a feather! (&Float Back&)"
+  },
+  "36e36f79-09e2-ca54-a79f-bd318e97b4ff": {
     "name": "Zero Gravity",
-    "uuid": "36e36f79-09e2-ca54-a79f-bd318e97b4ff",
     "message": "@ is floating!",
     "specialmessage": "@ hasn't discovered gravity yet!"
   },
-  {
+  "80298db9-9016-cda9-d0f6-4f89ca4842af": {
     "name": "Dramatic Anime Poses",
-    "uuid": "80298db9-9016-cda9-d0f6-4f89ca4842af",
     "message": "@ shows their &Dramatic Anime Poses&.",
     "specialmessage": "@ rocks the dance floor! (&Dramatic Anime Poses&)"
   },
-  {
+  "5d34f01f-fe46-5adf-e334-7d5a844fba37": {
+    "name": "Slow Clap",
+    "message": "@ is slow clapping (&Slow Clap&)",
+    "specialmessage": "@ is slow clapping (&Slow Clap&)"
+  },
+  "9c4b0e1d-992a-861a-0a22-2eaeaae02b43": {
+    "name": "Weapon Inspect",
+    "message": "Check this out!",
+    "specialmessage": "When you go to The Nether tell the Piglins,  @ sent you."
+  },
+  "ace4d38b-c089-52f4-cc2f-2a979804f597": {
+    "name": "Summer Dance",
+    "message": "@ is dancing the &Summer Dance&! ",
+    "specialmessage": "@ has got moves! (&Summer Dance&)"
+  },
+  "4d1b2423-48fc-f159-6898-fb58b884ffb8": {
+    "name": "Cool Flip",
+    "message": "@ is doing a &Cool Flip&!",
+    "specialmessage": "This is too easy! (&Cool Flip&)"
+  },
+  "b691aea1-c0a5-90ce-3d5c-d4ad2f89ce0d": {
     "name": "Happy Jumping",
-    "uuid": "b691aea1-c0a5-90ce-3d5c-d4ad2f89ce0d",
     "message": "@ is doing &Happy Jumping&",
     "specialmessage": "Help! @ cannot stop doing &Happy Jumping&"
   },
-  {
+  "3dd5f9ac-1579-4bf1-894a-c2db9c37c194": {
+    "name": "Tube Man",
+    "message": "@ is waving around!",
+    "specialmessage": "@ is going insane with each movement!"
+  },
+  "da4319d2-7289-3b8a-2e3f-f57efd429a2c": {
     "name": "Sprint Run",
-    "uuid": "da4319d2-7289-3b8a-2e3f-f57efd429a2c",
     "message": "@ is doing a &Sprint Run&!",
     "specialmessage": "@ is unstoppable"
   },
-  {
+  "975a6aef-d931-e382-5503-07229f242e63": {
     "name": "High Five",
-    "uuid": "975a6aef-d931-e382-5503-07229f242e63",
     "message": "@ wants to &High Five& with you!",
     "specialmessage": "@ wants to &High Five& with you!"
   },
-  {
+  "e023347d-e9bf-a884-1213-eecef49c5e56": {
+    "name": "Chicken Dance",
+    "message": "@ is doing the &Chicken Dance&!",
+    "specialmessage": "@ is ruffling some feathers!"
+  },
+  "9bcc476a-301e-3c1c-a1c4-0941d3662dd3": {
     "name": "Backflip",
-    "uuid": "9bcc476a-301e-3c1c-a1c4-0941d3662dd3",
     "message": "@ is doing a &backflip&!",
     "specialmessage": "@ is showing off their &backflip& skills!"
   },
-  {
+  "fc87883c-643e-f68d-9de3-16c32e6d42bc": {
     "name": "Clapping",
-    "uuid": "fc87883c-643e-f68d-9de3-16c32e6d42bc",
     "message": "@ is &Clapping&!",
     "specialmessage": "@ congratulates you on your masterly achievement! (&Clapping&)"
   },
-  {
+  "b8a80fc5-131b-cfc5-838e-ca83f54d402f": {
     "name": "Walking On Air",
-    "uuid": "b8a80fc5-131b-cfc5-838e-ca83f54d402f",
     "message": "@ is &Walking On Air&!",
     "specialmessage": "@ is breaking the laws of physics! (&Walking On Air&)"
   },
-  {
+  "70bb2022-a536-9135-17b7-9874ec11af39": {
+    "name": "Superhero Fly",
+    "message": "@ is doing the &Superhero Fly&!",
+    "specialmessage": "@ is a bird, or a plane? No its a &Superhero&!"
+  },
+  "98bea1a3-0a08-153c-f0cd-335c51bbb190": {
+    "name": "Relaxed",
+    "message": "@ started to feel &Relaxed&",
+    "specialmessage": "@ is floating on air! (&Relaxed&)"
+  },
+  "fa607dfc-dd19-6199-3243-b7bcb22ad14b": {
+    "name": "Shrug",
+    "message": "@ is not sure",
+    "specialmessage": "@ is as lost as a sock in a dryer"
+  },
+  "9a1aecff-16e2-d0aa-9fe9-5520620b6f69": {
+    "name": "The Phonk Walk",
+    "message": "@ is doing the &The Phonk Walk&.",
+    "specialmessage": "@ is one lean, mean, confident machine! (&The Phonk Walk&)"
+  },
+  "39f3f279-fe80-3afd-5123-09662d57eb33": {
+    "name": "Peaceful Rest",
+    "message": "@ takes a little rest (&Peaceful Rest&)",
+    "specialmessage": "@ admires the view (&Peaceful Rest&)"
+  },
+  "acc2d0af-2f07-45f6-b4ee-7d30db22ac2e": {
+    "name": "Cool Fail",
+    "message": "@ tried to play off a &Cool Fail&.",
+    "specialmessage": "@ realized gravity was not their wingman. (&Cool Fail&)"
+  },
+  "ec605df5-bc95-2896-7931-3add13126cbb": {
+    "name": "Slipped",
+    "message": "@ slipped on a banana!",
+    "specialmessage": "@ is clumsy!"
+  },
+  "1801ab41-3ed2-263f-4c21-ed66c6088759": {
+    "name": "Glitched Out",
+    "message": "@ has &Glitched Out&",
+    "specialmessage": "@ has discovered a glitch"
+  },
+  "41dae449-ee61-1908-a681-1869ada47706": {
     "name": "Iconic Dance",
-    "uuid": "41dae449-ee61-1908-a681-1869ada47706",
     "message": "@ is doing the &Iconic Dance&!",
     "specialmessage": "@ wanted to show off their dancing skills. (&Iconic Dance&)"
   },
-  {
+  "876cc6a8-4eb3-5429-bde8-c7140ed648cd": {
+    "name": "Tornado",
+    "message": "@ spins around like a &Tornado&.",
+    "specialmessage": "@ twirls wildly in the air. (&Tornado&)"
+  },
+  "4ed7b497-52be-55b4-1db1-d58ce9f0157f": {
     "name": "Wacky waving inflatable arm flailing tube man",
-    "uuid": "4ed7b497-52be-55b4-1db1-d58ce9f0157f",
     "message": "@ is a tube man.",
     "specialmessage": "Wacky waving inflatable arm flailing tube man!"
   },
-  {
+  "26f5ea5d-2c2d-4560-826a-a3bc6036ee87": {
     "name": "Point and Laugh",
-    "uuid": "26f5ea5d-2c2d-4560-826a-a3bc6036ee87",
     "message": "@ raises their hand to &Point and Laugh&",
     "specialmessage": "@ has seen something funny. (&Point and Laugh&)"
   },
-  {
+  "d1cc0092-92de-69ad-e3ef-6755538d8ab2": {
     "name": "Anime Flying",
-    "uuid": "d1cc0092-92de-69ad-e3ef-6755538d8ab2",
     "message": "@ is flying!",
     "specialmessage": "@ is flying like a superhero!"
   },
-  {
+  "a6e74656-de40-88f7-c806-5dcd0269a512": {
+    "name": "Gym poses",
+    "message": "@ is flexing at the gym",
+    "specialmessage": "time to go to the gym"
+  },
+  "23a6dfdc-ca55-32d6-c75c-dc738b3cd70e": {
+    "name": "Knock-Out",
+    "message": "@ hits the canvas! ",
+    "specialmessage": "It's a KO! @ down!"
+  },
+  "af8e2b99-bb8f-1fd1-df1a-19151e47a4ca": {
     "name": "Vibing",
-    "uuid": "af8e2b99-bb8f-1fd1-df1a-19151e47a4ca",
     "message": "@ is vibing!",
     "specialmessage": "@ is vibing! &Those are some moves!&"
   },
-  {
+  "35ef5920-a8c5-e502-2a5a-b8a8f4a44770": {
     "name": "K-Pop Style",
-    "uuid": "35ef5920-a8c5-e502-2a5a-b8a8f4a44770",
     "message": "@ is dancing &K-Pop& style",
     "specialmessage": "@ needs to find a horse. (&K-Pop Style&)"
   },
-  {
+  "76debf4f-84c1-441a-84e1-26fe55391e71": {
+    "name": "Space Walk",
+    "message": "@ is doing a &space walk&",
+    "specialmessage": "@ is walking... In space?!?"
+  },
+  "0d87ca2e-c8bd-5f3a-4ff0-57825fd1953e": {
     "name": "The Dodge",
-    "uuid": "0d87ca2e-c8bd-5f3a-4ff0-57825fd1953e",
     "message": "@ is doing the &Dodge&!",
     "specialmessage": "@ dodges everything!"
   },
-  {
+  "e9624d78-3bef-760b-3fbd-82bf657f49cb": {
     "name": "Jump Celebration",
-    "uuid": "e9624d78-3bef-760b-3fbd-82bf657f49cb",
     "message": "@ does a &Jump Celebration&",
     "specialmessage": "@ is celebrating after a big accomplishment. (&Jump Celebration&)"
   },
-  {
+  "dd8da8eb-7df0-532a-fcc1-aa2ca428daa9": {
     "name": "Ninja Run",
-    "uuid": "dd8da8eb-7df0-532a-fcc1-aa2ca428daa9",
     "message": "@ is doing the &ninja run&",
     "specialmessage": "@ has the power of anime on their side! (&ninja run&)"
   },
-  {
+  "144106d4-bf87-aa9e-67f1-70658b04fc25": {
     "name": "Shuffle Dance",
-    "uuid": "144106d4-bf87-aa9e-67f1-70658b04fc25",
     "message": "@ is doing a &Shuffle Dance&",
     "specialmessage": "@ watch out! Earthquake-level Shuffle Dance in progress! &Shuffle Dance&"
   },
-  {
+  "e8f2ffa3-7869-e56f-4a92-d66edf651e9c": {
     "name": "Sit On Block",
-    "uuid": "e8f2ffa3-7869-e56f-4a92-d66edf651e9c",
     "message": "@ is sitting on a block!",
     "specialmessage": "@ is going viral sitting on a block!"
   },
-  {
+  "b388f241-bad0-2946-b5c2-957dccd8a657": {
     "name": "Shrugs",
-    "uuid": "b388f241-bad0-2946-b5c2-957dccd8a657",
     "message": "@ &Shrugs&",
     "specialmessage": "@ is super confused right now. (&Shrug&)"
   },
-  {
+  "cc20ffdf-d48f-85cf-1138-492d13e8d464": {
     "name": "Laughing",
-    "uuid": "cc20ffdf-d48f-85cf-1138-492d13e8d464",
     "message": "@'s Laughing so hard, even the game's cracking up!",
     "specialmessage": "Can't stop laughing with @'s hilarious Laughing animation!"
   },
-  {
+  "2ea96931-b2c0-4029-baa1-0da8dcc25f80": {
     "name": "Bouncy Floor",
-    "uuid": "2ea96931-b2c0-4029-baa1-0da8dcc25f80",
     "message": "@ is bouncing on the floor!",
     "specialmessage": "@ is doing a viral floor bounce!"
   },
-  {
+  "b747ec6e-e15b-3bdb-ccb0-dc1d4324cc64": {
     "name": "The Game",
-    "uuid": "b747ec6e-e15b-3bdb-ccb0-dc1d4324cc64",
     "message": "@ is warming up for &The Game&",
     "specialmessage": "@ is gonna own this round in &The Game&"
   },
-  {
+  "7e419341-f18c-8f76-981c-b8b369d6eada": {
     "name": "Stargazing",
-    "uuid": "7e419341-f18c-8f76-981c-b8b369d6eada",
     "message": "@ is &Stargazing&",
     "specialmessage": "@ is admiring the beauty of the stars. (&Stargazing&)"
   },
-  {
+  "6e69b63b-07f1-6be7-5e4d-31e3419eb207": {
     "name": "Swag Flip",
-    "uuid": "6e69b63b-07f1-6be7-5e4d-31e3419eb207",
     "message": "@ goin' smooth! (&Swag Flip&)",
     "specialmessage": "@ goin' reaaallyy smoooooth! (&Swag Flip&)"
   },
-  {
+  "426765cb-5cc2-4dd0-9e96-b8dba670c0a0": {
     "name": "Tightrope Walking",
-    "uuid": "426765cb-5cc2-4dd0-9e96-b8dba670c0a0",
     "message": "@ is walking a tightrope. (&Tightrope Walking&)",
     "specialmessage": "@ is a successful tightrope walker. (&Tightrope Walking&)"
   },
-  {
+  "6bb4d56d-094f-2653-4b55-886646add571": {
     "name": "Push-Ups",
-    "uuid": "6bb4d56d-094f-2653-4b55-886646add571",
     "message": "@ is doing &push-ups&",
     "specialmessage": "@ is getting fit! (&Push-Ups&)"
   },
-  {
+  "c7dd1194-632a-4392-8eb0-485b50802055": {
     "name": "Happily Dancing",
-    "uuid": "c7dd1194-632a-4392-8eb0-485b50802055",
     "message": "@ is &Happily Dancing&",
     "specialmessage": "@ is dancing like Cinderella! &Happily Dancing&"
   },
-  {
+  "95c74c13-88f8-3606-d9ad-78a91015a557": {
     "name": "Air Punch",
-    "uuid": "95c74c13-88f8-3606-d9ad-78a91015a557",
     "message": "@ is doing an Air Punch!",
     "specialmessage": "@ went into the skies by doing an Air Punch!"
   },
-  {
+  "65afefb8-8406-762f-9f2c-73f500268fd9": {
     "name": "The Flux",
-    "uuid": "65afefb8-8406-762f-9f2c-73f500268fd9",
     "message": "@ is doing the &Flux&!",
     "specialmessage": "@ shows off their best dance move!"
   },
-  {
-    "name": "Shell Spinning",
-    "uuid": "a9a15546-b597-4937-9ab3-6882192ce6d8",
-    "message": "@ is &Shell Spinning.&",
-    "specialmessage": "Look out dude! @ is &Shell Spinning.&"
-  },
-  {
-    "name": "Frosty Friction",
-    "uuid": "9eb9ccd3-dd53-0263-5673-99c69bd591ea",
-    "message": "@ rubs their arms to stay warm.",
-    "specialmessage": "@ is freezing. Can someone get them %Frosty Friction% a blanket?"
-  },
-  {
-    "name": "Wildly Skipping",
-    "uuid": "ba83e17e-9ed5-421b-a0ce-4b4787d13277",
-    "message": "@ is &Wildly Skipping&",
-    "specialmessage": "@ is skipping through Wonderland! &Wildly Skipping&"
-  },
-  {
-    "name": "Dab Sneeze",
-    "uuid": "b77912f5-8f20-1e18-50f7-6b5fc21205e6",
-    "message": "@ Just did a &Dab Sneeze&!",
-    "specialmessage": "@ is bringing back the &Dab Sneeze& "
-  },
-  {
-    "name": "Jump of joy",
-    "uuid": "21ab3cc5-bb1c-27ef-2d53-297c8ccff9b4",
-    "message": "@ is screaming „Yee-Haw“!",
-    "specialmessage": "@ says „Ouch, my ankle“!"
-  },
-  {
-    "name": "Pop-Up",
-    "uuid": "2b7b54f9-c2c2-a6d1-a6e4-4b011bda20af",
-    "message": "@ is doing the &Pop-Up&!",
-    "specialmessage": "@ is going vertical doing the &Pop-Up&!"
-  },
-  {
-    "name": "push ups",
-    "uuid": "f8dcb189-d880-e358-65c5-25807f9971b3",
-    "message": "@  has just completed 100 pumps",
-    "specialmessage": "@  is the strongest on the server"
-  },
-  {
-    "name": "Slow Motion",
-    "uuid": "a396b61c-ec46-0e26-fa81-1233f8e0c049",
-    "message": "@ is doing the &Slow Motion&!",
-    "specialmessage": "@ is Slowing Time in &Slow Motion&!"
-  },
-  {
-    "name": "Helicopter Helicopter",
-    "uuid": "c4764170-3136-3d47-fffa-b5cb7399064e",
-    "message": "@ transformed into a &Helicopter Helicopter&!",
-    "specialmessage": "Is it a bird? No, it's @'s &Helicopter Helicopter&!"
-  },
-  {
-    "name": "No no no",
-    "uuid": "1c32d42a-df61-bad4-a47b-b5fb0a6b781e",
-    "message": "@ says &No no no&",
-    "specialmessage": "@ woah woah woah &No no no&"
-  },
-  {
-    "name": "Big Yawn",
-    "uuid": "988ed8d3-4da4-e1d4-f47d-0c2d00992ae4",
-    "message": "@ is sleepy",
-    "specialmessage": "sooo tired~"
-  },
-  {
-    "name": "stretching",
-    "uuid": "49013daf-588d-2597-032b-2a8c1ab0e17e",
-    "message": "@ is (&stretching&)",
-    "specialmessage": "@ is getting ready to rumble! (&stretching&)"
-  },
-  {
-    "name": "T-Pose",
-    "uuid": "d3cababb-4551-f3ce-951a-bbe1ec1ef7ed",
-    "message": "@ is doing a &T-Pose&",
-    "specialmessage": "@ is showing dominance. (&T-Pose&)"
-  },
-  {
-    "name": "Hand Spin",
-    "uuid": "10c9d263-e6fb-6ba7-f5a3-e8b147782d8b",
-    "message": "@ makes a hand spin.",
-    "specialmessage": "@ is spinning so fast!"
-  },
-  {
-    "name": "too tired",
-    "uuid": "eb451dd5-36d9-c9a5-aada-fef83e5d3f63",
-    "message": "@ is really tired...",
-    "specialmessage": "Oh, I'm so tired! Please just 5 more minutes..."
-  },
-  {
-    "name": "Stargazer",
-    "uuid": "0ab9769c-d3a1-2440-f6a8-89f92b8bc620",
-    "message": "@ is staring at the stars.",
-    "specialmessage": "@ might have seen a UFO."
-  },
-  {
-    "name": "Double Dab",
-    "uuid": "eb1c4639-5a92-de7c-2038-084693661762",
-    "message": "@ is hitting the double dab",
-    "specialmessage": "@ is double dabbing on you!"
-  },
-  {
-    "name": "Underwater Dancing",
-    "uuid": "05af18ca-920f-4232-83cb-133b2d913dd6",
-    "message": "@ is &Underwater Dancing.&",
-    "specialmessage": "@ is communing with the Guardians while &Underwater Dancing.&"
-  },
-  {
-    "name": "Star Jumps",
-    "uuid": "bf340351-1891-4701-a42a-79739832bc40",
-    "message": "@ is doing &Star Jumps&",
-    "specialmessage": "@ is reaching for the stars! (&Star Jumps&)"
-  },
-  {
-    "name": "Breakdance Freeze",
-    "uuid": "df1bca54-23b8-6b12-4faa-9ec01dddecb8",
-    "message": "@ is doing the &Breakdance Freeze&",
-    "specialmessage": "@ has frozen time! &Breakdance Freeze&"
-  },
-  {
-    "name": "Secret Handshake",
-    "uuid": "ceb97e43-f793-43a6-b74c-32828f08d3e4",
-    "message": "@ goes in for the &Secret Handshake.&",
-    "specialmessage": "Executed flawlessly, @ performs the &Secret Handshake.&"
-  },
-  {
-    "name": "T Pose",
-    "uuid": "b553e298-bf96-a16d-0707-5572d34126ec",
-    "message": "@ is standing still.",
-    "specialmessage": "Is @ sleeping? Or what?"
-  },
-  {
-    "name": "Shadow Boxing",
-    "uuid": "42fde774-37d4-4422-b374-89ff13a6535a",
-    "message": "@ is &Shadow Boxing.&",
-    "specialmessage": "Float like a Phantom, sting like a bee! &(Shadow Boxing)&"
-  },
-  {
-    "name": "Roaring Like Godzilla",
-    "uuid": "6521948c-7d2c-4ab9-aeb4-ef535327faf7",
-    "message": "@ is &Roaring Like Godzilla&.",
-    "specialmessage": "SSSSKKREEEEEEEONNNK @ is &Roaring Like Godzilla&."
-  },
-  {
-    "name": "Anime Run",
-    "uuid": "346ae49b-43b6-2482-8045-0baf4d4725c3",
-    "message": "Catch that blur? That's @ mastering the Anime Run!",
-    "specialmessage": "Who needs a cape?  @ is nailing the Anime Run!"
-  },
-  {
-    "name": "Greatest Handshake",
-    "uuid": "a9a83f69-15a5-d1b7-b7e3-0ac317344e5d",
-    "message": "@ is performing the &Greatest Handshake&",
-    "specialmessage": "@ just broke the sound barrier with that epic handshake! &Greatest Handshake&"
-  },
-  {
-    "name": "We Have Lift Off",
-    "uuid": "a38b0907-b417-57ac-1748-6b55fc6d3606",
-    "message": "@ is giving &helicopter& energy",
-    "specialmessage": "It's a bird, it's a plane, it's a @ &-copter?&"
-  },
-  {
-    "name": "Startled",
-    "uuid": "77300dcc-dc80-41a9-b9e6-0c9273418fea",
-    "message": "@ is &Startled&",
-    "specialmessage": "AH! Look out behind you! &Startled&"
-  },
-  {
-    "name": "Floss Dance",
-    "uuid": "955ce061-20ce-e38a-c390-20c9ed32190f",
-    "message": "@ is doing a cool &Floss Dance&",
-    "specialmessage": "@ is getting cramps!"
-  },
-  {
-    "name": "Curtsy",
-    "uuid": "4d9167f2-019c-2033-244c-d470ff86ef51",
-    "message": "@ is doing a &curtsy&.",
-    "specialmessage": "@ has some graceful moves!"
-  },
-  {
-    "name": "Silly",
-    "uuid": "86b34976-8f41-475b-a386-385080dc6e83",
-    "message": "@ is feeling &Silly.&",
-    "specialmessage": "@ is dancing, jumping, and acting super &Silly.&"
-  },
-  {
-    "name": "Hammering",
-    "uuid": "7cec98d8-55cc-44fe-b0ae-2672b0b2bd37",
-    "message": "@ is &Hammering& away.",
-    "specialmessage": "@….I think you’re missing the crafting table? What are you &Hammering?&"
-  },
-  {
-    "name": "Take The L",
-    "uuid": "cfc510d9-184a-3106-f9c3-0a9a5bf6b01c",
-    "message": "@ is doing the &L Dance&!",
-    "specialmessage": "@ bounces around!"
-  },
-  {
-    "name": "UwU",
-    "uuid": "45941813-d36e-65a7-f524-9c4391d6d74d",
-    "message": "@ is a little bit &shy& right now.",
-    "specialmessage": "@ is embarrassed..."
-  },
-  {
-    "name": "Showcase Item",
-    "uuid": "1690ba91-2201-6817-44c0-6187f44dab78",
-    "message": "@is showcasing item",
-    "specialmessage": "@is showcasing special item"
-  },
-  {
-    "name": "Flower Dance",
-    "uuid": "bf3a9ed9-551d-ff1d-1b7b-c42e619745da",
-    "message": "Look! @ is doing a &Flower Dance&! ",
-    "specialmessage": "@ just picked some flowers and is doing a &Flower Dance&!"
-  },
-  {
-    "name": "Mining",
-    "uuid": "d7519b5a-45ec-4d27-997c-89d402c6b57f",
-    "message": "@ is &Mining& air.",
-    "specialmessage": "@ received (1) Air Block from &Mining.&"
-  },
-  {
-    "name": "Dip and Point",
-    "uuid": "28aa6563-36b8-0d81-c021-6acd1584378e",
-    "message": "@ is doing the &Dip and Point& move!",
-    "specialmessage": "@ is turning up the disco in the mine! Groovy moves, block star! (&Dip and Point&)"
-  },
-  {
-    "name": "Playing Possum",
-    "uuid": "0123f9a5-2377-d4c4-dc93-559d7da332aa",
-    "message": "@ is &Playing Possum&",
-    "specialmessage": "@ is not &Playing Possum&!"
-  },
-  {
-    "name": "Frontflip",
-    "uuid": "9951d365-e94f-245e-1157-16a676fa60b0",
-    "message": "@ does a crazy frontflip!",
-    "specialmessage": "@ is spinning like a superhero!"
-  },
-  {
-    "name": "Stomping Like a Dino",
-    "uuid": "8387f555-f789-45a4-90d8-3fa2a9a9e299",
-    "message": "@ is &Stomping Like a Dino&",
-    "specialmessage": "Run for your lives! @ is &Stomping Like a Dino&"
-  },
-  {
-    "name": "Standing Ovation",
-    "uuid": "eec85101-6eb5-417f-8cda-2a2a75e13df5",
-    "message": "@ is giving a &Standing Ovation&.",
-    "specialmessage": "Wow! @ can't clap fast enough! &Standing Ovation&"
-  },
-  {
-    "name": "Backflip Wave",
-    "uuid": "8465bd2e-2a59-ba73-70fc-b88cf9d8727c",
-    "message": "@ is doing a backflip and is waving!",
-    "specialmessage": "@ is going viral with this cool wave!"
-  },
-  {
-    "name": "anime run",
-    "uuid": "0f79b091-8026-059a-5b9f-0d57da756bec",
-    "message": "@ is running at crazy speeds!",
-    "specialmessage": "Run! Run! Run!"
-  },
-  {
-    "name": "Jump Rope",
-    "uuid": "9e99ba2a-090c-f4e8-6537-b8463849feba",
-    "message": "@ is pretty good at &Jump Rope&!",
-    "specialmessage": "Watch out! The &Jump Rope& champ , @, is in town!"
-  },
-  {
-    "name": "warm up dance",
-    "uuid": "c9ae3ba8-2e9c-cb7a-4e92-b1e464cadfbc",
-    "message": "@ is doing warm-up dance!",
-    "specialmessage": "@ is going to be viral with this!"
-  },
-  {
-    "name": "Rockin'",
-    "uuid": "385ca980-843d-3467-0ab3-2c4a3f84e795",
-    "message": "@ is &Rockin'&!",
-    "specialmessage": "@ knows how to set the mood! (&Rockin'&)"
-  },
-  {
-    "name": "Tired",
-    "uuid": "dfc6bd7d-fdc1-3da8-a98a-02f5bf585a60",
-    "message": "Is it nap time yet, @? Your 'Tired' look says yes!",
-    "specialmessage": "Warning: @ is so tired, they might snooze mid-game!"
-  },
-  {
-    "name": "You lose",
-    "uuid": "fd0f4a49-cdf0-25a6-2bfe-eaa661240c26",
-    "message": "@ does the L dance",
-    "specialmessage": "@ Celebrates in style"
-  },
-  {
-    "name": "Joyful Bop",
-    "uuid": "4ac8315a-9a0e-cd11-aad9-6b8fa65c67ce",
-    "message": "@ is &joyfully bopping&",
-    "specialmessage": "Happy vibes all around (&Joyful Bop&)"
-  },
-  {
-    "name": "Backflip",
-    "uuid": "573fdad9-e33a-6766-39e6-41775fb41785",
-    "message": "@is doing backflips!",
-    "specialmessage": "@is doing backflip for many times!"
-  },
-  {
-    "name": "horror dance",
-    "uuid": "02b5af77-197b-a9cf-eb30-e7dd876529bd",
-    "message": "@ is doing &Horror dance&!",
-    "specialmessage": "That dance is looking scary!"
-  },
-  {
-    "name": "around the world dance",
-    "uuid": "7804548a-79b1-0eb7-1d51-229339c033b7",
-    "message": "@ is doing around the world dance!",
-    "specialmessage": "Whoom! Whoom! Whoooom!"
-  },
-  {
-    "name": "Trending Dance",
-    "uuid": "d6d1349f-50a5-5980-0980-7a9f43be259e",
-    "message": "@ is doing the Trending Dance!",
-    "specialmessage": "@ is trending... and dancing!"
-  },
-  {
-    "name": "Formal Bow",
-    "uuid": "1d650d97-1eef-9003-3431-75ac83b27ee2",
-    "message": "@ bows.",
-    "specialmessage": "@ is quite formal."
-  },
-  {
-    "name": "In Awe",
-    "uuid": "34ad2ad5-44ba-2876-b3e2-9474221a04a4",
-    "message": "@ is looking around &In Awe&!",
-    "specialmessage": "@ can't believe what they found! They are &In Awe&!"
-  },
-  {
-    "name": "Pantomime",
-    "uuid": "f8b05dd8-2458-34c8-5d9b-1d4230ffaa54",
-    "message": "@ is showing off their &Pantomime& skills!",
-    "specialmessage": "@ missed that wall! (&Pantomime&)"
-  },
-  {
-    "name": "One Handed Pushups",
-    "uuid": "bfa08e4d-d2a7-43a3-a6e6-ee2ea484d36d",
-    "message": "@ is doing &One Handed Pushups&.",
-    "specialmessage": "Now @ is just showing off... &One Handed Pushups&."
-  },
-  {
-    "name": "Falling Asleep",
-    "uuid": "5f2f0156-0570-dae6-4dc9-cb7ae029bd34",
-    "message": "@ is &Falling Asleep&...",
-    "specialmessage": "@ just needs five more minutes! (&Falling Asleep&)"
-  },
-  {
-    "name": "Push ups",
-    "uuid": "de454fbc-c940-a1f3-07b6-02d6c0b99dff",
-    "message": "Push Up pro @ – turning the game into a gym!",
-    "specialmessage": "Muscle mode: Activated! @ is crushing those Push Ups!"
-  },
-  {
-    "name": "Griddy",
-    "uuid": "e5ef10b5-d864-9766-c1a0-81035923db4a",
-    "message": "@ is doing the Griddy!",
-    "specialmessage": "@ is tapping their heels and swinging their arms!"
-  },
-  {
-    "name": "Surprised",
-    "uuid": "9f18b97c-0bc4-0291-678b-1fd18024290a",
-    "message": "@ is &Surprised&!",
-    "specialmessage": "@ is &Flabbergasted!&!"
-  },
-  {
-    "name": "Raging Out",
-    "uuid": "94d53226-a7a0-081b-6098-e9b3399692e0",
-    "message": "@ is &Raging Out&!",
-    "specialmessage": "Stand back! @ is &Raging Out&!"
-  },
-  {
-    "name": "showing off",
-    "uuid": "6762ef32-7835-2bf8-7744-dd8eb302a61e",
-    "message": "@ is &Showing Off&!",
-    "specialmessage": "@ is trend setting by &Showing Off&!"
-  },
-  {
-    "name": "Invisible Stairs",
-    "uuid": "f4080ab6-68b6-56e8-61c6-1aa17626d9b8",
-    "message": "@ is climbing &Invisible Stairs&!",
-    "specialmessage": "@ missed a step! (&Invisible Stairs&)"
-  },
-  {
-    "name": "Break It Down",
-    "uuid": "f5d9e381-a95b-a0bc-77bd-84a735de7e04",
-    "message": "@ is breakin' it down! (&Break It Down&)",
-    "specialmessage": "@ is boppin' like a parrot on a jukebox! (&Break It Down&)"
-  },
-  {
-    "name": "Inspecting Item",
-    "uuid": "6d35a7a6-942f-4d6f-a233-1499be044158",
-    "message": "@ is &Inspecting Item.&",
-    "specialmessage": "Is this enchanted? Can I eat it? @ is &Inspecting Item.&"
-  },
-  {
-    "name": "Disappointment",
-    "uuid": "a91dc5bc-e476-6e4d-6aff-5cd53dd51ce0",
-    "message": "@ is doing the &Disappointment&!",
-    "specialmessage": "@ is very disappointed!"
-  },
-  {
-    "name": "Salsa Dance",
-    "uuid": "b9ec74d5-3a2d-1832-eb8a-0dbadb4d7425",
-    "message": "@i is doing the &Salsa Dance&!",
-    "specialmessage": "@ is getting Spicy with the &Salsa Dance&!"
-  },
-  {
-    "name": "Dueling Like Obi-Wan",
-    "uuid": "070374b6-10b8-4496-8b4e-44511d1be42b",
-    "message": "@ is &Dueling Like Obi-Wan&",
-    "specialmessage": "@ has the high ground! &Dueling Like Obi-Wan&"
-  },
-  {
-    "name": "Force Lifting",
-    "uuid": "60b9db3f-608f-4fff-aec0-31a5ff4c54eb",
-    "message": "@ is &Force Lifting& their item.",
-    "specialmessage": "Concentrate, @ must, to use the Force. &Force Lifting&"
-  },
-  {
-    "name": "Hype",
-    "uuid": "419272b3-cd1c-e4bc-b711-ac56e9eff24a",
-    "message": "@ is hyping!",
-    "specialmessage": "@ is generating a new hype!"
-  },
-  {
-    "name": "Stunned",
-    "uuid": "12cda254-ed05-d295-8020-a6dd695afbea",
-    "message": "@ got &stunned&!",
-    "specialmessage": "The world won't stop spinning! (&stunned&)"
-  },
-  {
-    "name": "Leaning On Wall",
-    "uuid": "db6b03fa-f1c2-076f-55b7-fee5769a9e1b",
-    "message": "@ is leaning on a wall",
-    "specialmessage": "@ is waiting for someone"
-  },
-  {
-    "name": "Chilling",
-    "uuid": "043d6f77-f539-2df1-8f81-137d2b650787",
-    "message": "@ is peacefully &Chilling&",
-    "specialmessage": "@ is on vacations (&Chilling&)"
-  },
-  {
-    "name": "Running in place",
-    "uuid": "ab591200-f15c-f901-8508-fe76ab8e5341",
-    "message": "@ is running on the spot!",
-    "specialmessage": "@ became so fast!"
-  },
-  {
-    "name": "Cowabunga!",
-    "uuid": "78abdd9a-b6bd-478f-8148-b4e15b6229ba",
-    "message": "@:&Cowabunga!& Let's go!",
-    "specialmessage": "Turtles count it off: 1! 2! 3! 4! &Cowabunga!&"
-  },
-  {
-    "name": "Zombie Dance",
-    "uuid": "405bf079-cc53-d63a-1f61-258ba662cbba",
-    "message": "@ does a &Zombie Dance&",
-    "specialmessage": "@  is dancing for brains! (&Zombie Dance&)"
-  },
-  {
-    "name": "Fallen wie ein plank",
-    "uuid": "f604f307-9c2c-dfa6-2128-4f3ff9400602",
-    "message": "@ fell like a plank.",
-    "specialmessage": "@ is so stiff."
-  },
-  {
-    "name": "Airplane",
-    "uuid": "009f3f8d-0937-b9f3-6577-9bc1c8b53889",
-    "message": "@ is ready for take-off! (&Airplane&)",
-    "specialmessage": "@ is seriously gaining some airtime! (&Airplane&)"
-  },
-  {
-    "name": "Shrinking",
-    "uuid": "7f0a5760-df0e-e654-0e46-f21f7e0149a3",
-    "message": "@ is &shrinking&",
-    "specialmessage": "@ is getting smaller! (&shrinking&)"
-  },
-  {
-    "name": "Face Palming",
-    "uuid": "815fcc71-9202-7009-10c1-367609640de6",
-    "message": "@ is &Face Palming&!",
-    "specialmessage": "@ just can't look(&Face Palming&)!"
-  },
-  {
-    "name": "Mega Man Jump",
-    "uuid": "ae421dd2-6a61-46b7-b260-0323e523fdc1",
-    "message": "@ does a &Mega Man Jump.&",
-    "specialmessage": "@ is ready to take on the robots. (&Mega Man Jump&)"
-  },
-  {
-    "name": "Rowing",
-    "uuid": "82722215-5061-2e00-504d-b08a76b0d05c",
-    "message": "@ is &rowing& away!",
-    "specialmessage": "@ is paddling like crazy!"
-  },
-  {
-    "name": "Mega Man Victory",
-    "uuid": "92572802-402b-4e50-a55b-804a48853ce6",
-    "message": "@ celebrates a &Mega Man Victory.&",
-    "specialmessage": "\"You Get Block Fist\" @ achieved a &Mega Man Victory.&"
-  },
-  {
-    "name": "Dual Dancing",
-    "uuid": "10db17a5-62a5-4493-8ae6-faf32ecfeb18",
-    "message": "@ invites everyone, &Let's Dance!&",
-    "specialmessage": "Adventure can wait, &Let's dance!& @ has a dance party."
-  },
-  {
-    "name": "Staff Spinning",
-    "uuid": "be10427e-4a69-40fb-949f-b2d51ce25f66",
-    "message": "@ is &Staff Spinning& like Aang.",
-    "specialmessage": "Is @ able to bend air? &Staff Spinning&?"
-  },
-  {
-    "name": "Warm-up Stretch",
-    "uuid": "b49958cc-f47e-448a-b1a5-01bd94e19694",
-    "message": "@ is doing a &Warm-Up Stretch&!",
-    "specialmessage": "@'s hands are cold. (&Warm-Up Stretch&)"
-  },
-  {
-    "name": "Waiting Patiently",
-    "uuid": "1a2188a9-a882-3bcf-4c7d-33275b48987d",
-    "message": "@ is &Waiting Patiently&",
-    "specialmessage": "Somehow, @ is STILL &Waiting Patiently&"
-  },
-  {
-    "name": "Contorting",
-    "uuid": "fb379452-fc4e-41eb-8371-9f1475456234",
-    "message": "@ is &Contorting& like Ty Lee.",
-    "specialmessage": "@ is &Contorting& and demonstrating astounding skill."
-  },
-  {
-    "name": "Opening Chakras",
-    "uuid": "547e5f6c-d445-49a9-b06e-6919b1f9e48e",
-    "message": "@ is meditating and &Opening Chakras.&",
-    "specialmessage": "@ is &Opening Chakras& by looking within."
-  },
-  {
-    "name": "Karate Style",
-    "uuid": "e29b46e3-64e0-61f9-f932-afd2cdcc69a2",
-    "message": "@ is practicing karate!",
-    "specialmessage": "@ is training for a tournament!"
-  },
-  {
-    "name": "Unwinding",
-    "uuid": "de5be08b-99c1-a460-c46e-6074deac475b",
-    "message": "@ is &Unwinding&.",
-    "specialmessage": "@ is releasing the tension in their shoulders. (&Unwinding&)"
-  },
-  {
-    "name": "Default Gamers Dance",
-    "uuid": "5a5df86b-727d-f884-305f-89a4c9738988",
-    "message": "@ is doing the &Default Gamers Dance& !",
-    "specialmessage": "@ is flexing on the enemy. (&Default Gamers Dance&)"
-  },
-  {
-    "name": "Push-ups",
-    "uuid": "25ffccf4-e16a-d4fc-a250-b55a234d0034",
-    "message": "@ is doing some &Push-ups&!",
-    "specialmessage": "@ is showing off with even more &Push-ups&!"
-  },
-  {
-    "name": "To Infinity and Beyond",
-    "uuid": "79e8cb30-c1b4-4e41-8aa8-96492c6f390c",
-    "message": "@ &To Infinity and Beyond!&",
-    "specialmessage": "@ strikes a heroic pose, \"&To Infinity and Beyond!&\""
-  },
-  {
-    "name": "Excitedly Dancing",
-    "uuid": "d9d1192d-1262-470d-bc0c-5ba46bedab72",
-    "message": "I'm Ready! @ is &Excitedly Dancing.&",
-    "specialmessage": "@ is &Excitedly Dancing,& I'm Ready! I'm Ready! I'm Ready! I'm Ready! I'm Ready!"
-  },
-  {
-    "name": "Dizzy",
-    "uuid": "ad0f34be-beb1-84a6-9ec8-f9755f52237b",
-    "message": "@ is &Dizzy&!",
-    "specialmessage": "@ is greatly disturbed! (&Dizzy&)"
-  },
-  {
-    "name": "Sleepy",
-    "uuid": "a5f9881c-23b7-4650-8e92-039cd7a16889",
-    "message": "@ is &Sleepy.&",
-    "specialmessage": "@ is getting &Sleepy& while farming phantom membranes."
-  },
-  {
-    "name": "Laughing Out Loud",
-    "uuid": "310b41de-1c7a-4098-928d-addcd905bf65",
-    "message": "Hahahaha @ is &Laughing Out Loud.&",
-    "specialmessage": "Three Weeks Later... Hahahahaha! @ is still &Laughing Out Loud.&"
-  },
-  {
-    "name": "Faceplant",
-    "uuid": "6d9f24c0-6246-4c92-8169-4648d1981cbb",
-    "message": "@ &Faceplants.&",
-    "specialmessage": "SMACK! @, did that &Faceplant& hurt?"
-  },
-  {
-    "name": "Deep Thought",
-    "uuid": "bd6d9bfd-fc82-1f3a-3479-837e9246fc8e",
-    "message": "@ is in &Deep Thought&",
-    "specialmessage": "@ 3x3 Automatic bucket filler...  (&Deep Thought&)"
-  },
-  {
-    "name": "Anger Management",
-    "uuid": "a0b1a9f2-0ea4-48d0-8641-ada998beee4d",
-    "message": "@ is struggling with &Anger Management&",
-    "specialmessage": "Creepers are taking cover. if @ fails at &Anger Management& they'll explode!"
-  },
-  {
-    "name": "Intercom and Attack",
-    "uuid": "87c039b7-7bdc-45d1-8684-e940a131ec0a",
-    "message": "@ \"Who goes there?!\" &Intercom and Attack.&",
-    "specialmessage": "@ \"I've crash landed on a strange planet. Terrain seems a bit... blocky.\" &Intercom and Attack.&"
-  },
-  {
-    "name": "Neck Stretches",
-    "uuid": "86a386e7-c422-f0ae-0268-736b2aca2226",
-    "message": "@ is doing &Neck Stretches&",
-    "specialmessage": "@ feels great! (&Neck Stretches&)"
-  },
-  {
-    "name": "Sid Dance",
-    "uuid": "946f04ea-8ff0-416e-a66d-8b0d0751e8bf",
-    "message": "@ is doing the &Sid Dance.&",
-    "specialmessage": "Is @'s &Sid Dance& going to bring about a new ice biome?"
-  },
-  {
-    "name": "Smelling the Flowers",
-    "uuid": "3eba0f72-af17-e45b-3e1a-8619b172994e",
-    "message": "@ is &smelling the flowers&!",
-    "specialmessage": "@sniiiiiifffff...smells amazing! (&Smelling the Flowers&)"
-  },
-  {
-    "name": "Flight",
-    "uuid": "b310ea06-0485-4ad1-8424-df271ca6ec37",
-    "message": "@ is taking &Flight.&",
-    "specialmessage": "Can @ really take &Flight& without using an elytra? To Infinity and Beyond!"
-  },
-  {
-    "name": "Hoppin'",
-    "uuid": "fb9b884a-b217-46a2-85fd-d3ab0f2f33e6",
-    "message": "@ is &Hoppin'&",
-    "specialmessage": "Where did @ go? I can only see frogs...&(Hoppin')&"
-  },
-  {
-    "name": "Dabbing",
-    "uuid": "f5f7b7da-90d7-be82-82a5-da7fb526c907",
-    "message": "@ is &dabbing&",
-    "specialmessage": "@ is constantly being cool! (&Dabbing&)"
-  },
-  {
-    "name": "The Creep",
-    "uuid": "9dc76bac-f94e-76ca-c7f6-ef096246195b",
-    "message": "@ is doing the &Creep&!",
-    "specialmessage": "@ is Getting Spooky doing &The  Creep&!"
-  },
-  {
-    "name": "Peekaboo",
-    "uuid": "2ecc0fd1-312b-4664-9bfa-a06429838706",
-    "message": "@ plays &Peekaboo!&",
-    "specialmessage": "Where did @ go? &Peekaboo!&"
-  },
-  {
-    "name": "Look Your Missing It",
-    "uuid": "823ea45e-31ae-1216-aca0-9707e3069514",
-    "message": "§b@ §rwants §ayou to look",
-    "specialmessage": "§b@ §rsays §ayou need to look"
-  },
-  {
-    "name": "Fast Ball",
-    "uuid": "66e95931-0a43-51c5-45e5-97e32a396432",
-    "message": "@ is throwing a &Fast Ball&!",
-    "specialmessage": "@ is a great pitcher! &Fast Ball&"
-  },
-  {
-    "name": "Mechanical Bull ",
-    "uuid": "5f0612e4-12b8-fd24-fd80-717a86771e58",
-    "message": "@ is riding a &Mechanical Bull&",
-    "specialmessage": "@  is an authentic cowboy (&Mechanical Bull&)"
-  },
-  {
-    "name": "Crossack",
-    "uuid": "88025a03-fe17-4f3c-a620-21ba47a0ddf5",
-    "message": "@ feels like flying! (&Crossack&)",
-    "specialmessage": "@ dances in a most trying way! (&Crossack&)"
-  },
-  {
-    "name": "Walk Around",
-    "uuid": "000a5981-82a9-a1a9-13d4-66b797d2b32a",
-    "message": "@ is doing the &Walk Around&",
-    "specialmessage": "@ is walking on a new plane! (&Walk Around&)"
-  },
-  {
-    "name": "Mad Falling",
-    "uuid": "63cb3c45-b3b3-4c02-a4f3-fb4b9853dbe9",
-    "message": "@ is &Mad Falling&",
-    "specialmessage": "Nothing's working out @ is &Mad Falling&"
-  },
-  {
-    "name": "Fluttering",
-    "uuid": "9c939344-f9d6-4a3a-95a5-f64dd3d94e45",
-    "message": "@ is &Fluttering& and trying to fly.",
-    "specialmessage": "Why is @ &Fluttering& so much? Have they been hit by a Shulker?"
-  },
-  {
-    "name": "Flying",
-    "uuid": "be4f4451-9764-3239-a71c-4e354e36de21",
-    "message": "@ is &Flying&!",
-    "specialmessage": "@ is going up, up, and... well, just up!"
-  },
-  {
-    "name": "Chun-Li Spinning Kick",
-    "uuid": "af61c759-6252-431d-a7de-94d477cfb54c",
-    "message": "@: &Chun Li Spinning Bird Kick!!!&",
-    "specialmessage": "@: I did it! &Chun Li Spinning Bird Kick&"
-  },
-  {
-    "name": "Flourishing",
-    "uuid": "a57277d5-0693-4c8a-9b5c-45c33fdf7c26",
-    "message": "@ is Flourishing",
-    "specialmessage": "@: It's over, I have the high ground!  &(Flourishing)&"
-  },
-  {
-    "name": "Horse Racing",
-    "uuid": "394e41d0-8f61-62a3-084b-1dc8fd4dafd7",
-    "message": "@ is running like a… horse? &Horse Racing&",
-    "specialmessage": "How high can they jump? @, is &Horse Racing&!"
-  },
-  {
-    "name": "Hadoken!",
-    "uuid": "6453480a-54ac-435d-899d-4e6f7fe57591",
-    "message": "@: &Hadoken!&",
-    "specialmessage": "@: Wave Motion Fist! &Hadoken!&"
-  },
-  {
-    "name": "Ryu Guarding",
-    "uuid": "0c141653-1166-448b-87a2-38d0679bb549",
-    "message": "@: Get serious. &Ryu Guarding&",
-    "specialmessage": "@: You must defeat Herobrine to stand a chance. &Ryu Guarding&"
-  },
-  {
-    "name": "Flipping Crazy Dance",
-    "uuid": "4269f6d6-5007-1d89-f15a-f5aeb879f7ee",
-    "message": "@ is dancing",
-    "specialmessage": "@ is dancing like &Craazzyyy&"
-  },
-  {
-    "name": "Cant See Me",
-    "uuid": "308f742d-ff45-d537-9368-1afe54b88577",
-    "message": "@ is doing the &Can't See Me& emote",
-    "specialmessage": "@ is hiding! &Can't See Me&!"
-  },
-  {
-    "name": "Peter Pan Floating",
-    "uuid": "949c4f24-6aa6-4f2a-bad5-1b3de7e12749",
-    "message": "@ can fly! &(Peter Pan Floating)&",
-    "specialmessage": "@:Think happy thoughts. &(Peter Pan Floating)&"
-  },
-  {
-    "name": "Rapunzel Dance",
-    "uuid": "f15ceb56-6651-41c0-8bd5-087951204d81",
-    "message": "@ is doing the &Rapunzel Dance.&",
-    "specialmessage": "When will your life begin? When you hit respawn! &(Repunzle Dance)&"
-  },
-  {
-    "name": "UwU",
-    "uuid": "3babfcf6-2a50-2262-4c17-f313a5a73c81",
-    "message": "@ is expressing an &UwU&!",
-    "specialmessage": "@ is feeling cute! &UwU&"
-  },
-  {
-    "name": "Swinging Energy Sword",
-    "uuid": "d7680c67-8e54-482a-903d-622ddb43485f",
-    "message": "@ is &Swinging Energy Sword&",
-    "specialmessage": "@: I need a weapon. &Swinging Energy Sword&"
-  },
-  {
-    "name": "Hakuna Matata Dance",
-    "uuid": "71afa8ed-03b6-4808-b537-330daf9dbf50",
-    "message": "@:&Hakuna Matata&...",
-    "specialmessage": "@: It means no worries, for the rest of your days. &(Hakuna Matata Dance)&"
-  },
-  {
-    "name": "Novice Climber",
-    "uuid": "9307ceae-4556-17e5-d6a7-cd3671a3325d",
-    "message": "@ found something fun to climb.",
-    "specialmessage": "@ wasn't strong enough to make it to the top."
-  },
-  {
-    "name": "Superhero Landing",
-    "uuid": "c2b9dd03-7258-4813-b6f5-37ef9b4a3326",
-    "message": "@ is doing a &Superhero Landing&",
-    "specialmessage": "@: Wooo! &Superhero Landing!& You know that's really hard on your knees."
-  },
-  {
-    "name": "looking around",
-    "uuid": "36253a28-7b6c-474a-34ad-e21194207fa9",
-    "message": "@ is &looking around&",
-    "specialmessage": "@ is &looking around& and the coast is clear!"
-  },
-  {
-    "name": "Energetic Rave",
-    "uuid": "c4a34f85-f0c4-b78b-1513-4726549361fa",
-    "message": "@ is doing the &Energetic Rave&",
-    "specialmessage": "@ is buzzing with energy! (&Energetic Rave&)"
-  },
-  {
-    "name": "The Master Chief",
-    "uuid": "88dc7deb-21bb-48c3-8b5a-00757a06aef9",
-    "message": "@ is &The Master Chief&",
-    "specialmessage": "@: We make our own luck, but I'll always be there when you need me. &The Master Chief&"
-  },
-  {
-    "name": "Training Like Po",
-    "uuid": "d73c3523-260e-4dc7-bbaf-f2eaaa1fc556",
-    "message": "@ is &Training Like Po&.",
-    "specialmessage": "@ is their own secret ingredient. &Training Like Po&."
-  },
-  {
-    "name": "Push-Up",
-    "uuid": "a181fc56-8670-e2e1-8df2-c89922eb88f2",
-    "message": "@ is doing a Pushup!",
-    "specialmessage": "@ is getting buffer by doing a Push-Up!"
-  },
-  {
-    "name": "Cartwheel",
-    "uuid": "5cf9d5a3-6fa0-424e-8ae4-d1f877b836da",
-    "message": "@ is doing a &Cartwheel.&",
-    "specialmessage": "@: I did it! The perfect &Cartwheel!&"
-  },
-  {
-    "name": "Work out",
-    "uuid": "30ff9a8a-299a-89c5-22ab-b18715b34554",
-    "message": "@ is doing &Work out&",
-    "specialmessage": "@ is feeling strong! (&Work out&)"
-  },
-  {
-    "name": "T Pose",
-    "uuid": "d0f1b617-4178-c224-3e71-b51978215fb1",
-    "message": "@ is &T-Posing&! ",
-    "specialmessage": "@ thinks they're the letter T! (&T Pose&)"
-  },
-  {
-    "name": "Kneeling",
-    "uuid": "24444aea-cb6e-451f-90fc-b74e57cc7c5d",
-    "message": "@ is &Kneeling.&",
-    "specialmessage": "@ swears fealty by &Kneeling.&"
-  },
-  {
-    "name": "Minion Taunting",
-    "uuid": "a51f8e7c-a4dd-4ce1-9fc9-2c3cad66cede",
-    "message": "@ is &Minion Taunting.&",
-    "specialmessage": "@: Bananonina poopaye! &(Minion Taunting)&"
-  },
-  {
-    "name": "Sonic the Hedgehog",
-    "uuid": "cd8c3bc6-f455-43d2-836e-62c1a19474c7",
-    "message": "@ is &Victory Spinning.&",
-    "specialmessage": "@ Zone Complete! &(Victory Spinning)&"
-  },
-  {
-    "name": "Hero Slam",
-    "uuid": "4fc07794-af5a-fa14-7749-93ec10714548",
-    "message": "@ is doing a &Hero Slam& !",
-    "specialmessage": "@ the Hero has arrived! (&Hero Slam&)"
-  },
-  {
-    "name": "Minion Panicking",
-    "uuid": "79e93b59-38f0-4796-8033-f99d7aa9334e",
-    "message": "@ is &Minion Panicking.&",
-    "specialmessage": "@: Bee Do Bee Do Bee Do! &(Minion Panicking)&"
-  },
-  {
-    "name": "Minion Cheering",
-    "uuid": "6174a111-19ac-41d1-a483-0e0b37f9d049",
-    "message": "@ is &Minion Cheering.&",
-    "specialmessage": "@: Banana banana tank yu! &(Minion Cheering)&"
-  },
-  {
-    "name": "Work Out",
-    "uuid": "471dc8ba-b864-5bc9-1d90-08b6be951c8d",
-    "message": "@ is doing some &Work Out&",
-    "specialmessage": "Looks like @ is getting in shape at the gym."
-  },
-  {
-    "name": "Air Guitar",
-    "uuid": "fdc8a22f-2dd6-f6ba-8155-74455ece3f51",
-    "message": "@ is doing the &Air Guitar&!",
-    "specialmessage": "@ is rocking out with the &Air Guitar&!"
-  },
-  {
-    "name": "Hitting the Omnitrix",
-    "uuid": "1e30e8f4-2991-4aac-a58a-a6bf90a080c5",
-    "message": "@ is &Hitting the Omnitrix.&",
-    "specialmessage": "@ Stupid watch, stupid powers! &(Hitting the Omnitrix)&"
-  },
-  {
-    "name": "Posing Like a Hero",
-    "uuid": "7102c0f7-6113-44f5-b37c-4e94841b0e81",
-    "message": "@ is &Posing Like a Hero.&",
-    "specialmessage": "@: Bring it on! &(Posing Like a Hero)&"
-  },
-  {
-    "name": "Trampoline",
-    "uuid": "ecb4bcdd-6362-533c-c5da-aba49572eb4d",
-    "message": "@ is jumping on a &Trampoline&",
-    "specialmessage": "@ is doing amazing stunts. (&Trampoline&)"
-  },
-  {
-    "name": "Going Hero",
-    "uuid": "f14d652f-18ed-42dc-831f-7f6a2eab1246",
-    "message": "@ is &Going Hero.& ",
-    "specialmessage": "@: Come on Omnitrix gave me Wither! &(Going Hero)&"
-  },
-  {
-    "name": "Magic Trick",
-    "uuid": "94222474-788d-e113-a831-2f1c17fc9c0c",
-    "message": "@ is mystifying the crowd with a &Magic Trick&!",
-    "specialmessage": "@ is making items levitate! (&Magic Trick&)"
-  },
-  {
-    "name": "Sonic-Finger Wagging",
-    "uuid": "e8a91ad4-6f7a-479e-9556-e1a7c058351b",
-    "message": "@: Tsk Tsk &(Sonic-Finger Wagging)&",
-    "specialmessage": "@: Not today Dr. Robotnik, Tsk Tsk &(Sonic-Finger Wagging)&"
-  },
-  {
-    "name": "Arm swing",
-    "uuid": "c4aa9ca0-abcc-7d0c-01c7-76a7e4d4840e",
-    "message": "@ is doing the &Swinger&!",
-    "specialmessage": "@ is swinging around!"
-  },
-  {
-    "name": "Anime Running",
-    "uuid": "f3860b0e-fb05-5b8b-863b-ba7693afce11",
-    "message": "@ is running like an anime character. (&Anime Running&)",
-    "specialmessage": "@ is running as fast as possible. (&Anime Running&)"
-  },
-  {
-    "name": "Exhausted",
-    "uuid": "2391b018-3b8a-4bb0-9596-8edfc502d302",
-    "message": "@ is &Exhausted.&",
-    "specialmessage": "@: 0 hunger, no drumsticks, &Exhausted...&"
-  },
-  {
-    "name": "Sonic-Running",
-    "uuid": "b8e54924-ec3f-409c-8914-bca61fbe9242",
-    "message": "@ is &Sonic Running.&",
-    "specialmessage": "@ doesn’t need a Potion of Swiftness when &Sonic Running&"
-  },
-  {
-    "name": "Warm Up Drills",
-    "uuid": "6b9c7731-7422-4333-950f-cf3d147ffa47",
-    "message": "@ is doing &Warm Up Drills.&",
-    "specialmessage": "@: I know &Warm Up Drills.&"
-  },
-  {
-    "name": "Calling a Dragon",
-    "uuid": "9f5d4732-0513-4a0a-8ea2-b6b8d7587e74",
-    "message": "@ is &Calling a Dragon.&",
-    "specialmessage": "@ is &Calling a Dragon& but Jean doesn’t answer."
-  },
-  {
-    "name": "Baby Shark",
-    "uuid": "d2e66d12-cd7a-2d65-1fb2-6048115e07f6",
-    "message": "@ is dancing the like a baby shark!",
-    "specialmessage": "@ could also be a megalodon!"
-  },
-  {
-    "name": "C-3PO Wave",
-    "uuid": "c2d6091d-9f91-4a9e-badd-ef8481353cb0",
-    "message": "@ does a &C3PO Wave.&",
-    "specialmessage": "I am @, player-villager relations. &(C3PO Wave)&"
-  },
-  {
-    "name": "Meditating Like Luke",
-    "uuid": "85957448-e7bb-4bb4-9182-510b4428e52c",
-    "message": "@ is reaching out with the Force &(Meditating Like Luke)&",
-    "specialmessage": "@ is stacking blocks with their mind. &(Meditating Like Luke)&"
-  },
-  {
-    "name": "Tornado Jump",
-    "uuid": "cefd9987-17b1-3279-9146-a2f87f2165a0",
-    "message": "@ is doing the &Tornado Jump&!",
-    "specialmessage": "@ gets nauseous from spinning around!"
-  },
-  {
-    "name": "Reverse Gravity",
-    "uuid": "91fa19e5-e7f7-fba9-722f-85fae89625db",
-    "message": "@ is experiencing &Reverse Gravity&!",
-    "specialmessage": "Gravity: Am I a joke to @?"
-  },
-  {
-    "name": "Acting Like a Dragon",
-    "uuid": "c2a47805-c792-4882-a56d-17c80b6c57a8",
-    "message": "@ ROAR! &(Acting like a Dragon)&",
-    "specialmessage": "@: Stay away from my egg! &(Acting like a Dragon)&"
-  },
-  {
-    "name": "Dancing Like Toothless",
-    "uuid": "a12252fa-4ec8-42e0-a7d0-d44fbc90d753",
-    "message": "@ is &Dancing Like Toothless.&",
-    "specialmessage": "@: Magma walk and... Ravager! &(Dancing Like Toothless)&"
-  },
-  {
-    "name": "On Your Mark",
-    "uuid": "fced8dcb-6818-f2c0-45c1-dd7b36641fef",
-    "message": "@ is &On Their Mark&...",
-    "specialmessage": "@ is &On Their Mark&... Get set... GO!"
-  },
-  {
-    "name": "Air Heart",
-    "uuid": "3f7db11c-9960-e5fa-5374-28e11bf483f8",
-    "message": "@ is drawing an &Air Heart&!",
-    "specialmessage": "@ &Air Heart& is fluttering on a gentle breeze!"
-  },
-  {
-    "name": "Ayy Macarena",
-    "uuid": "b59bd4e3-7695-02b4-30d3-def25971f2bc",
-    "message": "@ is dancing &Ayy Macarena&",
-    "specialmessage": "@ is going wild with &Ayy Macarena&"
-  },
-  {
-    "name": "Obi-Wan’s Mind Trick",
-    "uuid": "4b9b9f17-3722-4d38-a6a9-9ba0e8cf5044",
-    "message": "@ These aren't the mobs you're looking for. &(Obi-Wan's Mind Trick)&",
-    "specialmessage": "@: I didn't look you in the eyes. I can go about my business. &(Obi-Wan's Mind Trick)&"
-  },
-  {
-    "name": "Jumping Jack",
-    "uuid": "ed81e090-82f2-27a5-e703-9b381c83af73",
-    "message": "@ is doing some sports!",
-    "specialmessage": "Jumping @!"
-  },
-  {
-    "name": "Grid Dance",
-    "uuid": "44c0e5e7-40a5-46db-de1f-227881f185f1",
-    "message": "@ is doing the &Grid Dance&!",
-    "specialmessage": "@ is on fire with these moves! (&Grid Dance&)"
-  },
-  {
-    "name": "Shuffle Step",
-    "uuid": "3e32a908-bc18-a965-503a-0947510c95ad",
-    "message": "@ is doing the &shuffle step&!",
-    "specialmessage": "@ is losing it doing the &shuffle step&!"
-  },
-  {
-    "name": "Item Spin",
-    "uuid": "25210ea3-2728-3fa5-8e89-53e80313c704",
-    "message": "@ is doing the &Item Spin&!",
-    "specialmessage": "@ watched the dropped items for too long. (&Item Spin&)"
-  },
-  {
+  "18891e6c-bb3d-47f6-bc15-265605d86525": {
     "name": "Abducted?",
-    "uuid": "18891e6c-bb3d-47f6-bc15-265605d86525",
     "message": "@ is being…&Abducted?&",
     "specialmessage": "@: Is this where all the Grass blocks have been going? &(Abducted?)&"
   },
-  {
+  "7a65740b-61c2-4c74-b549-56289244c46f": {
+    "name": "Monster Smash",
+    "message": "@ is doing the Monster Smash!",
+    "specialmessage": "@ is smashing the ground!"
+  },
+  "a9a15546-b597-4937-9ab3-6882192ce6d8": {
+    "name": "Shell Spinning",
+    "message": "@ is &Shell Spinning.&",
+    "specialmessage": "Look out dude! @ is &Shell Spinning.&"
+  },
+  "9eb9ccd3-dd53-0263-5673-99c69bd591ea": {
+    "name": "Frosty Friction",
+    "message": "@ rubs their arms to stay warm.",
+    "specialmessage": "@ is freezing. Can someone get them %Frosty Friction% a blanket?"
+  },
+  "c659f81b-fb61-699f-0341-9f26c9f11f88": {
+    "name": "Ragdoll",
+    "message": "@ is dropping like a &Ragdoll&",
+    "specialmessage": "Wow, excellent ragdoll physics! (&Ragdoll&)"
+  },
+  "ba83e17e-9ed5-421b-a0ce-4b4787d13277": {
+    "name": "Wildly Skipping",
+    "message": "@ is &Wildly Skipping&",
+    "specialmessage": "@ is skipping through Wonderland! &Wildly Skipping&"
+  },
+  "b77912f5-8f20-1e18-50f7-6b5fc21205e6": {
+    "name": "Dab Sneeze",
+    "message": "@ Just did a &Dab Sneeze&!",
+    "specialmessage": "@ is bringing back the &Dab Sneeze& "
+  },
+  "21ab3cc5-bb1c-27ef-2d53-297c8ccff9b4": {
+    "name": "Jump of joy",
+    "message": "@ is screaming „Yee-Haw“!",
+    "specialmessage": "@ says „Ouch, my ankle“!"
+  },
+  "2b7b54f9-c2c2-a6d1-a6e4-4b011bda20af": {
+    "name": "Pop-Up",
+    "message": "@ is doing the &Pop-Up&!",
+    "specialmessage": "@ is going vertical doing the &Pop-Up&!"
+  },
+  "f8dcb189-d880-e358-65c5-25807f9971b3": {
+    "name": "push ups",
+    "message": "@  has just completed 100 pumps",
+    "specialmessage": "@  is the strongest on the server"
+  },
+  "a396b61c-ec46-0e26-fa81-1233f8e0c049": {
+    "name": "Slow Motion",
+    "message": "@ is doing the &Slow Motion&!",
+    "specialmessage": "@ is Slowing Time in &Slow Motion&!"
+  },
+  "c4764170-3136-3d47-fffa-b5cb7399064e": {
+    "name": "Helicopter Helicopter",
+    "message": "@ transformed into a &Helicopter Helicopter&!",
+    "specialmessage": "Is it a bird? No, it's @'s &Helicopter Helicopter&!"
+  },
+  "1c32d42a-df61-bad4-a47b-b5fb0a6b781e": {
+    "name": "No no no",
+    "message": "@ says &No no no&",
+    "specialmessage": "@ woah woah woah &No no no&"
+  },
+  "988ed8d3-4da4-e1d4-f47d-0c2d00992ae4": {
+    "name": "Big Yawn",
+    "message": "@ is sleepy",
+    "specialmessage": "sooo tired~"
+  },
+  "49013daf-588d-2597-032b-2a8c1ab0e17e": {
+    "name": "stretching",
+    "message": "@ is (&stretching&)",
+    "specialmessage": "@ is getting ready to rumble! (&stretching&)"
+  },
+  "acd4f09b-b1cd-a618-01e5-e20921f2b05e": {
+    "name": "SIUUU",
+    "message": "@ is celebrating with &SIUUU&",
+    "specialmessage": "@ is GOATED &SIUUU&"
+  },
+  "d3cababb-4551-f3ce-951a-bbe1ec1ef7ed": {
+    "name": "T-Pose",
+    "message": "@ is doing a &T-Pose&",
+    "specialmessage": "@ is showing dominance. (&T-Pose&)"
+  },
+  "10c9d263-e6fb-6ba7-f5a3-e8b147782d8b": {
+    "name": "Hand Spin",
+    "message": "@ makes a hand spin.",
+    "specialmessage": "@ is spinning so fast!"
+  },
+  "7d9ac564-aa1b-91ae-d94f-594ace61553b": {
+    "name": "The Dip",
+    "message": "@ slipped! (&The Dip&)",
+    "specialmessage": "@ pretends to fall! (&The Dip&)"
+  },
+  "bc839f9b-da6e-03d7-a1e1-55d3774fc79f": {
+    "name": "Beam Charge",
+    "message": "@ is doing the &Beam Charge&!",
+    "specialmessage": "@ is Firing' the lazer!"
+  },
+  "dffb6b28-0c12-260f-6625-46912448d2ca": {
+    "name": "It's time to fly",
+    "message": "@ is trying to fly",
+    "specialmessage": "@ wants to look like an airplane"
+  },
+  "a7bb7cfa-ed75-7375-8ffb-4800cfd7e150": {
+    "name": "Face Plant",
+    "message": "@ has face planted into the ground! (&Face plant&)",
+    "specialmessage": "@ hit the ground! (&Face Plant&)"
+  },
+  "a4913821-4757-a586-168c-fb638fed3cf7": {
+    "name": "Floss Dance",
+    "message": "@ busts out some sick moves with the Floss Dance emote!",
+    "specialmessage": "@ does the Floss Dance like a pro!"
+  },
+  "eb451dd5-36d9-c9a5-aada-fef83e5d3f63": {
+    "name": "too tired",
+    "message": "@ is really tired...",
+    "specialmessage": "Oh, I'm so tired! Please just 5 more minutes..."
+  },
+  "0ab9769c-d3a1-2440-f6a8-89f92b8bc620": {
+    "name": "Stargazer",
+    "message": "@ is staring at the stars.",
+    "specialmessage": "@ might have seen a UFO."
+  },
+  "eb1c4639-5a92-de7c-2038-084693661762": {
+    "name": "Double Dab",
+    "message": "@ is hitting the double dab",
+    "specialmessage": "@ is double dabbing on you!"
+  },
+  "698b643b-71f8-9a4e-17da-07bf52d33f6b": {
+    "name": "Worm Dance",
+    "message": "@ is dancing like a worm!",
+    "specialmessage": "@'s dance moves take a lot of energy!"
+  },
+  "6edc87cc-0285-29a8-47a4-aa0d423b327d": {
+    "name": "Cute Laying Down",
+    "message": "@ is laying down cutely",
+    "specialmessage": "@ is so cute!!"
+  },
+  "771a0244-4a87-feb1-e86e-7a8e24f1fc93": {
+    "name": "Goodbye Kiss",
+    "message": "Bye Mwuah!",
+    "specialmessage": "Goodbye Mwuah! Mwuah! Chupchups!"
+  },
+  "e0e0e66f-020c-e039-6e12-d4563289ba05": {
+    "name": "Blowing a Kiss",
+    "message": "@ is &Blowing a Kiss&",
+    "specialmessage": "@ is so sweet! They are &Blowing a Kiss&"
+  },
+  "1ebf22ca-b683-f640-31b0-52fc69444eb7": {
+    "name": "Star Roll",
+    "message": "@ is doing a &Star Roll&!",
+    "specialmessage": "@'s &Star Roll& was so graceful, even the moon couldn't help but watch in silent admiration."
+  },
+  "5f0f79b3-1205-2b21-4acc-ec24e3618a94": {
+    "name": "Backflip Pose",
+    "message": "@ is &posing for the camera!",
+    "specialmessage": "@ is doing a crazy &backflip!"
+  },
+  "852cf616-7700-fd7d-1d64-d56afa707979": {
+    "name": "Break Dance",
+    "message": "@ is breaking the floor! (&Break Dance&)",
+    "specialmessage": "@ is a dance expert! (&Break Dance&)"
+  },
+  "e7144027-1b48-0bf9-176e-532d12081289": {
+    "name": "Dance Mashup",
+    "message": "@ is doing a &Dance Mashup&!",
+    "specialmessage": "WOAH! Check out @ doing a &Dance Mashup&!"
+  },
+  "05af18ca-920f-4232-83cb-133b2d913dd6": {
+    "name": "Underwater Dancing",
+    "message": "@ is &Underwater Dancing.&",
+    "specialmessage": "@ is communing with the Guardians while &Underwater Dancing.&"
+  },
+  "bf340351-1891-4701-a42a-79739832bc40": {
+    "name": "Star Jumps",
+    "message": "@ is doing &Star Jumps&",
+    "specialmessage": "@ is reaching for the stars! (&Star Jumps&)"
+  },
+  "df1bca54-23b8-6b12-4faa-9ec01dddecb8": {
+    "name": "Breakdance Freeze",
+    "message": "@ is doing the &Breakdance Freeze&",
+    "specialmessage": "@ has frozen time! &Breakdance Freeze&"
+  },
+  "18d88841-b9e7-de77-badd-7c6979bf53e5": {
+    "name": "Wind Up and Spin",
+    "message": "@ is doing a &Wind Up and Spin&!",
+    "specialmessage": "Look out! @ is winding up for a tight spin!"
+  },
+  "2cfb52df-ef9f-4976-b1cc-fac271bcc6da": {
+    "name": "Anime Jump",
+    "message": "@ is reaching the sky with Anime Jump!",
+    "specialmessage": "@ is going viral with touching the sky!"
+  },
+  "cac64e06-0115-4d74-9510-ce1aa54575e9": {
+    "name": "Moonwalk",
+    "message": "@ is doing the Moonwalk Dance!",
+    "specialmessage": "@ is getting famous with each step!"
+  },
+  "ceb97e43-f793-43a6-b74c-32828f08d3e4": {
+    "name": "Secret Handshake",
+    "message": "@ goes in for the &Secret Handshake.&",
+    "specialmessage": "Executed flawlessly, @ performs the &Secret Handshake.&"
+  },
+  "b553e298-bf96-a16d-0707-5572d34126ec": {
+    "name": "T Pose",
+    "message": "@ is standing still.",
+    "specialmessage": "Is @ sleeping? Or what?"
+  },
+  "653035f8-3a8d-c14e-8ca1-27c7ecf0d742": {
+    "name": "Laughing Really hard",
+    "message": "@ is laughing (&Laughing Really Hard&)",
+    "specialmessage": "@ can't stop laughing (&Laughing Really Hard&)"
+  },
+  "9b661084-6974-6f9d-7d18-dd485d910045": {
+    "name": "Jet Pack Flying",
+    "message": "@ is &Jet Pack Flying&",
+    "specialmessage": "Is it a bird? Is it a plane? No its @"
+  },
+  "42fde774-37d4-4422-b374-89ff13a6535a": {
+    "name": "Shadow Boxing",
+    "message": "@ is &Shadow Boxing.&",
+    "specialmessage": "Float like a Phantom, sting like a bee! &(Shadow Boxing)&"
+  },
+  "6521948c-7d2c-4ab9-aeb4-ef535327faf7": {
+    "name": "Roaring Like Godzilla",
+    "message": "@ is &Roaring Like Godzilla&.",
+    "specialmessage": "SSSSKKREEEEEEEONNNK @ is &Roaring Like Godzilla&."
+  },
+  "8d81d839-53c0-3587-329d-638868090d77": {
+    "name": "Toilet Flushed",
+    "message": "@is got flushed!",
+    "specialmessage": "@is got flushed by many times !"
+  },
+  "346ae49b-43b6-2482-8045-0baf4d4725c3": {
+    "name": "Anime Run",
+    "message": "Catch that blur? That's @ mastering the Anime Run!",
+    "specialmessage": "Who needs a cape?  @ is nailing the Anime Run!"
+  },
+  "a9a83f69-15a5-d1b7-b7e3-0ac317344e5d": {
+    "name": "Greatest Handshake",
+    "message": "@ is performing the &Greatest Handshake&",
+    "specialmessage": "@ just broke the sound barrier with that epic handshake! &Greatest Handshake&"
+  },
+  "a38b0907-b417-57ac-1748-6b55fc6d3606": {
+    "name": "We Have Lift Off",
+    "message": "@ is giving &helicopter& energy",
+    "specialmessage": "It's a bird, it's a plane, it's a @ &-copter?&"
+  },
+  "77300dcc-dc80-41a9-b9e6-0c9273418fea": {
+    "name": "Startled",
+    "message": "@ is &Startled&",
+    "specialmessage": "AH! Look out behind you! &Startled&"
+  },
+  "c1b4898e-e403-1ff4-2366-0371f7eba239": {
+    "name": "Floating ",
+    "message": "@ starts to float (&Floating&)",
+    "specialmessage": "@ is reaching the sky (&Floating&)"
+  },
+  "955ce061-20ce-e38a-c390-20c9ed32190f": {
+    "name": "Floss Dance",
+    "message": "@ is doing a cool &Floss Dance&",
+    "specialmessage": "@ is getting cramps!"
+  },
+  "4d9167f2-019c-2033-244c-d470ff86ef51": {
+    "name": "Curtsy",
+    "message": "@ is doing a &curtsy&.",
+    "specialmessage": "@ has some graceful moves!"
+  },
+  "7d28bd70-5b02-62d5-ed09-4e1ecc4eeb36": {
+    "name": "Salute",
+    "message": "@ started to &Salute&",
+    "specialmessage": "@ stands proudly! (&Salute&)"
+  },
+  "66f19d0e-2d9b-2990-896a-8cecb8bb31c8": {
+    "name": "T-Pose",
+    "message": "@ is T-Posing",
+    "specialmessage": "@ T-pose refers to a default pose in video games where an animated character stands with their arms horizontally outstretched."
+  },
+  "993a3f59-2900-2069-2233-0f2820ef0083": {
+    "name": "Its You",
+    "message": "@ is using the &You& emote.",
+    "specialmessage": "@ is pointing at &you&"
+  },
+  "86b34976-8f41-475b-a386-385080dc6e83": {
+    "name": "Silly",
+    "message": "@ is feeling &Silly.&",
+    "specialmessage": "@ is dancing, jumping, and acting super &Silly.&"
+  },
+  "7cec98d8-55cc-44fe-b0ae-2672b0b2bd37": {
+    "name": "Hammering",
+    "message": "@ is &Hammering& away.",
+    "specialmessage": "@….I think you’re missing the crafting table? What are you &Hammering?&"
+  },
+  "cfc510d9-184a-3106-f9c3-0a9a5bf6b01c": {
+    "name": "Take The L",
+    "message": "@ is doing the &L Dance&!",
+    "specialmessage": "@ bounces around!"
+  },
+  "45941813-d36e-65a7-f524-9c4391d6d74d": {
+    "name": "UwU",
+    "message": "@ is a little bit &shy& right now.",
+    "specialmessage": "@ is embarrassed..."
+  },
+  "1690ba91-2201-6817-44c0-6187f44dab78": {
+    "name": "Showcase Item",
+    "message": "@is showcasing item",
+    "specialmessage": "@is showcasing special item"
+  },
+  "bf3a9ed9-551d-ff1d-1b7b-c42e619745da": {
+    "name": "Flower Dance",
+    "message": "Look! @ is doing a &Flower Dance&! ",
+    "specialmessage": "@ just picked some flowers and is doing a &Flower Dance&!"
+  },
+  "d7519b5a-45ec-4d27-997c-89d402c6b57f": {
+    "name": "Mining",
+    "message": "@ is &Mining& air.",
+    "specialmessage": "@ received (1) Air Block from &Mining.&"
+  },
+  "28aa6563-36b8-0d81-c021-6acd1584378e": {
+    "name": "Dip and Point",
+    "message": "@ is doing the &Dip and Point& move!",
+    "specialmessage": "@ is turning up the disco in the mine! Groovy moves, block star! (&Dip and Point&)"
+  },
+  "0123f9a5-2377-d4c4-dc93-559d7da332aa": {
+    "name": "Playing Possum",
+    "message": "@ is &Playing Possum&",
+    "specialmessage": "@ is not &Playing Possum&!"
+  },
+  "9951d365-e94f-245e-1157-16a676fa60b0": {
+    "name": "Frontflip",
+    "message": "@ does a crazy frontflip!",
+    "specialmessage": "@ is spinning like a superhero!"
+  },
+  "8387f555-f789-45a4-90d8-3fa2a9a9e299": {
+    "name": "Stomping Like a Dino",
+    "message": "@ is &Stomping Like a Dino&",
+    "specialmessage": "Run for your lives! @ is &Stomping Like a Dino&"
+  },
+  "5852abca-45b2-3361-08a6-337e8a054f9c": {
+    "name": "shake it",
+    "message": "@ is ready to shake!",
+    "specialmessage": "@ is shaking all over the place!"
+  },
+  "eec85101-6eb5-417f-8cda-2a2a75e13df5": {
+    "name": "Standing Ovation",
+    "message": "@ is giving a &Standing Ovation&.",
+    "specialmessage": "Wow! @ can't clap fast enough! &Standing Ovation&"
+  },
+  "8465bd2e-2a59-ba73-70fc-b88cf9d8727c": {
+    "name": "Backflip Wave",
+    "message": "@ is doing a backflip and is waving!",
+    "specialmessage": "@ is going viral with this cool wave!"
+  },
+  "0f79b091-8026-059a-5b9f-0d57da756bec": {
+    "name": "anime run",
+    "message": "@ is running at crazy speeds!",
+    "specialmessage": "Run! Run! Run!"
+  },
+  "9e99ba2a-090c-f4e8-6537-b8463849feba": {
+    "name": "Jump Rope",
+    "message": "@ is pretty good at &Jump Rope&!",
+    "specialmessage": "Watch out! The &Jump Rope& champ , @, is in town!"
+  },
+  "c9ae3ba8-2e9c-cb7a-4e92-b1e464cadfbc": {
+    "name": "warm up dance",
+    "message": "@ is doing warm-up dance!",
+    "specialmessage": "@ is going to be viral with this!"
+  },
+  "61914613-98ee-65ce-7816-b8e076720f05": {
+    "name": "Anime Dance",
+    "message": "@ is doing the &Anime Dance&.",
+    "specialmessage": "@ grooves to inaudible music. (&Anime Dance&)"
+  },
+  "36780a72-05aa-57b0-0520-4519ff8feb3d": {
+    "name": "Roll Out",
+    "message": "@ is performing a &Roll Out&",
+    "specialmessage": "@ thinks they're a wheel! (&Roll Out&)"
+  },
+  "13f2e1f6-ac45-7c4d-9203-29b83faadd71": {
+    "name": "Levitate",
+    "message": "@ started to &Levitate&",
+    "specialmessage": "@ is of the ground! (&Levitate&)"
+  },
+  "385ca980-843d-3467-0ab3-2c4a3f84e795": {
+    "name": "Rockin'",
+    "message": "@ is &Rockin'&!",
+    "specialmessage": "@ knows how to set the mood! (&Rockin'&)"
+  },
+  "da569e30-213a-bbc3-29be-27ce8aafc290": {
+    "name": "cool flip",
+    "message": "@ is doing a &cool flip&",
+    "specialmessage": "@ is so cool look at their flip!"
+  },
+  "04ae3659-e91e-0ad3-ff27-d15faab04fb6": {
+    "name": "Roller Coaster",
+    "message": "@ is on a &Roller Coaster&",
+    "specialmessage": "@ is on a loop-de-loop! (&Roller Coaster&"
+  },
+  "dfc6bd7d-fdc1-3da8-a98a-02f5bf585a60": {
+    "name": "Tired",
+    "message": "Is it nap time yet, @? Your 'Tired' look says yes!",
+    "specialmessage": "Warning: @ is so tired, they might snooze mid-game!"
+  },
+  "fd0f4a49-cdf0-25a6-2bfe-eaa661240c26": {
+    "name": "You lose",
+    "message": "@ does the L dance",
+    "specialmessage": "@ Celebrates in style"
+  },
+  "4ac8315a-9a0e-cd11-aad9-6b8fa65c67ce": {
+    "name": "Joyful Bop",
+    "message": "@ is &joyfully bopping&",
+    "specialmessage": "Happy vibes all around (&Joyful Bop&)"
+  },
+  "573fdad9-e33a-6766-39e6-41775fb41785": {
+    "name": "Backflip",
+    "message": "@is doing backflips!",
+    "specialmessage": "@is doing backflip for many times!"
+  },
+  "02b5af77-197b-a9cf-eb30-e7dd876529bd": {
+    "name": "horror dance",
+    "message": "@ is doing &Horror dance&!",
+    "specialmessage": "That dance is looking scary!"
+  },
+  "7804548a-79b1-0eb7-1d51-229339c033b7": {
+    "name": "around the world dance",
+    "message": "@ is doing around the world dance!",
+    "specialmessage": "Whoom! Whoom! Whoooom!"
+  },
+  "095fbcdd-7fa8-b68e-6b53-6382a75900ca": {
+    "name": "No No No",
+    "message": "@ said no, no ,no",
+    "specialmessage": "@ SAID NOOOOOOOOO!"
+  },
+  "a72ea226-06ee-ad9c-1fd6-5d8543ce7b0c": {
+    "name": "Gasp!",
+    "message": "@ just gasped!",
+    "specialmessage": "@ is pretty startled right now."
+  },
+  "7040a943-fd2c-f9f8-04c8-870b834e1216": {
+    "name": "Super Triple Jump",
+    "message": "@ is doing a &Super Triple Jump&",
+    "specialmessage": "@ is trying to reach the sky with the &Super Triple Jump&"
+  },
+  "7387be27-5975-428d-adfa-9f9b7467deb6": {
+    "name": "Rumble",
+    "message": "@ is doing the &Rumble&!",
+    "specialmessage": "@ is getting ready to &Rumble&!"
+  },
+  "b9c8979a-6921-2595-9a3a-c6989ca54404": {
+    "name": "Yawning",
+    "message": "@ is &Yawning&",
+    "specialmessage": "@ feels sleepy (&Yawning&)"
+  },
+  "ece705e7-a58d-0c29-e319-3773a4689b42": {
+    "name": "Wacky Wavy Dance",
+    "message": "@ is doing a &Wacky Wavy Dance&!",
+    "specialmessage": "@ is trying to sell used cars! (&Wacky Wavy Dance&)"
+  },
+  "4f3d44dc-7f21-b054-4a86-fd4f771dd2d4": {
+    "name": "Faint",
+    "message": "@ started to &Faint&",
+    "specialmessage": "@ hit the ground! (&Faint&)"
+  },
+  "d6d1349f-50a5-5980-0980-7a9f43be259e": {
+    "name": "Trending Dance",
+    "message": "@ is doing the Trending Dance!",
+    "specialmessage": "@ is trending... and dancing!"
+  },
+  "1d650d97-1eef-9003-3431-75ac83b27ee2": {
+    "name": "Formal Bow",
+    "message": "@ bows.",
+    "specialmessage": "@ is quite formal."
+  },
+  "34ad2ad5-44ba-2876-b3e2-9474221a04a4": {
+    "name": "In Awe",
+    "message": "@ is looking around &In Awe&!",
+    "specialmessage": "@ can't believe what they found! They are &In Awe&!"
+  },
+  "f8b05dd8-2458-34c8-5d9b-1d4230ffaa54": {
+    "name": "Pantomime",
+    "message": "@ is showing off their &Pantomime& skills!",
+    "specialmessage": "@ missed that wall! (&Pantomime&)"
+  },
+  "c722c604-1483-a498-8882-440aced1df12": {
+    "name": "No Dirt On Me",
+    "message": "@ is dusting themselves off",
+    "specialmessage": "No dirt on @"
+  },
+  "8fffc6d4-f69f-d94f-1334-7c27153fdf04": {
+    "name": "Shake",
+    "message": "@ being shaken up by an &Earthquake&",
+    "specialmessage": "@ is losing their balance!"
+  },
+  "1ee5a820-5370-34a6-5747-6d08535a6065": {
+    "name": "Tube guy",
+    "message": "@ becomes a tube.",
+    "specialmessage": "@ thinks that feels strange."
+  },
+  "bfa08e4d-d2a7-43a3-a6e6-ee2ea484d36d": {
+    "name": "One Handed Pushups",
+    "message": "@ is doing &One Handed Pushups&.",
+    "specialmessage": "Now @ is just showing off... &One Handed Pushups&."
+  },
+  "5f2f0156-0570-dae6-4dc9-cb7ae029bd34": {
+    "name": "Falling Asleep",
+    "message": "@ is &Falling Asleep&...",
+    "specialmessage": "@ just needs five more minutes! (&Falling Asleep&)"
+  },
+  "de454fbc-c940-a1f3-07b6-02d6c0b99dff": {
+    "name": "Push ups",
+    "message": "Push Up pro @ – turning the game into a gym!",
+    "specialmessage": "Muscle mode: Activated! @ is crushing those Push Ups!"
+  },
+  "e5ef10b5-d864-9766-c1a0-81035923db4a": {
+    "name": "Griddy",
+    "message": "@ is doing the Griddy!",
+    "specialmessage": "@ is tapping their heels and swinging their arms!"
+  },
+  "9f18b97c-0bc4-0291-678b-1fd18024290a": {
+    "name": "Surprised",
+    "message": "@ is &Surprised&!",
+    "specialmessage": "@ is &Flabbergasted!&!"
+  },
+  "e21c782b-d491-dd5a-e701-fb403a0f74a6": {
+    "name": "rock paper scissors",
+    "message": "@ is doing rock paper scissors",
+    "specialmessage": "@ just won the rock paper scissors"
+  },
+  "17356799-2d42-54c6-deb8-6f78d8a4a35d": {
+    "name": "Cute Roll",
+    "message": "@ is doing a &Cute Roll&",
+    "specialmessage": "@ is a cute patootie (&Cute Roll&)"
+  },
+  "50cad516-68f9-047b-2523-cf1db44fc739": {
+    "name": "Kicking the Ground",
+    "message": "@ is &Kicking the Ground&!",
+    "specialmessage": "look at @ sadly &Kicking the Ground&!"
+  },
+  "bcf4c945-c227-2ebf-b6fe-627a85abc87b": {
+    "name": "Penguin Walk",
+    "message": "@ is wobbling to the left an right.",
+    "specialmessage": "Is @ a pen.. pen... PENGUIN?!"
+  },
+  "94d53226-a7a0-081b-6098-e9b3399692e0": {
+    "name": "Raging Out",
+    "message": "@ is &Raging Out&!",
+    "specialmessage": "Stand back! @ is &Raging Out&!"
+  },
+  "6762ef32-7835-2bf8-7744-dd8eb302a61e": {
+    "name": "showing off",
+    "message": "@ is &Showing Off&!",
+    "specialmessage": "@ is trend setting by &Showing Off&!"
+  },
+  "f4080ab6-68b6-56e8-61c6-1aa17626d9b8": {
+    "name": "Invisible Stairs",
+    "message": "@ is climbing &Invisible Stairs&!",
+    "specialmessage": "@ missed a step! (&Invisible Stairs&)"
+  },
+  "f5d9e381-a95b-a0bc-77bd-84a735de7e04": {
+    "name": "Break It Down",
+    "message": "@ is breakin' it down! (&Break It Down&)",
+    "specialmessage": "@ is boppin' like a parrot on a jukebox! (&Break It Down&)"
+  },
+  "6d35a7a6-942f-4d6f-a233-1499be044158": {
+    "name": "Inspecting Item",
+    "message": "@ is &Inspecting Item.&",
+    "specialmessage": "Is this enchanted? Can I eat it? @ is &Inspecting Item.&"
+  },
+  "a91dc5bc-e476-6e4d-6aff-5cd53dd51ce0": {
+    "name": "Disappointment",
+    "message": "@ is doing the &Disappointment&!",
+    "specialmessage": "@ is very disappointed!"
+  },
+  "5ee64028-962f-8fc3-d7d0-61f8e3cf700d": {
+    "name": "Super Hero",
+    "message": "Up, up, and away with @!",
+    "specialmessage": "@ to the rescue! Sky's the limit!"
+  },
+  "af685394-ad73-cead-af09-f6f84a659863": {
+    "name": "Cartoon Dance",
+    "message": "@ is doing a &Cartoon Dance&",
+    "specialmessage": "@ is doing the viral &Cartoon Dance&!"
+  },
+  "ca8dd355-4b31-054c-e477-7026b851d160": {
+    "name": "Three Monkeys",
+    "message": "@ is mimicing &three monkeys&!",
+    "specialmessage": "@ is neither listening, watching nor speakin. (&Three Monkeys&) "
+  },
+  "81f0d55a-9e4d-cc7b-e74b-eddb902d14b2": {
+    "name": "Recalibration",
+    "message": "@ is undergoing &Recalibration&.",
+    "specialmessage": "Something has gone horribly wrong! @'s systems are malfunctioning! They need a &Recalibration&!"
+  },
+  "95207bbe-0824-4c76-b7b1-e11e9aa860a5": {
+    "name": "K-Pop Dance",
+    "message": "@ is doing the &K-Pop Dance&!",
+    "specialmessage": "@ is spreading love with their moves! (&K-Pop Dance&)"
+  },
+  "b9ec74d5-3a2d-1832-eb8a-0dbadb4d7425": {
+    "name": "Salsa Dance",
+    "message": "@i is doing the &Salsa Dance&!",
+    "specialmessage": "@ is getting Spicy with the &Salsa Dance&!"
+  },
+  "070374b6-10b8-4496-8b4e-44511d1be42b": {
+    "name": "Dueling Like Obi-Wan",
+    "message": "@ is &Dueling Like Obi-Wan&",
+    "specialmessage": "@ has the high ground! &Dueling Like Obi-Wan&"
+  },
+  "60b9db3f-608f-4fff-aec0-31a5ff4c54eb": {
+    "name": "Force Lifting",
+    "message": "@ is &Force Lifting& their item.",
+    "specialmessage": "Concentrate, @ must, to use the Force. &Force Lifting&"
+  },
+  "f2ac4e22-1775-9d2e-f807-cff738499863": {
+    "name": "Bridge",
+    "message": "@ is doing the bridge!",
+    "specialmessage": "You can cross @!"
+  },
+  "effd638f-f3c8-59f3-4e80-1e2bd3a79ad0": {
+    "name": "L Dance",
+    "message": "@ does the L dance! Get your own L dance emote and show off your moves too!",
+    "specialmessage": "@ just dropped the L bomb with some sick dance moves!"
+  },
+  "b315d176-a6c5-6879-0ad6-9d4c326c39ea": {
+    "name": "Hopac dance",
+    "message": "@ is doing the Hopac dance",
+    "specialmessage": "@ is doing the Kazotsky Kick"
+  },
+  "419272b3-cd1c-e4bc-b711-ac56e9eff24a": {
+    "name": "Hype",
+    "message": "@ is hyping!",
+    "specialmessage": "@ is generating a new hype!"
+  },
+  "52d2f129-0cc7-7b1c-e4ec-6eea4033639b": {
+    "name": "Slow Mime",
+    "message": "@ pretnding to open a door",
+    "specialmessage": "@ is pretending to be locked up!"
+  },
+  "3633a685-fc51-97e6-23d4-4664bca025ec": {
+    "name": "Driving",
+    "message": "@ is &Driving& an imaginary car! ",
+    "specialmessage": "@ is going VROOM VROOOOM! "
+  },
+  "12cda254-ed05-d295-8020-a6dd695afbea": {
+    "name": "Stunned",
+    "message": "@ got &stunned&!",
+    "specialmessage": "The world won't stop spinning! (&stunned&)"
+  },
+  "b9f48ea1-f55c-8e3d-4c8d-8ccc43b7fa23": {
+    "name": "Squabble",
+    "message": "@ does it right, does it left, does it right! (&Squabble&)",
+    "specialmessage": "@ is famous on social media thanks to their dance! (&Squabble&)"
+  },
+  "c6bdf101-9c4e-1da7-552d-7a6983fd8792": {
+    "name": "Reverse Dab",
+    "message": "@ reverse-dabs (&Reverse Dab&)",
+    "specialmessage": "@ knows how to do the Dab (&Reverse Dab&)"
+  },
+  "7494b32e-84ce-4daa-8278-2839e48a532e": {
+    "name": "Figure Skating",
+    "message": "@ is &Figure Skating&",
+    "specialmessage": "@ is weaving a concerto on ice! (&Figure Skating&)"
+  },
+  "db6b03fa-f1c2-076f-55b7-fee5769a9e1b": {
+    "name": "Leaning On Wall",
+    "message": "@ is leaning on a wall",
+    "specialmessage": "@ is waiting for someone"
+  },
+  "81266601-c99a-29d7-6ea2-0445765a3703": {
+    "name": "Pheww!",
+    "message": "@ sweats a lot! (&Pheww!&)",
+    "specialmessage": "@ had a narrow escape! (&Pheww!&)"
+  },
+  "92248300-16e2-3797-0edc-42da99780630": {
+    "name": "front flip",
+    "message": "@ is so talented",
+    "specialmessage": "@ is ultra-flexible"
+  },
+  "21d26485-87e9-63ed-3b8c-c28fccd39ae8": {
+    "name": "The Spin",
+    "message": "@ is &spinning&!",
+    "specialmessage": "@ has cool &spinning& moves!"
+  },
+  "043d6f77-f539-2df1-8f81-137d2b650787": {
+    "name": "Chilling",
+    "message": "@ is peacefully &Chilling&",
+    "specialmessage": "@ is on vacations (&Chilling&)"
+  },
+  "ab591200-f15c-f901-8508-fe76ab8e5341": {
+    "name": "Running in place",
+    "message": "@ is running on the spot!",
+    "specialmessage": "@ became so fast!"
+  },
+  "78abdd9a-b6bd-478f-8148-b4e15b6229ba": {
+    "name": "Cowabunga!",
+    "message": "@:&Cowabunga!& Let's go!",
+    "specialmessage": "Turtles count it off: 1! 2! 3! 4! &Cowabunga!&"
+  },
+  "7facbcbe-a6b1-b307-5263-739a66cde49e": {
+    "name": "Itchy Bottom",
+    "message": "@ has an itch they must scratch",
+    "specialmessage": "@ I think you got away with that"
+  },
+  "405bf079-cc53-d63a-1f61-258ba662cbba": {
+    "name": "Zombie Dance",
+    "message": "@ does a &Zombie Dance&",
+    "specialmessage": "@  is dancing for brains! (&Zombie Dance&)"
+  },
+  "f604f307-9c2c-dfa6-2128-4f3ff9400602": {
+    "name": "Fallen wie ein plank",
+    "message": "@ fell like a plank.",
+    "specialmessage": "@ is so stiff."
+  },
+  "8f8e4f2d-0b9f-098a-848e-2830a18ce33f": {
+    "name": "Griddy",
+    "message": "@ is doing the Griddy Dance!",
+    "specialmessage": "@ is flaming around!"
+  },
+  "009f3f8d-0937-b9f3-6577-9bc1c8b53889": {
+    "name": "Airplane",
+    "message": "@ is ready for take-off! (&Airplane&)",
+    "specialmessage": "@ is seriously gaining some airtime! (&Airplane&)"
+  },
+  "62a40ce4-9912-eb5c-ea4b-915573748873": {
+    "name": "Breakdancing",
+    "message": "@ is &Breakdancing&.",
+    "specialmessage": "Look at @ dancing moves!"
+  },
+  "5a3db893-db64-b23a-5d36-6ba42855cddd": {
+    "name": "Superhero!",
+    "message": "@ is a &Superhero!&",
+    "specialmessage": "@ is compensating for not having elytras... (&Superhero!&)"
+  },
+  "7f0a5760-df0e-e654-0e46-f21f7e0149a3": {
+    "name": "Shrinking",
+    "message": "@ is &shrinking&",
+    "specialmessage": "@ is getting smaller! (&shrinking&)"
+  },
+  "815fcc71-9202-7009-10c1-367609640de6": {
+    "name": "Face Palming",
+    "message": "@ is &Face Palming&!",
+    "specialmessage": "@ just can't look(&Face Palming&)!"
+  },
+  "ae421dd2-6a61-46b7-b260-0323e523fdc1": {
+    "name": "Mega Man Jump",
+    "message": "@ does a &Mega Man Jump.&",
+    "specialmessage": "@ is ready to take on the robots. (&Mega Man Jump&)"
+  },
+  "1cd39395-8f40-9514-46f2-aacc2b03aede": {
+    "name": "Royal Greeting",
+    "message": "@ is greeting you (&Royal Greeting&)",
+    "specialmessage": "@ is greeting you (&Royal Greeting&) "
+  },
+  "82722215-5061-2e00-504d-b08a76b0d05c": {
+    "name": "Rowing",
+    "message": "@ is &rowing& away!",
+    "specialmessage": "@ is paddling like crazy!"
+  },
+  "92572802-402b-4e50-a55b-804a48853ce6": {
+    "name": "Mega Man Victory",
+    "message": "@ celebrates a &Mega Man Victory.&",
+    "specialmessage": "\"You Get Block Fist\" @ achieved a &Mega Man Victory.&"
+  },
+  "10db17a5-62a5-4493-8ae6-faf32ecfeb18": {
+    "name": "Dual Dancing",
+    "message": "@ invites everyone, &Let's Dance!&",
+    "specialmessage": "Adventure can wait, &Let's dance!& @ has a dance party."
+  },
+  "be10427e-4a69-40fb-949f-b2d51ce25f66": {
+    "name": "Staff Spinning",
+    "message": "@ is &Staff Spinning& like Aang.",
+    "specialmessage": "Is @ able to bend air? &Staff Spinning&?"
+  },
+  "4b8f18aa-a819-a557-1134-e50f8f36029f": {
+    "name": "Pirouettes",
+    "message": "@ is doing &Pirouettes&",
+    "specialmessage": "@ is a prima ballerina! (&Pirouettes&)"
+  },
+  "eb686ce5-4d25-47ed-b61d-4f14b4668ba6": {
+    "name": "Robot Dance",
+    "message": "@ is doing the &Robot Dance&!",
+    "specialmessage": "Beep boop... @ is a Robot doing a &Robot Dance&."
+  },
+  "4e27ae63-29f8-04ed-d5e1-124544646ba8": {
+    "name": "Jubislide",
+    "message": "@ is doing the &jubislide&!",
+    "specialmessage": "@ can walk on air! (&jubislide&)"
+  },
+  "74dfdfb7-dcd4-95c1-85bb-4e290c1e9219": {
+    "name": "Dab",
+    "message": "@ is dabbing (&Dab&)",
+    "specialmessage": "@ is dabbing (&Dab&)"
+  },
+  "b49958cc-f47e-448a-b1a5-01bd94e19694": {
+    "name": "Warm-up Stretch",
+    "message": "@ is doing a &Warm-Up Stretch&!",
+    "specialmessage": "@'s hands are cold. (&Warm-Up Stretch&)"
+  },
+  "1a2188a9-a882-3bcf-4c7d-33275b48987d": {
+    "name": "Waiting Patiently",
+    "message": "@ is &Waiting Patiently&",
+    "specialmessage": "Somehow, @ is STILL &Waiting Patiently&"
+  },
+  "fb379452-fc4e-41eb-8371-9f1475456234": {
+    "name": "Contorting",
+    "message": "@ is &Contorting& like Ty Lee.",
+    "specialmessage": "@ is &Contorting& and demonstrating astounding skill."
+  },
+  "547e5f6c-d445-49a9-b06e-6919b1f9e48e": {
+    "name": "Opening Chakras",
+    "message": "@ is meditating and &Opening Chakras.&",
+    "specialmessage": "@ is &Opening Chakras& by looking within."
+  },
+  "c9a5148d-1bba-fd88-66f6-080f996f1802": {
+    "name": "Splits Jump",
+    "message": "@ is doing a &splits jump&",
+    "specialmessage": "@ is very sporty! (&Splits Jump&)"
+  },
+  "1f80d0ed-14c5-ba67-ab1c-285dc917afa6": {
+    "name": "Fitness Session",
+    "message": "@ is getting in shape",
+    "specialmessage": "@ is becoming buff steve"
+  },
+  "28a7ef0f-ee70-6873-a934-acd31fb630ea": {
+    "name": "Boogie Down",
+    "message": "@ sets the stage on fire! (&Boogie Down&)",
+    "specialmessage": "@ is coming to the stage! (&Boogie Down&)"
+  },
+  "e29b46e3-64e0-61f9-f932-afd2cdcc69a2": {
+    "name": "Karate Style",
+    "message": "@ is practicing karate!",
+    "specialmessage": "@ is training for a tournament!"
+  },
+  "de5be08b-99c1-a460-c46e-6074deac475b": {
+    "name": "Unwinding",
+    "message": "@ is &Unwinding&.",
+    "specialmessage": "@ is releasing the tension in their shoulders. (&Unwinding&)"
+  },
+  "5a5df86b-727d-f884-305f-89a4c9738988": {
+    "name": "Default Gamers Dance",
+    "message": "@ is doing the &Default Gamers Dance& !",
+    "specialmessage": "@ is flexing on the enemy. (&Default Gamers Dance&)"
+  },
+  "25ffccf4-e16a-d4fc-a250-b55a234d0034": {
+    "name": "Push-ups",
+    "message": "@ is doing some &Push-ups&!",
+    "specialmessage": "@ is showing off with even more &Push-ups&!"
+  },
+  "79e8cb30-c1b4-4e41-8aa8-96492c6f390c": {
+    "name": "To Infinity and Beyond",
+    "message": "@ &To Infinity and Beyond!&",
+    "specialmessage": "@ strikes a heroic pose, \"&To Infinity and Beyond!&\""
+  },
+  "d9d1192d-1262-470d-bc0c-5ba46bedab72": {
+    "name": "Excitedly Dancing",
+    "message": "I'm Ready! @ is &Excitedly Dancing.&",
+    "specialmessage": "@ is &Excitedly Dancing,& I'm Ready! I'm Ready! I'm Ready! I'm Ready! I'm Ready!"
+  },
+  "45b2283e-e3e9-d2ac-cff4-6266e55e46a5": {
+    "name": "The Woah",
+    "message": "@ is hitting &The Woah&!",
+    "specialmessage": "@ is sturdy with it! (&The Woah&)"
+  },
+  "ab385a35-e023-4689-9a13-cca42c8ea68a": {
+    "name": "Super Hero Flying",
+    "message": "@ is starting to fly!",
+    "specialmessage": "@ is flying around city for protecting it at night!"
+  },
+  "4b14571b-3ee2-14a0-4d87-6ac9911f792f": {
+    "name": "Wave Dance",
+    "message": "@ is a &breakdancing legend!&",
+    "specialmessage": "@ is making WAVES!!! (&Wave Dance&)"
+  },
+  "4b7af8d8-1f5a-40ab-c2cc-ffa72484f9a0": {
+    "name": "Proposal",
+    "message": "@ wants to marry you (&Proposal&)",
+    "specialmessage": "@ wants you to be their partner for life (&Proposal&)"
+  },
+  "ad0f34be-beb1-84a6-9ec8-f9755f52237b": {
+    "name": "Dizzy",
+    "message": "@ is &Dizzy&!",
+    "specialmessage": "@ is greatly disturbed! (&Dizzy&)"
+  },
+  "a5f9881c-23b7-4650-8e92-039cd7a16889": {
+    "name": "Sleepy",
+    "message": "@ is &Sleepy.&",
+    "specialmessage": "@ is getting &Sleepy& while farming phantom membranes."
+  },
+  "310b41de-1c7a-4098-928d-addcd905bf65": {
+    "name": "Laughing Out Loud",
+    "message": "Hahahaha @ is &Laughing Out Loud.&",
+    "specialmessage": "Three Weeks Later... Hahahahaha! @ is still &Laughing Out Loud.&"
+  },
+  "6d9f24c0-6246-4c92-8169-4648d1981cbb": {
+    "name": "Faceplant",
+    "message": "@ &Faceplants.&",
+    "specialmessage": "SMACK! @, did that &Faceplant& hurt?"
+  },
+  "b3503263-1cc1-5686-c9cf-c2d580a90b0a": {
+    "name": "Flying",
+    "message": "@ is flying like a butterfly!",
+    "specialmessage": "@ is too heavy to fly!"
+  },
+  "bd6d9bfd-fc82-1f3a-3479-837e9246fc8e": {
+    "name": "Deep Thought",
+    "message": "@ is in &Deep Thought&",
+    "specialmessage": "@ 3x3 Automatic bucket filler...  (&Deep Thought&)"
+  },
+  "a0b1a9f2-0ea4-48d0-8641-ada998beee4d": {
+    "name": "Anger Management",
+    "message": "@ is struggling with &Anger Management&",
+    "specialmessage": "Creepers are taking cover. if @ fails at &Anger Management& they'll explode!"
+  },
+  "87c039b7-7bdc-45d1-8684-e940a131ec0a": {
+    "name": "Intercom and Attack",
+    "message": "@ \"Who goes there?!\" &Intercom and Attack.&",
+    "specialmessage": "@ \"I've crash landed on a strange planet. Terrain seems a bit... blocky.\" &Intercom and Attack.&"
+  },
+  "a1ca182b-91ad-4397-b936-88ec3c57fce4": {
+    "name": "Football Celebration",
+    "message": "@ scores! Goal dance time!",
+    "specialmessage": "@ nets it! What a goal!"
+  },
+  "3887944a-5f7c-0a91-2575-d939920674b4": {
+    "name": "Moon Jumpin",
+    "message": "@ is doing the &Moon Jumpin&!",
+    "specialmessage": "@ is on the Moon!"
+  },
+  "86a386e7-c422-f0ae-0268-736b2aca2226": {
+    "name": "Neck Stretches",
+    "message": "@ is doing &Neck Stretches&",
+    "specialmessage": "@ feels great! (&Neck Stretches&)"
+  },
+  "946f04ea-8ff0-416e-a66d-8b0d0751e8bf": {
+    "name": "Sid Dance",
+    "message": "@ is doing the &Sid Dance.&",
+    "specialmessage": "Is @'s &Sid Dance& going to bring about a new ice biome?"
+  },
+  "eaed7f72-8c3b-e5e3-e4b8-d64dac26cb77": {
+    "name": "Happy Skipping",
+    "message": "@ is &Happy Skipping& !",
+    "specialmessage": "@ is having the time of their life! (&Happy Skipping&)"
+  },
+  "7c888d4c-a520-504a-e425-145e220810bf": {
+    "name": "exaggerated_faceplant",
+    "message": "@ is doing an &exaggerated faceplant&",
+    "specialmessage": "@ has given up! #&faceplant&"
+  },
+  "a6bb2f4f-ecf1-ed0e-cc17-12410b853f76": {
+    "name": "Where You Go I Go",
+    "message": "Where You go, I go",
+    "specialmessage": "Are you the Strongest because you're @ ? Or are you @ because you're the strongest?"
+  },
+  "3eba0f72-af17-e45b-3e1a-8619b172994e": {
+    "name": "Smelling the Flowers",
+    "message": "@ is &smelling the flowers&!",
+    "specialmessage": "@sniiiiiifffff...smells amazing! (&Smelling the Flowers&)"
+  },
+  "b310ea06-0485-4ad1-8424-df271ca6ec37": {
+    "name": "Flight",
+    "message": "@ is taking &Flight.&",
+    "specialmessage": "Can @ really take &Flight& without using an elytra? To Infinity and Beyond!"
+  },
+  "fb9b884a-b217-46a2-85fd-d3ab0f2f33e6": {
+    "name": "Hoppin'",
+    "message": "@ is &Hoppin'&",
+    "specialmessage": "Where did @ go? I can only see frogs...&(Hoppin')&"
+  },
+  "13634fe0-ba1d-4db6-9fc4-c2af1c082f34": {
+    "name": "Energetic Jumping",
+    "message": "Look at @ doing the &Energetic Jumping&!",
+    "specialmessage": "@ just can't stop doing the &Energetic Jumping&!"
+  },
+  "9843cbca-dc4a-4ae4-8cbd-57ca4038e266": {
+    "name": "Breakdance",
+    "message": "@ is &Breakdance&ing!",
+    "specialmessage": "@ is jamming to the beat! (&Breakdance&)"
+  },
+  "6e0c1592-aed2-ad36-95be-5f854bd28546": {
+    "name": "Elevate",
+    "message": "@ is &Elevating&",
+    "specialmessage": "@ is being possessed!? (&Elevate&)"
+  },
+  "01989f13-cc9f-d0c9-c6ec-d81b2d97f603": {
+    "name": "Headspin",
+    "message": "@ is doing a headspin.",
+    "specialmessage": "Have you ever seen @ breakdancing like this?"
+  },
+  "c617b468-52a7-03df-5268-62e24a32616c": {
+    "name": "Handstand",
+    "message": "@ is doing a &handstand&",
+    "specialmessage": "@ is seeing everything upside down. (&Handstand&)"
+  },
+  "f5f7b7da-90d7-be82-82a5-da7fb526c907": {
+    "name": "Dabbing",
+    "message": "@ is &dabbing&",
+    "specialmessage": "@ is constantly being cool! (&Dabbing&)"
+  },
+  "9dc76bac-f94e-76ca-c7f6-ef096246195b": {
+    "name": "The Creep",
+    "message": "@ is doing the &Creep&!",
+    "specialmessage": "@ is Getting Spooky doing &The  Creep&!"
+  },
+  "2ecc0fd1-312b-4664-9bfa-a06429838706": {
+    "name": "Peekaboo",
+    "message": "@ plays &Peekaboo!&",
+    "specialmessage": "Where did @ go? &Peekaboo!&"
+  },
+  "d3c0dc87-f568-0aa3-9565-d30fcde8ef6a": {
+    "name": "Cheerleading",
+    "message": "@ is &cheerleading for everyone!",
+    "specialmessage": "@ has joined the &cheerleading squad!"
+  },
+  "823ea45e-31ae-1216-aca0-9707e3069514": {
+    "name": "Look Your Missing It",
+    "message": "§b@ §rwants §ayou to look",
+    "specialmessage": "§b@ §rsays §ayou need to look"
+  },
+  "66e95931-0a43-51c5-45e5-97e32a396432": {
+    "name": "Fast Ball",
+    "message": "@ is throwing a &Fast Ball&!",
+    "specialmessage": "@ is a great pitcher! &Fast Ball&"
+  },
+  "14a5d366-5e41-da08-44f8-3ab720d456c1": {
+    "name": "Superhero",
+    "message": "@ is a superhero!",
+    "specialmessage": "@ is here to save the day!"
+  },
+  "e115b8af-b508-06c0-c4a9-fe540bf2fd5b": {
+    "name": "Air Guitar",
+    "message": "@is rocking out on the &Air Guitar&!",
+    "specialmessage": "@is absolutely shredding on the &Air Guitar&!"
+  },
+  "a43b566a-77da-2b2b-e016-e2e82393041e": {
+    "name": "Alphabet A",
+    "message": "@ is doing the &Alphabet A&!",
+    "specialmessage": "@ is is as awesome as &Alphabet A&!"
+  },
+  "5f0612e4-12b8-fd24-fd80-717a86771e58": {
+    "name": "Mechanical Bull ",
+    "message": "@ is riding a &Mechanical Bull&",
+    "specialmessage": "@  is an authentic cowboy (&Mechanical Bull&)"
+  },
+  "88025a03-fe17-4f3c-a620-21ba47a0ddf5": {
+    "name": "Crossack",
+    "message": "@ feels like flying! (&Crossack&)",
+    "specialmessage": "@ dances in a most trying way! (&Crossack&)"
+  },
+  "000a5981-82a9-a1a9-13d4-66b797d2b32a": {
+    "name": "Walk Around",
+    "message": "@ is doing the &Walk Around&",
+    "specialmessage": "@ is walking on a new plane! (&Walk Around&)"
+  },
+  "63cb3c45-b3b3-4c02-a4f3-fb4b9853dbe9": {
+    "name": "Mad Falling",
+    "message": "@ is &Mad Falling&",
+    "specialmessage": "Nothing's working out @ is &Mad Falling&"
+  },
+  "9c939344-f9d6-4a3a-95a5-f64dd3d94e45": {
+    "name": "Fluttering",
+    "message": "@ is &Fluttering& and trying to fly.",
+    "specialmessage": "Why is @ &Fluttering& so much? Have they been hit by a Shulker?"
+  },
+  "ff831cf3-080e-8b7f-e210-6aae74ac080f": {
+    "name": "Sitting on a Block",
+    "message": "@ is &Sitting on a Block&!",
+    "specialmessage": "@ is &Sitting on a Block&... at least they might be!"
+  },
+  "ee51b4d4-5d5e-4e9d-d170-59159cf2f935": {
+    "name": "Cool Pose",
+    "message": "@ is doing a really &Cool Pose&!",
+    "specialmessage": "Check out the &Cool Pose& by @"
+  },
+  "be4f4451-9764-3239-a71c-4e354e36de21": {
+    "name": "Flying",
+    "message": "@ is &Flying&!",
+    "specialmessage": "@ is going up, up, and... well, just up!"
+  },
+  "af61c759-6252-431d-a7de-94d477cfb54c": {
+    "name": "Chun-Li Spinning Kick",
+    "message": "@: &Chun Li Spinning Bird Kick!!!&",
+    "specialmessage": "@: I did it! &Chun Li Spinning Bird Kick&"
+  },
+  "a57277d5-0693-4c8a-9b5c-45c33fdf7c26": {
+    "name": "Flourishing",
+    "message": "@ is Flourishing",
+    "specialmessage": "@: It's over, I have the high ground!  &(Flourishing)&"
+  },
+  "d3741459-e845-6896-f4f0-3e580912c01d": {
+    "name": "Waiting",
+    "message": "@'s patience game strong.",
+    "specialmessage": "Still waiting, @?"
+  },
+  "328c4440-fc97-6604-c254-5c02620d3276": {
+    "name": "Fast Clap",
+    "message": "@ congratulates you! (&Fast Clap&)",
+    "specialmessage": "@ is proud of everyone here! (&Fast Clap&)"
+  },
+  "394e41d0-8f61-62a3-084b-1dc8fd4dafd7": {
+    "name": "Horse Racing",
+    "message": "@ is running like a… horse? &Horse Racing&",
+    "specialmessage": "How high can they jump? @, is &Horse Racing&!"
+  },
+  "6453480a-54ac-435d-899d-4e6f7fe57591": {
+    "name": "Hadoken!",
+    "message": "@: &Hadoken!&",
+    "specialmessage": "@: Wave Motion Fist! &Hadoken!&"
+  },
+  "0c141653-1166-448b-87a2-38d0679bb549": {
+    "name": "Ryu Guarding",
+    "message": "@: Get serious. &Ryu Guarding&",
+    "specialmessage": "@: You must defeat Herobrine to stand a chance. &Ryu Guarding&"
+  },
+  "f29ed70d-d8f0-00d7-45a5-c6857e44ba23": {
+    "name": "Kamehameha",
+    "message": "@ is doing the Kamehameha",
+    "specialmessage": "KA-ME-HAME-HAAAA!"
+  },
+  "4269f6d6-5007-1d89-f15a-f5aeb879f7ee": {
+    "name": "Flipping Crazy Dance",
+    "message": "@ is dancing",
+    "specialmessage": "@ is dancing like &Craazzyyy&"
+  },
+  "308f742d-ff45-d537-9368-1afe54b88577": {
+    "name": "Cant See Me",
+    "message": "@ is doing the &Can't See Me& emote",
+    "specialmessage": "@ is hiding! &Can't See Me&!"
+  },
+  "949c4f24-6aa6-4f2a-bad5-1b3de7e12749": {
+    "name": "Peter Pan Floating",
+    "message": "@ can fly! &(Peter Pan Floating)&",
+    "specialmessage": "@:Think happy thoughts. &(Peter Pan Floating)&"
+  },
+  "f15ceb56-6651-41c0-8bd5-087951204d81": {
+    "name": "Rapunzel Dance",
+    "message": "@ is doing the &Rapunzel Dance.&",
+    "specialmessage": "When will your life begin? When you hit respawn! &(Repunzle Dance)&"
+  },
+  "3babfcf6-2a50-2262-4c17-f313a5a73c81": {
+    "name": "UwU",
+    "message": "@ is expressing an &UwU&!",
+    "specialmessage": "@ is feeling cute! &UwU&"
+  },
+  "d7680c67-8e54-482a-903d-622ddb43485f": {
+    "name": "Swinging Energy Sword",
+    "message": "@ is &Swinging Energy Sword&",
+    "specialmessage": "@: I need a weapon. &Swinging Energy Sword&"
+  },
+  "71afa8ed-03b6-4808-b537-330daf9dbf50": {
+    "name": "Hakuna Matata Dance",
+    "message": "@:&Hakuna Matata&...",
+    "specialmessage": "@: It means no worries, for the rest of your days. &(Hakuna Matata Dance)&"
+  },
+  "d9e2ae87-37cb-08d0-553a-37f501b70328": {
+    "name": "Float Nap",
+    "message": "@ is doing a &Float Nap&!",
+    "specialmessage": "@ is taking relaxation to new heights with their &Float Nap&! Floating effortlessly, they're dreaming among the clouds."
+  },
+  "9307ceae-4556-17e5-d6a7-cd3671a3325d": {
+    "name": "Novice Climber",
+    "message": "@ found something fun to climb.",
+    "specialmessage": "@ wasn't strong enough to make it to the top."
+  },
+  "c2b9dd03-7258-4813-b6f5-37ef9b4a3326": {
+    "name": "Superhero Landing",
+    "message": "@ is doing a &Superhero Landing&",
+    "specialmessage": "@: Wooo! &Superhero Landing!& You know that's really hard on your knees."
+  },
+  "7a913508-8cf4-4f49-b760-0e77e32e7482": {
+    "name": "Evil Laugh",
+    "message": "@ is doing an &Evil Laugh&!",
+    "specialmessage": "@ can't contain their cackling! (&Evil Laugh&)"
+  },
+  "fec9763a-5af6-6c58-5878-1843ced63d8f": {
+    "name": "I Surrender",
+    "message": "@ is &Surrendering&",
+    "specialmessage": "@ &Surrenders&! GET THEM!"
+  },
+  "a954b9d9-8161-8574-f90a-7bda514f4ca8": {
+    "name": "Disco",
+    "message": "@ is doing the &Disco&!",
+    "specialmessage": "@ is lighting up the dance floor!"
+  },
+  "36253a28-7b6c-474a-34ad-e21194207fa9": {
+    "name": "looking around",
+    "message": "@ is &looking around&",
+    "specialmessage": "@ is &looking around& and the coast is clear!"
+  },
+  "c4a34f85-f0c4-b78b-1513-4726549361fa": {
+    "name": "Energetic Rave",
+    "message": "@ is doing the &Energetic Rave&",
+    "specialmessage": "@ is buzzing with energy! (&Energetic Rave&)"
+  },
+  "88dc7deb-21bb-48c3-8b5a-00757a06aef9": {
+    "name": "The Master Chief",
+    "message": "@ is &The Master Chief&",
+    "specialmessage": "@: We make our own luck, but I'll always be there when you need me. &The Master Chief&"
+  },
+  "7a4521c8-6ab4-4c80-8db4-ddce755a0248": {
+    "name": "The Split",
+    "message": "@ just nailed landing &The Split&!",
+    "specialmessage": "@ is doi.. ouch, that kinda looked like it hurt. "
+  },
+  "d73c3523-260e-4dc7-bbaf-f2eaaa1fc556": {
+    "name": "Training Like Po",
+    "message": "@ is &Training Like Po&.",
+    "specialmessage": "@ is their own secret ingredient. &Training Like Po&."
+  },
+  "a181fc56-8670-e2e1-8df2-c89922eb88f2": {
+    "name": "Push-Up",
+    "message": "@ is doing a Pushup!",
+    "specialmessage": "@ is getting buffer by doing a Push-Up!"
+  },
+  "5cf9d5a3-6fa0-424e-8ae4-d1f877b836da": {
+    "name": "Cartwheel",
+    "message": "@ is doing a &Cartwheel.&",
+    "specialmessage": "@: I did it! The perfect &Cartwheel!&"
+  },
+  "0e7cdeca-6e5b-465b-2849-46610e1ad3b4": {
+    "name": "Pull-up",
+    "message": "@ is doing &pull-ups!",
+    "specialmessage": "@ is getting buff doing &pull-ups!"
+  },
+  "9ee11247-49a1-a816-2775-203727adc879": {
+    "name": "Aye Aye Captain",
+    "message": "@ shouts \"Aye Aye Captain\"!",
+    "specialmessage": "@ salutes the captain!"
+  },
+  "30ff9a8a-299a-89c5-22ab-b18715b34554": {
+    "name": "Work out",
+    "message": "@ is doing &Work out&",
+    "specialmessage": "@ is feeling strong! (&Work out&)"
+  },
+  "d0f1b617-4178-c224-3e71-b51978215fb1": {
+    "name": "T Pose",
+    "message": "@ is &T-Posing&! ",
+    "specialmessage": "@ thinks they're the letter T! (&T Pose&)"
+  },
+  "24444aea-cb6e-451f-90fc-b74e57cc7c5d": {
+    "name": "Kneeling",
+    "message": "@ is &Kneeling.&",
+    "specialmessage": "@ swears fealty by &Kneeling.&"
+  },
+  "a51f8e7c-a4dd-4ce1-9fc9-2c3cad66cede": {
+    "name": "Minion Taunting",
+    "message": "@ is &Minion Taunting.&",
+    "specialmessage": "@: Bananonina poopaye! &(Minion Taunting)&"
+  },
+  "e1792e29-f482-889d-dc14-5ce8fc441dc5": {
+    "name": "Break Down",
+    "message": "@ is having a &Break Down&",
+    "specialmessage": "@ can't handle it anymore and is having a &Break Down&!"
+  },
+  "0dbe9d80-3d05-e0f3-c061-153edb76430f": {
+    "name": "Facepalm",
+    "message": "@ saw something stupid!",
+    "specialmessage": "@ hurt their face with their own hand!"
+  },
+  "cd8c3bc6-f455-43d2-836e-62c1a19474c7": {
+    "name": "Sonic the Hedgehog",
+    "message": "@ is &Victory Spinning.&",
+    "specialmessage": "@ Zone Complete! &(Victory Spinning)&"
+  },
+  "e0b54d13-6a1b-1871-04ca-9577d178ebaa": {
+    "name": "Get It Off Me",
+    "message": "@ is screaming &Get It Off Me&!",
+    "specialmessage": "@ Needs Help! &Get It Off Me&!"
+  },
+  "4fc07794-af5a-fa14-7749-93ec10714548": {
+    "name": "Hero Slam",
+    "message": "@ is doing a &Hero Slam& !",
+    "specialmessage": "@ the Hero has arrived! (&Hero Slam&)"
+  },
+  "79e93b59-38f0-4796-8033-f99d7aa9334e": {
+    "name": "Minion Panicking",
+    "message": "@ is &Minion Panicking.&",
+    "specialmessage": "@: Bee Do Bee Do Bee Do! &(Minion Panicking)&"
+  },
+  "6174a111-19ac-41d1-a483-0e0b37f9d049": {
+    "name": "Minion Cheering",
+    "message": "@ is &Minion Cheering.&",
+    "specialmessage": "@: Banana banana tank yu! &(Minion Cheering)&"
+  },
+  "8d649a9b-59fb-9534-9dea-3e339b0174bc": {
+    "name": "Lock Down Shuffle",
+    "message": "@ is rotating quickly doing the &Lock Down Shuffle&!",
+    "specialmessage": "Is @ trying to T-Spin into place? That's the &Lock Down Shuffle&!"
+  },
+  "fa68ba66-61dc-61e5-c416-06b838b73ebc": {
+    "name": "Warrior Moves",
+    "message": "@ is doing &Warrior Moves&!",
+    "specialmessage": "Hyah! Hyah! (&Warrior Moves&)"
+  },
+  "471dc8ba-b864-5bc9-1d90-08b6be951c8d": {
+    "name": "Work Out",
+    "message": "@ is doing some &Work Out&",
+    "specialmessage": "Looks like @ is getting in shape at the gym."
+  },
+  "fdc8a22f-2dd6-f6ba-8155-74455ece3f51": {
+    "name": "Air Guitar",
+    "message": "@ is doing the &Air Guitar&!",
+    "specialmessage": "@ is rocking out with the &Air Guitar&!"
+  },
+  "1e30e8f4-2991-4aac-a58a-a6bf90a080c5": {
+    "name": "Hitting the Omnitrix",
+    "message": "@ is &Hitting the Omnitrix.&",
+    "specialmessage": "@ Stupid watch, stupid powers! &(Hitting the Omnitrix)&"
+  },
+  "7102c0f7-6113-44f5-b37c-4e94841b0e81": {
+    "name": "Posing Like a Hero",
+    "message": "@ is &Posing Like a Hero.&",
+    "specialmessage": "@: Bring it on! &(Posing Like a Hero)&"
+  },
+  "98f4e765-1c84-09af-90b6-f957f428e4c8": {
+    "name": "UwU",
+    "message": "@ UwU, too cute! ",
+    "specialmessage": "Oh @, such UwU!"
+  },
+  "629137f7-8cd3-b0da-e0b3-a5987703a83f": {
+    "name": "Dab Dab",
+    "message": "@ is doing the &Dab Dab&",
+    "specialmessage": "@ can't stop doing the &Dab Dab&"
+  },
+  "2d19ab9a-d760-5be3-d75e-93a986c17e1a": {
+    "name": "Back cracker",
+    "message": "@ is doing the &Back cracker&!",
+    "specialmessage": "@ has transformed in a &human chair&!"
+  },
+  "97bf992c-a10d-45d1-a730-219d5614822f": {
+    "name": "8-Bit Shuffle",
+    "message": "@ is doing the &8-Bit Shuffle&!",
+    "specialmessage": "Beep boop bub bop de de dooo"
+  },
+  "420517bd-f8d7-1b18-34b3-4224696fac5b": {
+    "name": "Skydiving",
+    "message": "@ is about to go &Skydiving&!",
+    "specialmessage": "@ better watch their step next time! &Skydiving&"
+  },
+  "ecb4bcdd-6362-533c-c5da-aba49572eb4d": {
+    "name": "Trampoline",
+    "message": "@ is jumping on a &Trampoline&",
+    "specialmessage": "@ is doing amazing stunts. (&Trampoline&)"
+  },
+  "f14d652f-18ed-42dc-831f-7f6a2eab1246": {
+    "name": "Going Hero",
+    "message": "@ is &Going Hero.& ",
+    "specialmessage": "@: Come on Omnitrix gave me Wither! &(Going Hero)&"
+  },
+  "94222474-788d-e113-a831-2f1c17fc9c0c": {
+    "name": "Magic Trick",
+    "message": "@ is mystifying the crowd with a &Magic Trick&!",
+    "specialmessage": "@ is making items levitate! (&Magic Trick&)"
+  },
+  "16eee3dd-8ca0-4a80-087e-64aa903e99ea": {
+    "name": "Power Flip",
+    "message": "@ is doing a &Power Flip&",
+    "specialmessage": "@ blew everyone away with their &Power Flip&"
+  },
+  "e8a91ad4-6f7a-479e-9556-e1a7c058351b": {
+    "name": "Sonic-Finger Wagging",
+    "message": "@: Tsk Tsk &(Sonic-Finger Wagging)&",
+    "specialmessage": "@: Not today Dr. Robotnik, Tsk Tsk &(Sonic-Finger Wagging)&"
+  },
+  "4deac5c6-f8cf-30f9-3638-ae6a5d647058": {
+    "name": "Wall Run",
+    "message": "@ is running up a wall",
+    "specialmessage": "@ is capable of running on walls"
+  },
+  "06bb1b0b-ed9d-f34f-533e-49471545f196": {
+    "name": "Spoopy",
+    "message": "@ is being spoopy",
+    "specialmessage": "@ is doin' a super spoopy"
+  },
+  "c4aa9ca0-abcc-7d0c-01c7-76a7e4d4840e": {
+    "name": "Arm swing",
+    "message": "@ is doing the &Swinger&!",
+    "specialmessage": "@ is swinging around!"
+  },
+  "f3860b0e-fb05-5b8b-863b-ba7693afce11": {
+    "name": "Anime Running",
+    "message": "@ is running like an anime character. (&Anime Running&)",
+    "specialmessage": "@ is running as fast as possible. (&Anime Running&)"
+  },
+  "2391b018-3b8a-4bb0-9596-8edfc502d302": {
+    "name": "Exhausted",
+    "message": "@ is &Exhausted.&",
+    "specialmessage": "@: 0 hunger, no drumsticks, &Exhausted...&"
+  },
+  "b8e54924-ec3f-409c-8914-bca61fbe9242": {
+    "name": "Sonic-Running",
+    "message": "@ is &Sonic Running.&",
+    "specialmessage": "@ doesn’t need a Potion of Swiftness when &Sonic Running&"
+  },
+  "6b9c7731-7422-4333-950f-cf3d147ffa47": {
+    "name": "Warm Up Drills",
+    "message": "@ is doing &Warm Up Drills.&",
+    "specialmessage": "@: I know &Warm Up Drills.&"
+  },
+  "156171d4-b2d7-f2a4-4582-8646c263eb97": {
+    "name": "Painting Heart",
+    "message": "@ is painting a heart for you!",
+    "specialmessage": "@ loves you!"
+  },
+  "8212d13d-8c01-7d0f-f705-5f40d78e05a4": {
+    "name": "Floss and Floss",
+    "message": "@ is doing the &Floss and Floss&",
+    "specialmessage": "@ just wants to &Floss and Floss& and &Floss and Floss&"
+  },
+  "aaa6e3e4-0c5c-b19d-3262-31d37dc83fc4": {
+    "name": "Facepalm",
+    "message": "@ is in disbelief",
+    "specialmessage": "@ is channeling their inner palm tree"
+  },
+  "2b5d923c-e030-3937-795a-a7d67d90b567": {
+    "name": "Tiptoe",
+    "message": "@ is quietly tiptoeing away...",
+    "specialmessage": "Whoa! Where did @ go?"
+  },
+  "8766ec5e-dc5e-1f4a-b307-599f0d4a5137": {
+    "name": "Happy Hello",
+    "message": "@ greets you joyfully (&Happy Hello&)",
+    "specialmessage": "@ is so happy to see you (&Happy Hello&)"
+  },
+  "9f5d4732-0513-4a0a-8ea2-b6b8d7587e74": {
+    "name": "Calling a Dragon",
+    "message": "@ is &Calling a Dragon.&",
+    "specialmessage": "@ is &Calling a Dragon& but Jean doesn’t answer."
+  },
+  "d0d835fd-62b0-51ac-6392-0badd988b68b": {
+    "name": "Dab",
+    "message": "@ is dabbing. (&Dab&)",
+    "specialmessage": "@ sneezes in style. (&Dab&)"
+  },
+  "d2e66d12-cd7a-2d65-1fb2-6048115e07f6": {
+    "name": "Baby Shark",
+    "message": "@ is dancing the like a baby shark!",
+    "specialmessage": "@ could also be a megalodon!"
+  },
+  "c2d6091d-9f91-4a9e-badd-ef8481353cb0": {
+    "name": "C-3PO Wave",
+    "message": "@ does a &C3PO Wave.&",
+    "specialmessage": "I am @, player-villager relations. &(C3PO Wave)&"
+  },
+  "85957448-e7bb-4bb4-9182-510b4428e52c": {
+    "name": "Meditating Like Luke",
+    "message": "@ is reaching out with the Force &(Meditating Like Luke)&",
+    "specialmessage": "@ is stacking blocks with their mind. &(Meditating Like Luke)&"
+  },
+  "73cead3f-0c5a-42ce-dc8b-8f8dab394204": {
+    "name": "Armadillo",
+    "message": "@ curled into a ball!",
+    "specialmessage": "@ shapeshifted into an &Armadillo&!"
+  },
+  "0b524099-7a5b-8cc8-f600-e9ff776b842a": {
+    "name": "Bow",
+    "message": "@ started to &Bow&",
+    "specialmessage": "@ receives grand applause! (&Bow&)"
+  },
+  "ac674580-0265-ad54-8208-e3a560474143": {
+    "name": "T E T R I S",
+    "message": "@ loves &T E T R I S&!",
+    "specialmessage": "What precision, what beauty... @ is doing the &T E T R I S&!"
+  },
+  "bf145823-d664-3d64-c7d3-e7a2f9049d38": {
+    "name": "Hug",
+    "message": "@ would like to hug someone.",
+    "specialmessage": "@ deserves a big hug!"
+  },
+  "cefd9987-17b1-3279-9146-a2f87f2165a0": {
+    "name": "Tornado Jump",
+    "message": "@ is doing the &Tornado Jump&!",
+    "specialmessage": "@ gets nauseous from spinning around!"
+  },
+  "91fa19e5-e7f7-fba9-722f-85fae89625db": {
+    "name": "Reverse Gravity",
+    "message": "@ is experiencing &Reverse Gravity&!",
+    "specialmessage": "Gravity: Am I a joke to @?"
+  },
+  "c2a47805-c792-4882-a56d-17c80b6c57a8": {
+    "name": "Acting Like a Dragon",
+    "message": "@ ROAR! &(Acting like a Dragon)&",
+    "specialmessage": "@: Stay away from my egg! &(Acting like a Dragon)&"
+  },
+  "a12252fa-4ec8-42e0-a7d0-d44fbc90d753": {
+    "name": "Dancing Like Toothless",
+    "message": "@ is &Dancing Like Toothless.&",
+    "specialmessage": "@: Magma walk and... Ravager! &(Dancing Like Toothless)&"
+  },
+  "64fb662e-70f2-707c-d5c4-c6ea821f210f": {
+    "name": "Smooth Groove",
+    "message": "@ is having a &smooth groove&",
+    "specialmessage": "@ is lacking some bones. (&Smooth Groove&)"
+  },
+  "fced8dcb-6818-f2c0-45c1-dd7b36641fef": {
+    "name": "On Your Mark",
+    "message": "@ is &On Their Mark&...",
+    "specialmessage": "@ is &On Their Mark&... Get set... GO!"
+  },
+  "3f7db11c-9960-e5fa-5374-28e11bf483f8": {
+    "name": "Air Heart",
+    "message": "@ is drawing an &Air Heart&!",
+    "specialmessage": "@ &Air Heart& is fluttering on a gentle breeze!"
+  },
+  "0ffdced7-1345-eef9-1d7f-d5297813b6f1": {
+    "name": "Coquettish Dance",
+    "message": "@ is doing the &Сoquettish Dance&!",
+    "specialmessage": "@ charms with the &Coquettish Dance&!"
+  },
+  "b59bd4e3-7695-02b4-30d3-def25971f2bc": {
+    "name": "Ayy Macarena",
+    "message": "@ is dancing &Ayy Macarena&",
+    "specialmessage": "@ is going wild with &Ayy Macarena&"
+  },
+  "f7472c15-bdfb-4113-bf7f-6cfe50a2cbca": {
+    "name": "Dynamite",
+    "message": "@ is doing the &Dynamite&!",
+    "specialmessage": "@ is having a dance party with &Dynamite&!"
+  },
+  "4b9b9f17-3722-4d38-a6a9-9ba0e8cf5044": {
+    "name": "Obi-Wan’s Mind Trick",
+    "message": "@ These aren't the mobs you're looking for. &(Obi-Wan's Mind Trick)&",
+    "specialmessage": "@: I didn't look you in the eyes. I can go about my business. &(Obi-Wan's Mind Trick)&"
+  },
+  "d5bb612f-68db-3bf3-6aef-e5ae57a00256": {
+    "name": "Moonwalk",
+    "message": "@ is doing the &Moonwalk&!",
+    "specialmessage": "@  is the king of pop. (&Moonwalk&)"
+  },
+  "ac757a66-0a3e-f8c5-e804-1ce74ad102e8": {
+    "name": "Victory Punch",
+    "message": "@ did a &Victory Punch&",
+    "specialmessage": "Way to go! (&Victory Punch&)"
+  },
+  "ed81e090-82f2-27a5-e703-9b381c83af73": {
+    "name": "Jumping Jack",
+    "message": "@ is doing some sports!",
+    "specialmessage": "Jumping @!"
+  },
+  "44c0e5e7-40a5-46db-de1f-227881f185f1": {
+    "name": "Grid Dance",
+    "message": "@ is doing the &Grid Dance&!",
+    "specialmessage": "@ is on fire with these moves! (&Grid Dance&)"
+  },
+  "e33d39a7-c36d-ac32-f6c4-676e2807576c": {
+    "name": "Point Here And There",
+    "message": "@is walking and pointing",
+    "specialmessage": "@is walking kind of cool"
+  },
+  "aaea9b66-1961-a6fa-a6e0-a88e30ad2dc5": {
+    "name": "Helicopter",
+    "message": "@ is doing the &helicopter&!",
+    "specialmessage": "@ is spinning too fast!"
+  },
+  "3e32a908-bc18-a965-503a-0947510c95ad": {
+    "name": "Shuffle Step",
+    "message": "@ is doing the &shuffle step&!",
+    "specialmessage": "@ is losing it doing the &shuffle step&!"
+  },
+  "25210ea3-2728-3fa5-8e89-53e80313c704": {
+    "name": "Item Spin",
+    "message": "@ is doing the &Item Spin&!",
+    "specialmessage": "@ watched the dropped items for too long. (&Item Spin&)"
+  },
+  "e1090020-cbe0-4b64-9c41-a3b9619da029": {
     "name": "Giving R2-D2 a Message",
-    "uuid": "e1090020-cbe0-4b64-9c41-a3b9619da029",
     "message": "@ is hiding the Death Star plans. &(Giving R2 a Message)&",
     "specialmessage": "@: Help me Obi-Wan Kenobi, you’re my only hope. &(Giving R2 a Message)&"
   },
-  {
+  "685eac6d-32e7-47b2-e58e-b6948bd04da6": {
+    "name": "Wave Dance",
+    "message": "@ is doing the &Wave Dance&!",
+    "specialmessage": "Wiggly arms! (&Wave Dance&)"
+  },
+  "a34809f5-e854-7c5c-8b8d-a2f96df3ca61": {
+    "name": "Helicopter 2",
+    "message": "@ is transforming into &Helicopter 2&!",
+    "specialmessage": "Is it a bird? Is it a plane? No, it is @ doing &Helicopter 2& move!"
+  },
+  "084500bd-2573-e581-06a8-cab92d68f0b3": {
     "name": "Right Left Lean",
-    "uuid": "084500bd-2573-e581-06a8-cab92d68f0b3",
     "message": "@ knows the moves! Right, right, left, left!",
     "specialmessage": "@ celebrates and shows off their moves!"
   },
-  {
+  "e9abe16f-5022-4ead-bff8-2aed71feeb0d": {
     "name": "Super Push-Up",
-    "uuid": "e9abe16f-5022-4ead-bff8-2aed71feeb0d",
     "message": "@ is doing a &Super Push-Up&!",
     "specialmessage": "@ is flexing on everyone! (&Super Push-Up&)"
   },
-  {
+  "c8474bab-3189-a03d-2bbf-ab280e9d3022": {
     "name": "Tantrum",
-    "uuid": "c8474bab-3189-a03d-2bbf-ab280e9d3022",
     "message": "@ is doing the &Tantrum&!",
     "specialmessage": "@ Can never get their way!"
   },
-  {
+  "6f82688e-e549-408c-946d-f8e99b91808d": {
     "name": "ROFL",
-    "uuid": "6f82688e-e549-408c-946d-f8e99b91808d",
     "message": "@ rolls on the floor laughing. &(ROFL)&",
     "specialmessage": "@ &ROFL&COPTER!"
   },
-  {
+  "21e0054a-5bf4-468d-bfc4-fc4b49bd44ac": {
     "name": "Offer",
-    "uuid": "21e0054a-5bf4-468d-bfc4-fc4b49bd44ac",
     "message": "@ makes an &Offer.&",
     "specialmessage": "@ spent many months living with Villagers to learn how to make this &Offer.&"
   },
-  {
+  "788e28e5-acc7-0d82-a7e0-b7bb05ecdf8d": {
+    "name": "Flip Fail",
+    "message": " @ did a &flip_fail&",
+    "specialmessage": "Oof. @ did a &flip_fail&"
+  },
+  "15e57af1-9937-b6d0-d84e-e598de3a95b5": {
+    "name": "Pro Dance",
+    "message": "@ is performing the &Pro Dance&",
+    "specialmessage": "@ get hyped with &Pro Dance&"
+  },
+  "40fbfc64-2cfb-edb7-69d8-66871c43053c": {
+    "name": "Breakdown",
+    "message": "@ is breaking it down!",
+    "specialmessage": "@ is going viral with their moves!"
+  },
+  "f320a276-1c05-a138-9058-e7351958c74c": {
     "name": "Searching",
-    "uuid": "f320a276-1c05-a138-9058-e7351958c74c",
     "message": "@ is &Searching& for something.",
     "specialmessage": "@ can't seem to find what they are &Searching& for."
   },
-  {
+  "255bf84c-ae5a-37ac-444f-15440cced1cf": {
     "name": "Kawaii Dance",
-    "uuid": "255bf84c-ae5a-37ac-444f-15440cced1cf",
     "message": "@ is doing a &Kawaii Dance&",
     "specialmessage": "@ is the star of the show! (&Kawaii Dance&)"
   },
-  {
+  "5dd129f9-cfc3-4fc1-b464-c66a03061545": {
     "name": "Hand Stand",
-    "uuid": "5dd129f9-cfc3-4fc1-b464-c66a03061545",
     "message": "@ is doing a &Hand Stand.&",
     "specialmessage": "@ Look at me! One handed &Hand Stand!& Wait, that was two hands! Back to the drawing board… "
   },
-  {
+  "24ace7eb-2020-b8fd-9a3c-24212590a79c": {
     "name": "Ninja Moves",
-    "uuid": "24ace7eb-2020-b8fd-9a3c-24212590a79c",
     "message": "@ moves like a ninja!",
     "specialmessage": "@ is doing a forbidden technique!"
   },
-  {
+  "5a5b2c0c-a924-4e13-a99b-4c12e3f02e1e": {
     "name": "Ghast Dancing",
-    "uuid": "5a5b2c0c-a924-4e13-a99b-4c12e3f02e1e",
     "message": "@ is &Ghast Dancing.&",
     "specialmessage": "@: I think I feel some tears coming on, maybe it’s just all this &Ghast Dancing.&"
   },
-  {
+  "1dbaa006-0ec6-42c3-9440-a3bfa0c6fdbe": {
     "name": "Breakdancing",
-    "uuid": "1dbaa006-0ec6-42c3-9440-a3bfa0c6fdbe",
     "message": "@ is &Breakdancing&.",
     "specialmessage": "@ is good at &Breakdancing& for someone who can't bend."
   },
-  {
+  "278d2cff-5287-d598-39f2-253637215b6a": {
+    "name": "Wiggle Dance",
+    "message": "@ is performing the &Wiggle Dance&",
+    "specialmessage": "@ is becoming liquid! (&Wiggle Dance&)"
+  },
+  "66581b96-5974-30a1-e29c-7c7f6c8b6c22": {
+    "name": "new",
+    "message": "@ is too close to the edge!",
+    "specialmessage": "@ is losing balance!"
+  },
+  "36862dd9-bdf2-0689-c702-5e65ec7c642b": {
+    "name": "Turtle",
+    "message": "@ is looks like a turtle.",
+    "specialmessage": "@ has too heavy a shell."
+  },
+  "b5287de3-3932-b976-c6a6-6bd6410bddaf": {
     "name": "Floaty Leaf",
-    "uuid": "b5287de3-3932-b976-c6a6-6bd6410bddaf",
     "message": "@ is a &Floaty Leaf&",
     "specialmessage": "@ is a &Floaty Leaf& drifting away"
   },
-  {
+  "de12e175-70dc-9b77-0c6c-895b73726011": {
+    "name": "Stretching",
+    "message": "@ is &Stretching&",
+    "specialmessage": "@ is gently Stretching! (&Stretching&)"
+  },
+  "f3d7fe12-6f7d-2c61-48fe-1673b89cb59e": {
     "name": "Buzz Off",
-    "uuid": "f3d7fe12-6f7d-2c61-48fe-1673b89cb59e",
     "message": "@ is buzzing off.",
     "specialmessage": "@ is buzzing."
   },
-  {
+  "3f66cbc7-3c0b-35ff-26e2-f4af011a21b7": {
     "name": "Whirlwind",
-    "uuid": "3f66cbc7-3c0b-35ff-26e2-f4af011a21b7",
     "message": "@ is doing a &Whirlwind&!",
     "specialmessage": "Looks like @ is caught in a block-tacular &Whirlwind&! Hold onto your pickaxes!"
   },
-  {
+  "089f07a6-92db-45c2-396a-312cf8c273e6": {
     "name": "Shrug",
-    "uuid": "089f07a6-92db-45c2-396a-312cf8c273e6",
     "message": "@ is doing &Shrug&",
     "specialmessage": "@ is growing uncertain! (&Shrug&)"
   },
-  {
+  "efc2f0f5-af00-4d9e-a4b1-78f18d63be79": {
     "name": "Playing Dead",
-    "uuid": "efc2f0f5-af00-4d9e-a4b1-78f18d63be79",
     "message": "@ is &Playing Dead.&",
     "specialmessage": "@: Stop telling them! It really RUINS the effect if they know I’m just &Playing Dead.&"
   },
-  {
+  "5fc47e75-5e7d-6413-9dc5-53cc2a877e94": {
+    "name": "Infinity Portal",
+    "message": "@ is teleporting to infinity.",
+    "specialmessage": "@ found a portal teleport glitch."
+  },
+  "e8b2abbc-efe8-9aa0-0488-bafb4c632c16": {
+    "name": "T Up",
+    "message": "@ does a &T Up&",
+    "specialmessage": "@ is making a &T& shape with their body"
+  },
+  "168498b6-8a60-4bb4-9731-200b226f90ec": {
+    "name": "Big Heart",
+    "message": "@ is showing their love with a &Big Heart&!",
+    "specialmessage": "@ is making a <3 (&Big Heart&)"
+  },
+  "0d090971-6b6d-2c69-6461-2cb1ab6cc86b": {
+    "name": "Air Guitar",
+    "message": "@ is playing the &Air Guitar& !",
+    "specialmessage": "@ ' guitar is on fire!! (&Air Guitar&)"
+  },
+  "e298581c-3ba1-6f5a-e112-85d4de973a26": {
     "name": "Dab",
-    "uuid": "e298581c-3ba1-6f5a-e112-85d4de973a26",
     "message": "@ is &dabbing&",
     "specialmessage": "@ is performing a &dab&"
   },
-  {
+  "a43368fe-8bc7-e9cf-ce84-ed091577fe57": {
     "name": "Spin Fail",
-    "uuid": "a43368fe-8bc7-e9cf-ce84-ed091577fe57",
     "message": "@ is doing a &Spin Fail&",
     "specialmessage": "@ is spinning right round (and failed)"
   },
-  {
+  "ddfa6f0e-88ca-46de-b189-2bd5b18e96a0": {
     "name": "Bowing",
-    "uuid": "ddfa6f0e-88ca-46de-b189-2bd5b18e96a0",
     "message": "@ is &Bowing.&",
     "specialmessage": "@: My thanks are deeper than bedrock. &(Bowing)&"
   },
-  {
+  "40d5eb7c-c1fb-72a5-4016-4607d6361ff4": {
+    "name": "Dry Swim",
+    "message": "@ is doing the &Dry Swim&!",
+    "specialmessage": "@ is swimming to safety!"
+  },
+  "942142a7-7640-423a-a5ca-ad1f740eb41a": {
     "name": "Numa Numa Meme",
-    "uuid": "942142a7-7640-423a-a5ca-ad1f740eb41a",
     "message": "§b@ §ris §aNuma Numa",
     "specialmessage": "§b@ §rlet's all §aNuma Numa"
   },
-  {
+  "7dfdb88d-eb26-f85b-f1b9-69cfd55e89aa": {
     "name": "The Floody",
-    "uuid": "7dfdb88d-eb26-f85b-f1b9-69cfd55e89aa",
     "message": "@ is doing &The Floody&!",
     "specialmessage": "@ is getting all the attention! &The Floody&!"
   },
-  {
+  "719eb4f5-149b-c110-6b9a-5d3fef6601e4": {
     "name": "Petting",
-    "uuid": "719eb4f5-149b-c110-6b9a-5d3fef6601e4",
     "message": "@ is petting something.",
     "specialmessage": "@ is petting something. It's super effective!"
   },
-  {
+  "1b13d7cb-4a0b-d60d-a5ec-cf709effbf6a": {
     "name": "Skydiving",
-    "uuid": "1b13d7cb-4a0b-d60d-a5ec-cf709effbf6a",
     "message": "@ is &Skydiving&",
     "specialmessage": "@, be careful doing &Skydiving& !"
   },
-  {
+  "0ebd6a94-4dd8-13f8-0af9-f3c040b68176": {
     "name": "Hiding",
-    "uuid": "0ebd6a94-4dd8-13f8-0af9-f3c040b68176",
     "message": "@ is (not really) &Hiding&!",
     "specialmessage": "@ thinks nobody can see them! (&Hiding&)"
   },
-  {
+  "cd8026f6-f767-6659-a186-c65f81784521": {
+    "name": "Zen Attitude",
+    "message": "@ takes a moment to themselves (&Zen Attitude&)",
+    "specialmessage": "@ is looking for peace (&Zen Attitude&)"
+  },
+  "be2fac28-b980-4ef2-9274-326559601af0": {
+    "name": "Secure The W",
+    "message": "@ is celebrating with &Secure The W&!",
+    "specialmessage": "@ is stacking dubs! (&Secure The W&)"
+  },
+  "17f6d944-1e2c-4027-d1a0-545baec5cd77": {
     "name": "Epic Dab",
-    "uuid": "17f6d944-1e2c-4027-d1a0-545baec5cd77",
     "message": "@ is dabbing",
     "specialmessage": "@ should upload this dab to some short video platform"
   },
-  {
+  "9cb096e8-3220-af69-a311-4d7473866c84": {
     "name": "Cheerleading",
-    "uuid": "9cb096e8-3220-af69-a311-4d7473866c84",
     "message": "@ is &Cheerlading&!",
     "specialmessage": "Ready? Ok! @ is &Cheerleading&!"
   },
-  {
+  "6730c808-356f-5638-804f-1246e8325493": {
+    "name": "Stuck in the Mud",
+    "message": "@ is &Stuck in the Mud&!",
+    "specialmessage": "@ glued their feet to the ground! (&Stuck in the Mud&)"
+  },
+  "7a2ff2ed-68f2-0a5a-318c-96173e0121ca": {
     "name": "Victory Dance!",
-    "uuid": "7a2ff2ed-68f2-0a5a-318c-96173e0121ca",
     "message": "@ is doing some cool moves!",
     "specialmessage": "@ is the party master!"
   },
-  {
+  "c08c6523-0915-95af-e718-ecbfeba55472": {
     "name": "Almost Fell",
-    "uuid": "c08c6523-0915-95af-e718-ecbfeba55472",
     "message": "Woah there!",
     "specialmessage": "That was a close call!"
   },
-  {
+  "5d633016-4ee7-0158-4574-e14bfdfbaa5b": {
+    "name": "Jumping Jacks",
+    "message": "@ is getting ready to play sports!",
+    "specialmessage": "@ is ready for leg day!"
+  },
+  "a152a09e-b889-0a08-3992-3f2a087bf75c": {
+    "name": "baka",
+    "message": "@ is a baka",
+    "specialmessage": "@ loves anime too much!"
+  },
+  "4b8ad72a-388b-3407-5c47-beffe1fcea15": {
+    "name": "Surfing",
+    "message": "@ riding the waves! ",
+    "specialmessage": "Wave master @ in action! "
+  },
+  "3706e0e2-9991-40ac-98e0-4acd8dd7bc95": {
     "name": "Sniffer Sniffin'",
-    "uuid": "3706e0e2-9991-40ac-98e0-4acd8dd7bc95",
     "message": "@ is &Sniffer Sniffin'.&",
     "specialmessage": "@ found the ancient scent. Time for some &Sniffer Sniffin'.&"
   },
-  {
+  "7b15cc9a-1a65-95f1-22aa-1160b0e3d435": {
     "name": "Snow Star",
-    "uuid": "7b15cc9a-1a65-95f1-22aa-1160b0e3d435",
     "message": "@ is making a &Snow Star&!",
     "specialmessage": "@ is carving a &Snow Star&, a chilly masterpiece in the making!"
   },
-  {
+  "2da45633-fbce-396f-1df5-6c1320800c42": {
     "name": "Infinite Dab",
-    "uuid": "2da45633-fbce-396f-1df5-6c1320800c42",
     "message": "@ is dab-ing infinitly! (&Infinite Dab&)",
     "specialmessage": "@ doesn't stop! (&Infinite Dab&)"
   },
-  {
+  "fa68e7a1-5d12-3757-89b9-f1888fcbb0f4": {
     "name": "Backflip",
-    "uuid": "fa68e7a1-5d12-3757-89b9-f1888fcbb0f4",
     "message": "@ is doing a &backflip&",
     "specialmessage": "@ did a cool flip"
   },
-  {
+  "3a1736bf-3f6f-e4a0-e02a-beb92d80593e": {
     "name": "Upside Down Spin",
-    "uuid": "3a1736bf-3f6f-e4a0-e02a-beb92d80593e",
     "message": "@ is doing the &Upside Down Spin&!",
     "specialmessage": "Elytra flying is so last season. &Upside Down& spinning is in!"
   },
-  {
+  "ce0fe70e-02d4-a7c2-928c-99030213e7a6": {
     "name": "Jaunty Jig",
-    "uuid": "ce0fe70e-02d4-a7c2-928c-99030213e7a6",
     "message": "@ is doing a &Jaunty Jig&!",
     "specialmessage": "@ is really jiggin' it out! (&Jaunty Jig&)"
   },
-  {
+  "b157e821-f077-ddff-48c8-ff80a1818221": {
     "name": "zero two dance",
-    "uuid": "b157e821-f077-ddff-48c8-ff80a1818221",
     "message": "@ look at me dance",
     "specialmessage": "@ is so cute"
   },
-  {
+  "ecfcb8ca-a2c1-da18-b438-4bee3f0e2a7b": {
+    "name": "U Can't See Me",
+    "message": "@ performs &U Can't See Me&!",
+    "specialmessage": "@ is not visible while performing &U Can't See Me&!"
+  },
+  "4b586b00-c18e-9734-4138-8da140958c04": {
+    "name": "Helicopter",
+    "message": "@ is doing the &helicopter&",
+    "specialmessage": "@ is levitating! (&Helicopter&)"
+  },
+  "23570445-a93e-48b4-89b8-dcf3578b630b": {
+    "name": "Floss",
+    "message": "@ is doing a &floss &",
+    "specialmessage": "@ is doing a (&floss&) - and not the teeth kind!"
+  },
+  "ad6fa9bc-f832-7804-7d96-a424dacb74c0": {
     "name": "Boogie Down",
-    "uuid": "ad6fa9bc-f832-7804-7d96-a424dacb74c0",
     "message": "@ is &boogieing down&!",
     "specialmessage": "@ is getting their boogie on!"
   },
-  {
+  "6d3c573e-7940-fdb1-6cfd-9d0805d57710": {
     "name": "The Splits",
-    "uuid": "6d3c573e-7940-fdb1-6cfd-9d0805d57710",
     "message": "@ is doing &The Splits&!",
     "specialmessage": "@ is doing &The Splits& and they're not going to quit!"
   },
-  {
+  "17be4ac1-d626-42d8-c2a5-5cbf2cf7526a": {
     "name": "Fainting",
-    "uuid": "17be4ac1-d626-42d8-c2a5-5cbf2cf7526a",
     "message": "@p fainted...",
     "specialmessage": "@p is shocked..."
   },
-  {
+  "c63d95ad-cf5f-2216-b793-485824adde4d": {
     "name": "Ascension",
-    "uuid": "c63d95ad-cf5f-2216-b793-485824adde4d",
     "message": "@ just initiated an &Ascension&",
     "specialmessage": "@ is challenging the laws of gravity. (&Ascension&)"
   },
-  {
+  "e35b7cb9-714e-92c6-9131-d777e9c0ebbe": {
+    "name": "Ascending Glitch",
+    "message": "@ is experiencing an &Ascending Glitch&.",
+    "specialmessage": "Something is wrong with the Ascension! @ is glitching! This shouldn't happen! (&Ascending Glitch&)"
+  },
+  "c276e7b6-74e6-26ad-6f89-2d75c9e684af": {
     "name": "Handstand",
-    "uuid": "c276e7b6-74e6-26ad-6f89-2d75c9e684af",
     "message": "@ is doing a &Handstand&!",
     "specialmessage": "@ is Standing, but opposite, doing a &Handstand&!"
   },
-  {
+  "65587973-a8c7-e24c-637c-63feebb35a71": {
     "name": "Outburst",
-    "uuid": "65587973-a8c7-e24c-637c-63feebb35a71",
     "message": "@ can't contain their frustration.",
     "specialmessage": "@ is stomping around."
   },
-  {
+  "f9e35fe0-8f00-334e-f739-d9e83b391446": {
     "name": "Floss Dance",
-    "uuid": "f9e35fe0-8f00-334e-f739-d9e83b391446",
     "message": "@ is doing a &Floss Dance&!",
     "specialmessage": "@ is doing the famous &Floss Dance&! Join in!"
   },
-  {
+  "ae256dd2-3af6-bdb8-2786-4c543ae72513": {
     "name": "Flip Dance",
-    "uuid": "ae256dd2-3af6-bdb8-2786-4c543ae72513",
     "message": "@ is doing the &Dance Flip&!",
     "specialmessage": "@ is flippin' like crazy! (&Flip Dance&)"
   },
-  {
+  "a3f0f8d2-71df-2f32-d1f8-ac29aaa9a732": {
+    "name": "Pop lock dance",
+    "message": "@ is doing some spinning!",
+    "specialmessage": "@ dances like a pro!"
+  },
+  "b5052ca5-fd22-e95a-37ad-992ba821ab62": {
+    "name": "Zen",
+    "message": "@ is meditating with &Zen&",
+    "specialmessage": "@ is so &Zen& "
+  },
+  "e58a2b25-6f94-454f-ae97-3bc2973acd14": {
+    "name": "You Kidding Me?",
+    "message": "@ says &You Kidding Me?&",
+    "specialmessage": "@ can't take you seriously! (&You Kidding Me?&)"
+  },
+  "292c0ebf-bd8a-7a03-8515-1ecb76df538c": {
     "name": "Blowing Kisses",
-    "uuid": "292c0ebf-bd8a-7a03-8515-1ecb76df538c",
     "message": "@ is &blowing kisses& at you!",
     "specialmessage": "Muah muah muah! (&Blowing Kisses &)"
   },
-  {
+  "1e137be8-8c5a-c880-e65e-8e98548d5b51": {
     "name": "Awesome Flip",
-    "uuid": "1e137be8-8c5a-c880-e65e-8e98548d5b51",
     "message": "@ does an amazing &Awesome Flip& !",
     "specialmessage": "@ is ready to chill. (&Awesome Flip&)"
   },
-  {
+  "a1656439-c8a4-1aa5-fab8-1103dc792d3c": {
     "name": "Bursting with Joy",
-    "uuid": "a1656439-c8a4-1aa5-fab8-1103dc792d3c",
     "message": "@ is Bursting with Joy!",
     "specialmessage": "@ is so joyful they could burst!"
   },
-  {
+  "eea1bdca-68c5-a04a-c5d3-45e4ce92c2be": {
+    "name": "Backflip",
+    "message": "@ is doing a &Backflip&!",
+    "specialmessage": "How is @ even doing this?"
+  },
+  "f943c6ae-4bb0-1dbf-9b42-4111bb648084": {
     "name": "Celebration Dance",
-    "uuid": "f943c6ae-4bb0-1dbf-9b42-4111bb648084",
     "message": "yay!",
     "specialmessage": "celebrate!"
   },
-  {
+  "f98da84c-37e7-4754-6cfa-eb7aa44da3be": {
     "name": "Spooky Skeleton Dance",
-    "uuid": "f98da84c-37e7-4754-6cfa-eb7aa44da3be",
     "message": "@ is doing the !&Skeleton Dance&¡",
     "specialmessage": "@ is going viral with the &Skeleton Dance&"
   },
-  {
+  "132153ae-66fb-d586-9e0f-71fb8369df9e": {
+    "name": "I'm levitating",
+    "message": "@ is levitating",
+    "specialmessage": "@ is chilling out while floating"
+  },
+  "eee01cfe-0750-c41c-8de2-4e5cc7b20594": {
     "name": "Hype",
-    "uuid": "eee01cfe-0750-c41c-8de2-4e5cc7b20594",
     "message": "@ is &Hyped&!",
     "specialmessage": "@ is really &Hyped&!"
   },
-  {
+  "ffff31f9-b671-8538-1be3-f56e6174edff": {
+    "name": "Sweeepin'",
+    "message": "@ is doing the &Sweepin'&!",
+    "specialmessage": "@ is enthusiastically waving their arms back and forth!"
+  },
+  "f65b8ee3-65db-42fc-9b00-4b0751d62364": {
     "name": "High Five",
-    "uuid": "f65b8ee3-65db-42fc-9b00-4b0751d62364",
     "message": "@ leaps up for a &High Five.&",
     "specialmessage": "@ really wants a &High Five.&"
   },
-  {
+  "16489f0f-3219-aa2e-af88-cea0d4525144": {
     "name": "That's the word!",
-    "uuid": "16489f0f-3219-aa2e-af88-cea0d4525144",
     "message": "@ found the word! (&That's the word!&)",
     "specialmessage": "@ found the bird! (&That's the word!&)"
   },
-  {
+  "22dc9e27-fdf4-9eec-fc25-36c7cb185f33": {
     "name": "drop_splits_emote",
-    "uuid": "22dc9e27-fdf4-9eec-fc25-36c7cb185f33",
     "message": "@ is doing the &Drop Splits&!",
     "specialmessage": "@ is showing off by doing the &Drop Splits&!"
   },
-  {
+  "e6686442-9603-7b13-4684-dffa7d40e5a5": {
     "name": "Silly Dance",
-    "uuid": "e6686442-9603-7b13-4684-dffa7d40e5a5",
     "message": "@ is doing the &Silly Dance&!",
     "specialmessage": "@ is going viral with the &Silly Dance&!"
   },
-  {
+  "f20de429-1b45-daf9-d22b-6a3d59955d57": {
+    "name": "Surf's Up",
+    "message": "@ is catching a wave! &Surfs Up&!",
+    "specialmessage": "Watch out! @ just caught the biggest wave! &Surfs Up&!"
+  },
+  "a0ad453c-cc0b-ee83-300b-e0d34fe698f4": {
     "name": "Superhero Landing",
-    "uuid": "a0ad453c-cc0b-ee83-300b-e0d34fe698f4",
     "message": "@ comes to save the day! (&Superhero landing&)",
     "specialmessage": "@ wants to bring justice! (&Superhero landing&)"
   },
-  {
+  "76f240f9-5d35-4d63-a6ef-f8ad8c154a80": {
     "name": "Worm Dance",
-    "uuid": "76f240f9-5d35-4d63-a6ef-f8ad8c154a80",
     "message": "@ is doing the &Worm Dance&.",
     "specialmessage": "@ can't wait to go fishing! &Worm Dance&."
   },
-  {
+  "9a4ed8da-dea2-21d3-0844-830b2251db9c": {
     "name": "L Dance",
-    "uuid": "9a4ed8da-dea2-21d3-0844-830b2251db9c",
     "message": "@ is doing a wild &L Dance&",
     "specialmessage": "@ is dancing too much!"
   },
-  {
+  "d6114dde-aeef-c8c8-db32-a024f715272a": {
+    "name": "Wiggle",
+    "message": "@ is &Wiggling&",
+    "specialmessage": "@ tries to entertain you (&Wiggling&)"
+  },
+  "5aa536b7-c9f5-bfe1-3b00-99f1970165bd": {
+    "name": "Siuuu Pose",
+    "message": "Siuuuuu!",
+    "specialmessage": "@ scored! Siuuuu!"
+  },
+  "d58d2fca-7338-f2c1-828a-df6a078aa606": {
+    "name": "Classic Pop Dance",
+    "message": "@ is doing a &Classic Pop Dance&!!",
+    "specialmessage": "@ is so slay, doing the &Classic Pop Dance&!"
+  },
+  "94402c81-d8a5-6715-f056-7e556b9b783e": {
+    "name": "T-Pose",
+    "message": "@ is doing a &T-Pose&.",
+    "specialmessage": "@ shows how cool they are. (&T-Pose&)"
+  },
+  "7aff2616-5242-4d28-9df3-639894947d0b": {
+    "name": "Petrified",
+    "message": "@ is far too afraid (&Petrified&)",
+    "specialmessage": "@ can't move at all (&Petrified&)"
+  },
+  "65e4658f-2efe-4945-35a3-d329c17c2e6e": {
     "name": "Hero Kata",
-    "uuid": "65e4658f-2efe-4945-35a3-d329c17c2e6e",
     "message": "@ is preparing a &Hero Kata&",
     "specialmessage": "@ is getting &super dizzy&!"
   },
-  {
+  "535db425-48d5-c253-92eb-49e72b36623c": {
     "name": "Waiting",
-    "uuid": "535db425-48d5-c253-92eb-49e72b36623c",
     "message": "@ is waiting.",
     "specialmessage": "@ is still waiting..."
   },
-  {
+  "9a497899-4a54-c936-f73b-08b259afe370": {
     "name": "Evil Laughing",
-    "uuid": "9a497899-4a54-c936-f73b-08b259afe370",
     "message": "@ is &Evil Laughing&",
     "specialmessage": "@'s laughter is eerily menacing. (&Evil Laughing&)"
   },
-  {
+  "09b34c1f-8899-df1b-7e0f-ce73f1c1807f": {
     "name": "Flips",
-    "uuid": "09b34c1f-8899-df1b-7e0f-ce73f1c1807f",
     "message": "@ is doing some flips.",
     "specialmessage": "Has @ switched off gravity?"
   },
-  {
+  "25006636-2f1a-7507-df06-06de42eee479": {
+    "name": "Super Villain",
+    "message": "@ is laughing menancingly.",
+    "specialmessage": "@ is powering up! Mwahaha"
+  },
+  "892fa7e4-24e6-997e-8297-88b84e0cfa88": {
+    "name": "Infinite Dab",
+    "message": "@ is performing the &Infinite Dab&!",
+    "specialmessage": "@ can't stop the &Infinite Dab&!"
+  },
+  "2033f5be-848b-99f5-9697-e0c6b0f81d34": {
     "name": "You're Welcome",
-    "uuid": "2033f5be-848b-99f5-9697-e0c6b0f81d34",
     "message": "@ is bowing",
     "specialmessage": "You have my respect"
   },
-  {
+  "c12e38f3-f88f-4a01-3b06-1c43f8818058": {
+    "name": "Take This L",
+    "message": "@ gives you a L (&Take This L&)",
+    "specialmessage": "@ is offering you this L (&Take This L&)"
+  },
+  "50e51304-515d-441f-81d8-7921327b97f9": {
     "name": "Rallying",
-    "uuid": "50e51304-515d-441f-81d8-7921327b97f9",
     "message": "@ is &Rallying& the team together.",
     "specialmessage": "@ lets out a &Rallying& cry. CHARGE!"
   },
-  {
+  "57685cc0-2d5d-7d85-d73a-c74b36627d2c": {
     "name": "Skateboarding",
-    "uuid": "57685cc0-2d5d-7d85-d73a-c74b36627d2c",
     "message": "@ is &Skateboarding&",
     "specialmessage": "@ has learned some tricks (&Skateboarding&)"
   },
-  {
+  "786fec7c-694b-841a-0a03-d5b9668eca9d": {
     "name": "Ballerina Dance",
-    "uuid": "786fec7c-694b-841a-0a03-d5b9668eca9d",
     "message": "@ is doing the &Ballerina Dance&!",
     "specialmessage": "@ is Becoming the Ultimate Dancer!"
   },
-  {
+  "dcdef3f6-eefa-d5fb-fc3b-fba42e2b0eaf": {
+    "name": "Walking Upside Down",
+    "message": "@ is &Walking Upside Down& !",
+    "specialmessage": "@ is defying the laws of gravity. (&Walking Upside Down&)"
+  },
+  "599420df-f690-c022-eac0-6b4538e8104d": {
+    "name": "Helicopter",
+    "message": "@ is doing some circles.",
+    "specialmessage": "@ takes off like a helicopter."
+  },
+  "6131e1e3-0c13-4cd3-96cf-fbb39b277b6d": {
     "name": "Triumphantly Cheering",
-    "uuid": "6131e1e3-0c13-4cd3-96cf-fbb39b277b6d",
     "message": "@ is &Triumphantly Cheering&.",
     "specialmessage": "@ vanquished their foes and is &Triumphantly Cheering&."
   },
-  {
+  "1c6b8fb8-2890-42cb-aca3-f1441625b1ce": {
     "name": "Napping",
-    "uuid": "1c6b8fb8-2890-42cb-aca3-f1441625b1ce",
     "message": "@ is &Napping&.",
     "specialmessage": "Just a quick snooze to keep the Phantoms away. @ is &Napping&."
   },
-  {
+  "16ea0270-edd8-d62c-a898-d66ea932284a": {
     "name": "Racecar Driving",
-    "uuid": "16ea0270-edd8-d62c-a898-d66ea932284a",
     "message": "@ is driving a racecar! &Racecar Driving&",
     "specialmessage": "@ crossed the finish line! &Racecar Driving&"
   },
-  {
+  "4d0d83c3-0df2-bb43-7895-d50f83fa5b76": {
     "name": "Break Dance Head Spin",
-    "uuid": "4d0d83c3-0df2-bb43-7895-d50f83fa5b76",
     "message": "@p twirled it in style!",
     "specialmessage": "@p is breaking it down!"
   },
-  {
+  "2f17bada-d2c8-a30f-649e-d4648911fcf6": {
     "name": "Ninja Weapon Flip",
-    "uuid": "2f17bada-d2c8-a30f-649e-d4648911fcf6",
     "message": "Ninja Style!",
     "specialmessage": "@ is doing a forbidden flipping technique!"
   },
-  {
+  "97c12242-e1c0-09d5-4ce2-6962f29b7996": {
     "name": "The Zombie",
-    "uuid": "97c12242-e1c0-09d5-4ce2-6962f29b7996",
     "message": "@ is doing &The Zombie&!",
     "specialmessage": "@ is looking a little &Zombified&!"
   },
-  {
+  "7e7efcf4-3100-1dea-b126-c89903492b35": {
+    "name": "Crowd Kisses",
+    "message": "@ is sending kisses to the crowd!",
+    "specialmessage": "@ is blowing kisses to their adoring fans!"
+  },
+  "a6e8d5bf-9c1a-3703-f933-b45fc4e840dd": {
+    "name": "Pick Me",
+    "message": "@ wants you to pick them.",
+    "specialmessage": "@ REALLY wants you to pick them!"
+  },
+  "6e5a23ec-a694-b5a7-8634-eee5d57a2f34": {
     "name": "You Lost",
-    "uuid": "6e5a23ec-a694-b5a7-8634-eee5d57a2f34",
     "message": "Too bad! (&You Lost&)",
     "specialmessage": "@ has severe Schadenfreude (&You Lost&)"
   },
-  {
+  "9e283d6c-6799-ca04-fbf1-b5279c38ced8": {
     "name": "Robot Dance",
-    "uuid": "9e283d6c-6799-ca04-fbf1-b5279c38ced8",
     "message": "@ is doing the &Robot Dance&",
     "specialmessage": "@ is ready to perform at a family pizzeria! (&Robot Dance&)"
   },
-  {
+  "22495944-8391-4edd-b617-c3541a2c60d3": {
     "name": "Ta-daaaa !",
-    "uuid": "22495944-8391-4edd-b617-c3541a2c60d3",
     "message": "@ wants to show you something! (&Ta-daaaa&)",
     "specialmessage": "@ is proud to show you this! (&Ta-daaaa&)"
   },
-  {
+  "51cfdf2e-d725-09dc-a5dc-caab497dec43": {
     "name": "Flares",
-    "uuid": "51cfdf2e-d725-09dc-a5dc-caab497dec43",
     "message": "@ is doing a &Flare&",
     "specialmessage": "@ is ready to dance battle! &Flares&"
   },
-  {
+  "9c8a03bd-98a7-8b86-7cc4-e89187b537f0": {
+    "name": "DJ party",
+    "message": "@ is being a DJ",
+    "specialmessage": "@ is vibing with the music!"
+  },
+  "1e909865-4c80-4708-839c-b0c0fcaa2f1c": {
     "name": "Juggling",
-    "uuid": "1e909865-4c80-4708-839c-b0c0fcaa2f1c",
     "message": "@ is &Juggling& while they wait.",
     "specialmessage": "Watch out! @ is &Juggling& pointy items."
   },
-  {
+  "b6d48380-5278-8611-b1ea-5db0482a02fb": {
     "name": "Rodeo Dance",
-    "uuid": "b6d48380-5278-8611-b1ea-5db0482a02fb",
     "message": "@ is doing the &Rodeo Dance&.",
     "specialmessage": "@ is riding with the music. (&Rodeo Dance&)"
   },
-  {
+  "5c9d7eaf-51a9-ec62-582b-74926ff7f088": {
     "name": "Fast Spinning ",
-    "uuid": "5c9d7eaf-51a9-ec62-582b-74926ff7f088",
     "message": "@ spins on itself! (&Fast Spinning&)",
     "specialmessage": "@ is trying to reach the speed of light! (&Fast Spinning&)"
   },
-  {
+  "c0b9a42f-de88-ea29-8cf9-038f913f40d0": {
     "name": "Moon Walk",
-    "uuid": "c0b9a42f-de88-ea29-8cf9-038f913f40d0",
     "message": "@ is moon walking!",
     "specialmessage": "@ is the king of pop!"
   },
-  {
+  "9e902cf9-4416-558c-eef1-426f5fe2d020": {
+    "name": "Eagle",
+    "message": "@ is doing the eagle.",
+    "specialmessage": "@ is flying away..."
+  },
+  "137730ec-9617-4fa9-a715-c2a671a7210e": {
     "name": "Sitting",
-    "uuid": "137730ec-9617-4fa9-a715-c2a671a7210e",
     "message": "@ is &Sitting&.",
     "specialmessage": "@ is &Sitting& around daydreaming of cherry blossoms."
   },
-  {
+  "dc9300a3-11a6-6c09-d71e-740311a5715a": {
+    "name": "Superhero Landing",
+    "message": "@ is doing a &Superhero Landing&!",
+    "specialmessage": "MAKE WAY! @ is doing a &Superhero Landing&!"
+  },
+  "7a314ecf-f94c-42c0-945f-76903c923808": {
     "name": "Bored",
-    "uuid": "7a314ecf-f94c-42c0-945f-76903c923808",
     "message": "@ is &Bored.&",
     "specialmessage": "@: YAAAWWWN. Well, shall we move onto something else? &(Bored)&"
   },
-  {
+  "297a8c6f-661a-c292-bd0b-7ba1c1a3d4c6": {
+    "name": "Laugh It Up",
+    "message": "@ laughs loudly!",
+    "specialmessage": "@ saw something funny!"
+  },
+  "87478e1d-07f8-7641-a6cb-db006625683b": {
+    "name": "I Drop",
+    "message": "@ is defying gravity doing the &I Drop&!",
+    "specialmessage": "@ is about to get a Tetris! (&I Drop&)"
+  },
+  "f2d004ab-6d62-4c21-8517-f7ef03d9bb26": {
     "name": "Back Handsprings",
-    "uuid": "f2d004ab-6d62-4c21-8517-f7ef03d9bb26",
     "message": "@ is doing &Back Handsprings.&",
     "specialmessage": "Who turned on the redstone repeater? @ can't stop doing &Back Handsprings!&"
   },
-  {
+  "c9c66be7-1c77-d83b-3a6c-cd2d8d86dbc9": {
+    "name": "Jump and Cheer",
+    "message": "@ is doing the &Jump and Cheer& ",
+    "specialmessage": "@ is celebrating something with the &Jump and Cheer& dance"
+  },
+  "a624945a-6b60-9dc9-3b00-517b64ee94f3": {
+    "name": "Stick in the ground",
+    "message": "@ is doing the &Stick in the ground&",
+    "specialmessage": "The stick is stuck in the ground! I hope you're happy @ !"
+  },
+  "8d328393-f9b1-ada5-f9ae-7e271407395f": {
     "name": "There! Look!",
-    "uuid": "8d328393-f9b1-ada5-f9ae-7e271407395f",
     "message": "@ is showing you something, hurry! (&There! Look!&)",
     "specialmessage": "@ has something important to show you! (&There! Look!&)"
   },
-  {
+  "18478bf0-a810-4ad1-77c4-69ad9cbb22ef": {
+    "name": "Scared",
+    "message": "@ is scared!",
+    "specialmessage": "@ will run away!"
+  },
+  "b5d85d3d-ab5f-515f-ae4f-7de2937724d3": {
     "name": "disco_dance",
-    "uuid": "b5d85d3d-ab5f-515f-ae4f-7de2937724d3",
     "message": "@ is doing a &Disco Dance&!",
     "specialmessage": "@ is doing a &Disco Dance&! JOIN IN!"
   },
-  {
+  "9aac4cd3-fadf-0645-19fa-45d68f7ff204": {
     "name": "Dance Battle",
-    "uuid": "9aac4cd3-fadf-0645-19fa-45d68f7ff204",
     "message": "@ is starting a &Dance Battle&.",
     "specialmessage": "@ is challenging all to a &Dance Battle&!"
   },
-  {
+  "c7efbcf5-3633-5311-bfef-58937d4d4d23": {
+    "name": "Guitar Hero",
+    "message": "@ is being a &Guitar Hero&",
+    "specialmessage": "@ is rockin' hard! &Guitar Hero&"
+  },
+  "f1d75faf-b6fc-d09a-c354-bfa8dc063ec0": {
     "name": "looking far away",
-    "uuid": "f1d75faf-b6fc-d09a-c354-bfa8dc063ec0",
     "message": "@ is looking very far!",
     "specialmessage": "@ can see beyond the mountains!"
   },
-  {
+  "c6231238-3869-4acd-8f8e-818a34a59c2c": {
+    "name": "Chill Victory",
+    "message": "@ is celebrating a &Chill Victory&.",
+    "specialmessage": "@ can't stop winning! (&Chill Victory&)"
+  },
+  "505146b0-d5c8-4f4b-a13c-007d2175bbb6": {
     "name": "Drowsy",
-    "uuid": "505146b0-d5c8-4f4b-a13c-007d2175bbb6",
     "message": "@ is &Drowsy.&",
     "specialmessage": "@ had too much Suspicious Stew. &(Drowsy)&"
   },
-  {
+  "b305f0e8-cb72-48de-bfea-7e2f4afb63c7": {
     "name": "Wall Running",
-    "uuid": "b305f0e8-cb72-48de-bfea-7e2f4afb63c7",
     "message": "@ is &Wall Running&",
     "specialmessage": "@ is bouncing off the walls! &Wall Running&"
   },
-  {
+  "de3871ca-4a91-67e3-6922-4f5766e875db": {
     "name": "Handstand",
-    "uuid": "de3871ca-4a91-67e3-6922-4f5766e875db",
     "message": "§b@ §ris §adoing Handstand Press-ups",
     "specialmessage": "§b@ §rhas §araw power"
   },
-  {
+  "e9ab2d64-615e-7067-1495-c6beb9fa410d": {
     "name": "Ice Dance",
-    "uuid": "e9ab2d64-615e-7067-1495-c6beb9fa410d",
     "message": "@ is dancing through the ice. (&Ice Dance%)",
     "specialmessage": "Such grace from @! (&Ice Dance%)"
+  },
+  "4c815b7c-1f7c-bf8c-64d6-4f8948c56ebf": {
+    "name": "The Eagle",
+    "message": "@ is doing &The Eagle&!",
+    "specialmessage": "@ Believes they can fly!"
+  },
+  "f8faa7aa-d9c7-d2ff-e001-26f1db24e6ff": {
+    "name": "Anime Run",
+    "message": "@ is running like they're in an anime! ",
+    "specialmessage": "Is that a car? No, it's just @ doing an (&anime_run&)!"
   }
-]
+}

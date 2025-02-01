@@ -91,6 +91,7 @@ public class ConfigLoader {
                 .addAction(NodePath.path("proxy-mode"), TransformAction.remove())
                 .addAction(NodePath.path("external-address"), TransformAction.remove())
                 .addAction(NodePath.path("external-port"), TransformAction.remove())
+                .addAction(NodePath.path("mute-emote-chat"), TransformAction.remove())
                 .build();
     }
 

@@ -11,7 +11,7 @@ import java.util.List;
 public class GeyserExtrasCommand implements BedrockCommand {
 
     @Override
-    public void onExecute(ExtrasPlayer player, List<String> args) {
+    public void onExecute(ExtrasPlayer player, List<String> args, String label) {
         if (!args.isEmpty()) {
             String subcommand = args.get(0);
             /*

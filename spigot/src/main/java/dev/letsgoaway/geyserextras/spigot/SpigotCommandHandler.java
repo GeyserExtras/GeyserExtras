@@ -16,6 +16,9 @@ public class SpigotCommandHandler implements CommandExecutor {
             if (player != null) {
                 CommandHandler.runFromCommandInput(player, label, args);
             }
+            else {
+                CommandHandler.runFromCommandInput(spigotPlayer.getUniqueId(), label, args);
+            }
         }
         return true;
     }

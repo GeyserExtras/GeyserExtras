@@ -5,11 +5,18 @@ import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.TickUtil;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.GeyserExtras;
+import dev.letsgoaway.geyserextras.core.parity.bedrock.EmoteUtils;
+import dev.letsgoaway.geyserextras.core.preferences.JavaPreferencesData;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 
 import java.nio.file.Path;
+import java.util.UUID;
+
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 
 public class GeyserExtrasSpigot extends JavaPlugin implements Server {
     public static GeyserExtras CORE;
@@ -20,6 +27,7 @@ public class GeyserExtrasSpigot extends JavaPlugin implements Server {
 
     public GeyserExtrasSpigot() {
         ServerType.type = ServerType.SPIGOT;
+        SPIGOT = this;
         spigotTickUtil = new SpigotTickUtil();
     }
 
@@ -30,10 +38,16 @@ public class GeyserExtrasSpigot extends JavaPlugin implements Server {
         this.getCommand("platformlist").setExecutor(handler);
         this.getCommand("playerlist").setExecutor(handler);
         this.getCommand("emotechat").setExecutor(handler);
+        this.getServer().getPluginManager().registerEvents(new SpigotListener(), this);
         CORE = new GeyserExtras(this);
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, () -> {
             CORE.serverTick();
         }, 0L, 0L);
+    }
+
+    @Override
+    public void onDisable() {
+        CORE.autoReconnectAll();
     }
 
     @Override
@@ -59,5 +73,28 @@ public class GeyserExtrasSpigot extends JavaPlugin implements Server {
     @Override
     public Path getPluginFolder() {
         return getDataFolder().toPath();
+    }
+
+    @Override
+    public void sendEmoteChat(ExtrasPlayer player, String emoteChat) {
+        SpigotExtrasPlayer spigotPlayer = (SpigotExtrasPlayer) player;
+        spigotTickUtil.runSync(() -> {
+            for (Player playerNear : spigotPlayer.player.getWorld().getEntitiesByClass(Player.class)) {
+                boolean isBedrockPlayer = GE.geyserApi.isBedrockPlayer(playerNear.getUniqueId());
+                if (isBedrockPlayer) continue;
+
+                JavaPreferencesData userPrefs = GE.getJavaPreferencesData(playerNear.getUniqueId());
+                if (userPrefs != null && userPrefs.muteEmoteChat) continue;
+
+                if (EmoteUtils.EMOTE_DISTANCE >= spigotPlayer.player.getLocation().distance(playerNear.getLocation())) {
+                    playerNear.sendMessage(ChatColor.translateAlternateColorCodes('§', emoteChat));
+                }
+            }
+        }, player);
+    }
+
+    @Override
+    public void sendRawMessage(UUID javaPlayer, String message) {
+        Bukkit.getPlayer(javaPlayer).sendRawMessage(message);
     }
 }

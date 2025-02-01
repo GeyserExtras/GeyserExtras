@@ -9,6 +9,7 @@ import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import org.geysermc.event.subscribe.Subscribe;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.event.lifecycle.GeyserPostInitializeEvent;
+import org.geysermc.geyser.api.event.lifecycle.GeyserPreReloadEvent;
 import org.geysermc.geyser.api.extension.Extension;
 
 import java.nio.file.Path;
@@ -28,6 +29,7 @@ public class GeyserExtrasExtension implements Extension, Server {
         CORE = new GeyserExtras(this);
         tickUtil = new ExtensionTickUtil();
     }
+
 
     @Override
     public TickUtil getTickUtil() {
@@ -52,5 +54,9 @@ public class GeyserExtrasExtension implements Extension, Server {
     @Override
     public Path getPluginFolder() {
         return this.dataFolder();
+    }
+
+    @Override
+    public void sendEmoteChat(ExtrasPlayer player, String emoteChat) {
     }
 }

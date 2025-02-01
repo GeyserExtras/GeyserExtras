@@ -1,33 +1,38 @@
 package dev.letsgoaway.geyserextras.core;
 
 import dev.letsgoaway.geyserextras.core.features.skinsaver.SkinSaver;
+import dev.letsgoaway.geyserextras.core.form.BedrockForm;
+import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
+import dev.letsgoaway.geyserextras.core.form.BedrockModal;
 import dev.letsgoaway.geyserextras.core.locale.GELocale;
+import dev.letsgoaway.geyserextras.core.parity.java.combat.CooldownHandler;
 import dev.letsgoaway.geyserextras.core.parity.java.menus.serverlinks.ServerLinksData;
+import dev.letsgoaway.geyserextras.core.parity.java.menus.tablist.TabListData;
 import dev.letsgoaway.geyserextras.core.preferences.PreferencesData;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
-import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
-import dev.letsgoaway.geyserextras.core.form.BedrockForm;
-import dev.letsgoaway.geyserextras.core.form.BedrockModal;
-import dev.letsgoaway.geyserextras.core.parity.java.combat.CooldownHandler;
-import dev.letsgoaway.geyserextras.core.parity.java.menus.tablist.TabListData;
+import dev.letsgoaway.geyserextras.core.parity.bedrock.EmoteUtils;
 import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import dev.letsgoaway.geyserextras.core.utils.StringUtils;
 import lombok.Getter;
 import lombok.Setter;
-import org.cloudburstmc.math.vector.Vector3f;
-import org.cloudburstmc.protocol.bedrock.data.camera.CameraTargetInstruction;
-import org.cloudburstmc.protocol.bedrock.packet.*;
-import org.geysermc.api.util.BedrockPlatform;
-import org.geysermc.api.util.InputMode;
+import org.cloudburstmc.protocol.bedrock.packet.AnimatePacket;
+import org.cloudburstmc.protocol.bedrock.packet.ServerboundDiagnosticsPacket;
+import org.cloudburstmc.protocol.bedrock.packet.SetTitlePacket;
+import org.cloudburstmc.protocol.bedrock.packet.ToastRequestPacket;
 import org.geysermc.geyser.api.bedrock.camera.GuiElement;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent;
+import org.geysermc.geyser.level.JavaDimension;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.text.MinecraftLocale;
 import org.geysermc.geyser.util.DimensionUtils;
 
 import java.io.File;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -37,47 +42,52 @@ import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class ExtrasPlayer {
     @Getter
-    private UUID javaUUID;
-
-    @Getter
-    private String bedrockXUID;
-
-    @Setter
-    private List<UUID> emotesList;
-
-    @Getter
-    public GeyserSession session;
-
-    @Getter
     private final CooldownHandler cooldownHandler;
-
     @Getter
     private final TabListData tabListData;
-
     @Getter
     private final ServerLinksData serverLinksData;
-
-
     @Getter
     private final PreferencesData preferences;
-
+    @Getter
+    public GeyserSession session;
+    @Setter
+    @Getter
+    public float tickrate = 20.0f;
+    public long ticks = 0;
+    @Getter
+    private UUID javaUUID;
+    @Getter
+    private String bedrockXUID;
+    @Setter
+    private List<UUID> emotesList;
     @Getter
     private ScheduledFuture<?> combatTickThread;
-
     @Getter
     @Setter
     private ScheduledFuture<?> doubleClickShortcutFuture;
-
     @Getter
     private File userPrefs;
-
     @Getter
     @Setter
     private ServerboundDiagnosticsPacket diagnostics;
-
     @Setter
     @Getter
     private boolean packsUpdated = false;
+    @Getter
+    private boolean loggedIn = false;
+    private Instant lastEmoteTime = Instant.now();
+
+
+    // Used for the double click menu action
+    @Setter
+    @Getter
+    private float lastInventoryClickTime = 0;
+
+    // For emote chat on platforms where we cant get the dimensions of other players
+    @Getter
+    private Map<Integer, JavaDimension> playerDimensionsMap;
+
 
     public ExtrasPlayer(GeyserConnection connection) {
         this.session = (GeyserSession) connection;
@@ -90,10 +100,8 @@ public class ExtrasPlayer {
         emotesList = List.of();
         userPrefs = PreferencesData.PREFERENCES_PATH.resolve(bedrockXUID + ".json").toFile();
         preferences.load();
+        playerDimensionsMap = new HashMap<>();
     }
-
-    @Getter
-    private boolean loggedIn = false;
 
     public void startGame() {
         loggedIn = true;
@@ -140,26 +148,26 @@ public class ExtrasPlayer {
     }
 
     public void onEmoteEvent(ClientEmoteEvent ev) {
-        int id = emotesList.indexOf(UUID.fromString(ev.emoteId()));
+        UUID uuid = UUID.fromString(ev.emoteId());
+        int id = emotesList.indexOf(uuid);
 
         if (id == -1) {
             SERVER.debugWarn("Emote with id: " + ev.emoteId() + " was not in emote list!");
             return;
         }
 
-        preferences.getAction(Remappable.values()[id]).run(this);
+        if (preferences.isDefault(Remappable.values()[id])) {
+            String emoteChat = EmoteUtils.getEmoteChatString(uuid, this);
+
+            if (emoteChat != null && Duration.between(lastEmoteTime, Instant.now()).toMillis() >= 3000) {
+                SERVER.sendEmoteChat(this, emoteChat);
+                lastEmoteTime = Instant.now();
+            }
+        } else {
+            preferences.getAction(Remappable.values()[id]).run(this);
+        }
+
     }
-
-    @Setter
-    @Getter
-    public float tickrate = 20.0f;
-
-    public long ticks = 0;
-
-    // Used for the VR Quick-Menu double click action
-    @Setter
-    @Getter
-    private float lastInventoryClickTime = 0;
 
     public void tick() {
         ticks++;

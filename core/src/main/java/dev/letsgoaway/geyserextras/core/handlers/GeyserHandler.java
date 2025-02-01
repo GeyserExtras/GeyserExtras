@@ -14,6 +14,7 @@ import org.geysermc.mcprotocollib.protocol.packet.common.clientbound.Clientbound
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.*;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.entity.*;
 import org.cloudburstmc.protocol.bedrock.packet.*;
+import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.entity.spawn.ClientboundAddEntityPacket;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.inventory.ClientboundOpenScreenPacket;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.level.*;
 
@@ -55,6 +56,11 @@ public class GeyserHandler {
             // Server Links (1.21+)
             Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundServerLinksPacket.class, new JavaServerLinksInjector());
         }
+
+        // Emote chat dimension workarounds
+        Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundAddEntityPacket.class, new JavaAddEntityInjector());
+        Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundRemoveEntitiesPacket.class, new JavaRemoveEntityInjector());
+
     }
 
     public static void registerDownstream() {

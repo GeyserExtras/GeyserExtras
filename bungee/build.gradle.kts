@@ -8,7 +8,7 @@ dependencies {
 tasks {
     shadowJar {
         archiveClassifier.set("")
-        archiveFileName.set("GeyserExtras-Bungee.jar")
+        archiveFileName.set("GeyserExtras-BungeeCord.jar")
         relocate("org.spongepowered", "dev.letsgoaway.relocate.org.spongepowered")
         relocate("io.leangen.geantyref", "dev.letsgoaway.io.leangen.geantyref")
         relocate("com.fasterxml", "dev.letsgoaway.relocate.com.fasterxml")

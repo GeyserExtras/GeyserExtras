@@ -21,7 +21,7 @@ repositories {
     maven("https://repo.opencollab.dev/main/")
     maven("https://repo.codemc.io/repository/maven-releases/")
 }
-6
+
 dependencies {
     implementation("org.spongepowered:configurate-yaml:4.2.0-GeyserMC-SNAPSHOT")
     shadow("org.spongepowered:configurate-yaml:4.2.0-GeyserMC-SNAPSHOT")
