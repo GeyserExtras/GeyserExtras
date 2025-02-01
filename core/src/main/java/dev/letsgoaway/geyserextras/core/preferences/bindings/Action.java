@@ -1,6 +1,5 @@
 package dev.letsgoaway.geyserextras.core.preferences.bindings;
 
-import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.locale.BedrockLocale;
 import dev.letsgoaway.geyserextras.core.menus.MainMenu;
@@ -12,7 +11,6 @@ import org.geysermc.geyser.text.ChatColor;
 import org.geysermc.geyser.util.InventoryUtils;
 import org.geysermc.mcprotocollib.protocol.data.game.ClientCommand;
 import org.geysermc.mcprotocollib.protocol.data.game.entity.player.PlayerState;
-import org.geysermc.mcprotocollib.protocol.data.game.entity.type.EntityType;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.serverbound.ServerboundClientCommandPacket;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.serverbound.player.ServerboundPlayerCommandPacket;
 
@@ -54,9 +52,7 @@ public enum Action {
                 session.sendDownstreamGamePacket(packet);
             }
             case PLAYER_LIST -> {
-                if (ServerType.canRunTabList()) {
-                    player.sendForm(new PlayerListMenu());
-                }
+                player.sendForm(new PlayerListMenu());
             }
             case PLATFORM_LIST -> {
                 // TODO: platformlist

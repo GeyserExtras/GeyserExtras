@@ -3,20 +3,25 @@ package dev.letsgoaway.geyserextras.core.handlers;
 import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.SoundReplacer;
+import dev.letsgoaway.geyserextras.core.handlers.bedrock.*;
+import dev.letsgoaway.geyserextras.core.handlers.java.*;
+import org.cloudburstmc.protocol.bedrock.packet.*;
 import org.geysermc.geyser.GeyserImpl;
 import org.geysermc.geyser.api.util.PlatformType;
 import org.geysermc.geyser.registry.Registries;
 import org.geysermc.geyser.session.GeyserSession;
-import dev.letsgoaway.geyserextras.core.handlers.bedrock.*;
-import dev.letsgoaway.geyserextras.core.handlers.java.*;
 import org.geysermc.mcprotocollib.protocol.packet.common.clientbound.ClientboundDisconnectPacket;
 import org.geysermc.mcprotocollib.protocol.packet.common.clientbound.ClientboundServerLinksPacket;
-import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.*;
-import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.entity.*;
-import org.cloudburstmc.protocol.bedrock.packet.*;
+import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.ClientboundPlayerInfoUpdatePacket;
+import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.ClientboundSoundEntityPacket;
+import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.ClientboundTabListPacket;
+import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.ClientboundTickingStatePacket;
+import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.entity.ClientboundEntityEventPacket;
+import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.entity.ClientboundRemoveEntitiesPacket;
+import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.entity.ClientboundUpdateAttributesPacket;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.entity.spawn.ClientboundAddEntityPacket;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.inventory.ClientboundOpenScreenPacket;
-import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.level.*;
+import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.level.ClientboundSoundPacket;
 
 import java.util.UUID;
 
@@ -50,12 +55,12 @@ public class GeyserHandler {
 
         // we do this for now because of adventure library issues (this sucks!!!)
         // todo: figure out a workaround or a better way to fix this
-        if (ServerType.canRunTabList()) {
-            Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundTabListPacket.class, new JavaTabListInjector());
-            Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundPlayerInfoUpdatePacket.class, new JavaPlayerInfoUpdateInjector());
-            // Server Links (1.21+)
-            Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundServerLinksPacket.class, new JavaServerLinksInjector());
-        }
+
+        Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundTabListPacket.class, new JavaTabListInjector());
+        Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundPlayerInfoUpdatePacket.class, new JavaPlayerInfoUpdateInjector());
+        // Server Links (1.21+)
+        Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundServerLinksPacket.class, new JavaServerLinksInjector());
+
 
         // Emote chat dimension workarounds
         Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundAddEntityPacket.class, new JavaAddEntityInjector());

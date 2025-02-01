@@ -1,19 +1,16 @@
 package dev.letsgoaway.geyserextras.core.menus;
 
-import dev.letsgoaway.geyserextras.ServerType;
+import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
+import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
+import dev.letsgoaway.geyserextras.core.form.elements.Button;
+import dev.letsgoaway.geyserextras.core.locale.BedrockLocale;
 import dev.letsgoaway.geyserextras.core.menus.settings.menus.SettingsMenu;
+import dev.letsgoaway.geyserextras.core.parity.java.menus.packs.PackLoader;
 import dev.letsgoaway.geyserextras.core.parity.java.menus.packs.PackMenu;
 import dev.letsgoaway.geyserextras.core.parity.java.menus.serverlinks.ServerLinksMenu;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Action;
-import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
-import dev.letsgoaway.geyserextras.core.form.elements.Button;
-
-import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
-import dev.letsgoaway.geyserextras.core.locale.BedrockLocale;
 import org.geysermc.cumulus.form.SimpleForm;
 import org.geysermc.cumulus.util.FormImage;
-
-import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 
 public class MainMenu extends BedrockMenu {
     public MainMenu() {
@@ -42,22 +39,22 @@ public class MainMenu extends BedrockMenu {
         add(new Button(Action.OPEN_STATISTICS.translate(player), FormImage.Type.PATH, "textures/ui/world_glyph_color_2x_black_outline.png", () -> {
             Action.OPEN_STATISTICS.run(player);
         }));
-        if (ServerType.canRunTabList()) {
-            add(new Button(Action.PLAYER_LIST.translate(player), FormImage.Type.PATH, "textures/ui/Local.png", () -> {
-                Action.PLAYER_LIST.run(player);
-            }));
 
-            if (!player.getServerLinksData().getServerLinks().isEmpty()) {
-                add(new Button(player.translate("menu.server_links.title"), FormImage.Type.PATH, "textures/ui/external_link.png", () -> {
-                    player.sendForm(new ServerLinksMenu());
-                }));
-            }
-        }
-
-        add(new Button(BedrockLocale.MENU.RESOURCE_PACKS, FormImage.Type.PATH, "textures/ui/glyph_resource_pack.png", () -> {
-            player.sendForm(new PackMenu());
+        add(new Button(Action.PLAYER_LIST.translate(player), FormImage.Type.PATH, "textures/ui/Local.png", () -> {
+            Action.PLAYER_LIST.run(player);
         }));
 
+        if (!player.getServerLinksData().getServerLinks().isEmpty()) {
+            add(new Button(player.translate("menu.server_links.title"), FormImage.Type.PATH, "textures/ui/external_link.png", () -> {
+                player.sendForm(new ServerLinksMenu());
+            }));
+        }
+
+        if (!PackLoader.PACKS.isEmpty()) {
+            add(new Button(BedrockLocale.MENU.RESOURCE_PACKS, FormImage.Type.PATH, "textures/ui/glyph_resource_pack.png", () -> {
+                player.sendForm(new PackMenu());
+            }));
+        }
         return super.create(player);
     }
 }

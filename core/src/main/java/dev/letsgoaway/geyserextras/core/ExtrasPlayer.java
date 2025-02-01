@@ -130,11 +130,11 @@ public class ExtrasPlayer {
 
     public void onDisconnect() {
         if (combatTickThread != null) {
-            combatTickThread.cancel(true);
+            combatTickThread.cancel(false);
             combatTickThread = null;
         }
         if (doubleClickShortcutFuture != null) {
-            doubleClickShortcutFuture.cancel(true);
+            doubleClickShortcutFuture.cancel(false);
             doubleClickShortcutFuture = null;
         }
         tabListData.getPlayers().clear();

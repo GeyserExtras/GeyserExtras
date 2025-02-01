@@ -14,13 +14,6 @@ public enum ServerType {
         return type == EXTENSION || type == STANDALONE;
     }
 
-
-    // lazy ass workaround, should try and fix sometime
-    // likely going to use server-side apis for this as it should be better in the long run
-    public static boolean canRunTabList() {
-        return platformType == PlatformType.STANDALONE;
-    }
-
     public static ServerType get(){
         return type;
     }
