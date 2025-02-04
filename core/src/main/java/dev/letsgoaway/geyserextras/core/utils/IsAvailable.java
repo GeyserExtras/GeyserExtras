@@ -1,5 +1,7 @@
 package dev.letsgoaway.geyserextras.core.utils;
 
+import dev.letsgoaway.geyserextras.ServerType;
+
 // Couldn't think of a good name to call this lol
 public class IsAvailable {
 
@@ -26,6 +28,10 @@ public class IsAvailable {
     }
 
     public static boolean floodgate() {
+        // For some reason this worked to fix a linkage error, idfk
+        if (ServerType.type == ServerType.BUNGEE){
+            return false;
+        }
         return FLOODGATE;
     }
 

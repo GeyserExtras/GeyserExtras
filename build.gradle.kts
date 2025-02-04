@@ -6,6 +6,7 @@ plugins {
 
 repositories {
     mavenCentral()
+    gradlePluginPortal()
 
     maven("https://maven.lenni0451.net/snapshots/") {
         name = "lenni0451Maven"
@@ -20,6 +21,9 @@ repositories {
     }
     maven("https://repo.opencollab.dev/main/")
     maven("https://repo.codemc.io/repository/maven-releases/")
+    maven("https://maven.fabricmc.net/")
+    maven("https://maven.architectury.dev/")
+    maven("https://maven.neoforged.net/releases")
 }
 
 dependencies {
@@ -43,8 +47,10 @@ dependencies {
 
 
 subprojects {
+
     repositories {
         mavenCentral()
+        gradlePluginPortal()
 
         maven("https://maven.lenni0451.net/snapshots/") {
             name = "lenni0451Maven"
@@ -59,6 +65,9 @@ subprojects {
         }
         maven("https://repo.opencollab.dev/main/")
         maven("https://repo.codemc.io/repository/maven-releases/")
+        maven("https://maven.fabricmc.net/")
+        maven("https://maven.architectury.dev/")
+        maven("https://maven.neoforged.net/releases")
     }
 
     plugins.withId("java") {

@@ -78,7 +78,9 @@ public class JavaPreferencesData {
     public void save() {
         new Thread(() -> {
             try {
-                JSON_MAPPER.writeValue(saveFile, this);
+                if (!JSON_MAPPER.writeValueAsString(this).equals(JSON_MAPPER.writeValueAsString(DEFAULT))) {
+                    JSON_MAPPER.writeValue(saveFile, this);
+                }
             } catch (IOException e) {
                 SERVER.warn("Could not save data for player " + javaUUID + "\n" + e.getLocalizedMessage());
             }

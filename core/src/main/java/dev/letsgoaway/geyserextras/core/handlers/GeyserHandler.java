@@ -5,6 +5,7 @@ import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.SoundReplacer;
 import dev.letsgoaway.geyserextras.core.handlers.bedrock.*;
 import dev.letsgoaway.geyserextras.core.handlers.java.*;
+import dev.letsgoaway.geyserextras.core.parity.java.blockdisplay.BlockDisplayEntity;
 import org.cloudburstmc.protocol.bedrock.packet.*;
 import org.geysermc.geyser.GeyserImpl;
 import org.geysermc.geyser.api.util.PlatformType;
@@ -29,6 +30,7 @@ import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 
 public class GeyserHandler {
     public static void register() {
+        BlockDisplayEntity.buildEntityDef();
         SoundReplacer.loadSoundMappings();
         CommandHandler.loadCommands();
         registerUpstream();

@@ -2,9 +2,9 @@ package dev.letsgoaway.geyserextras.core.preferences;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
+import dev.letsgoaway.geyserextras.core.menus.Menus;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Action;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
-import dev.letsgoaway.geyserextras.core.menus.Menus;
 import lombok.Getter;
 import lombok.Setter;
 import org.geysermc.geyser.GeyserImpl;
@@ -25,20 +25,14 @@ import static dev.letsgoaway.geyserextras.core.cache.Cache.JSON_MAPPER;
 
 public class PreferencesData {
     @JsonIgnore
+    public static Path PREFERENCES_PATH;
+    @JsonIgnore
+    private static PreferencesData DEFAULT;
+    @JsonIgnore
     private final ExtrasPlayer player;
-
     @JsonIgnore
     private final GeyserSession session;
-
-    @JsonIgnore
-    public static Path PREFERENCES_PATH;
-
     public CooldownUtils.CooldownType cooldownType = CooldownUtils.CooldownType.TITLE;
-
-    @Getter
-    @Setter
-    private boolean adjustCooldownWithPing = true;
-
     public boolean showCoordinates = false;
 
     public boolean advancedTooltips = false;
@@ -46,30 +40,26 @@ public class PreferencesData {
     public boolean customSkullSkins = false;
 
     public HashMap<Remappable, Action> remappableActionMap;
-
+    @Getter
+    @Setter
+    private boolean adjustCooldownWithPing = true;
     @Getter
     @Setter
     private float indicatorUpdateRate = 60f;
-
     @Getter
     @Setter
     private Menus settingsMenuForm = Menus.GE_SETTINGS;
-
     @Getter
     @Setter
     private boolean enableDoubleClickShortcut = true;
-
     @Getter
     @Setter
     private int doubleClickMS = 200;
-
     @Getter
     @Setter
     private boolean promptOnLinks = true;
-
     @Getter
     private Perspectives lockedPerspective = Perspectives.OFF;
-
     @Getter
     @Setter
     private List<UUID> selectedPacks = new ArrayList<>();
@@ -81,9 +71,13 @@ public class PreferencesData {
         showCoordinates = GeyserImpl.getInstance().getConfig().isShowCoordinates();
     }
 
-    @JsonIgnore
-    private static PreferencesData DEFAULT;
 
+    public PreferencesData() {
+        this.player = null;
+        this.session = null;
+        remappableActionMap = new HashMap<>();
+        showCoordinates = GeyserImpl.getInstance().getConfig().isShowCoordinates();
+    }
 
     public static void init() {
         PREFERENCES_PATH = SERVER.getPluginFolder().resolve("preferences/");
@@ -106,14 +100,6 @@ public class PreferencesData {
         } catch (Exception e) {
             SERVER.warn("Could not load custom default settings, new players will recieve factory\ndefault's, no changes have been made to default.json.\n" + e.getLocalizedMessage());
         }
-    }
-
-
-    public PreferencesData() {
-        this.player = null;
-        this.session = null;
-        remappableActionMap = new HashMap<>();
-        showCoordinates = GeyserImpl.getInstance().getConfig().isShowCoordinates();
     }
 
     public void runAction(Remappable binding) {
@@ -148,7 +134,9 @@ public class PreferencesData {
         this.update();
         new Thread(() -> {
             try {
-                JSON_MAPPER.writeValue(player.getUserPrefs(), this);
+                if (!JSON_MAPPER.writeValueAsString(this).equals(JSON_MAPPER.writeValueAsString(DEFAULT))) {
+                    JSON_MAPPER.writeValue(player.getUserPrefs(), this);
+                }
             } catch (IOException e) {
                 SERVER.warn("Could not save data for player " + player.getBedrockXUID() + "\n" + e.getLocalizedMessage());
             }

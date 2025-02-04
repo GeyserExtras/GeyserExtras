@@ -17,5 +17,6 @@ tasks {
         relocate("net.kyori", "org.geysermc.geyser.platform.spigot.shaded.net.kyori") {
             exclude("net.kyori.adventure.text.logger.slf4j.ComponentLogger")
         }
+        relocate("it.unimi.dsi.fastutil", "org.geysermc.geyser.platform.spigot.shaded.it.unimi.dsi.fastutil")
     }
 }

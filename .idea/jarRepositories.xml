@@ -71,5 +71,25 @@
       <option name="name" value="lenni0451Maven" />
       <option name="url" value="https://maven.lenni0451.net/snapshots/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven5" />
+      <option name="name" value="maven5" />
+      <option name="url" value="https://maven.architectury.dev/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Gradle Central Plugin Repository" />
+      <option name="name" value="Gradle Central Plugin Repository" />
+      <option name="url" value="https://plugins.gradle.org/m2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven5" />
+      <option name="name" value="maven5" />
+      <option name="url" value="https://maven.fabricmc.net/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven7" />
+      <option name="name" value="maven7" />
+      <option name="url" value="https://maven.neoforged.net/releases" />
+    </remote-repository>
   </component>
 </project>
