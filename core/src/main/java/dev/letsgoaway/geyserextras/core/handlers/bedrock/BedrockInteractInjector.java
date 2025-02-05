@@ -31,6 +31,7 @@ public class BedrockInteractInjector extends BedrockInteractTranslator {
                 if (packet.getAction().equals(InteractPacket.Action.DAMAGE)) {
                     player.getCooldownHandler().setDigTicks(-1);
                     player.getCooldownHandler().setLastSwingTime(System.currentTimeMillis());
+                    player.hungerSprintCancel();
                 } else if (packet.getAction().equals(InteractPacket.Action.MOUSEOVER)) {
                     player.getCooldownHandler().setLastMouseoverID(packet.getRuntimeEntityId());
                 }

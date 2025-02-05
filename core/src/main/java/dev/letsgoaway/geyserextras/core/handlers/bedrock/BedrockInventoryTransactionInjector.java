@@ -6,7 +6,6 @@ import org.cloudburstmc.math.vector.Vector3i;
 import org.cloudburstmc.protocol.bedrock.data.definitions.BlockDefinition;
 import org.cloudburstmc.protocol.bedrock.data.inventory.transaction.InventoryTransactionType;
 import org.cloudburstmc.protocol.bedrock.packet.InventoryTransactionPacket;
-
 import org.cloudburstmc.protocol.bedrock.packet.UpdateBlockPacket;
 import org.geysermc.geyser.entity.type.Entity;
 import org.geysermc.geyser.level.block.type.BlockState;
@@ -17,8 +16,6 @@ import org.geysermc.geyser.session.cache.SkullCache;
 import org.geysermc.geyser.translator.inventory.InventoryTranslator;
 import org.geysermc.geyser.translator.protocol.Translator;
 import org.geysermc.geyser.translator.protocol.bedrock.BedrockInventoryTransactionTranslator;
-
-import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 
 // I love it when bedrock randomly sends data in random packets
 // of which the name they have is completely irrelavant to what
@@ -52,6 +49,8 @@ public class BedrockInventoryTransactionInjector extends BedrockInventoryTransac
             if (packet.getActionType() == 1) {
                 player.getCooldownHandler().setDigTicks(-1);
                 player.getCooldownHandler().setLastSwingTime(System.currentTimeMillis());
+
+                player.hungerSprintCancel();
             }
         }
         if (type.equals(InventoryTransactionType.ITEM_USE)) {
