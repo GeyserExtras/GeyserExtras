@@ -20,6 +20,11 @@ public final class GeyserExtrasConfig {
     private boolean enableJavaCombatSounds = true;
 
     @Comment("""
+    Enable the Block Display entity workaround using FMBE. (https://wiki.bedrock.dev/commands/display-entities.html)
+    """)
+    private boolean enableBlockDisplayWorkaround = false;
+
+    @Comment("""
             Forces block placements to not be hold-bridgable/scaffold-bridgeable.
             Requires disable-bedrock-scaffolding: true in Geyser's config for forward block placements.
             """)

@@ -30,7 +30,9 @@ import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 
 public class GeyserHandler {
     public static void register() {
-        BlockDisplayEntity.buildEntityDef();
+        if (GE.getConfig().isEnableBlockDisplayWorkaround()) {
+            BlockDisplayEntity.buildEntityDef();
+        }
         SoundReplacer.loadSoundMappings();
         CommandHandler.loadCommands();
         registerUpstream();
@@ -52,12 +54,6 @@ public class GeyserHandler {
         Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundDisconnectPacket.class, new JavaDisconnectInjector());
 
         // Tab list
-
-        PlatformType platformType = GeyserImpl.getInstance().getPlatformType();
-
-        // we do this for now because of adventure library issues (this sucks!!!)
-        // todo: figure out a workaround or a better way to fix this
-
         Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundTabListPacket.class, new JavaTabListInjector());
         Registries.JAVA_PACKET_TRANSLATORS.register(ClientboundPlayerInfoUpdatePacket.class, new JavaPlayerInfoUpdateInjector());
         // Server Links (1.21+)

@@ -16,5 +16,6 @@ tasks {
         relocate("org.spongepowered", "dev.letsgoaway.relocate.org.spongepowered")
         relocate("io.leangen.geantyref", "dev.letsgoaway.io.leangen.geantyref")
         relocate("com.fasterxml", "dev.letsgoaway.relocate.com.fasterxml")
+        relocate("it.unimi.dsi.fastutil", "org.geysermc.geyser.platform.velocity.shaded.it.unimi.dsi.fastutil")
     }
 }

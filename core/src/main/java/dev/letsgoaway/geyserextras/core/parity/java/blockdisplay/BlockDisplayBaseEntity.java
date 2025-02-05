@@ -14,8 +14,8 @@ public class BlockDisplayBaseEntity extends FoxEntity {
     private Vector3f baseTranslation = Vector3f.ZERO;
     private Vector3f blockDisplayScale = Vector3f.ONE;
 
-    private Vector4f leftRotation = Vector4f.ZERO;
-    private Vector4f rightRotation = Vector4f.ZERO;
+    private Vector4f leftRotation = Vector4f.from(0, 0, 0, 1);
+    private Vector4f rightRotation = Vector4f.from(0, 0, 0, 1);
 
     public BlockDisplayBaseEntity(GeyserSession session, int entityId, long geyserId, UUID uuid, EntityDefinition<?> definition, Vector3f position, Vector3f motion, float yaw, float pitch, float headYaw) {
         super(session, entityId, geyserId, uuid, definition, position, motion, yaw, pitch, headYaw);
@@ -43,25 +43,28 @@ public class BlockDisplayBaseEntity extends FoxEntity {
         this.blockDisplayScale = translationMeta.getValue();
     }
 
-
-    public void setLeftRotation(EntityMetadata<Vector4f, ?> translationMeta) {
-        if (translationMeta.getValue() == null) {
-            return;
-        }
-        this.leftRotation = translationMeta.getValue();
-    }
     public Vector4f getLeftRotation() {
         return this.leftRotation;
     }
 
+    public void setLeftRotation(EntityMetadata<Vector4f, ?> translationMeta) {
+        if (translationMeta.getValue() == null) {
+            leftRotation = Vector4f.from(0, 0, 0, 1);
+            return;
+        }
+        this.leftRotation = translationMeta.getValue();
+    }
+
+    public Vector4f getRightRotation() {
+        return this.rightRotation;
+    }
+
     public void setRightRotation(EntityMetadata<Vector4f, ?> translationMeta) {
         if (translationMeta.getValue() == null) {
+            rightRotation = Vector4f.from(0, 0, 0, 1);
             return;
         }
         this.rightRotation = translationMeta.getValue();
-    }
-    public Vector4f getRightRotation() {
-        return this.rightRotation;
     }
 
 }

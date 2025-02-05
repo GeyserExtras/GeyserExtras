@@ -1,28 +1,42 @@
 package dev.letsgoaway.geyserextras.core.parity.java.blockdisplay;
 
+import dev.letsgoaway.geyserextras.MathUtils;
 import org.cloudburstmc.math.vector.Vector3f;
 import org.cloudburstmc.math.vector.Vector4f;
-import org.cloudburstmc.protocol.bedrock.data.definitions.BlockDefinition;
 import org.cloudburstmc.protocol.bedrock.data.entity.EntityDataTypes;
 import org.cloudburstmc.protocol.bedrock.data.entity.EntityFlag;
 import org.cloudburstmc.protocol.bedrock.packet.AnimateEntityPacket;
+import org.cloudburstmc.protocol.bedrock.packet.MoveEntityDeltaPacket;
 import org.geysermc.geyser.entity.EntityDefinition;
 import org.geysermc.geyser.entity.type.Entity;
 import org.geysermc.geyser.entity.type.Tickable;
 import org.geysermc.geyser.item.Items;
+import org.geysermc.geyser.item.type.BlockItem;
+import org.geysermc.geyser.item.type.Item;
+import org.geysermc.geyser.level.block.BlockStateValues;
+import org.geysermc.geyser.level.block.type.Block;
+import org.geysermc.geyser.level.block.type.BlockState;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.mcprotocollib.protocol.data.game.entity.metadata.MetadataType;
 import org.geysermc.mcprotocollib.protocol.data.game.entity.metadata.type.IntEntityMetadata;
 import org.geysermc.mcprotocollib.protocol.data.game.entity.type.EntityType;
+import org.geysermc.mcprotocollib.protocol.data.game.item.component.BlockStateProperties;
+import org.geysermc.mcprotocollib.protocol.data.game.item.component.DataComponent;
+import org.geysermc.mcprotocollib.protocol.data.game.item.component.DataComponentType;
 import org.geysermc.mcprotocollib.protocol.data.game.item.component.DataComponents;
 
 import java.text.DecimalFormat;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
 
 public class BlockDisplayEntity extends BlockDisplayBaseEntity implements Tickable {
     private static final DecimalFormat format = new DecimalFormat("#.###");
-    public BlockDefinition bedrockBlockId;
+    private static final List<String> rendersAs2D = List.of(
+            Items.CAMPFIRE.javaIdentifier(),
+            Items.IRON_BARS.javaIdentifier(),
+            Items.BELL.javaIdentifier()
+    );
     private String animationExpression = "";
 
     public BlockDisplayEntity(GeyserSession session, int entityId, long geyserId, UUID uuid, EntityDefinition<?> definition, Vector3f position, Vector3f motion, float yaw, float pitch, float headYaw) {
@@ -68,7 +82,7 @@ public class BlockDisplayEntity extends BlockDisplayBaseEntity implements Tickab
 
     @Override
     public void spawnEntity() {
-        position = position.add(this.getTranslation());
+        position = position.add(this.getTranslationOffsetSub());
         super.spawnEntity();
         dirtyMetadata.put(EntityDataTypes.COLLISION_BOX, Vector3f.ZERO);
         dirtyMetadata.put(EntityDataTypes.WIDTH, 0.0f);
@@ -80,14 +94,12 @@ public class BlockDisplayEntity extends BlockDisplayBaseEntity implements Tickab
         setFlag(EntityFlag.HAS_COLLISION, false);
         setFlag(EntityFlag.HAS_GRAVITY, false);
         setFlag(EntityFlag.PUSH_TOWARDS_CLOSEST_SPACE, false);
+
+        updateBedrockMetadata();
     }
 
     @Override
     public void drawTick() {
-
-    }
-
-    public void tick() {
         animationExpression = "";
         buildScale();
         buildTranslation();
@@ -112,6 +124,10 @@ public class BlockDisplayEntity extends BlockDisplayBaseEntity implements Tickab
         animate("animation.parrot.dance", "v.dance.x=-v.zpos;v.dance.y=0;", "ge:zpos");
     }
 
+    public void tick() {
+
+    }
+
     private void animate(String anim, String stopExpression, String controller) {
         AnimateEntityPacket animation = new AnimateEntityPacket();
         animation.setAnimation(anim);
@@ -124,9 +140,21 @@ public class BlockDisplayEntity extends BlockDisplayBaseEntity implements Tickab
     }
 
     public void setBlock(IntEntityMetadata entityMetadata) {
-        bedrockBlockId = session.getBlockMappings().getBedrockBlock(entityMetadata.getPrimitiveValue());
+        BlockState state = BlockState.of(entityMetadata.getPrimitiveValue());
+        Block block = state.block();
+        Item item = BlockItem.byBlock(block);
+        if (item.javaIdentifier().contains("_door") || item.javaIdentifier().contains("_candle")) {
+            setHand(Items.AIR.newItemStack(1, null).getItemStack());
+            updateMainHand(session);
+            return;
+        }
 
-        setHand(Items.ACACIA_LEAVES.newItemStack(1, new DataComponents(new HashMap<>())).getItemStack());
+        if (rendersAs2D.contains(block.javaIdentifier().toString())) {
+            setHand(Items.AIR.newItemStack(1, null).getItemStack());
+            updateMainHand(session);
+            return;
+        }
+        setHand(item.newItemStack(1,null).getItemStack());
         updateMainHand(session);
     }
 
@@ -145,26 +173,83 @@ public class BlockDisplayEntity extends BlockDisplayBaseEntity implements Tickab
     public void moveAbsolute(Vector3f position, float yaw, float pitch, float headYaw, boolean isOnGround, boolean teleported) {
         //super.moveAbsolute(position, yaw, pitch, headYaw, isOnGround, teleported);
 
-        super.moveAbsolute(position.add(-0.5, 0, -0.5), yaw, pitch, headYaw, isOnGround, teleported);
         this.position = position;
+        moveAbsoluteImmediate(position.add(getTranslationOffsetSub()));
+    }
+
+    protected void moveAbsoluteImmediate(Vector3f position) {
+        this.moveAbsoluteImmediate(position, yaw, pitch, headYaw, isOnGround(), false);
+    }
+
+    protected void moveAbsoluteImmediate(Vector3f position, float yaw, float pitch, float headYaw, boolean isOnGround, boolean teleported) {
+        MoveEntityDeltaPacket moveEntityDeltaPacket = new MoveEntityDeltaPacket();
+        moveEntityDeltaPacket.setRuntimeEntityId(geyserId);
+
+        if (isOnGround) {
+            moveEntityDeltaPacket.getFlags().add(MoveEntityDeltaPacket.Flag.ON_GROUND);
+        }
+        setOnGround(isOnGround);
+
+        if (teleported) {
+            moveEntityDeltaPacket.getFlags().add(MoveEntityDeltaPacket.Flag.TELEPORTING);
+        }
+
+        if (this.position.getX() != position.getX()) {
+            moveEntityDeltaPacket.getFlags().add(MoveEntityDeltaPacket.Flag.HAS_X);
+            moveEntityDeltaPacket.setX(position.getX());
+        }
+        if (this.position.getY() != position.getY()) {
+            moveEntityDeltaPacket.getFlags().add(MoveEntityDeltaPacket.Flag.HAS_Y);
+            moveEntityDeltaPacket.setY(position.getY());
+        }
+        if (this.position.getZ() != position.getZ()) {
+            moveEntityDeltaPacket.getFlags().add(MoveEntityDeltaPacket.Flag.HAS_Z);
+            moveEntityDeltaPacket.setZ(position.getZ());
+        }
+        setPosition(position);
+
+        if (getYaw() != yaw) {
+            moveEntityDeltaPacket.getFlags().add(MoveEntityDeltaPacket.Flag.HAS_YAW);
+            moveEntityDeltaPacket.setYaw(yaw);
+            setYaw(yaw);
+        }
+        if (getPitch() != pitch) {
+            moveEntityDeltaPacket.getFlags().add(MoveEntityDeltaPacket.Flag.HAS_PITCH);
+            moveEntityDeltaPacket.setPitch(pitch);
+            setPitch(pitch);
+        }
+        if (getHeadYaw() != headYaw) {
+            moveEntityDeltaPacket.getFlags().add(MoveEntityDeltaPacket.Flag.HAS_HEAD_YAW);
+            moveEntityDeltaPacket.setHeadYaw(headYaw);
+            setHeadYaw(headYaw);
+        }
+
+        if (!moveEntityDeltaPacket.getFlags().isEmpty()) {
+            session.sendUpstreamPacket(moveEntityDeltaPacket);
+        }
     }
 
     @Override
     public void moveRelative(double relX, double relY, double relZ, float yaw, float pitch, float headYaw, boolean isOnGround) {
         //super.moveAbsolute(position, yaw, pitch, headYaw, isOnGround, teleported);
 
-        super.moveRelative(relX - 0.5, relY, relZ - 0.5, yaw, pitch, headYaw, isOnGround);
-        this.position = position.add(0.5, 0, 0.5);
+        super.moveRelative(relX, relY, relZ, yaw, pitch, headYaw, isOnGround);
+
     }
 
     private void buildTranslation() {
-    //    moveRelative(pos.getX(), pos.getY(), pos.getZ(), yaw, pitch, headYaw, false);
-        //    position = position.sub(pos);
-
         // * 16 bc fmbe method makes block pos multiples of 16
-        animationExpression += mlVAR("xpos", (-0.5 + getTranslation().getX()) * 16) + mlVAR("ypos", (0.5 + getTranslation().getY()) * 16) + mlVAR("zpos", (-0.5 + getTranslation().getZ()) * 16);
+        animationExpression += mlVAR("xpos", (getTranslationOffset().getX()) * 16) + mlVAR("ypos", (getTranslationOffset().getY()) * 16) + mlVAR("zpos", (getTranslationOffset().getZ()) * 16);
         animationExpression += mlVAR("xbasepos", (0.5) * 16) + mlVAR("ybasepos", (0.5) * 16) + mlVAR("zbasepos", (0.5) * 16);
 
+    }
+
+    private Vector3f getTranslationOffset() {
+        return this.getTranslation().add(0, -2, 0);
+    }
+
+    private Vector3f getTranslationOffsetSub() {
+        return this.getTranslation().sub(0, -1.5, 0);
     }
 
 
@@ -178,23 +263,10 @@ public class BlockDisplayEntity extends BlockDisplayBaseEntity implements Tickab
     // this is going to make me lose my mind :D
     public void buildRotation() {
         Vector4f q = getLeftRotation();
+        q = Vector4f.from(MathUtils.clampOne(q.getX()), MathUtils.clampOne(q.getY()), MathUtils.clampOne(q.getZ()), MathUtils.clampOne(q.getW()));
+        Vector3f euler = MathUtils.toEuler(q);
 
-        double sinr_cosp = 2 * (q.getW() * q.getX() + q.getY() * q.getZ());
-        double cosr_cosp = 1 - 2 * (q.getX() * q.getX() + q.getY() * q.getY());
-        double roll = Math.atan2(sinr_cosp, cosr_cosp);
-
-        // pitch (y-axis rotation)
-        double sinp = Math.sqrt(1 + 2 * (q.getW() * q.getY() - q.getX() * q.getZ()));
-        double cosp = Math.sqrt(1 - 2 * (q.getW() * q.getY() - q.getX() * q.getZ()));
-        double pitch = 2 * Math.atan2(sinp, cosp) - Math.PI / 2;
-
-        // yaw (z-axis rotation)
-        double siny_cosp = 2 * (q.getW() * q.getZ() + q.getX() * q.getY());
-        double cosy_cosp = 1 - 2 * (q.getY() * q.getY() + q.getZ() * q.getZ());
-        double yaw = Math.atan2(siny_cosp, cosy_cosp);
-
-
-        animationExpression += mlVAR("xrot", (roll) * (180 / Math.PI)) + mlVAR("yrot", (-pitch) * (180 / Math.PI)) + mlVAR("zrot", (-yaw) * (180 / Math.PI));
+        animationExpression += mlVAR("xrot", Math.toDegrees(euler.getX())) + mlVAR("yrot", Math.toDegrees(-euler.getY())) + mlVAR("zrot", Math.toDegrees(-euler.getZ()));
         //     GeyserExtras.SERVER.log(animationExpression);
     }
 
