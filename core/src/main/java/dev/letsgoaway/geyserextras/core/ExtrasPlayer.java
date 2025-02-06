@@ -1,5 +1,6 @@
 package dev.letsgoaway.geyserextras.core;
 
+import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.features.skinsaver.SkinSaver;
 import dev.letsgoaway.geyserextras.core.form.BedrockForm;
 import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
@@ -11,18 +12,17 @@ import dev.letsgoaway.geyserextras.core.parity.java.menus.serverlinks.ServerLink
 import dev.letsgoaway.geyserextras.core.parity.java.menus.tablist.TabListData;
 import dev.letsgoaway.geyserextras.core.preferences.PreferencesData;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
-import dev.letsgoaway.geyserextras.core.utils.GESignal;
 import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import dev.letsgoaway.geyserextras.core.utils.StringUtils;
 import lombok.Getter;
 import lombok.Setter;
-import org.cloudburstmc.protocol.bedrock.data.AttributeData;
-import org.cloudburstmc.protocol.bedrock.data.entity.EntityFlag;
-import org.cloudburstmc.protocol.bedrock.packet.*;
+import org.cloudburstmc.protocol.bedrock.packet.AnimatePacket;
+import org.cloudburstmc.protocol.bedrock.packet.ServerboundDiagnosticsPacket;
+import org.cloudburstmc.protocol.bedrock.packet.SetTitlePacket;
+import org.cloudburstmc.protocol.bedrock.packet.ToastRequestPacket;
 import org.geysermc.geyser.api.bedrock.camera.GuiElement;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent;
-import org.geysermc.geyser.entity.attribute.GeyserAttributeType;
 import org.geysermc.geyser.level.JavaDimension;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.text.MinecraftLocale;
@@ -89,10 +89,6 @@ public class ExtrasPlayer {
     @Getter
     private Map<Integer, JavaDimension> playerDimensionsMap;
 
-    @Getter
-    private GESignal tickSignal = new GESignal();
-
-
     public ExtrasPlayer(GeyserConnection connection) {
         this.session = (GeyserSession) connection;
         this.javaUUID = connection.javaUuid();
@@ -109,7 +105,9 @@ public class ExtrasPlayer {
 
     public void startGame() {
         loggedIn = true;
-        sendToast(translateGE("ge.welcome_toast.line1"), translateGE("ge.welcome_toast.line2"));
+
+        sendSystemToast(translateGE("ge.welcome_toast.line1"), translateGE("ge.welcome_toast.line2"));
+
         if (GE.getConfig().isEnableSkinSaving()) {
             SkinSaver.save(this);
         }
@@ -152,7 +150,7 @@ public class ExtrasPlayer {
     }
 
     public void hungerSprintCancel() {
-        // todo
+        // todo: figure out how to recreate this option with geyser codebase
     }
 
     public void onEmoteEvent(ClientEmoteEvent ev) {
@@ -179,7 +177,6 @@ public class ExtrasPlayer {
 
     public void tick() {
         ticks++;
-        tickSignal.dispatch();
         if (GE.getConfig().isDisablePaperDoll()) {
             session.camera().hideElement(GuiElement.PAPER_DOLL);
         }
@@ -229,6 +226,15 @@ public class ExtrasPlayer {
         toastPacket.setTitle(title);
         toastPacket.setContent(description);
         session.sendUpstreamPacket(toastPacket);
+    }
+
+    public void sendSystemToast(String title, String description) {
+        if (preferences.isSendSystemToasts() && GE.getConfig().isEnableGeyserExtrasMenu()) {
+            ToastRequestPacket toastPacket = new ToastRequestPacket();
+            toastPacket.setTitle(title);
+            toastPacket.setContent(description);
+            session.sendUpstreamPacket(toastPacket);
+        }
     }
 
     public void resetTitle() {

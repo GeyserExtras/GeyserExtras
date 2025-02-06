@@ -18,7 +18,7 @@ import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.TickUtil;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.GeyserExtras;
-import dev.letsgoaway.geyserextras.core.handlers.CommandHandler;
+import dev.letsgoaway.geyserextras.core.commands.CommandExecutor;
 import dev.letsgoaway.geyserextras.core.parity.bedrock.EmoteUtils;
 import dev.letsgoaway.geyserextras.core.preferences.JavaPreferencesData;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
@@ -75,7 +75,7 @@ public class GeyserExtrasVelocity implements Server {
     @Override
     public void onGeyserExtrasInitialize() {
         CommandManager commandManager = server.getCommandManager();
-        for (String label : CommandHandler.ids.keySet()) {
+        for (String label : CommandExecutor.ids.keySet()) {
             commandManager.register(commandManager.metaBuilder(label).build(), new VelocityCommandHandler());
         }
 

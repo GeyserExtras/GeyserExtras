@@ -3,7 +3,7 @@ package dev.letsgoaway.geyserextras;
 import org.geysermc.geyser.api.util.PlatformType;
 
 public enum ServerType {
-    BUNGEE,
+    BUNGEECORD,
     EXTENSION,
     SPIGOT,
     VELOCITY,

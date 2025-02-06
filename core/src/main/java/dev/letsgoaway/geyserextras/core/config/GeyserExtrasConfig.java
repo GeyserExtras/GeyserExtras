@@ -11,7 +11,28 @@ import java.util.List;
 @SuppressWarnings("FieldMayBeFinal")
 @ConfigSerializable
 @Getter
+
+// TODO make wiki page/s to explain stuff better
 public final class GeyserExtrasConfig {
+    @Comment("""
+            Enable the GeyserExtras menu, which can be opened by players by
+            double-tapping inventory, or typing `/ge`.
+            \s
+            The GeyserExtras Menu provides actions and configurable settings such as
+            - Remapping certain actions (e.g emotes/pick block) to Java Edition only actions (e.g offhand)
+            - Configurable HUD Visibility
+            - Quick access to form remakes of Java Edition Menus
+              (e.g Player List, Advancements, Statistics).
+            \s
+            You can configure default options for Bedrock Players at
+            `preferences/default.json`
+            and for Java Players at
+            `preferences/java/default.json`.
+            \s
+            Setting this to `false` also disables saving of preferences.
+            """)
+    private boolean enableGeyserExtrasMenu = true;
+
     @Comment("""
             Enable the Java Edition styled cooldown.""")
     private boolean enableCustomCooldown = true;
@@ -20,18 +41,14 @@ public final class GeyserExtrasConfig {
     private boolean enableJavaCombatSounds = true;
 
     @Comment("""
-    Enable the Block Display entity workaround using FMBE. (https://wiki.bedrock.dev/commands/display-entities.html)
+    Enable the Block Display entity workaround using FMBE. (EXPERIMENTAL)
+    Note that the translation is not 100% accurate and some block types might be invisible (candles, doors, campfires),
+    where as some blocks will render differently (fence, glass panes, some storage containers).
+    Block Display billboards do not work and X/Z scale are linked to which ever one is highest,
+    meaning that this should only be enabled for very simple usages of Block Displays.
+    (https://wiki.bedrock.dev/commands/display-entities.html)
     """)
     private boolean enableBlockDisplayWorkaround = false;
-
-    @Comment("""
-            Forces block placements to not be hold-bridgable/scaffold-bridgeable.
-            Requires disable-bedrock-scaffolding: true in Geyser's config for forward block placements.
-            """)
-    private boolean enableJavaOnlyBlockPlacement = false;
-
-    @Comment("Updates the block at the player's line of sight every tick to remove ghost blocks.")
-    private boolean enableBlockGhostingFix = false;
 
     @Comment("When the server closes or Geyser reloads, should GeyserExtras reconnect to the server using the below address.")
     private boolean autoReconnect = true;
@@ -40,51 +57,10 @@ public final class GeyserExtrasConfig {
             """
             The language that Java Edition players read when using a GeyserExtras command (e.g, `/muteemotechat`).
             This is automatically set on Bedrock Edition from the player's settings.
-            You can see the list of all locale codes here: https://github.com/GeyserExtras/data/blob/main/langs/language_names.json
+            You can see the list of all locale codes here: 
+            https://github.com/GeyserExtras/data/blob/main/langs/language_names.json
             """)
     private String defaultLocale = "en_US";
-
-    @Comment("""
-            The actions that will show up in the Quick-Menu. Quick-Menu requires the plugin version of Geyser.
-            Actions are formatted as shown below,
-            "{title} >> {command}"
-            Commands are executed as the player.
-            Available placeholders are:
-                        
-            %player_name% - The name that is the Java Username of the player. For example: .Geyser_Extras
-            If the player is linked the linked Java account's name is used.
-                        
-            %xbox_username% - The username that the Bedrock player has. For example: Geyser Extras
-                        
-            %player_device% - The device the player is using currently.
-            Possible values: Android | iOS | Amazon | Windows Phone | Gear VR | Hololens | Windows | macOS | Apple TV | PlayStation | Switch | Xbox | Dedicated | Unknown
-                        
-            %player_platform% - The platform the player is using currently.
-            Possible values: Console | Mobile | PC | VR | Unknown
-                        
-            %player_inputtype% - The input type the player is using.
-            Possible values: Keyboard | Touch | Controller | VR | Unknown
-                        
-            %player_uiprofile% - The UI Profile the player is using.
-            Possible values: Classic | Pocket
-            """)
-    private List<String> quickMenuActions = new ArrayList<>(Arrays.asList(
-            "Swap Items with Off-hand >> /geyser offhand",
-            "Toggle Tooltips >> /geyser tooltips",
-            "Open GeyserExtras Menu >> /ge",
-            "Open Advancements >> /geyser advancements",
-            "Open Statistics >> /geyser statistics",
-            "Player List >> /playerlist",
-            "Platform List >> /platformlist")
-    );
-
-    @Comment("""
-            Enables the Knockback Attack Sprint fix.
-            In Java, when you execute a Knockback attack, the Player stops sprinting for one tick.
-            The workaround for Bedrock tricks the client into having no hunger for a tick, however
-            this temporarily makes the hunger bar look empty.
-            """)
-    private boolean enableKnockbackAttackSprintFix = true;
 
     @Comment("""
             Enables downloading of Bedrock Player skins.
@@ -107,5 +83,5 @@ public final class GeyserExtrasConfig {
     private boolean debugMode = false;
 
     @Comment("The version of the config. DO NOT CHANGE!")
-    private int version = 1;
+    private int version = ConfigLoader.LATEST_VERSION;
 }

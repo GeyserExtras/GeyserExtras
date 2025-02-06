@@ -14,6 +14,8 @@ import org.geysermc.mcprotocollib.protocol.data.game.entity.player.PlayerState;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.serverbound.ServerboundClientCommandPacket;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.serverbound.player.ServerboundPlayerCommandPacket;
 
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
+
 public enum Action {
     DEFAULT,
     DISABLED,
@@ -26,8 +28,7 @@ public enum Action {
     PLAYER_LIST,
     PLATFORM_LIST,
     OPEN_INVENTORY,
-    NEXT_LOCKED_PERSPECTIVE,
-    CUSTOM;
+    NEXT_LOCKED_PERSPECTIVE;
 
 
     public void run(ExtrasPlayer player) {
@@ -52,7 +53,9 @@ public enum Action {
                 session.sendDownstreamGamePacket(packet);
             }
             case PLAYER_LIST -> {
-                player.sendForm(new PlayerListMenu());
+                if (GE.getConfig().isEnableGeyserExtrasMenu()){
+                    player.sendForm(new PlayerListMenu());
+                }
             }
             case PLATFORM_LIST -> {
                 // TODO: platformlist
@@ -72,9 +75,6 @@ public enum Action {
             }
             case NEXT_LOCKED_PERSPECTIVE -> {
                 player.getPreferences().setLockedPerspective(player.getPreferences().getLockedPerspective().getNext());
-            }
-            case CUSTOM -> {
-                // TODO: custom
             }
             default -> {
             }
@@ -114,9 +114,6 @@ public enum Action {
             }
             case OPEN_INVENTORY -> {
                 return BedrockLocale.KEY.OPEN_INVENTORY;
-            }
-            case CUSTOM -> {
-                return BedrockLocale.GUI.CUSTOM;
             }
         }
         return this.name();

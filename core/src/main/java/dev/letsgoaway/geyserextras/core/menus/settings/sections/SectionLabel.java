@@ -5,10 +5,10 @@ import org.geysermc.geyser.text.ChatColor;
 
 public class SectionLabel extends Label {
     public SectionLabel(String text, String description) {
-        super( ChatColor.BOLD + text + "\n" + ChatColor.RESET + ChatColor.ITALIC + ChatColor.DARK_GRAY + description);
+        super(ChatColor.BOLD + text + "\n" + ChatColor.RESET + ChatColor.ITALIC + ChatColor.DARK_GRAY + description);
     }
 
     public SectionLabel(String text) {
-        super( ChatColor.BOLD + text + "\n" + ChatColor.RESET + ChatColor.ITALIC + ChatColor.DARK_GRAY);
+        super(ChatColor.BOLD + text + "\n" + ChatColor.RESET + ChatColor.ITALIC + ChatColor.DARK_GRAY);
     }
 }

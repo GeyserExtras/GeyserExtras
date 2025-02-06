@@ -1,14 +1,9 @@
 package dev.letsgoaway.geyserextras.core.handlers.bedrock;
 
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
-import dev.letsgoaway.geyserextras.core.menus.MainMenu;
+import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Action;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
-import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
-import org.cloudburstmc.math.vector.Vector3f;
-import org.cloudburstmc.protocol.bedrock.data.camera.CameraSetInstruction;
-import org.cloudburstmc.protocol.bedrock.data.camera.CameraTargetInstruction;
-import org.cloudburstmc.protocol.bedrock.packet.CameraInstructionPacket;
 import org.cloudburstmc.protocol.bedrock.packet.InteractPacket;
 import org.geysermc.geyser.entity.type.Entity;
 import org.geysermc.geyser.session.GeyserSession;
@@ -38,17 +33,18 @@ public class BedrockInteractInjector extends BedrockInteractTranslator {
             }
             super.translate(session, packet);
         } else {
-            if (player.getPreferences().isEnableDoubleClickShortcut() && !(player.getSession().isSneaking() && !player.getPreferences().isDefault(Remappable.SNEAK_INVENTORY))) {
+            if ((player.getPreferences().isEnableDoubleClickShortcut() && GE.getConfig().isEnableGeyserExtrasMenu())
+                    && !(player.getSession().isSneaking() && !player.getPreferences().isDefault(Remappable.SNEAK_INVENTORY))) {
                 // Double click
                 if (player.getPreferences().getDoubleClickMS() > System.currentTimeMillis() - player.getLastInventoryClickTime()) {
                     if (player.getDoubleClickShortcutFuture() != null && !player.getDoubleClickShortcutFuture().isCancelled() && !player.getDoubleClickShortcutFuture().isDone()) {
                         player.getDoubleClickShortcutFuture().cancel(false);
                         // open menu
-                        player.sendForm(new MainMenu());
+                        Action.OPEN_GE_MENU.run(player);
                     } else {
                         player.setLastInventoryClickTime(System.currentTimeMillis());
                         player.setDoubleClickShortcutFuture(session.scheduleInEventLoop(() -> {
-                           player.getPreferences().runAction(Remappable.OPEN_INVENTORY);
+                            player.getPreferences().runAction(Remappable.OPEN_INVENTORY);
                         }, player.getPreferences().getDoubleClickMS() + 20, TimeUnit.MILLISECONDS));
                     }
                     return;

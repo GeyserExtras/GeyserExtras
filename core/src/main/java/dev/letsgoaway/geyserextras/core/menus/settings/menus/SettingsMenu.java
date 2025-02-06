@@ -16,6 +16,7 @@ public class SettingsMenu extends BedrockMenu {
 
     public SimpleForm create(ExtrasPlayer player) {
         setTitle(player.translateGE("ge.settings"));
+        setHeader(player.translateGE("ge.settings.section.submit_warning"));
         GeyserSession session = player.getSession();
         List<Section> sections = Settings.list();
 

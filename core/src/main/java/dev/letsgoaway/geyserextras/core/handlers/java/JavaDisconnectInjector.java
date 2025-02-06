@@ -9,7 +9,7 @@ import org.geysermc.geyser.translator.text.MessageTranslator;
 import org.geysermc.mcprotocollib.protocol.packet.common.clientbound.ClientboundDisconnectPacket;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
-
+// Doesnt work lmao
 @Translator(packet = ClientboundDisconnectPacket.class)
 public class JavaDisconnectInjector extends PacketTranslator<ClientboundDisconnectPacket> {
     @Override

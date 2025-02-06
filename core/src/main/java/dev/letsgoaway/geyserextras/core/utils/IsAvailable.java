@@ -29,7 +29,7 @@ public class IsAvailable {
 
     public static boolean floodgate() {
         // For some reason this worked to fix a linkage error, idfk
-        if (ServerType.type == ServerType.BUNGEE){
+        if (ServerType.type == ServerType.BUNGEECORD || ServerType.type == ServerType.EXTENSION) {
             return false;
         }
         return FLOODGATE;

@@ -5,7 +5,7 @@ import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.TickUtil;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.GeyserExtras;
-import dev.letsgoaway.geyserextras.core.handlers.CommandHandler;
+import dev.letsgoaway.geyserextras.core.commands.CommandExecutor;
 import dev.letsgoaway.geyserextras.core.parity.bedrock.EmoteUtils;
 import dev.letsgoaway.geyserextras.core.preferences.JavaPreferencesData;
 import net.md_5.bungee.api.ChatColor;
@@ -30,7 +30,7 @@ public class GeyserExtrasBungee extends Plugin implements Server {
     private static BungeeTickUtil bungeeTickUtil;
 
     public GeyserExtrasBungee() {
-        ServerType.type = ServerType.BUNGEE;
+        ServerType.type = ServerType.BUNGEECORD;
         BUNGEE = this;
         bungeeTickUtil = new BungeeTickUtil();
     }
@@ -47,7 +47,7 @@ public class GeyserExtrasBungee extends Plugin implements Server {
 
     @Override
     public void onGeyserExtrasInitialize() {
-        for (String label : CommandHandler.ids.keySet()) {
+        for (String label : CommandExecutor.ids.keySet()) {
             ProxyServer.getInstance().getPluginManager().registerCommand(this, new BungeeCommandHandler(label));
         }
         ProxyServer.getInstance().getPluginManager().registerListener(this, new BungeeListener());

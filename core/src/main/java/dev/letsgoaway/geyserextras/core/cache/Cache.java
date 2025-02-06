@@ -35,6 +35,8 @@ public class Cache {
 
     public static Path LANGUAGE_FOLDER;
 
+    private static final String REPO = "https://raw.githubusercontent.com/GeyserExtras/data/main/";
+
     public static void initialize() {
         CACHE_FOLDER = SERVER.getPluginFolder().resolve("cache/");
 
@@ -77,6 +79,7 @@ public class Cache {
             downloadCredits();
         }
         if (dataNeedsUpdate) {
+            SERVER.log("Downloading languages...");
             downloadLanguages();
         }
     }
@@ -93,7 +96,7 @@ public class Cache {
 
 
     private static void downloadCredits() {
-        InputStream in = HTTP.request("https://raw.githubusercontent.com/GeyserExtras/data/main/credits.txt");
+        InputStream in = HTTP.request(REPO+"credits.txt");
         try {
             Files.copy(in, CREDITS_PATH, StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException e) {
@@ -102,7 +105,7 @@ public class Cache {
     }
 
     private static void downloadLanguages() {
-        String langNames = HTTP.asText("https://raw.githubusercontent.com/GeyserExtras/data/main/langs/language_names.json");
+        String langNames = HTTP.asText(REPO+"langs/language_names.json");
 
         try {
             PrintWriter out = new PrintWriter(LANGUAGE_FOLDER.resolve("language_names.json").toFile());
@@ -112,7 +115,7 @@ public class Cache {
             String[][] langs = GSON.fromJson(langNames, String[][].class);
 
             for (String[] lang : langs) {
-                InputStream langJson = HTTP.request("https://raw.githubusercontent.com/GeyserExtras/data/main/langs/" + lang[0] + ".json");
+                InputStream langJson = HTTP.request(REPO+"langs/" + lang[0] + ".json");
                 Files.copy(langJson, LANGUAGE_FOLDER.resolve(lang[0] + ".json"), StandardCopyOption.REPLACE_EXISTING);
             }
         } catch (IOException ignored) {

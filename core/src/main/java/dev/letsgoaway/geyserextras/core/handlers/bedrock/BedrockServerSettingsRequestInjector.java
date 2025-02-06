@@ -1,9 +1,8 @@
 package dev.letsgoaway.geyserextras.core.handlers.bedrock;
 
-import dev.letsgoaway.geyserextras.ReflectionAPI;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
-import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
+import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import org.cloudburstmc.protocol.bedrock.packet.ServerSettingsRequestPacket;
 import org.cloudburstmc.protocol.bedrock.packet.ServerSettingsResponsePacket;
@@ -14,17 +13,26 @@ import org.geysermc.geyser.translator.protocol.bedrock.BedrockServerSettingsRequ
 
 import java.util.concurrent.TimeUnit;
 
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
+
 public class BedrockServerSettingsRequestInjector extends BedrockServerSettingsRequestTranslator {
     @Override
     public void translate(GeyserSession session, ServerSettingsRequestPacket packet) {
-        ExtrasPlayer player = GeyserHandler.getPlayer(session);
-        player.getPreferences().runAction(Remappable.SETTINGS);
-        // Sending settings form with floodgate causes linkage error :/
-        if (IsAvailable.floodgate()) {
-            player.sendToast(player.translateGE("ge.form_error_toast.line1"), player.translateGE("ge.form_error_toast.line2"));
+        if (!GE.getConfig().isEnableGeyserExtrasMenu()) {
+            super.translate(session, packet);
             return;
         }
-        CustomForm form = GeyserHandler.getPlayer(session).getPreferences().getSettingsMenuForm().open(GeyserHandler.getPlayer(session));
+
+        ExtrasPlayer player = GeyserHandler.getPlayer(session);
+        // Sending settings form with floodgate causes linkage error :/
+        if (IsAvailable.floodgate()) {
+            player.sendSystemToast(player.translateGE("ge.form_error_toast.line1"), player.translateGE("ge.form_error_toast.line2"));
+            super.translate(session, packet);
+            return;
+        }
+
+        player.getPreferences().runAction(Remappable.SETTINGS);
+        CustomForm form = player.getPreferences().getSettingsMenuForm().open(player);
         int formId = session.getFormCache().addForm(form);
 
         String jsonData = FormDefinitions.instance().codecFor(form).jsonData(form);

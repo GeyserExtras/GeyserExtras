@@ -1,22 +1,24 @@
-package dev.letsgoaway.geyserextras.core.handlers;
+package dev.letsgoaway.geyserextras.core.commands;
 
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
-import dev.letsgoaway.geyserextras.core.commands.BedrockCommand;
-import dev.letsgoaway.geyserextras.core.commands.EmoteChatCommand;
-import dev.letsgoaway.geyserextras.core.commands.GeyserExtrasCommand;
 
 import java.util.*;
 
-public class CommandHandler {
+public class CommandExecutor {
     public static Map<String, BedrockCommand> ids;
 
     public static void loadCommands() {
         ids = new HashMap<>();
-        ids.put("ge", new GeyserExtrasCommand());
-        ids.put("geyserextras", new GeyserExtrasCommand());
-        ids.put("emotechat", new EmoteChatCommand());
-        ids.put("muteemotechat", new EmoteChatCommand());
-        ids.put("unmuteemotechat", new EmoteChatCommand());
+        add(List.of("ge", "geyserextras"), new GeyserExtrasCommand());
+        add(List.of("emotechat", "muteemotechat", "unmuteemotechat"), new EmoteChatCommand());
+        add(List.of("l", "players", "listplayers", "tab", "tablist"), new TabListCommand());
+    }
+
+
+    public static void add(List<String> aliases, BedrockCommand cmd) {
+        for (String alias : aliases) {
+            ids.put(alias, cmd);
+        }
     }
 
     public static boolean isExtrasCommand(String input) {

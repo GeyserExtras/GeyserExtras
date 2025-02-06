@@ -5,11 +5,7 @@ import org.geysermc.geyser.session.auth.BedrockClientData;
 import org.geysermc.geyser.util.FileUtils;
 
 import javax.imageio.ImageIO;
-import javax.imageio.stream.ImageInputStream;
-import java.awt.*;
-import java.awt.color.ColorSpace;
-import java.awt.image.*;
-import java.io.ByteArrayInputStream;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -17,7 +13,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Base64;
 
-import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class SkinSaver {
@@ -33,13 +28,18 @@ public class SkinSaver {
 
             String geometryName = new String(Base64.getDecoder().decode(data.getGeometryName().getBytes(StandardCharsets.UTF_8)));
             String geometryData = new String(Base64.getDecoder().decode(data.getGeometryData().getBytes(StandardCharsets.UTF_8)));
-            String animationData = new String(Base64.getDecoder().decode(data.getSkinAnimationData().getBytes(StandardCharsets.UTF_8)));
+
+            String rawAnimData = data.getSkinAnimationData();
+            if (!rawAnimData.isEmpty() && !rawAnimData.isBlank()) {
+                String animationData = new String(Base64.getDecoder().decode(rawAnimData.getBytes(StandardCharsets.UTF_8)));
+                if (!animationData.isEmpty() && !animationData.isBlank()) {
+                    FileUtils.writeFile(skinsFolder.resolve("skin.animation.json").toFile(), animationData.toCharArray());
+                }
+            }
+
 
             FileUtils.writeFile(skinsFolder.resolve("skin.geometry.json").toFile(), geometryData.toCharArray());
             FileUtils.writeFile(skinsFolder.resolve("skin.geometry_name.json").toFile(), geometryName.toCharArray());
-            if (!animationData.isEmpty()) {
-                FileUtils.writeFile(skinsFolder.resolve("skin.animation.json").toFile(), animationData.toCharArray());
-            }
             // Capes
             if (!data.getCapeId().isEmpty()) {
                 Path capesFolder = Files.createDirectories(SERVER.getPluginFolder().resolve("capes/" + data.getCapeId() + "/"));

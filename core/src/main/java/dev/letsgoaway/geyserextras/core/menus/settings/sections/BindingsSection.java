@@ -22,7 +22,7 @@ public class BindingsSection extends Section {
         }
         for (Remappable binding : Remappable.values()) {
             if (binding.equals(Remappable.SNEAK_DROP)) {
-                continue; // not implemented yet
+                continue; // todo: implement sneak drop
             }
             menu.add(new Dropdown(binding.translate(player),
                     new ArrayList<>(actionNames.keySet()),

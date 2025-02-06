@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 import static dev.letsgoaway.geyserextras.core.cache.Cache.JSON_MAPPER;
 
@@ -63,6 +64,9 @@ public class PreferencesData {
     @Getter
     @Setter
     private List<UUID> selectedPacks = new ArrayList<>();
+    @Getter
+    @Setter
+    private boolean sendSystemToasts = true;
 
     public PreferencesData(ExtrasPlayer player) {
         this.player = player;
@@ -132,19 +136,21 @@ public class PreferencesData {
 
     public void save() {
         this.update();
-        new Thread(() -> {
-            try {
-                if (!JSON_MAPPER.writeValueAsString(this).equals(JSON_MAPPER.writeValueAsString(DEFAULT))) {
-                    JSON_MAPPER.writeValue(player.getUserPrefs(), this);
+        if (GE.getConfig().isEnableGeyserExtrasMenu()) {
+            new Thread(() -> {
+                try {
+                    if (!JSON_MAPPER.writeValueAsString(this).equals(JSON_MAPPER.writeValueAsString(DEFAULT))) {
+                        JSON_MAPPER.writeValue(player.getUserPrefs(), this);
+                    }
+                } catch (IOException e) {
+                    SERVER.warn("Could not save data for player " + player.getBedrockXUID() + "\n" + e.getLocalizedMessage());
                 }
-            } catch (IOException e) {
-                SERVER.warn("Could not save data for player " + player.getBedrockXUID() + "\n" + e.getLocalizedMessage());
-            }
-        }).start();
+            }).start();
+        }
     }
 
     public void load() {
-        if (player.getUserPrefs().exists()) {
+        if (player.getUserPrefs().exists() && GE.getConfig().isEnableGeyserExtrasMenu()) {
             try {
                 FileInputStream data = new FileInputStream(player.getUserPrefs());
                 // Copy from because session would be null
@@ -186,6 +192,7 @@ public class PreferencesData {
         this.doubleClickMS = data.doubleClickMS;
         this.lockedPerspective = data.lockedPerspective;
         this.selectedPacks = data.selectedPacks;
+        this.sendSystemToasts = data.sendSystemToasts;
     }
 
     public Action setAction(Remappable binding, Action action) {

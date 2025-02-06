@@ -1,7 +1,7 @@
 package dev.letsgoaway.geyserextras.bungee;
 
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
-import dev.letsgoaway.geyserextras.core.handlers.CommandHandler;
+import dev.letsgoaway.geyserextras.core.commands.CommandExecutor;
 import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
@@ -17,10 +17,10 @@ public class BungeeCommandHandler extends Command {
         if (sender instanceof ProxiedPlayer player) {
             ExtrasPlayer bedrockPlayer = GeyserHandler.getPlayer(player.getUniqueId());
             if (bedrockPlayer != null) {
-                CommandHandler.runFromCommandInput(bedrockPlayer, this.getName(), args);
+                CommandExecutor.runFromCommandInput(bedrockPlayer, this.getName(), args);
             }
             else {
-                CommandHandler.runFromCommandInput(player.getUniqueId(), this.getName(), args);
+                CommandExecutor.runFromCommandInput(player.getUniqueId(), this.getName(), args);
             }
         }
     }

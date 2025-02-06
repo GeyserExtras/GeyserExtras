@@ -24,6 +24,10 @@ public class MenuSection extends Section {
         menu.add(new Toggle(player.translate("options.chat.links.prompt"), player.getPreferences().isPromptOnLinks(), (b) -> {
             player.getPreferences().setPromptOnLinks(b);
         }));
+
+        menu.add(new Toggle(player.translateGE("ge.settings.menu.sendSystemToasts"), player.getPreferences().isSendSystemToasts(), (b) -> {
+            player.getPreferences().setSendSystemToasts(b);
+        }));
     }
 
     @Override
