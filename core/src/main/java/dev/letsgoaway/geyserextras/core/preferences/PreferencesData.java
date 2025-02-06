@@ -73,6 +73,7 @@ public class PreferencesData {
         this.session = player.getSession();
         remappableActionMap = new HashMap<>();
         showCoordinates = GeyserImpl.getInstance().getConfig().isShowCoordinates();
+        customSkullSkins = GeyserImpl.getInstance().getConfig().isAllowCustomSkulls();
     }
 
 
@@ -81,6 +82,7 @@ public class PreferencesData {
         this.session = null;
         remappableActionMap = new HashMap<>();
         showCoordinates = GeyserImpl.getInstance().getConfig().isShowCoordinates();
+        customSkullSkins = GeyserImpl.getInstance().getConfig().isAllowCustomSkulls();
     }
 
     public static void init() {
