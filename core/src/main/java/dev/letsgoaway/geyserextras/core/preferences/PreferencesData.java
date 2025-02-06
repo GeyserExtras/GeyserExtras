@@ -38,7 +38,7 @@ public class PreferencesData {
 
     public boolean advancedTooltips = false;
 
-    public boolean customSkullSkins = false;
+    public boolean customSkullSkins = true;
 
     public HashMap<Remappable, Action> remappableActionMap;
     @Getter
