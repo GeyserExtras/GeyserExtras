@@ -1,11 +1,13 @@
 package dev.letsgoaway.geyserextras;
 
+import dev.letsgoaway.geyserextras.core.parity.java.blockdisplay.BlockDisplayEntity;
 import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 
 import java.text.DecimalFormat;
 import java.time.Duration;
 import java.time.Instant;
 
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class InitializeLogger {
@@ -24,6 +26,9 @@ public class InitializeLogger {
     }
 
     public static void end() {
+        if (GE.getConfig().isEnableBlockDisplayWorkaround()) {
+            BlockDisplayEntity.buildEntityDef();
+        }
         DecimalFormat r3 = new DecimalFormat("0.000");
         Instant finish = Instant.now();
         info("Done! (" + r3.format(Duration.between(start, finish).toMillis() / 1000.0d) + "s)");

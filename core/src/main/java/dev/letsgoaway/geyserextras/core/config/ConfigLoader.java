@@ -82,9 +82,6 @@ public class ConfigLoader {
             GE.setConfig(new GeyserExtrasConfig());
         }
 
-        if (GE.getConfig().isEnableBlockDisplayWorkaround()) {
-            BlockDisplayEntity.buildEntityDef();
-        }
         try {
             if (GE.getConfig().isEnableCustomCooldown()) {
                 updateGeyserConfig();

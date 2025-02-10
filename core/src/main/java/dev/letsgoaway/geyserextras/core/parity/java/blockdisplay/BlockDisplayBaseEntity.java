@@ -49,7 +49,7 @@ public class BlockDisplayBaseEntity extends FoxEntity {
 
     public void setLeftRotation(EntityMetadata<Vector4f, ?> translationMeta) {
         if (translationMeta.getValue() == null) {
-            leftRotation = Vector4f.from(0, 0, 0, 1);
+            this.leftRotation = Vector4f.from(0, 0, 0, 1);
             return;
         }
         this.leftRotation = translationMeta.getValue();
@@ -61,7 +61,7 @@ public class BlockDisplayBaseEntity extends FoxEntity {
 
     public void setRightRotation(EntityMetadata<Vector4f, ?> translationMeta) {
         if (translationMeta.getValue() == null) {
-            rightRotation = Vector4f.from(0, 0, 0, 1);
+            this.rightRotation = Vector4f.from(0, 0, 0, 1);
             return;
         }
         this.rightRotation = translationMeta.getValue();
