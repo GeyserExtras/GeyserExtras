@@ -24,7 +24,8 @@ import java.text.DecimalFormat;
 import java.util.List;
 import java.util.UUID;
 
-public class BlockDisplayEntity extends BlockDisplayBaseEntity implements Tickable {
+// needs to be fixed and icbf rn so its staying here for now
+public class BlockDisplayEntityNew extends BlockDisplayBaseEntity implements Tickable {
     private static final DecimalFormat format = new DecimalFormat("#.###");
     private static final List<String> rendersAs2D = List.of(
             Items.CAMPFIRE.javaIdentifier(),
@@ -32,12 +33,15 @@ public class BlockDisplayEntity extends BlockDisplayBaseEntity implements Tickab
             Items.BELL.javaIdentifier()
     );
     private String animationExpression = "";
+    private Vector3f rot;
 
-    public BlockDisplayEntity(GeyserSession session, int entityId, long geyserId, UUID uuid, EntityDefinition<?> definition, Vector3f position, Vector3f motion, float yaw, float pitch, float headYaw) {
+
+
+    public BlockDisplayEntityNew(GeyserSession session, int entityId, long geyserId, UUID uuid, EntityDefinition<?> definition, Vector3f position, Vector3f motion, float yaw, float pitch, float headYaw) {
         super(session, entityId, geyserId, uuid, definition, position, motion, yaw, pitch, headYaw);
     }
 
-    public static EntityDefinition<BlockDisplayEntity> buildEntityDef() {
+    public static EntityDefinition<BlockDisplayEntityNew> buildEntityDef() {
         EntityDefinition<Entity> entityBase = EntityDefinition.builder(Entity::new)
                 .addTranslator(MetadataType.BYTE, Entity::setFlags)
                 .addTranslator(MetadataType.INT, Entity::setAir) // Air/bubbles
@@ -67,16 +71,16 @@ public class BlockDisplayEntity extends BlockDisplayBaseEntity implements Tickab
                 .addTranslator(null) // Glow color override
                 .build();
 
-        return EntityDefinition.inherited(BlockDisplayEntity::new, displayBase)
+        return EntityDefinition.inherited(BlockDisplayEntityNew::new, displayBase)
                 .type(EntityType.BLOCK_DISPLAY)
                 .identifier("minecraft:fox")
-                .addTranslator(MetadataType.BLOCK_STATE, BlockDisplayEntity::setBlock)
+                .addTranslator(MetadataType.BLOCK_STATE, BlockDisplayEntityNew::setBlock)
                 .build();
     }
 
     @Override
     public void spawnEntity() {
-        position = position.add(this.getTranslationOffsetSub());
+        position = position.add(this.getTranslationOffset());
         super.spawnEntity();
         dirtyMetadata.put(EntityDataTypes.COLLISION_BOX, Vector3f.ZERO);
         dirtyMetadata.put(EntityDataTypes.WIDTH, 0.0f);
@@ -156,19 +160,18 @@ public class BlockDisplayEntity extends BlockDisplayBaseEntity implements Tickab
         return "v." + name + "=" + format.format(variable) + ";";
     }
 
+    // everything below from here is complete fuckery to make this shit work with javas offset
+    // god save you if you ever stumble upon this code because it is FUCKED
+
     private String mlVAR(String name, double variable) {
         return "v." + name + "=" + format.format(variable) + ";";
     }
 
-    // everything below from here is complete fuckery to make this shit work with javas offset
-    // god save you if you ever stumble upon this code because it is FUCKED
-
     @Override
     public void moveAbsolute(Vector3f position, float yaw, float pitch, float headYaw, boolean isOnGround, boolean teleported) {
         //super.moveAbsolute(position, yaw, pitch, headYaw, isOnGround, teleported);
-
         this.position = position;
-        moveAbsoluteImmediate(position.add(getTranslationOffsetSub()));
+        moveAbsoluteImmediate(position.add(getTranslationOffsetSub()), yaw, pitch, headYaw, isOnGround, teleported);
     }
 
     protected void moveAbsoluteImmediate(Vector3f position) {
@@ -226,26 +229,29 @@ public class BlockDisplayEntity extends BlockDisplayBaseEntity implements Tickab
     @Override
     public void moveRelative(double relX, double relY, double relZ, float yaw, float pitch, float headYaw, boolean isOnGround) {
         //super.moveAbsolute(position, yaw, pitch, headYaw, isOnGround, teleported);
-
-        super.moveRelative(relX, relY, relZ, yaw, pitch, headYaw, isOnGround);
-
+        moveAbsoluteImmediate(this.position.add(relX, relY, relZ));
     }
 
     private void buildTranslation() {
         // * 16 bc fmbe method makes block pos multiples of 16
-        animationExpression += mlVAR("xpos", (getTranslationOffset().getX()) * 16) + mlVAR("ypos", (getTranslationOffset().getY()) * 16) + mlVAR("zpos", (getTranslationOffset().getZ()) * 16);
+
+        Vector3f t = getTranslationOffset();
+        Vector3f s = getScale();
+
+        //animationExpression += mlVAR("xpos", (t.getX()+(s.getX())) * 16) + mlVAR("ypos", (t.getY()+(s.getY())) * 16) + mlVAR("zpos", (t.getZ()+(s.getZ())) * 16);
+        animationExpression += mlVAR("xpos", 0) + mlVAR("ypos", (-s.getY()) * 16) + mlVAR("zpos", 0);
+
         animationExpression += mlVAR("xbasepos", (0.5) * 16) + mlVAR("ybasepos", (0.5) * 16) + mlVAR("zbasepos", (0.5) * 16);
 
     }
 
     private Vector3f getTranslationOffset() {
-        return this.getTranslation().add(0, -2, 0);
+        return this.getTranslation().sub(0, getScale().getY() - 1, 0);
     }
 
     private Vector3f getTranslationOffsetSub() {
-        return this.getTranslation().sub(0, -1.5, 0);
+        return this.getTranslation().add(0, getScale().getY() - 1, 0);
     }
-
 
     public void buildScale() {
         float xzscale = Math.max(getScale().getX(), getScale().getZ());
@@ -258,10 +264,12 @@ public class BlockDisplayEntity extends BlockDisplayBaseEntity implements Tickab
     public void buildRotation() {
         Vector4f q = getLeftRotation();
         q = Vector4f.from(MathUtils.clampOne(q.getX()), MathUtils.clampOne(q.getY()), MathUtils.clampOne(q.getZ()), MathUtils.clampOne(q.getW()));
-        Vector3f euler = MathUtils.toEuler(q);
+        rot = MathUtils.toEuler(q);
+        rot = Vector3f.from(Math.toDegrees(rot.getX()), Math.toDegrees(rot.getY()), Math.toDegrees(rot.getZ()));
 
-        animationExpression += mlVAR("xrot", Math.toDegrees(euler.getX())) + mlVAR("yrot", Math.toDegrees(-euler.getY())) + mlVAR("zrot", Math.toDegrees(-euler.getZ()));
-        //     GeyserExtras.SERVER.log(animationExpression);
+
+        animationExpression += mlVAR("xrot", rot.getX()) + mlVAR("yrot", -rot.getY()) + mlVAR("zrot", -rot.getZ());
+
     }
 
 }
