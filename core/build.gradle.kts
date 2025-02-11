@@ -1,4 +1,3 @@
-
 dependencies {
     implementation("org.spongepowered:configurate-yaml:4.2.0-GeyserMC-SNAPSHOT")
     shadow("org.spongepowered:configurate-yaml:4.2.0-GeyserMC-SNAPSHOT")
@@ -26,4 +25,7 @@ tasks {
         relocate("io.leangen.geantyref", "dev.letsgoaway.io.leangen.geantyref")
         relocate("com.fasterxml", "dev.letsgoaway.relocate.com.fasterxml")
     }
+
+
 }
+

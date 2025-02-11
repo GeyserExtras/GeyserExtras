@@ -7,4 +7,5 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-include("core", "spigot", "bungee", "velocity", "extension")
+
+include("core", "spigot", "bungee", "velocity", "extension", "fabric")

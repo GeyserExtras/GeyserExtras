@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "fabric",
+  "version": "${version}",
+  "name": "GeyserExtras-Fabric",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "LGPL-3.0",
+  "icon": "assets/fabric/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "dev.letsgoaway.geyserextras.fabric.client.FabricClient"
+    ],
+    "main": [
+      "dev.letsgoaway.geyserextras.fabric.Fabric"
+    ]
+  },
+  "mixins": [
+    "fabric.mixins.json",
+    {
+      "config": "fabric.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
