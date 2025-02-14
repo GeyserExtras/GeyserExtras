@@ -8,4 +8,4 @@ pluginManagement {
     }
 }
 
-include("core", "spigot", "bungee", "velocity", "extension", "fabric")
+include("core", "spigot", "bungee", "velocity", "extension")

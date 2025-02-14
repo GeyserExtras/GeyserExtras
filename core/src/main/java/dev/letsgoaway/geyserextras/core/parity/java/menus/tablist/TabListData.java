@@ -12,17 +12,14 @@ import java.util.UUID;
 
 public class TabListData {
     private final ExtrasPlayer player;
-
+    @Getter
+    private final LinkedHashMap<UUID, PlayerListEntry> players;
     @Setter
     @Getter
     private String header = " ";
-
     @Setter
     @Getter
     private String footer = " ";
-
-    @Getter
-    private final LinkedHashMap<UUID, PlayerListEntry> players;
 
     public TabListData(ExtrasPlayer player) {
         this.player = player;
@@ -37,13 +34,13 @@ public class TabListData {
     }
 
     public static String getPlayerListHead(PlayerListEntry entry) {
-        return "https://mc-heads.net/avatar/" + entry.getProfileId() + "/8";
+        return "https://starlightskins.lunareclipse.studio/render/pixel/" + entry.getProfileId() + "/face?cameraWidth=8";
     }
 
 
     // Ping icons are supplied by GeyserExtrasPack
     // Matches how Minecraft Java Edition chooses the icon to use
-    public static String getPingIcon(PlayerListEntry entry){
+    public static String getPingIcon(PlayerListEntry entry) {
         String pingIcon = "\uF834";
         int ping = entry.getLatency();
         if (ping < 0) {

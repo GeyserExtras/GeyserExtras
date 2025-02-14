@@ -11,7 +11,6 @@
             <option value="$PROJECT_DIR$/bungee" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/extension" />
-            <option value="$PROJECT_DIR$/fabric" />
             <option value="$PROJECT_DIR$/spigot" />
             <option value="$PROJECT_DIR$/velocity" />
           </set>

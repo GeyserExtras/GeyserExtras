@@ -70,42 +70,6 @@
         </processorPath>
         <module name="GeyserExtras.velocity.main" />
       </profile>
-      <profile name="Gradle Imported" enabled="true">
-        <outputRelativeToContentRoot value="true" />
-        <option name="defaultObfuscationEnv" value="named:intermediary" />
-        <option name="inMapFileNamedIntermediary" value="C:\Users\ethps\.gradle\caches\fabric-loom\1.21.4\loom.mappings.1_21_4.layered+hash.2198-v2\mappings.tiny" />
-        <option name="outMapFileNamedIntermediary" value="C:\Users\ethps\OneDrive\Documents\GitHub\GeyserExtras\fabric\build\loom-cache\mixin-map-loom.mappings.1_21_4.layered+hash.2198-v2.client.tiny" />
-        <option name="outRefMapFile" value="C:\Users\ethps\OneDrive\Documents\GitHub\GeyserExtras\fabric\build\classes\java\client\client-GeyserExtras-Fabric-refmap.json" />
-        <option name="quiet" value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.30/f195ee86e6c896ea47a1d39defbe20eb59cd149d/lombok-1.18.30.jar" />
-        </processorPath>
-        <module name="GeyserExtras.fabric.client" />
-      </profile>
-      <profile name="Gradle Imported" enabled="true">
-        <outputRelativeToContentRoot value="true" />
-        <option name="defaultObfuscationEnv" value="named:intermediary" />
-        <option name="inMapFileNamedIntermediary" value="C:\Users\ethps\.gradle\caches\fabric-loom\1.21.4\loom.mappings.1_21_4.layered+hash.2198-v2\mappings.tiny" />
-        <option name="outMapFileNamedIntermediary" value="C:\Users\ethps\OneDrive\Documents\GitHub\GeyserExtras\fabric\build\loom-cache\mixin-map-loom.mappings.1_21_4.layered+hash.2198-v2.main.tiny" />
-        <option name="outRefMapFile" value="C:\Users\ethps\OneDrive\Documents\GitHub\GeyserExtras\fabric\build\classes\java\main\GeyserExtras-Fabric-refmap.json" />
-        <option name="quiet" value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.30/f195ee86e6c896ea47a1d39defbe20eb59cd149d/lombok-1.18.30.jar" />
-        </processorPath>
-        <module name="GeyserExtras.fabric.main" />
-      </profile>
-      <profile name="Gradle Imported" enabled="true">
-        <outputRelativeToContentRoot value="true" />
-        <option name="defaultObfuscationEnv" value="named:intermediary" />
-        <option name="inMapFileNamedIntermediary" value="C:\Users\ethps\.gradle\caches\fabric-loom\1.21.4\loom.mappings.1_21_4.layered+hash.2198-v2\mappings.tiny" />
-        <option name="outMapFileNamedIntermediary" value="C:\Users\ethps\OneDrive\Documents\GitHub\GeyserExtras\fabric\build\loom-cache\mixin-map-loom.mappings.1_21_4.layered+hash.2198-v2.test.tiny" />
-        <option name="outRefMapFile" value="C:\Users\ethps\OneDrive\Documents\GitHub\GeyserExtras\fabric\build\classes\java\test\test-GeyserExtras-Fabric-refmap.json" />
-        <option name="quiet" value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.30/f195ee86e6c896ea47a1d39defbe20eb59cd149d/lombok-1.18.30.jar" />
-        </processorPath>
-        <module name="GeyserExtras.fabric.test" />
-      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17">
       <module name="fabric" target="21" />

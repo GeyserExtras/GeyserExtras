@@ -5,9 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/bungee/GeyserExtras.bungee.main.iml" filepath="$PROJECT_DIR$/.idea/modules/bungee/GeyserExtras.bungee.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/GeyserExtras.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/GeyserExtras.core.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/extension/GeyserExtras.extension.main.iml" filepath="$PROJECT_DIR$/.idea/modules/extension/GeyserExtras.extension.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/GeyserExtras.fabric.client.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/GeyserExtras.fabric.client.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/GeyserExtras.fabric.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/GeyserExtras.fabric.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/GeyserExtras.fabric.test.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/GeyserExtras.fabric.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/GeyserExtras.main.iml" filepath="$PROJECT_DIR$/.idea/modules/GeyserExtras.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/spigot/GeyserExtras.spigot.main.iml" filepath="$PROJECT_DIR$/.idea/modules/spigot/GeyserExtras.spigot.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/velocity/GeyserExtras.velocity.main.iml" filepath="$PROJECT_DIR$/.idea/modules/velocity/GeyserExtras.velocity.main.iml" />
