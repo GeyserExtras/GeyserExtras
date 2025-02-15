@@ -146,6 +146,8 @@ public class PreferencesData {
                 try {
                     if (!JSON_MAPPER.writeValueAsString(this).equals(JSON_MAPPER.writeValueAsString(DEFAULT))) {
                         JSON_MAPPER.writeValue(player.getUserPrefs(), this);
+                    } else if (player.getUserPrefs().exists()) {
+                        player.getUserPrefs().delete();
                     }
                 } catch (IOException e) {
                     SERVER.warn("Could not save data for player " + player.getBedrockXUID() + "\n" + e.getLocalizedMessage());

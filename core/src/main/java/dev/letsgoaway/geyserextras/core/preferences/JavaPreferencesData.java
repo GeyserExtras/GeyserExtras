@@ -80,6 +80,8 @@ public class JavaPreferencesData {
             try {
                 if (!JSON_MAPPER.writeValueAsString(this).equals(JSON_MAPPER.writeValueAsString(DEFAULT))) {
                     JSON_MAPPER.writeValue(saveFile, this);
+                } else if (saveFile.exists()) {
+                    saveFile.delete();
                 }
             } catch (IOException e) {
                 SERVER.warn("Could not save data for player " + javaUUID + "\n" + e.getLocalizedMessage());
