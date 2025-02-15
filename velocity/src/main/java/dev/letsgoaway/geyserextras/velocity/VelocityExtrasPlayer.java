@@ -4,10 +4,9 @@ import com.velocitypowered.api.proxy.Player;
 import com.velocitypowered.api.scheduler.ScheduledTask;
 import com.velocitypowered.api.scheduler.Scheduler;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
-import dev.letsgoaway.geyserextras.core.TickMath;
+import dev.letsgoaway.geyserextras.core.utils.TickMath;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 
-import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 public class VelocityExtrasPlayer extends ExtrasPlayer {

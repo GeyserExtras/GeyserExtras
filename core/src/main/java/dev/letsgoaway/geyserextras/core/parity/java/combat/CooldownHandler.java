@@ -1,13 +1,11 @@
 package dev.letsgoaway.geyserextras.core.parity.java.combat;
 
-import dev.letsgoaway.geyserextras.MathUtils;
-import dev.letsgoaway.geyserextras.ReflectionAPI;
+import dev.letsgoaway.geyserextras.core.utils.MathUtils;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
+import dev.letsgoaway.geyserextras.core.utils.TickMath;
 import dev.letsgoaway.geyserextras.core.utils.GUIElements;
 import lombok.Getter;
 import lombok.Setter;
-import org.cloudburstmc.protocol.bedrock.packet.AnimateEntityPacket;
-import org.cloudburstmc.protocol.bedrock.packet.AnimatePacket;
 import org.geysermc.geyser.inventory.GeyserItemStack;
 import org.geysermc.geyser.item.Items;
 import org.geysermc.geyser.item.type.Item;
@@ -19,54 +17,8 @@ import org.geysermc.mcprotocollib.protocol.data.game.item.component.ItemEnchantm
 
 import java.util.List;
 
-import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
-
 
 public class CooldownHandler {
-    private final ExtrasPlayer player;
-
-    private GeyserSession session;
-
-    @Setter
-    private long lastSwingTime;
-
-    private long lastHotbarTime = 0;
-
-    @Getter
-    @Setter
-    public double attackSpeed = 4.0;
-
-
-    /**
-     * -1 means the player is not digging
-     */
-    @Setter
-    @Getter
-    public int digTicks = -1;
-
-    @Setter
-    private long lastMouseoverID = 0;
-
-    // Shield stuff
-    @Setter
-    @Getter
-    private boolean skipNextItemUse1 = false;
-
-    @Setter
-    @Getter
-    private long lastBlockRightClickTime = 0;
-
-    @Setter
-    @Getter
-    private boolean lastClickWasAirClick = false;
-
-    public CooldownHandler(ExtrasPlayer player) {
-        this.player = player;
-        lastSwingTime = System.currentTimeMillis();
-        session = player.getSession();
-    }
-
-    public boolean readyToAttack = false;
     private static final List<Item> readyToAttackIndicatorItems = List.of(
             Items.NETHERITE_AXE,
             Items.DIAMOND_AXE,
@@ -95,6 +47,51 @@ public class CooldownHandler {
             Items.TRIDENT,
             Items.MACE
     );
+    private static final String[] crosshair = {"\uF821", "\uF810", "\uF811", "\uF812", "\uF813", "\uF814", "\uF815", "\uF816", "\uF817", "\uF818", "\uF819", "\uF81A", "\uF81B", "\uF81C", "\uF81D", "\uF81E", "\uF81F"};
+    private static final String[] hotbar = {"\uF800", "\uF801", "\uF802", "\uF803", "\uF804", "\uF805", "\uF806", "\uF807", "\uF808", "\uF809", "\uF80A", "\uF80B", "\uF80C", "\uF80D", "\uF80E", "\uF80F"};
+    private static final String crosshairAttackReady = "\uF820";
+    private final ExtrasPlayer player;
+    @Getter
+    @Setter
+    public double attackSpeed = 4.0;
+    /**
+     * -1 means the player is not digging
+     */
+    @Setter
+    @Getter
+    public int digTicks = -1;
+    public boolean readyToAttack = false;
+    private GeyserSession session;
+    @Setter
+    private long lastSwingTime;
+    private long lastHotbarTime = 0;
+    @Setter
+    private long lastMouseoverID = 0;
+    // Shield stuff
+    @Setter
+    @Getter
+    private boolean skipNextItemUse1 = false;
+    @Setter
+    @Getter
+    private long lastBlockRightClickTime = 0;
+    @Setter
+    @Getter
+    private boolean lastClickWasAirClick = false;
+    private String lastCharSent = "";
+    @Getter
+    private double averagePing = 0.0f;
+    @Getter
+    private long pingSample = 0;
+    @Getter
+    private long pingSampleSize = 0;
+    @Getter
+    private int lastPing = -1;
+
+    public CooldownHandler(ExtrasPlayer player) {
+        this.player = player;
+        lastSwingTime = System.currentTimeMillis();
+        session = player.getSession();
+    }
 
     public boolean isTool() {
         return readyToAttackIndicatorItems.contains(session.getPlayerInventory().getItemInHand().asItem());
@@ -107,18 +104,12 @@ public class CooldownHandler {
         } else {
             readyToAttack = false;
         }
-        double time = (System.currentTimeMillis() + (player.getPreferences().isAdjustCooldownWithPing() ? averagePing : 0)) - lastSwingTime;
+        double time = (System.currentTimeMillis() + (player.getPreferences().isAdjustCooldownWithPing() && TickMath.toMillis((float) getCooldownPeriod()) > averagePing ? averagePing : 0)) - lastSwingTime;
         double cooldown = MathUtils.restrain((time) * attackSpeed / 1000.0, 1);
         sendCooldown(cooldown);
     }
 
-    private static final String[] crosshair = {"\uF821", "\uF810", "\uF811", "\uF812", "\uF813", "\uF814", "\uF815", "\uF816", "\uF817", "\uF818", "\uF819", "\uF81A", "\uF81B", "\uF81C", "\uF81D", "\uF81E", "\uF81F"};
-    private static final String[] hotbar = {"\uF800", "\uF801", "\uF802", "\uF803", "\uF804", "\uF805", "\uF806", "\uF807", "\uF808", "\uF809", "\uF80A", "\uF80B", "\uF80C", "\uF80D", "\uF80E", "\uF80F"};
-
-    private static final String crosshairAttackReady = "\uF820";
-
-    private String lastCharSent = "";
-
+    // this code is shit
     private void sendCooldown(double progress) {
         CooldownUtils.CooldownType position = session.getPreferencesCache().getCooldownPreference();
         if (position.equals(CooldownUtils.CooldownType.DISABLED)) return;
@@ -201,17 +192,6 @@ public class CooldownHandler {
         return 1.0D / attackSpeed * 20.0;
     }
 
-    @Getter
-    private double averagePing = 0.0f;
-
-    @Getter
-    private long pingSample = 0;
-    @Getter
-    private long pingSampleSize = 0;
-
-    @Getter
-    private int lastPing = -1;
-
     private void calculateAveragePing() {
         int ping = session.ping();
         if (ping != lastPing) {
@@ -221,7 +201,7 @@ public class CooldownHandler {
         }
         averagePing = (double) pingSample / pingSampleSize;
     }
-    
+
     public void setLastHotbarTime(long time) {
         lastHotbarTime = time;
         setLastSwingTime(time);

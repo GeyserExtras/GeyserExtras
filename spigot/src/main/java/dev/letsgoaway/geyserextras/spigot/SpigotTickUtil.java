@@ -1,6 +1,6 @@
 package dev.letsgoaway.geyserextras.spigot;
 
-import dev.letsgoaway.geyserextras.TickUtil;
+import dev.letsgoaway.geyserextras.core.utils.TickUtil;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import org.bukkit.Bukkit;
 

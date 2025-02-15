@@ -2,7 +2,7 @@ package dev.letsgoaway.geyserextras.bungee;
 
 import dev.letsgoaway.geyserextras.Server;
 import dev.letsgoaway.geyserextras.ServerType;
-import dev.letsgoaway.geyserextras.TickUtil;
+import dev.letsgoaway.geyserextras.core.utils.TickUtil;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.GeyserExtras;
 import dev.letsgoaway.geyserextras.core.commands.CommandExecutor;
@@ -11,6 +11,7 @@ import dev.letsgoaway.geyserextras.core.preferences.JavaPreferencesData;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.ProxyServer;
+import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Plugin;
@@ -110,6 +111,10 @@ public class GeyserExtrasBungee extends Plugin implements Server {
 
     @Override
     public void sendRawMessage(UUID javaPlayer, String message) {
+        ProxyServer.getInstance().getPlayer(javaPlayer).sendMessage(message);
+    }
+    @Override
+    public void sendMessage(UUID javaPlayer, String message) {
         TextComponent component = new TextComponent();
         component.setText(ChatColor.translateAlternateColorCodes('§', message));
         ProxyServer.getInstance().getPlayer(javaPlayer).sendMessage(ChatMessageType.SYSTEM, component);

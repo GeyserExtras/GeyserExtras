@@ -12,10 +12,10 @@ import com.velocitypowered.api.plugin.annotation.DataDirectory;
 import com.velocitypowered.api.proxy.Player;
 import com.velocitypowered.api.proxy.ProxyServer;
 import com.velocitypowered.api.proxy.ServerConnection;
-import dev.letsgoaway.geyserextras.PluginVersion;
+import dev.letsgoaway.geyserextras.core.version.PluginVersion;
 import dev.letsgoaway.geyserextras.Server;
 import dev.letsgoaway.geyserextras.ServerType;
-import dev.letsgoaway.geyserextras.TickUtil;
+import dev.letsgoaway.geyserextras.core.utils.TickUtil;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.GeyserExtras;
 import dev.letsgoaway.geyserextras.core.commands.CommandExecutor;
@@ -148,5 +148,11 @@ public class GeyserExtrasVelocity implements Server {
     public void sendRawMessage(UUID javaPlayer, String message) {
         Optional<Player> optPlayer = server.getPlayer(javaPlayer);
         optPlayer.ifPresent(player -> player.sendPlainMessage(message));
+    }
+
+    @Override
+    public void sendMessage(UUID javaPlayer, String message) {
+        Optional<Player> optPlayer = server.getPlayer(javaPlayer);
+        optPlayer.ifPresent(player -> player.sendMessage(LegacyComponentSerializer.legacySection().deserialize(message)));
     }
 }

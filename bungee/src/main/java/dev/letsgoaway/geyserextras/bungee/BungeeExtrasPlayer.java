@@ -2,8 +2,7 @@ package dev.letsgoaway.geyserextras.bungee;
 
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.GeyserExtras;
-import dev.letsgoaway.geyserextras.core.TickMath;
-import net.md_5.bungee.api.ProxyServer;
+import dev.letsgoaway.geyserextras.core.utils.TickMath;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 

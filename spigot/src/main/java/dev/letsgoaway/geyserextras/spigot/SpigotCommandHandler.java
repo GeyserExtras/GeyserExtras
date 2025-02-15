@@ -2,7 +2,7 @@ package dev.letsgoaway.geyserextras.spigot;
 
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.commands.CommandExecutor;
-import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
+import dev.letsgoaway.geyserextras.core.injectors.GeyserHandler;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;

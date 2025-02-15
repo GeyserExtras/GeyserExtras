@@ -2,17 +2,18 @@ package dev.letsgoaway.geyserextras.extension;
 
 import dev.letsgoaway.geyserextras.Server;
 import dev.letsgoaway.geyserextras.ServerType;
-import dev.letsgoaway.geyserextras.TickUtil;
+import dev.letsgoaway.geyserextras.core.utils.TickUtil;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.GeyserExtras;
 import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import org.geysermc.event.subscribe.Subscribe;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.event.lifecycle.GeyserPostInitializeEvent;
-import org.geysermc.geyser.api.event.lifecycle.GeyserPreReloadEvent;
 import org.geysermc.geyser.api.extension.Extension;
+import org.geysermc.geyser.text.ChatColor;
 
 import java.nio.file.Path;
+import java.util.UUID;
 
 public class GeyserExtrasExtension implements Extension, Server {
     public static GeyserExtras CORE;
@@ -59,4 +60,13 @@ public class GeyserExtrasExtension implements Extension, Server {
     @Override
     public void sendEmoteChat(ExtrasPlayer player, String emoteChat) {
     }
+
+    @Override
+    public void sendRawMessage(UUID javaPlayer, String message) {
+
+    }
+
+
+    @Override
+    public void sendMessage(UUID javaPlayer, String message) {}
 }

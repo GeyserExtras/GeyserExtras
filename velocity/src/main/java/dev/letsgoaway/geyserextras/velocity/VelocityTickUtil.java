@@ -1,8 +1,8 @@
 package dev.letsgoaway.geyserextras.velocity;
 
-import dev.letsgoaway.geyserextras.TickUtil;
+import dev.letsgoaway.geyserextras.core.utils.TickUtil;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
-import dev.letsgoaway.geyserextras.core.TickMath;
+import dev.letsgoaway.geyserextras.core.utils.TickMath;
 
 import java.util.concurrent.TimeUnit;
 

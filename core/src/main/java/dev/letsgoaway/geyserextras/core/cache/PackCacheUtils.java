@@ -1,14 +1,13 @@
 package dev.letsgoaway.geyserextras.core.cache;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import dev.letsgoaway.geyserextras.Version3;
+import dev.letsgoaway.geyserextras.core.version.Version3;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.parity.java.menus.packs.PackLoader;
 import org.geysermc.geyser.api.event.bedrock.SessionLoadResourcePacksEvent;
 import org.geysermc.geyser.api.pack.PackCodec;
 import org.geysermc.geyser.api.pack.ResourcePack;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.nio.file.Files;

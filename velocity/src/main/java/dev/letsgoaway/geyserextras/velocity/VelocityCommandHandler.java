@@ -4,7 +4,7 @@ import com.velocitypowered.api.command.RawCommand;
 import com.velocitypowered.api.proxy.Player;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.commands.CommandExecutor;
-import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
+import dev.letsgoaway.geyserextras.core.injectors.GeyserHandler;
 
 public class VelocityCommandHandler implements RawCommand {
     @Override

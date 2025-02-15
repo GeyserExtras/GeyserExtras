@@ -1,6 +1,6 @@
 package dev.letsgoaway.geyserextras.core.menus.settings.sections;
 
-import dev.letsgoaway.geyserextras.PluginVersion;
+import dev.letsgoaway.geyserextras.core.version.PluginVersion;
 import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.form.BedrockForm;

@@ -57,7 +57,7 @@ public final class GeyserExtrasConfig {
             """
             The language that Java Edition players read when using a GeyserExtras command (e.g, `/muteemotechat`).
             This is automatically set on Bedrock Edition from the player's settings.
-            You can see the list of all locale codes here: 
+            You can see the list of all locale codes here:
             https://github.com/GeyserExtras/data/blob/main/langs/language_names.json
             """)
     private String defaultLocale = "en_US";

@@ -1,6 +1,5 @@
 package dev.letsgoaway.geyserextras.core;
 
-import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.features.skinsaver.SkinSaver;
 import dev.letsgoaway.geyserextras.core.form.BedrockForm;
 import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
@@ -14,8 +13,10 @@ import dev.letsgoaway.geyserextras.core.preferences.PreferencesData;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
 import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import dev.letsgoaway.geyserextras.core.utils.StringUtils;
+import dev.letsgoaway.geyserextras.core.utils.TickMath;
 import lombok.Getter;
 import lombok.Setter;
+import net.kyori.adventure.text.Component;
 import org.cloudburstmc.protocol.bedrock.packet.AnimatePacket;
 import org.cloudburstmc.protocol.bedrock.packet.ServerboundDiagnosticsPacket;
 import org.cloudburstmc.protocol.bedrock.packet.SetTitlePacket;
@@ -25,6 +26,7 @@ import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent;
 import org.geysermc.geyser.level.JavaDimension;
 import org.geysermc.geyser.session.GeyserSession;
+import org.geysermc.geyser.session.cache.BossBar;
 import org.geysermc.geyser.text.MinecraftLocale;
 import org.geysermc.geyser.util.DimensionUtils;
 
@@ -71,7 +73,7 @@ public class ExtrasPlayer {
     private File userPrefs;
     @Getter
     @Setter
-    private ServerboundDiagnosticsPacket diagnostics;
+    private ServerboundDiagnosticsPacket diagnostics = null;
     @Setter
     @Getter
     private boolean packsUpdated = false;
@@ -88,6 +90,10 @@ public class ExtrasPlayer {
     // For emote chat on platforms where we cant get the dimensions of other players
     @Getter
     private Map<Integer, JavaDimension> playerDimensionsMap;
+
+    @Getter
+    @Setter
+    private BossBar fpsBossBar;
 
     public ExtrasPlayer(GeyserConnection connection) {
         this.session = (GeyserSession) connection;
@@ -117,6 +123,15 @@ public class ExtrasPlayer {
         // Java UUID is null until login
         javaUUID = session.javaUuid();
     }
+
+    private void createFpsBossBar() {
+        long entityId = session.getEntityCache().getNextEntityId().incrementAndGet();
+        fpsBossBar = new BossBar(session, entityId, Component.text(diagnostics != null ? "FPS: " + Math.round(diagnostics.getAvgFps()) : ""), 1.0f, 0, 1, 0);
+
+        UUID bossbarID = UUID.randomUUID();
+        session.getEntityCache().addBossBar(bossbarID, fpsBossBar);
+    }
+
 
     public void startCombatTickThread(float updateRate) {
         getPreferences().setIndicatorUpdateRate(updateRate);
@@ -186,6 +201,10 @@ public class ExtrasPlayer {
                 session.camera().removeFog(DimensionUtils.BEDROCK_FOG_HELL);
             }
         }
+
+        if (preferences.isShowFPS() && diagnostics != null && fpsBossBar == null) {
+            createFpsBossBar();
+        }
     }
 
     public void sendTitle(String title, String subtitle, int fadeIn, int stay, int fadeOut) {
@@ -235,6 +254,10 @@ public class ExtrasPlayer {
             toastPacket.setContent(description);
             session.sendUpstreamPacket(toastPacket);
         }
+    }
+
+    public void sendMessage(String text) {
+        session.sendMessage(text);
     }
 
     public void resetTitle() {

@@ -7,7 +7,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
 
-import static dev.letsgoaway.geyserextras.PluginVersion.GE_VERSION;
+import static dev.letsgoaway.geyserextras.core.version.PluginVersion.GE_VERSION;
 
 public class HTTP {
     public static InputStream request(URL url) {

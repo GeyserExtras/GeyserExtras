@@ -1,6 +1,6 @@
 package dev.letsgoaway.geyserextras.core.parity.java.blockdisplay;
 
-import dev.letsgoaway.geyserextras.MathUtils;
+import dev.letsgoaway.geyserextras.core.utils.MathUtils;
 import org.cloudburstmc.math.vector.Vector3f;
 import org.cloudburstmc.math.vector.Vector4f;
 import org.cloudburstmc.protocol.bedrock.data.entity.EntityDataTypes;

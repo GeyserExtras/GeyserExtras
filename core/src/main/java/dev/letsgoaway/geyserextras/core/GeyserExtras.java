@@ -1,14 +1,14 @@
 package dev.letsgoaway.geyserextras.core;
 
 import dev.letsgoaway.geyserextras.InitializeLogger;
-import dev.letsgoaway.geyserextras.PluginVersion;
+import dev.letsgoaway.geyserextras.core.version.PluginVersion;
 import dev.letsgoaway.geyserextras.Server;
 import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.cache.Cache;
 import dev.letsgoaway.geyserextras.core.cache.PackCacheUtils;
 import dev.letsgoaway.geyserextras.core.config.ConfigLoader;
 import dev.letsgoaway.geyserextras.core.config.GeyserExtrasConfig;
-import dev.letsgoaway.geyserextras.core.handlers.GeyserHandler;
+import dev.letsgoaway.geyserextras.core.injectors.GeyserHandler;
 import dev.letsgoaway.geyserextras.core.parity.bedrock.EmoteUtils;
 import dev.letsgoaway.geyserextras.core.preferences.JavaPreferencesData;
 import dev.letsgoaway.geyserextras.core.preferences.PreferencesData;

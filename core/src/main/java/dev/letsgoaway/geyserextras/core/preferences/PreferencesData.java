@@ -67,6 +67,9 @@ public class PreferencesData {
     @Getter
     @Setter
     private boolean sendSystemToasts = true;
+    @Getter
+    @Setter
+    private boolean showFPS = false;
 
     public PreferencesData(ExtrasPlayer player) {
         this.player = player;
@@ -195,6 +198,7 @@ public class PreferencesData {
         this.lockedPerspective = data.lockedPerspective;
         this.selectedPacks = data.selectedPacks;
         this.sendSystemToasts = data.sendSystemToasts;
+        this.showFPS = data.showFPS;
     }
 
     public Action setAction(Remappable binding, Action action) {

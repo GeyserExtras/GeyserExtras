@@ -1,9 +1,9 @@
 package dev.letsgoaway.geyserextras;
 
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
+import dev.letsgoaway.geyserextras.core.utils.TickUtil;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 
-import java.io.File;
 import java.nio.file.Path;
 import java.util.UUID;
 
@@ -34,6 +34,10 @@ public interface Server {
     }
 
     default void sendRawMessage(UUID javaPlayer, String message) {}
+
+    default void sendMessage(UUID javaPlayer, String message) {
+
+    }
 
     Path getPluginFolder();
 
