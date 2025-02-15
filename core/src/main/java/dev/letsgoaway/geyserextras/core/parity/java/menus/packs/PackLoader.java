@@ -20,7 +20,7 @@ import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 public class PackLoader {
     public static Path PACKS_PATH;
 
-    public static Map<UUID, ResourcePack> PACKS = new LinkedHashMap<>();
+    public static LinkedHashMap<UUID, ResourcePack> PACKS = new LinkedHashMap<>();
 
     public static void initialize() {
         PACKS_PATH = SERVER.getPluginFolder().resolve("optionalpacks/");

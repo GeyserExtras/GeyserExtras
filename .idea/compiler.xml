@@ -72,10 +72,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17">
-      <module name="fabric" target="21" />
-      <module name="fabric.client" target="21" />
-      <module name="fabric.main" target="21" />
-      <module name="fabric.test" target="21" />
       <module name="spigot" target="17" />
     </bytecodeTargetLevel>
   </component>

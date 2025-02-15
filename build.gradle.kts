@@ -47,7 +47,6 @@ dependencies {
 
 
 subprojects {
-
     repositories {
         mavenCentral()
         gradlePluginPortal()
