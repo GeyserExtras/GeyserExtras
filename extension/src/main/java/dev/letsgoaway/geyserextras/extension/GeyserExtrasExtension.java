@@ -6,6 +6,7 @@ import dev.letsgoaway.geyserextras.core.utils.TickUtil;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.GeyserExtras;
 import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
+import org.cloudburstmc.protocol.bedrock.packet.ShowStoreOfferPacket;
 import org.geysermc.event.subscribe.Subscribe;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.event.lifecycle.GeyserPostInitializeEvent;

@@ -1,7 +1,6 @@
 package dev.letsgoaway.geyserextras.core;
 
 import dev.letsgoaway.geyserextras.InitializeLogger;
-import dev.letsgoaway.geyserextras.core.version.PluginVersion;
 import dev.letsgoaway.geyserextras.Server;
 import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.cache.Cache;
@@ -13,6 +12,7 @@ import dev.letsgoaway.geyserextras.core.parity.bedrock.EmoteUtils;
 import dev.letsgoaway.geyserextras.core.preferences.JavaPreferencesData;
 import dev.letsgoaway.geyserextras.core.preferences.PreferencesData;
 import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
+import dev.letsgoaway.geyserextras.core.version.PluginVersion;
 import lombok.Getter;
 import lombok.Setter;
 import org.geysermc.geyser.GeyserImpl;
@@ -137,7 +137,7 @@ public class GeyserExtras implements EventRegistrar {
             GeyserSession session = player.getSession();
             if (session.bedrockUsername().equals(connection.bedrockUsername())) {
                 // this occurs before bedrock authenticates properly
-                if (player.getSession().getAuthData() == null && player.getSession().getClientData() == null) {
+                if (session.getAuthData() == null && session.getClientData() == null) {
                     // we clear the players packs here as its possible that the game crashes when trying to load a pack
                     player.getPreferences().getSelectedPacks().clear();
                     player.getPreferences().save();

@@ -10,7 +10,7 @@ import org.geysermc.geyser.translator.protocol.bedrock.BedrockEmoteListTranslato
 public class BedrockEmoteListInjector extends BedrockEmoteListTranslator {
     @Override
     public void translate(GeyserSession session, EmoteListPacket packet) {
-        GeyserHandler.getPlayer(session).setEmotesList(packet.getPieceIds());
+        GeyserHandler.getPlayer(session).getEmotesList().addAll(packet.getPieceIds());
         super.translate(session, packet);
     }
 }

@@ -12,6 +12,8 @@ import dev.letsgoaway.geyserextras.core.preferences.bindings.Action;
 import org.geysermc.cumulus.form.SimpleForm;
 import org.geysermc.cumulus.util.FormImage;
 
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
+
 public class MainMenu extends BedrockMenu {
     public MainMenu() {
         super();
@@ -55,6 +57,13 @@ public class MainMenu extends BedrockMenu {
                 player.sendForm(new PackMenu());
             }));
         }
+
+        if (GE.getConfig().isDebugMode()) {
+            add(new Button("EmotesTest", FormImage.Type.PATH, "textures/ui/emotes.png", () -> {
+                player.sendForm(new EmoteDataTestMenu());
+            }));
+        }
+
         return super.create(player);
     }
 }

@@ -21,6 +21,7 @@ import org.cloudburstmc.protocol.bedrock.packet.AnimatePacket;
 import org.cloudburstmc.protocol.bedrock.packet.ServerboundDiagnosticsPacket;
 import org.cloudburstmc.protocol.bedrock.packet.SetTitlePacket;
 import org.cloudburstmc.protocol.bedrock.packet.ToastRequestPacket;
+import org.geysermc.geyser.api.bedrock.camera.CameraPerspective;
 import org.geysermc.geyser.api.bedrock.camera.GuiElement;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent;
@@ -33,10 +34,7 @@ import org.geysermc.geyser.util.DimensionUtils;
 import java.io.File;
 import java.time.Duration;
 import java.time.Instant;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
@@ -63,7 +61,8 @@ public class ExtrasPlayer {
     @Getter
     private String bedrockXUID;
     @Setter
-    private List<UUID> emotesList;
+    @Getter
+    private ArrayList<UUID> emotesList;
     @Getter
     private ScheduledFuture<?> combatTickThread;
     @Getter
@@ -81,7 +80,6 @@ public class ExtrasPlayer {
     private boolean loggedIn = false;
     private Instant lastEmoteTime = Instant.now();
 
-
     // Used for the double click menu action
     @Setter
     @Getter
@@ -95,6 +93,10 @@ public class ExtrasPlayer {
     @Setter
     private BossBar fpsBossBar;
 
+    @Setter
+    @Getter
+    private boolean emoting = false;
+
     public ExtrasPlayer(GeyserConnection connection) {
         this.session = (GeyserSession) connection;
         this.javaUUID = connection.javaUuid();
@@ -103,7 +105,7 @@ public class ExtrasPlayer {
         tabListData = new TabListData(this);
         serverLinksData = new ServerLinksData(this);
         preferences = new PreferencesData(this);
-        emotesList = List.of();
+        emotesList = new ArrayList<>();
         userPrefs = PreferencesData.PREFERENCES_PATH.resolve(bedrockXUID + ".json").toFile();
         preferences.load();
         playerDimensionsMap = new HashMap<>();

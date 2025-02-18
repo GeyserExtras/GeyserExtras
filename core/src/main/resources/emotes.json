@@ -4,6 +4,7 @@
     "message": "@ is asking everyone to &Follow& along.",
     "specialmessage": "@: Llama train, rolling out! (&Follow&)",
     "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/83a576e3-78d7-4652-aa48-4f4eeeda8be5/communication_follow_me_thumbnail_0.png",
     "price": 0,
     "rarity": "common"
   },
@@ -12,6 +13,7 @@
     "message": "@ is &Clapping&.",
     "specialmessage": "@: Congratulations!",
     "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/cc6807cc-60f9-4ec5-937e-162a3b886151/basic_clap_thumbnail_0.png",
     "price": 0,
     "rarity": "common"
   },
@@ -20,6 +22,7 @@
     "message": "@ is pointing &over there&!",
     "specialmessage": "@: This isn't working... CREEPER!",
     "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/c89da231-54a6-4b1d-9317-419f4cca5191/communication_point_thumbnail_0.png",
     "price": 0,
     "rarity": "common"
   },
@@ -28,13 +31,18 @@
     "message": "@ is &Waving&.",
     "specialmessage": "@'s arm is tired from so much Waving.",
     "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/499a490b-f2ac-4815-b0e9-7711367c82ee/overhead_wave_thumbnail_0.png",
     "price": 0,
     "rarity": "common"
   },
   "2c2183c9-d8a2-aacd-9ad6-cdb260d7fc33": {
     "name": "Aggressive Pointing",
     "message": "@ is &Aggressively Pointing&",
-    "specialmessage": "@ is just standing there... and &POINTING AGGRESSIVELY&"
+    "specialmessage": "@ is just standing there... and &POINTING AGGRESSIVELY&",
+    "creator": "Team VoidFeather",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/9e5b8d2c-64ee-4cd9-9b1f-0379f3de7f4c/aggressive_pointing_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "d40b905d-d32e-6485-4617-5bd993460b77": {
     "name": "Rocket Leap",
@@ -104,7 +112,11 @@
   "48db5bc8-b360-6ffd-f034-d013918e157b": {
     "name": "Ride to Victory",
     "message": "@ is riding to victory!",
-    "specialmessage": "@ is visualizing their success and riding to victory!"
+    "specialmessage": "@ is visualizing their success and riding to victory!",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/ae6c6841-7b90-4932-873e-291dee4524a0/em_ride_to_victory_thumbnail_0.png",
+    "price": 0,
+    "rarity": "rare"
   },
   "02f4f5f4-0e00-dc19-71e2-0b309c50db80": {
     "name": "Gravity Glitch",
@@ -129,7 +141,11 @@
   "21e70048-7da7-e260-3a7a-2873d6ba1154": {
     "name": "Straight Stem",
     "message": "@ is imitating a plant! (&Straight Stem&)",
-    "specialmessage": "@ is very good at gymnastics! (&Straight Stem&)"
+    "specialmessage": "@ is very good at gymnastics! (&Straight Stem&)",
+    "creator": "Kubo Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/fbf1dfc2-c3a2-434d-9c2a-e8269817c7d3/em_kubo_straight_stem_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "3b343e41-208c-4000-df42-517904a8d4cb": {
     "name": "Fast Dance",
@@ -137,9 +153,13 @@
     "specialmessage": "@ is showing their skills with a &Fast Dance&!"
   },
   "6b025b2d-4650-28d2-2723-70da1ec1e80c": {
-    "name": "L-Dance",
+    "name": "L Dance",
     "message": "@ is doing the &L-Dance&!",
-    "specialmessage": "Someone is taking an L from @!"
+    "specialmessage": "Someone is taking an L from @!",
+    "creator": "XP GAMES",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/27710d87-52cc-4d33-a5f6-eda5855ad4d2/emote_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "981d34f1-85ed-8540-0644-9ca79728a84a": {
     "name": "Heroic Backflip",
@@ -169,12 +189,20 @@
   "4d87632b-5391-a28d-424a-5a87923a2f87": {
     "name": "Victory Cartwheel",
     "message": "@ is doing a victorious cartwheel!",
-    "specialmessage": "@ is performing a magnificent cartwheel!"
+    "specialmessage": "@ is performing a magnificent cartwheel!",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/e8772ac3-1212-4a19-b191-bbd8cee7b102/em_victory_cartwheel_thumbnail_0.png",
+    "price": 0,
+    "rarity": "rare"
   },
   "1c082444-afe2-2223-7c7f-1d0e9fe5a5e0": {
     "name": "Chicken Flying",
     "message": "@ is flying like a chicken!",
-    "specialmessage": "@ is flapping their wings and flying like a chicken!"
+    "specialmessage": "@ is flapping their wings and flying like a chicken!",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/ed1b39e5-ae60-47ee-8d8e-eb34be92ce23/em_chicken_flying_thumbnail_0.png",
+    "price": 0,
+    "rarity": "rare"
   },
   "b494a015-a60d-408f-c124-db0b8a04a8e5": {
     "name": "The Worm",
@@ -199,7 +227,11 @@
   "f4374f93-f441-5ef5-e72f-33b14e8ed144": {
     "name": "Glitch Walk",
     "message": "@ is doing the &Glitch Walk&.",
-    "specialmessage": "@ has strange hiccups. (&Glitch Walk&)"
+    "specialmessage": "@ has strange hiccups. (&Glitch Walk&)",
+    "creator": "DogHouse",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/22debfe1-d270-4ed6-9bc4-1adebc61ec1b/glitch_walk_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "913a299d-c16c-63fe-8167-aa2f061ce736": {
     "name": "Jubilation",
@@ -224,7 +256,11 @@
   "e64848e7-cd6a-1eb4-476f-e53ccba1a087": {
     "name": "To di World",
     "message": "@ is posing &To di World&",
-    "specialmessage": "@ is having fun! (&To di World&)"
+    "specialmessage": "@ is having fun! (&To di World&)",
+    "creator": "The Craft Stars",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/8d0e2644-7583-44f4-b391-e7361fca17e5/em_to_di_world_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "d6b18ef1-fece-f989-d559-6b86482d5648": {
     "name": "Winner Dance",
@@ -259,7 +295,11 @@
   "2e17b365-81ee-45af-a15f-09ea012ef4d0": {
     "name": "Weapon Twirling",
     "message": "@ is ready to attack! &Weapon Twirling&",
-    "specialmessage": "Whoosh, whoosh, whoosh, whoosh, whoosh. The epic sound of &Weapon Twirling.&"
+    "specialmessage": "Whoosh, whoosh, whoosh, whoosh, whoosh. The epic sound of &Weapon Twirling.&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/819bb168-523c-45a4-bab5-bbd23951e3be/staff_spin_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "afed80c1-7372-c454-286f-83e4cdacda4d": {
     "name": "Learn to Fly",
@@ -314,7 +354,11 @@
   "20b0a551-270a-0a41-ce15-dde6ebb21206": {
     "name": "Way Over Here",
     "message": "@ is waving really high!",
-    "specialmessage": "@ needs assistance!"
+    "specialmessage": "@ needs assistance!",
+    "creator": "Logdotzip",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/d6730476-5368-4141-80ac-906c4eeb9da6/way_over_here_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "e27f5200-bca7-0973-d38f-c7e8126c75d0": {
     "name": "Be the Fish!",
@@ -359,7 +403,11 @@
   "63041af7-70ee-91a7-41a8-3c010f53f4d5": {
     "name": "Confused",
     "message": "@ is confused",
-    "specialmessage": "@ is not sure what happened"
+    "specialmessage": "@ is not sure what happened",
+    "creator": "Pixels & Blocks",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/6752c11d-5452-43db-82b1-10849ba502ef/em_pixelsandblocks_confused_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "a4060cc3-62f4-eb34-1252-48a80784e12b": {
     "name": "Head Spin",
@@ -444,7 +492,11 @@
   "80298db9-9016-cda9-d0f6-4f89ca4842af": {
     "name": "Dramatic Anime Poses",
     "message": "@ shows their &Dramatic Anime Poses&.",
-    "specialmessage": "@ rocks the dance floor! (&Dramatic Anime Poses&)"
+    "specialmessage": "@ rocks the dance floor! (&Dramatic Anime Poses&)",
+    "creator": "DogHouse",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/f0803ec3-46df-4eb6-8a6e-1c2b3d51f56d/dramatic_anime_poses_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "5d34f01f-fe46-5adf-e334-7d5a844fba37": {
     "name": "Slow Clap",
@@ -489,7 +541,11 @@
   "e023347d-e9bf-a884-1213-eecef49c5e56": {
     "name": "Chicken Dance",
     "message": "@ is doing the &Chicken Dance&!",
-    "specialmessage": "@ is ruffling some feathers!"
+    "specialmessage": "@ is ruffling some feathers!",
+    "creator": "Tetrascape",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/74c8da38-ee7e-4d71-a080-aca7c2f7def4/em_chicken_dance_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "9bcc476a-301e-3c1c-a1c4-0941d3662dd3": {
     "name": "Backflip",
@@ -549,7 +605,11 @@
   "41dae449-ee61-1908-a681-1869ada47706": {
     "name": "Iconic Dance",
     "message": "@ is doing the &Iconic Dance&!",
-    "specialmessage": "@ wanted to show off their dancing skills. (&Iconic Dance&)"
+    "specialmessage": "@ wanted to show off their dancing skills. (&Iconic Dance&)",
+    "creator": "Doctor Benx",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/4c2b4090-537c-4579-befb-4e2505e3ccfa/iconic_dance_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "876cc6a8-4eb3-5429-bde8-c7140ed648cd": {
     "name": "Tornado",
@@ -564,7 +624,11 @@
   "26f5ea5d-2c2d-4560-826a-a3bc6036ee87": {
     "name": "Point and Laugh",
     "message": "@ raises their hand to &Point and Laugh&",
-    "specialmessage": "@ has seen something funny. (&Point and Laugh&)"
+    "specialmessage": "@ has seen something funny. (&Point and Laugh&)",
+    "creator": "Doctor Benx",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/281db040-6518-413f-95d1-bbca488ba3fb/point_and_laugh_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "d1cc0092-92de-69ad-e3ef-6755538d8ab2": {
     "name": "Anime Flying",
@@ -589,7 +653,11 @@
   "35ef5920-a8c5-e502-2a5a-b8a8f4a44770": {
     "name": "K-Pop Style",
     "message": "@ is dancing &K-Pop& style",
-    "specialmessage": "@ needs to find a horse. (&K-Pop Style&)"
+    "specialmessage": "@ needs to find a horse. (&K-Pop Style&)",
+    "creator": "GoE-Craft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/0bcdbf9c-46a5-4919-8ed9-b9a102a78efa/em_k_pop_style_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "76debf4f-84c1-441a-84e1-26fe55391e71": {
     "name": "Space Walk",
@@ -597,9 +665,13 @@
     "specialmessage": "@ is walking... In space?!?"
   },
   "0d87ca2e-c8bd-5f3a-4ff0-57825fd1953e": {
-    "name": "The Dodge",
+    "name": "Dodge",
     "message": "@ is doing the &Dodge&!",
-    "specialmessage": "@ dodges everything!"
+    "specialmessage": "@ dodges everything!",
+    "creator": "Blockworks",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/86ac28c6-f7ba-4046-a09c-0b5a31965998/dodge_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "e9624d78-3bef-760b-3fbd-82bf657f49cb": {
     "name": "Jump Celebration",
@@ -664,7 +736,11 @@
   "c7dd1194-632a-4392-8eb0-485b50802055": {
     "name": "Happily Dancing",
     "message": "@ is &Happily Dancing&",
-    "specialmessage": "@ is dancing like Cinderella! &Happily Dancing&"
+    "specialmessage": "@ is dancing like Cinderella! &Happily Dancing&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/35da61a6-4127-41b8-b127-a3238020e555/spinning_snow_white_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "95c74c13-88f8-3606-d9ad-78a91015a557": {
     "name": "Air Punch",
@@ -672,14 +748,22 @@
     "specialmessage": "@ went into the skies by doing an Air Punch!"
   },
   "65afefb8-8406-762f-9f2c-73f500268fd9": {
-    "name": "The Flux",
+    "name": "Flux",
     "message": "@ is doing the &Flux&!",
-    "specialmessage": "@ shows off their best dance move!"
+    "specialmessage": "@ shows off their best dance move!",
+    "creator": "Blockworks",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/a2c32892-0667-4e41-8d09-8538444c19b9/flux_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "18891e6c-bb3d-47f6-bc15-265605d86525": {
     "name": "Abducted?",
     "message": "@ is being…&Abducted?&",
-    "specialmessage": "@: Is this where all the Grass blocks have been going? &(Abducted?)&"
+    "specialmessage": "@: Is this where all the Grass blocks have been going? &(Abducted?)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/39b93de1-5e22-4aac-a050-e3b661426945/abducted_thumbnail_0.png",
+    "price": 0,
+    "rarity": "rare"
   },
   "7a65740b-61c2-4c74-b549-56289244c46f": {
     "name": "Monster Smash",
@@ -689,12 +773,20 @@
   "a9a15546-b597-4937-9ab3-6882192ce6d8": {
     "name": "Shell Spinning",
     "message": "@ is &Shell Spinning.&",
-    "specialmessage": "Look out dude! @ is &Shell Spinning.&"
+    "specialmessage": "Look out dude! @ is &Shell Spinning.&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/ed21d1c3-4f83-4003-a175-56135e387efa/shell_spin_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "9eb9ccd3-dd53-0263-5673-99c69bd591ea": {
     "name": "Frosty Friction",
     "message": "@ rubs their arms to stay warm.",
-    "specialmessage": "@ is freezing. Can someone get them %Frosty Friction% a blanket?"
+    "specialmessage": "@ is freezing. Can someone get them %Frosty Friction% a blanket?",
+    "creator": "Logdotzip",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/63a12a5e-7002-4a3b-ac48-986acaf10672/frosty_friction_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "c659f81b-fb61-699f-0341-9f26c9f11f88": {
     "name": "Ragdoll",
@@ -704,12 +796,20 @@
   "ba83e17e-9ed5-421b-a0ce-4b4787d13277": {
     "name": "Wildly Skipping",
     "message": "@ is &Wildly Skipping&",
-    "specialmessage": "@ is skipping through Wonderland! &Wildly Skipping&"
+    "specialmessage": "@ is skipping through Wonderland! &Wildly Skipping&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/57a978e8-e318-4728-a721-16533758d311/skipping_in_wonderland_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "b77912f5-8f20-1e18-50f7-6b5fc21205e6": {
     "name": "Dab Sneeze",
     "message": "@ Just did a &Dab Sneeze&!",
-    "specialmessage": "@ is bringing back the &Dab Sneeze& "
+    "specialmessage": "@ is bringing back the &Dab Sneeze& ",
+    "creator": "CubeCraft Games",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/5b7a9708-f8ed-4c7a-b6e6-da7fd7393d6d/em_dab_sneeze_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "21ab3cc5-bb1c-27ef-2d53-297c8ccff9b4": {
     "name": "Jump of joy",
@@ -734,7 +834,11 @@
   "c4764170-3136-3d47-fffa-b5cb7399064e": {
     "name": "Helicopter Helicopter",
     "message": "@ transformed into a &Helicopter Helicopter&!",
-    "specialmessage": "Is it a bird? No, it's @'s &Helicopter Helicopter&!"
+    "specialmessage": "Is it a bird? No, it's @'s &Helicopter Helicopter&!",
+    "creator": "Spectral Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/224f4822-66cc-4a5a-bcac-a2458bfdf1fb/helicopterhelicopter_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "1c32d42a-df61-bad4-a47b-b5fb0a6b781e": {
     "name": "No no no",
@@ -804,7 +908,11 @@
   "eb1c4639-5a92-de7c-2038-084693661762": {
     "name": "Double Dab",
     "message": "@ is hitting the double dab",
-    "specialmessage": "@ is double dabbing on you!"
+    "specialmessage": "@ is double dabbing on you!",
+    "creator": "Pixels & Blocks",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/513669b8-8050-4856-bd82-300ca955dc90/pb_double_dab_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "698b643b-71f8-9a4e-17da-07bf52d33f6b": {
     "name": "Worm Dance",
@@ -849,7 +957,11 @@
   "05af18ca-920f-4232-83cb-133b2d913dd6": {
     "name": "Underwater Dancing",
     "message": "@ is &Underwater Dancing.&",
-    "specialmessage": "@ is communing with the Guardians while &Underwater Dancing.&"
+    "specialmessage": "@ is communing with the Guardians while &Underwater Dancing.&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/1b570cf1-04f8-45c1-88c9-622b803fb916/free_diver_thumbnail_0.png",
+    "price": 0,
+    "rarity": "rare"
   },
   "bf340351-1891-4701-a42a-79739832bc40": {
     "name": "Star Jumps",
@@ -879,7 +991,11 @@
   "ceb97e43-f793-43a6-b74c-32828f08d3e4": {
     "name": "Secret Handshake",
     "message": "@ goes in for the &Secret Handshake.&",
-    "specialmessage": "Executed flawlessly, @ performs the &Secret Handshake.&"
+    "specialmessage": "Executed flawlessly, @ performs the &Secret Handshake.&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/cd2c6335-bb31-474f-bd90-61ff45ce2e4c/the_ultimate_handshake_thumbnail_0.png",
+    "price": 0,
+    "rarity": "rare"
   },
   "b553e298-bf96-a16d-0707-5572d34126ec": {
     "name": "T Pose",
@@ -899,12 +1015,20 @@
   "42fde774-37d4-4422-b374-89ff13a6535a": {
     "name": "Shadow Boxing",
     "message": "@ is &Shadow Boxing.&",
-    "specialmessage": "Float like a Phantom, sting like a bee! &(Shadow Boxing)&"
+    "specialmessage": "Float like a Phantom, sting like a bee! &(Shadow Boxing)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/e0a40ca9-4142-489c-84a7-402bc01508d0/woodpunch_thumbnail_0.png",
+    "price": 0,
+    "rarity": "rare"
   },
   "6521948c-7d2c-4ab9-aeb4-ef535327faf7": {
     "name": "Roaring Like Godzilla",
     "message": "@ is &Roaring Like Godzilla&.",
-    "specialmessage": "SSSSKKREEEEEEEONNNK @ is &Roaring Like Godzilla&."
+    "specialmessage": "SSSSKKREEEEEEEONNNK @ is &Roaring Like Godzilla&.",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/74b6b24c-7e51-4482-8a1b-2df70f677579/godzilla_roar_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "8d81d839-53c0-3587-329d-638868090d77": {
     "name": "Toilet Flushed",
@@ -929,7 +1053,11 @@
   "77300dcc-dc80-41a9-b9e6-0c9273418fea": {
     "name": "Startled",
     "message": "@ is &Startled&",
-    "specialmessage": "AH! Look out behind you! &Startled&"
+    "specialmessage": "AH! Look out behind you! &Startled&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/0703d42e-b377-4445-a9f2-9fbe536ff89f/freeze_surprised_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "c1b4898e-e403-1ff4-2366-0371f7eba239": {
     "name": "Floating ",
@@ -939,7 +1067,11 @@
   "955ce061-20ce-e38a-c390-20c9ed32190f": {
     "name": "Floss Dance",
     "message": "@ is doing a cool &Floss Dance&",
-    "specialmessage": "@ is getting cramps!"
+    "specialmessage": "@ is getting cramps!",
+    "creator": "The Craft Stars",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/45736bc1-94fa-4e34-9fc4-ec25941acfe4/floss_dance_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "4d9167f2-019c-2033-244c-d470ff86ef51": {
     "name": "Curtsy",
@@ -954,7 +1086,11 @@
   "66f19d0e-2d9b-2990-896a-8cecb8bb31c8": {
     "name": "T-Pose",
     "message": "@ is T-Posing",
-    "specialmessage": "@ T-pose refers to a default pose in video games where an animated character stands with their arms horizontally outstretched."
+    "specialmessage": "@ T-pose refers to a default pose in video games where an animated character stands with their arms horizontally outstretched.",
+    "creator": "Sova Knights",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/f20bfd2f-2675-44a3-9ce9-0371f312cdad/t-pose_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "993a3f59-2900-2069-2233-0f2820ef0083": {
     "name": "Its You",
@@ -964,12 +1100,20 @@
   "86b34976-8f41-475b-a386-385080dc6e83": {
     "name": "Silly",
     "message": "@ is feeling &Silly.&",
-    "specialmessage": "@ is dancing, jumping, and acting super &Silly.&"
+    "specialmessage": "@ is dancing, jumping, and acting super &Silly.&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/ff27311f-a4a8-4a34-85ac-a234d2b4310a/celebration_diamond_thumbnail_0.png",
+    "price": 0,
+    "rarity": "rare"
   },
   "7cec98d8-55cc-44fe-b0ae-2672b0b2bd37": {
     "name": "Hammering",
     "message": "@ is &Hammering& away.",
-    "specialmessage": "@….I think you’re missing the crafting table? What are you &Hammering?&"
+    "specialmessage": "@….I think you’re missing the crafting table? What are you &Hammering?&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/084e4e3a-159f-4cde-a586-1caa6dc12acf/action_hammering_thumbnail_0.png",
+    "price": 0,
+    "rarity": "uncommon"
   },
   "cfc510d9-184a-3106-f9c3-0a9a5bf6b01c": {
     "name": "Take The L",
@@ -992,9 +1136,13 @@
     "specialmessage": "@ just picked some flowers and is doing a &Flower Dance&!"
   },
   "d7519b5a-45ec-4d27-997c-89d402c6b57f": {
-    "name": "Mining",
+    "name": "The Pickaxe",
     "message": "@ is &Mining& air.",
-    "specialmessage": "@ received (1) Air Block from &Mining.&"
+    "specialmessage": "@ received (1) Air Block from &Mining.&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/7269a746-f917-4eff-8e3e-cc4c107d6282/thepickaxe_thumbnail_0.png",
+    "price": 0,
+    "rarity": "rare"
   },
   "28aa6563-36b8-0d81-c021-6acd1584378e": {
     "name": "Dip and Point",
@@ -1014,7 +1162,11 @@
   "8387f555-f789-45a4-90d8-3fa2a9a9e299": {
     "name": "Stomping Like a Dino",
     "message": "@ is &Stomping Like a Dino&",
-    "specialmessage": "Run for your lives! @ is &Stomping Like a Dino&"
+    "specialmessage": "Run for your lives! @ is &Stomping Like a Dino&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/d86b239a-af73-4a65-8818-95b58403ceb5/trex_stomping_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "5852abca-45b2-3361-08a6-337e8a054f9c": {
     "name": "shake it",
@@ -1024,7 +1176,11 @@
   "eec85101-6eb5-417f-8cda-2a2a75e13df5": {
     "name": "Standing Ovation",
     "message": "@ is giving a &Standing Ovation&.",
-    "specialmessage": "Wow! @ can't clap fast enough! &Standing Ovation&"
+    "specialmessage": "Wow! @ can't clap fast enough! &Standing Ovation&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/792eb52f-c308-439c-b567-2fbbbcfec8fe/big_applause_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "8465bd2e-2a59-ba73-70fc-b88cf9d8727c": {
     "name": "Backflip Wave",
@@ -1049,7 +1205,11 @@
   "61914613-98ee-65ce-7816-b8e076720f05": {
     "name": "Anime Dance",
     "message": "@ is doing the &Anime Dance&.",
-    "specialmessage": "@ grooves to inaudible music. (&Anime Dance&)"
+    "specialmessage": "@ grooves to inaudible music. (&Anime Dance&)",
+    "creator": "DogHouse",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/0fe1bee4-5936-4d67-baeb-05dfc0152ea0/anime_dance_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "36780a72-05aa-57b0-0520-4519ff8feb3d": {
     "name": "Roll Out",
@@ -1124,7 +1284,11 @@
   "7387be27-5975-428d-adfa-9f9b7467deb6": {
     "name": "Rumble",
     "message": "@ is doing the &Rumble&!",
-    "specialmessage": "@ is getting ready to &Rumble&!"
+    "specialmessage": "@ is getting ready to &Rumble&!",
+    "creator": "The World Foundry",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/56ec5f82-cba7-4e02-9556-4218cb519959/twf_rumble_emote_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "b9c8979a-6921-2595-9a3a-c6989ca54404": {
     "name": "Yawning",
@@ -1134,7 +1298,11 @@
   "ece705e7-a58d-0c29-e319-3773a4689b42": {
     "name": "Wacky Wavy Dance",
     "message": "@ is doing a &Wacky Wavy Dance&!",
-    "specialmessage": "@ is trying to sell used cars! (&Wacky Wavy Dance&)"
+    "specialmessage": "@ is trying to sell used cars! (&Wacky Wavy Dance&)",
+    "creator": "Polymaps",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/f763d19d-fcb9-4e69-a746-e179ddfa51c8/em_wacky_wavy_dance_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "4f3d44dc-7f21-b054-4a86-fd4f771dd2d4": {
     "name": "Faint",
@@ -1154,7 +1322,11 @@
   "34ad2ad5-44ba-2876-b3e2-9474221a04a4": {
     "name": "In Awe",
     "message": "@ is looking around &In Awe&!",
-    "specialmessage": "@ can't believe what they found! They are &In Awe&!"
+    "specialmessage": "@ can't believe what they found! They are &In Awe&!",
+    "creator": "Jigarbov Productions",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/e724416c-e698-4581-86b9-42a5b101ca37/in_awe_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "f8b05dd8-2458-34c8-5d9b-1d4230ffaa54": {
     "name": "Pantomime",
@@ -1179,7 +1351,11 @@
   "bfa08e4d-d2a7-43a3-a6e6-ee2ea484d36d": {
     "name": "One Handed Pushups",
     "message": "@ is doing &One Handed Pushups&.",
-    "specialmessage": "Now @ is just showing off... &One Handed Pushups&."
+    "specialmessage": "Now @ is just showing off... &One Handed Pushups&.",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/9aabf50d-95bd-4f63-b0cd-09875c2602c7/one_hand_push_up_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "5f2f0156-0570-dae6-4dc9-cb7ae029bd34": {
     "name": "Falling Asleep",
@@ -1224,7 +1400,11 @@
   "94d53226-a7a0-081b-6098-e9b3399692e0": {
     "name": "Raging Out",
     "message": "@ is &Raging Out&!",
-    "specialmessage": "Stand back! @ is &Raging Out&!"
+    "specialmessage": "Stand back! @ is &Raging Out&!",
+    "creator": "Jigarbov Productions",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/6bf945d8-5ce8-41c5-bb26-b90c45678d66/raging_out_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "6762ef32-7835-2bf8-7744-dd8eb302a61e": {
     "name": "showing off",
@@ -1244,12 +1424,20 @@
   "6d35a7a6-942f-4d6f-a233-1499be044158": {
     "name": "Inspecting Item",
     "message": "@ is &Inspecting Item.&",
-    "specialmessage": "Is this enchanted? Can I eat it? @ is &Inspecting Item.&"
+    "specialmessage": "Is this enchanted? Can I eat it? @ is &Inspecting Item.&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/34b4ccb3-ae03-4165-812b-690d29d07e2d/spyglass_inspect_item_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "a91dc5bc-e476-6e4d-6aff-5cd53dd51ce0": {
     "name": "Disappointment",
     "message": "@ is doing the &Disappointment&!",
-    "specialmessage": "@ is very disappointed!"
+    "specialmessage": "@ is very disappointed!",
+    "creator": "Blockworks",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/8e616539-4c01-43bc-846a-d910802245ae/disappointment_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "5ee64028-962f-8fc3-d7d0-61f8e3cf700d": {
     "name": "Super Hero",
@@ -1284,12 +1472,20 @@
   "070374b6-10b8-4496-8b4e-44511d1be42b": {
     "name": "Dueling Like Obi-Wan",
     "message": "@ is &Dueling Like Obi-Wan&",
-    "specialmessage": "@ has the high ground! &Dueling Like Obi-Wan&"
+    "specialmessage": "@ has the high ground! &Dueling Like Obi-Wan&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/9bf48bcc-b712-4088-a3bc-4b07e1217cb2/obi_wan_duel_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "60b9db3f-608f-4fff-aec0-31a5ff4c54eb": {
     "name": "Force Lifting",
     "message": "@ is &Force Lifting& their item.",
-    "specialmessage": "Concentrate, @ must, to use the Force. &Force Lifting&"
+    "specialmessage": "Concentrate, @ must, to use the Force. &Force Lifting&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/3a551b64-3d69-42e7-a2d7-1c1f3b40ab6a/star_wars_force_move_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "f2ac4e22-1775-9d2e-f807-cff738499863": {
     "name": "Bridge",
@@ -1374,7 +1570,11 @@
   "78abdd9a-b6bd-478f-8148-b4e15b6229ba": {
     "name": "Cowabunga!",
     "message": "@:&Cowabunga!& Let's go!",
-    "specialmessage": "Turtles count it off: 1! 2! 3! 4! &Cowabunga!&"
+    "specialmessage": "Turtles count it off: 1! 2! 3! 4! &Cowabunga!&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/24bcba07-3d34-47e6-b0c5-fdee652266eb/team_huddle_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "7facbcbe-a6b1-b307-5263-739a66cde49e": {
     "name": "Itchy Bottom",
@@ -1424,7 +1624,11 @@
   "ae421dd2-6a61-46b7-b260-0323e523fdc1": {
     "name": "Mega Man Jump",
     "message": "@ does a &Mega Man Jump.&",
-    "specialmessage": "@ is ready to take on the robots. (&Mega Man Jump&)"
+    "specialmessage": "@ is ready to take on the robots. (&Mega Man Jump&)",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/3ed865d9-b281-4555-835f-e78eb06a6d8c/megaman_jump_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "1cd39395-8f40-9514-46f2-aacc2b03aede": {
     "name": "Royal Greeting",
@@ -1439,17 +1643,29 @@
   "92572802-402b-4e50-a55b-804a48853ce6": {
     "name": "Mega Man Victory",
     "message": "@ celebrates a &Mega Man Victory.&",
-    "specialmessage": "\"You Get Block Fist\" @ achieved a &Mega Man Victory.&"
+    "specialmessage": "\"You Get Block Fist\" @ achieved a &Mega Man Victory.&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/9b854c2c-6c14-40d1-b726-ae2c0d4712a0/triumphant_pose_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "10db17a5-62a5-4493-8ae6-faf32ecfeb18": {
     "name": "Dual Dancing",
     "message": "@ invites everyone, &Let's Dance!&",
-    "specialmessage": "Adventure can wait, &Let's dance!& @ has a dance party."
+    "specialmessage": "Adventure can wait, &Let's dance!& @ has a dance party.",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/e2fe72da-014a-4948-bac2-b5798a27e273/lets_dance_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "be10427e-4a69-40fb-949f-b2d51ce25f66": {
     "name": "Staff Spinning",
     "message": "@ is &Staff Spinning& like Aang.",
-    "specialmessage": "Is @ able to bend air? &Staff Spinning&?"
+    "specialmessage": "Is @ able to bend air? &Staff Spinning&?",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/44432963-942e-4e44-8d3c-8340660c869a/wind_blow_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "4b8f18aa-a819-a557-1134-e50f8f36029f": {
     "name": "Pirouettes",
@@ -1479,17 +1695,29 @@
   "1a2188a9-a882-3bcf-4c7d-33275b48987d": {
     "name": "Waiting Patiently",
     "message": "@ is &Waiting Patiently&",
-    "specialmessage": "Somehow, @ is STILL &Waiting Patiently&"
+    "specialmessage": "Somehow, @ is STILL &Waiting Patiently&",
+    "creator": "Jigarbov Productions",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/e42d1f7e-d948-4968-84ee-d334711acc49/waiting_patiently_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "fb379452-fc4e-41eb-8371-9f1475456234": {
     "name": "Contorting",
     "message": "@ is &Contorting& like Ty Lee.",
-    "specialmessage": "@ is &Contorting& and demonstrating astounding skill."
+    "specialmessage": "@ is &Contorting& and demonstrating astounding skill.",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/c7f01772-7cd9-4388-9337-60d0da1e0387/ty_lee_contortion_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "547e5f6c-d445-49a9-b06e-6919b1f9e48e": {
     "name": "Opening Chakras",
     "message": "@ is meditating and &Opening Chakras.&",
-    "specialmessage": "@ is &Opening Chakras& by looking within."
+    "specialmessage": "@ is &Opening Chakras& by looking within.",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/662e6953-aaa5-43a7-9e07-d9097b21a01b/opening_chakras_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "c9a5148d-1bba-fd88-66f6-080f996f1802": {
     "name": "Splits Jump",
@@ -1509,7 +1737,11 @@
   "e29b46e3-64e0-61f9-f932-afd2cdcc69a2": {
     "name": "Karate Style",
     "message": "@ is practicing karate!",
-    "specialmessage": "@ is training for a tournament!"
+    "specialmessage": "@ is training for a tournament!",
+    "creator": "Dig Down Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/ade45957-f86c-41ec-b14d-64733210bd67/karate_style_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "de5be08b-99c1-a460-c46e-6074deac475b": {
     "name": "Unwinding",
@@ -1529,12 +1761,20 @@
   "79e8cb30-c1b4-4e41-8aa8-96492c6f390c": {
     "name": "To Infinity and Beyond",
     "message": "@ &To Infinity and Beyond!&",
-    "specialmessage": "@ strikes a heroic pose, \"&To Infinity and Beyond!&\""
+    "specialmessage": "@ strikes a heroic pose, \"&To Infinity and Beyond!&\"",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/84b5fa54-ed39-4bcb-b960-9fd4a64986d9/hero_pose_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "d9d1192d-1262-470d-bc0c-5ba46bedab72": {
     "name": "Excitedly Dancing",
     "message": "I'm Ready! @ is &Excitedly Dancing.&",
-    "specialmessage": "@ is &Excitedly Dancing,& I'm Ready! I'm Ready! I'm Ready! I'm Ready! I'm Ready!"
+    "specialmessage": "@ is &Excitedly Dancing,& I'm Ready! I'm Ready! I'm Ready! I'm Ready! I'm Ready!",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/8ac87d0b-a6f6-4846-ba8a-ce036c756b9b/excitement_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "45b2283e-e3e9-d2ac-cff4-6266e55e46a5": {
     "name": "The Woah",
@@ -1549,12 +1789,20 @@
   "4b14571b-3ee2-14a0-4d87-6ac9911f792f": {
     "name": "Wave Dance",
     "message": "@ is a &breakdancing legend!&",
-    "specialmessage": "@ is making WAVES!!! (&Wave Dance&)"
+    "specialmessage": "@ is making WAVES!!! (&Wave Dance&)",
+    "creator": "Cleverlike",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/ec9b8806-cbcc-4705-b90d-7c9ea01a6b3a/emote_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "4b7af8d8-1f5a-40ab-c2cc-ffa72484f9a0": {
     "name": "Proposal",
     "message": "@ wants to marry you (&Proposal&)",
-    "specialmessage": "@ wants you to be their partner for life (&Proposal&)"
+    "specialmessage": "@ wants you to be their partner for life (&Proposal&)",
+    "creator": "Kubo Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/18c09a0b-2d38-4982-9706-5261cebf8f71/em_kubo_proposal_emote_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "ad0f34be-beb1-84a6-9ec8-f9755f52237b": {
     "name": "Dizzy",
@@ -1564,17 +1812,29 @@
   "a5f9881c-23b7-4650-8e92-039cd7a16889": {
     "name": "Sleepy",
     "message": "@ is &Sleepy.&",
-    "specialmessage": "@ is getting &Sleepy& while farming phantom membranes."
+    "specialmessage": "@ is getting &Sleepy& while farming phantom membranes.",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/324ad581-2a0d-437e-80a7-5889fdb32dd4/sleeping_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "310b41de-1c7a-4098-928d-addcd905bf65": {
     "name": "Laughing Out Loud",
     "message": "Hahahaha @ is &Laughing Out Loud.&",
-    "specialmessage": "Three Weeks Later... Hahahahaha! @ is still &Laughing Out Loud.&"
+    "specialmessage": "Three Weeks Later... Hahahahaha! @ is still &Laughing Out Loud.&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/ef2c00d9-8b5e-4b6d-89d1-44068c45dc8b/laughing_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "6d9f24c0-6246-4c92-8169-4648d1981cbb": {
     "name": "Faceplant",
     "message": "@ &Faceplants.&",
-    "specialmessage": "SMACK! @, did that &Faceplant& hurt?"
+    "specialmessage": "SMACK! @, did that &Faceplant& hurt?",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/8d84a9d4-60ac-4842-a287-c44d5a9ce46b/faceplant_thumbnail_0.png",
+    "price": 0,
+    "rarity": "uncommon"
   },
   "b3503263-1cc1-5686-c9cf-c2d580a90b0a": {
     "name": "Flying",
@@ -1589,12 +1849,20 @@
   "a0b1a9f2-0ea4-48d0-8641-ada998beee4d": {
     "name": "Anger Management",
     "message": "@ is struggling with &Anger Management&",
-    "specialmessage": "Creepers are taking cover. if @ fails at &Anger Management& they'll explode!"
+    "specialmessage": "Creepers are taking cover. if @ fails at &Anger Management& they'll explode!",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/9aec3eca-c4f5-4d93-8782-a5e4f0d59d1a/anger_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "87c039b7-7bdc-45d1-8684-e940a131ec0a": {
     "name": "Intercom and Attack",
     "message": "@ \"Who goes there?!\" &Intercom and Attack.&",
-    "specialmessage": "@ \"I've crash landed on a strange planet. Terrain seems a bit... blocky.\" &Intercom and Attack.&"
+    "specialmessage": "@ \"I've crash landed on a strange planet. Terrain seems a bit... blocky.\" &Intercom and Attack.&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/ee90649e-8857-41bb-a5bc-598dd28802b6/intercom_and_attack_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "a1ca182b-91ad-4397-b936-88ec3c57fce4": {
     "name": "Football Celebration",
@@ -1614,7 +1882,11 @@
   "946f04ea-8ff0-416e-a66d-8b0d0751e8bf": {
     "name": "Sid Dance",
     "message": "@ is doing the &Sid Dance.&",
-    "specialmessage": "Is @'s &Sid Dance& going to bring about a new ice biome?"
+    "specialmessage": "Is @'s &Sid Dance& going to bring about a new ice biome?",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/f5f33bda-6ca4-46c9-a0a8-423ed74cfaf5/sid_dance_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "eaed7f72-8c3b-e5e3-e4b8-d64dac26cb77": {
     "name": "Happy Skipping",
@@ -1639,7 +1911,11 @@
   "b310ea06-0485-4ad1-8424-df271ca6ec37": {
     "name": "Flight",
     "message": "@ is taking &Flight.&",
-    "specialmessage": "Can @ really take &Flight& without using an elytra? To Infinity and Beyond!"
+    "specialmessage": "Can @ really take &Flight& without using an elytra? To Infinity and Beyond!",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/35c7dbd2-1d0a-4edb-bd97-90bc6b88258a/infinity_and_beyond_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "fb9b884a-b217-46a2-85fd-d3ab0f2f33e6": {
     "name": "Hoppin'",
@@ -1684,7 +1960,11 @@
   "2ecc0fd1-312b-4664-9bfa-a06429838706": {
     "name": "Peekaboo",
     "message": "@ plays &Peekaboo!&",
-    "specialmessage": "Where did @ go? &Peekaboo!&"
+    "specialmessage": "Where did @ go? &Peekaboo!&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/00755f6d-ec91-4c4f-8e5f-dfa8b9b9b74b/peekaboo_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "d3c0dc87-f568-0aa3-9565-d30fcde8ef6a": {
     "name": "Cheerleading",
@@ -1714,7 +1994,11 @@
   "a43b566a-77da-2b2b-e016-e2e82393041e": {
     "name": "Alphabet A",
     "message": "@ is doing the &Alphabet A&!",
-    "specialmessage": "@ is is as awesome as &Alphabet A&!"
+    "specialmessage": "@ is is as awesome as &Alphabet A&!",
+    "creator": "The World Foundry",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/de866de1-621a-4a00-a8e4-5094cab3f5ab/twf_alphamote_a_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "5f0612e4-12b8-fd24-fd80-717a86771e58": {
     "name": "Mechanical Bull ",
@@ -1734,12 +2018,20 @@
   "63cb3c45-b3b3-4c02-a4f3-fb4b9853dbe9": {
     "name": "Mad Falling",
     "message": "@ is &Mad Falling&",
-    "specialmessage": "Nothing's working out @ is &Mad Falling&"
+    "specialmessage": "Nothing's working out @ is &Mad Falling&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/870f64d8-3f03-4dcc-a69a-19989824d825/mad_fall_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "9c939344-f9d6-4a3a-95a5-f64dd3d94e45": {
     "name": "Fluttering",
     "message": "@ is &Fluttering& and trying to fly.",
-    "specialmessage": "Why is @ &Fluttering& so much? Have they been hit by a Shulker?"
+    "specialmessage": "Why is @ &Fluttering& so much? Have they been hit by a Shulker?",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/17b746f7-d162-4a09-8930-e86f8ea438bd/fluttering_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "ff831cf3-080e-8b7f-e210-6aae74ac080f": {
     "name": "Sitting on a Block",
@@ -1754,17 +2046,29 @@
   "be4f4451-9764-3239-a71c-4e354e36de21": {
     "name": "Flying",
     "message": "@ is &Flying&!",
-    "specialmessage": "@ is going up, up, and... well, just up!"
+    "specialmessage": "@ is going up, up, and... well, just up!",
+    "creator": "MelonBP",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/52635830-a459-416c-9721-909f8ee218de/em_melonbp_flying_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "af61c759-6252-431d-a7de-94d477cfb54c": {
     "name": "Chun-Li Spinning Kick",
     "message": "@: &Chun Li Spinning Bird Kick!!!&",
-    "specialmessage": "@: I did it! &Chun Li Spinning Bird Kick&"
+    "specialmessage": "@: I did it! &Chun Li Spinning Bird Kick&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/abe86c13-f81c-442a-afdb-dc3698e236fd/chun_li_kick_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "a57277d5-0693-4c8a-9b5c-45c33fdf7c26": {
     "name": "Flourishing",
     "message": "@ is Flourishing",
-    "specialmessage": "@: It's over, I have the high ground!  &(Flourishing)&"
+    "specialmessage": "@: It's over, I have the high ground!  &(Flourishing)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/2f77c279-5649-4f5e-9034-8d77cbd8ca3d/sword_flourish_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "d3741459-e845-6896-f4f0-3e580912c01d": {
     "name": "Waiting",
@@ -1784,12 +2088,20 @@
   "6453480a-54ac-435d-899d-4e6f7fe57591": {
     "name": "Hadoken!",
     "message": "@: &Hadoken!&",
-    "specialmessage": "@: Wave Motion Fist! &Hadoken!&"
+    "specialmessage": "@: Wave Motion Fist! &Hadoken!&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/c9396a35-640e-4df4-bdfd-5cc629da209c/hadoken_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "0c141653-1166-448b-87a2-38d0679bb549": {
     "name": "Ryu Guarding",
     "message": "@: Get serious. &Ryu Guarding&",
-    "specialmessage": "@: You must defeat Herobrine to stand a chance. &Ryu Guarding&"
+    "specialmessage": "@: You must defeat Herobrine to stand a chance. &Ryu Guarding&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/213de31d-e247-406a-a65d-1db233618afa/ryu_idle_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "f29ed70d-d8f0-00d7-45a5-c6857e44ba23": {
     "name": "Kamehameha",
@@ -1807,14 +2119,22 @@
     "specialmessage": "@ is hiding! &Can't See Me&!"
   },
   "949c4f24-6aa6-4f2a-bad5-1b3de7e12749": {
-    "name": "Peter Pan Floating",
+    "name": "Flying Like Peter Pan",
     "message": "@ can fly! &(Peter Pan Floating)&",
-    "specialmessage": "@:Think happy thoughts. &(Peter Pan Floating)&"
+    "specialmessage": "@:Think happy thoughts. &(Peter Pan Floating)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/3b0c5103-a145-472e-8ef1-a447e76854ef/peter_pan_floating_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "f15ceb56-6651-41c0-8bd5-087951204d81": {
-    "name": "Rapunzel Dance",
+    "name": "Dancing Like Rapunzel",
     "message": "@ is doing the &Rapunzel Dance.&",
-    "specialmessage": "When will your life begin? When you hit respawn! &(Repunzle Dance)&"
+    "specialmessage": "When will your life begin? When you hit respawn! &(Repunzle Dance)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/1193b2d8-29fb-47bb-934d-d608a7955af1/rapunzel_dance_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "3babfcf6-2a50-2262-4c17-f313a5a73c81": {
     "name": "UwU",
@@ -1824,12 +2144,20 @@
   "d7680c67-8e54-482a-903d-622ddb43485f": {
     "name": "Swinging Energy Sword",
     "message": "@ is &Swinging Energy Sword&",
-    "specialmessage": "@: I need a weapon. &Swinging Energy Sword&"
+    "specialmessage": "@: I need a weapon. &Swinging Energy Sword&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/977507dc-88ac-4aab-b6e9-8982f3fd4fa3/sword_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "71afa8ed-03b6-4808-b537-330daf9dbf50": {
-    "name": "Hakuna Matata Dance",
+    "name": "Hakuna Matata",
     "message": "@:&Hakuna Matata&...",
-    "specialmessage": "@: It means no worries, for the rest of your days. &(Hakuna Matata Dance)&"
+    "specialmessage": "@: It means no worries, for the rest of your days. &(Hakuna Matata Dance)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/43af2b63-91ee-4aa4-bc76-51518d1c208a/hakuna_matata_dance_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "d9e2ae87-37cb-08d0-553a-37f501b70328": {
     "name": "Float Nap",
@@ -1839,12 +2167,20 @@
   "9307ceae-4556-17e5-d6a7-cd3671a3325d": {
     "name": "Novice Climber",
     "message": "@ found something fun to climb.",
-    "specialmessage": "@ wasn't strong enough to make it to the top."
+    "specialmessage": "@ wasn't strong enough to make it to the top.",
+    "creator": "Ninja Squirrel Gaming",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/0cf9c828-8a16-4ebd-a6c6-9111087701a2/novice_climber_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "c2b9dd03-7258-4813-b6f5-37ef9b4a3326": {
     "name": "Superhero Landing",
     "message": "@ is doing a &Superhero Landing&",
-    "specialmessage": "@: Wooo! &Superhero Landing!& You know that's really hard on your knees."
+    "specialmessage": "@: Wooo! &Superhero Landing!& You know that's really hard on your knees.",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/efb7184d-c74a-4aaf-ba8f-820bc2a808bc/halo4_cover_pose_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "7a913508-8cf4-4f49-b760-0e77e32e7482": {
     "name": "Evil Laugh",
@@ -1874,7 +2210,11 @@
   "88dc7deb-21bb-48c3-8b5a-00757a06aef9": {
     "name": "The Master Chief",
     "message": "@ is &The Master Chief&",
-    "specialmessage": "@: We make our own luck, but I'll always be there when you need me. &The Master Chief&"
+    "specialmessage": "@: We make our own luck, but I'll always be there when you need me. &The Master Chief&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/3e36b025-563c-423c-b483-757762a61dc0/hero_pose_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "7a4521c8-6ab4-4c80-8db4-ddce755a0248": {
     "name": "The Split",
@@ -1884,7 +2224,11 @@
   "d73c3523-260e-4dc7-bbaf-f2eaaa1fc556": {
     "name": "Training Like Po",
     "message": "@ is &Training Like Po&.",
-    "specialmessage": "@ is their own secret ingredient. &Training Like Po&."
+    "specialmessage": "@ is their own secret ingredient. &Training Like Po&.",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/4c5af984-6307-4af6-8cf7-253760fee43b/training_like_po_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "a181fc56-8670-e2e1-8df2-c89922eb88f2": {
     "name": "Push-Up",
@@ -1894,7 +2238,11 @@
   "5cf9d5a3-6fa0-424e-8ae4-d1f877b836da": {
     "name": "Cartwheel",
     "message": "@ is doing a &Cartwheel.&",
-    "specialmessage": "@: I did it! The perfect &Cartwheel!&"
+    "specialmessage": "@: I did it! The perfect &Cartwheel!&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/03cc5a07-7690-4845-b168-8e916defab4d/cartwheel_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "0e7cdeca-6e5b-465b-2849-46610e1ad3b4": {
     "name": "Pull-up",
@@ -1919,12 +2267,20 @@
   "24444aea-cb6e-451f-90fc-b74e57cc7c5d": {
     "name": "Kneeling",
     "message": "@ is &Kneeling.&",
-    "specialmessage": "@ swears fealty by &Kneeling.&"
+    "specialmessage": "@ swears fealty by &Kneeling.&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/39d5dcee-c18d-43a5-b3e2-f0a23191fb3f/roleplay_getting_knighted_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "a51f8e7c-a4dd-4ce1-9fc9-2c3cad66cede": {
     "name": "Minion Taunting",
     "message": "@ is &Minion Taunting.&",
-    "specialmessage": "@: Bananonina poopaye! &(Minion Taunting)&"
+    "specialmessage": "@: Bananonina poopaye! &(Minion Taunting)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/6a4fa98e-b45f-4c26-a2ab-14a3d44bf805/minions_taunting_dance_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "e1792e29-f482-889d-dc14-5ce8fc441dc5": {
     "name": "Break Down",
@@ -1937,9 +2293,13 @@
     "specialmessage": "@ hurt their face with their own hand!"
   },
   "cd8c3bc6-f455-43d2-836e-62c1a19474c7": {
-    "name": "Sonic the Hedgehog",
+    "name": "Sonic-Victory Spinning",
     "message": "@ is &Victory Spinning.&",
-    "specialmessage": "@ Zone Complete! &(Victory Spinning)&"
+    "specialmessage": "@ Zone Complete! &(Victory Spinning)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/aecee98a-0e51-4946-89ad-bbba6f67afc7/sonic_spin_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "e0b54d13-6a1b-1871-04ca-9577d178ebaa": {
     "name": "Get It Off Me",
@@ -1954,17 +2314,29 @@
   "79e93b59-38f0-4796-8033-f99d7aa9334e": {
     "name": "Minion Panicking",
     "message": "@ is &Minion Panicking.&",
-    "specialmessage": "@: Bee Do Bee Do Bee Do! &(Minion Panicking)&"
+    "specialmessage": "@: Bee Do Bee Do Bee Do! &(Minion Panicking)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/3e3a146a-0de7-4d48-8493-5b264632fcd9/minions_running_scared_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "6174a111-19ac-41d1-a483-0e0b37f9d049": {
     "name": "Minion Cheering",
     "message": "@ is &Minion Cheering.&",
-    "specialmessage": "@: Banana banana tank yu! &(Minion Cheering)&"
+    "specialmessage": "@: Banana banana tank yu! &(Minion Cheering)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/991fe185-c14e-46c3-897e-a97cb7383453/minions_celebrating_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "8d649a9b-59fb-9534-9dea-3e339b0174bc": {
-    "name": "Lock Down Shuffle",
+    "name": "Lockdown Shuffle",
     "message": "@ is rotating quickly doing the &Lock Down Shuffle&!",
-    "specialmessage": "Is @ trying to T-Spin into place? That's the &Lock Down Shuffle&!"
+    "specialmessage": "Is @ trying to T-Spin into place? That's the &Lock Down Shuffle&!",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/a609ab55-44a6-4e45-961e-46590bcc66ae/jig_lockdown_shuffle_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "fa68ba66-61dc-61e5-c416-06b838b73ebc": {
     "name": "Warrior Moves",
@@ -1984,12 +2356,20 @@
   "1e30e8f4-2991-4aac-a58a-a6bf90a080c5": {
     "name": "Hitting the Omnitrix",
     "message": "@ is &Hitting the Omnitrix.&",
-    "specialmessage": "@ Stupid watch, stupid powers! &(Hitting the Omnitrix)&"
+    "specialmessage": "@ Stupid watch, stupid powers! &(Hitting the Omnitrix)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/17be732f-2d22-4e4c-9467-42a543fab155/animation.benten_its_not_working_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "7102c0f7-6113-44f5-b37c-4e94841b0e81": {
     "name": "Posing Like a Hero",
     "message": "@ is &Posing Like a Hero.&",
-    "specialmessage": "@: Bring it on! &(Posing Like a Hero)&"
+    "specialmessage": "@: Bring it on! &(Posing Like a Hero)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/742bc1c4-83c0-4334-ab85-cc5251aaa94c/animation.benten_hero_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "98f4e765-1c84-09af-90b6-f957f428e4c8": {
     "name": "UwU",
@@ -2024,7 +2404,11 @@
   "f14d652f-18ed-42dc-831f-7f6a2eab1246": {
     "name": "Going Hero",
     "message": "@ is &Going Hero.& ",
-    "specialmessage": "@: Come on Omnitrix gave me Wither! &(Going Hero)&"
+    "specialmessage": "@: Come on Omnitrix gave me Wither! &(Going Hero)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/efbaa677-db4a-4b78-a5e7-75772bd7273e/animation.benten_transform_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "94222474-788d-e113-a831-2f1c17fc9c0c": {
     "name": "Magic Trick",
@@ -2039,7 +2423,11 @@
   "e8a91ad4-6f7a-479e-9556-e1a7c058351b": {
     "name": "Sonic-Finger Wagging",
     "message": "@: Tsk Tsk &(Sonic-Finger Wagging)&",
-    "specialmessage": "@: Not today Dr. Robotnik, Tsk Tsk &(Sonic-Finger Wagging)&"
+    "specialmessage": "@: Not today Dr. Robotnik, Tsk Tsk &(Sonic-Finger Wagging)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/a616c604-5d8d-4c3c-b3cb-e05d5cce3dad/sonic_tsk_tsk_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "4deac5c6-f8cf-30f9-3638-ae6a5d647058": {
     "name": "Wall Run",
@@ -2064,17 +2452,29 @@
   "2391b018-3b8a-4bb0-9596-8edfc502d302": {
     "name": "Exhausted",
     "message": "@ is &Exhausted.&",
-    "specialmessage": "@: 0 hunger, no drumsticks, &Exhausted...&"
+    "specialmessage": "@: 0 hunger, no drumsticks, &Exhausted...&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/ad821dac-0c9c-4c78-b569-0a31d842e4d9/emotion_fall_over_from_exhaustion_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "b8e54924-ec3f-409c-8914-bca61fbe9242": {
     "name": "Sonic-Running",
     "message": "@ is &Sonic Running.&",
-    "specialmessage": "@ doesn’t need a Potion of Swiftness when &Sonic Running&"
+    "specialmessage": "@ doesn’t need a Potion of Swiftness when &Sonic Running&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/71dd69fd-0eee-4426-991a-9abee2d45f4c/sonic_run_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "6b9c7731-7422-4333-950f-cf3d147ffa47": {
     "name": "Warm Up Drills",
     "message": "@ is doing &Warm Up Drills.&",
-    "specialmessage": "@: I know &Warm Up Drills.&"
+    "specialmessage": "@: I know &Warm Up Drills.&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/39786a71-9a8d-4b9a-ab3d-d08d87a91188/martial_arts_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "156171d4-b2d7-f2a4-4582-8646c263eb97": {
     "name": "Painting Heart",
@@ -2104,7 +2504,11 @@
   "9f5d4732-0513-4a0a-8ea2-b6b8d7587e74": {
     "name": "Calling a Dragon",
     "message": "@ is &Calling a Dragon.&",
-    "specialmessage": "@ is &Calling a Dragon& but Jean doesn’t answer."
+    "specialmessage": "@ is &Calling a Dragon& but Jean doesn’t answer.",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/94cfaf55-cb3a-4fcc-8e09-305dd979fc87/calling_dragon_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "d0d835fd-62b0-51ac-6392-0badd988b68b": {
     "name": "Dab",
@@ -2117,14 +2521,22 @@
     "specialmessage": "@ could also be a megalodon!"
   },
   "c2d6091d-9f91-4a9e-badd-ef8481353cb0": {
-    "name": "C-3PO Wave",
+    "name": "Waving Like C-3PO",
     "message": "@ does a &C3PO Wave.&",
-    "specialmessage": "I am @, player-villager relations. &(C3PO Wave)&"
+    "specialmessage": "I am @, player-villager relations. &(C3PO Wave)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/26800e61-b474-4495-8487-320830fa29ef/c3p0_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "85957448-e7bb-4bb4-9182-510b4428e52c": {
     "name": "Meditating Like Luke",
     "message": "@ is reaching out with the Force &(Meditating Like Luke)&",
-    "specialmessage": "@ is stacking blocks with their mind. &(Meditating Like Luke)&"
+    "specialmessage": "@ is stacking blocks with their mind. &(Meditating Like Luke)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/b9b6cb3f-64ea-4ee2-ad69-fe079b396075/meditation_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "73cead3f-0c5a-42ce-dc8b-8f8dab394204": {
     "name": "Armadillo",
@@ -2137,9 +2549,13 @@
     "specialmessage": "@ receives grand applause! (&Bow&)"
   },
   "ac674580-0265-ad54-8208-e3a560474143": {
-    "name": "T E T R I S",
+    "name": "Tetris® Dance",
     "message": "@ loves &T E T R I S&!",
-    "specialmessage": "What precision, what beauty... @ is doing the &T E T R I S&!"
+    "specialmessage": "What precision, what beauty... @ is doing the &T E T R I S&!",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/25e4a5c6-1644-49da-8d7b-70dd4dbfcc44/jig_tetris_dance_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "bf145823-d664-3d64-c7d3-e7a2f9049d38": {
     "name": "Hug",
@@ -2159,12 +2575,20 @@
   "c2a47805-c792-4882-a56d-17c80b6c57a8": {
     "name": "Acting Like a Dragon",
     "message": "@ ROAR! &(Acting like a Dragon)&",
-    "specialmessage": "@: Stay away from my egg! &(Acting like a Dragon)&"
+    "specialmessage": "@: Stay away from my egg! &(Acting like a Dragon)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/41443890-efce-4c31-b67d-663dc23c3c60/acting_like_a_dragon_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "a12252fa-4ec8-42e0-a7d0-d44fbc90d753": {
     "name": "Dancing Like Toothless",
     "message": "@ is &Dancing Like Toothless.&",
-    "specialmessage": "@: Magma walk and... Ravager! &(Dancing Like Toothless)&"
+    "specialmessage": "@: Magma walk and... Ravager! &(Dancing Like Toothless)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/a599a85b-d226-49ea-a2f1-63191e617903/dragon_mating_dance_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "64fb662e-70f2-707c-d5c4-c6ea821f210f": {
     "name": "Smooth Groove",
@@ -2184,7 +2608,11 @@
   "0ffdced7-1345-eef9-1d7f-d5297813b6f1": {
     "name": "Coquettish Dance",
     "message": "@ is doing the &Сoquettish Dance&!",
-    "specialmessage": "@ charms with the &Coquettish Dance&!"
+    "specialmessage": "@ charms with the &Coquettish Dance&!",
+    "creator": "Skilendarz",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/2047ccf3-6633-49e7-a50f-a5c8871bbb37/em_coquettish_dance_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "b59bd4e3-7695-02b4-30d3-def25971f2bc": {
     "name": "Ayy Macarena",
@@ -2197,9 +2625,13 @@
     "specialmessage": "@ is having a dance party with &Dynamite&!"
   },
   "4b9b9f17-3722-4d38-a6a9-9ba0e8cf5044": {
-    "name": "Obi-Wan’s Mind Trick",
+    "name": "Using Jedi Mind Trick",
     "message": "@ These aren't the mobs you're looking for. &(Obi-Wan's Mind Trick)&",
-    "specialmessage": "@: I didn't look you in the eyes. I can go about my business. &(Obi-Wan's Mind Trick)&"
+    "specialmessage": "@: I didn't look you in the eyes. I can go about my business. &(Obi-Wan's Mind Trick)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/c1f832bc-3c6f-4591-aa85-caaaf581e99d/jedi_mind_trick_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "d5bb612f-68db-3bf3-6aef-e5ae57a00256": {
     "name": "Moonwalk",
@@ -2244,7 +2676,11 @@
   "e1090020-cbe0-4b64-9c41-a3b9619da029": {
     "name": "Giving R2-D2 a Message",
     "message": "@ is hiding the Death Star plans. &(Giving R2 a Message)&",
-    "specialmessage": "@: Help me Obi-Wan Kenobi, you’re my only hope. &(Giving R2 a Message)&"
+    "specialmessage": "@: Help me Obi-Wan Kenobi, you’re my only hope. &(Giving R2 a Message)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/19271fcb-195e-4890-bb71-021bff6133bd/leia_r2_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "685eac6d-32e7-47b2-e58e-b6948bd04da6": {
     "name": "Wave Dance",
@@ -2274,12 +2710,20 @@
   "6f82688e-e549-408c-946d-f8e99b91808d": {
     "name": "ROFL",
     "message": "@ rolls on the floor laughing. &(ROFL)&",
-    "specialmessage": "@ &ROFL&COPTER!"
+    "specialmessage": "@ &ROFL&COPTER!",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/7c65e959-e3cd-483d-b105-d157269a1376/emotion_rofl_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "21e0054a-5bf4-468d-bfc4-fc4b49bd44ac": {
     "name": "Offer",
     "message": "@ makes an &Offer.&",
-    "specialmessage": "@ spent many months living with Villagers to learn how to make this &Offer.&"
+    "specialmessage": "@ spent many months living with Villagers to learn how to make this &Offer.&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/d212318e-ed57-4141-ac85-46f7b5ed30f2/proposal_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "788e28e5-acc7-0d82-a7e0-b7bb05ecdf8d": {
     "name": "Flip Fail",
@@ -2309,7 +2753,11 @@
   "5dd129f9-cfc3-4fc1-b464-c66a03061545": {
     "name": "Hand Stand",
     "message": "@ is doing a &Hand Stand.&",
-    "specialmessage": "@ Look at me! One handed &Hand Stand!& Wait, that was two hands! Back to the drawing board… "
+    "specialmessage": "@ Look at me! One handed &Hand Stand!& Wait, that was two hands! Back to the drawing board… ",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/8fe522c3-ed8e-45ca-82d2-b6ef843d558d/hand_stand_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "24ace7eb-2020-b8fd-9a3c-24212590a79c": {
     "name": "Ninja Moves",
@@ -2319,12 +2767,20 @@
   "5a5b2c0c-a924-4e13-a99b-4c12e3f02e1e": {
     "name": "Ghast Dancing",
     "message": "@ is &Ghast Dancing.&",
-    "specialmessage": "@: I think I feel some tears coming on, maybe it’s just all this &Ghast Dancing.&"
+    "specialmessage": "@: I think I feel some tears coming on, maybe it’s just all this &Ghast Dancing.&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/131b9b5a-6059-4bec-834b-03c3dfe1539f/dance_ghast_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "1dbaa006-0ec6-42c3-9440-a3bfa0c6fdbe": {
     "name": "Breakdancing",
     "message": "@ is &Breakdancing&.",
-    "specialmessage": "@ is good at &Breakdancing& for someone who can't bend."
+    "specialmessage": "@ is good at &Breakdancing& for someone who can't bend.",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/2ba27c88-ba49-4a64-a767-b92c4b909aa5/breakdance_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "278d2cff-5287-d598-39f2-253637215b6a": {
     "name": "Wiggle Dance",
@@ -2367,9 +2823,13 @@
     "specialmessage": "@ is growing uncertain! (&Shrug&)"
   },
   "efc2f0f5-af00-4d9e-a4b1-78f18d63be79": {
-    "name": "Playing Dead",
+    "name": "Fake Death",
     "message": "@ is &Playing Dead.&",
-    "specialmessage": "@: Stop telling them! It really RUINS the effect if they know I’m just &Playing Dead.&"
+    "specialmessage": "@: Stop telling them! It really RUINS the effect if they know I’m just &Playing Dead.&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/b247ffdf-2296-4d84-bdd9-0d1623b2242b/fake_death_thumbnail_0.png",
+    "price": 0,
+    "rarity": "rare"
   },
   "5fc47e75-5e7d-6413-9dc5-53cc2a877e94": {
     "name": "Infinity Portal",
@@ -2384,7 +2844,11 @@
   "168498b6-8a60-4bb4-9731-200b226f90ec": {
     "name": "Big Heart",
     "message": "@ is showing their love with a &Big Heart&!",
-    "specialmessage": "@ is making a <3 (&Big Heart&)"
+    "specialmessage": "@ is making a <3 (&Big Heart&)",
+    "creator": "Polymaps",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/26222ea0-f604-4abc-9f97-f2899ebaf1c7/em_big_heart_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "0d090971-6b6d-2c69-6461-2cb1ab6cc86b": {
     "name": "Air Guitar",
@@ -2402,9 +2866,13 @@
     "specialmessage": "@ is spinning right round (and failed)"
   },
   "ddfa6f0e-88ca-46de-b189-2bd5b18e96a0": {
-    "name": "Bowing",
+    "name": "Bow",
     "message": "@ is &Bowing.&",
-    "specialmessage": "@: My thanks are deeper than bedrock. &(Bowing)&"
+    "specialmessage": "@: My thanks are deeper than bedrock. &(Bowing)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/c41d621c-2ecd-4a1f-b9eb-2775513ffb02/bow_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "40d5eb7c-c1fb-72a5-4016-4607d6361ff4": {
     "name": "Dry Swim",
@@ -2439,7 +2907,11 @@
   "cd8026f6-f767-6659-a186-c65f81784521": {
     "name": "Zen Attitude",
     "message": "@ takes a moment to themselves (&Zen Attitude&)",
-    "specialmessage": "@ is looking for peace (&Zen Attitude&)"
+    "specialmessage": "@ is looking for peace (&Zen Attitude&)",
+    "creator": "OG Games",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/cba4186f-d0bc-478b-95da-346dc70710b1/em_oggames_zen_attitude_emote_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "be2fac28-b980-4ef2-9274-326559601af0": {
     "name": "Secure The W",
@@ -2459,7 +2931,11 @@
   "6730c808-356f-5638-804f-1246e8325493": {
     "name": "Stuck in the Mud",
     "message": "@ is &Stuck in the Mud&!",
-    "specialmessage": "@ glued their feet to the ground! (&Stuck in the Mud&)"
+    "specialmessage": "@ glued their feet to the ground! (&Stuck in the Mud&)",
+    "creator": "Polymaps",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/aadeee54-7736-4c35-9fab-b5cf559a29ec/em_stuck_in_the_mud_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "7a2ff2ed-68f2-0a5a-318c-96173e0121ca": {
     "name": "Victory Dance!",
@@ -2489,12 +2965,20 @@
   "3706e0e2-9991-40ac-98e0-4acd8dd7bc95": {
     "name": "Sniffer Sniffin'",
     "message": "@ is &Sniffer Sniffin'.&",
-    "specialmessage": "@ found the ancient scent. Time for some &Sniffer Sniffin'.&"
+    "specialmessage": "@ found the ancient scent. Time for some &Sniffer Sniffin'.&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/e657901b-8765-40b4-bc41-eb7e45a8fd19/tracking_scents_thumbnail_0.png",
+    "price": 0,
+    "rarity": "uncommon"
   },
   "7b15cc9a-1a65-95f1-22aa-1160b0e3d435": {
     "name": "Snow Star",
     "message": "@ is making a &Snow Star&!",
-    "specialmessage": "@ is carving a &Snow Star&, a chilly masterpiece in the making!"
+    "specialmessage": "@ is carving a &Snow Star&, a chilly masterpiece in the making!",
+    "creator": "Tetrascape",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/3665fd11-a73e-4cdc-a4db-3a5c790197e3/snow_star_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "2da45633-fbce-396f-1df5-6c1320800c42": {
     "name": "Infinite Dab",
@@ -2504,12 +2988,20 @@
   "fa68e7a1-5d12-3757-89b9-f1888fcbb0f4": {
     "name": "Backflip",
     "message": "@ is doing a &backflip&",
-    "specialmessage": "@ did a cool flip"
+    "specialmessage": "@ did a cool flip",
+    "creator": "Logdotzip",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/332e211d-0a12-4f26-b3d2-cc1cf2ac7367/backflip_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "3a1736bf-3f6f-e4a0-e02a-beb92d80593e": {
     "name": "Upside Down Spin",
     "message": "@ is doing the &Upside Down Spin&!",
-    "specialmessage": "Elytra flying is so last season. &Upside Down& spinning is in!"
+    "specialmessage": "Elytra flying is so last season. &Upside Down& spinning is in!",
+    "creator": "MelonBP",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/874df6b8-5854-48de-8d22-0a21fd138152/upside_down_spin_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "ce0fe70e-02d4-a7c2-928c-99030213e7a6": {
     "name": "Jaunty Jig",
@@ -2644,7 +3136,11 @@
   "f65b8ee3-65db-42fc-9b00-4b0751d62364": {
     "name": "High Five",
     "message": "@ leaps up for a &High Five.&",
-    "specialmessage": "@ really wants a &High Five.&"
+    "specialmessage": "@ really wants a &High Five.&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/9789a544-f4a3-44f5-80f6-6325a3784be1/leaping_high_five_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "16489f0f-3219-aa2e-af88-cea0d4525144": {
     "name": "That's the word!",
@@ -2674,12 +3170,20 @@
   "76f240f9-5d35-4d63-a6ef-f8ad8c154a80": {
     "name": "Worm Dance",
     "message": "@ is doing the &Worm Dance&.",
-    "specialmessage": "@ can't wait to go fishing! &Worm Dance&."
+    "specialmessage": "@ can't wait to go fishing! &Worm Dance&.",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/dbffe8db-7b13-435e-a9aa-a598bec67647/the_worm_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "9a4ed8da-dea2-21d3-0844-830b2251db9c": {
     "name": "L Dance",
     "message": "@ is doing a wild &L Dance&",
-    "specialmessage": "@ is dancing too much!"
+    "specialmessage": "@ is dancing too much!",
+    "creator": "The Craft Stars",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/0bd4f1b8-0d31-4fba-85d9-10dc769d7792/l_dance_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "d6114dde-aeef-c8c8-db32-a024f715272a": {
     "name": "Wiggle",
@@ -2729,7 +3233,11 @@
   "25006636-2f1a-7507-df06-06de42eee479": {
     "name": "Super Villain",
     "message": "@ is laughing menancingly.",
-    "specialmessage": "@ is powering up! Mwahaha"
+    "specialmessage": "@ is powering up! Mwahaha",
+    "creator": "Ninja Squirrel Gaming",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/6371a185-d625-403d-b909-bc349fab84eb/em_ns_supervillain_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "892fa7e4-24e6-997e-8297-88b84e0cfa88": {
     "name": "Infinite Dab",
@@ -2749,7 +3257,11 @@
   "50e51304-515d-441f-81d8-7921327b97f9": {
     "name": "Rallying",
     "message": "@ is &Rallying& the team together.",
-    "specialmessage": "@ lets out a &Rallying& cry. CHARGE!"
+    "specialmessage": "@ lets out a &Rallying& cry. CHARGE!",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/b8c4814d-711d-4998-94f3-f9ea3c129d86/emote_rally_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "57685cc0-2d5d-7d85-d73a-c74b36627d2c": {
     "name": "Skateboarding",
@@ -2774,12 +3286,20 @@
   "6131e1e3-0c13-4cd3-96cf-fbb39b277b6d": {
     "name": "Triumphantly Cheering",
     "message": "@ is &Triumphantly Cheering&.",
-    "specialmessage": "@ vanquished their foes and is &Triumphantly Cheering&."
+    "specialmessage": "@ vanquished their foes and is &Triumphantly Cheering&.",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/db54d398-1385-477c-be09-934ab22a2876/winning_battle_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "1c6b8fb8-2890-42cb-aca3-f1441625b1ce": {
     "name": "Napping",
     "message": "@ is &Napping&.",
-    "specialmessage": "Just a quick snooze to keep the Phantoms away. @ is &Napping&."
+    "specialmessage": "Just a quick snooze to keep the Phantoms away. @ is &Napping&.",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/a997cf2a-87fb-4351-9569-74bb35ba6c2d/napping_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "16ea0270-edd8-d62c-a898-d66ea932284a": {
     "name": "Racecar Driving",
@@ -2804,7 +3324,11 @@
   "7e7efcf4-3100-1dea-b126-c89903492b35": {
     "name": "Crowd Kisses",
     "message": "@ is sending kisses to the crowd!",
-    "specialmessage": "@ is blowing kisses to their adoring fans!"
+    "specialmessage": "@ is blowing kisses to their adoring fans!",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/97f58a8f-037f-4f9e-86fc-725cb4c0ac5d/em_crowd_kisses_thumbnail_0.png",
+    "price": 0,
+    "rarity": "rare"
   },
   "a6e8d5bf-9c1a-3703-f933-b45fc4e840dd": {
     "name": "Pick Me",
@@ -2829,17 +3353,29 @@
   "51cfdf2e-d725-09dc-a5dc-caab497dec43": {
     "name": "Flares",
     "message": "@ is doing a &Flare&",
-    "specialmessage": "@ is ready to dance battle! &Flares&"
+    "specialmessage": "@ is ready to dance battle! &Flares&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/1ca3c500-df39-4ddd-af36-ece020e3f01d/flares_emote_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "9c8a03bd-98a7-8b86-7cc4-e89187b537f0": {
-    "name": "DJ party",
+    "name": "DJ mixing",
     "message": "@ is being a DJ",
-    "specialmessage": "@ is vibing with the music!"
+    "specialmessage": "@ is vibing with the music!",
+    "creator": "Pixels & Blocks",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/8bbee54e-1af3-428a-bf72-f643b5b03d57/em_pixelsandblocks_dj_party_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "1e909865-4c80-4708-839c-b0c0fcaa2f1c": {
     "name": "Juggling",
     "message": "@ is &Juggling& while they wait.",
-    "specialmessage": "Watch out! @ is &Juggling& pointy items."
+    "specialmessage": "Watch out! @ is &Juggling& pointy items.",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/db9b267e-5e25-42d2-9abe-3165186d5e2a/idle_toss_item_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "b6d48380-5278-8611-b1ea-5db0482a02fb": {
     "name": "Rodeo Dance",
@@ -2864,7 +3400,11 @@
   "137730ec-9617-4fa9-a715-c2a671a7210e": {
     "name": "Sitting",
     "message": "@ is &Sitting&.",
-    "specialmessage": "@ is &Sitting& around daydreaming of cherry blossoms."
+    "specialmessage": "@ is &Sitting& around daydreaming of cherry blossoms.",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/9e8d9f8d-6ee4-49a5-a46d-11f3c795de8d/idle_sit_down_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "dc9300a3-11a6-6c09-d71e-740311a5715a": {
     "name": "Superhero Landing",
@@ -2874,7 +3414,11 @@
   "7a314ecf-f94c-42c0-945f-76903c923808": {
     "name": "Bored",
     "message": "@ is &Bored.&",
-    "specialmessage": "@: YAAAWWWN. Well, shall we move onto something else? &(Bored)&"
+    "specialmessage": "@: YAAAWWWN. Well, shall we move onto something else? &(Bored)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/b7df1879-2015-4128-9d4a-906eb211168b/bored_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
   },
   "297a8c6f-661a-c292-bd0b-7ba1c1a3d4c6": {
     "name": "Laugh It Up",
@@ -2884,12 +3428,20 @@
   "87478e1d-07f8-7641-a6cb-db006625683b": {
     "name": "I Drop",
     "message": "@ is defying gravity doing the &I Drop&!",
-    "specialmessage": "@ is about to get a Tetris! (&I Drop&)"
+    "specialmessage": "@ is about to get a Tetris! (&I Drop&)",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/c279cea7-d295-41a8-b5ea-5cf314a29a52/jig_i_drop_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "f2d004ab-6d62-4c21-8517-f7ef03d9bb26": {
     "name": "Back Handsprings",
     "message": "@ is doing &Back Handsprings.&",
-    "specialmessage": "Who turned on the redstone repeater? @ can't stop doing &Back Handsprings!&"
+    "specialmessage": "Who turned on the redstone repeater? @ can't stop doing &Back Handsprings!&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/5a78911d-1bf2-466f-a6cb-6c051c17ecc3/rapid_backflip_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "c9c66be7-1c77-d83b-3a6c-cd2d8d86dbc9": {
     "name": "Jump and Cheer",
@@ -2924,7 +3476,11 @@
   "c7efbcf5-3633-5311-bfef-58937d4d4d23": {
     "name": "Guitar Hero",
     "message": "@ is being a &Guitar Hero&",
-    "specialmessage": "@ is rockin' hard! &Guitar Hero&"
+    "specialmessage": "@ is rockin' hard! &Guitar Hero&",
+    "creator": "Pixelusion",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/27e1a705-3b27-4714-9d82-e48d11f475d1/guitar_hero_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "f1d75faf-b6fc-d09a-c354-bfa8dc063ec0": {
     "name": "looking far away",
@@ -2939,12 +3495,20 @@
   "505146b0-d5c8-4f4b-a13c-007d2175bbb6": {
     "name": "Drowsy",
     "message": "@ is &Drowsy.&",
-    "specialmessage": "@ had too much Suspicious Stew. &(Drowsy)&"
+    "specialmessage": "@ had too much Suspicious Stew. &(Drowsy)&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/5ed2c960-e731-47c8-9373-638a3ebc0ae4/slow_swaying_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
   },
   "b305f0e8-cb72-48de-bfea-7e2f4afb63c7": {
     "name": "Wall Running",
     "message": "@ is &Wall Running&",
-    "specialmessage": "@ is bouncing off the walls! &Wall Running&"
+    "specialmessage": "@ is bouncing off the walls! &Wall Running&",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/c79847c7-7f90-4b48-9367-bab578fa55df/wall_run_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   },
   "de3871ca-4a91-67e3-6922-4f5766e875db": {
     "name": "Handstand",
@@ -2965,5 +3529,2475 @@
     "name": "Anime Run",
     "message": "@ is running like they're in an anime! ",
     "specialmessage": "Is that a car? No, it's just @ doing an (&anime_run&)!"
+  },
+  "608f5df4-57de-414b-7d0f-9892931ef2ae": {
+    "name": "Monkey Dance",
+    "message": "@ is doing the Monkey Dance!",
+    "specialmessage": "@ is doing a Primal Move! I guess...",
+    "creator": "Plank",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/3e45554a-5d2e-49db-a980-fec14d5f85d8/monkey_dance_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "6ea51093-d2c2-ef07-0717-1af224071632": {
+    "name": "Explosive Push-Ups",
+    "message": "@ is doing &Explosive Push-Ups&!",
+    "specialmessage": "And boom goes the dynamite! @ is setting off shockwaves with those push-ups! (&Explosive Push-Ups&)",
+    "creator": "CreatorLabs",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/a0fd556f-c5e8-4b97-804d-71ed16be39cc/em_creatorlabs_explosive_push_ups_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "e4278b7d-4405-522d-2bd3-cc2a8f9ad2a8": {
+    "name": "AAAGGHH!",
+    "message": "@ is running away! &AAAGGHH!&",
+    "specialmessage": "@ is running like their life depends on it!",
+    "creator": "Block Perfect Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/52978210-07b2-45ba-8279-3a9024bace7e/em_bp_aaagghh_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "1b923008-d5e1-5edf-76e0-b512a30fbd72": {
+    "name": "Anime Run",
+    "message": "@ is the fastest in the server!",
+    "specialmessage": "@ is going over &9000&!!!",
+    "creator": "Galaxite",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/fcb38a6d-78f1-4e27-a247-aa072d0c937f/em_emote_ultimate_ninjarun_blockception_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "cea799ba-612f-f4b2-e8c9-40c6b76cd63a": {
+    "name": "Slalom Sweep",
+    "message": "@ is skiing through the snow!",
+    "specialmessage": "@ is becoming a pro!",
+    "creator": "Lothiredon",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/617484aa-b6eb-4c12-8307-410851d05659/em_lot_slalom_sweep_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "90e84930-e164-936b-961c-09811768a1e5": {
+    "name": "Sky Diving",
+    "message": "@ is Sky Diving!",
+    "specialmessage": "@ is reaching the skies!",
+    "creator": "Plank",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/b6102f90-6d6c-48e3-a70b-3881a186523c/sky_diving_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "1057bcb1-91ff-cf22-085f-5858498d994e": {
+    "name": "The Creak",
+    "message": "@ is doing $The Creak$",
+    "specialmessage": "Look out! Oh it's just @ doing $The Creak$",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/a26f4cdd-e9ef-4e5d-9ad1-d57b9763b55a/emote_thumbnail_0.png",
+    "price": 0,
+    "rarity": "rare"
+  },
+  "e2f2bcef-d00e-5c73-5eda-afb61bcd1398": {
+    "name": "Nope!",
+    "message": "@ don't agree (&Nope!&)",
+    "specialmessage": "@ don't agree (&Nope!&)",
+    "creator": "OG Games",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/6b6f8c2d-86a4-44f4-b899-11cd4ea6b28c/em_oggames_nope_emote_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "b236ef8e-2107-8ffd-26b1-5f4998aa2426": {
+    "name": "Floating Dream",
+    "message": "@ is floating in a dream",
+    "specialmessage": "@ is in a dream!",
+    "creator": "Pickaxe Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/c09c8290-48aa-43ea-9429-8d8d25cdb595/em_pickaxe_dream_stance_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "a010153c-4d4f-4692-8b2c-33a2d690b5d1": {
+    "name": "Sneaking",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/0457b487-f3b2-477e-ad6b-f3bbdf6acc8b/tiptoeing_thumbnail_0.png",
+    "price": 0,
+    "rarity": "rare"
+  },
+  "89539297-3a49-dae3-894e-9731b7ddaf4e": {
+    "name": "Amy's Hammer Smash",
+    "message": "Hammer Smash!",
+    "specialmessage": "Piko Piko!",
+    "creator": "Gamemode One",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/b295cf3c-aa4a-4ed4-9d3c-2900aeee2775/em_amy_hammer_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "66145f06-5979-a9ac-7b49-fe7199c8992a": {
+    "name": "Knuckles' Glide",
+    "message": "@ is gliding like Knuckles!",
+    "specialmessage": "This is how I roll!",
+    "creator": "Gamemode One",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/e998e115-be7c-49e7-bda3-3a4b758bb767/em_knuckles_glide_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "36b2368b-b55c-e9ce-2667-4ea5dcac05de": {
+    "name": "Shadow's Skating",
+    "message": "@ is &skating like shadow&!",
+    "specialmessage": "They're AIR shoes! (&Shadow's Skating&)",
+    "creator": "Gamemode One",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/7aa78774-6b45-42db-b0d6-eaded32fbb5a/em_shadow_skate_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "82fd6b58-b8b1-acba-870b-2dd16bb41435": {
+    "name": "Successful Hunt!",
+    "message": "&A successful hunt!&",
+    "specialmessage": "&Eywa will always provide!&",
+    "creator": "Gamemode One",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/c696be78-0767-4194-83b0-0d814a9d6a85/em_successful_hunt_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "c3cbc0ce-8318-d087-aa5f-07038a735bd3": {
+    "name": "I See You",
+    "message": "&Friend, I see you!&",
+    "specialmessage": "&Eywa has heard you!&",
+    "creator": "Gamemode One",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/d7eb5aea-ed39-4f3f-b898-832c0fe5b1f9/em_i_see_you_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "07b248e0-1872-0f7e-e569-05db0bf3cd00": {
+    "name": "Na'vi Crouch",
+    "message": "@s is on the hunt!",
+    "specialmessage": "grrr",
+    "creator": "Gamemode One",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/aacae9ce-dc0b-494a-a884-489e18e51de1/em_gm1_crouch_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "376340f1-9080-f215-a8c8-98816aca335e": {
+    "name": "Piano Hands",
+    "message": "@ is playing Piano!",
+    "specialmessage": "@ is becoming Classic with this Piano song!",
+    "creator": "RareLoot",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/e85d3ced-77b5-4afb-9ea0-1c4f5d1b3c20/piano_hands_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "5f06a240-e6e9-e01e-9a6c-dea1ac5ff2b4": {
+    "name": "Cowboy Hoop",
+    "message": "@ is showing off with a &Cowboy Hoop&",
+    "specialmessage": "@ is hooking you with a &Cowboy Hoop&",
+    "creator": "CubeCraft Games",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/34e90c39-4f23-487e-98af-7a7a9b2199a8/em_cubecraft_cowboyhoopemote_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "6c7717bd-a686-5a15-f8ed-2c07ee6f913d": {
+    "name": "Go To Sleep",
+    "message": "@ is heading to sleep!",
+    "specialmessage": "@ is feeling sleepy!",
+    "creator": "CodeStudios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/2ef518f4-bff9-4ffa-9382-7868b867a03c/em_cdst_go_to_sleep_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "fe1f59dd-f55a-2a59-eb59-6accc21f8a77": {
+    "name": "Golf Swing",
+    "message": "@ gives us a magnificent Air-shot!",
+    "specialmessage": "Nice Ace from @.",
+    "creator": "Blockbytes",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/7c73df3f-c81f-4cd0-a30e-50705867aaed/em_bb_golf_swing_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "d0d88d69-c5cc-7f5f-8615-14bfbbb65821": {
+    "name": "Lots of Kisses",
+    "message": "Lots of kisses for you!",
+    "specialmessage": "@ is sending love to everyone!",
+    "creator": "Netherpixel",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/8fe9ecc2-c735-498c-8ae7-55606c15bd8e/em_netherpixelstudios_lots_of_kisses_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "4f304a4b-200d-bb9f-299e-87dff8732479": {
+    "name": "Double Dab",
+    "message": "@ &double-dab&",
+    "specialmessage": "@ &double-dab&",
+    "creator": "Meraki",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/f41a56cc-13bd-461c-bc13-eea0ba6b1bcd/em_meraki_double_dab_emote_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "65507c7a-0fbe-d636-1eda-47129991a8e2": {
+    "name": "Electro Shuffle",
+    "message": "@ is doing the &Electro Shuffle&!",
+    "specialmessage": "Boots & cats & boots & cats (&Electro Shuffle&)",
+    "creator": "JFCrafters",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/bf0f9902-f5a5-4210-9f62-e47262d657bf/em_jfcrafters_electro_shuffle_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "51e58a6d-8d6f-9815-8cfe-7e999a98deba": {
+    "name": "Snow Angel",
+    "message": "@ is making a &Snow Angel&!",
+    "specialmessage": "@ just loves the winter so much they're making a &Snow Angel&",
+    "creator": "CubeCraft Games",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/defe2b72-e2e9-452f-b0f4-a26a135a8191/em_cubecraft_snow_angel_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "a1f89dbd-8a54-5765-399d-df0bc15302dd": {
+    "name": "Forgot how to walk",
+    "message": "@ doesn't know how to walk",
+    "specialmessage": "@ is moving but not walking",
+    "creator": "AriaCreations",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/2cd9d5d3-00d7-47f3-9d94-c3ffe9d309c4/em_aria_forgot_walk_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "97f07692-101f-cda8-5045-fe6f4086802c": {
+    "name": "Neko Dance",
+    "message": "@ is hitting &Neko Dance&!",
+    "specialmessage": "@ is sturdy with it! (&Neko Dance&)",
+    "creator": "ShapeStudio",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/c01b7378-0052-486e-9922-8c99d9ae4f76/em_neko_dance_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "6eb4cdd3-db29-6066-563b-dcd8ac997087": {
+    "name": "Floss",
+    "message": "@ celebrate! (&Floss&)",
+    "specialmessage": "@ celebrate! (&Floss&)",
+    "creator": "Cubical",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/6e7e4483-10b0-4172-a9db-7b2f1804c54b/em_cubical_floss_emote_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "4d7dba4e-eb94-54b5-fc43-bbc454bd8c0b": {
+    "name": "I am Better",
+    "message": "@ is being menacing",
+    "specialmessage": "@ is being menacing",
+    "creator": "Red Eagle Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/e54d09dd-eca8-4c7f-b4eb-1771c2a6af99/em_re_iambetter_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "5e05831a-8a35-c89d-d094-582f9cdcba31": {
+    "name": "Head Shake Yes",
+    "message": "@ is saying yes.",
+    "specialmessage": "@ agree with you.",
+    "creator": "Honeyfrost",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/9dfd4678-059c-4088-906f-fd45bb4896f2/em_hf_head_shake_yes_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "58dada1b-99e0-a5f0-b1f7-40e9813bdf79": {
+    "name": "Stuck in the celling",
+    "message": "@ is stuck in the celling.",
+    "specialmessage": "How did @ end up there?",
+    "creator": "HorizonBlocks",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/498adaeb-15b7-4796-b54e-65be3f96f4e2/em_horizonblocks_stuckcelling_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "7633e43d-da86-fbee-a9ff-32fc9fee9f8b": {
+    "name": "The Wave",
+    "message": "@ is doing &The Wave&!",
+    "specialmessage": "@ is moving their shoulders and arms like a wave!",
+    "creator": "Razzleberries",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/4ef09655-0dfe-47c4-ad8d-ebc10bf5c0a9/em_the_wave_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "275e0fe1-769d-cd0d-5ffc-48cfbefeb78c": {
+    "name": "Infinity Portal 2",
+    "message": "@ is teleporting to infinity.",
+    "specialmessage": "@ found a portal teleport glitch.",
+    "creator": "AriaCreations",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/3e4552f6-a9f7-4237-89fb-edc1a9459233/em_aria_infinity_portal_2_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "a631f0cb-6f18-c338-8f41-a94f32b8c598": {
+    "name": "Knock-Out",
+    "message": "@ hits the canvas! ",
+    "specialmessage": "It's a KO! @ down!",
+    "creator": "Glorious Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/26c3e020-4973-4f3c-a885-7acd1316b4b7/em_gloriousstudios_knockout_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "9e9f9ca4-345a-3bd9-7ed7-de53f826dfd2": {
+    "name": "Flying Hero",
+    "message": "@ is a &Flying Hero&!",
+    "specialmessage": "Is it a bird? Is it a plane? No, it's @ defying gravity again! (&Flying Hero&)",
+    "creator": "CreatorLabs",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/6dd3b060-9aea-406b-b031-8cb93d4efebb/em_creatorlabs_flying_hero_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "79a2c03f-b04a-e9b1-9228-c4452a500f7c": {
+    "name": "Happy Wave",
+    "message": "@ used &Happy Wave&",
+    "specialmessage": "@ is waving! (&Happy Wave&)",
+    "creator": "Glowfischdesigns",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/805e3509-2733-4e00-bc1d-d188efb3bb94/em_glowfisch_happy_wave_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "9c6f5bbd-b9a4-07da-7a2e-657d3dbb2a1b": {
+    "name": "Invisible mirror",
+    "message": "@ took a wall",
+    "specialmessage": "@ is too fast",
+    "creator": "Block Factory",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/64ccc1c6-c04a-4d05-a2b4-4dc5a5d58b48/em_invisible_mirror_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "2227fd15-1fd4-bf01-384c-dc5da6867b84": {
+    "name": "Hyped",
+    "creator": "Meraki",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/fc89e441-fb6f-417a-ab2c-b40f63c1a8dc/em_hype_emote_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "43001321-fe6c-d75c-0a32-6f08d7c46489": {
+    "name": "Head Banger",
+    "message": "@ is head banging!",
+    "specialmessage": "@ is rocking out!",
+    "creator": "Pickaxe Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/f32895db-3940-4eb8-914a-4e0ba11ccec6/em_pickaxe_head_banger_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "a05bff79-abe3-03bf-f09b-4bb2cbc9edc8": {
+    "name": "Giddy",
+    "message": "@ is doing the &Giddy& emote!",
+    "specialmessage": "@ is just super happy!",
+    "creator": "Builders Horizon",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/e54ee635-c83b-4d1e-a3af-58507f6633ca/em_bh_giddy_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "14adb178-3488-4db8-bda8-469c941dd8be": {
+    "name": "Celebration",
+    "message": "@ is having a &Celebration&!",
+    "specialmessage": "@ is super thrilled to see you! (&Celebration&)",
+    "creator": "Pixel Smile Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/c94335c9-0ebd-4d0f-8cb8-5e089491fd10/em_pixelsmilestudio_celebration_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "e2cc6cce-c6b9-45ec-9662-d724815d1ce2": {
+    "name": "Meditating",
+    "message": "@ is &Meditating&. ",
+    "specialmessage": "@ is transcending!",
+    "creator": "Spark Universe",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/59bc379a-c47a-465c-a730-910bd5bdc680/em_spark_meditating_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "535b5f46-e58b-a53c-1f83-f75077684b6c": {
+    "name": "Flying",
+    "message": "@ is flying off to save the world—or maybe just to grab snacks.",
+    "specialmessage": "@ is flying high! Quick, someone cue the dramatic music.",
+    "creator": "Aymeric Pierre",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/b5996dc0-8804-480a-a3ea-03febda4b574/em_aypierre_flying_emote_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "7336722e-f548-858d-2847-8a3ee5924f9a": {
+    "name": "Playing Possum 3",
+    "message": "@ is &Playing Possum 3&",
+    "specialmessage": "@ is not &Playing Possum 3&!",
+    "creator": "MrAniman2",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/c5be6511-e16c-4344-ae74-eb91528b1451/em_mra_playingpossum3_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "1179e4f8-7ad3-d987-e36e-1ee7ff00bbf9": {
+    "name": "L Dancing",
+    "message": "@ give you their L (&L Dancing&)",
+    "specialmessage": "@ have a L for you (&L Dancing&)",
+    "creator": "Minty",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/832bc67f-c331-405a-ae0f-078aa7e176ef/em_minty_l_dancing_emote_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "48da832d-ec46-59a0-044d-c33f0cf143f4": {
+    "name": "Teleport Fall",
+    "message": "@ is doing teleport fall.",
+    "specialmessage": "@ is teleporting.",
+    "creator": "Rainbow Theory",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/33f6aed4-87f5-42ba-974b-ac6be15d48f9/em_rainbowtheory_teleportfall_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "a1479670-1f8f-67ca-6160-51e9d3f7a9e0": {
+    "name": "Monster Spawner",
+    "message": "@ is spinning like a &Monster Spawner&",
+    "specialmessage": "@ is trying to summon clones! (&Monster Spawner&)",
+    "creator": "4KS Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/64d68969-47c1-441c-8f45-8296cabd4fc9/em_4ks_monsterspawner_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "2265f791-d077-44b6-c0a9-8399220b3b3d": {
+    "name": "Dip",
+    "message": "@ fake his death (&Dip&)",
+    "specialmessage": "@ pretend to be dead (&Dip&)",
+    "creator": "Cubical",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/91cc46eb-4855-4259-be74-2a465d6ba948/em_cubical_dip_emote_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "f68c433b-70ca-c41c-5548-b5abd167c040": {
+    "name": "Bye Bye Bye",
+    "message": "@ is doing the &Bye Bye Bye&!",
+    "specialmessage": "@ is dancing in sync with their inner self!",
+    "creator": "King Cube",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/047c1684-1f5d-4a98-ae86-c28057955633/em_bye_bye_bye_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "ead83b5b-affd-2201-0fdf-a4a5f9625957": {
+    "name": "L O S E R dance",
+    "message": "@ is doing the &L O S E R dance&",
+    "specialmessage": "@ is the best player of all time",
+    "creator": "Dalibu Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/e79a2196-5ff0-4772-b99e-a03cdd289d5f/em_dlb_l_o_s_e_r_dance_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "2c2468fe-3276-cf58-19d7-9294deeec7c8": {
+    "name": "Face Palm",
+    "message": "@ is doing the &Face Palm&!",
+    "specialmessage": "@ is &disappointed&",
+    "creator": "StarkTMA",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/28972824-6076-40d0-8a2f-6a11afa89fef/em_starktma_face_palm_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "2fca42e1-1b6e-dee0-2a86-43737b5879b2": {
+    "name": "Ultimate Floss Dance",
+    "message": "@ is doing the &floss&!",
+    "specialmessage": "@ the &floss-master&!",
+    "creator": "Blockception",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/6cc9c602-f87c-4922-916f-85a272782201/em_emote_ultimateflossdance_blockception_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "1c5f9f88-88cc-ab5a-3eca-aa9f427e4aa6": {
+    "name": "V-Pose",
+    "message": "@ is doing a V-Pose!",
+    "specialmessage": "@ is showing their moves by doing a V-Pose!",
+    "creator": "BLOCKLAB Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/c1c228de-67db-434e-b9ec-00d1e149fb7b/em_ec_bl_vpose_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "0771f8cd-6fd5-ef86-b10f-1a8a168470e1": {
+    "name": "Take the L",
+    "message": "@ is giving the L!",
+    "specialmessage": "What's that? Oh, it's just @ giving the L again...",
+    "creator": "5 Frame Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/7510dcd6-5b6e-410f-a0b8-6340b838ea4e/em_fiveframe_takethel_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "01efc5ea-f419-3bf5-2f87-3ec3b51def1e": {
+    "name": "Kicking Ball",
+    "message": "@ is shooting ball over the skyline!",
+    "specialmessage": "@ is a real footballer!",
+    "creator": "Mod Block",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/2c7ed704-8707-4f73-b335-a0eb76d9ea5f/em_mb_kicking_ball_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "ce2dd616-440f-202a-c96f-3373349afbc0": {
+    "name": "Curtsy",
+    "message": "@ finished its presentation!",
+    "specialmessage": "@ is humbled after an outstanding performance!",
+    "creator": "RareLoot",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/333f1593-65e1-4edb-8cf3-dff62de6a45a/curtsy_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "dd462a5a-5687-4ae3-8544-ed9f0ac07466": {
+    "name": "Werewolf",
+    "message": "@ is a werewolf",
+    "specialmessage": "@ just turned into a werewolf!",
+    "creator": "Misfits",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/937482ca-b593-4a98-b95a-8586e922048f/em_msft_werewolf_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "cc598e18-5803-681c-35e0-84e00bfd224c": {
+    "name": "Figure Skating",
+    "message": "@ is &Figure Skating&!",
+    "specialmessage": "@ is so elegant! (&Figure Skating&)",
+    "creator": "ShapeStudio",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/047d6a93-61c0-4b16-9805-8c6de85fa356/em_figure_skating_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "2d0d8b10-1c28-9dcc-f46f-f03c9e90091d": {
+    "name": "Infinite Teleportation",
+    "message": "@ can't stop teleporting",
+    "specialmessage": "@ dodge everything",
+    "creator": "Block Factory",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/b2f9a8e2-81ae-4802-9971-6bf344c3b7d2/em_infinite_teleportation_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "7a85bd28-ae59-34a7-189f-9b140211806b": {
+    "name": "Superhero Lunge-Hug",
+    "message": "Ooohhhh! Look! Look! @ is doing the &Superhero Lunge-Hug&!",
+    "specialmessage": "In dark times, when all hope seems lost and tomorrow feels so far away, only @ can save the day with their special move: the &Superhero Lunge-Hug&!",
+    "creator": "Scai Quest",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/f8e10cc3-432e-48ae-ad08-0320fd6d723a/em_sqst_superherolungehug_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "97db7397-7ff1-0d9b-84f0-1aace415b8bd": {
+    "name": "The Moonwalk",
+    "message": "@ is doing the moonwalk!",
+    "specialmessage": "WOW! Is @ the king of pop?",
+    "creator": "ASCENT",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/0f2a0d8b-3c27-4929-9179-121217ee8669/em_the_moonwalk_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "68dcbae8-bff6-0ec3-8feb-015bb2654b42": {
+    "name": "Flexing",
+    "message": "@ is &flexing& on you!",
+    "specialmessage": "&Flexmonster& unleashed!",
+    "creator": "Impulse",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/57df7c1a-0920-4002-becc-ca06a9d0d360/em_emote_flexing_blockception_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "1208641e-3af9-8287-e1b3-1f1736b68dca": {
+    "name": "Deadly Virus",
+    "message": "@ has a &Deadly Virus&!",
+    "specialmessage": "Save yourselves! (&Deadly Virus&)",
+    "creator": "Hielke Maps",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/d9fa67b8-0c62-4e6c-9198-0d456430a5a4/em_hielke_deadly_virus_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "d6287eff-d40e-97bc-b331-858aa8694b89": {
+    "name": "Thinking",
+    "message": "@ is deep in thought...",
+    "specialmessage": "Hmm... @ is pondering something important.",
+    "creator": "Endorah",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/85eeddab-cfa0-4462-af92-8b68151bbe75/em_endorah_thinking_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "c0634165-9dec-4804-b69b-c55bd9a4d93a": {
+    "name": "Paws Dance",
+    "message": "is doing the paws dance!",
+    "specialmessage": "UwU OwO",
+    "creator": "Float Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/e750618e-9e11-4c6e-b0b7-bfadc3f570cc/em_floatstudios_paws_dance_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "418f6c15-03d9-4b03-848c-23b9ee7d3d94": {
+    "name": "WAVING",
+    "message": "@ is waving!",
+    "specialmessage": "Everybody, wave with @!",
+    "creator": "Blocky",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/935ae2c2-9508-47fa-af1b-0e236546835c/em_blocky_waving_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "2fe0bc51-35b0-bf5b-ed8d-7c0fb4a80dff": {
+    "name": "I'm lost!",
+    "message": "@ has lost the way...",
+    "specialmessage": "Dear diary, I'm lost. Yours truly, @",
+    "creator": "ASCENT",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/c829c06d-80ba-4702-b213-f619699292df/em_im_lost_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "3d7b67cc-e9df-1e48-19ac-d84da60a54cc": {
+    "name": "Tornado Jump",
+    "message": "@ is doing a &Tornado Jump&!",
+    "specialmessage": "@ is causing a whirlwind! (&Tornado Jump&)",
+    "creator": "QwertyuiopThePie",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/59d6b484-32cf-457b-8698-4e636983bf85/em_qwertyuiopthepie_tornado_jump_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "8f3915e4-6ced-9ab4-31ba-4e5f08f81fa2": {
+    "name": "FOUND SOMETHING!",
+    "message": "@ has found something valuable!",
+    "specialmessage": "@ FOUND DIAMONDS! AAAAAAAAAH!",
+    "creator": "Square Dreams",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/0be35a96-2ea5-4bca-adbd-619e99807638/em_found_something_valuable_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "ff30f2be-b4b4-bc55-3921-8178ad163789": {
+    "name": "Derpy Squid",
+    "message": "@ is a &Derpy Squid&!",
+    "specialmessage": "There's not a single thought behind those eyes... (&Derpy Squid&)",
+    "creator": "Hielke Maps",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/5faa8b19-96db-436d-b0d8-003238a6b5da/em_hielke_derpy_squid_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "f799cafe-c236-4f97-52fe-9253af6b8973": {
+    "name": "Bouncy Ball",
+    "message": "@ is a &Bouncy Ball&!",
+    "specialmessage": "@ is having a ball being a &Bouncy Ball&!",
+    "creator": "Wonder",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/94059060-1145-4da1-ac78-c86836d934be/em_wonder_bouncy_ball_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "00ebe72c-e65d-e4c5-feff-e84416d1cbe1": {
+    "name": "Rockstar",
+    "message": "@ is rocking out!",
+    "specialmessage": "@ is shredding the guitar!",
+    "creator": "ChewMingo",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/3eecb8a9-4018-4c22-91db-3946737bc1e2/em_chewmingo_rockstar_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "40416f66-937f-26e1-591b-18a7996d548f": {
+    "name": "Breakdance routine",
+    "message": "@ is doing its breakdance routine.",
+    "specialmessage": "@ should be at the olympic games with these breakdance skills!",
+    "creator": "Netherfly",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/372106f6-3055-4810-907a-860c6322496d/em_breakdance_routine_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "9d2ae8a6-c11f-f2d4-b664-d17376e944f9": {
+    "name": "Jumpscare",
+    "message": "@ is ready to scare someone",
+    "specialmessage": "@ is acting creepy",
+    "creator": "Diveblocks",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/45b03531-a767-4227-8b92-3a7198c9f2d8/em_diveblocks_jumpscare_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "15685153-0a8e-e9e2-6081-1277268fe235": {
+    "name": "Headstand Tornado",
+    "message": "@ is spinning like a tornado.",
+    "specialmessage": "@ is feeling dizzy.",
+    "creator": "Oaken",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/fbd710ee-8e7f-4a9b-9fbf-f187e6e3afd2/em_headstand_tornado_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "e382f4d2-87c7-173f-271e-7027681c24df": {
+    "name": "Energetic Jumping 2",
+    "message": "Look at @ doing the &Energetic Jumping&!",
+    "specialmessage": "@ just can't stop doing the &Energetic Jumping&!",
+    "creator": "MrAniman2",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/1e515b3f-91d0-448e-9650-3f763c20de30/em_mra_energeticjumping2_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "5234f1cf-9472-12e8-ecd7-998656642f85": {
+    "name": "Cloud Running",
+    "message": "@ is doing cloud jumps.",
+    "specialmessage": "@ is jumping over blocky clouds.",
+    "creator": "HorizonBlocks",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/64c2186d-312c-4add-8b60-f08483b191bd/em_horizonblocks_cloudrunning_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "6a7c36d4-ba48-8cec-4a6e-62acac1535a5": {
+    "name": "Extreme Fast Run",
+    "message": "@ is doing a extreme fast run.",
+    "specialmessage": "@ is running extremly fast!",
+    "creator": "Fall Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/7e67798b-ded3-41f1-a8a0-a6571316c23a/em_fallstudios_fastrun_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "bc0cc56a-3867-7ee3-72f8-34e9051fc316": {
+    "name": "Sledding",
+    "message": "@ is &Sledding& down a hill!",
+    "specialmessage": "Watch out! @ is coming in fast! &Sledding&!",
+    "creator": "Gamefam",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/3410c240-a682-41bc-af9e-332746510006/em_gamefam_sledding_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "197e5483-670e-4986-8015-9d623a343997": {
+    "name": "Splits",
+    "message": "@ is doing the &Splits&!",
+    "specialmessage": "@ is a &Splits&-decision maker ;)",
+    "creator": "Yeggs",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/c2f0a9d9-0b69-43bf-94e4-248256760b4d/em_yeggs_spl_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "394e7fdc-c339-81c5-defe-01ac0624d0d7": {
+    "name": "Float",
+    "message": "@ &float&",
+    "specialmessage": "@ is reaching the sky (&Float&)",
+    "creator": "Cubical",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/3d4d48cd-976d-43ab-a587-6f2ea4438470/em_cubical_float_emote_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "9bebe11e-4642-97fd-fa33-173e509a6c69": {
+    "name": "Evil Laugh",
+    "message": "@ is having an evil laugh.",
+    "specialmessage": "@ is having a sinister laugh.",
+    "creator": "Senior Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/038b7001-1617-494f-8b87-e0bd05bb6464/evil_laugh_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "9d3ad184-4b02-491b-a834-6307eecad9e1": {
+    "name": "Funny Surprise",
+    "message": "@ is doing the &Funny Surprise& emote!",
+    "specialmessage": "@ just got suprised with something hysterical!",
+    "creator": "Block Perfect Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/098cf098-ff91-4537-a9fd-5084635d2cd1/em_bp_funny_surprise_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "edfa45b2-39b0-dd31-afd6-b148a4b5af4f": {
+    "name": "Flying Faceplant",
+    "message": "@ flapped, flew, and fell!",
+    "specialmessage": "Gravity: 1, @'s dreams: 0",
+    "creator": "XP GAMES",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/26cfe8a4-bdd0-4699-83e5-ef8591a1dd01/em_xp_flyingfaceplant_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "762c61d5-ee3b-3411-5e0e-ace3b1503eae": {
+    "name": "Dab Dance",
+    "message": "@ is performing a &Dab Dance&!",
+    "specialmessage": "@ is living the life! (&Dab Dance&)",
+    "creator": "Pixel Smile Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/7c66e1c8-7d94-40b3-a35b-4afb718465ee/em_pixelsmilestudio_dab_dance_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "bcd26813-6691-5fcf-0c4a-acb94aea672c": {
+    "name": "Dolphin Dance",
+    "message": "@ is doing the &Dolphin Dance&!",
+    "specialmessage": "&EeEeeeEeeEe tehehehehe EEP&",
+    "creator": "Galaxite",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/05096eef-9c53-4e5b-952f-19971fb55922/em_emote_dolphindance_blockception_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "6373d5e3-0fd0-6253-9c99-3a43965e558e": {
+    "name": "Back Flipping Emote",
+    "message": "@ is back flipping",
+    "specialmessage": "look at @ doing a back flip",
+    "creator": "Lostduckies",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/9b00449b-5f45-4aaa-8d29-03bdbf694437/em_backflipping_lostduckies_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "db470178-ca08-3da3-4210-1b8820d6ce19": {
+    "name": "Facepalm",
+    "message": "@ &Facepalmed&",
+    "specialmessage": "@ is so appaled they &Facepalmed&",
+    "creator": "Dots Aglow",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/48d1f648-ef30-4bf2-ba51-77dcb7c04e87/em_da_facepalm_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "a9ab08c1-e947-4ab0-8e54-934425e3b0f7": {
+    "name": "Pool Dance",
+    "message": " @ is infecting you with their legendary Pool Dance!",
+    "specialmessage": "@ has discovered the legendary Pool Dance Party Move!",
+    "creator": "Misfits",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/3f8c3a36-2053-47af-b1f7-968323cba129/em_msft_pooldance_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "24f8e355-d4d8-fa7d-4ded-22ffc7f76b3b": {
+    "name": "Rockstar",
+    "message": "@'s channeling their inner &rockstar&",
+    "specialmessage": "@ is playing the strings of imagination",
+    "creator": "Humblebright Studio",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/9a3da3e4-5ea8-4dc2-a70d-98f6a6d799b7/em_hublebrightstudio_rockstar_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "e7457362-30b3-fbd2-0c94-bd60379e4055": {
+    "name": "Infinite Flash Run",
+    "message": "@ is doing the &flash run&.",
+    "specialmessage": "@ is running faster then light!",
+    "creator": "Panascais",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/c549453e-20c0-4001-8102-a9657d10c170/em_panascais_flashrun_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "78a57a32-a610-362e-2424-9649aeb96784": {
+    "name": "Big Steps",
+    "message": "@ is doing Big Steps.",
+    "specialmessage": "@ is taking very big steps.",
+    "creator": "Fall Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/ccfbde50-4067-4f3e-a5ed-2c2aff490d3d/em_fallstudios_bigsteps_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "cafcec13-51ee-7fd5-4fa5-f96bad3b9e8a": {
+    "name": "Running on all fours",
+    "message": "@ is running on all fours!",
+    "specialmessage": "@ is running like a sheep... or a cow maybe?",
+    "creator": "Netherfly",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/0766cdce-ed40-47a5-a168-43912e400f3e/em_running_on_all_fours_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "c7ea8c03-3661-4db7-b8e2-2b3135c923ef": {
+    "name": "Moonwalk",
+    "message": "@ is doing the &Moonwalk&!",
+    "specialmessage": "@ has some real smooth moves! (&Moonwalk&)",
+    "creator": "FingerMaps",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/3c6b328f-d2de-492f-b486-28e2837c0746/em_fingermaps_mwk_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "d5cb4cf5-54e3-182b-2dec-677a9842069c": {
+    "name": "Stunned",
+    "message": "@ is &Stunned&!",
+    "specialmessage": "@ is frozen in place (&Stunned&)",
+    "creator": "Red Eagle Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/0f95cab1-7e83-4856-8d76-5907c06c4d1b/em_redeagle_stunned_emote_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "36cbb754-1ad4-a0f2-8bf7-210279fdc530": {
+    "name": "Banana Sliding",
+    "message": "@ is &Banana Sliding&",
+    "specialmessage": "@ slipped on a banana. (&Banana sliding&)",
+    "creator": "Glowfischdesigns",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/25e8d1f9-8319-4b7d-817f-fcaf56f8c543/em_glowfisch_banana_sliding_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "899a3044-3aee-2585-ccd0-55ab593e6b3b": {
+    "name": "Chicken",
+    "message": "@ is doing the Chicken.",
+    "specialmessage": "@ thinks they can fly!",
+    "creator": "Blockbytes",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/fa061f44-aef6-40ff-b900-617aa22c4c3d/em_bb_chicken_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "63cc281c-5c76-8155-ed3d-57423414c2a2": {
+    "name": "Rage",
+    "message": "@ is full of &Rage&!",
+    "specialmessage": "argh!!! (&Rage&)",
+    "creator": "Hielke Maps",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/89c7c27c-0973-4b19-81d4-0798a0181128/em_hielke_rage_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "4d7bdd68-b4fe-c642-6ee6-918bfec25e72": {
+    "name": "Crazy Spin",
+    "message": "@ is spinning  very funny!",
+    "specialmessage": "@ is spinnig like a wheel",
+    "creator": "Street Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/46241d23-84ff-4ee0-a1e5-7982be61b8f7/em_crazy_spin_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "6c5a6dc4-fbb7-4404-9e34-eb539309e624": {
+    "name": "Dance",
+    "message": "@ is doing the Mosaku dance!",
+    "specialmessage": "@ is showing off their Mosaku moves!",
+    "creator": "A30x1",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/2fa47854-5ebe-420a-98cb-91d7a07d61c4/em_dlvn_mosaku_dance_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "02797c65-f983-82ac-9b81-dc6d8964c285": {
+    "name": "Warm Up",
+    "message": "@ is doing some warm ups.",
+    "specialmessage": "@ is absolutely ready!",
+    "creator": "Rainbow Theory",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/24dce92d-0d63-4135-9e62-336255b1cf51/em_rainbowtheory_warmup_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "e4ed3146-4dcf-e521-05fa-d33eda3a1117": {
+    "name": "Sleeping Straight",
+    "message": "@ fall asleep standing up (&Sleeping Straight&)",
+    "specialmessage": "@ fall asleep standing up (&Sleeping Straight&)",
+    "creator": "Kubo Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/584d5629-2125-4ae9-9f40-cfa135f3858f/em_kubo_sleeping_straight_emote_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "adb2812e-ca13-cb49-5646-6233218e23ac": {
+    "name": "Clap",
+    "message": "@ is clapping ",
+    "specialmessage": " @ is clapping with happines ",
+    "creator": "Street Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/9e209bfc-1dae-458a-bf86-b5d6688f8666/em_happy_clap_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "3dfa6746-5e51-5ae0-1681-c15784e09a0f": {
+    "name": "Yawn",
+    "message": "@ is exhausted.",
+    "specialmessage": "@ is really tired.",
+    "creator": "Honeyfrost",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/3ed47351-6a60-4ee7-b852-96df39c0b383/em_hf_yawn_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "28ac3ee1-b1ec-427d-149b-90efcd5605e5": {
+    "name": "Cool Flip",
+    "message": "@ wants your attention! (&Cool Flip&)",
+    "specialmessage": "@ plays it cool! (&Cool Flip&)",
+    "creator": "Aurrora",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/7531f01b-6f51-45f4-8a60-2636ee0001eb/em_aurrora_cool_flip_emote_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "e75f8e38-b87f-43ca-adab-44362d679efd": {
+    "name": "Respecful Bow",
+    "message": "@ is doing a &Respectful Bow&!",
+    "specialmessage": "@ is showing you the ultimate form of respect!",
+    "creator": "Razzleberries",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/debee3d4-8c06-4aa8-9ff5-6445951d1bcf/em_razz_respectful_bow_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "7e034327-28ef-4e03-99f4-6c0b804e9a21": {
+    "name": "WORM DANCE",
+    "message": "@ is doing the worm dance!",
+    "specialmessage": "@ is now a dancing worm???",
+    "creator": "Blocky",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/46ac0c65-8d01-454f-b278-a6de4bfd935f/em_blocky_worm_dance_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "59016c53-9510-283f-03fd-f9e6ff7c95ac": {
+    "name": "Hero Landing",
+    "message": "@ is doing the &Hero Landing&!",
+    "specialmessage": "@ is here to save the day!",
+    "creator": "XP GAMES",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/5cc5eae3-f79a-40af-b123-1fea6002997f/emote_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "0f505e65-1592-a88d-4b79-9fa029959f81": {
+    "name": "Boioioing",
+    "message": "@ is doing the &Boioioing&!",
+    "specialmessage": "@ acts just like a rubber ball! (&Boioioing&)",
+    "creator": "BDcraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/0dbaa20b-7c0b-43ed-a98d-83ec777840c9/em_sphax_boioioing_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "38e6bcd2-f7d3-4556-afd6-49d2662cbfdc": {
+    "name": "Super Flip",
+    "message": "@ is doing a &Super Flip&!",
+    "specialmessage": "@ is ready for action! (&Super Flip&)",
+    "creator": "JFCrafters",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/9fb4b994-2101-4e9d-8e4c-620ae682935b/em_jfcrafters_super_flip_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "51ccb3f0-d424-648d-b0d8-7050fa89a35c": {
+    "name": "Eagle Flaps",
+    "message": "@ is flapping like an eagle!",
+    "specialmessage": "Show me your base!",
+    "creator": "Netherpixel",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/e04da394-a62a-4be1-ae56-9f72e10644d0/em_netherpixelstudios_eagle_flaps_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "884f2cdf-0191-d300-b651-cc148a21f7e6": {
+    "name": "Flying Chicken",
+    "message": "@ is a &Flying Chicken&!",
+    "specialmessage": "Cluck, cluck, fly up! @ taking the chicken flight tonight! (&Flying Chicken&)",
+    "creator": "CreatorLabs",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/7b3ad23a-26ff-43cd-9334-e689154fb7c2/em_creatorlabs_flying_chicken_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "9773ad8e-b478-7d5b-302a-4e6c5e4f28cc": {
+    "name": "Worried",
+    "message": "@ is &worried&...",
+    "specialmessage": "@ can't stop worrying! (&Worried&)",
+    "creator": "Team Workbench",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/30226047-4946-4738-a07a-afa1e960b785/em_wb_worried_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "9df25513-b8ea-4d55-8406-24582d64be47": {
+    "name": "Mime",
+    "message": "@ is performing a &Mime&!",
+    "specialmessage": "@ is trapped in a box! (&Mime&)",
+    "creator": "Loose Screw",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/1993231e-3405-4342-98a3-e60f6cf2230e/em_loosescrew_mim_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "6fef6029-fd35-d537-317e-0e687c2d8815": {
+    "name": "Spider Sitting",
+    "message": "@ is sitting like a Spider! (&Spider Sitting&)",
+    "specialmessage": "@ got bitten by a spider! (&Spider Sitting&)",
+    "creator": "Venift",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/143d5572-e6d1-416c-8670-a40617083ad7/em_spider_sitting_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "79afba04-6dd5-f734-0821-1f6d7cefc6a4": {
+    "name": "Bobble Head",
+    "message": "@ has a &Bobble Head&",
+    "specialmessage": "Bobble, wiggle, wobble. @ is a &Bobble Head&",
+    "creator": "Dots Aglow",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/fc8310d5-ca5c-4e22-b230-985603ceae71/em_da_bobble_head_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "ac87172f-b358-46bc-1983-f9762bb0f219": {
+    "name": "Breaking Dance",
+    "message": "@ is doing the &Breaking& Dance!",
+    "specialmessage": "@ is spinning up the competition!",
+    "creator": "Builders Horizon",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/46e5ebfe-3331-46d8-9896-5a036e924da0/em_bh_breaking_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "68395b7e-f35b-ab76-40af-364178bd56fe": {
+    "name": "Baby Dance",
+    "message": "@ is doing the &baby dance!&",
+    "specialmessage": "@ is just a baby!",
+    "creator": "Impulse",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/715d3911-52c5-483f-9c41-6c2d8405e18f/em_emote_babydance_blockception_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "24957284-2338-5d8f-adc7-85f9ac7fdecd": {
+    "name": "Go-Kart Wipeout!",
+    "message": "@ got into a &Go Kart Crash&!",
+    "specialmessage": "@ &Go Kart Crash&es and burns!",
+    "creator": "Spectral Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/a92df350-534c-4442-8b21-4b22750eba9e/em_spectral_gokartcrash_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "3de410d7-83c0-eb5f-8fe3-47d20e6c4bc7": {
+    "name": "Blow a Kiss",
+    "message": "@ like you! (&Blow a kiss&)",
+    "specialmessage": "@ <3 you! (&Blow a kiss&)",
+    "creator": "Lunar Client",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/06e300cd-9310-44b0-aa72-1758455edd5d/em_lunar_blow_a_kiss_emote_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "5b356266-f5cd-e35c-ac78-ad6832445263": {
+    "name": "Sonic Sideways Jumps!",
+    "message": "@ is doing &Sonic Sideways Jumps!&",
+    "specialmessage": "@ is breaking the sound barrier &Sonic Sideways Jumps!&",
+    "creator": "Spectral Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/583c1b4a-34cf-41c6-9749-51d54a25266b/em_spectral_sonicsidewaysjumps_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "b2b503c8-130a-5a32-64fd-e414fdd629a3": {
+    "name": "Pull You Closer",
+    "message": "@ is &Pulling you Closer&!",
+    "specialmessage": "@ is having you come over here!",
+    "creator": "Builders Horizon",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/26279a95-8f91-4720-a2c3-4279f01c3b66/em_bh_pull_you_closer_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "3d28bef1-013e-1596-c47e-5d17d3559ad5": {
+    "name": "Wall Jump",
+    "message": "@ is so strong",
+    "specialmessage": "@ is doing a wall jump",
+    "creator": "Block Factory",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/5b0d69b2-6fb0-44ee-b6f1-ae07b40b2028/em_wall_jump_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "2b6060f2-b794-e9ac-aa99-6efcc301d90d": {
+    "name": "Griddy",
+    "message": "@ do the &Griddy&!",
+    "specialmessage": "@ have a few moves to show you! (&Griddy&)",
+    "creator": "Minty",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/07a280d2-0197-428a-b513-7c1f0578466b/em_minty_griddy_emote_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "ce9dd50c-a31b-4901-985d-89ad13a3d821": {
+    "name": "Glitching Out",
+    "message": "@ is &Glitching Out&.",
+    "specialmessage": "@ is [][][]404#*ERROR****01001##!",
+    "creator": "Team Vaeron",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/44f2e5e2-5842-4ff8-946b-9941b6c51faf/em_vaeron_glitching_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "03e62acd-4eb7-44c2-a58a-b223a51e2536": {
+    "name": "SIUUU Dab Celebration",
+    "message": "@ is doing the SIUUU celebration!",
+    "specialmessage": "@ is celebrating their way to 1000 goals!",
+    "creator": "A30x1",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/c357bd81-0ca2-4d74-b542-79d02d1e30f9/em_dlvn_siuu_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "2f4beefe-d496-0461-363d-f5d7bb5ad752": {
+    "name": "Head Shake No",
+    "message": "@ is saying no.",
+    "specialmessage": "@ do not agree with you.",
+    "creator": "Honeyfrost",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/c04df580-3009-4154-abb7-ea1f5b3ef71b/em_hf_head_shake_no_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "30440624-72d6-cbdf-cdeb-b97e13a58b0d": {
+    "name": "Cute Dance",
+    "message": "@ is doing a cute dance",
+    "specialmessage": "@ is going viral doing the cute dance",
+    "creator": "Lostduckies",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/c4d4477d-d057-490f-904a-895b5982269e/em_cutedance_lostduckies_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "0c769be4-0dc4-14a3-edfc-b202ef81b96c": {
+    "name": "Flexing Emote",
+    "message": "@ is flexing their muscles.",
+    "specialmessage": "@ is strongest in the room.",
+    "creator": "Octovon",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/e6408802-be72-45ae-856e-7320a1233ba5/flexing_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "011b9b4e-7c8d-fab7-dd44-e1a37cab281b": {
+    "name": "Heroic Dance",
+    "message": "@ is dancing heroically",
+    "specialmessage": "@ is dancing heroically",
+    "creator": "Red Eagle Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/f68d4bbb-4d5d-4262-bd3b-61bc37c023ca/em_re_heroicdance_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "6592dc30-67bc-4ae3-e669-2f694d3d926e": {
+    "name": "Wizard Gnome",
+    "message": "@ is a &wizard gnome&!",
+    "specialmessage": "Stupid knights, you willl never catch me! (&wizard gnome&)",
+    "creator": "QwertyuiopThePie",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/82aacec4-14c0-4184-b1e2-7df120cde7e6/em_qwertyuiopthepie_wizard_gnome_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "29d48236-7347-4671-5b79-9b2768cc3407": {
+    "name": "L Dance",
+    "message": "@ is doing the &L Dance&!",
+    "specialmessage": "@ can move. Watch them do the &L Dance&!",
+    "creator": "Gamefam",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/bb312a7c-d7a7-4675-882c-65edc893bbac/em_gamefam_ldance_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "bb542180-a386-4337-9019-5cce800c61b9": {
+    "name": "Floss",
+    "message": "@ is doing the &Floss&",
+    "specialmessage": "Swish swish swish swish! (&Floss&)",
+    "creator": "JFCrafters",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/c94b7110-9e17-46d7-bd6e-32d8346aafb9/em_jfcrafters_floss_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "0aaa5689-0cff-f125-eb76-e71691dbbe93": {
+    "name": "Taking a rest",
+    "message": "@ is &Taking a rest&",
+    "specialmessage": "@ stretche out a little (&Taking a rest&)",
+    "creator": "Aurrora",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/1673d0b4-30e3-49cd-8301-1fcbb0e6d819/em_aurrora_taking_a_rest_emote_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "f0605016-81f6-d11e-10db-543d804e50f1": {
+    "name": "Cry More",
+    "message": "@ is feeling bad for you! Or are they?",
+    "specialmessage": "@ is encouraging you to hold the L!",
+    "creator": "100Media",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/0ffebf46-236c-4c84-8c08-23d534c29f36/em_100m_cry_more_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "7bf5b5fe-769d-36a6-1300-b9a03576e8f6": {
+    "name": "High Five",
+    "message": "@ is high-fiving you!",
+    "specialmessage": "@ is high-fiving everyone!",
+    "creator": "A30x1",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/44a90426-098e-41f2-bab6-cfcddb3e397b/em_dlvn_high_five_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "ee1d7446-2bd4-5b92-95cc-3185a5509de0": {
+    "name": "Backflip Pushup",
+    "message": "@ just did a backflip push up!",
+    "specialmessage": "@, now you're just showing off!",
+    "creator": "Maca Designs",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/15104f01-86d7-4954-87dd-dda758743e30/em_backflip_pushup_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "e267f2b5-f4db-4850-8ff0-4b3696d92336": {
+    "name": "Basketball",
+    "message": "@ is playing &Basketball&.",
+    "specialmessage": "@ hit them with that swish!",
+    "creator": "Team Vaeron",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/be2aa78b-34c1-419d-8877-b2e33edd16fc/em_vaeron_basketball_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "2bf2c182-9674-3d6a-b1ce-03d3f5e71656": {
+    "name": "Knee Hugs",
+    "message": "@ thinks their knees are the bee's knees! (&Knee Hugs&)",
+    "specialmessage": "@ is grateful for their knees, for how they help with jumping and skipping and running and even dancing! (&Knee Hugs&)",
+    "creator": "Scai Quest",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/bf322272-cc7b-49c7-9d5e-b620bfcf579d/em_sqst_kneehugs_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "dc1a44f9-d4e4-e8ee-2bfb-b39d18e05f97": {
+    "name": "Celebration Dance",
+    "message": "@ is doing the &Celebration Dance&",
+    "specialmessage": "@ is showing some great moves",
+    "creator": "Dalibu Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/433b33ac-09bd-40c0-bc5c-bc8ce0a704b6/em_dlb_celebration_dance_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "7c66e65b-2669-4b60-b399-1c45c046c29b": {
+    "name": "Ninja",
+    "message": "@ is a bonafide &Ninja&!",
+    "specialmessage": "@ is one with the shadows. (&Ninja&)",
+    "creator": "FingerMaps",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/b5a15c97-9e25-4e91-bf34-ed3413d8ce25/em_fingermaps_nja_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "e1b691b9-46a2-691c-58e4-ef24248a822e": {
+    "name": "Shaking",
+    "message": "@ is shaking like a leaf in a hurricane!",
+    "specialmessage": "Looks like @ is trying to invent a new dance move: The Shakequakenventory vanish!",
+    "creator": "Glorious Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/ac04a849-8a9c-4001-84d9-0717c00aa9b4/em_gs_shaking_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "76b4c433-fd61-e82e-85e4-39a8e6aff6e4": {
+    "name": "Trampoline",
+    "message": "@ is jumping on the &Trampoline&!",
+    "specialmessage": ": What trick is @ doing on the &Trampoline&?",
+    "creator": "Gamefam",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/8d155ecc-36f8-4761-8a29-ad6e2d8affcf/em_gamefam_trampoline_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "a0d01583-bce0-1ae3-eac5-1ee50075a22d": {
+    "name": "Epic Pirouette",
+    "message": "@ is twisting!",
+    "specialmessage": "@ is doing an epic pirouette, just look!",
+    "creator": "Senior Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/e6c97848-307a-4f24-a228-2ebdd761a76c/em_ec_epic_pirouette_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "0e708eb2-74db-3dc8-cb0a-fd320608c8ab": {
+    "name": "Around The Town",
+    "message": "@ is dancing around the town!",
+    "specialmessage": "&and around and around and around and around&",
+    "creator": "Impulse",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/fdb403c5-9da1-4e03-8fa9-adc218de36e8/em_emote_aroundthetown_blockception_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "1f826adc-9c76-3643-81e9-2dccf995bf1f": {
+    "name": "Helicopter",
+    "message": "@ is doing the Helicopter",
+    "specialmessage": "@ is about to lift off",
+    "creator": "Pixelbiester",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/55a64272-3ccf-4efb-aae9-e3fff74bf9ac/em_pb_helicpoter_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "2ca1ff13-06ff-60ba-fb21-ac5823374565": {
+    "name": "Snow Angels",
+    "message": "@ is doing &Snow Angels&!",
+    "specialmessage": "@ has fun in the snow! (&Snow Angels&)",
+    "creator": "BDcraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/2f6f9276-963e-4d23-93ff-b2c8df578c8d/em_sphax_snow_angels_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "05ec02a1-292c-bda3-f58f-1a488705b654": {
+    "name": "The Splits",
+    "message": "@ is doing the splits!",
+    "specialmessage": "@ is ready to compete in the Olympics!",
+    "creator": "100Media",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/340b0093-b926-4541-a0d5-b8cfe1c8cf89/em_100m_split_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "4ea6e882-e361-4d2f-9f22-9739f9ed7b6f": {
+    "name": "Disappointment",
+    "message": "@ is full of &Disappointment&!",
+    "specialmessage": "@ is feeling very Disappointed at whatever is in front of them.",
+    "creator": "Razzleberries",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/2718d4ff-a36f-4880-9c6f-5329a4c24d36/em_razz_dissapointment_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "0f97679f-cc88-85ec-855b-a3d4ae4adeff": {
+    "name": "Starwatching",
+    "message": "Look up! @ is enjoying the night sky.",
+    "specialmessage": "@ is lost in the beauty of the stars.",
+    "creator": "Endorah",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/d400f2c5-63d0-489c-b95a-aed14e59257f/em_endorah_starwatching_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "0802594c-1c56-4962-9726-140083131e7c": {
+    "name": "Slow Mo Moves",
+    "message": "@ is doing &Slow Mo Moves&.",
+    "specialmessage": "Is @ teleporting around? (&Slow Mo Moves&)",
+    "creator": "Yeggs",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/15d26276-a830-49f9-90f5-c51dab55264b/em_yeggs_smm_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "174c346c-f43e-418c-8acf-f282be1c6768": {
+    "name": "Dramatic Fall",
+    "message": "@ fainted with a &Dramatic Fall&!",
+    "specialmessage": "@ couldn't believe their eyes! (&Dramatic Fall&)",
+    "creator": "Loose Screw",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/4475cfa2-3225-4f70-b47c-eeb66c724119/em_loosescrew_dfl_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "c5eca8aa-72f0-3513-6519-391387fe1bff": {
+    "name": "Slip",
+    "message": "@ embraced the ground",
+    "specialmessage": "@ lost against gravity",
+    "creator": "Humblebright Studio",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/1c4c0a9d-a06c-4e17-a08b-b155c77eba43/em_hublebrightstudio_slip_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "29ad09cb-1923-4b65-8ec3-90dadd5603ae": {
+    "name": "Game Over",
+    "message": "Womp womp. @ got a &Game Over&!",
+    "specialmessage": "@: Press Any Key to Continue. (&Game Over&)",
+    "creator": "FingerMaps",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/98d36387-3392-4341-b2ec-0b1a53977fef/em_fingermaps_gov_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "1d94ab1e-2c43-29d5-5a16-fa4102f87448": {
+    "name": "Frustrated",
+    "message": "@ frustration meter just broke!",
+    "specialmessage": "@ is frustrated—someone remind them it’s just a game... maybe later.",
+    "creator": "Glorious Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/91be925f-32af-45d6-837b-d46749779cdc/em_gs_frustrated_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "efc38892-1496-d6d0-8298-9c04a6a75b98": {
+    "name": "Skill Issue",
+    "message": "@ is dealing with skill issues",
+    "specialmessage": "@ never thought in that way.",
+    "creator": "BLOCKLAB Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/7bfbc0e1-7106-4fdb-993e-61bc93a950b1/skill_issue_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "ec8b8ed4-97b5-209c-8ff2-31d522cfabb9": {
+    "name": "Snow Angel",
+    "message": "@ is doing a snow angel",
+    "specialmessage": "Never eat the yellow snow!",
+    "creator": "Netherfly",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/9ec4cc08-eb47-48c0-9a22-ad8d321ee2f8/em_snow_angel_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "764e0885-e4f8-4357-b95e-30fdac27a54d": {
+    "name": "Spider Crawl",
+    "message": "@ is crawling like a &Spider&.",
+    "specialmessage": "Don't get caught in @'s spider web! ",
+    "creator": "Spark Universe",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/341ae1f1-9df3-4db0-9eb7-2eeb13d87038/em_spark_spider_crawl_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "8f6a10e9-9ced-d93c-45e1-c59ba9a61c53": {
+    "name": "Gorilla",
+    "message": "@ is acting like a &Gorilla&",
+    "specialmessage": "@ is looking for some bananas",
+    "creator": "Diveblocks",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/98f50d7c-6154-4381-8cd6-78aef664bd88/em_diveblocks_gorilla_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "fa50eec1-0c65-7fc1-b7a2-1f10acd298f5": {
+    "name": "Karate Pose",
+    "message": "@ is making a &Karate Pose&!",
+    "specialmessage": "@ is preparing to fight with the &Karate Pose&",
+    "creator": "Street Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/8dc33fab-d42f-49f6-b58d-9828104c225a/em_karate_pose_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "0253c291-fdd2-e0c8-2800-24d37afc0c94": {
+    "name": "Griddy Dance",
+    "message": "No one can Griddy like @! ",
+    "specialmessage": "@ is groovin' with the Griddy dance! ",
+    "creator": "Aymeric Pierre",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/dea8749f-3c3f-4a87-bc63-7728e105a9f2/em_aypierre_griddy_emote_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "2f699a45-2985-4e3b-b671-c634520597b1": {
+    "name": "Glitched Floss Dance",
+    "message": "@ is doing the & Glitched Floss Dance&",
+    "specialmessage": "@ is having some issues while doing the floss dance",
+    "creator": "Diveblocks",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/de3890ab-96f3-4416-9198-03873f493eba/em_diveblocks_glitched_floss_dance_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "f7e7569c-0853-84e0-99fb-9bd017631cf5": {
+    "name": "Head Bop",
+    "message": "@ is doing the &head bop&!",
+    "specialmessage": "@ is &boppin&!",
+    "creator": "Galaxite",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/48b456d7-6e3d-4372-a301-370f7761f08d/em_emote_headbop_blockception_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "79f931e5-86f1-01bb-0394-43fc50ac205a": {
+    "name": "Moonwalk",
+    "message": "@ is doing the Moonwalk!",
+    "specialmessage": "@ is topping the charts with the Moonwalk dance!",
+    "creator": "100Media",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/8905fc59-9eab-4a81-9bf2-47fc9e18013f/em_100m_moon_walk_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "21f03278-4f4d-7e68-3a39-3250978ea330": {
+    "name": "Finger Spin Emote",
+    "message": "@ is breaking it down on the dancefloor.",
+    "specialmessage": "@ is coming at you with style.",
+    "creator": "Octovon",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/ab7e1a8e-d4e3-43e8-b7b2-acc579288d09/finger_spin_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "11aa43be-85e8-eca6-4702-0ce678c3e055": {
+    "name": "Dancing Hurricane",
+    "message": "@ is doing dancing hurricane",
+    "specialmessage": "@ just won the dance competition with their moves!",
+    "creator": "Misfits",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/7bae649e-35a1-4861-bd34-43143491136c/em_msft_dancinghurricane_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "b1bb260f-5202-47b6-a9c6-550bcaae7671": {
+    "name": "Anime Powerup",
+    "message": "@ is &Powering Up&.",
+    "specialmessage": "@ is about to use their ultimate attack!",
+    "creator": "Spark Universe",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/9c53d716-ca01-4c86-8df4-8df69f01679b/em_spark_anime_powerup_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "7880ca00-8e69-561b-11a0-5b78a4a4ed27": {
+    "name": "Enderman Teleport",
+    "message": "@ is &randomly teleporting&!",
+    "specialmessage": "where is @ going?",
+    "creator": "Panascais",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/61c3034b-55c1-48e4-83a7-148f613ff093/em_panascais_enderman_teleport_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "0af466c3-f266-3ffb-7b5f-3f2970561d95": {
+    "name": "Heroic Twist",
+    "message": "@ is doing the Heroic Twist!",
+    "specialmessage": "@ is doing the coolest flip ever!",
+    "creator": "BLOCKLAB Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/45cee307-d5fe-4aae-bbde-d0f90b6a10ee/em_heroic_twist_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "834471d5-dd5a-30e9-1540-15b8ff7e9d53": {
+    "name": "Plank Fall",
+    "message": "@ is performing a &Plank Fall&!",
+    "specialmessage": "@ is a piece of wood. (&Plank Fall&)",
+    "creator": "Pixel Smile Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/3514a7c1-877c-46ca-922f-5ba3ad90cc65/em_pixelsmilestudio_plank_fall_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "499cdbce-dd8b-e8c4-42d9-7bb1ff9386e0": {
+    "name": "LOL",
+    "message": "@ can't stop laughing at you! (&LOL&)",
+    "specialmessage": "@ think you're so funny! (&LOL&)",
+    "creator": "Aurrora",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/98b9ec54-b527-47c8-919c-4a3aec0e0fc8/em_aurrora_lol_emote_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "5f8935f5-791e-e061-c080-8e2cd8d5408b": {
+    "name": "Meditating Emote",
+    "message": "@ is mediating",
+    "specialmessage": "@ has reached self consciousness",
+    "creator": "Lostduckies",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/fb5e2094-85e5-4777-9d7d-ec8062af10b1/em_meditating_lostduckies_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "78a2a53c-2d3c-95dd-829e-73a62c09da58": {
+    "name": "Slick Back",
+    "message": "@ move across the dance floor!",
+    "specialmessage": "@ shows off their special move!",
+    "creator": "Blockbytes",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/76a826b7-4d83-4b82-ae1e-692b96318e3a/em_bb_slick_back_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "7e0c64eb-664d-098a-f744-c2d3751ed248": {
+    "name": "Do Not Move",
+    "message": "@ is frozen (&Do Not Move&)",
+    "specialmessage": "I'm not moving first! (&Do Not Move&)",
+    "creator": "QwertyuiopThePie",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/67b4fd78-1134-4acd-9839-02d6fbc3d6ef/em_qwertyuiopthepie_do_not_move_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "1fe49dc7-b1db-492f-025c-55a14cc9c8ea": {
+    "name": "Divine Emote",
+    "message": "@ is doing the Divine!",
+    "specialmessage": "@ became divine",
+    "creator": "Plank",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/d8003f08-aa25-4718-8b61-8b6a2d584b9d/em_ec_divine_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "e4ed92b0-311d-4401-92ca-148281153238": {
+    "name": "Cat Purr",
+    "message": "@ is acting like a cat!",
+    "specialmessage": "@ Meow",
+    "creator": "Float Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/3e0e050e-e4b1-47c3-a4ff-60c9afa2411f/em_floatstudios_cat_purr_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "8abc1c31-219c-baaa-891c-328310d5856c": {
+    "name": "Sit and Ponder",
+    "message": "@ is sitting down",
+    "specialmessage": "@ is enjoying the scenery",
+    "creator": "ChewMingo",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/f4ee281a-71db-4e71-b5a3-51ca427d8978/em_sit_ponder_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "ccc9314d-8323-7da0-9c2d-6c0a36dd3f83": {
+    "name": "Ragdoll",
+    "message": "@ fell like a &Ragdoll&!",
+    "specialmessage": "@ collapsed. (&Ragdoll&)",
+    "creator": "Team Workbench",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/e324ca1e-6221-4946-a1ed-87acc51e6c63/em_workbench_ragdoll_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "4257a8c1-ac92-4bca-a45a-3a4ffa49db3d": {
+    "name": "Wolf Howl",
+    "message": "@ is howling like a wolf!",
+    "specialmessage": "@ AWOOO!!!",
+    "creator": "Float Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/506da174-9b26-41c0-8aa0-0eff781d0add/em_floatstudios_wolf_howl_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "031d8be5-5194-987b-c9bd-98cad3c50f3d": {
+    "name": "Best Friends",
+    "message": "@ is making new friends!",
+    "specialmessage": "@ has so much friends!",
+    "creator": "Lothiredon",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/1cf68ed4-8fbb-40f8-8ee6-2303e8d3c4b5/em_lot_best_friends_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "f8a5f2ad-7fac-195f-e8fe-8c0fcb31d18a": {
+    "name": "Be a NINJA!",
+    "message": "@ is a ninja!",
+    "specialmessage": "Hi-yah! Eeee-yah! oHyah!",
+    "creator": "Maca Designs",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/af87e04c-83b4-42c9-91f5-487ee1af3a87/em_be_a_ninja_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "f221504c-42b3-f90f-e915-e5651ab86516": {
+    "name": "Power Float",
+    "message": "@ &rises& !",
+    "specialmessage": "@ is &ascending& to the skies!",
+    "creator": "Blockception",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/b9ad5780-7567-43a5-a164-9974ec96be49/em_emote_powerfloat_blockception_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "6cf819db-459a-53b9-207d-0749f2e8a031": {
+    "name": "Possessed",
+    "message": "What is happening to @ !",
+    "specialmessage": "@ is being possesed by an evil spirit!",
+    "creator": "Netherpixel",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/4d47ef3e-90e3-4af2-9222-860a3bc5de95/em_netherpixelstudios_possesed_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "91a03cac-67d5-5678-34f0-b711e83a5fa0": {
+    "name": "Falling",
+    "message": "@ is dropping like a plank! ",
+    "specialmessage": "That’s gotta hurt! @ just fell like a plank!",
+    "creator": "Aymeric Pierre",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/5c588e03-6891-4fc9-ac49-5f1b8da1f941/em_aypierre_falling_emote_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "fffa1f10-0d29-dc5b-62cc-304f8cd99190": {
+    "name": "Shy",
+    "message": "@ is being &Shy&.",
+    "specialmessage": "@ is showing their &Bashful& side.",
+    "creator": "King Cube",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/52e9fee9-7f30-4018-9ffe-a5b617755ba5/em_kicu_shy_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "6b7dd490-b6b4-4e22-2a3a-ab1d3a86d4bf": {
+    "name": "Cheer Up Dance",
+    "message": "@ is dancing like a cheerleading",
+    "specialmessage": "@ makes crazy cheerleader moves",
+    "creator": "Panascais",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/188475a3-ce4d-4e9f-96ee-3d864e27ee16/em_panascais_cheer_up_dance_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "5dffd686-152b-1d49-3ad3-b99895520b6d": {
+    "name": "You Can't See Me",
+    "message": "@ is basically invisible!",
+    "specialmessage": "@ is gone off the radar!",
+    "creator": "CodeStudios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/89cc086b-03d8-439e-94ca-55cdc1dabba5/em_cdst_cant_see_me_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "33701abc-ae5c-34bc-4a3f-09fb9eb7f74a": {
+    "name": "Push Up",
+    "message": "@ do a few push-ups (&Push-ups&)",
+    "specialmessage": "@ want to look their best at the gym (&Push-ups&)",
+    "creator": "Lunar Client",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/7c0d22f8-8425-4831-9808-ed7ec57e0d34/em_lunar_push_ups_emote_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "0888899c-68ff-6688-d930-43c81c9229cc": {
+    "name": "Butterfly",
+    "message": "@ is a &Butterfly&",
+    "specialmessage": "Does anybody know @ became a &Butterfly& ?",
+    "creator": "MrAniman2",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/b0d44f01-bfd9-4cd4-a737-8802531c753c/em_mra_butterfly2_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "c591041f-3764-c532-28e6-23ed6544ad52": {
+    "name": "Still Waiting",
+    "message": "@ is &Still Waiting&!",
+    "specialmessage": "Seasons have passed, kingdoms have crumbled and time has etched vallies upon the landscape. And yet, @ is &Still Waiting&.",
+    "creator": "Scai Quest",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/00dbb856-d4a0-419f-b334-ebf09d6175c8/em_sqst_stillwaiting_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "2f479ded-9257-d685-02df-a0f09a3d95c8": {
+    "name": "Moonwalk",
+    "message": "@ is &moonwalking&!",
+    "specialmessage": "@ is not affected by gravity!",
+    "creator": "StarkTMA",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/a7b9579d-286c-4194-9581-2f855bbc2728/em_starktma_moonwalk_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "6259d4dc-7085-461f-b8f7-2f187d2c8dad": {
+    "name": "Soccer",
+    "message": "@ is playing &Soccer&.",
+    "specialmessage": "@ is going for the goal! ",
+    "creator": "Team Vaeron",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/691085f1-7498-4d93-97de-1ce955a83475/em_vaeron_soccer_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "f2137452-0475-8f62-e617-04927509f3e8": {
+    "name": "Jump Split",
+    "message": "@ is doing a &Jump Split&",
+    "specialmessage": "@ is making an epic! (&Jump Split&)",
+    "creator": "Syclone Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/cae3a329-df2b-4215-900c-4679d67b2350/em_syclone_studios_jump_split_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "0e07d3e9-d4c0-9e1c-ebcd-c6152e8da37b": {
+    "name": "Driving In Circles",
+    "message": "@ is &Driving In Circles&!",
+    "specialmessage": "@ is feeling dizzy from &Driving In Circles&!",
+    "creator": "Venift",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/29e503b2-3776-4239-b2d7-dd460e91253d/em_driving_in_circles_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "39c6de49-4730-4be4-62de-c7f0aed75bfe": {
+    "name": "Wednesdance",
+    "message": "@ is doing wednesday dance!",
+    "specialmessage": "I'm going to dance, dance, dance!",
+    "creator": "Heropixel Games",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/72afc58c-6b9e-44dc-8419-29b3faacb515/em_hp_wednesday_dance_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "21c21052-509a-1656-8e5e-8b7f46b2636f": {
+    "name": "Super Shuffle",
+    "message": "@ is doing a Super Shuffle!",
+    "specialmessage": "Is it a plane? Is it a bird? No! It's @ doing a Super Shuffle!",
+    "creator": "5 Frame Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/16ea0f28-4560-42bb-8cf6-d00100d6abc4/em_fiveframe_supershuffle_thumbnail_0.png",
+    "price": 50,
+    "rarity": "common"
+  },
+  "5738659f-8432-a9e6-ae34-3808e3fde703": {
+    "name": "Swimming",
+    "message": "@ is a great swimmer!",
+    "specialmessage": "@ is swimming.",
+    "creator": "Mod Block",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/43a25b0f-c2a1-4fed-9fb6-1409dd6bc072/em_mb_swimming_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "d30eb5aa-02a8-8607-3dc2-bac33cc22ae5": {
+    "name": "Inflatable Tube Man",
+    "message": "The wind is blowing @ like an &Inflatable Tube Man&.",
+    "specialmessage": "*Whooooosh* goes @! (&Inflatable Tube Man&)",
+    "creator": "Loose Screw",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/9582a8de-10d2-468a-85ed-cec89d7b24b8/em_loosescrew_itm_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "ce476681-1996-8c25-4037-705ce176f272": {
+    "name": "Walls",
+    "message": "@ is running against a wall",
+    "specialmessage": "@ is stuck between two walls",
+    "creator": "AriaCreations",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/b3b978af-c187-48be-9bbd-4636df3b0566/em_aria_walls_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "11575ac1-33ef-b159-91b9-4013585fe5ed": {
+    "name": "Squid Tentacle Dance",
+    "message": "@ is doing squidward dance!",
+    "specialmessage": "My hands are like a snake!",
+    "creator": "Heropixel Games",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/a4cca44c-e1c1-401d-b9c1-a179476c4191/em_hp_squidward_dance_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "de12940d-d437-8d7c-2097-814b4625319c": {
+    "name": "Dance Mashup",
+    "message": "@ is doing a &Dance Mashup&!",
+    "specialmessage": "@ has unlimited dance moves! (&Dance Mashup&)",
+    "creator": "Team Workbench",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/e79a1b96-9f30-46f5-8595-e5e2bfe3c746/em_dance_mashup_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "ae41d0af-daa7-74f9-f445-033198b1a166": {
+    "name": "Driving Lessons",
+    "message": "@ is driving a car",
+    "specialmessage": "@ is having some driving lessons",
+    "creator": "Dalibu Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/9c36cba4-a800-43e4-9d52-e2e964e0e366/em_dlb_driving_lessons_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "70b5d2b6-f70a-93a7-f8a3-323f38927abd": {
+    "name": "I'm Sleeping",
+    "message": "@ is getting a little tired.",
+    "specialmessage": "@: zzz zzz zzz",
+    "creator": "Square Dreams",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/11e48caf-d515-490f-a20a-4bbc58442896/em_is_sleeping_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "378d8cd2-1198-df2f-a7c8-5f095903ccf8": {
+    "name": "RKO OUT OF NOWHERE!",
+    "message": "@ is doing an RKO out of nowhere!",
+    "specialmessage": "WHAT? RKO OUT OF NOWHERE! ",
+    "creator": "Maca Designs",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/02f0993e-3d36-4cdd-bad3-4567b5b11807/em_rko_out_of_nowhere_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "005bff79-abe3-03bf-f09b-4bb2cbc9edff": {
+    "name": "Point and Laugh",
+    "message": "@ is &Pointing and Laughing&.",
+    "specialmessage": "@ is pointing out something super funny!",
+    "creator": "King Cube",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/d809083e-6443-4049-b0b8-13b189d3c830/em_kicu_point_and_laugh_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "e6c0592a-3aee-c231-b528-694f635de73b": {
+    "name": "Yeah!",
+    "message": "@ agree! (&Yeah!&)",
+    "specialmessage": "@ agree! (&Yeah!&)",
+    "creator": "OG Games",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/06ca24d0-2d3f-4c13-b6f5-306031e9f69e/em_oggames_yeah_emote_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "292a0af4-151e-1d1d-1fb1-c5959f6e1d4d": {
+    "name": "Future Meme",
+    "message": "Fuutuurre... Fuutuurre... Fuutuurre...",
+    "specialmessage": "*french accent* two thousand years later",
+    "creator": "Oaken",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/a37ce97d-fe33-4a02-9c8d-109f2ecf91da/em_future_meme_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "0e2d45c0-2e2f-1818-f311-c8dbda30c081": {
+    "name": "Anime Run",
+    "message": "@ is running like in anime! (&Anime Run&)",
+    "specialmessage": "@ is running fast! (&Anime Run&)",
+    "creator": "Meraki",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/07e65e7e-f9ca-4972-b900-e7508f8ce55a/em_meraki_anime_run_emote_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "c8f30132-b1bf-c7ef-c8eb-41563a0a7376": {
+    "name": "Float",
+    "message": "@ has started to &Float&!",
+    "specialmessage": "@ is light as a feather and started to &Float& - maybe not!",
+    "creator": "Wonder",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/fcbc50b7-07e5-46c8-9880-a86b58ef5ecc/em_wonder_float_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "363a361d-dea9-c8bb-d422-16cc64e6d72e": {
+    "name": "Head Push Ups",
+    "message": "@ is doing head push ups.",
+    "specialmessage": "@ is doing push ups while handstanding.",
+    "creator": "Fall Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/bd94d82f-5ce4-4790-9ba1-04a49b9f1978/em_fallstudios_headpushups_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "9b2d7221-f48d-a329-6646-9ae4679744af": {
+    "name": "Ultimate dab",
+    "message": "@ dabbed on you!",
+    "specialmessage": "@ is the ultimate &dabber&!",
+    "creator": "Blockception",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/46bf0af8-7f40-486b-9644-a02c70645ed1/em_emote_ultimatedab_blockception_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "0bbebc2b-03c3-e5a0-ddb2-5dc02b0e52c7": {
+    "name": "Possessed",
+    "message": "@ has become &Possessed&!",
+    "specialmessage": "@ has been taken over and is &Possessed&!",
+    "creator": "Wonder",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/40bad344-2cfe-4822-8988-bca84f54b799/em_wonder_possessed_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "f987cf41-070c-1c9a-b8c0-dc7c39d213ac": {
+    "name": "Griddy",
+    "message": "@ is hitting the griddy!",
+    "specialmessage": "@ is hitting the griddy!",
+    "creator": "CodeStudios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/6a16f4d0-334d-4e98-a596-82ff07de1008/em_cdst_griddy_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "be055882-cfac-5f73-b95e-1ca3736d4b86": {
+    "name": "Give Love",
+    "message": "@ is doing the &Give Love&!",
+    "specialmessage": "@ is showing Kindness with the &Give Love&!",
+    "creator": "Block Perfect Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/85a17308-6aaa-489d-bb11-54582eea1f79/em_bps_give_love_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "601ea605-11d4-2b12-ae0f-ea1a00965633": {
+    "name": "Derpy Eagle",
+    "message": "@ is a &derpy eagle&.",
+    "specialmessage": "@ think they can fly. *They can't* (&Derpy Eagle&)&",
+    "creator": "BDcraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/36307b64-c0f0-441c-9a4a-47341c75835c/em_sphax_derpy_eagle_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "178ef2b2-02dd-4a4b-b65e-7f173aa1e816": {
+    "name": "Bouncy Ball",
+    "message": "@ is bouncing like a ball.",
+    "specialmessage": "Armadillos would be proud of @.",
+    "creator": "Oaken",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/07c58b33-c43c-4971-8271-815698e43ce2/em_bouncy_ball_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "e1fff74e-3c39-a3bb-7983-082b5efc262d": {
+    "name": "Sneak up",
+    "message": "@ is sneaking around.",
+    "specialmessage": "@ moves silently.",
+    "creator": "HorizonBlocks",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/438c4923-5437-49c3-8605-fdcae195baa5/em_horizonblocks_sneakup_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "0dc3fbcb-cf64-713d-e18c-078a379c7d76": {
+    "name": "Chicken Peck",
+    "message": "@ is doing the &Chicken Peck&",
+    "specialmessage": "@ &Pecks like a Chicken&",
+    "creator": "Dots Aglow",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/89edae5d-31a8-46fd-9fe3-bf3b8b8b6b83/em_da_chicken_peck_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "bf19aa3e-3603-201d-4f68-d102c9f6914a": {
+    "name": "Fainting",
+    "message": "@ just couldn't handle it and fainted! ",
+    "specialmessage": "Down goes @! They just fainted!",
+    "creator": "Endorah",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/588b4358-85ff-4be1-a994-109f4d7d2a48/em_endorah_fainting_emote_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "8123d35d-6634-2317-a7f3-7e706e8a67ac": {
+    "name": "Rolling on the Ground",
+    "message": "@ is &Rolling on the Ground&!",
+    "specialmessage": "@ can't stop rollin'! (&Rolling on the Ground&)",
+    "creator": "Venift",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/beaeea9b-2166-452d-b9d4-57b7d9e3cae8/em_rolling_on_the_ground_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "6e80578a-013b-45e8-df15-da2e2d6eaa91": {
+    "name": "Snail Dance",
+    "message": "@ does a &Snail Dance&",
+    "specialmessage": "Wiggle, wiggle, wiggle... @ does the &Snail Dance&!",
+    "creator": "SandBlock Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/42d94652-3bcb-4c67-b627-55997316ea42/em_sbs_snail_dance_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "5ce324a4-1887-8f07-9d0b-5c0a3e860151": {
+    "name": "Balance on the line",
+    "message": "@ is balancing on a line.",
+    "specialmessage": "@ is trying to beat gravity.",
+    "creator": "Rainbow Theory",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/4cf7c53d-e7e5-408e-9955-acf21ff79fb6/em_rainbowtheory_balanceline_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "d077bbeb-4097-a8a5-924d-1414a401feaa": {
+    "name": "Charging Attack",
+    "message": "@ is &Charging Attack&!",
+    "specialmessage": "Watch out! @ is charging an epic attack!",
+    "creator": "SandBlock Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/5cc413e1-ec89-499c-a9fd-105ade8cc7fb/em_sbs_charging_attack_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "757b69ad-926a-c504-cf2d-b1069b5c100a": {
+    "name": "Kata",
+    "message": "@ is showing off moves!",
+    "specialmessage": "@ is training to become the best!",
+    "creator": "Senior Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/8d5a1c71-05b0-4b7b-9295-8880b546fd7b/em_ec_kata_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "880e4a06-f26e-638f-24de-7f34e1b1e5dd": {
+    "name": "Kangaroo Dance",
+    "message": "@ is doing kangaroo breakdance!",
+    "specialmessage": "I'll go viral with it!",
+    "creator": "Heropixel Games",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/6a5c32c6-1de7-45e5-9f99-109280efb133/em_kangaroo_breakdance_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "f7cf84dd-2154-ce9d-a8c5-b60d7d233897": {
+    "name": "Trampoline Jumping",
+    "message": "@ is a &Trampoline Jumping& master!",
+    "specialmessage": "Boing, boing, boing... @ can't stop jumping!",
+    "creator": "SandBlock Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/85da567b-d320-4c9b-8535-5d9a132739a7/em_sbs_trampoline_jumping_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "b7d24d31-8670-4c05-af0b-3b964be1e6d2": {
+    "name": "Wiggle Walk",
+    "message": "@ is doing the &Wiggle Walk&.",
+    "specialmessage": "@ is walking like a jelly! (&Wiggle Walk&)",
+    "creator": "Yeggs",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/4852b833-889d-4233-8e29-560fd3f0b71a/em_yeggs_wwk_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "bacc2232-b70a-3e6e-73c6-71a219a837fc": {
+    "name": "Groovin'",
+    "message": "@ is movin' and groovin'!!",
+    "specialmessage": "@ is taking over the dancefloor!",
+    "creator": "Lothiredon",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/bdaaad24-4cac-40a8-912d-670cf9cfe1b9/em_lot_groovin_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "507f758c-b438-b47f-ad06-78e8076af62c": {
+    "name": "INSANE DANCE",
+    "message": "@ is doing the insane dance!",
+    "specialmessage": "Wow! @'s dance is crazy!",
+    "creator": "Blocky",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/3491b16e-5e5e-4b66-8c7b-4bdee5a45f35/em_blocky_insane_dance_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "93fe2046-19cb-b74c-865d-aa4937a6ac4e": {
+    "name": "Weightless",
+    "message": "@ is feeling &weightless& today",
+    "specialmessage": "@ is taking a break from gravity",
+    "creator": "Humblebright Studio",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/403c976a-59e8-4eae-b3f3-d0340ec6d650/em_humblebrightstudio_weightless_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "bfb8a6af-b9b0-b113-2e20-e43c41fd2bab": {
+    "name": "Shrug",
+    "message": "@ is doing the &Shrug&",
+    "specialmessage": "@ has no idea",
+    "creator": "StarkTMA",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/9f69a3be-8ac0-4695-bdc9-e7d58d32d31a/em_starktma_shrug_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "946e8237-6d30-a306-19dd-6b79e2f6938a": {
+    "name": "LET ME COOK!",
+    "message": "@ is cooking up something crazy!",
+    "specialmessage": "Bro, let me cook! This is going to be crazy.",
+    "creator": "ASCENT",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/fe3c9167-7225-4e5f-a325-a177e782c98c/em_let_me_cook_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "b8d928c4-8a9a-1fb8-ff6b-7c33db9ae22a": {
+    "name": "Teleport Sneak",
+    "message": "@ is doing a &Teleport Sneak&",
+    "specialmessage": "@ is blinking all over! (&Teleport Sneak&)",
+    "creator": "4KS Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/2b54295c-4a3c-4527-a58a-d7970cab1588/em_4ks_teleportsneak_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "02f4d0c0-deb4-1eb4-00f9-fbdbc380a112": {
+    "name": "T Pose",
+    "message": "@ do the &T Pose&",
+    "specialmessage": "@ mimic the letter T (&T Pose&)",
+    "creator": "Minty",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/330194bd-8a39-4ccd-ac59-3a43bfccf171/em_minty_t_pose_emote_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "eda0b91e-2b63-a533-2e16-612e9e2e57d3": {
+    "name": "Heihei Strut",
+    "message": "@ is walking like Hei Hei!",
+    "specialmessage": "Is that Hei Hei? No, it is @ !",
+    "creator": "Starfish Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/9d50dcd1-d702-430f-a812-92203a84dcc6/em_heihei_strut_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "709d88c2-dde7-4831-97fc-9b4cb14fdeb3": {
+    "name": "You're Welcome",
+    "message": "@ is saying you're welcome!",
+    "specialmessage": "@ is acting like a demi god!",
+    "creator": "Starfish Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/561f2537-cc7a-49c1-a708-ba249840160e/em_youre_welcome_thumbnail_0.png",
+    "price": 830,
+    "rarity": "epic"
+  },
+  "295c948c-d651-45fb-84d5-8500a15b23c6": {
+    "name": "Ocean Dance",
+    "message": "@ is dancing with the Ocean!",
+    "specialmessage": "@ is calling the spirits of the Ocean!",
+    "creator": "Starfish Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/09f5ba9f-b271-4361-9a01-edb4298a9f37/em_ocean_dance_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "58c03144-dbf1-cee4-84bf-97a0fb753f1c": {
+    "name": "Optimus Prime Kick",
+    "message": "Watch out, @'s got the &Optimus Kick&!",
+    "specialmessage": "@ just kicked like Optimus Prime! (&Optimus Kick&) ",
+    "creator": "Syclone Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/b661ae74-898b-4d43-86f7-f8ab1c21c82e/em_optimus_kick_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "a4747be9-48d4-e203-d2cf-22bef1e47e10": {
+    "name": "Autobot Conversion",
+    "message": "Autobots, roll out! &Roll Out&",
+    "specialmessage": "@ is rolling out with the Autobots! (&Roll Out&)",
+    "creator": "Syclone Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/3aa13913-5078-4ffa-bc98-20aac8232b40/em_syclone_studios_roll_out_thumbnail_0.png",
+    "price": 830,
+    "rarity": "epic"
+  },
+  "3345ac0d-a0b1-3561-f121-cb0310290bf9": {
+    "name": "Bumblebee Combo",
+    "message": "@ is using the &Optimus Combo&",
+    "specialmessage": "@ is fighting like Optimus Prime! (&Optimus Combo&)",
+    "creator": "Syclone Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/9ee4662d-13fa-4df4-8563-2b7d649c4662/em_syclone_studios_optimus_combo_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "773e55a0-0897-06e2-c80d-392fb0def159": {
+    "name": "Jazz Combo",
+    "message": "Whoa, @'s grooving the &Jazz Combo&",
+    "specialmessage": "Look out! @'s got Jazz's moves! (&Jazz Combo&)",
+    "creator": "Syclone Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/f9bf4003-4f18-43fa-9b47-a0f30909a585/em_syclone_studios_jazz_combo_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "a27cbb8e-06da-dafb-8fde-35ea15d048a5": {
+    "name": "Surfin' Bird Dance",
+    "message": "Bird is the word!",
+    "specialmessage": "@ is doing the surfin' bird dance",
+    "creator": "Panascais",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/ba42ff84-c8ed-403f-ae9a-43701198f6cb/em_surfin_bird_dance_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "ba328f8d-7b22-b04e-bdac-6660d3dacc81": {
+    "name": "Spider Flip",
+    "message": "@ is doing The &Spider Flip&!",
+    "specialmessage": "&Spider Flip&: The itsy bitsy @ flipped off the water spout!",
+    "creator": "Spark Universe",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/ebbdfee1-cb38-4085-bd66-9b319d344435/em_sparkuniverse_spider_flip_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "b36a4344-79ad-d515-eec0-9aafd3b8a110": {
+    "name": "Gangnam Style",
+    "message": "@ is doing the &Gangnam Style&!",
+    "specialmessage": "@ is doing a &secret dance&!",
+    "creator": "Panascais",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/c6e7569b-9f14-4322-968d-665e06aef684/em_gangnam_style_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "c5a766dc-0e10-4268-8a9d-cad28af2fcb2": {
+    "name": "Become the Enderdragon",
+    "message": "@ is turning into an Enderdragon!",
+    "specialmessage": "Why is @ making Enderdragon noises?",
+    "creator": "Maca Designs",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/09b4df0d-7208-447e-bc11-f55827e2f541/em_becoming_the_enderdragon_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "7fed3efa-797a-7939-5da9-df5a0ff62e5d": {
+    "name": "Flying Helicopter",
+    "message": "@ Is flying like a helicopter!",
+    "specialmessage": "@ Is flying like a helicopter!",
+    "creator": "Dodo Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/9f752658-28dc-4662-8543-604ba4e3646c/em_flying_helicopter_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "4653dd8b-deea-cee6-d90a-e904886cbeea": {
+    "name": "Dab Backflip",
+    "message": "@ is doing a &Dab Backflip&",
+    "specialmessage": "@ just flipped in style! (&Dab Backflip&)",
+    "creator": "Pixel Smile Studios",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/0b63dac5-7e14-46d6-8908-bde2ac356a9e/em_pixelsmilestudios_dab_backflip_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "13f9f4d7-b592-4674-16fa-5809eb1cdc58": {
+    "name": "No Gravity",
+    "message": "@ has no gravity!",
+    "specialmessage": "@ has turned off &Gravity!",
+    "creator": "Dodo Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/df9bb44f-3baa-4e24-8bdd-ddb381501bcc/em_no_gravity_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "5ad431f8-035a-8c6e-17c5-005d8caebb6b": {
+    "name": "Fish Flop",
+    "message": "@ is flopping like a fish! (&Fish Flop&)",
+    "specialmessage": "@ used Splash! (&Fish Flop&)",
+    "creator": "Team Workbench",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/0f0e421d-053b-4964-aadc-fdc79daa0eca/em_fish_flop_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "bc1ffa2e-687c-45ad-b9e6-cf303c770537": {
+    "name": "Flying",
+    "message": "@ is &Flying&!",
+    "specialmessage": "&Flying&: @ is swooping in to the rescue!",
+    "creator": "Spark Universe",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/6e76ad58-6a89-496f-87d9-5d1adf97fb61/flying_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "0309ad4f-e467-819c-65cf-e30005da6530": {
+    "name": "Bird Flying",
+    "message": "@ is flying like a bird! (&Bird Flying&)",
+    "specialmessage": "@ is gliding smooothly! (&Bird Flying&)",
+    "creator": "Venift",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/ba64eb52-5c24-4f89-b96c-8d8c29ae05e6/em_bird_flying_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "564bbf65-fe87-1a69-ddd7-3b797740a0f7": {
+    "name": "Sit",
+    "message": "@ is Sitting",
+    "specialmessage": "@ is Sitting",
+    "creator": "Red Eagle Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/c3598743-b42c-4536-bda6-a846de15708d/em_re_sitting_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "c4b85459-d763-46ba-ba3d-cc01a3c23a4e": {
+    "name": "Just Griddy",
+    "message": "@ is &Just Griddy&!",
+    "specialmessage": "@ is Getting Griddy!",
+    "creator": "Block Perfect Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/9a33739d-0365-4f8b-890b-48be032141ac/em_bps_just_griddy_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "745dab6a-8fda-6c23-ea19-1413ca64a9f1": {
+    "name": "Backflip Spin",
+    "message": "@ is doing a &Backflip Spin&!",
+    "specialmessage": "@ just flipped and spun their way into an epic move – don’t miss it! (&Backflip Spin&)",
+    "creator": "CreatorLabs",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/bc4f3cb5-fc29-487a-988d-b6d65d589a0d/em_creatorlabs_backflip_spin_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "9fcd6470-8778-423b-0df1-4bb03b74c2ad": {
+    "name": "Playing Possum 2",
+    "message": "@ is &Playing Possum 2&",
+    "specialmessage": "@ is not &Playing Possum 2&!",
+    "creator": "MrAniman2",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/0187a279-49b7-49fc-8daa-720ea4af8ff1/em_mra_playingpossum2_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "deecc52d-87b2-04fd-b7a3-b1c894e0a7e5": {
+    "name": "The Worm",
+    "message": "@p is doing the worm",
+    "specialmessage": "@p is wigglin'!",
+    "creator": "Lifeboat",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/155e3a92-4b57-42ff-b218-61fd1655a87b/em_emote_worm_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "ffa4b088-ee71-5475-a326-412ef2fab328": {
+    "name": "Scary Walk",
+    "message": "@ is doing a &Scary Walk&",
+    "specialmessage": "@ is haunted! (&Scary Walk&)",
+    "creator": "4KS Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/da5a08ec-defe-42ca-91f6-f0c5ddbd4c05/em_4ks_scarywalk_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "df659a5c-3fab-43ea-bda5-2805dd47a796": {
+    "name": "Cool Backflip",
+    "message": "@ is doing a &Cool Backflip&",
+    "specialmessage": "@ just busted their superhero cover! (&Cool Backflip&)",
+    "creator": "Hielke Maps",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/f83b1c03-f1b9-4c1e-a742-147d62f56174/em_hielke_cool_backflip_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "93825bad-f36a-d788-91c1-f18abd155a7e": {
+    "name": "Honored One",
+    "message": "@ is the honored one!",
+    "specialmessage": "Throughout The Overworld, The Nether and The End, I alone am The Honored One.",
+    "creator": "Netherpixel",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/689eb4a9-15bf-4189-b413-a40785656bdc/em_netherpixelstudios_honored_one_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "2fd67ef3-ed18-6d05-ee94-90acc19ba0ac": {
+    "name": "Enderman TP",
+    "message": "@ is so cool",
+    "specialmessage": "@ is an enderman",
+    "creator": "Block Factory",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/eeb08b07-96d6-43c1-8ad7-6b4686039844/em_tp_enderman_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "e17c1e65-1cd0-1e9c-4e96-55587facea56": {
+    "name": "Anime Flying",
+    "message": "@ is ready to fly ",
+    "specialmessage": "@ is capable of flying ",
+    "creator": "Diveblocks",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/1256bc45-1318-46a9-a936-b8c08b3b8754/em_diveblocks_animeflying_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "c19fa1e1-c4d1-8547-71e8-629fa9d2a918": {
+    "name": "Moonwalk",
+    "message": "@ is doing the &Moonwalk&!",
+    "specialmessage": "@ is a smooth criminal! (&Moonwalk&)",
+    "creator": "Venift",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/07fcb553-c218-4f7c-b4da-9a220220d56c/em_wb_moonwalk_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "6acaf652-5986-8f67-1598-b07d986a9ad2": {
+    "name": "Fall Asleep",
+    "message": "@ is Sleepy, ready to &Fall Asleep&!",
+    "specialmessage": "@ is all Tuckered out! &Falling Asleep&",
+    "creator": "King Cube",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/90066fb1-9e8f-4ee4-a086-2fae59bc9ff1/em_kc_fall_asleep_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "e351162f-dad2-6aad-a5cf-65b771557a88": {
+    "name": "Helicopter Spin",
+    "message": "@ is doing the &Helicopter Spin&!",
+    "specialmessage": "@ is flying away using &Helicopter Spin&!",
+    "creator": "Skilendarz",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/85aa8938-9bd3-4d6a-a28b-6aacf3b22c25/helicopter_spin_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "bc6e056c-7f29-881e-13e3-75ef40f7c45a": {
+    "name": "Zero Gravity",
+    "message": "@ has entered &Zero Gravity&",
+    "specialmessage": "@ is floating into space! (&Zero Gravity&)",
+    "creator": "4KS Studios",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/df3540cb-5ff7-4a39-b7f6-d912f820d244/zero_gravity_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "b5cbb1f3-6b88-ad8a-c442-de9f75547314": {
+    "name": "DAB",
+    "message": "@ is dabbing",
+    "specialmessage": "@: Check this out! &(Dab)&",
+    "creator": "GoE-Craft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/c0596685-1656-4e05-b127-7a47232ce1ce/em_goe_dab_pose_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "9d7f75fd-28d9-6929-ccaa-7db303316380": {
+    "name": "Dog Walking",
+    "message": "@ is doing the dog walk.",
+    "specialmessage": "@ seems to be a dog!",
+    "creator": "Skilendarz",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/fa63184d-58e2-4152-86fd-2be863b78087/em_skilendarz_dog_walking_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "ea4d3777-b63d-aa67-dfa8-bc939225f85d": {
+    "name": "Push-Ups",
+    "message": "@ is doing &Push-Ups&.",
+    "specialmessage": "@ wants to get buff. (&Push-Ups&)",
+    "creator": "Doctor Benx",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/4ce3dd27-1fac-4a55-80cd-bbc3c9be2d59/push_ups_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "405d0578-4ad0-1108-3a55-89520739fa8c": {
+    "name": "Calculated",
+    "message": "@ &Calculated& that with ease!",
+    "specialmessage": "@ plan was so well &Calculated& that it left everyone in awe!",
+    "creator": "Levelatics",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/5941bc46-03c4-492b-80af-0d63596e343e/calculated_emote_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "8c266eef-650e-861b-5f2f-dd6f7a344e4f": {
+    "name": "Moonwalk",
+    "message": "@ is doing a moonwalk",
+    "specialmessage": "@ is doing a moonwalk",
+    "creator": "GoE-Craft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/71d72702-23b4-4429-b5ad-f7bb233f964d/moonwalk_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "4242f8a4-a0fa-d3e9-944d-4625f7b3c4e3": {
+    "name": "Helicopter",
+    "message": "@ starts to spin like a &Helicopter&",
+    "specialmessage": "Hop on @'s crazy &Helicopter& ride!",
+    "creator": "Levelatics",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/cfa66054-b2f6-4df0-83bf-34f4d15255db/helicopter_emote_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "2794cdac-e033-23e4-b931-c894f9c9f5dc": {
+    "name": "T-Pose",
+    "message": "@ is doing a &T-Pose&!",
+    "specialmessage": "@ is stuck doing a &T-Pose&!!",
+    "creator": "Levelatics",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/3a37747a-7c13-4621-9dd2-f403e2becd11/t_pose_emote_thumbnail_0.png",
+    "price": 160,
+    "rarity": "common"
+  },
+  "91d79d4a-c998-4e32-bd36-f195e619a0d8": {
+    "name": "Fighting Batman-style",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/04e2ec22-5534-4f04-abad-94c600ed630b/fighting_mode_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
+  },
+  "bb5baae6-1694-42c0-9cc8-6ff4bb5503c6": {
+    "name": "Batman Landing",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/fd565f0c-0c96-4d8f-a43e-84f047c7073b/spreading_wings_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "2e1cb748-4406-4626-8fd5-5ee4a1675e95": {
+    "name": "The Joker's Mad Laugh",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/e53b83f0-67ba-4b32-b5b2-8326d272d931/joker_deranged_laugh_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "9d4019d0-db3f-4859-a579-f6c37532d2a6": {
+    "name": "Playing Dead",
+    "creator": "Minecraft",
+    "thumbnail": "https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/c83cae06-0944-483c-9310-3c90a6d259d7/playing_dead_thumbnail_0.png",
+    "price": 310,
+    "rarity": "uncommon"
+  },
+  "653c913f-d72c-c340-d1e8-764ba4cd579d": {
+    "name": "Griddy",
+    "creator": "ShapeStudio",
+    "thumbnail": "https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/f0898bea-f679-4633-9c5c-730f5c2755c4/griddy_thumbnail_0.png",
+    "price": 660,
+    "rarity": "rare"
   }
 }

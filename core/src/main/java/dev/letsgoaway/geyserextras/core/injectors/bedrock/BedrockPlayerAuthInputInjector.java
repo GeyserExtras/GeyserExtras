@@ -12,23 +12,27 @@ import org.geysermc.geyser.translator.protocol.PacketTranslator;
 import org.geysermc.geyser.translator.protocol.Translator;
 import org.geysermc.geyser.translator.protocol.bedrock.entity.player.input.BedrockPlayerAuthInputTranslator;
 
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
+
 @Translator(packet = PlayerAuthInputPacket.class)
 // Why is the BedrockPlayerAuthInputTranslator a final class???
 // I have to use this to work around that
 public class BedrockPlayerAuthInputInjector extends PacketTranslator<PlayerAuthInputPacket> {
+
     BedrockPlayerAuthInputTranslator translator = new BedrockPlayerAuthInputTranslator();
     @Override
     public void translate(GeyserSession session, PlayerAuthInputPacket packet) {
         translator.translate(session, packet);
+
         ExtrasPlayer player = GeyserHandler.getPlayer(session);
-        SessionPlayerEntity playerEntity = session.getPlayerEntity();
+        player.setEmoting(packet.getInputData().contains(PlayerAuthInputData.EMOTING));
+
         for (PlayerAuthInputData input : packet.getInputData()) {
             switch (input) {
                 case PERFORM_BLOCK_ACTIONS -> BedrockBlockInteractions.translate(session, packet.getPlayerActions());
                 case MISSED_SWING -> {
                     player.getCooldownHandler().setDigTicks(-1);
                     player.getCooldownHandler().setLastSwingTime(System.currentTimeMillis());
-
 
                     if (session.inputMode().equals(InputMode.TOUCH)) {
                         player.swingArm();
