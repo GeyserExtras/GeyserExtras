@@ -15,7 +15,19 @@ public class EmoteDataTestMenu extends BedrockMenu {
 
     @Override
     public SimpleForm create(ExtrasPlayer player) {
-        // if this works this might be the most cooked shit ever made
+        // ok so basically we can rip every emotes data using this shit yipee
+
+        add(new Button("Download All",()->{
+            player.getSession().getEntityCache().getAllPlayerEntities().forEach((entity) -> {
+                EmoteUtils.emotes.keySet().forEach((id) -> {
+
+                    // nvm, do this slowly without spamming so microsoft doesnt rate limit the SHIT out of me lmao
+                    
+                    //player.getSession().showEmote(entity, UUID.fromString(id).toString());
+                });
+            });
+        }));
+
         EmoteUtils.emotes.keySet().forEach((id) -> {
             UUID emote = UUID.fromString(id);
 
