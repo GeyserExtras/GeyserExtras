@@ -13,6 +13,7 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class PluginVersion {
@@ -23,6 +24,10 @@ public class PluginVersion {
 
 
     public static boolean checkForUpdate() {
+        if (!GE.getConfig().isCheckForUpdates()) {
+            return false;
+        }
+
         try {
             if (!ServerType.isExtension()) {
                 URL url = new URL("https://api.modrinth.com/v2/project/geyserextras/version");
@@ -65,14 +70,17 @@ public class PluginVersion {
     }
 
     public static void checkForUpdatesAndPrintToLog() {
+        if (!GE.getConfig().isCheckForUpdates()) {
+            return;
+        }
+
         new Thread(() -> {
             if (checkForUpdate()) {
                 SERVER.warn("There is a new update to GeyserExtras!");
                 SERVER.warn("You are on version " + GE_VERSION + " but the latest version is " + latestVersion + ".");
                 if (!ServerType.isExtension()) {
                     SERVER.warn("Download & Changelog: https://modrinth.com/plugin/geyserextras/version/" + latestVersionModrinthID);
-                }
-                else {
+                } else {
                     SERVER.warn("Download & Changelog: https://github.com/GeyserExtras/GeyserExtras/releases/latest");
                 }
             } else {

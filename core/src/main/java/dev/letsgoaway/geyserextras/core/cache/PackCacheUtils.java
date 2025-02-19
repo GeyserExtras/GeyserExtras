@@ -1,9 +1,9 @@
 package dev.letsgoaway.geyserextras.core.cache;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import dev.letsgoaway.geyserextras.core.version.Version3;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.parity.java.menus.packs.PackLoader;
+import dev.letsgoaway.geyserextras.core.version.Version3;
 import org.geysermc.geyser.api.event.bedrock.SessionLoadResourcePacksEvent;
 import org.geysermc.geyser.api.pack.PackCodec;
 import org.geysermc.geyser.api.pack.ResourcePack;
@@ -17,8 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
-import static dev.letsgoaway.geyserextras.core.cache.Cache.*;
+import static dev.letsgoaway.geyserextras.core.cache.Cache.CACHE_DATES;
+import static dev.letsgoaway.geyserextras.core.cache.Cache.JSON_MAPPER;
 
 public class PackCacheUtils {
     public static Path PACKS_FOLDER;
@@ -31,7 +33,7 @@ public class PackCacheUtils {
         PACKS_FOLDER = Cache.CACHE_FOLDER.resolve("packs/");
         GEYSER_OPTIONAL_PACK = PACKS_FOLDER.resolve("GeyserOptionalPack.mcpack");
         GEYSER_EXTRAS_PACK = PACKS_FOLDER.resolve("GeyserExtrasPack.mcpack");
-        SERVER.log("Checking for updates...");
+        SERVER.log("Checking for pack updates...");
         try {
             Files.createDirectories(PACKS_FOLDER);
             boolean optionalPackNeedsUpdate = checkOptionalPack();
@@ -60,22 +62,34 @@ public class PackCacheUtils {
     }
 
     private static boolean checkOptionalPack() {
-        Version3 oldVersion = Version3.fromArray(CACHE_DATES.lastOptionalPackVersion);
-        Version3 latestOptionalPackVersion = getPackVersion("https://raw.githubusercontent.com/GeyserMC/GeyserOptionalPack/master/manifest.json");
-        CACHE_DATES.lastOptionalPackVersion = latestOptionalPackVersion.asArray();
+        // Download the pack if it exists
         if (!GEYSER_OPTIONAL_PACK.toFile().exists()) {
             return true;
         }
+
+        // Otherwise check for updates
+        if (!GE.getConfig().isCheckForUpdates()) {
+            return false;
+        }
+        Version3 oldVersion = Version3.fromArray(CACHE_DATES.lastOptionalPackVersion);
+        Version3 latestOptionalPackVersion = getPackVersion("https://raw.githubusercontent.com/GeyserMC/GeyserOptionalPack/master/manifest.json");
+        CACHE_DATES.lastOptionalPackVersion = latestOptionalPackVersion.asArray();
         return latestOptionalPackVersion.isNewer(oldVersion);
     }
 
     private static boolean checkExtrasPack() {
-        Version3 oldVersion = Version3.fromArray(CACHE_DATES.lastExtrasPackVersion);
-        Version3 latestExtrasPackVersion = getPackVersion("https://raw.githubusercontent.com/GeyserExtras/GeyserExtrasPack/main/src/pack/manifest.json");
-        CACHE_DATES.lastExtrasPackVersion = latestExtrasPackVersion.asArray();
+        // Download the pack if it exists
         if (!GEYSER_EXTRAS_PACK.toFile().exists()) {
             return true;
         }
+
+        // Otherwise check for updates
+        if (!GE.getConfig().isCheckForUpdates()) {
+            return false;
+        }
+        Version3 oldVersion = Version3.fromArray(CACHE_DATES.lastExtrasPackVersion);
+        Version3 latestExtrasPackVersion = getPackVersion("https://raw.githubusercontent.com/GeyserExtras/GeyserExtrasPack/main/src/pack/manifest.json");
+        CACHE_DATES.lastExtrasPackVersion = latestExtrasPackVersion.asArray();
         return latestExtrasPackVersion.isNewer(oldVersion);
     }
 
@@ -93,11 +107,11 @@ public class PackCacheUtils {
         }
     }
 
-    public static void onPackLoadEvent(ExtrasPlayer player, SessionLoadResourcePacksEvent ev){
+    public static void onPackLoadEvent(ExtrasPlayer player, SessionLoadResourcePacksEvent ev) {
         ev.register(RP_GEYSER_OPTIONAL);
         ev.register(RP_GEYSER_EXTRAS);
         List<UUID> packsToLoad = player.getPreferences().getSelectedPacks();
-        for (UUID pack : packsToLoad){
+        for (UUID pack : packsToLoad) {
             ev.register(PackLoader.PACKS.get(pack));
         }
     }

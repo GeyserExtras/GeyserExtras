@@ -79,6 +79,13 @@ public final class GeyserExtrasConfig {
             """)
     private boolean disablePaperDoll = false;
 
+    @Comment("""
+    Whether to check for updates or not.
+    This also disables updating of the GeyserExtrasPack and GeyserOptionalPack,
+    however you can manually update them by deleting the 'GeyserExtras/cache/' folder.
+    """)
+    private boolean checkForUpdates = true;
+
     @Comment("Only enable if you know what you are doing.")
     private boolean debugMode = false;
 

@@ -40,7 +40,7 @@ public class EmoteUtils {
         return obj.getAsJsonObject().get("name").getAsString();
     }
 
-    private static String getString(UUID uuid, String string){
+    private static String getString(UUID uuid, String string) {
         JsonElement elem = emotes.get(uuid.toString());
         if (elem == null) {
             return null;
@@ -60,6 +60,10 @@ public class EmoteUtils {
 
     public static String getCreator(UUID uuid) {
         return getString(uuid, "creator");
+    }
+
+    public static String getPrimary(UUID uuid) {
+        return getString(uuid, "primary");
     }
 
     public static int getPrice(UUID uuid) {
@@ -95,8 +99,11 @@ public class EmoteUtils {
         };
     }
 
-
     private static String getEmoteChatRaw(UUID uuid) {
+        return getEmoteChatRaw(uuid, EmoteTextType.RANDOM);
+    }
+
+    private static String getEmoteChatRaw(UUID uuid, EmoteTextType type) {
         JsonElement element = emotes.get(uuid.toString());
         if (element == null)
             return null;
@@ -109,15 +116,34 @@ public class EmoteUtils {
         if (message == null)
             return null;
 
-        if (emoteRandom.nextInt(0, 16) == 4) {
-            return obj.get("specialmessage").getAsString();
-        }
+        switch (type) {
+            case RANDOM -> {
+                if (emoteRandom.nextInt(0, 16) == 4) {
+                    return obj.get("specialmessage").getAsString();
+                }
 
-        return message.getAsString();
+                return message.getAsString();
+            }
+            case MESSAGE -> {
+                return message.getAsString();
+            }
+            case SPECIAL_MESSAGE -> {
+                return obj.get("specialmessage").getAsString();
+            }
+            default -> {
+                return null;
+            }
+        }
     }
 
     public static String getEmoteChatString(UUID uuid, ExtrasPlayer player) {
-        String raw = getEmoteChatRaw(uuid);
+        return getEmoteChatString(uuid, player, EmoteTextType.RANDOM);
+    }
+
+    public static String getEmoteChatString(UUID uuid, ExtrasPlayer player, EmoteTextType type) {
+        String raw = getEmoteChatRaw(uuid,type);
+
+        // Apparently emotes can just have no text....
         if (raw == null || raw.isEmpty()) {
             return null;
         }
@@ -154,5 +180,11 @@ public class EmoteUtils {
         raw = raw.replace("\uE001", "§r§a");
         raw = raw.replace("\uE002", "§r");
         return raw;
+    }
+
+    public enum EmoteTextType {
+        RANDOM,
+        SPECIAL_MESSAGE,
+        MESSAGE
     }
 }

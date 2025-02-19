@@ -21,7 +21,7 @@ import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class ConfigLoader {
 
-    public static final int LATEST_VERSION = 2;
+    public static final int LATEST_VERSION = 3;
     private static final String HEADER = """
             GeyserExtras
             If Geyser is detected, all required config changes will be automatically applied.
@@ -30,6 +30,7 @@ public class ConfigLoader {
     private static final ConfigurationTransformation.Versioned transformer = ConfigurationTransformation.versionedBuilder()
             .addVersion(1, zeroToOne())
             .addVersion(2, oneToTwo())
+            .addVersion(3, twoToThree())
             .build();
 
 
@@ -117,6 +118,12 @@ public class ConfigLoader {
                 .addAction(NodePath.path("enable-java-only-block-placement"), TransformAction.remove())
                 .addAction(NodePath.path("enable-block-ghosting-fix"), TransformAction.remove())
                 .addAction(NodePath.path("enable-knockback-attack-sprint-fix"), TransformAction.remove())
+                .build();
+    }
+
+    // no changes, added check for updates to config
+    private static ConfigurationTransformation twoToThree() {
+        return ConfigurationTransformation.builder()
                 .build();
     }
 

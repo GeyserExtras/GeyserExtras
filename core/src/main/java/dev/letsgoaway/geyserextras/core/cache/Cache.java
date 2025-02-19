@@ -22,6 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.TimeZone;
 
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class Cache {
@@ -130,6 +131,11 @@ public class Cache {
         try {
             if (isDirEmpty(LANGUAGE_FOLDER)) {
                 return true;
+            }
+
+            // Check for updates
+            if (!GE.getConfig().isCheckForUpdates()) {
+                return false;
             }
 
             JsonObject clientDataJson = GSON.fromJson(HTTP.asText("https://api.github.com/repos/GeyserExtras/data/branches/main"), JsonObject.class);
