@@ -2,7 +2,7 @@
 dependencies {
     implementation(project(":core"))
     compileOnly("net.kyori:adventure-api:4.18.0")
-    compileOnly("org.geysermc.geyser:core:2.6.0-SNAPSHOT")
+    compileOnly("org.geysermc.geyser:core:2.6.1-SNAPSHOT")
     compileOnly("org.spigotmc:spigot-api:1.12-R0.1-SNAPSHOT")
 }
 

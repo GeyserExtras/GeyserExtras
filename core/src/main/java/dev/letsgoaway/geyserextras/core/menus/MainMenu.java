@@ -9,6 +9,9 @@ import dev.letsgoaway.geyserextras.core.parity.java.menus.packs.PackLoader;
 import dev.letsgoaway.geyserextras.core.parity.java.menus.packs.PackMenu;
 import dev.letsgoaway.geyserextras.core.parity.java.menus.serverlinks.ServerLinksMenu;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Action;
+import org.cloudburstmc.math.vector.Vector2f;
+import org.cloudburstmc.protocol.bedrock.data.camera.AimAssistAction;
+import org.cloudburstmc.protocol.bedrock.packet.CameraAimAssistPacket;
 import org.geysermc.cumulus.form.SimpleForm;
 import org.geysermc.cumulus.util.FormImage;
 
@@ -63,6 +66,8 @@ public class MainMenu extends BedrockMenu {
                 player.sendForm(new EmoteDataTestMenu());
             }));
         }
+
+
 
         return super.create(player);
     }
