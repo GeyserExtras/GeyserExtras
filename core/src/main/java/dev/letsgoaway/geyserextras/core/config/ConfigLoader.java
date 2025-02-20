@@ -25,7 +25,7 @@ public class ConfigLoader {
     private static final String HEADER = """
             GeyserExtras
             If Geyser is detected, all required config changes will be automatically applied.
-            For more details, go to https://geyserextras.github.io/
+            For more details, go to https://geyserextras.letsgoaway.dev/
             """;
     private static final ConfigurationTransformation.Versioned transformer = ConfigurationTransformation.versionedBuilder()
             .addVersion(1, zeroToOne())

@@ -7,6 +7,10 @@ import dev.letsgoaway.geyserextras.core.GeyserExtras;
 import dev.letsgoaway.geyserextras.core.parity.bedrock.EmoteUtils;
 import dev.letsgoaway.geyserextras.core.preferences.JavaPreferencesData;
 import dev.letsgoaway.geyserextras.core.utils.TickUtil;
+import dev.letsgoaway.geyserextras.spigot.config.GeyserExtrasSpigotConfig;
+import dev.letsgoaway.geyserextras.spigot.config.SpigotConfigLoader;
+import lombok.Getter;
+import lombok.Setter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -24,6 +28,10 @@ public class GeyserExtrasSpigot extends JavaPlugin implements Server {
     public static GeyserExtrasSpigot SPIGOT;
 
     private static SpigotTickUtil spigotTickUtil;
+
+    @Getter
+    @Setter
+    private GeyserExtrasSpigotConfig platformConfig;
 
     public GeyserExtrasSpigot() {
         ServerType.type = ServerType.SPIGOT;
@@ -43,6 +51,11 @@ public class GeyserExtrasSpigot extends JavaPlugin implements Server {
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, () -> {
             CORE.serverTick();
         }, 0L, 0L);
+    }
+
+    @Override
+    public void onConfigLoad() {
+        SpigotConfigLoader.load();
     }
 
     @Override
@@ -102,5 +115,4 @@ public class GeyserExtrasSpigot extends JavaPlugin implements Server {
     public void sendMessage(UUID javaPlayer, String message) {
         Bukkit.getPlayer(javaPlayer).sendMessage(ChatColor.translateAlternateColorCodes('§', message));
     }
-
 }

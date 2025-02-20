@@ -2,7 +2,7 @@ name: ${name}
 version: ${version}
 author: "LetsGoAway"
 main: dev.letsgoaway.geyserextras.spigot.GeyserExtrasSpigot
-api-version: '1.12'
+api-version: '1.16'
 depend:
   - Geyser-Spigot
 commands:

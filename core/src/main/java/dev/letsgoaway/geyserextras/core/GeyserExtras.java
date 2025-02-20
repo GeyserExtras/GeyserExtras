@@ -68,6 +68,7 @@ public class GeyserExtras implements EventRegistrar {
 
         SERVER.log("Loading config...");
         ConfigLoader.load();
+        SERVER.onConfigLoad();
 
         PreferencesData.init();
 

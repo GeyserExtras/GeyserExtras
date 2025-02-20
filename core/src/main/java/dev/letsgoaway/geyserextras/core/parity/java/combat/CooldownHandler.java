@@ -13,6 +13,7 @@ import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.util.CooldownUtils;
 import org.geysermc.mcprotocollib.protocol.data.game.entity.player.GameMode;
 import org.geysermc.mcprotocollib.protocol.data.game.item.component.DataComponentType;
+import org.geysermc.mcprotocollib.protocol.data.game.item.component.DataComponentTypes;
 import org.geysermc.mcprotocollib.protocol.data.game.item.component.ItemEnchantments;
 
 import java.util.List;
@@ -168,7 +169,7 @@ public class CooldownHandler {
                     if (heldItem.asItem().equals(Items.DEBUG_STICK)) {
                         curChar.append("\n\n");
                     }
-                    ItemEnchantments enchantments = heldItem.getComponent(DataComponentType.ENCHANTMENTS);
+                    ItemEnchantments enchantments = heldItem.getComponent(DataComponentTypes.ENCHANTMENTS);
                     if (enchantments != null) {
                         for (int enchID : enchantments.getEnchantments().keySet()) {
                             // SWEEPING_EDGE, java only so it doesnt show on the item text popup
@@ -210,7 +211,7 @@ public class CooldownHandler {
     private double getHBStayTime() {
         double textTime = 3.5; // 3 seconds is how long the item text popup stay time is
         GeyserItemStack item = session.getPlayerInventory().getItemInHand();
-        ItemEnchantments enchantments = item.getComponent(DataComponentType.ENCHANTMENTS);
+        ItemEnchantments enchantments = item.getComponent(DataComponentTypes.ENCHANTMENTS);
         if (enchantments != null) {
 
             for (int enchID : enchantments.getEnchantments().keySet()) {

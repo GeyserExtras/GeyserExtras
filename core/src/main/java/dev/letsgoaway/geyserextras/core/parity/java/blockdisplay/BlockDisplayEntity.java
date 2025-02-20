@@ -17,6 +17,7 @@ import org.geysermc.geyser.level.block.type.Block;
 import org.geysermc.geyser.level.block.type.BlockState;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.mcprotocollib.protocol.data.game.entity.metadata.MetadataType;
+import org.geysermc.mcprotocollib.protocol.data.game.entity.metadata.MetadataTypes;
 import org.geysermc.mcprotocollib.protocol.data.game.entity.metadata.type.IntEntityMetadata;
 import org.geysermc.mcprotocollib.protocol.data.game.entity.type.EntityType;
 
@@ -39,24 +40,24 @@ public class BlockDisplayEntity extends BlockDisplayBaseEntity implements Tickab
 
     public static EntityDefinition<BlockDisplayEntity> buildEntityDef() {
         EntityDefinition<Entity> entityBase = EntityDefinition.builder(Entity::new)
-                .addTranslator(MetadataType.BYTE, Entity::setFlags)
-                .addTranslator(MetadataType.INT, Entity::setAir) // Air/bubbles
-                .addTranslator(MetadataType.OPTIONAL_CHAT, Entity::setDisplayName)
-                .addTranslator(MetadataType.BOOLEAN, Entity::setDisplayNameVisible)
-                .addTranslator(MetadataType.BOOLEAN, Entity::setSilent)
-                .addTranslator(MetadataType.BOOLEAN, Entity::setGravity)
-                .addTranslator(MetadataType.POSE, (entity, entityMetadata) -> entity.setPose(entityMetadata.getValue()))
-                .addTranslator(MetadataType.INT, Entity::setFreezing)
+                .addTranslator(MetadataTypes.BYTE, Entity::setFlags)
+                .addTranslator(MetadataTypes.INT, Entity::setAir) // Air/bubbles
+                .addTranslator(MetadataTypes.OPTIONAL_CHAT, Entity::setDisplayName)
+                .addTranslator(MetadataTypes.BOOLEAN, Entity::setDisplayNameVisible)
+                .addTranslator(MetadataTypes.BOOLEAN, Entity::setSilent)
+                .addTranslator(MetadataTypes.BOOLEAN, Entity::setGravity)
+                .addTranslator(MetadataTypes.POSE, (entity, entityMetadata) -> entity.setPose(entityMetadata.getValue()))
+                .addTranslator(MetadataTypes.INT, Entity::setFreezing)
                 .build();
 
         EntityDefinition<BlockDisplayBaseEntity> displayBase = EntityDefinition.inherited(BlockDisplayBaseEntity::new, entityBase)
                 .addTranslator(null) // Interpolation delay
                 .addTranslator(null) // Transformation interpolation duration
                 .addTranslator(null) // Position/Rotation interpolation duration
-                .addTranslator(MetadataType.VECTOR3, BlockDisplayBaseEntity::setTranslation) // Translation
-                .addTranslator(MetadataType.VECTOR3, BlockDisplayBaseEntity::setScale) // Scale
-                .addTranslator(MetadataType.QUATERNION, BlockDisplayBaseEntity::setLeftRotation) // Left rotation
-                .addTranslator(MetadataType.QUATERNION, BlockDisplayBaseEntity::setRightRotation) // Right rotation
+                .addTranslator(MetadataTypes.VECTOR3, BlockDisplayBaseEntity::setTranslation) // Translation
+                .addTranslator(MetadataTypes.VECTOR3, BlockDisplayBaseEntity::setScale) // Scale
+                .addTranslator(MetadataTypes.QUATERNION, BlockDisplayBaseEntity::setLeftRotation) // Left rotation
+                .addTranslator(MetadataTypes.QUATERNION, BlockDisplayBaseEntity::setRightRotation) // Right rotation
                 .addTranslator(null) // Billboard render constraints
                 .addTranslator(null) // Brightness override
                 .addTranslator(null) // View range
@@ -70,7 +71,7 @@ public class BlockDisplayEntity extends BlockDisplayBaseEntity implements Tickab
         return EntityDefinition.inherited(BlockDisplayEntity::new, displayBase)
                 .type(EntityType.BLOCK_DISPLAY)
                 .identifier("minecraft:fox")
-                .addTranslator(MetadataType.BLOCK_STATE, BlockDisplayEntity::setBlock)
+                .addTranslator(MetadataTypes.BLOCK_STATE, BlockDisplayEntity::setBlock)
                 .build();
     }
 

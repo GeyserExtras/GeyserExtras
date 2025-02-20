@@ -42,4 +42,6 @@ public interface Server {
     Path getPluginFolder();
 
     default void onGeyserExtrasInitialize() {}
+
+    default void onConfigLoad() {}
 }
