@@ -3,7 +3,6 @@ package dev.letsgoaway.geyserextras.spigot;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 
@@ -29,11 +28,15 @@ public class SpigotExtrasPlayer extends ExtrasPlayer {
         super.tick();
         if (SPIGOT.getPlatformConfig().isEnableBlockGhostingWorkaround() && ticks % 2 == 1) {
             float interactionRange = (float) session.getPlayerEntity().getBlockInteractionRange();
-            player.getLineOfSight(Set.of(Material.AIR), Math.round(interactionRange)).forEach((targetBlock)->{
-               if (targetBlock != null) {
-                   player.sendBlockChange(targetBlock.getLocation(), targetBlock.getBlockData());
-               }
+            player.getLineOfSight(Set.of(Material.AIR), Math.round(interactionRange)).forEach((targetBlock) -> {
+                if (targetBlock != null) {
+                    player.sendBlockChange(targetBlock.getLocation(), targetBlock.getBlockData());
+                }
             });
         }
+    }
+
+    @Override
+    public void hungerSprintCancel() {
     }
 }

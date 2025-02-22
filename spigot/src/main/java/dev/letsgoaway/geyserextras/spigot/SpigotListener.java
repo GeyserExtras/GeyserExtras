@@ -14,6 +14,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerKickEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.util.RayTraceResult;
+import org.bukkit.util.Vector;
 
 import java.util.Arrays;
 import java.util.List;
@@ -21,6 +22,7 @@ import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class SpigotListener implements Listener {
     public static final List<String> cropTypes = Arrays.asList(
@@ -113,7 +115,11 @@ public class SpigotListener implements Listener {
                 }
                 if (ev.isCancelled()) {
                     block.setType(Material.AIR);
+                    Vector velocity = player.getVelocity().clone();
                     player.teleport(player.getLocation());
+                    SERVER.getTickUtil().runIn(2L,() ->{
+                        player.setVelocity(velocity);
+                    }, extrasPlayer);
                     player.updateInventory();
                 }
             }
