@@ -1,7 +1,7 @@
 dependencies {
     implementation(project(":core"))
 
-    compileOnly("org.geysermc.geyser:core:2.6.1-SNAPSHOT")
+    compileOnly("org.geysermc.geyser:core:2.7.0-SNAPSHOT")
     compileOnly("net.md-5:bungeecord-api:1.21-R0.1-SNAPSHOT")
 }
 

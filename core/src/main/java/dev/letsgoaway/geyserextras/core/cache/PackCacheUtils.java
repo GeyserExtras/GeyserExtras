@@ -7,6 +7,8 @@ import dev.letsgoaway.geyserextras.core.version.Version3;
 import org.geysermc.geyser.api.event.bedrock.SessionLoadResourcePacksEvent;
 import org.geysermc.geyser.api.pack.PackCodec;
 import org.geysermc.geyser.api.pack.ResourcePack;
+import org.geysermc.geyser.api.pack.option.PriorityOption;
+import org.geysermc.geyser.pack.option.GeyserPriorityOption;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -40,12 +42,6 @@ public class PackCacheUtils {
             boolean extrasPackNeedsUpdate = checkExtrasPack();
             if (optionalPackNeedsUpdate || extrasPackNeedsUpdate) {
                 Cache.saveCacheDates();
-            }
-            if (optionalPackNeedsUpdate) {
-                SERVER.log("Downloading GeyserOptionalPack...");
-                InputStream in = HTTP.request("https://download.geysermc.org/v2/projects/geyseroptionalpack/versions/latest/builds/latest/downloads/geyseroptionalpack");
-                Files.copy(in, GEYSER_OPTIONAL_PACK, StandardCopyOption.REPLACE_EXISTING);
-                SERVER.log("GeyserOptionalPack downloaded!");
             }
             if (extrasPackNeedsUpdate) {
                 SERVER.log("Downloading GeyserExtrasPack...");
@@ -108,11 +104,28 @@ public class PackCacheUtils {
     }
 
     public static void onPackLoadEvent(ExtrasPlayer player, SessionLoadResourcePacksEvent ev) {
-        ev.register(RP_GEYSER_OPTIONAL);
-        ev.register(RP_GEYSER_EXTRAS);
+        try {
+            if (!ev.resourcePacks().contains(RP_GEYSER_OPTIONAL)) {
+                ev.register(RP_GEYSER_OPTIONAL, GeyserPriorityOption.HIGHEST);
+            }
+        } catch (Exception e) {
+        }
+        try {
+            if (!ev.resourcePacks().contains(RP_GEYSER_EXTRAS)) {
+                ev.register(RP_GEYSER_EXTRAS, GeyserPriorityOption.HIGHEST);
+            }
+        } catch (Exception e) {
+        }
         List<UUID> packsToLoad = player.getPreferences().getSelectedPacks();
         for (UUID pack : packsToLoad) {
-            ev.register(PackLoader.PACKS.get(pack));
+            ResourcePack rp = PackLoader.PACKS.get(pack);
+            try {
+                if (ev.resourcePacks().contains(rp)) {
+                    continue;
+                }
+                ev.register(rp, PriorityOption.priority(packsToLoad.indexOf(pack) - 99));
+            } catch (Exception e) {
+            }
         }
     }
 }

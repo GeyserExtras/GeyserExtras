@@ -179,7 +179,7 @@ public class PreferencesData {
             session.getPreferencesCache().setPrefersShowCoordinates(this.showCoordinates);
             session.setAdvancedTooltips(this.advancedTooltips);
             if (player.isLoggedIn()) {
-                session.getInventoryTranslator().updateInventory(session, session.getPlayerInventory());
+                session.getPlayerInventory().updateInventory();
             }
             session.getPreferencesCache().setPrefersCustomSkulls(this.customSkullSkins);
         }

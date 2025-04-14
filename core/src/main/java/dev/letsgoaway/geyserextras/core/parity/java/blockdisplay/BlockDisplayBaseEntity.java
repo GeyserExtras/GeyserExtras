@@ -1,7 +1,7 @@
 package dev.letsgoaway.geyserextras.core.parity.java.blockdisplay;
 
 import org.cloudburstmc.math.vector.Vector3f;
-import org.cloudburstmc.math.vector.Vector4f;
+import org.cloudburstmc.math.imaginary.Quaternionf;
 import org.geysermc.geyser.entity.EntityDefinition;
 import org.geysermc.geyser.entity.type.living.animal.FoxEntity;
 import org.geysermc.geyser.session.GeyserSession;
@@ -14,8 +14,8 @@ public class BlockDisplayBaseEntity extends FoxEntity {
     private Vector3f baseTranslation = Vector3f.ZERO;
     private Vector3f blockDisplayScale = Vector3f.ONE;
 
-    private Vector4f leftRotation = Vector4f.from(0, 0, 0, 1);
-    private Vector4f rightRotation = Vector4f.from(0, 0, 0, 1);
+    private Quaternionf leftRotation = Quaternionf.from(0, 0, 0, 1);
+    private Quaternionf rightRotation = Quaternionf.from(0, 0, 0, 1);
 
     public BlockDisplayBaseEntity(GeyserSession session, int entityId, long geyserId, UUID uuid, EntityDefinition<?> definition, Vector3f position, Vector3f motion, float yaw, float pitch, float headYaw) {
         super(session, entityId, geyserId, uuid, definition, position, motion, yaw, pitch, headYaw);
@@ -43,25 +43,25 @@ public class BlockDisplayBaseEntity extends FoxEntity {
         this.blockDisplayScale = translationMeta.getValue();
     }
 
-    public Vector4f getLeftRotation() {
+    public Quaternionf getLeftRotation() {
         return this.leftRotation;
     }
 
-    public void setLeftRotation(EntityMetadata<Vector4f, ?> translationMeta) {
+    public void setLeftRotation(EntityMetadata<Quaternionf, ?> translationMeta) {
         if (translationMeta.getValue() == null) {
-            this.leftRotation = Vector4f.from(0, 0, 0, 1);
+            this.leftRotation = Quaternionf.from(0, 0, 0, 1);
             return;
         }
         this.leftRotation = translationMeta.getValue();
     }
 
-    public Vector4f getRightRotation() {
+    public Quaternionf getRightRotation() {
         return this.rightRotation;
     }
 
-    public void setRightRotation(EntityMetadata<Vector4f, ?> translationMeta) {
+    public void setRightRotation(EntityMetadata<Quaternionf, ?> translationMeta) {
         if (translationMeta.getValue() == null) {
-            this.rightRotation = Vector4f.from(0, 0, 0, 1);
+            this.rightRotation = Quaternionf.from(0, 0, 0, 1);
             return;
         }
         this.rightRotation = translationMeta.getValue();

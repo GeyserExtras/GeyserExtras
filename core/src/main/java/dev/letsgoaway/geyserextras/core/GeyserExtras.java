@@ -54,6 +54,14 @@ public class GeyserExtras implements EventRegistrar {
             return;
         }
 
+
+
+        geyserApi = GeyserApi.api();
+
+        SERVER.log("Loading config...");
+        ConfigLoader.load();
+        SERVER.onConfigLoad();
+
         if (ServerType.isExtension()) {
             GeyserHandler.register();
 
@@ -62,13 +70,6 @@ public class GeyserExtras implements EventRegistrar {
             SERVER.log("Loading Emote Data...");
             EmoteUtils.initialize();
         }
-
-
-        geyserApi = GeyserApi.api();
-
-        SERVER.log("Loading config...");
-        ConfigLoader.load();
-        SERVER.onConfigLoad();
 
         PreferencesData.init();
 

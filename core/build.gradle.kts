@@ -8,7 +8,7 @@ dependencies {
     shadow("com.fasterxml.jackson.core:jackson-core:2.17.0")
     shadow("com.fasterxml.jackson.core:jackson-databind:2.17.0")
 
-    compileOnly("org.geysermc.geyser:core:2.6.1-SNAPSHOT")
+    compileOnly("org.geysermc.geyser:core:2.7.0-SNAPSHOT")
     compileOnly("org.geysermc.floodgate:core:2.2.3-SNAPSHOT")
     compileOnly("org.projectlombok:lombok:1.18.34")
     annotationProcessor("org.projectlombok:lombok:1.18.34")

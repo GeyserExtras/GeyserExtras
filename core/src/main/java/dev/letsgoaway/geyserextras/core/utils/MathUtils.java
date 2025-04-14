@@ -1,5 +1,6 @@
 package dev.letsgoaway.geyserextras.core.utils;
 
+import org.cloudburstmc.math.imaginary.Quaternionf;
 import org.cloudburstmc.math.vector.Vector3f;
 import org.cloudburstmc.math.vector.Vector4f;
 
@@ -90,7 +91,7 @@ public class MathUtils {
     }
 
 
-    public static Vector3f toEuler(Vector4f q) {
+    public static Vector3f toEuler(Quaternionf q) {
         Vector3f v;
         float sqw = q.getW() * q.getW();
         float sqx = q.getX() * q.getX();

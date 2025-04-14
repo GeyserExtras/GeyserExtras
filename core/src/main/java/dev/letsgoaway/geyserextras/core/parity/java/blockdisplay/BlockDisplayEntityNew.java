@@ -1,6 +1,7 @@
 package dev.letsgoaway.geyserextras.core.parity.java.blockdisplay;
 
 import dev.letsgoaway.geyserextras.core.utils.MathUtils;
+import org.cloudburstmc.math.imaginary.Quaternionf;
 import org.cloudburstmc.math.vector.Vector3f;
 import org.cloudburstmc.math.vector.Vector4f;
 import org.cloudburstmc.protocol.bedrock.data.entity.EntityDataTypes;
@@ -46,7 +47,7 @@ public class BlockDisplayEntityNew extends BlockDisplayBaseEntity implements Tic
         EntityDefinition<Entity> entityBase = EntityDefinition.builder(Entity::new)
                 .addTranslator(MetadataTypes.BYTE, Entity::setFlags)
                 .addTranslator(MetadataTypes.INT, Entity::setAir) // Air/bubbles
-                .addTranslator(MetadataTypes.OPTIONAL_CHAT, Entity::setDisplayName)
+                .addTranslator(MetadataTypes.OPTIONAL_COMPONENT, Entity::setDisplayName)
                 .addTranslator(MetadataTypes.BOOLEAN, Entity::setDisplayNameVisible)
                 .addTranslator(MetadataTypes.BOOLEAN, Entity::setSilent)
                 .addTranslator(MetadataTypes.BOOLEAN, Entity::setGravity)
@@ -263,8 +264,8 @@ public class BlockDisplayEntityNew extends BlockDisplayBaseEntity implements Tic
 
     // this is going to make me lose my mind :D
     public void buildRotation() {
-        Vector4f q = getLeftRotation();
-        q = Vector4f.from(MathUtils.clampOne(q.getX()), MathUtils.clampOne(q.getY()), MathUtils.clampOne(q.getZ()), MathUtils.clampOne(q.getW()));
+        Quaternionf q = getLeftRotation();
+        q = Quaternionf.from(MathUtils.clampOne(q.getX()), MathUtils.clampOne(q.getY()), MathUtils.clampOne(q.getZ()), MathUtils.clampOne(q.getW()));
         rot = MathUtils.toEuler(q);
         rot = Vector3f.from(Math.toDegrees(rot.getX()), Math.toDegrees(rot.getY()), Math.toDegrees(rot.getZ()));
 

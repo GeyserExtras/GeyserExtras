@@ -43,7 +43,7 @@ public enum Action {
                         + player.translate("debug.prefix")
                         + " " + ChatColor.RESET
                         + player.translate("debug.advanced_tooltips." + onOrOff));
-                session.getInventoryTranslator().updateInventory(session, session.getPlayerInventory());
+                session.getPlayerInventory().updateInventory();
             }
             case OPEN_GE_MENU -> player.sendForm(new MainMenu());
             case OPEN_ADVANCEMENTS -> session.getAdvancementsCache().buildAndShowMenuForm();
