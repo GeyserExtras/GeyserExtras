@@ -52,12 +52,13 @@ public class PackManagerMenu extends BedrockMenu {
                     down(player);
                 }));
             }
+            /*
             if (!pack.manifest().subpacks().isEmpty()) {
                 add(new Button(BedrockLocale.SETTINGS, FormImage.Type.PATH, "textures/ui/settings_glyph_color_2x.png", () -> {
                     player.sendForm(new PackSettingsMenu(pack));
                     openingSubMenu = true;
                 }));
-            }
+            }*/
         }
         return super.create(player);
     }

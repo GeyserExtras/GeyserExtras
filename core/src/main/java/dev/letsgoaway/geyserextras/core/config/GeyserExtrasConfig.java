@@ -50,7 +50,7 @@ public final class GeyserExtrasConfig {
     """)
     private boolean enableBlockDisplayWorkaround = false;
 
-    @Comment("When the server closes or Geyser reloads, should GeyserExtras reconnect to the server using the below address.")
+    @Comment("When the server closes or Geyser reloads, should GeyserExtras automatically reconnect players to the server.")
     private boolean autoReconnect = true;
 
     @Comment(
