@@ -8,6 +8,7 @@ import org.geysermc.geyser.api.event.bedrock.SessionLoadResourcePacksEvent;
 import org.geysermc.geyser.api.pack.PackCodec;
 import org.geysermc.geyser.api.pack.ResourcePack;
 import org.geysermc.geyser.api.pack.option.PriorityOption;
+import org.geysermc.geyser.api.pack.option.SubpackOption;
 import org.geysermc.geyser.pack.option.GeyserPriorityOption;
 
 import java.io.InputStream;
@@ -108,13 +109,13 @@ public class PackCacheUtils {
             if (!ev.resourcePacks().contains(RP_GEYSER_OPTIONAL)) {
                 ev.register(RP_GEYSER_OPTIONAL, GeyserPriorityOption.HIGHEST);
             }
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
         try {
             if (!ev.resourcePacks().contains(RP_GEYSER_EXTRAS)) {
                 ev.register(RP_GEYSER_EXTRAS, GeyserPriorityOption.HIGHEST);
             }
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
         List<UUID> packsToLoad = player.getPreferences().getSelectedPacks();
         for (UUID pack : packsToLoad) {
@@ -123,8 +124,13 @@ public class PackCacheUtils {
                 if (ev.resourcePacks().contains(rp)) {
                     continue;
                 }
-                ev.register(rp, PriorityOption.priority(packsToLoad.indexOf(pack) - 99));
-            } catch (Exception e) {
+                String subpack = "";
+                if (player.getPreferences().getSelectedSubpacks().containsKey(pack)) {
+                    subpack = player.getPreferences().getSelectedSubpacks().get(pack);
+                }
+
+                ev.register(rp, PriorityOption.priority(99 - packsToLoad.indexOf(pack)), SubpackOption.named(subpack));
+            } catch (Exception ignored) {
             }
         }
     }

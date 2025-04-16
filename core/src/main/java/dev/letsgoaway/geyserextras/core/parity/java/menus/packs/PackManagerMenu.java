@@ -8,13 +8,14 @@ import org.geysermc.cumulus.form.SimpleForm;
 import org.geysermc.cumulus.util.FormImage;
 import org.geysermc.geyser.api.pack.ResourcePack;
 import org.geysermc.geyser.api.pack.ResourcePackManifest;
-import org.geysermc.geyser.util.MathUtils;
 
 import java.util.UUID;
 
 public class PackManagerMenu extends BedrockMenu {
     private final ResourcePack pack;
     private final UUID packID;
+
+    private boolean openingSubMenu = false;
 
     public PackManagerMenu(ResourcePack pack) {
         super();
@@ -51,6 +52,12 @@ public class PackManagerMenu extends BedrockMenu {
                     down(player);
                 }));
             }
+            if (!pack.manifest().subpacks().isEmpty()) {
+                add(new Button(BedrockLocale.SETTINGS, FormImage.Type.PATH, "textures/ui/settings_glyph_color_2x.png", () -> {
+                    player.sendForm(new PackSettingsMenu(pack));
+                    openingSubMenu = true;
+                }));
+            }
         }
         return super.create(player);
     }
@@ -64,8 +71,10 @@ public class PackManagerMenu extends BedrockMenu {
     @Override
     public void onButtonClick(ExtrasPlayer player) {
         super.onButtonClick(player);
-        player.setPacksUpdated(true);
-        player.sendForm(new PackMenu());
+        if (!openingSubMenu) {
+            player.setPacksUpdated(true);
+            player.sendForm(new PackMenu());
+        }
     }
 
     private void addPack(ExtrasPlayer player) {

@@ -24,6 +24,7 @@ public class PackMenu extends BedrockMenu {
 
         List<UUID> selectedPacks = player.getPreferences().getSelectedPacks();
 
+
         for (UUID uuid : selectedPacks) {
             createPackButton(PackLoader.PACKS.get(uuid), player);
         }

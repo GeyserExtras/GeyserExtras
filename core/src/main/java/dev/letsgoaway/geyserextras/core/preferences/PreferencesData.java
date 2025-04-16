@@ -1,6 +1,7 @@
 package dev.letsgoaway.geyserextras.core.preferences;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.menus.Menus;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Action;
@@ -64,6 +65,10 @@ public class PreferencesData {
     @Getter
     @Setter
     private List<UUID> selectedPacks = new ArrayList<>();
+    @Getter
+    @Setter
+    @JsonSerialize
+    private HashMap<UUID, String> selectedSubpacks = new HashMap<>();
     @Getter
     @Setter
     private boolean sendSystemToasts = true;
@@ -179,7 +184,7 @@ public class PreferencesData {
             session.getPreferencesCache().setPrefersShowCoordinates(this.showCoordinates);
             session.setAdvancedTooltips(this.advancedTooltips);
             if (player.isLoggedIn()) {
-                session.getPlayerInventory().updateInventory();
+                session.getPlayerInventoryHolder().updateInventory();
             }
             session.getPreferencesCache().setPrefersCustomSkulls(this.customSkullSkins);
         }
@@ -199,6 +204,7 @@ public class PreferencesData {
         this.doubleClickMS = data.doubleClickMS;
         this.lockedPerspective = data.lockedPerspective;
         this.selectedPacks = data.selectedPacks;
+        this.selectedSubpacks = data.selectedSubpacks;
         this.sendSystemToasts = data.sendSystemToasts;
         this.showFPS = data.showFPS;
     }

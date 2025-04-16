@@ -82,7 +82,7 @@ public class VideoSection extends Section {
                         + player.translate("debug.prefix")
                         + " " + ChatColor.RESET
                         + player.translate("debug.advanced_tooltips." + onOrOff));
-                session.getPlayerInventory().updateInventory();
+                session.getPlayerInventoryHolder().updateInventory();
             }
         }));
 

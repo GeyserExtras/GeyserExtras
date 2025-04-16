@@ -43,7 +43,7 @@ public enum Action {
                         + player.translate("debug.prefix")
                         + " " + ChatColor.RESET
                         + player.translate("debug.advanced_tooltips." + onOrOff));
-                session.getPlayerInventory().updateInventory();
+                session.getPlayerInventoryHolder().updateInventory();
             }
             case OPEN_GE_MENU -> player.sendForm(new MainMenu());
             case OPEN_ADVANCEMENTS -> session.getAdvancementsCache().buildAndShowMenuForm();
@@ -69,7 +69,7 @@ public enum Action {
                         ServerboundPlayerCommandPacket openVehicleWindowPacket = new ServerboundPlayerCommandPacket(session.getPlayerEntity().getEntityId(), PlayerState.OPEN_VEHICLE_INVENTORY);
                         session.sendDownstreamGamePacket(openVehicleWindowPacket);
                     } else {
-                        InventoryUtils.openInventory(session, session.getPlayerInventory());
+                        InventoryUtils.openInventory(session.getPlayerInventoryHolder());
                     }
                 }
             }

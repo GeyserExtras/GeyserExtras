@@ -96,7 +96,7 @@ public class GeyserHandler {
 
     public static ExtrasPlayer getPlayer(UUID javaUUID) {
         for (ExtrasPlayer player : GE.connections.values()) {
-            if (player.getJavaUUID().equals(javaUUID)) {
+            if (player.getJavaUUID() != null && player.getJavaUUID().equals(javaUUID)) {
                 return player;
             }
         }

@@ -26,7 +26,7 @@ public class BedrockBlockInteractions {
             case DROP_ITEM -> {
                 if (session.isSneaking()) {
                     player.getPreferences().runAction(Remappable.SNEAK_DROP);
-                    session.getPlayerInventory().updateInventory();
+                    session.getPlayerInventoryHolder().updateInventory();
                 }
             }
             case START_BREAK -> {
