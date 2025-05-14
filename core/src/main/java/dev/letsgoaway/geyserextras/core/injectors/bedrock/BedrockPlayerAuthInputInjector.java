@@ -25,6 +25,10 @@ public class BedrockPlayerAuthInputInjector extends PacketTranslator<PlayerAuthI
         translator.translate(session, packet);
 
         ExtrasPlayer player = GeyserHandler.getPlayer(session);
+        if (player == null) {
+            SERVER.debugWarn("Player is null, skipping PlayerAuthInputPacket");
+            return;
+        }
         player.setEmoting(packet.getInputData().contains(PlayerAuthInputData.EMOTING));
 
         for (PlayerAuthInputData input : packet.getInputData()) {

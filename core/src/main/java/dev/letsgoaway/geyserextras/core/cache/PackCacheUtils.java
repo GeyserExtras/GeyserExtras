@@ -44,6 +44,13 @@ public class PackCacheUtils {
             if (optionalPackNeedsUpdate || extrasPackNeedsUpdate) {
                 Cache.saveCacheDates();
             }
+            // how on gods green earth did i accidentally delete this are we fr
+            if (optionalPackNeedsUpdate) {
+                SERVER.log("Downloading GeyserOptionalPack...");
+                InputStream in = HTTP.request("https://download.geysermc.org/v2/projects/geyseroptionalpack/versions/latest/builds/latest/downloads/geyseroptionalpack");
+                Files.copy(in, GEYSER_OPTIONAL_PACK, StandardCopyOption.REPLACE_EXISTING);
+                SERVER.log("GeyserOptionalPack downloaded!");
+            }
             if (extrasPackNeedsUpdate) {
                 SERVER.log("Downloading GeyserExtrasPack...");
                 InputStream in = HTTP.request("https://raw.githubusercontent.com/GeyserExtras/GeyserExtrasPack/main/GeyserExtrasPack.mcpack");
