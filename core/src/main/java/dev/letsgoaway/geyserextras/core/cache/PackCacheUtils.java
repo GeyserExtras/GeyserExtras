@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.parity.java.menus.packs.PackLoader;
 import dev.letsgoaway.geyserextras.core.version.Version3;
+import org.geysermc.api.Geyser;
 import org.geysermc.geyser.api.event.bedrock.SessionLoadResourcePacksEvent;
 import org.geysermc.geyser.api.pack.PackCodec;
 import org.geysermc.geyser.api.pack.ResourcePack;
@@ -11,6 +12,7 @@ import org.geysermc.geyser.api.pack.option.PriorityOption;
 import org.geysermc.geyser.api.pack.option.SubpackOption;
 import org.geysermc.geyser.pack.option.GeyserPriorityOption;
 
+import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
 import java.nio.file.Files;
@@ -63,6 +65,21 @@ public class PackCacheUtils {
         SERVER.log("Loading resources...");
         RP_GEYSER_OPTIONAL = ResourcePack.create(PackCodec.path(GEYSER_OPTIONAL_PACK));
         RP_GEYSER_EXTRAS = ResourcePack.create(PackCodec.path(GEYSER_EXTRAS_PACK));
+
+        // temporary, remove when geyserextras is released as its to remove a workaround for a bug i fixed that i suggested in the discord
+        Path geyserMCPacks = GE.geyserApi.packDirectory();
+        File geWorkaroundPack = geyserMCPacks.resolve("GeyserExtrasPack.mcpack").toFile();
+        if (geWorkaroundPack.exists()) {
+            if (geWorkaroundPack.delete()) {
+                SERVER.log("Deleted GeyserExtrasPack.mcpack from GeyserMC packs folder");
+            }
+        }
+        File gopWorkaroundPack = geyserMCPacks.resolve("GeyserOptionalPack.mcpack").toFile();
+        if (gopWorkaroundPack.exists()) {
+            if (gopWorkaroundPack.delete()) {
+                SERVER.log("Deleted GeyserOptionalPack.mcpack from GeyserMC packs folder");
+            }
+        }
     }
 
     private static boolean checkOptionalPack() {
