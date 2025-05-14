@@ -23,8 +23,9 @@ public class ResetModal extends BedrockModal {
     public void onSubmit(ExtrasPlayer player, boolean accepted) {
         if (accepted) {
             new Thread(() -> {
-                player.getUserPrefs().delete();
-                player.reconnect();
+                if (player.getUserPrefs().delete()) {
+                    player.reconnect();
+                }
             }).start();
         } else {
             onClose(player);

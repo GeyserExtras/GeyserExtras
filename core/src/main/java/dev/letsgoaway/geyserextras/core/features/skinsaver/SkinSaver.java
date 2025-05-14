@@ -50,6 +50,7 @@ public class SkinSaver {
             }
 
         } catch (IOException e) {
+            SERVER.warn("Could not save skin data for player " + player.getBedrockXUID() + ", " + e.getLocalizedMessage());
         }
     }
 

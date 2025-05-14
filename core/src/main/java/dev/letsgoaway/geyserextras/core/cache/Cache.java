@@ -91,6 +91,7 @@ public class Cache {
         try (FileInputStream data = new FileInputStream(CREDITS_PATH.toFile())) {
             CREDITS_TEXT = new String(data.readAllBytes()).replaceAll("&", "§");
         } catch (Exception e) {
+            CREDITS_TEXT = "Error loading credits :/";
         }
         GELocale.loadAll();
     }

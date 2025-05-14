@@ -6,7 +6,7 @@ import org.geysermc.cumulus.component.Component;
 import org.geysermc.cumulus.component.LabelComponent;
 
 public class Label extends FormElement {
-    public String text = "";
+    public String text;
     public Label(String text){
         this.text = text;
     }

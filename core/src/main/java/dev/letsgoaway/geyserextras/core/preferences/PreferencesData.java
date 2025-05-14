@@ -35,11 +35,11 @@ public class PreferencesData {
     @JsonIgnore
     private final GeyserSession session;
     public CooldownUtils.CooldownType cooldownType = CooldownUtils.CooldownType.TITLE;
-    public boolean showCoordinates = false;
+    public boolean showCoordinates;
 
     public boolean advancedTooltips = false;
 
-    public boolean customSkullSkins = true;
+    public boolean customSkullSkins;
 
     public HashMap<Remappable, Action> remappableActionMap;
     @Getter

@@ -13,6 +13,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.command.PluginCommand;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.geysermc.geyser.api.connection.GeyserConnection;
@@ -42,10 +43,27 @@ public class GeyserExtrasSpigot extends JavaPlugin implements Server {
     @Override
     public void onEnable() {
         SpigotCommandHandler handler = new SpigotCommandHandler();
-        this.getCommand("geyserextras").setExecutor(handler);
-        this.getCommand("platformlist").setExecutor(handler);
-        this.getCommand("playerlist").setExecutor(handler);
-        this.getCommand("emotechat").setExecutor(handler);
+
+        PluginCommand geCommand = this.getCommand("geyserextras");
+        if (geCommand != null){
+            geCommand.setExecutor(handler);
+        }
+
+        PluginCommand platformlistCommand = this.getCommand("platformlist");
+        if (platformlistCommand != null){
+            platformlistCommand.setExecutor(handler);
+        }
+
+        PluginCommand playerlistCommand = this.getCommand("playerlist");
+        if (playerlistCommand != null){
+            playerlistCommand.setExecutor(handler);
+        }
+
+        PluginCommand emoteChatCommand = this.getCommand("emotechat");
+        if (emoteChatCommand != null){
+            emoteChatCommand.setExecutor(handler);
+        }
+
         this.getServer().getPluginManager().registerEvents(new SpigotListener(), this);
         CORE = new GeyserExtras(this);
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, () -> {
@@ -108,11 +126,19 @@ public class GeyserExtrasSpigot extends JavaPlugin implements Server {
 
     @Override
     public void sendRawMessage(UUID javaPlayer, String message) {
-        Bukkit.getPlayer(javaPlayer).sendRawMessage(message);
+        Player player = Bukkit.getPlayer(javaPlayer);
+        if (player == null) {
+            return;
+        }
+        player.sendRawMessage(message);
     }
 
     @Override
     public void sendMessage(UUID javaPlayer, String message) {
-        Bukkit.getPlayer(javaPlayer).sendMessage(ChatColor.translateAlternateColorCodes('§', message));
+        Player player = Bukkit.getPlayer(javaPlayer);
+        if (player == null) {
+            return;
+        }
+        player.sendMessage(ChatColor.translateAlternateColorCodes('§', message));
     }
 }

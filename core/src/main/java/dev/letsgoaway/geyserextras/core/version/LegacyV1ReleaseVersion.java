@@ -13,12 +13,10 @@ public class LegacyV1ReleaseVersion {
 
     LegacyV1ReleaseVersion(Version3 minecraftVersion) {
         this.minecraftVersion = minecraftVersion;
-        this.resourceVersion = resourceVersion;
     }
 
     LegacyV1ReleaseVersion(Version3 minecraftVersion, boolean prerelease) {
         this.minecraftVersion = minecraftVersion;
-        this.resourceVersion = resourceVersion;
         this.prerelease = prerelease;
     }
 

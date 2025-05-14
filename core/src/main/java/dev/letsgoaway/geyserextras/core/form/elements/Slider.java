@@ -9,7 +9,7 @@ import org.geysermc.cumulus.component.SliderComponent;
 import java.util.function.Consumer;
 
 public class Slider extends FormElement {
-    public String title = "";
+    public String title;
     public float min;
     public float max;
     public float step;

@@ -9,7 +9,7 @@ import org.geysermc.cumulus.util.FormImage;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class Button extends FormElement {
-    public String text = "";
+    public String text;
     public FormImage.Type type;
     public String data;
     public Runnable onSelect;

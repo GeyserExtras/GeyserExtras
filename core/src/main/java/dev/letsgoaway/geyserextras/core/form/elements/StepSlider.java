@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class StepSlider extends FormElement {
-    public String title = "";
+    public String title;
     public List<String> steps;
     public String defaultStep;
     public Consumer<String> onResult;
