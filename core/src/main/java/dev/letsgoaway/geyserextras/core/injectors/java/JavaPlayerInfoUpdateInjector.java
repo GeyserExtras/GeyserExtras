@@ -12,6 +12,7 @@ import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.Clientbound
 import java.util.Set;
 
 // this could probably be better but im lazy
+// TODO figure out why this doesnt remove players properly
 @Translator(packet = ClientboundPlayerInfoUpdatePacket.class)
 public class JavaPlayerInfoUpdateInjector extends JavaPlayerInfoUpdateTranslator {
     @Override
@@ -26,11 +27,18 @@ public class JavaPlayerInfoUpdateInjector extends JavaPlayerInfoUpdateTranslator
             if (actions.contains(PlayerListEntryAction.UPDATE_LISTED)) {
                 if (cached == null) {
                     // Add it because we havent cached it yet.
-                    player.getTabListData().getPlayers().put(entry.getProfileId(), entry);
+                    if (entry.isListed()) {
+                        player.getTabListData().getPlayers().put(entry.getProfileId(), entry);
+                    }
                 } else {
                     // Edit the current listed status because the player is cached.
                     cached.setListed(entry.isListed());
-                    player.getTabListData().getPlayers().put(entry.getProfileId(), cached);
+                    if (entry.isListed()) {
+                        player.getTabListData().getPlayers().put(entry.getProfileId(), cached);
+                    } else {
+                        player.getTabListData().getPlayers().remove(entry.getProfileId());
+                    }
+                    continue;
                 }
             }
 

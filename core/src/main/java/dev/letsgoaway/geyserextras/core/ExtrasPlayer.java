@@ -129,10 +129,14 @@ public class ExtrasPlayer {
 
     private void createFpsBossBar() {
         long entityId = session.getEntityCache().getNextEntityId().incrementAndGet();
-        fpsBossBar = new BossBar(session, entityId, Component.text(diagnostics != null ? "FPS: " + Math.round(diagnostics.getAvgFps()) : ""), 1.0f, 0, 1, 0);
+        fpsBossBar = new BossBar(session, entityId, Component.text(getBossBarText()), 1.0f, 0, 1, 0);
 
         UUID bossbarID = UUID.randomUUID();
         session.getEntityCache().addBossBar(bossbarID, fpsBossBar);
+    }
+
+    public String getBossBarText() {
+        return diagnostics != null ? "FPS: " + Math.round(diagnostics.getAvgFps()) : "";
     }
 
 

@@ -18,7 +18,7 @@ public class BedrockDiagnosticsInjector extends PacketTranslator<ServerboundDiag
 
             player.getFpsBossBar().removeBossBar();
             player.getFpsBossBar().addBossBar();
-            player.getFpsBossBar().updateTitle(Component.text("FPS: " + Math.round(packet.getAvgFps())));
+            player.getFpsBossBar().updateTitle(Component.text(player.getBossBarText()));
         }
         //SERVER.log(String.valueOf(packet.getAvgFps()));
         //  GeyserHandler.getPlayer(session).sendActionbarTitle("FPS: " + packet.getAvgFps());
