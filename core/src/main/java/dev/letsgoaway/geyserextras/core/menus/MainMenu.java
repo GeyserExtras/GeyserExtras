@@ -62,9 +62,12 @@ public class MainMenu extends BedrockMenu {
         }
 
         if (GE.getConfig().isDebugMode()) {
+            /*
             add(new Button("EmotesTest", FormImage.Type.PATH, "textures/ui/emotes.png", () -> {
                 player.sendForm(new EmoteDataTestMenu());
             }));
+
+             */
         }
 
 

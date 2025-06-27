@@ -4,5 +4,6 @@ public enum EmoteRarity {
     COMMON,
     UNCOMMON,
     RARE,
-    EPIC
+    EPIC,
+    LEGENDARY
 }

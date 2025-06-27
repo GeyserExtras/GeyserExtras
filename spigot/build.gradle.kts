@@ -3,7 +3,7 @@ dependencies {
     implementation(project(":core"))
     compileOnly("org.spongepowered:configurate-yaml:4.2.0-GeyserMC-SNAPSHOT")
     compileOnly("net.kyori:adventure-api:4.18.0")
-    compileOnly("org.geysermc.geyser:core:2.7.1-SNAPSHOT")
+    compileOnly("org.geysermc.geyser:core:2.8.0-SNAPSHOT")
     compileOnly("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
 }
 

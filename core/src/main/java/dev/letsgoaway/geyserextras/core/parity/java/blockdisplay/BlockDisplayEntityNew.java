@@ -144,17 +144,17 @@ public class BlockDisplayEntityNew extends BlockDisplayBaseEntity implements Tic
         Block block = state.block();
         Item item = BlockItem.byBlock(block);
         if (item.javaIdentifier().contains("_door") || item.javaIdentifier().contains("_candle")) {
-            setHand(Items.AIR.newItemStack(1, null).getItemStack());
+            setHand(Items.AIR.newItemStack(1, null));
             updateMainHand(session);
             return;
         }
 
         if (rendersAs2D.contains(block.javaIdentifier().toString())) {
-            setHand(Items.AIR.newItemStack(1, null).getItemStack());
+            setHand(Items.AIR.newItemStack(1, null));
             updateMainHand(session);
             return;
         }
-        setHand(item.newItemStack(1, null).getItemStack());
+        setHand(item.newItemStack(1, null));
         updateMainHand(session);
     }
 
