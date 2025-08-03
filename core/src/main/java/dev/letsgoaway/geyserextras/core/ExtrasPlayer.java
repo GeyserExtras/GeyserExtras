@@ -17,9 +17,10 @@ import dev.letsgoaway.geyserextras.core.utils.TickMath;
 import lombok.Getter;
 import lombok.Setter;
 import net.kyori.adventure.text.Component;
-import org.cloudburstmc.math.vector.Vector2f;
-import org.cloudburstmc.protocol.bedrock.data.camera.AimAssistAction;
-import org.cloudburstmc.protocol.bedrock.packet.*;
+import org.cloudburstmc.protocol.bedrock.packet.AnimatePacket;
+import org.cloudburstmc.protocol.bedrock.packet.ServerboundDiagnosticsPacket;
+import org.cloudburstmc.protocol.bedrock.packet.SetTitlePacket;
+import org.cloudburstmc.protocol.bedrock.packet.ToastRequestPacket;
 import org.geysermc.geyser.api.bedrock.camera.GuiElement;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 import org.geysermc.geyser.api.event.bedrock.ClientEmoteEvent;
@@ -127,11 +128,12 @@ public class ExtrasPlayer {
         javaUUID = session.javaUuid();
     }
 
+    private UUID bossbarID;
+
     private void createFpsBossBar() {
         long entityId = session.getEntityCache().getNextEntityId().incrementAndGet();
         fpsBossBar = new BossBar(session, entityId, Component.text(getBossBarText()), 1.0f, 0, 1, 0);
-
-        UUID bossbarID = UUID.randomUUID();
+        bossbarID = UUID.randomUUID();
         session.getEntityCache().addBossBar(bossbarID, fpsBossBar);
     }
 
@@ -162,6 +164,10 @@ public class ExtrasPlayer {
             doubleClickShortcutFuture = null;
         }
         tabListData.getPlayers().clear();
+        if (fpsBossBar != null) {
+            session.getEntityCache().removeBossBar(bossbarID);
+            fpsBossBar = null;
+        }
     }
 
     public void reconnect() {
@@ -199,17 +205,17 @@ public class ExtrasPlayer {
 
     public void tick() {
         ticks++;
-        if (GE.getConfig().isDisablePaperDoll()) {
+        if (GE.getConfig().isDisablePaperDoll() && !session.camera().isHudElementHidden(GuiElement.PAPER_DOLL)) {
             session.camera().hideElement(GuiElement.PAPER_DOLL);
         }
 
-        if (session.getDimensionType().isNetherLike()) {
-            if (session.camera().fogEffects().contains(DimensionUtils.BEDROCK_FOG_HELL)) {
-                session.camera().removeFog(DimensionUtils.BEDROCK_FOG_HELL);
-            }
+
+        if (session.getDimensionType().isNetherLike() && session.camera().fogEffects().contains(DimensionUtils.BEDROCK_FOG_HELL)) {
+            session.camera().removeFog(DimensionUtils.BEDROCK_FOG_HELL);
         }
 
-        if (preferences.isShowFPS() && diagnostics != null && fpsBossBar == null) {
+
+        if (fpsBossBar == null && preferences.isShowFPS() && diagnostics != null) {
             createFpsBossBar();
         }
     }

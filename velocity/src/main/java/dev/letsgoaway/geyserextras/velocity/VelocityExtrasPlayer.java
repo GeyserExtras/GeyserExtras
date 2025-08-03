@@ -9,13 +9,18 @@ import org.geysermc.geyser.api.connection.GeyserConnection;
 
 import java.util.concurrent.TimeUnit;
 
+import static com.velocitypowered.api.scheduler.TaskStatus.SCHEDULED;
+
 public class VelocityExtrasPlayer extends ExtrasPlayer {
     public Player player;
     Scheduler.TaskBuilder builder;
     ScheduledTask task;
 
+    Scheduler scheduler;
+
     public VelocityExtrasPlayer(GeyserConnection connection) {
         super(connection);
+        this.scheduler = GeyserExtrasVelocity.server.getScheduler();
     }
 
     @Override
@@ -30,10 +35,11 @@ public class VelocityExtrasPlayer extends ExtrasPlayer {
     public void setTickingState(float tickrate) {
         super.setTickingState(tickrate);
         if (builder == null) {
-            builder = GeyserExtrasVelocity.server.getScheduler().buildTask(GeyserExtrasVelocity.VELOCITY, this::tick);
+            builder = scheduler.buildTask(GeyserExtrasVelocity.VELOCITY, this::tick);
         }
-        if (task != null) {
+        if (task != null && task.status().equals(SCHEDULED)) {
             task.cancel();
+            task = null;
         }
         builder.clearRepeat();
         builder.repeat(TickMath.toNanos(tickrate), TimeUnit.NANOSECONDS);

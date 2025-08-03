@@ -4,6 +4,7 @@ import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.GeyserExtras;
 import dev.letsgoaway.geyserextras.core.utils.TickMath;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
+import net.md_5.bungee.api.scheduler.TaskScheduler;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 
 import java.util.concurrent.TimeUnit;
@@ -11,8 +12,11 @@ import java.util.concurrent.TimeUnit;
 public class BungeeExtrasPlayer extends ExtrasPlayer {
     public ProxiedPlayer player;
 
+    public TaskScheduler scheduler;
+
     public BungeeExtrasPlayer(GeyserConnection connection) {
         super(connection);
+        scheduler = GeyserExtrasBungee.BUNGEE.getProxy().getScheduler();
     }
 
     @Override
@@ -25,7 +29,6 @@ public class BungeeExtrasPlayer extends ExtrasPlayer {
     @Override
     public void tick() {
         super.tick();
-        GeyserExtrasBungee.BUNGEE.getProxy().getScheduler().schedule(GeyserExtrasBungee.BUNGEE, this::tick, TickMath.toNanos(this.tickrate), TimeUnit.NANOSECONDS);
-        GeyserExtras.SERVER.getTickUtil().runIn(1L, this::tick, this);
+        scheduler.schedule(GeyserExtrasBungee.BUNGEE, this::tick, TickMath.toNanos(this.tickrate), TimeUnit.NANOSECONDS);
     }
 }
