@@ -2,7 +2,7 @@ dependencies {
     implementation(project(":core"))
     compileOnly("net.kyori:adventure-api:4.18.0")
     compileOnly("org.geysermc.geyser:core:2.8.2-SNAPSHOT")
-    compileOnly("net.md-5:bungeecord-api:1.21-R0.1-SNAPSHOT")
+    compileOnly("net.md-5:bungeecord-api:1.21-R0.1")
 }
 
 tasks {
