@@ -42,7 +42,7 @@ import java.util.concurrent.TimeUnit;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
-
+//
 public class ExtrasPlayer {
     @Getter
     private final CooldownHandler cooldownHandler;
