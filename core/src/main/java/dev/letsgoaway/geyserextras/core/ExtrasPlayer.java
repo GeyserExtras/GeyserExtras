@@ -29,6 +29,7 @@ import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.session.cache.BossBar;
 import org.geysermc.geyser.text.MinecraftLocale;
 import org.geysermc.geyser.util.DimensionUtils;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.time.Duration;
@@ -42,6 +43,7 @@ import java.util.concurrent.TimeUnit;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
+
 //
 public class ExtrasPlayer {
     @Getter
@@ -171,11 +173,9 @@ public class ExtrasPlayer {
     }
 
     public void reconnect() {
-        String[] data = session.getClientData().getServerAddress().split(":");
-        String address = data[0];
-        int port = Integer.parseInt(data[1]);
-        session.transfer(address, port);
+        session.transfer(session.joinAddress(), session.joinPort());
     }
+
 
     public void hungerSprintCancel() {
         // todo: figure out how to recreate this option with geyser codebase
@@ -263,8 +263,8 @@ public class ExtrasPlayer {
     public void sendSystemToast(String title, String description) {
         if (preferences.isSendSystemToasts() && GE.getConfig().isEnableGeyserExtrasMenu()) {
             ToastRequestPacket toastPacket = new ToastRequestPacket();
-            toastPacket.setTitle(title);
-            toastPacket.setContent(description);
+            toastPacket.setTitle((CharSequence) title);
+            toastPacket.setContent((CharSequence) description);
             session.sendUpstreamPacket(toastPacket);
         }
     }
