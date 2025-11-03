@@ -3,11 +3,18 @@ package dev.letsgoaway.geyserextras.spigot;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.World;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Mannequin;
 import org.bukkit.entity.Player;
+import org.bukkit.profile.PlayerProfile;
+import org.bukkit.profile.PlayerSkinPatch;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 
 import java.util.Set;
 
+import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 import static dev.letsgoaway.geyserextras.spigot.GeyserExtrasSpigot.SPIGOT;
 
 public class SpigotExtrasPlayer extends ExtrasPlayer {
@@ -21,6 +28,7 @@ public class SpigotExtrasPlayer extends ExtrasPlayer {
     public void startGame() {
         super.startGame();
         player = Bukkit.getPlayer(getJavaUUID());
+
     }
 
     @Override
@@ -33,6 +41,7 @@ public class SpigotExtrasPlayer extends ExtrasPlayer {
                     player.sendBlockChange(targetBlock.getLocation(), targetBlock.getBlockData());
                 }
             });
+
         }
     }
 

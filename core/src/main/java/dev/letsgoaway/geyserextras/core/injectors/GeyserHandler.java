@@ -22,6 +22,7 @@ import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.entity.Clie
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.inventory.ClientboundOpenScreenPacket;
 import org.geysermc.mcprotocollib.protocol.packet.ingame.clientbound.level.ClientboundSoundPacket;
 
+import javax.annotation.Nullable;
 import java.util.UUID;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
@@ -89,11 +90,12 @@ public class GeyserHandler {
         Registries.BEDROCK_PACKET_TRANSLATORS.register(InteractPacket.class, new BedrockInteractInjector());
     }
 
-
+    @Nullable
     public static ExtrasPlayer getPlayer(GeyserSession session) {
         return GE.connections.get(session.xuid());
     }
 
+    @Nullable
     public static ExtrasPlayer getPlayer(UUID javaUUID) {
         for (ExtrasPlayer player : GE.connections.values()) {
             if (player.getJavaUUID() != null && player.getJavaUUID().equals(javaUUID)) {

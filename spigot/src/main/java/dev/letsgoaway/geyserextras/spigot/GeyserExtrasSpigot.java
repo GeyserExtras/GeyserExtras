@@ -1,11 +1,13 @@
 package dev.letsgoaway.geyserextras.spigot;
 
+
 import dev.letsgoaway.geyserextras.Server;
 import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.GeyserExtras;
 import dev.letsgoaway.geyserextras.core.parity.bedrock.EmoteUtils;
 import dev.letsgoaway.geyserextras.core.preferences.JavaPreferencesData;
+import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import dev.letsgoaway.geyserextras.core.utils.TickUtil;
 import dev.letsgoaway.geyserextras.spigot.config.GeyserExtrasSpigotConfig;
 import dev.letsgoaway.geyserextras.spigot.config.SpigotConfigLoader;
@@ -14,6 +16,7 @@ import lombok.Setter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.PluginCommand;
+import org.bukkit.entity.Mannequin;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.geysermc.geyser.api.connection.GeyserConnection;
@@ -30,6 +33,7 @@ public class GeyserExtrasSpigot extends JavaPlugin implements Server {
 
     private static SpigotTickUtil spigotTickUtil;
 
+
     @Getter
     @Setter
     private GeyserExtrasSpigotConfig platformConfig;
@@ -38,6 +42,19 @@ public class GeyserExtrasSpigot extends JavaPlugin implements Server {
         ServerType.type = ServerType.SPIGOT;
         SPIGOT = this;
         spigotTickUtil = new SpigotTickUtil();
+
+
+    }
+
+    @Override
+    public void onLoad() {
+        // use the function instead of IsAvailable.PACKETEVENTS because packetevents is loaded before GeyserExtras is loaded
+        // where the IsAvailable class is initialised
+        if (IsAvailable.packetevents()) {
+            dev.letsgoaway.geyserextras.core.protocol.ProtocolHandler.load(
+                    io.github.retrooper.packetevents.factory.spigot.SpigotPacketEventsBuilder.build(this)
+            );
+        }
     }
 
     @Override
@@ -69,6 +86,10 @@ public class GeyserExtrasSpigot extends JavaPlugin implements Server {
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, () -> {
             CORE.serverTick();
         }, 0L, 0L);
+
+        if (IsAvailable.packetevents()) {
+            dev.letsgoaway.geyserextras.core.protocol.ProtocolHandler.init();
+        }
     }
 
     @Override
@@ -76,9 +97,15 @@ public class GeyserExtrasSpigot extends JavaPlugin implements Server {
         SpigotConfigLoader.load();
     }
 
+
+
     @Override
     public void onDisable() {
         CORE.autoReconnectAll();
+        if (IsAvailable.packetevents()) {
+            dev.letsgoaway.geyserextras.core.protocol.ProtocolHandler.terminate();
+        }
+
     }
 
     @Override

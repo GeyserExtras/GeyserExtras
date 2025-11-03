@@ -1,0 +1,40 @@
+The cape workaround works by using fake mannequin entities 
+with player profiles that have a cape on, 
+hiding the players body texture using skin patches,
+and copying the players movement packets to the fake mannequin entity.
+The following player profiles were used to get each cape working.
+
+(so if you are one of the below players, 
+it would be really nice if you dont change / take off your cape)
+
+(but do what you want lol :D)
+
+(if you would like your profile removed from the list/program
+please contact me at contact@letsgoaway.dev)
+
+The Pan Cape!: https://namemc.com/profile/soul276.1
+One Vanilla Cape: https://namemc.com/profile/cryzze.2
+Common Cape: https://namemc.com/profile/ToGa_ns.1
+
+MINECON 2011 Cape: https://namemc.com/profile/Isuca.4
+MINECON 2012 Cape: https://namemc.com/profile/MineconOwner.2
+MINECON 2013 Cape: https://namemc.com/profile/TNT_Overlord.1
+MINECON 2015 Cape: https://namemc.com/profile/Music.1
+MINECON 2016 Cape: https://namemc.com/profile/FuryVoid1.1
+MINECON Live 2019 Cape (Founder's Cape): https://namemc.com/profile/_chirs.2
+Minecraft Experience Cape: https://namemc.com/profile/ml_.2
+
+Cherry Blossom Cape: https://namemc.com/profile/Erok096.1
+Follower's Cape: https://namemc.com/profile/reconot.1
+Purple Heart Cape: https://namemc.com/profile/xZululu.1
+15th Anniversary Cape: https://namemc.com/profile/Prebt.1
+Copper Cape: https://namemc.com/profile/Bowlman420.1
+
+MCC 15th Year Cape: https://namemc.com/profile/wjaw.2
+Eyeblossom Cape (Mojang Office Cape): https://namemc.com/profile/pz89.1
+
+(i have searched every single cape username but these are actually wearing the cape :D)
+Home Cape: https://namemc.com/profile/HomeCape.1
+Menace Cape: https://namemc.com/profile/MenaceCape.1
+Yearn Cape: https://namemc.com/profile/YearnCape.1
+

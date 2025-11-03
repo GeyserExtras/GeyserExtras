@@ -11,6 +11,7 @@ public class IsAvailable {
     // on startup
     private static boolean CLOUDBURST = false;
     private static boolean ADVENTURE = false;
+    private static boolean PACKETEVENTS = false;
 
     public static boolean classExists(String clazz) {
         try {
@@ -25,6 +26,7 @@ public class IsAvailable {
         FLOODGATE = classExists("org.geysermc.floodgate.api.SimpleFloodgateApi");
         CLOUDBURST = classExists("org.cloudburstmc.protocol.bedrock.packet.BedrockPacket");
         ADVENTURE = classExists("net.kyori.adventure.text.Component") || classExists("org.geysermc.geyser.platform.spigot.shaded.net.kyori.adventure.text.Component") || classExists("org.geysermc.geyser.platform.bungeecord.shaded.net.kyori.adventure.text.Component");
+        PACKETEVENTS = classExists("com.github.retrooper.packetevents.PacketEvents");
     }
 
     public static boolean floodgate() {
@@ -43,5 +45,9 @@ public class IsAvailable {
 
     public static boolean adventure() {
         return ADVENTURE;
+    }
+
+    public static boolean packetevents() {
+        return classExists("com.github.retrooper.packetevents.PacketEvents");
     }
 }

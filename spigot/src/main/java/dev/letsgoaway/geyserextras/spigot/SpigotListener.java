@@ -1,10 +1,11 @@
 package dev.letsgoaway.geyserextras.spigot;
 
+
+import com.github.retrooper.packetevents.wrapper.play.server.*;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.injectors.GeyserHandler;
 import org.bukkit.FluidCollisionMode;
 import org.bukkit.Material;
-import org.bukkit.SoundCategory;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -12,16 +13,13 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerKickEvent;
+import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.util.RayTraceResult;
 import org.bukkit.util.Vector;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.*;
 
-import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class SpigotListener implements Listener {
@@ -46,6 +44,8 @@ public class SpigotListener implements Listener {
             "PUMPKIN_STEM"
     );
 
+
+
     public static void stopSoundForBlock(String blockName, Player player) {
         player.stopSound("minecraft:dig." + blockName);
         player.stopSound("minecraft:use." + blockName);
@@ -54,6 +54,11 @@ public class SpigotListener implements Listener {
         player.stopSound("minecraft:jump." + blockName);
         player.stopSound("minecraft:hit." + blockName);
         player.stopSound("minecraft:fall." + blockName);
+    }
+
+    @EventHandler
+    public void onPlayerLogin(PlayerLoginEvent event) {
+
     }
 
     @EventHandler
@@ -105,8 +110,7 @@ public class SpigotListener implements Listener {
 
                 if (block.getType().equals(Material.AIR) || ev.getBlockAgainst().getType().equals(Material.AIR)) {
                     ev.setCancelled(true);
-                }
-                else {
+                } else {
                     RayTraceResult blockCast = player.rayTraceBlocks(interactionRange, FluidCollisionMode.ALWAYS);
 
                     if (blockCast != null) {
@@ -117,7 +121,7 @@ public class SpigotListener implements Listener {
                     block.setType(Material.AIR);
                     Vector velocity = player.getVelocity().clone();
                     player.teleport(player.getLocation());
-                    SERVER.getTickUtil().runIn(2L,() ->{
+                    SERVER.getTickUtil().runIn(2L, () -> {
                         player.setVelocity(velocity);
                     }, extrasPlayer);
                     player.updateInventory();
