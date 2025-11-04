@@ -29,9 +29,11 @@ public class CapeLoader {
         FOUNDERS(UUID.fromString("1b99b77c-3caa-4aaa-8f79-f79f053e586f"), "founders"),
         HOME(UUID.fromString("a4c83b58-b18e-0815-7ce7-1ec9182d8027"), "home"),
         MCC(UUID.fromString("d9ad40f5-e119-4b2b-8077-cec04b923e60"), "mcc15thyear"),
+        // MC Experience
         MENACE(UUID.fromString("3f4f5068-2c40-debb-b181-bdafad187859"), "menace"),
         PANCAPE(UUID.fromString("ef479b6d-7072-47aa-8985-0f025cd24cdb"), "pan"),
         PURPLE_HEART(UUID.fromString("07adfe62-a54b-49b4-9d93-10c6c2079a76"), "purpleheart"),
+        // VANILLA
         YEARN(UUID.fromString("5b20560b-6da2-4c2f-ba1c-3d94fea845eb"), "yearn"),
 
         MINECON_2016(UUID.fromString("918a35c9-9af0-30d3-b7ca-39981e49284f"), "minecon2016"),

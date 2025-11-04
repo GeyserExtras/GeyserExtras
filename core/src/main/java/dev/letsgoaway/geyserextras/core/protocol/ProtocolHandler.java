@@ -348,7 +348,7 @@ public class ProtocolHandler implements PacketListener {
             } else {
                 for (int entityID : wrapper.getPassengers()) {
                     if (players.containsKey(entityID)) {
-                        deleteMannequin(user, entityID);
+                        deleteMannequin(user, -entityID);
                     }
                 }
 
@@ -360,7 +360,8 @@ public class ProtocolHandler implements PacketListener {
         WrapperPlayServerDestroyEntities wrapper = new WrapperPlayServerDestroyEntities(mannequinID);
         user.sendPacketSilently(wrapper);
         mannequins.remove(Integer.valueOf(mannequinID));
-
+        // todo: make the mannequin checks seperate from players that should apply the workaround
+        players.remove(Integer.valueOf(-mannequinID));
     }
 
     @Override
