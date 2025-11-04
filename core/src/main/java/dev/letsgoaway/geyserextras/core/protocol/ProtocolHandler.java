@@ -24,6 +24,7 @@ import com.github.retrooper.packetevents.wrapper.play.client.WrapperPlayClientIn
 import com.github.retrooper.packetevents.wrapper.play.server.*;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.injectors.GeyserHandler;
+import dev.letsgoaway.geyserextras.core.parity.java.menus.tablist.TabListData;
 import org.geysermc.geyser.entity.type.player.SessionPlayerEntity;
 import org.geysermc.geyser.session.GeyserSession;
 
@@ -136,7 +137,7 @@ public class ProtocolHandler implements PacketListener {
                     playerUUID = packet.getUUID().get();
                 }
                 // only apply the mannequin work around for bedrock players, java players will load their cape fine
-                if (playerUUID != null && GE.geyserApi.isBedrockPlayer(playerUUID)) {
+                if (playerUUID != null && GE.geyserApi.isBedrockPlayer(playerUUID) && TabListData.isFloodgateID(playerUUID)) {
                     GeyserSession player = (GeyserSession) GE.geyserApi.connectionByUuid(playerUUID);
 
                     // if we can actually load their cape on java lets do that
