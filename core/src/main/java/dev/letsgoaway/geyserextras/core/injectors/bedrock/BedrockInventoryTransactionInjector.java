@@ -32,7 +32,7 @@ import org.geysermc.geyser.translator.protocol.bedrock.BedrockInventoryTransacti
 public class BedrockInventoryTransactionInjector extends BedrockInventoryTransactionTranslator {
     @Override
     public void translate(GeyserSession session, InventoryTransactionPacket packet) {
-        ExtrasPlayer player = GeyserHandler.getPlayer(session);
+        ExtrasPlayer player = ExtrasPlayer.get(session);
 
         //SERVER.log("INVENTORY TRANSACTION PACKET: " + packet.getTransactionType().name() + " " + packet.getActionType() + " " + (packet.getBlockPosition() == null ? "null" : packet.getBlockPosition().toString()) + " " + packet.getClickPosition().toString());
         //SERVER.log(String.valueOf(System.currentTimeMillis() - player.getCooldownHandler().getLastBlockRightClickTime()));

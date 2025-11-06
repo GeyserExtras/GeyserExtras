@@ -11,6 +11,7 @@ import dev.letsgoaway.geyserextras.core.parity.java.menus.serverlinks.ServerLink
 import dev.letsgoaway.geyserextras.core.parity.java.menus.tablist.TabListData;
 import dev.letsgoaway.geyserextras.core.preferences.PreferencesData;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
+import dev.letsgoaway.geyserextras.core.utils.IdUtils;
 import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import dev.letsgoaway.geyserextras.core.utils.StringUtils;
 import dev.letsgoaway.geyserextras.core.utils.TickMath;
@@ -31,6 +32,7 @@ import org.geysermc.geyser.text.MinecraftLocale;
 import org.geysermc.geyser.util.DimensionUtils;
 import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.Nullable;
 import java.io.File;
 import java.time.Duration;
 import java.time.Instant;
@@ -324,4 +326,46 @@ public class ExtrasPlayer {
     public String translateGE(String lang) {
         return GELocale.translate(lang, session.locale());
     }
+    public String translateOtherwiseGE(String lang, String otherwise) {
+        return GELocale.translateOtherwise(lang, otherwise, session.locale());
+    }
+
+    @Nullable
+    public static ExtrasPlayer get(UUID javaUUID) {
+        long XUID = IdUtils.getBedrockXUID(javaUUID);
+        if (XUID != -1) {
+            return get(XUID);
+        }
+        for (ExtrasPlayer player : GE.connections.values()) {
+            if (player.getJavaUUID() != null && player.getJavaUUID().equals(javaUUID)) {
+                return player;
+            }
+        }
+        return null;
+    }
+
+    public static ExtrasPlayer get(GeyserConnection connection) {
+        return get(connection.xuid());
+    }
+
+    public static ExtrasPlayer get(long XUID) {
+        return get(String.valueOf(XUID));
+    }
+
+    public static ExtrasPlayer get(String XUID) {
+        return GE.connections.get(XUID);
+    }
+
+    public static boolean exists(GeyserConnection connection) {
+        return exists(connection.xuid());
+    }
+
+    public static boolean exists(long XUID) {
+        return exists(String.valueOf(XUID));
+    }
+
+    public static boolean exists(String XUID) {
+        return GE.connections.containsKey(XUID);
+    }
+
 }

@@ -12,7 +12,8 @@ import org.geysermc.geyser.translator.protocol.Translator;
 public class BedrockDiagnosticsInjector extends PacketTranslator<ServerboundDiagnosticsPacket> {
     @Override
     public void translate(GeyserSession session, ServerboundDiagnosticsPacket packet) {
-        ExtrasPlayer player = GeyserHandler.getPlayer(session);
+        ExtrasPlayer player = ExtrasPlayer.get(session);
+
         player.setDiagnostics(packet.clone());
         if (player.getFpsBossBar() != null) {
 

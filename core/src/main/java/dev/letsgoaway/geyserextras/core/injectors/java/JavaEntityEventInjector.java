@@ -1,5 +1,6 @@
 package dev.letsgoaway.geyserextras.core.injectors.java;
 
+import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.injectors.GeyserHandler;
 import org.cloudburstmc.protocol.bedrock.packet.PlaySoundPacket;
 import org.geysermc.geyser.entity.type.Entity;
@@ -17,8 +18,9 @@ public class JavaEntityEventInjector extends JavaEntityEventTranslator {
         switch (packet.getEvent()) {
             case PLAYER_SWAP_SAME_ITEM -> {
                 if (packet.getEntityId() == session.getPlayerEntity().getEntityId()) {
-                    GeyserHandler.getPlayer(session).getCooldownHandler().setLastSwingTime(System.currentTimeMillis());
-                    GeyserHandler.getPlayer(session).getCooldownHandler().setDigTicks(-1);
+                    ExtrasPlayer player = ExtrasPlayer.get(session);
+                    player.getCooldownHandler().setLastSwingTime(System.currentTimeMillis());
+                    player.getCooldownHandler().setDigTicks(-1);
                 }
             }
             case LIVING_SHIELD_BLOCK -> {

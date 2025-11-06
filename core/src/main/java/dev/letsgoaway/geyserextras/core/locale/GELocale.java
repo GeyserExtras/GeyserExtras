@@ -47,4 +47,12 @@ public class GELocale {
         }
         return LANGUAGES_MAP.get("en_US").getOrDefault(key, key);
     }
+
+    public static String translateOtherwise(String key, String otherwise, String locale) {
+        if (LANGUAGES_MAP.containsKey(locale)) {
+            return LANGUAGES_MAP.get(locale).getOrDefault(key, key);
+        }
+
+        return otherwise;
+    }
 }

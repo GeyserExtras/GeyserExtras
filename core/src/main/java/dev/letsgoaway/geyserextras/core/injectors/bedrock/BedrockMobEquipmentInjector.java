@@ -21,7 +21,7 @@ public class BedrockMobEquipmentInjector extends BedrockMobEquipmentTranslator {
     @Override
     public void translate(GeyserSession session, MobEquipmentPacket packet) {
         if (GE.getConfig().isEnableCustomCooldown()) {
-            ExtrasPlayer player = GeyserHandler.getPlayer(session);
+            ExtrasPlayer player = ExtrasPlayer.get(session);
 
             int newSlot = packet.getHotbarSlot();
             if (!session.isSpawned() || newSlot > 8 || packet.getContainerId() != ContainerId.INVENTORY

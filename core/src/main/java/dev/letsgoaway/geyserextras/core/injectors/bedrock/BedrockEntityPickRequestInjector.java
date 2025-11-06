@@ -13,7 +13,7 @@ public class BedrockEntityPickRequestInjector extends BedrockEntityPickRequestTr
 
     @Override
     public void translate(GeyserSession session, EntityPickRequestPacket packet) {
-        ExtrasPlayer player = GeyserHandler.getPlayer(session);
+        ExtrasPlayer player = ExtrasPlayer.get(session);
         if (player.getPreferences().isDefault(Remappable.PICK_BLOCK))
             super.translate(session, packet);
         else

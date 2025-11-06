@@ -38,9 +38,9 @@ public class CapeLoader {
 
         MINECON_2016(UUID.fromString("918a35c9-9af0-30d3-b7ca-39981e49284f"), "minecon2016"),
         MINECON_2015(UUID.fromString("57c944ac-5f69-369d-b54f-209aa8f3c670"), "minecon2015"),
-        MINECON_2013(UUID.fromString("f88ed3ec-2e5d-35ca-b0fc-e710ff9d5e9a"),"minecon2013"),
-        MINECON_2012(UUID.fromString("5a8f4a08-3a77-3823-9b26-48fa07ff8270"),"minecon2012"),
-        MINECON_2011(UUID.fromString("b52f7287-df73-3114-b0eb-e883e2cbd43e"),"minecon2011");
+        MINECON_2013(UUID.fromString("f88ed3ec-2e5d-35ca-b0fc-e710ff9d5e9a"), "minecon2013"),
+        MINECON_2012(UUID.fromString("5a8f4a08-3a77-3823-9b26-48fa07ff8270"), "minecon2012"),
+        MINECON_2011(UUID.fromString("b52f7287-df73-3114-b0eb-e883e2cbd43e"), "minecon2011");
 
         final UUID bedrockId;
         final String definitionId;
@@ -72,6 +72,7 @@ public class CapeLoader {
 
     public static ItemProfile getAsItemProfile(UUID capeUUID) {
         JsonObject object = UUID_TO_JAVA_PROFILE.get(capeUUID);
+
         return new ItemProfile(
                 object.get("name").getAsString(),
                 UUID.fromString(addDashes(object.get("id").getAsString())),
@@ -95,15 +96,27 @@ public class CapeLoader {
     }
 
     public static UUID getPlayerCapeUUID(GeyserSession session) {
-        UUID uuid = null;
-        try {
-            uuid = UUID.fromString(session.getClientData().getCapeId());
+        UUID capeUUID;
 
+        // Data UUID's are used for Minecon capes because
+        // technically they are skin pack capes
+        // and they dont have a uuid
+        UUID dataUUID = UUID.nameUUIDFromBytes(session.getClientData().getCapeData());
+
+        try {
+            capeUUID = UUID.fromString(session.getClientData().getCapeId());
         } catch (IllegalArgumentException e) {
-            uuid = UUID.nameUUIDFromBytes(session.getClientData().getCapeData());
+            return dataUUID;
         }
-        return uuid;
+
+        // Bedrock prefers skin pack capes over equipped ones
+        if (CapeLoader.exists(dataUUID)) {
+            return dataUUID;
+        }
+
+        return capeUUID;
     }
+
 
     public static boolean exists(UUID uuid) {
         return UUID_TO_JAVA_PROFILE.containsKey(uuid);

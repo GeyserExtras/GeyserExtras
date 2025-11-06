@@ -13,7 +13,7 @@ public class BedrockCommandRequestInjector extends BedrockCommandRequestTranslat
     @Override
     public void translate(GeyserSession session, CommandRequestPacket packet) {
         if (CommandExecutor.isExtrasCommand(packet.getCommand())) {
-            ExtrasPlayer player = GeyserHandler.getPlayer(session);
+            ExtrasPlayer player = ExtrasPlayer.get(session);
             CommandExecutor.runFromInput(player, packet.getCommand());
         } else {
             super.translate(session, packet);

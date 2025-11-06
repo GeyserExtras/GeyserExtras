@@ -3,6 +3,7 @@ package dev.letsgoaway.geyserextras.core.parity.java.menus.tablist;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
 import dev.letsgoaway.geyserextras.core.form.elements.Button;
+import dev.letsgoaway.geyserextras.core.utils.IdUtils;
 import org.cloudburstmc.protocol.bedrock.packet.ShowProfilePacket;
 import org.geysermc.cumulus.form.SimpleForm;
 import org.geysermc.cumulus.util.FormImage;
@@ -24,9 +25,10 @@ public class PlayerListMenu extends BedrockMenu {
                 String name = fixUnreadable(createPlayerName(entry));
                 add(new Button(name, FormImage.Type.URL, TabListData.getPlayerListHead(entry), () -> {
                     // Show the user profile menu if it is a bedrock player.
-                    if (TabListData.isFloodgateID(entry.getProfileId())) {
+                    long XUID = IdUtils.getBedrockXUID(entry.getProfileId());
+                    if (XUID != -1) {
                         ShowProfilePacket showProfilePacket = new ShowProfilePacket();
-                        showProfilePacket.setXuid(String.valueOf(TabListData.getBedrockXUID(entry.getProfileId())));
+                        showProfilePacket.setXuid(String.valueOf(XUID));
                         player.getSession().sendUpstreamPacket(showProfilePacket);
                     } else {
                         // Otherwise refresh the menu

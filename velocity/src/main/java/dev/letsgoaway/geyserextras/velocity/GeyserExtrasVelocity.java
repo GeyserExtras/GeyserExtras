@@ -12,6 +12,7 @@ import com.velocitypowered.api.plugin.annotation.DataDirectory;
 import com.velocitypowered.api.proxy.Player;
 import com.velocitypowered.api.proxy.ProxyServer;
 import com.velocitypowered.api.proxy.ServerConnection;
+import dev.letsgoaway.geyserextras.core.utils.IdUtils;
 import dev.letsgoaway.geyserextras.core.version.PluginVersion;
 import dev.letsgoaway.geyserextras.Server;
 import dev.letsgoaway.geyserextras.ServerType;
@@ -116,7 +117,7 @@ public class GeyserExtrasVelocity implements Server {
         for (Player playerNear : getServerPlayers(velocityPlayer.player)) {
             UUID javaUUID = playerNear.getUniqueId();
 
-            boolean isBedrock = GeyserExtras.GE.geyserApi.isBedrockPlayer(javaUUID);
+            boolean isBedrock = IdUtils.isBedrockPlayer(javaUUID);
             if (isBedrock) continue;
 
             JavaPreferencesData userPrefs = GE.getJavaPreferencesData(javaUUID);

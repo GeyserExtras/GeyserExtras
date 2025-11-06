@@ -21,7 +21,7 @@ import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
 
 public class ConfigLoader {
 
-    public static final int LATEST_VERSION = 3;
+    public static final int LATEST_VERSION = 4;
     private static final String HEADER = """
             GeyserExtras
             If Geyser is detected, all required config changes will be automatically applied.
@@ -31,6 +31,8 @@ public class ConfigLoader {
             .addVersion(1, zeroToOne())
             .addVersion(2, oneToTwo())
             .addVersion(3, twoToThree())
+            .addVersion(4, threeToFour())
+
             .build();
 
 
@@ -123,6 +125,12 @@ public class ConfigLoader {
 
     // no changes, added check for updates to config
     private static ConfigurationTransformation twoToThree() {
+        return ConfigurationTransformation.builder()
+                .build();
+    }
+
+    // no changes, added packet events / mannequin cape workaround
+    private static ConfigurationTransformation threeToFour() {
         return ConfigurationTransformation.builder()
                 .build();
     }

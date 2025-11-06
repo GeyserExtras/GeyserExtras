@@ -23,7 +23,7 @@ public class BedrockServerSettingsRequestInjector extends BedrockServerSettingsR
             return;
         }
 
-        ExtrasPlayer player = GeyserHandler.getPlayer(session);
+        ExtrasPlayer player = ExtrasPlayer.get(session);
         // Sending settings form with floodgate causes linkage error :/
         if (IsAvailable.floodgate()) {
             player.sendSystemToast(player.translateGE("ge.form_error_toast.line1"), player.translateGE("ge.form_error_toast.line2"));

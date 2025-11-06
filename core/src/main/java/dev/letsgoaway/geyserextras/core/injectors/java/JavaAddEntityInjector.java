@@ -14,7 +14,7 @@ public class JavaAddEntityInjector extends JavaAddEntityTranslator {
     public void translate(GeyserSession session, ClientboundAddEntityPacket packet) {
         super.translate(session, packet);
         if (packet.getType() == EntityType.PLAYER) {
-            ExtrasPlayer player = GeyserHandler.getPlayer(session);
+            ExtrasPlayer player = ExtrasPlayer.get(session);
             player.getPlayerDimensionsMap().put(packet.getEntityId(), session.getDimensionType());
         }
     }

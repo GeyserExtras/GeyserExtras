@@ -18,7 +18,7 @@ import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 public class BedrockInteractInjector extends BedrockInteractTranslator {
     @Override
     public void translate(GeyserSession session, InteractPacket packet) {
-        ExtrasPlayer player = GeyserHandler.getPlayer(session);
+        ExtrasPlayer player = ExtrasPlayer.get(session);
         if (!packet.getAction().equals(InteractPacket.Action.OPEN_INVENTORY)) {
             if (GE.getConfig().isEnableCustomCooldown()) {
                 // seems like this is handled properly in BedrockInventoryTransactionTranslator

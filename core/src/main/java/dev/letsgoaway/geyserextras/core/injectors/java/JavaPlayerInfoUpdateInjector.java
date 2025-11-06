@@ -18,7 +18,7 @@ public class JavaPlayerInfoUpdateInjector extends JavaPlayerInfoUpdateTranslator
     @Override
     public void translate(GeyserSession session, ClientboundPlayerInfoUpdatePacket packet) {
         super.translate(session, packet);
-        ExtrasPlayer player = GeyserHandler.getPlayer(session);
+        ExtrasPlayer player = ExtrasPlayer.get(session);
         Set<PlayerListEntryAction> actions = packet.getActions();
         /* Updaters */
         for (PlayerListEntry entry : packet.getEntries()) {

@@ -41,14 +41,41 @@ public final class GeyserExtrasConfig {
     private boolean enableJavaCombatSounds = true;
 
     @Comment("""
-    Enable the Block Display entity workaround using FMBE. (EXPERIMENTAL)
-    Note that the translation is not 100% accurate and some block types might be invisible (candles, doors, campfires),
-    where as some blocks will render differently (fence, glass panes, some storage containers).
-    Block Display billboards do not work and X/Z scale are linked to which ever one is highest,
-    meaning that this should only be enabled for very simple usages of Block Displays.
-    (https://wiki.bedrock.dev/commands/display-entities.html)
-    """)
+            Enable the Block Display entity workaround using FMBE. (EXPERIMENTAL)
+            Note that the translation is not 100% accurate and some block types might be invisible (candles, doors, campfires),
+            where as some blocks will render differently (fence, glass panes, some storage containers).
+            Block Display billboards do not work and X/Z scale are linked to which ever one is highest,
+            meaning that this should only be enabled for very simple usages of Block Displays.
+            (https://wiki.bedrock.dev/commands/display-entities.html)
+            """)
     private boolean enableBlockDisplayWorkaround = false;
+
+
+    @Comment("""
+            Requires PacketEvents and Java Edition clients on 1.21.9 or above.
+            https://modrinth.com/plugin/packetevents
+
+            Enables the cape workaround. (EXPERIMENTAL)
+            
+            This shows Bedrock Edition player capes on Java Edition clients,
+            by using fake mannequin player entities.
+            It copies the packets of the player, so the position is identical.
+            The hitbox of the mannequin is identical to the player and
+            whenever the mannequin is attacked by the player it is translated as an attack
+            to the bedrock player.
+            
+            This may break anti-cheats or plugins, and is not perfect.
+            
+            The Bedrock Edition player's cape will sometimes slightly clip
+            inside the Bedrock Player when wearing armor and if the player attacks.
+            
+            The cape is visually removed when entering mounts that can support more than one
+            player (including chest boats).
+            
+            This only works with capes that are available on Java Edition, that are also on
+            Bedrock Edition.
+            """)
+    private boolean enableBedrockCapesOnJavaWorkaround = true;
 
     @Comment("When the server closes or Geyser reloads, should GeyserExtras automatically reconnect players to the server.")
     private boolean autoReconnect = true;
@@ -80,11 +107,12 @@ public final class GeyserExtrasConfig {
     private boolean disablePaperDoll = false;
 
     @Comment("""
-    Whether to check for updates or not.
-    This also disables updating of the GeyserExtrasPack and GeyserOptionalPack,
-    however you can manually update them by deleting the 'GeyserExtras/cache/' folder.
-    """)
+            Whether to check for updates or not.
+            This also disables updating of the GeyserExtrasPack and GeyserOptionalPack,
+            however you can manually update them by deleting the 'GeyserExtras/cache/' folder.
+            """)
     private boolean checkForUpdates = true;
+
 
     @Comment("Only enable if you know what you are doing.")
     private boolean debugMode = false;

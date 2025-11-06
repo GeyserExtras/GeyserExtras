@@ -1,6 +1,7 @@
 package dev.letsgoaway.geyserextras.core.parity.java.menus.tablist;
 
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
+import dev.letsgoaway.geyserextras.core.utils.IdUtils;
 import lombok.Getter;
 import lombok.Setter;
 import org.geysermc.geyser.text.ChatColor;
@@ -38,35 +39,14 @@ public class TabListData {
     }
 
 
-    private static String getPlayerListID(UUID profileID){
-        if (isFloodgateID(profileID)) {
+    private static String getPlayerListID(UUID profileID) {
+        long XUID = IdUtils.getBedrockXUID(profileID);
+        if (XUID != -1) {
             // StarlightStudios needs a dot infront of it to recognize it as a XUID.
-            return "." + getBedrockXUID(profileID);
+            return "." + XUID;
         }
         // If its not a Bedrock Player, then we can just return the UUID as a string.
         return profileID.toString();
-    }
-
-    public static boolean isFloodgateID(UUID javaUUID) {
-        // This is how we detect bedrock players, even if they are joined via a different geyser proxy.
-        // Firstly, im going to use my Java UUID as an example:
-        // 16ea03b2-6d37-482b-9e4e-a4b42067ab84
-        // This is my Java UUID for the LetsGoAway account.
-        // I'm also going to use jeb_'s account as an example uuid:
-        // 853c80ef-3c37-49fd-aa49-938b674adae6
-
-        // Notice that the 3rd section of Java UUID's begin with a 4, stating that it is a version 4 UUID.
-        // But if you take a look at any Floodgate Bedrock UUID (using mine for LetsGoAway3419 as an example):
-        // you have this:
-        // 00000000-0000-0000-0009-01f5e8f1f3d1
-        // GeyserMC does not set the version number of the uuid, so the third section always starts with 0.
-        // Whether or not this is a bug is up to discussion, but it allows us to do this:
-        return javaUUID.version() == 0;
-    }
-
-    public static long getBedrockXUID(UUID floodgateUUID) {
-        // This results in an xuid, for example my XUID is 2535430477181905, Floodgate just encodes the XUID into the UUID.
-        return floodgateUUID.getLeastSignificantBits();
     }
 
     // Ping icons are supplied by GeyserExtrasPack

@@ -2,6 +2,7 @@ package dev.letsgoaway.geyserextras.bungee;
 
 import dev.letsgoaway.geyserextras.Server;
 import dev.letsgoaway.geyserextras.ServerType;
+import dev.letsgoaway.geyserextras.core.utils.IdUtils;
 import dev.letsgoaway.geyserextras.core.utils.TickUtil;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.GeyserExtras;
@@ -91,7 +92,7 @@ public class GeyserExtrasBungee extends Plugin implements Server {
         for (ProxiedPlayer playerNear : bungeePlayer.player.getServer().getInfo().getPlayers()) {
             UUID javaUUID = playerNear.getUniqueId();
 
-            boolean isBedrock = GE.geyserApi.isBedrockPlayer(javaUUID);
+            boolean isBedrock = IdUtils.isBedrockPlayer(javaUUID);
             if (isBedrock) continue;
 
             JavaPreferencesData userPrefs = GE.getJavaPreferencesData(javaUUID);

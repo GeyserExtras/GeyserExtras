@@ -1,5 +1,6 @@
 package dev.letsgoaway.geyserextras.core.injectors.java;
 
+import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.injectors.GeyserHandler;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.translator.protocol.java.entity.JavaRemoveEntitiesTranslator;
@@ -10,7 +11,7 @@ public class JavaRemoveEntityInjector extends JavaRemoveEntitiesTranslator {
     public void translate(GeyserSession session, ClientboundRemoveEntitiesPacket packet) {
         super.translate(session, packet);
         for (int entityId : packet.getEntityIds()) {
-            GeyserHandler.getPlayer(session).getPlayerDimensionsMap().remove(entityId);
+            ExtrasPlayer.get(session).getPlayerDimensionsMap().remove(entityId);
         }
     }
 }

@@ -11,7 +11,8 @@ import org.geysermc.geyser.translator.protocol.bedrock.BedrockBlockPickRequestTr
 public class BedrockBlockPickRequestInjector extends BedrockBlockPickRequestTranslator {
     @Override
     public void translate(GeyserSession session, BlockPickRequestPacket packet) {
-        ExtrasPlayer player = GeyserHandler.getPlayer(session);
+        ExtrasPlayer player = ExtrasPlayer.get(session);
+
         if (player.getPreferences().isDefault(Remappable.PICK_BLOCK))
             super.translate(session, packet);
         else

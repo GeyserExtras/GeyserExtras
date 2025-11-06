@@ -23,7 +23,7 @@ public class JavaTabListInjector extends PacketTranslator<ClientboundTabListPack
         if (!IsAvailable.adventure() || ReflectionAPI.getMethodOrNull(ClientboundTabListPacket.class, "getHeader") == null) {
             return;
         }
-        ExtrasPlayer player = GeyserHandler.getPlayer(session);
+        ExtrasPlayer player = ExtrasPlayer.get(session);
         player.getTabListData().setHeader(MessageTranslator.convertMessage(session, packet.getHeader()));
         player.getTabListData().setFooter(MessageTranslator.convertMessage(session, packet.getFooter()));
     }

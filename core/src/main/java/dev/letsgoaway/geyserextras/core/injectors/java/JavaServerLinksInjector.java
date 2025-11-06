@@ -11,7 +11,7 @@ import org.geysermc.mcprotocollib.protocol.packet.common.clientbound.Clientbound
 public class JavaServerLinksInjector extends PacketTranslator<ClientboundServerLinksPacket> {
     @Override
     public void translate(GeyserSession session, ClientboundServerLinksPacket packet) {
-        ExtrasPlayer player = GeyserHandler.getPlayer(session);
+        ExtrasPlayer player = ExtrasPlayer.get(session);
         player.getServerLinksData().setServerLinks(packet.getLinks());
     }
 }

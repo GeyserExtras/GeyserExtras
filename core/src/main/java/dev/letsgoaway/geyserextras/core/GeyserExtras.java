@@ -11,6 +11,7 @@ import dev.letsgoaway.geyserextras.core.injectors.GeyserHandler;
 import dev.letsgoaway.geyserextras.core.parity.bedrock.EmoteUtils;
 import dev.letsgoaway.geyserextras.core.preferences.JavaPreferencesData;
 import dev.letsgoaway.geyserextras.core.preferences.PreferencesData;
+import dev.letsgoaway.geyserextras.core.utils.IdUtils;
 import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import dev.letsgoaway.geyserextras.core.version.PluginVersion;
 import lombok.Getter;
@@ -195,7 +196,7 @@ public class GeyserExtras implements EventRegistrar {
     // These are called from the seperate plugin classes and these aren't ever called on standalone / extension
     public void onJavaPlayerJoin(UUID javaUUID) {
         // this still saves sometimes if your a bedrock player anyway (doesnt really matter atm but pretty stupid that it happens)
-        if (!geyserApi.isBedrockPlayer(javaUUID)) {
+        if (!IdUtils.isBedrockPlayer(javaUUID)) {
             javaConnections.put(javaUUID, JavaPreferencesData.load(javaUUID));
         }
     }

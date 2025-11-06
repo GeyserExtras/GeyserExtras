@@ -21,7 +21,8 @@ public class BedrockBlockInteractions {
 
     private static void handle(GeyserSession session, PlayerBlockActionData blockActionData) {
         PlayerActionType action = blockActionData.getAction();
-        ExtrasPlayer player = GeyserHandler.getPlayer(session);
+        ExtrasPlayer player = ExtrasPlayer.get(session);
+
         switch (action) {
             case DROP_ITEM -> {
                 if (session.isSneaking()) {
@@ -56,7 +57,6 @@ public class BedrockBlockInteractions {
                     // Java shows cooldown on block break abort.
                 }
             }
-
         }
     }
 }

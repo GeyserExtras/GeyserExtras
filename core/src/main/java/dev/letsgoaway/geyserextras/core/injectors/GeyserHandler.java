@@ -6,6 +6,7 @@ import dev.letsgoaway.geyserextras.core.parity.java.combat.SoundReplacer;
 import dev.letsgoaway.geyserextras.core.commands.CommandExecutor;
 import dev.letsgoaway.geyserextras.core.injectors.bedrock.*;
 import dev.letsgoaway.geyserextras.core.injectors.java.*;
+import dev.letsgoaway.geyserextras.core.utils.IdUtils;
 import org.cloudburstmc.protocol.bedrock.packet.*;
 import org.geysermc.geyser.registry.Registries;
 import org.geysermc.geyser.session.GeyserSession;
@@ -88,20 +89,5 @@ public class GeyserHandler {
         Registries.BEDROCK_PACKET_TRANSLATORS.register(EntityPickRequestPacket.class, new BedrockEntityPickRequestInjector());
         // OPEN_INVENTORY and cooldown stuff
         Registries.BEDROCK_PACKET_TRANSLATORS.register(InteractPacket.class, new BedrockInteractInjector());
-    }
-
-    @Nullable
-    public static ExtrasPlayer getPlayer(GeyserSession session) {
-        return GE.connections.get(session.xuid());
-    }
-
-    @Nullable
-    public static ExtrasPlayer getPlayer(UUID javaUUID) {
-        for (ExtrasPlayer player : GE.connections.values()) {
-            if (player.getJavaUUID() != null && player.getJavaUUID().equals(javaUUID)) {
-                return player;
-            }
-        }
-        return null;
     }
 }
