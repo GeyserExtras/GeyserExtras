@@ -15,7 +15,7 @@ public class BungeeCommandHandler extends Command {
     @Override
     public void execute(CommandSender sender, String[] args) {
         if (sender instanceof ProxiedPlayer player) {
-            ExtrasPlayer bedrockPlayer = GeyserHandler.getPlayer(player.getUniqueId());
+            ExtrasPlayer bedrockPlayer = ExtrasPlayer.get(player.getUniqueId());
             if (bedrockPlayer != null) {
                 // Run as bedrock player
                 CommandExecutor.runFromCommandInput(bedrockPlayer, this.getName(), args);

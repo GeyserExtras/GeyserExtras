@@ -11,7 +11,7 @@ public class SpigotCommandHandler implements org.bukkit.command.CommandExecutor 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player spigotPlayer) {
-            ExtrasPlayer player = GeyserHandler.getPlayer(spigotPlayer.getUniqueId());
+            ExtrasPlayer player = ExtrasPlayer.get(spigotPlayer.getUniqueId());
             if (player != null) {
                 CommandExecutor.runFromCommandInput(player, label, args);
             }

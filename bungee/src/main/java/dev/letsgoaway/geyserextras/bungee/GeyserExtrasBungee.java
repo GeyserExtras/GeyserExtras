@@ -3,6 +3,7 @@ package dev.letsgoaway.geyserextras.bungee;
 import dev.letsgoaway.geyserextras.Server;
 import dev.letsgoaway.geyserextras.ServerType;
 import dev.letsgoaway.geyserextras.core.utils.IdUtils;
+import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import dev.letsgoaway.geyserextras.core.utils.TickUtil;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.GeyserExtras;
@@ -38,13 +39,31 @@ public class GeyserExtrasBungee extends Plugin implements Server {
     }
 
     @Override
+    public void onLoad() {
+        // use the function instead of IsAvailable.PACKETEVENTS because packetevents is loaded before GeyserExtras is loaded
+        // where the IsAvailable class is initialised
+        if (IsAvailable.packetevents()) {
+            dev.letsgoaway.geyserextras.core.protocol.ProtocolHandler.load(
+                   io.github.retrooper.packetevents.bungee.factory.BungeePacketEventsBuilder.build(this)
+            );
+        }
+    }
+
+    @Override
     public void onEnable() {
         CORE = new GeyserExtras(this);
+
+        if (IsAvailable.packetevents()) {
+            dev.letsgoaway.geyserextras.core.protocol.ProtocolHandler.init();
+        }
     }
 
     @Override
     public void onDisable() {
         CORE.autoReconnectAll();
+        if (IsAvailable.packetevents()) {
+            dev.letsgoaway.geyserextras.core.protocol.ProtocolHandler.terminate();
+        }
     }
 
     @Override

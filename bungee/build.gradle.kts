@@ -3,6 +3,7 @@ dependencies {
     compileOnly("net.kyori:adventure-api:4.18.0")
     compileOnly("org.geysermc.geyser:core:2.9.0-SNAPSHOT")
     compileOnly("net.md-5:bungeecord-api:1.21-R0.1")
+    compileOnly("com.github.retrooper:packetevents-bungeecord:2.10.0")
 }
 
 tasks {

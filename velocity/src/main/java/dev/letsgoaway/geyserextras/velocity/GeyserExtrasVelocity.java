@@ -6,13 +6,13 @@ import com.velocitypowered.api.event.Subscribe;
 import com.velocitypowered.api.event.proxy.ProxyInitializeEvent;
 import com.velocitypowered.api.event.proxy.ProxyReloadEvent;
 import com.velocitypowered.api.event.proxy.ProxyShutdownEvent;
-import com.velocitypowered.api.plugin.Dependency;
-import com.velocitypowered.api.plugin.Plugin;
+import com.velocitypowered.api.plugin.*;
 import com.velocitypowered.api.plugin.annotation.DataDirectory;
 import com.velocitypowered.api.proxy.Player;
 import com.velocitypowered.api.proxy.ProxyServer;
 import com.velocitypowered.api.proxy.ServerConnection;
 import dev.letsgoaway.geyserextras.core.utils.IdUtils;
+import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import dev.letsgoaway.geyserextras.core.version.PluginVersion;
 import dev.letsgoaway.geyserextras.Server;
 import dev.letsgoaway.geyserextras.ServerType;
@@ -34,6 +34,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 
@@ -43,7 +45,7 @@ public class GeyserExtrasVelocity implements Server {
     public static GeyserExtrasVelocity VELOCITY;
     public static ProxyServer server;
     private final Logger logger;
-
+    private final PluginContainer container;
     private final VelocityTickUtil velocityTickUtil;
 
     private final Path dataDirectory;
@@ -55,12 +57,24 @@ public class GeyserExtrasVelocity implements Server {
         GeyserExtrasVelocity.server = server;
         this.logger = logger;
         this.dataDirectory = dataDirectory;
+        this.container = server.getPluginManager().ensurePluginContainer(this);
         velocityTickUtil = new VelocityTickUtil();
+        // use the function instead of IsAvailable.PACKETEVENTS because packetevents is loaded before GeyserExtras is loaded
+        // where the IsAvailable class is initialised
+        if (IsAvailable.packetevents()) {
+            dev.letsgoaway.geyserextras.core.protocol.ProtocolHandler.load(
+                    io.github.retrooper.packetevents.velocity.factory.VelocityPacketEventsBuilder.build(server, container, logger, this.dataDirectory)
+            );
+        }
     }
 
     @Subscribe
     public void onProxyInitialization(ProxyInitializeEvent event) {
         CORE = new GeyserExtras(this);
+        if (IsAvailable.packetevents()) {
+            dev.letsgoaway.geyserextras.core.protocol.ProtocolHandler.init();
+        }
+
     }
 
     @Subscribe
@@ -71,6 +85,10 @@ public class GeyserExtrasVelocity implements Server {
     @Subscribe
     public void onProxyShutdown(ProxyShutdownEvent ev) {
         CORE.autoReconnectAll();
+        if (IsAvailable.packetevents()) {
+            dev.letsgoaway.geyserextras.core.protocol.ProtocolHandler.terminate();
+        }
+
     }
 
     @Override

@@ -12,7 +12,7 @@ public class VelocityCommandHandler implements RawCommand {
         if (invocation.source() instanceof Player player) {
             String command = "/" + invocation.alias() + " " + invocation.arguments();
 
-            ExtrasPlayer bedrockPlayer = GeyserHandler.getPlayer(player.getUniqueId());
+            ExtrasPlayer bedrockPlayer = ExtrasPlayer.get(player.getUniqueId());
             if (bedrockPlayer != null) {
                 CommandExecutor.runFromInput(bedrockPlayer, command);
             } else {
