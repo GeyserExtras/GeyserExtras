@@ -24,6 +24,14 @@ public class InitializeLogger {
         if (ServerType.type != ServerType.BUNGEECORD && ServerType.type != ServerType.EXTENSION) {
             info("Floodgate installed: " + (IsAvailable.floodgate() ? "Yes" : "No"));
         }
+        if (ServerType.type != ServerType.EXTENSION) {
+            info("PacketEvents installed: " + (IsAvailable.packetevents() ? "Yes" : "No"));
+            if (IsAvailable.packetevents()) {
+                warn("Some features require PacketEvents, which can be downloaded at https://modrinth.com/plugin/packetevents.");
+                warn("Features that require PacketEvents will not run!");
+            }
+        }
+
     }
 
     public static void end() {
@@ -58,5 +66,9 @@ public class InitializeLogger {
 
     private static void info(String s) {
         SERVER.log(s);
+    }
+
+    private static void warn(String s) {
+        SERVER.warn(s);
     }
 }

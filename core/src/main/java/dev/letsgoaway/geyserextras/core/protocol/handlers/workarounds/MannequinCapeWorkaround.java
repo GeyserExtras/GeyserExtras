@@ -134,13 +134,23 @@ public class MannequinCapeWorkaround implements JavaPacketHandler {
 
                 // weird fix to get it to align how it would send normally
                 int indexOf16 = -1;
+                int indexOf18 = -1;
 
                 for (EntityData<?> data : metadata) {
                     if (data.getIndex() == 16) {
                         indexOf16 = metadata.indexOf(data);
 
-                        break;
+                        continue;
                     }
+                    if (data.getIndex() == 18) {
+                        indexOf18 = metadata.indexOf(data);
+                        continue;
+                    }
+                }
+                if (indexOf18 != -1) {
+                    // not sure why but this disconnects users, and its not even there all the time.
+                    // seems to happen once you kill an enemy, maybe xp?
+                    metadata.remove(indexOf18);
                 }
                 if (indexOf16 != -1) {
                     GeyserSession session = (GeyserSession) GE.geyserApi.connectionByUuid(players.get(meta.getEntityId()));
@@ -397,6 +407,9 @@ public class MannequinCapeWorkaround implements JavaPacketHandler {
                 }
 
             }
+//        } else if (event.getPacketType().equals(PacketType.Play.Server.PLAYER_ABILITIES)) {
+//            WrapperPlayServerPlayerAbilities wrapper = new WrapperPlayServerPlayerAbilities(event);
+//            wrapper.getMode()
         }
     }
 
