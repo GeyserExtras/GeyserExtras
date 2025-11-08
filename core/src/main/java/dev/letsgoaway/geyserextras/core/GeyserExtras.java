@@ -11,6 +11,7 @@ import dev.letsgoaway.geyserextras.core.injectors.GeyserHandler;
 import dev.letsgoaway.geyserextras.core.parity.bedrock.EmoteUtils;
 import dev.letsgoaway.geyserextras.core.preferences.JavaPreferencesData;
 import dev.letsgoaway.geyserextras.core.preferences.PreferencesData;
+import dev.letsgoaway.geyserextras.core.protocol.CapeLoader;
 import dev.letsgoaway.geyserextras.core.utils.IdUtils;
 import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import dev.letsgoaway.geyserextras.core.version.PluginVersion;
@@ -132,6 +133,7 @@ public class GeyserExtras implements EventRegistrar {
 
     public void onSessionJoin(SessionJoinEvent ev) {
         connections.get(ev.connection().xuid()).startGame();
+
     }
 
     public void onSessionRemove(SessionDisconnectEvent ev) {

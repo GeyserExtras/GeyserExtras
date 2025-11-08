@@ -11,6 +11,7 @@ import dev.letsgoaway.geyserextras.core.parity.java.menus.serverlinks.ServerLink
 import dev.letsgoaway.geyserextras.core.parity.java.menus.tablist.TabListData;
 import dev.letsgoaway.geyserextras.core.preferences.PreferencesData;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Remappable;
+import dev.letsgoaway.geyserextras.core.protocol.CapeLoader;
 import dev.letsgoaway.geyserextras.core.utils.IdUtils;
 import dev.letsgoaway.geyserextras.core.utils.IsAvailable;
 import dev.letsgoaway.geyserextras.core.utils.StringUtils;

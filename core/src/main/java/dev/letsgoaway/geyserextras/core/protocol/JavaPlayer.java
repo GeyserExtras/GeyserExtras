@@ -3,6 +3,7 @@ package dev.letsgoaway.geyserextras.core.protocol;
 import com.github.retrooper.packetevents.event.PacketReceiveEvent;
 import com.github.retrooper.packetevents.event.PacketSendEvent;
 import com.github.retrooper.packetevents.protocol.player.User;
+import dev.letsgoaway.geyserextras.core.preferences.JavaPreferencesData;
 import dev.letsgoaway.geyserextras.core.protocol.handlers.JavaPacketHandler;
 import dev.letsgoaway.geyserextras.core.protocol.handlers.workarounds.MannequinCapeWorkaround;
 import lombok.Getter;
@@ -23,6 +24,10 @@ public class JavaPlayer {
         createHandlers();
     }
 
+    public JavaPreferencesData getPreferences() {
+        return GE.getJavaPreferencesData(user.getUUID());
+    }
+
     private void createHandlers() {
         if (GE.getConfig().isEnableBedrockCapesOnJavaWorkaround()) {
             handlers.add(new MannequinCapeWorkaround());
@@ -35,7 +40,6 @@ public class JavaPlayer {
                 continue;
             }
             handler.onPacketSend(this, event);
-
         }
     }
 

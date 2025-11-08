@@ -102,7 +102,7 @@ public class SpigotListener implements Listener {
 
         // Java Only Block Placement (ported from v1.0)
 
-        ExtrasPlayer user = GeyserHandler.getPlayer(player.getUniqueId());
+        ExtrasPlayer user = ExtrasPlayer.get(player.getUniqueId());
         if (user instanceof SpigotExtrasPlayer extrasPlayer) {
             if (GeyserExtrasSpigot.SPIGOT.getPlatformConfig().isEnableJavaOnlyBlockPlacement()) {
                 Block block = ev.getBlockPlaced();
