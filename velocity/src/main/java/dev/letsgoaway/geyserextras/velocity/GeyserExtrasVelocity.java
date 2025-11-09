@@ -39,7 +39,17 @@ import java.util.concurrent.ExecutorService;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 
-@Plugin(authors = "LetsGoAway", name = "GeyserExtras", version = PluginVersion.GE_VERSION, id = "geyserextras", dependencies = {@Dependency(id = "geyser"),})
+@Plugin(
+        authors = "LetsGoAway",
+        name = "GeyserExtras",
+        version = PluginVersion.GE_VERSION,
+        id = "geyserextras",
+        dependencies = {
+                @Dependency(id = "geyser"),
+                @Dependency(id = "packetevents", optional = true),
+        }
+)
+
 public class GeyserExtrasVelocity implements Server {
     public static GeyserExtras CORE;
     public static GeyserExtrasVelocity VELOCITY;

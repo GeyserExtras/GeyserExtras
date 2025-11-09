@@ -4,3 +4,5 @@ author: "LetsGoAway"
 main: dev.letsgoaway.geyserextras.bungee.GeyserExtrasBungee
 depends:
   - "Geyser-BungeeCord"
+softDepends:
+  - "packetevents"

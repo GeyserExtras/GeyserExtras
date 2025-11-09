@@ -3,13 +3,7 @@ package dev.letsgoaway.geyserextras.spigot;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.World;
-import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Mannequin;
 import org.bukkit.entity.Player;
-import org.bukkit.profile.PlayerProfile;
-import org.bukkit.profile.PlayerSkinPatch;
 import org.geysermc.geyser.api.connection.GeyserConnection;
 
 import java.util.Set;

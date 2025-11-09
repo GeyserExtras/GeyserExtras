@@ -5,7 +5,9 @@ main: dev.letsgoaway.geyserextras.spigot.GeyserExtrasSpigot
 api-version: '1.16'
 depend:
   - Geyser-Spigot
+softdepend:
   - packetevents
+website: geyserextras.letsgoaway.dev
 commands:
   geyserextras:
     description: Open the GeyserExtras menu.
