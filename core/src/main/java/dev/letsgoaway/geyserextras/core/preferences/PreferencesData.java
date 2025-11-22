@@ -80,8 +80,9 @@ public class PreferencesData {
         this.player = player;
         this.session = player.getSession();
         remappableActionMap = new HashMap<>();
-        showCoordinates = GeyserImpl.getInstance().getConfig().isShowCoordinates();
-        customSkullSkins = GeyserImpl.getInstance().getConfig().isAllowCustomSkulls();
+        showCoordinates = GeyserImpl.getInstance().config().gameplay().showCoordinates();
+        int visibleCustomSkulls = GeyserImpl.getInstance().config().gameplay().maxVisibleCustomSkulls();
+        customSkullSkins = (visibleCustomSkulls > 0 || visibleCustomSkulls == -1);
     }
 
 
@@ -89,8 +90,9 @@ public class PreferencesData {
         this.player = null;
         this.session = null;
         remappableActionMap = new HashMap<>();
-        showCoordinates = GeyserImpl.getInstance().getConfig().isShowCoordinates();
-        customSkullSkins = GeyserImpl.getInstance().getConfig().isAllowCustomSkulls();
+        showCoordinates = GeyserImpl.getInstance().config().gameplay().showCoordinates();
+        int visibleCustomSkulls = GeyserImpl.getInstance().config().gameplay().maxVisibleCustomSkulls();
+        customSkullSkins = (visibleCustomSkulls > 0 || visibleCustomSkulls == -1);
     }
 
     public static void init() {
@@ -109,6 +111,7 @@ public class PreferencesData {
                 FileInputStream data = new FileInputStream(defaultPath.toFile());
                 // Copy from because defaults might be different
                 DEFAULT.copyFrom(JSON_MAPPER.convertValue(JSON_MAPPER.readTree(data.readAllBytes()), PreferencesData.class));
+                data.close();
             }
             JSON_MAPPER.writeValue(defaultPath.toFile(), DEFAULT);
         } catch (Exception e) {
@@ -167,6 +170,7 @@ public class PreferencesData {
                 FileInputStream data = new FileInputStream(player.getUserPrefs());
                 // Copy from because session would be null
                 this.copyFrom(JSON_MAPPER.convertValue(JSON_MAPPER.readTree(data.readAllBytes()), PreferencesData.class));
+                data.close();
             } catch (Exception e) {
                 SERVER.warn("Could not load data for player " + player.getBedrockXUID() + ", restoring to default for them.\n" + e.getLocalizedMessage());
 

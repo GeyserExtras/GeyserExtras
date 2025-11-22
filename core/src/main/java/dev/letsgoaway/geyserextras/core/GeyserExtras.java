@@ -43,7 +43,7 @@ public class GeyserExtras implements EventRegistrar {
     public GeyserExtras(Server server) {
         GE = this;
         SERVER = server;
-        ServerType.platformType = GeyserImpl.getInstance().getPlatformType();
+        ServerType.platformType = GeyserImpl.getInstance().platformType();
 
         IsAvailable.preload();
 
