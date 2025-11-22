@@ -61,13 +61,15 @@ public class GeyserExtrasVelocity implements Server {
     private final Path dataDirectory;
 
     @Inject
-    public GeyserExtrasVelocity(ProxyServer server, Logger logger, @DataDirectory Path dataDirectory) {
+    public GeyserExtrasVelocity(ProxyServer server, Logger logger,
+                            @DataDirectory Path dataDirectory,
+                            PluginContainer container) {
         ServerType.type = ServerType.VELOCITY;
         VELOCITY = this;
         GeyserExtrasVelocity.server = server;
         this.logger = logger;
         this.dataDirectory = dataDirectory;
-        this.container = server.getPluginManager().ensurePluginContainer(this);
+        this.container = container;
         velocityTickUtil = new VelocityTickUtil();
         // use the function instead of IsAvailable.PACKETEVENTS because packetevents is loaded before GeyserExtras is loaded
         // where the IsAvailable class is initialised

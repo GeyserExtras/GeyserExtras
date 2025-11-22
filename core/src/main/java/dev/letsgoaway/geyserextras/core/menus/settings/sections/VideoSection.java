@@ -36,7 +36,7 @@ public class VideoSection extends Section {
 
     @Override
     public void build(BedrockForm menu, GeyserSession session, ExtrasPlayer player) {
-        if (CooldownUtils.getDefaultShowCooldown() != CooldownUtils.CooldownType.DISABLED) {
+        if (session.getGeyser().config().gameplay().showCooldown() != CooldownUtils.CooldownType.DISABLED) {
             LinkedHashMap<String, CooldownUtils.CooldownType> cooldownTypes = new LinkedHashMap<>();
             for (CooldownUtils.CooldownType cooldownType : CooldownUtils.CooldownType.values()) {
                 cooldownTypes.put(translateCooldown(cooldownType, player), cooldownType);
