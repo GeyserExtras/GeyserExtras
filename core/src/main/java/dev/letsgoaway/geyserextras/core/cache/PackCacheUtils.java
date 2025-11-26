@@ -10,7 +10,6 @@ import org.geysermc.geyser.api.pack.PackCodec;
 import org.geysermc.geyser.api.pack.ResourcePack;
 import org.geysermc.geyser.api.pack.option.PriorityOption;
 import org.geysermc.geyser.api.pack.option.SubpackOption;
-import org.geysermc.geyser.pack.option.GeyserPriorityOption;
 
 import java.io.File;
 import java.io.InputStream;
@@ -111,7 +110,13 @@ public class PackCacheUtils {
     public static void onPackLoadEvent(ExtrasPlayer player, SessionLoadResourcePacksEvent ev) {
         try {
             if (!ev.resourcePacks().contains(RP_GEYSER_EXTRAS)) {
-                ev.register(RP_GEYSER_EXTRAS, GeyserPriorityOption.HIGHEST);
+                int priority = GE.getConfig().getGeyserExtrasPackPriority();
+                // Geyser requires priority to be between -100 and 100
+                if (priority < -100 || priority > 100) {
+                    SERVER.warn("GeyserExtrasPack priority " + priority + " is out of valid range (-100 to 100). Using default value of 100.");
+                    priority = 100;
+                }
+                ev.register(RP_GEYSER_EXTRAS, PriorityOption.priority(priority));
             }
         } catch (Exception ignored) {
         }

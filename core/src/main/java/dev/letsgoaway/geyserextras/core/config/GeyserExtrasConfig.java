@@ -113,6 +113,20 @@ public final class GeyserExtrasConfig {
             """)
     private boolean checkForUpdates = true;
 
+    @Comment("""
+            The priority level for the GeyserExtrasPack resource pack.
+            Higher values = higher priority (packs with higher priority override files from lower-priority packs
+            when file names conflict, and the client cannot easily merge them).
+            Valid range: -100 to 100
+            Common values:
+            - -100: Lowest priority
+            - 0: Normal priority
+            - 100: Highest priority (default)
+
+            Only change this if you have other resource packs that need to override GeyserExtrasPack,
+            or if GeyserExtrasPack needs lower priority than your custom packs.
+            """)
+    private int geyserExtrasPackPriority = 100;
 
     @Comment("Only enable if you know what you are doing.")
     private boolean debugMode = false;
