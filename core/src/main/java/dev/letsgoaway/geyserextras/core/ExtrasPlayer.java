@@ -128,7 +128,7 @@ public class ExtrasPlayer {
         }
 
         // Update the cooldown at a faster rate for smoother animations at fast periods
-        startCombatTickThread(60f);
+        startCombatTickThread(getPreferences().getIndicatorUpdateRate());
         // Java UUID is null until login
         javaUUID = session.javaUuid();
     }

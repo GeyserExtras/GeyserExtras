@@ -86,7 +86,6 @@ public class GeyserExtrasVelocity implements Server {
         if (IsAvailable.packetevents()) {
             dev.letsgoaway.geyserextras.core.protocol.ProtocolHandler.init();
         }
-
     }
 
     @Subscribe

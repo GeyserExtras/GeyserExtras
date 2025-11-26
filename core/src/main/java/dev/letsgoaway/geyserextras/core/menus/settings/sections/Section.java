@@ -4,6 +4,7 @@ import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.form.BedrockForm;
 import dev.letsgoaway.geyserextras.core.form.BedrockMenu;
 import dev.letsgoaway.geyserextras.core.form.elements.Button;
+import dev.letsgoaway.geyserextras.core.form.elements.Label;
 import dev.letsgoaway.geyserextras.core.menus.settings.menus.SectionMenu;
 import org.geysermc.cumulus.util.FormImage;
 import org.geysermc.geyser.session.GeyserSession;
@@ -11,8 +12,14 @@ import org.geysermc.geyser.session.GeyserSession;
 import java.util.List;
 
 public class Section {
-    public void create(BedrockForm menu, GeyserSession session, ExtrasPlayer player) {
-        menu.add(new SectionLabel(getHeader(player).get(0), getHeader(player).get(1)));
+    public void create(BedrockForm menu, GeyserSession session, ExtrasPlayer player, boolean includeHeader) {
+        if (includeHeader) {
+            menu.add(new SectionLabel(getHeader(player).get(0), getHeader(player).get(1)));
+        }
+        else {
+            // Add padding because bedrock doesnt lmao
+            menu.add(new Label(""));
+        }
         build(menu, session, player);
     }
 

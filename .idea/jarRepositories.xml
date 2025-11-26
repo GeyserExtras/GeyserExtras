@@ -116,5 +116,10 @@
       <option name="name" value="LoomLocalRemappedMods" />
       <option name="url" value="file:/$PROJECT_DIR$/.gradle/loom-cache/remapped_mods/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven9" />
+      <option name="name" value="maven9" />
+      <option name="url" value="https://repo.codemc.io/repository/maven-snapshots/" />
+    </remote-repository>
   </component>
 </project>
