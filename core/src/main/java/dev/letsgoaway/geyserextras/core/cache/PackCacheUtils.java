@@ -11,6 +11,8 @@ import org.geysermc.geyser.api.pack.ResourcePack;
 import org.geysermc.geyser.api.pack.option.PriorityOption;
 import org.geysermc.geyser.api.pack.option.SubpackOption;
 
+import org.geysermc.geyser.api.pack.UrlPackCodec;
+
 import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
@@ -109,7 +111,26 @@ public class PackCacheUtils {
 
     public static void onPackLoadEvent(ExtrasPlayer player, SessionLoadResourcePacksEvent ev) {
         try {
-            if (!ev.resourcePacks().contains(RP_GEYSER_EXTRAS)) {
+            UUID extrasPackUuid = RP_GEYSER_EXTRAS.manifest().header().uuid();
+
+            // check if GeyserExtrasPack is already registered (e.g. via CDN/UrlPackCodec)
+            ResourcePack existingPack = null;
+            for (ResourcePack pack : ev.resourcePacks()) {
+                if (pack.manifest().header().uuid().equals(extrasPackUuid)) {
+                    existingPack = pack;
+                    break;
+                }
+            }
+
+            if (existingPack != null) {
+                // pack already registered - check if it's via CDN
+                if (existingPack.codec() instanceof UrlPackCodec) {
+                    SERVER.log("GeyserExtrasPack detected via CDN (UrlPackCodec), skipping local registration.");
+                } else {
+                    SERVER.log("GeyserExtrasPack already registered, skipping.");
+                }
+            } else {
+                // register local copy of the GeyserExtrasPack
                 int priority = GE.getConfig().getGeyserExtrasPackPriority();
                 // Geyser requires priority to be between -100 and 100
                 if (priority < -100 || priority > 100) {
