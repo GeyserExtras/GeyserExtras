@@ -108,7 +108,7 @@ public final class GeyserExtrasConfig {
 
     @Comment("""
             Whether to check for updates or not.
-            This also disables updating of the GeyserExtrasPack and GeyserOptionalPack,
+            This also disables updating of the GeyserExtrasPack,
             however you can manually update them by deleting the 'GeyserExtras/cache/' folder.
             """)
     private boolean checkForUpdates = true;
