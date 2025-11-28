@@ -42,8 +42,7 @@ public class PackCacheUtils {
             boolean extrasPackNeedsUpdate = checkExtrasPack();
             if (extrasPackNeedsUpdate) {
                 Cache.saveCacheDates();
-            }
-            if (extrasPackNeedsUpdate) {
+
                 SERVER.log("Downloading GeyserExtrasPack...");
                 InputStream in = HTTP.request("https://raw.githubusercontent.com/GeyserExtras/GeyserExtrasPack/main/GeyserExtrasPack.mcpack");
                 Files.copy(in, GEYSER_EXTRAS_PACK, StandardCopyOption.REPLACE_EXISTING);
@@ -67,14 +66,14 @@ public class PackCacheUtils {
         File gopWorkaroundPack = geyserMCPacks.resolve("GeyserOptionalPack.mcpack").toFile();
         if (gopWorkaroundPack.exists()) {
             if (gopWorkaroundPack.delete()) {
-                SERVER.log("Deleted deprecated GeyserOptionalPack.mcpack from GeyserMC packs folder");
+                SERVER.log("Removed deprecated GeyserOptionalPack.mcpack from GeyserMC packs");
             }
         }
         // delete old GeyserOptionalPack from cache folder if it exists
         File oldOptionalPack = PACKS_FOLDER.resolve("GeyserOptionalPack.mcpack").toFile();
         if (oldOptionalPack.exists()) {
             if (oldOptionalPack.delete()) {
-                SERVER.log("Deleted deprecated GeyserOptionalPack.mcpack from cache folder");
+                SERVER.log("Removed deprecated GeyserOptionalPack.mcpack from cache");
             }
         }
     }

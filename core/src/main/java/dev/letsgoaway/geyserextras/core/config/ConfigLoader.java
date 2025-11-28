@@ -138,7 +138,10 @@ public class ConfigLoader {
         YamlConfigurationLoader loader = YamlConfigurationLoader.builder().file(configPath.toFile()).build();
 
         CommentedConfigurationNode geyserConfig = loader.load();
-        geyserConfig.node("show-cooldown").set("title");
+        geyserConfig.node("gameplay").node("show-cooldown").set("title");
+        SERVER.log("Enabling GeyserIntegratedPack...");
+        geyserConfig.node("gameplay").node("enable-integrated-pack").set(true);
+
         loader.save(geyserConfig);
     }
 }

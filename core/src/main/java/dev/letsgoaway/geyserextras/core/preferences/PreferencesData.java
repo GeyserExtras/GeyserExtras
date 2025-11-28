@@ -1,7 +1,5 @@
 package dev.letsgoaway.geyserextras.core.preferences;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import dev.letsgoaway.geyserextras.core.ExtrasPlayer;
 import dev.letsgoaway.geyserextras.core.menus.Menus;
 import dev.letsgoaway.geyserextras.core.preferences.bindings.Action;
@@ -12,7 +10,8 @@ import org.geysermc.geyser.GeyserImpl;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.geyser.util.CooldownUtils;
 
-import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -23,17 +22,14 @@ import java.util.UUID;
 
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.GE;
 import static dev.letsgoaway.geyserextras.core.GeyserExtras.SERVER;
-import static dev.letsgoaway.geyserextras.core.cache.Cache.JSON_MAPPER;
+import static dev.letsgoaway.geyserextras.core.cache.Cache.GSON;
 
 public class PreferencesData {
-    @JsonIgnore
     public static Path PREFERENCES_PATH;
-    @JsonIgnore
     private static PreferencesData DEFAULT;
-    @JsonIgnore
-    private final ExtrasPlayer player;
-    @JsonIgnore
-    private final GeyserSession session;
+
+    private transient final ExtrasPlayer player;
+    private transient final GeyserSession session;
     public CooldownUtils.CooldownType cooldownType = CooldownUtils.CooldownType.TITLE;
     public boolean showCoordinates;
 
@@ -67,7 +63,6 @@ public class PreferencesData {
     private List<UUID> selectedPacks = new ArrayList<>();
     @Getter
     @Setter
-    @JsonSerialize
     private HashMap<UUID, String> selectedSubpacks = new HashMap<>();
     @Getter
     @Setter
@@ -106,16 +101,27 @@ public class PreferencesData {
 
         Path defaultPath = PREFERENCES_PATH.resolve("default.json");
         DEFAULT = new PreferencesData();
-        try {
-            if (defaultPath.toFile().exists()) {
-                FileInputStream data = new FileInputStream(defaultPath.toFile());
+        if (defaultPath.toFile().exists()) {
+            try (FileReader reader = new FileReader(defaultPath.toFile())) {
                 // Copy from because defaults might be different
-                DEFAULT.copyFrom(JSON_MAPPER.convertValue(JSON_MAPPER.readTree(data.readAllBytes()), PreferencesData.class));
-                data.close();
+                DEFAULT.copyFrom(GSON.fromJson(reader, PreferencesData.class));
+                writeDefaults();
+            } catch (Exception e) {
+                SERVER.warn("Could not load custom default settings, new players will recieve factory\ndefault's, no changes have been made to default.json.\n" + e.getLocalizedMessage());
             }
-            JSON_MAPPER.writeValue(defaultPath.toFile(), DEFAULT);
-        } catch (Exception e) {
-            SERVER.warn("Could not load custom default settings, new players will recieve factory\ndefault's, no changes have been made to default.json.\n" + e.getLocalizedMessage());
+        } else {
+            writeDefaults();
+
+        }
+    }
+
+    private static void writeDefaults() {
+        Path defaultPath = PREFERENCES_PATH.resolve("default.json");
+
+        try (FileWriter write = new FileWriter(defaultPath.toFile())) {
+            GSON.toJson(DEFAULT, write);
+        } catch (IOException e) {
+            SERVER.warn("Could not create default preferences file.\n" + e.getLocalizedMessage());
         }
     }
 
@@ -151,9 +157,9 @@ public class PreferencesData {
         this.update();
         if (GE.getConfig().isEnableGeyserExtrasMenu()) {
             new Thread(() -> {
-                try {
-                    if (!JSON_MAPPER.writeValueAsString(this).equals(JSON_MAPPER.writeValueAsString(DEFAULT))) {
-                        JSON_MAPPER.writeValue(player.getUserPrefs(), this);
+                try (FileWriter writer = new FileWriter(player.getUserPrefs())) {
+                    if (!GSON.toJson(this).equals(GSON.toJson(DEFAULT))) {
+                        GSON.toJson(this, writer);
                     } else if (player.getUserPrefs().exists()) {
                         player.getUserPrefs().delete();
                     }
@@ -166,17 +172,16 @@ public class PreferencesData {
 
     public void load() {
         if (player.getUserPrefs().exists() && GE.getConfig().isEnableGeyserExtrasMenu()) {
-            try {
-                FileInputStream data = new FileInputStream(player.getUserPrefs());
+            try (FileReader reader = new FileReader(player.getUserPrefs())) {
                 // Copy from because session would be null
-                this.copyFrom(JSON_MAPPER.convertValue(JSON_MAPPER.readTree(data.readAllBytes()), PreferencesData.class));
-                data.close();
+                this.copyFrom(GSON.fromJson(reader, PreferencesData.class));
             } catch (Exception e) {
                 SERVER.warn("Could not load data for player " + player.getBedrockXUID() + ", restoring to default for them.\n" + e.getLocalizedMessage());
 
                 this.copyFrom(DEFAULT);
             }
         } else {
+            SERVER.debugWarn("No preferences file found for player " + player.getBedrockXUID() + ", using default settings.");
             this.copyFrom(DEFAULT);
         }
         this.onLoad();

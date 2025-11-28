@@ -21,7 +21,7 @@ public class InGameSettingsMenu extends BedrockForm {
         add(new Label(player.translateGE("ge.settings.reset.ingame")));
 
         for (Section section : sections) {
-            section.create(this, session, player);
+            section.create(this, session, player, true);
         }
 
         return super.create(player);

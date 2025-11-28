@@ -17,17 +17,17 @@ public class SectionMenu extends BedrockForm {
     public CustomForm.Builder create(ExtrasPlayer player) {
         setTitle(section.getHeader(player).get(0));
         GeyserSession session = player.getSession();
-        section.create(this,session,player);
+        section.create(this, session, player, false);
         return super.create(player);
     }
 
     @Override
-    public void onClose(ExtrasPlayer player){
+    public void onClose(ExtrasPlayer player) {
         player.sendForm(new SettingsMenu());
     }
 
     @Override
-    public void onSubmit(ExtrasPlayer player){
+    public void onSubmit(ExtrasPlayer player) {
         player.sendForm(new SettingsMenu());
         player.getPreferences().save();
     }

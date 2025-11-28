@@ -5,7 +5,7 @@ You can view 2.0's WIP wiki here: https://geyserextras.letsgoaway.dev/
 # GeyserExtras
 A plugin which attempts to unify features for Bedrock Edition players on Java Edition Servers with GeyserMC, aswell as other handy features for Bedrock Players.
 
-[![CodeFactor](https://www.codefactor.io/repository/github/geyserextras/geyserextras/badge)](https://www.codefactor.io/repository/github/geyserextras/geyserextras)
+[![CodeFactor](https://www.codefactor.io/repository/github/geyserextras/geyserextras/badge/master)](https://www.codefactor.io/repository/github/geyserextras/geyserextras/overview/master)
 
 [![generic](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/documentation/generic_vector.svg)](https://geyserextras.letsgoaway.dev)
 [![discord-singular](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/social/discord-singular_vector.svg)](https://discord.gg/2FfuShKQgy)
