@@ -125,6 +125,9 @@ public final class GeyserExtrasConfig {
 
             Only change this if you have other resource packs that need to override GeyserExtrasPack,
             or if GeyserExtrasPack needs lower priority than your custom packs.
+
+            Note: If you serve GeyserExtrasPack externally via CDN (using UrlPackCodec),
+            GeyserExtras will automatically detect it by UUID and skip registering its own copy.
             """)
     private int geyserExtrasPackPriority = 100;
 
