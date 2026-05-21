@@ -1,8 +1,11 @@
 dependencies {
+    val geyser_version: String by project
+    val bungeecord_version: String by project
+
     implementation(project(":core"))
 
-    compileOnly("org.geysermc.geyser:core:2.9.1-SNAPSHOT")
-    compileOnly("net.md-5:bungeecord-api:1.21-R0.1")
+    compileOnly("org.geysermc.geyser:core:${geyser_version}")
+    compileOnly("net.md-5:bungeecord-api:${bungeecord_version}")
 }
 
 tasks {

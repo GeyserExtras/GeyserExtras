@@ -274,8 +274,11 @@ public class ExtrasPlayer {
 
     public void swingArm() {
         AnimatePacket animatePacket = new AnimatePacket();
-        animatePacket.setRuntimeEntityId(session.getPlayerEntity().getGeyserId());
+
+        long runtimeId = session.getPlayerEntity().getEntityId();
+        animatePacket.setRuntimeEntityId(runtimeId);
         animatePacket.setAction(AnimatePacket.Action.SWING_ARM);
+
         session.sendUpstreamPacket(animatePacket);
     }
 

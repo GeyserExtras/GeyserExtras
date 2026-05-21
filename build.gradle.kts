@@ -1,7 +1,9 @@
 plugins {
     id("java")
-    id("io.freefair.lombok") version "8.6"
-    id("com.gradleup.shadow") version "8.3.0"
+    id("io.freefair.lombok") version "9.5.0"
+    id("com.gradleup.shadow") version "9.4.1"
+    id("net.fabricmc.fabric-loom") version "1.16-SNAPSHOT" apply false
+    id("net.neoforged.moddev") version "2.0.141" apply false
 }
 
 repositories {
@@ -19,7 +21,7 @@ repositories {
     maven("https://oss.sonatype.org/content/groups/public/") {
         name = "sonatype"
     }
-    maven("https://repo.opencollab.dev/main/")
+    maven("https://repo.opencollab.dev/main")
     maven("https://repo.codemc.io/repository/maven-releases/")
     maven("https://maven.fabricmc.net/")
     maven("https://maven.architectury.dev/")
@@ -30,27 +32,31 @@ repositories {
 }
 
 dependencies {
-    implementation("org.spongepowered:configurate-yaml:4.2.0-GeyserMC-SNAPSHOT")
-    shadow("org.spongepowered:configurate-yaml:4.2.0-GeyserMC-SNAPSHOT")
-    implementation("com.fasterxml.jackson.core:jackson-annotations:2.17.0")
-    implementation("com.fasterxml.jackson.core:jackson-core:2.17.0")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.17.0")
-    shadow("com.fasterxml.jackson.core:jackson-annotations:2.17.0")
-    shadow("com.fasterxml.jackson.core:jackson-core:2.17.0")
-    shadow("com.fasterxml.jackson.core:jackson-databind:2.17.0")
+    val configurate_yaml: String by project
+    val jackson_version: String by project
+    val geyser_version: String by project
+    val lombok_version: String by project
 
-    compileOnly("org.geysermc.geyser:core:2.9.1-SNAPSHOT")
-    compileOnly("org.geysermc.floodgate:core:2.2.5-SNAPSHOT")
-    compileOnly("org.projectlombok:lombok:1.18.34")
-    annotationProcessor("org.projectlombok:lombok:1.18.34")
-    testCompileOnly("org.projectlombok:lombok:1.18.34")
-    testAnnotationProcessor("org.projectlombok:lombok:1.18.34")
+    implementation("org.spongepowered:configurate-yaml:${configurate_yaml}")
+    shadow("org.spongepowered:configurate-yaml:${configurate_yaml}")
+    implementation("com.fasterxml.jackson.core:jackson-annotations:${jackson_version}")
+    implementation("com.fasterxml.jackson.core:jackson-core:${jackson_version}")
+    implementation("com.fasterxml.jackson.core:jackson-databind:${jackson_version}")
+    shadow("com.fasterxml.jackson.core:jackson-annotations:${jackson_version}")
+    shadow("com.fasterxml.jackson.core:jackson-core:${jackson_version}")
+    shadow("com.fasterxml.jackson.core:jackson-databind:${jackson_version}")
+
+    compileOnly("org.geysermc.geyser:core:${geyser_version}")
+
+    compileOnly("org.projectlombok:lombok:${lombok_version}")
+    annotationProcessor("org.projectlombok:lombok:${lombok_version}")
+    testCompileOnly("org.projectlombok:lombok:${lombok_version}")
+    testAnnotationProcessor("org.projectlombok:lombok:${lombok_version}")
 }
-
-
 
 subprojects {
     repositories {
+        mavenLocal()
         mavenCentral()
         gradlePluginPortal()
 
@@ -74,7 +80,7 @@ subprojects {
 
     plugins.withId("java") {
         java {
-            toolchain.languageVersion = JavaLanguageVersion.of(17)
+            toolchain.languageVersion = JavaLanguageVersion.of(25)
         }
     }
 
@@ -85,10 +91,6 @@ subprojects {
     }
 
     tasks {
-        compileJava {
-            options.encoding = "UTF-8"
-        }
-
         processResources {
             filesMatching(listOf("plugin.yml", "bungee.yml", "extension.yml")) {
                 expand(

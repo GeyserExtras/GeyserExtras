@@ -1,9 +1,14 @@
 dependencies {
+    val adventure_api_version: String by project
+    val geyser_version: String by project
+    val bungeecord_version: String by project
+    val packetevents_version: String by project
+
     implementation(project(":core"))
-    compileOnly("net.kyori:adventure-api:4.18.0")
-    compileOnly("org.geysermc.geyser:core:2.9.0-SNAPSHOT")
-    compileOnly("net.md-5:bungeecord-api:1.21-R0.1")
-    compileOnly("com.github.retrooper:packetevents-bungeecord:2.10.0")
+    compileOnly("net.kyori:adventure-api:${adventure_api_version}")
+    compileOnly("org.geysermc.geyser:core:${geyser_version}")
+    compileOnly("net.md-5:bungeecord-api:${bungeecord_version}")
+    compileOnly("com.github.retrooper:packetevents-bungeecord:${packetevents_version}")
 }
 
 tasks {

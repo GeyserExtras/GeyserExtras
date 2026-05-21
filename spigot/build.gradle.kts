@@ -1,11 +1,17 @@
 
 dependencies {
+    val configurate_yaml: String by project
+    val adventure_api_version: String by project
+    val geyser_version: String by project
+    val spigot_version: String by project
+    val packetevents_version: String by project
+
     implementation(project(":core"))
-    compileOnly("org.spongepowered:configurate-yaml:4.2.0-GeyserMC-SNAPSHOT")
-    compileOnly("net.kyori:adventure-api:4.18.0")
-    compileOnly("org.geysermc.geyser:core:2.9.0-SNAPSHOT")
-    compileOnly("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
-    compileOnly("com.github.retrooper:packetevents-spigot:2.10.0")
+    compileOnly("org.spongepowered:configurate-yaml:${configurate_yaml}")
+    compileOnly("net.kyori:adventure-api:${adventure_api_version}")
+    compileOnly("org.geysermc.geyser:core:${geyser_version}")
+    compileOnly("org.spigotmc:spigot-api:${spigot_version}")
+    compileOnly("com.github.retrooper:packetevents-spigot:${packetevents_version}")
 
 }
 

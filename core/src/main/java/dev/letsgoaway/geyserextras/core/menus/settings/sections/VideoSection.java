@@ -18,13 +18,14 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+
 public class VideoSection extends Section {
     private static String translateCooldown(CooldownUtils.CooldownType cooldownType, ExtrasPlayer player) {
         switch (cooldownType) {
-            case TITLE -> {
+            case CROSSHAIR -> {
                 return BedrockLocale.CROSSHAIR;
             }
-            case ACTIONBAR -> {
+            case HOTBAR -> {
                 return player.translate("options.attack.hotbar");
             }
             case DISABLED -> {
@@ -36,7 +37,7 @@ public class VideoSection extends Section {
 
     @Override
     public void build(BedrockForm menu, GeyserSession session, ExtrasPlayer player) {
-        if (session.getGeyser().config().gameplay().showCooldown() != CooldownUtils.CooldownType.DISABLED) {
+        if (session.getGeyser().config().gameplay().cooldownType() != CooldownUtils.CooldownType.DISABLED) {
             LinkedHashMap<String, CooldownUtils.CooldownType> cooldownTypes = new LinkedHashMap<>();
             for (CooldownUtils.CooldownType cooldownType : CooldownUtils.CooldownType.values()) {
                 cooldownTypes.put(translateCooldown(cooldownType, player), cooldownType);

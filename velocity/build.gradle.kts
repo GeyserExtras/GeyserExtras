@@ -1,10 +1,14 @@
 
 dependencies {
+    val packetevents_version: String by project
+    val geyser_version: String by project
+    val velocity_version: String by project
+
     implementation(project(":core"))
-    compileOnly("org.geysermc.geyser:core:2.9.0-SNAPSHOT")
-    compileOnly("com.velocitypowered:velocity-api:3.4.0-SNAPSHOT")
-    annotationProcessor("com.velocitypowered:velocity-api:3.4.0-SNAPSHOT")
-    compileOnly("com.github.retrooper:packetevents-velocity:2.10.0")
+    compileOnly("org.geysermc.geyser:core:${geyser_version}")
+    compileOnly("com.velocitypowered:velocity-api:${velocity_version}")
+    annotationProcessor("com.velocitypowered:velocity-api:${velocity_version}")
+    compileOnly("com.github.retrooper:packetevents-velocity:${packetevents_version}")
 }
 
 

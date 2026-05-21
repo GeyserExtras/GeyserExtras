@@ -50,7 +50,7 @@ public class BedrockInteractInjector extends BedrockInteractTranslator {
                 return;
             }
             Entity entity;
-            if (packet.getRuntimeEntityId() == session.getPlayerEntity().getGeyserId()) {
+            if (packet.getRuntimeEntityId() == session.getPlayerEntity().getEntityId()) {
                 //Player is not in entity cache
                 entity = session.getPlayerEntity();
             } else {

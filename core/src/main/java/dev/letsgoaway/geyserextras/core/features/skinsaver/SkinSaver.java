@@ -23,11 +23,11 @@ public class SkinSaver {
             Path skinsFolder = Files.createDirectories(SERVER.getPluginFolder().resolve("skins/" + data.getSkinId().replace(data.getCapeId(), "") + "/"));
 
             File skinFile = skinsFolder.resolve("skin.png").toFile();
-            byte[] skinBytes = Base64.getDecoder().decode(data.getSkinData().getBytes(StandardCharsets.UTF_8));
+            byte[] skinBytes = Base64.getDecoder().decode(data.getSkinData());
             ImageIO.write(getFromSkinData(data.getSkinImageWidth(), data.getSkinImageHeight(), skinBytes), "png", skinFile);
 
-            String geometryName = new String(Base64.getDecoder().decode(data.getGeometryName().getBytes(StandardCharsets.UTF_8)));
-            String geometryData = new String(Base64.getDecoder().decode(data.getGeometryData().getBytes(StandardCharsets.UTF_8)));
+            String geometryName = new String(Base64.getDecoder().decode(data.getGeometryName()));
+            String geometryData = new String(Base64.getDecoder().decode(data.getGeometryData()));
 
             String rawAnimData = data.getSkinAnimationData();
             if (!rawAnimData.isEmpty() && !rawAnimData.isBlank()) {

@@ -50,7 +50,7 @@ public enum Action {
             case OPEN_ADVANCEMENTS -> session.getAdvancementsCache().buildAndShowMenuForm();
             case OPEN_STATISTICS -> {
                 session.setWaitingForStatistics(true);
-                ServerboundClientCommandPacket packet = new ServerboundClientCommandPacket(ClientCommand.STATS);
+                ServerboundClientCommandPacket packet = new ServerboundClientCommandPacket(ClientCommand.REQUEST_STATS);
                 session.sendDownstreamGamePacket(packet);
             }
             case PLAYER_LIST -> {
